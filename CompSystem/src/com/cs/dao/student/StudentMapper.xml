@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cs.dao.student.StudentMapper">
+  <resultMap id="BaseResultMap" type="com.cs.pojo.Student">
+    <id column="studentNo" jdbcType="INTEGER" property="studentno" />
+    <result column="studentName" jdbcType="VARCHAR" property="studentname" />
+    <result column="gender" jdbcType="VARCHAR" property="gender" />
+    <result column="departmentId" jdbcType="INTEGER" property="departmentid" />
+    <result column="profession" jdbcType="VARCHAR" property="profession" />
+    <result column="classNo" jdbcType="INTEGER" property="classno" />
+    <result column="grade" jdbcType="INTEGER" property="grade" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    studentNo, studentName, gender, departmentId, profession, classNo, grade, phone, 
+    email, password
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from student
+    where studentNo = #{studentno,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from student
+    where studentNo = #{studentno,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cs.pojo.Student">
+    insert into student (studentNo, studentName, gender, 
+      departmentId, profession, classNo, 
+      grade, phone, email, 
+      password)
+    values (#{studentno,jdbcType=INTEGER}, #{studentname,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, 
+      #{departmentid,jdbcType=INTEGER}, #{profession,jdbcType=VARCHAR}, #{classno,jdbcType=INTEGER}, 
+      #{grade,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cs.pojo.Student">
+    insert into student
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="studentno != null">
+        studentNo,
+      </if>
+      <if test="studentname != null">
+        studentName,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="departmentid != null">
+        departmentId,
+      </if>
+      <if test="profession != null">
+        profession,
+      </if>
+      <if test="classno != null">
+        classNo,
+      </if>
+      <if test="grade != null">
+        grade,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="studentno != null">
+        #{studentno,jdbcType=INTEGER},
+      </if>
+      <if test="studentname != null">
+        #{studentname,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentid != null">
+        #{departmentid,jdbcType=INTEGER},
+      </if>
+      <if test="profession != null">
+        #{profession,jdbcType=VARCHAR},
+      </if>
+      <if test="classno != null">
+        #{classno,jdbcType=INTEGER},
+      </if>
+      <if test="grade != null">
+        #{grade,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Student">
+    update student
+    <set>
+      <if test="studentname != null">
+        studentName = #{studentname,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentid != null">
+        departmentId = #{departmentid,jdbcType=INTEGER},
+      </if>
+      <if test="profession != null">
+        profession = #{profession,jdbcType=VARCHAR},
+      </if>
+      <if test="classno != null">
+        classNo = #{classno,jdbcType=INTEGER},
+      </if>
+      <if test="grade != null">
+        grade = #{grade,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where studentNo = #{studentno,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Student">
+    update student
+    set studentName = #{studentname,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=VARCHAR},
+      departmentId = #{departmentid,jdbcType=INTEGER},
+      profession = #{profession,jdbcType=VARCHAR},
+      classNo = #{classno,jdbcType=INTEGER},
+      grade = #{grade,jdbcType=INTEGER},
+      phone = #{phone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR}
+    where studentNo = #{studentno,jdbcType=INTEGER}
+  </update>
+</mapper>

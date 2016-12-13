@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cs.dao.competition.CompetitionMapper">
+  <resultMap id="BaseResultMap" type="com.cs.pojo.Competition">
+    <id column="comId" jdbcType="INTEGER" property="comid" />
+    <result column="comName" jdbcType="VARCHAR" property="comname" />
+    <result column="teacherNo" jdbcType="INTEGER" property="teacherno" />
+    <result column="unit" jdbcType="VARCHAR" property="unit" />
+    <result column="levelId" jdbcType="INTEGER" property="levelid" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="departmentId" jdbcType="INTEGER" property="departmentid" />
+    <result column="date" jdbcType="DATE" property="date" />
+    <result column="host" jdbcType="VARCHAR" property="host" />
+    <result column="time" jdbcType="DATE" property="time" />
+    <result column="place" jdbcType="VARCHAR" property="place" />
+    <result column="introduce" jdbcType="VARCHAR" property="introduce" />
+    <result column="object" jdbcType="VARCHAR" property="object" />
+    <result column="people" jdbcType="INTEGER" property="people" />
+    <result column="sponsor" jdbcType="VARCHAR" property="sponsor" />
+    <result column="plan" jdbcType="VARCHAR" property="plan" />
+    <result column="tgoal" jdbcType="VARCHAR" property="tgoal" />
+    <result column="wgoal" jdbcType="VARCHAR" property="wgoal" />
+    <result column="sopinion" jdbcType="VARCHAR" property="sopinion" />
+    <result column="slsign" jdbcType="VARCHAR" property="slsign" />
+    <result column="slsdate" jdbcType="DATE" property="slsdate" />
+    <result column="uopinion" jdbcType="VARCHAR" property="uopinion" />
+    <result column="dsign" jdbcType="VARCHAR" property="dsign" />
+    <result column="dsdate" jdbcType="DATE" property="dsdate" />
+    <result column="tdopinion" jdbcType="VARCHAR" property="tdopinion" />
+    <result column="olsign" jdbcType="VARCHAR" property="olsign" />
+    <result column="olsdate" jdbcType="DATE" property="olsdate" />
+    <result column="lsign" jdbcType="VARCHAR" property="lsign" />
+    <result column="lsdate" jdbcType="DATE" property="lsdate" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    comId, comName, teacherNo, unit, levelId, phone, email, departmentId, date, host, 
+    time, place, introduce, object, people, sponsor, plan, tgoal, wgoal, sopinion, slsign, 
+    slsdate, uopinion, dsign, dsdate, tdopinion, olsign, olsdate, lsign, lsdate, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from competition
+    where comId = #{comid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from competition
+    where comId = #{comid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cs.pojo.Competition">
+    insert into competition (comId, comName, teacherNo, 
+      unit, levelId, phone, 
+      email, departmentId, date, 
+      host, time, place, introduce, 
+      object, people, sponsor, 
+      plan, tgoal, wgoal, 
+      sopinion, slsign, slsdate, 
+      uopinion, dsign, dsdate, 
+      tdopinion, olsign, olsdate, 
+      lsign, lsdate, status)
+    values (#{comid,jdbcType=INTEGER}, #{comname,jdbcType=VARCHAR}, #{teacherno,jdbcType=INTEGER}, 
+      #{unit,jdbcType=VARCHAR}, #{levelid,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{departmentid,jdbcType=INTEGER}, #{date,jdbcType=DATE}, 
+      #{host,jdbcType=VARCHAR}, #{time,jdbcType=DATE}, #{place,jdbcType=VARCHAR}, #{introduce,jdbcType=VARCHAR}, 
+      #{object,jdbcType=VARCHAR}, #{people,jdbcType=INTEGER}, #{sponsor,jdbcType=VARCHAR}, 
+      #{plan,jdbcType=VARCHAR}, #{tgoal,jdbcType=VARCHAR}, #{wgoal,jdbcType=VARCHAR}, 
+      #{sopinion,jdbcType=VARCHAR}, #{slsign,jdbcType=VARCHAR}, #{slsdate,jdbcType=DATE}, 
+      #{uopinion,jdbcType=VARCHAR}, #{dsign,jdbcType=VARCHAR}, #{dsdate,jdbcType=DATE}, 
+      #{tdopinion,jdbcType=VARCHAR}, #{olsign,jdbcType=VARCHAR}, #{olsdate,jdbcType=DATE}, 
+      #{lsign,jdbcType=VARCHAR}, #{lsdate,jdbcType=DATE}, #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cs.pojo.Competition">
+    insert into competition
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="comid != null">
+        comId,
+      </if>
+      <if test="comname != null">
+        comName,
+      </if>
+      <if test="teacherno != null">
+        teacherNo,
+      </if>
+      <if test="unit != null">
+        unit,
+      </if>
+      <if test="levelid != null">
+        levelId,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="departmentid != null">
+        departmentId,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="host != null">
+        host,
+      </if>
+      <if test="time != null">
+        time,
+      </if>
+      <if test="place != null">
+        place,
+      </if>
+      <if test="introduce != null">
+        introduce,
+      </if>
+      <if test="object != null">
+        object,
+      </if>
+      <if test="people != null">
+        people,
+      </if>
+      <if test="sponsor != null">
+        sponsor,
+      </if>
+      <if test="plan != null">
+        plan,
+      </if>
+      <if test="tgoal != null">
+        tgoal,
+      </if>
+      <if test="wgoal != null">
+        wgoal,
+      </if>
+      <if test="sopinion != null">
+        sopinion,
+      </if>
+      <if test="slsign != null">
+        slsign,
+      </if>
+      <if test="slsdate != null">
+        slsdate,
+      </if>
+      <if test="uopinion != null">
+        uopinion,
+      </if>
+      <if test="dsign != null">
+        dsign,
+      </if>
+      <if test="dsdate != null">
+        dsdate,
+      </if>
+      <if test="tdopinion != null">
+        tdopinion,
+      </if>
+      <if test="olsign != null">
+        olsign,
+      </if>
+      <if test="olsdate != null">
+        olsdate,
+      </if>
+      <if test="lsign != null">
+        lsign,
+      </if>
+      <if test="lsdate != null">
+        lsdate,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="comid != null">
+        #{comid,jdbcType=INTEGER},
+      </if>
+      <if test="comname != null">
+        #{comname,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherno != null">
+        #{teacherno,jdbcType=INTEGER},
+      </if>
+      <if test="unit != null">
+        #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="levelid != null">
+        #{levelid,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentid != null">
+        #{departmentid,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=DATE},
+      </if>
+      <if test="host != null">
+        #{host,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=DATE},
+      </if>
+      <if test="place != null">
+        #{place,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce != null">
+        #{introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="object != null">
+        #{object,jdbcType=VARCHAR},
+      </if>
+      <if test="people != null">
+        #{people,jdbcType=INTEGER},
+      </if>
+      <if test="sponsor != null">
+        #{sponsor,jdbcType=VARCHAR},
+      </if>
+      <if test="plan != null">
+        #{plan,jdbcType=VARCHAR},
+      </if>
+      <if test="tgoal != null">
+        #{tgoal,jdbcType=VARCHAR},
+      </if>
+      <if test="wgoal != null">
+        #{wgoal,jdbcType=VARCHAR},
+      </if>
+      <if test="sopinion != null">
+        #{sopinion,jdbcType=VARCHAR},
+      </if>
+      <if test="slsign != null">
+        #{slsign,jdbcType=VARCHAR},
+      </if>
+      <if test="slsdate != null">
+        #{slsdate,jdbcType=DATE},
+      </if>
+      <if test="uopinion != null">
+        #{uopinion,jdbcType=VARCHAR},
+      </if>
+      <if test="dsign != null">
+        #{dsign,jdbcType=VARCHAR},
+      </if>
+      <if test="dsdate != null">
+        #{dsdate,jdbcType=DATE},
+      </if>
+      <if test="tdopinion != null">
+        #{tdopinion,jdbcType=VARCHAR},
+      </if>
+      <if test="olsign != null">
+        #{olsign,jdbcType=VARCHAR},
+      </if>
+      <if test="olsdate != null">
+        #{olsdate,jdbcType=DATE},
+      </if>
+      <if test="lsign != null">
+        #{lsign,jdbcType=VARCHAR},
+      </if>
+      <if test="lsdate != null">
+        #{lsdate,jdbcType=DATE},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Competition">
+    update competition
+    <set>
+      <if test="comname != null">
+        comName = #{comname,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherno != null">
+        teacherNo = #{teacherno,jdbcType=INTEGER},
+      </if>
+      <if test="unit != null">
+        unit = #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="levelid != null">
+        levelId = #{levelid,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentid != null">
+        departmentId = #{departmentid,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        date = #{date,jdbcType=DATE},
+      </if>
+      <if test="host != null">
+        host = #{host,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        time = #{time,jdbcType=DATE},
+      </if>
+      <if test="place != null">
+        place = #{place,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce != null">
+        introduce = #{introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="object != null">
+        object = #{object,jdbcType=VARCHAR},
+      </if>
+      <if test="people != null">
+        people = #{people,jdbcType=INTEGER},
+      </if>
+      <if test="sponsor != null">
+        sponsor = #{sponsor,jdbcType=VARCHAR},
+      </if>
+      <if test="plan != null">
+        plan = #{plan,jdbcType=VARCHAR},
+      </if>
+      <if test="tgoal != null">
+        tgoal = #{tgoal,jdbcType=VARCHAR},
+      </if>
+      <if test="wgoal != null">
+        wgoal = #{wgoal,jdbcType=VARCHAR},
+      </if>
+      <if test="sopinion != null">
+        sopinion = #{sopinion,jdbcType=VARCHAR},
+      </if>
+      <if test="slsign != null">
+        slsign = #{slsign,jdbcType=VARCHAR},
+      </if>
+      <if test="slsdate != null">
+        slsdate = #{slsdate,jdbcType=DATE},
+      </if>
+      <if test="uopinion != null">
+        uopinion = #{uopinion,jdbcType=VARCHAR},
+      </if>
+      <if test="dsign != null">
+        dsign = #{dsign,jdbcType=VARCHAR},
+      </if>
+      <if test="dsdate != null">
+        dsdate = #{dsdate,jdbcType=DATE},
+      </if>
+      <if test="tdopinion != null">
+        tdopinion = #{tdopinion,jdbcType=VARCHAR},
+      </if>
+      <if test="olsign != null">
+        olsign = #{olsign,jdbcType=VARCHAR},
+      </if>
+      <if test="olsdate != null">
+        olsdate = #{olsdate,jdbcType=DATE},
+      </if>
+      <if test="lsign != null">
+        lsign = #{lsign,jdbcType=VARCHAR},
+      </if>
+      <if test="lsdate != null">
+        lsdate = #{lsdate,jdbcType=DATE},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where comId = #{comid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Competition">
+    update competition
+    set comName = #{comname,jdbcType=VARCHAR},
+      teacherNo = #{teacherno,jdbcType=INTEGER},
+      unit = #{unit,jdbcType=VARCHAR},
+      levelId = #{levelid,jdbcType=INTEGER},
+      phone = #{phone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      departmentId = #{departmentid,jdbcType=INTEGER},
+      date = #{date,jdbcType=DATE},
+      host = #{host,jdbcType=VARCHAR},
+      time = #{time,jdbcType=DATE},
+      place = #{place,jdbcType=VARCHAR},
+      introduce = #{introduce,jdbcType=VARCHAR},
+      object = #{object,jdbcType=VARCHAR},
+      people = #{people,jdbcType=INTEGER},
+      sponsor = #{sponsor,jdbcType=VARCHAR},
+      plan = #{plan,jdbcType=VARCHAR},
+      tgoal = #{tgoal,jdbcType=VARCHAR},
+      wgoal = #{wgoal,jdbcType=VARCHAR},
+      sopinion = #{sopinion,jdbcType=VARCHAR},
+      slsign = #{slsign,jdbcType=VARCHAR},
+      slsdate = #{slsdate,jdbcType=DATE},
+      uopinion = #{uopinion,jdbcType=VARCHAR},
+      dsign = #{dsign,jdbcType=VARCHAR},
+      dsdate = #{dsdate,jdbcType=DATE},
+      tdopinion = #{tdopinion,jdbcType=VARCHAR},
+      olsign = #{olsign,jdbcType=VARCHAR},
+      olsdate = #{olsdate,jdbcType=DATE},
+      lsign = #{lsign,jdbcType=VARCHAR},
+      lsdate = #{lsdate,jdbcType=DATE},
+      status = #{status,jdbcType=INTEGER}
+    where comId = #{comid,jdbcType=INTEGER}
+  </update>
+</mapper>

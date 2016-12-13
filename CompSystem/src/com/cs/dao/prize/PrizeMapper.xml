@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cs.dao.prize.PrizeMapper">
+  <resultMap id="BaseResultMap" type="com.cs.pojo.Prize">
+    <id column="prizeId" jdbcType="INTEGER" property="prizeid" />
+    <result column="prizeName" jdbcType="VARCHAR" property="prizename" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    prizeId, prizeName
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from prize
+    where prizeId = #{prizeid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from prize
+    where prizeId = #{prizeid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cs.pojo.Prize">
+    insert into prize (prizeId, prizeName)
+    values (#{prizeid,jdbcType=INTEGER}, #{prizename,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cs.pojo.Prize">
+    insert into prize
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="prizeid != null">
+        prizeId,
+      </if>
+      <if test="prizename != null">
+        prizeName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="prizeid != null">
+        #{prizeid,jdbcType=INTEGER},
+      </if>
+      <if test="prizename != null">
+        #{prizename,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Prize">
+    update prize
+    <set>
+      <if test="prizename != null">
+        prizeName = #{prizename,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where prizeId = #{prizeid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Prize">
+    update prize
+    set prizeName = #{prizename,jdbcType=VARCHAR}
+    where prizeId = #{prizeid,jdbcType=INTEGER}
+  </update>
+</mapper>

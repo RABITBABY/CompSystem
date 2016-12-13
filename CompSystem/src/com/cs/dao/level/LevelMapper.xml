@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cs.dao.level.LevelMapper">
+  <resultMap id="BaseResultMap" type="com.cs.pojo.Level">
+    <id column="levelId" jdbcType="INTEGER" property="levelid" />
+    <result column="levelName" jdbcType="VARCHAR" property="levelname" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    levelId, levelName
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from level
+    where levelId = #{levelid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from level
+    where levelId = #{levelid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cs.pojo.Level">
+    insert into level (levelId, levelName)
+    values (#{levelid,jdbcType=INTEGER}, #{levelname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cs.pojo.Level">
+    insert into level
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="levelid != null">
+        levelId,
+      </if>
+      <if test="levelname != null">
+        levelName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="levelid != null">
+        #{levelid,jdbcType=INTEGER},
+      </if>
+      <if test="levelname != null">
+        #{levelname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Level">
+    update level
+    <set>
+      <if test="levelname != null">
+        levelName = #{levelname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where levelId = #{levelid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Level">
+    update level
+    set levelName = #{levelname,jdbcType=VARCHAR}
+    where levelId = #{levelid,jdbcType=INTEGER}
+  </update>
+</mapper>

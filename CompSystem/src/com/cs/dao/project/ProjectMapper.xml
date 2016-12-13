@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cs.dao.project.ProjectMapper">
+  <resultMap id="BaseResultMap" type="com.cs.pojo.Project">
+    <id column="comId" jdbcType="INTEGER" property="comid" />
+    <result column="comName" jdbcType="VARCHAR" property="comname" />
+    <result column="levelId" jdbcType="INTEGER" property="levelid" />
+    <result column="hunit" jdbcType="VARCHAR" property="hunit" />
+    <result column="sOrganizer" jdbcType="VARCHAR" property="sorganizer" />
+    <result column="applyBeginDate" jdbcType="DATE" property="applybegindate" />
+    <result column="applyEndDate" jdbcType="DATE" property="applyenddate" />
+    <result column="comDate" jdbcType="DATE" property="comdate" />
+    <result column="cost" jdbcType="DECIMAL" property="cost" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="isPublish" jdbcType="INTEGER" property="ispublish" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.cs.pojo.Project">
+    <result column="introduction" jdbcType="LONGVARCHAR" property="introduction" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    comId, comName, levelId, hunit, sOrganizer, applyBeginDate, applyEndDate, comDate, 
+    cost, status, isPublish
+  </sql>
+  <sql id="Blob_Column_List">
+    introduction
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from project
+    where comId = #{comid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from project
+    where comId = #{comid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cs.pojo.Project">
+    insert into project (comId, comName, levelId, 
+      hunit, sOrganizer, applyBeginDate, 
+      applyEndDate, comDate, cost, 
+      status, isPublish, introduction
+      )
+    values (#{comid,jdbcType=INTEGER}, #{comname,jdbcType=VARCHAR}, #{levelid,jdbcType=INTEGER}, 
+      #{hunit,jdbcType=VARCHAR}, #{sorganizer,jdbcType=VARCHAR}, #{applybegindate,jdbcType=DATE}, 
+      #{applyenddate,jdbcType=DATE}, #{comdate,jdbcType=DATE}, #{cost,jdbcType=DECIMAL}, 
+      #{status,jdbcType=INTEGER}, #{ispublish,jdbcType=INTEGER}, #{introduction,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cs.pojo.Project">
+    insert into project
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="comid != null">
+        comId,
+      </if>
+      <if test="comname != null">
+        comName,
+      </if>
+      <if test="levelid != null">
+        levelId,
+      </if>
+      <if test="hunit != null">
+        hunit,
+      </if>
+      <if test="sorganizer != null">
+        sOrganizer,
+      </if>
+      <if test="applybegindate != null">
+        applyBeginDate,
+      </if>
+      <if test="applyenddate != null">
+        applyEndDate,
+      </if>
+      <if test="comdate != null">
+        comDate,
+      </if>
+      <if test="cost != null">
+        cost,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="ispublish != null">
+        isPublish,
+      </if>
+      <if test="introduction != null">
+        introduction,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="comid != null">
+        #{comid,jdbcType=INTEGER},
+      </if>
+      <if test="comname != null">
+        #{comname,jdbcType=VARCHAR},
+      </if>
+      <if test="levelid != null">
+        #{levelid,jdbcType=INTEGER},
+      </if>
+      <if test="hunit != null">
+        #{hunit,jdbcType=VARCHAR},
+      </if>
+      <if test="sorganizer != null">
+        #{sorganizer,jdbcType=VARCHAR},
+      </if>
+      <if test="applybegindate != null">
+        #{applybegindate,jdbcType=DATE},
+      </if>
+      <if test="applyenddate != null">
+        #{applyenddate,jdbcType=DATE},
+      </if>
+      <if test="comdate != null">
+        #{comdate,jdbcType=DATE},
+      </if>
+      <if test="cost != null">
+        #{cost,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="ispublish != null">
+        #{ispublish,jdbcType=INTEGER},
+      </if>
+      <if test="introduction != null">
+        #{introduction,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Project">
+    update project
+    <set>
+      <if test="comname != null">
+        comName = #{comname,jdbcType=VARCHAR},
+      </if>
+      <if test="levelid != null">
+        levelId = #{levelid,jdbcType=INTEGER},
+      </if>
+      <if test="hunit != null">
+        hunit = #{hunit,jdbcType=VARCHAR},
+      </if>
+      <if test="sorganizer != null">
+        sOrganizer = #{sorganizer,jdbcType=VARCHAR},
+      </if>
+      <if test="applybegindate != null">
+        applyBeginDate = #{applybegindate,jdbcType=DATE},
+      </if>
+      <if test="applyenddate != null">
+        applyEndDate = #{applyenddate,jdbcType=DATE},
+      </if>
+      <if test="comdate != null">
+        comDate = #{comdate,jdbcType=DATE},
+      </if>
+      <if test="cost != null">
+        cost = #{cost,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="ispublish != null">
+        isPublish = #{ispublish,jdbcType=INTEGER},
+      </if>
+      <if test="introduction != null">
+        introduction = #{introduction,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where comId = #{comid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.cs.pojo.Project">
+    update project
+    set comName = #{comname,jdbcType=VARCHAR},
+      levelId = #{levelid,jdbcType=INTEGER},
+      hunit = #{hunit,jdbcType=VARCHAR},
+      sOrganizer = #{sorganizer,jdbcType=VARCHAR},
+      applyBeginDate = #{applybegindate,jdbcType=DATE},
+      applyEndDate = #{applyenddate,jdbcType=DATE},
+      comDate = #{comdate,jdbcType=DATE},
+      cost = #{cost,jdbcType=DECIMAL},
+      status = #{status,jdbcType=INTEGER},
+      isPublish = #{ispublish,jdbcType=INTEGER},
+      introduction = #{introduction,jdbcType=LONGVARCHAR}
+    where comId = #{comid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Project">
+    update project
+    set comName = #{comname,jdbcType=VARCHAR},
+      levelId = #{levelid,jdbcType=INTEGER},
+      hunit = #{hunit,jdbcType=VARCHAR},
+      sOrganizer = #{sorganizer,jdbcType=VARCHAR},
+      applyBeginDate = #{applybegindate,jdbcType=DATE},
+      applyEndDate = #{applyenddate,jdbcType=DATE},
+      comDate = #{comdate,jdbcType=DATE},
+      cost = #{cost,jdbcType=DECIMAL},
+      status = #{status,jdbcType=INTEGER},
+      isPublish = #{ispublish,jdbcType=INTEGER}
+    where comId = #{comid,jdbcType=INTEGER}
+  </update>
+</mapper>

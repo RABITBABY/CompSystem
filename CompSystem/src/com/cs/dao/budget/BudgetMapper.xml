@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cs.dao.budget.BudgetMapper">
+  <resultMap id="BaseResultMap" type="com.cs.pojo.Budget">
+    <id column="budgetId" jdbcType="INTEGER" property="budgetid" />
+    <result column="comId" jdbcType="INTEGER" property="comid" />
+    <result column="subject" jdbcType="VARCHAR" property="subject" />
+    <result column="sum" jdbcType="INTEGER" property="sum" />
+    <result column="reasons" jdbcType="VARCHAR" property="reasons" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    budgetId, comId, subject, sum, reasons
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from budget
+    where budgetId = #{budgetid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from budget
+    where budgetId = #{budgetid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cs.pojo.Budget">
+    insert into budget (budgetId, comId, subject, 
+      sum, reasons)
+    values (#{budgetid,jdbcType=INTEGER}, #{comid,jdbcType=INTEGER}, #{subject,jdbcType=VARCHAR}, 
+      #{sum,jdbcType=INTEGER}, #{reasons,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cs.pojo.Budget">
+    insert into budget
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="budgetid != null">
+        budgetId,
+      </if>
+      <if test="comid != null">
+        comId,
+      </if>
+      <if test="subject != null">
+        subject,
+      </if>
+      <if test="sum != null">
+        sum,
+      </if>
+      <if test="reasons != null">
+        reasons,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="budgetid != null">
+        #{budgetid,jdbcType=INTEGER},
+      </if>
+      <if test="comid != null">
+        #{comid,jdbcType=INTEGER},
+      </if>
+      <if test="subject != null">
+        #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="sum != null">
+        #{sum,jdbcType=INTEGER},
+      </if>
+      <if test="reasons != null">
+        #{reasons,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Budget">
+    update budget
+    <set>
+      <if test="comid != null">
+        comId = #{comid,jdbcType=INTEGER},
+      </if>
+      <if test="subject != null">
+        subject = #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="sum != null">
+        sum = #{sum,jdbcType=INTEGER},
+      </if>
+      <if test="reasons != null">
+        reasons = #{reasons,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where budgetId = #{budgetid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Budget">
+    update budget
+    set comId = #{comid,jdbcType=INTEGER},
+      subject = #{subject,jdbcType=VARCHAR},
+      sum = #{sum,jdbcType=INTEGER},
+      reasons = #{reasons,jdbcType=VARCHAR}
+    where budgetId = #{budgetid,jdbcType=INTEGER}
+  </update>
+</mapper>
