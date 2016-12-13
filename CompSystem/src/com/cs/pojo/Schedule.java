@@ -3,11 +3,11 @@ package com.cs.pojo;
 import java.util.Date;
 
 public class Schedule {
-    private Integer scheduleid;
+    private Integer scheduleId;
 
-    private Integer comid;
+    private Integer comId;
 
-    private Integer teacherno;
+    private Integer teacherNo;
 
     private String content;
 
@@ -17,28 +17,28 @@ public class Schedule {
 
     private Integer hours;
 
-    public Integer getScheduleid() {
-        return scheduleid;
+    public Integer getScheduleId() {
+        return scheduleId;
     }
 
-    public void setScheduleid(Integer scheduleid) {
-        this.scheduleid = scheduleid;
+    public void setScheduleId(Integer scheduleId) {
+        this.scheduleId = scheduleId;
     }
 
-    public Integer getComid() {
-        return comid;
+    public Integer getComId() {
+        return comId;
     }
 
-    public void setComid(Integer comid) {
-        this.comid = comid;
+    public void setComId(Integer comId) {
+        this.comId = comId;
     }
 
-    public Integer getTeacherno() {
-        return teacherno;
+    public Integer getTeacherNo() {
+        return teacherNo;
     }
 
-    public void setTeacherno(Integer teacherno) {
-        this.teacherno = teacherno;
+    public void setTeacherNo(Integer teacherNo) {
+        this.teacherNo = teacherNo;
     }
 
     public String getContent() {

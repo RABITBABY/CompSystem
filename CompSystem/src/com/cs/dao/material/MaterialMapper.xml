@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cs.dao.material.MaterialMapper">
   <resultMap id="BaseResultMap" type="com.cs.pojo.Material">
-    <id column="materialId" jdbcType="INTEGER" property="materialid" />
-    <result column="studentNo" jdbcType="INTEGER" property="studentno" />
-    <result column="materialName" jdbcType="VARCHAR" property="materialname" />
-    <result column="materialPic" jdbcType="VARCHAR" property="materialpic" />
+    <id column="materialId" jdbcType="INTEGER" property="materialId" />
+    <result column="studentNo" jdbcType="INTEGER" property="studentNo" />
+    <result column="materialName" jdbcType="VARCHAR" property="materialName" />
+    <result column="materialPic" jdbcType="VARCHAR" property="materialPic" />
   </resultMap>
   <sql id="Base_Column_List">
     materialId, studentNo, materialName, materialPic
@@ -14,69 +14,69 @@
     select 
     <include refid="Base_Column_List" />
     from material
-    where materialId = #{materialid,jdbcType=INTEGER}
+    where materialId = #{materialId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from material
-    where materialId = #{materialid,jdbcType=INTEGER}
+    where materialId = #{materialId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.cs.pojo.Material">
     insert into material (materialId, studentNo, materialName, 
       materialPic)
-    values (#{materialid,jdbcType=INTEGER}, #{studentno,jdbcType=INTEGER}, #{materialname,jdbcType=VARCHAR}, 
-      #{materialpic,jdbcType=VARCHAR})
+    values (#{materialId,jdbcType=INTEGER}, #{studentNo,jdbcType=INTEGER}, #{materialName,jdbcType=VARCHAR}, 
+      #{materialPic,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.cs.pojo.Material">
     insert into material
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="materialid != null">
+      <if test="materialId != null">
         materialId,
       </if>
-      <if test="studentno != null">
+      <if test="studentNo != null">
         studentNo,
       </if>
-      <if test="materialname != null">
+      <if test="materialName != null">
         materialName,
       </if>
-      <if test="materialpic != null">
+      <if test="materialPic != null">
         materialPic,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="materialid != null">
-        #{materialid,jdbcType=INTEGER},
+      <if test="materialId != null">
+        #{materialId,jdbcType=INTEGER},
       </if>
-      <if test="studentno != null">
-        #{studentno,jdbcType=INTEGER},
+      <if test="studentNo != null">
+        #{studentNo,jdbcType=INTEGER},
       </if>
-      <if test="materialname != null">
-        #{materialname,jdbcType=VARCHAR},
+      <if test="materialName != null">
+        #{materialName,jdbcType=VARCHAR},
       </if>
-      <if test="materialpic != null">
-        #{materialpic,jdbcType=VARCHAR},
+      <if test="materialPic != null">
+        #{materialPic,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Material">
     update material
     <set>
-      <if test="studentno != null">
-        studentNo = #{studentno,jdbcType=INTEGER},
+      <if test="studentNo != null">
+        studentNo = #{studentNo,jdbcType=INTEGER},
       </if>
-      <if test="materialname != null">
-        materialName = #{materialname,jdbcType=VARCHAR},
+      <if test="materialName != null">
+        materialName = #{materialName,jdbcType=VARCHAR},
       </if>
-      <if test="materialpic != null">
-        materialPic = #{materialpic,jdbcType=VARCHAR},
+      <if test="materialPic != null">
+        materialPic = #{materialPic,jdbcType=VARCHAR},
       </if>
     </set>
-    where materialId = #{materialid,jdbcType=INTEGER}
+    where materialId = #{materialId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Material">
     update material
-    set studentNo = #{studentno,jdbcType=INTEGER},
-      materialName = #{materialname,jdbcType=VARCHAR},
-      materialPic = #{materialpic,jdbcType=VARCHAR}
-    where materialId = #{materialid,jdbcType=INTEGER}
+    set studentNo = #{studentNo,jdbcType=INTEGER},
+      materialName = #{materialName,jdbcType=VARCHAR},
+      materialPic = #{materialPic,jdbcType=VARCHAR}
+    where materialId = #{materialId,jdbcType=INTEGER}
   </update>
 </mapper>

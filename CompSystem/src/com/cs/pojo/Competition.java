@@ -3,21 +3,21 @@ package com.cs.pojo;
 import java.util.Date;
 
 public class Competition {
-    private Integer comid;
+    private Integer comId;
 
-    private String comname;
+    private String comName;
 
-    private Integer teacherno;
+    private Integer teacherNo;
 
     private String unit;
 
-    private Integer levelid;
+    private Integer levelId;
 
     private String phone;
 
     private String email;
 
-    private Integer departmentid;
+    private Integer departmentId;
 
     private Date date;
 
@@ -65,28 +65,28 @@ public class Competition {
 
     private Integer status;
 
-    public Integer getComid() {
-        return comid;
+    public Integer getComId() {
+        return comId;
     }
 
-    public void setComid(Integer comid) {
-        this.comid = comid;
+    public void setComId(Integer comId) {
+        this.comId = comId;
     }
 
-    public String getComname() {
-        return comname;
+    public String getComName() {
+        return comName;
     }
 
-    public void setComname(String comname) {
-        this.comname = comname == null ? null : comname.trim();
+    public void setComName(String comName) {
+        this.comName = comName == null ? null : comName.trim();
     }
 
-    public Integer getTeacherno() {
-        return teacherno;
+    public Integer getTeacherNo() {
+        return teacherNo;
     }
 
-    public void setTeacherno(Integer teacherno) {
-        this.teacherno = teacherno;
+    public void setTeacherNo(Integer teacherNo) {
+        this.teacherNo = teacherNo;
     }
 
     public String getUnit() {
@@ -97,12 +97,12 @@ public class Competition {
         this.unit = unit == null ? null : unit.trim();
     }
 
-    public Integer getLevelid() {
-        return levelid;
+    public Integer getLevelId() {
+        return levelId;
     }
 
-    public void setLevelid(Integer levelid) {
-        this.levelid = levelid;
+    public void setLevelId(Integer levelId) {
+        this.levelId = levelId;
     }
 
     public String getPhone() {
@@ -121,12 +121,12 @@ public class Competition {
         this.email = email == null ? null : email.trim();
     }
 
-    public Integer getDepartmentid() {
-        return departmentid;
+    public Integer getDepartmentId() {
+        return departmentId;
     }
 
-    public void setDepartmentid(Integer departmentid) {
-        this.departmentid = departmentid;
+    public void setDepartmentId(Integer departmentId) {
+        this.departmentId = departmentId;
     }
 
     public Date getDate() {

@@ -1,46 +1,46 @@
 package com.cs.pojo;
 
 public class Groups {
-    private Integer groupsno;
+    private Integer groupsNo;
 
-    private Integer comid;
+    private Integer comId;
 
-    private String groupsname;
+    private String groupsName;
 
-    private Integer teacherno;
+    private Integer teacherNo;
 
     private Integer status;
 
-    public Integer getGroupsno() {
-        return groupsno;
+    public Integer getGroupsNo() {
+        return groupsNo;
     }
 
-    public void setGroupsno(Integer groupsno) {
-        this.groupsno = groupsno;
+    public void setGroupsNo(Integer groupsNo) {
+        this.groupsNo = groupsNo;
     }
 
-    public Integer getComid() {
-        return comid;
+    public Integer getComId() {
+        return comId;
     }
 
-    public void setComid(Integer comid) {
-        this.comid = comid;
+    public void setComId(Integer comId) {
+        this.comId = comId;
     }
 
-    public String getGroupsname() {
-        return groupsname;
+    public String getGroupsName() {
+        return groupsName;
     }
 
-    public void setGroupsname(String groupsname) {
-        this.groupsname = groupsname == null ? null : groupsname.trim();
+    public void setGroupsName(String groupsName) {
+        this.groupsName = groupsName == null ? null : groupsName.trim();
     }
 
-    public Integer getTeacherno() {
-        return teacherno;
+    public Integer getTeacherNo() {
+        return teacherNo;
     }
 
-    public void setTeacherno(Integer teacherno) {
-        this.teacherno = teacherno;
+    public void setTeacheNo(Integer teacherNo) {
+        this.teacherNo = teacherNo;
     }
 
     public Integer getStatus() {

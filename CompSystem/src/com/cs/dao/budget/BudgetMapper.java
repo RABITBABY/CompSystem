@@ -2,18 +2,52 @@ package com.cs.dao.budget;
 
 import com.cs.pojo.Budget;
 
-
-
 public interface BudgetMapper {
-    int deleteByPrimaryKey(Integer budgetid);
+	/**
+	 * 根据Id删除
+	 * 
+	 * @param budgetid
+	 * @return
+	 */
+	int deleteID(Integer budgetid);
 
-    int insert(Budget record);
+	/**
+	 * 全部插入
+	 * 
+	 * @param record
+	 * @return
+	 */
+	int insert(Budget record);
 
-    int insertSelective(Budget record);
+	/**
+	 * 动态插入
+	 * 
+	 * @param record
+	 * @return
+	 */
+	int insertSelective(Budget record);
 
-    Budget selectByPrimaryKey(Integer budgetid);
+	/**
+	 * 根据ID查找
+	 * 
+	 * @param budgetid
+	 * @return
+	 */
+	Budget selectByID(Integer budgetid);
 
-    int updateByPrimaryKeySelective(Budget record);
+	/**
+	 * 动态更新
+	 * 
+	 * @param record
+	 * @return
+	 */
+	int updateByIDSelective(Budget record);
 
-    int updateByPrimaryKey(Budget record);
+	/**
+	 * 全部更新
+	 * 
+	 * @param record
+	 * @return
+	 */
+	int updateID(Budget record);
 }

@@ -3,8 +3,8 @@
 <mapper namespace="com.cs.dao.groupDetail.GroupsDetailMapper">
   <resultMap id="BaseResultMap" type="com.cs.pojo.GroupsDetail">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="groupsNo" jdbcType="INTEGER" property="groupsno" />
-    <result column="studentNo" jdbcType="INTEGER" property="studentno" />
+    <result column="groupsNo" jdbcType="INTEGER" property="groupsNo" />
+    <result column="studentNo" jdbcType="INTEGER" property="studentNo" />
   </resultMap>
   <sql id="Base_Column_List">
     id, groupsNo, studentNo
@@ -22,7 +22,7 @@
   <insert id="insert" parameterType="com.cs.pojo.GroupsDetail">
     insert into groupsdetail (id, groupsNo, studentNo
       )
-    values (#{id,jdbcType=INTEGER}, #{groupsno,jdbcType=INTEGER}, #{studentno,jdbcType=INTEGER}
+    values (#{id,jdbcType=INTEGER}, #{groupsNo,jdbcType=INTEGER}, #{studentNo,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.cs.pojo.GroupsDetail">
@@ -31,10 +31,10 @@
       <if test="id != null">
         id,
       </if>
-      <if test="groupsno != null">
+      <if test="groupsNo != null">
         groupsNo,
       </if>
-      <if test="studentno != null">
+      <if test="studentNo != null">
         studentNo,
       </if>
     </trim>
@@ -42,30 +42,30 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="groupsno != null">
-        #{groupsno,jdbcType=INTEGER},
+      <if test="groupsNo != null">
+        #{groupsNo,jdbcType=INTEGER},
       </if>
-      <if test="studentno != null">
-        #{studentno,jdbcType=INTEGER},
+      <if test="studentNo != null">
+        #{studentNo,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.GroupsDetail">
     update groupsdetail
     <set>
-      <if test="groupsno != null">
-        groupsNo = #{groupsno,jdbcType=INTEGER},
+      <if test="groupsNo != null">
+        groupsNo = #{groupsNo,jdbcType=INTEGER},
       </if>
-      <if test="studentno != null">
-        studentNo = #{studentno,jdbcType=INTEGER},
+      <if test="studentNo != null">
+        studentNo = #{studentNo,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.cs.pojo.GroupsDetail">
     update groupsdetail
-    set groupsNo = #{groupsno,jdbcType=INTEGER},
-      studentNo = #{studentno,jdbcType=INTEGER}
+    set groupsNo = #{groupsNo,jdbcType=INTEGER},
+      studentNo = #{studentNo,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -2,53 +2,53 @@ package com.cs.pojo;
 import java.util.Date;
 
 public class FileUpload {
-    private Integer fileid;
+    private Integer fileId;
 
-    private Integer filename;
+    private Integer fileName;
 
-    private String savename;
+    private String saveName;
 
-    private Date uploaddate;
+    private Date uploadDate;
 
-    private String uploaduser;
+    private String uploadUser;
 
-    public Integer getFileid() {
-        return fileid;
+    public Integer getFileId() {
+        return fileId;
     }
 
-    public void setFileid(Integer fileid) {
-        this.fileid = fileid;
+    public void setFileId(Integer fileId) {
+        this.fileId = fileId;
     }
 
-    public Integer getFilename() {
-        return filename;
+    public Integer getFileName() {
+        return fileName;
     }
 
-    public void setFilename(Integer filename) {
-        this.filename = filename;
+    public void setFileName(Integer fileName) {
+        this.fileName = fileName;
     }
 
-    public String getSavename() {
-        return savename;
+    public String getSaveName() {
+        return saveName;
     }
 
-    public void setSavename(String savename) {
-        this.savename = savename == null ? null : savename.trim();
+    public void setSaveName(String saveName) {
+        this.saveName = saveName == null ? null : saveName.trim();
     }
 
-    public Date getUploaddate() {
-        return uploaddate;
+    public Date getUploadDate() {
+        return uploadDate;
     }
 
-    public void setUploaddate(Date uploaddate) {
-        this.uploaddate = uploaddate;
+    public void setUploadDate(Date uploadDate) {
+        this.uploadDate = uploadDate;
     }
 
-    public String getUploaduser() {
-        return uploaduser;
+    public String getUploadUser() {
+        return uploadUser;
     }
 
-    public void setUploaduser(String uploaduser) {
-        this.uploaduser = uploaduser == null ? null : uploaduser.trim();
+    public void setUploadUser(String uploadUser) {
+        this.uploadUser = uploadUser == null ? null : uploadUser.trim();
     }
 }

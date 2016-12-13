@@ -1,23 +1,23 @@
 package com.cs.pojo;
 
 public class Level {
-    private Integer levelid;
+    private Integer levelId;
 
-    private String levelname;
+    private String levelName;
 
-    public Integer getLevelid() {
-        return levelid;
+    public Integer getLevelId() {
+        return levelId;
     }
 
-    public void setLevelid(Integer levelid) {
-        this.levelid = levelid;
+    public void setLevelId(Integer levelId) {
+        this.levelId = levelId;
     }
 
-    public String getLevelname() {
-        return levelname;
+    public String getLevelName() {
+        return levelName;
     }
 
-    public void setLevelname(String levelname) {
-        this.levelname = levelname == null ? null : levelname.trim();
+    public void setLevelName(String levelName) {
+        this.levelName = levelName == null ? null : levelName.trim();
     }
 }

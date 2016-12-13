@@ -1,38 +1,38 @@
 package com.cs.pojo;
 
 public class Standard {
-    private Integer standardid;
+    private Integer standardId;
 
-    private Integer levelid;
+    private Integer levelId;
 
-    private Integer prizeid;
+    private Integer prizeId;
 
     private Integer student;
 
     private Integer teacher;
 
-    public Integer getStandardid() {
-        return standardid;
+    public Integer getStandardId() {
+        return standardId;
     }
 
-    public void setStandardid(Integer standardid) {
-        this.standardid = standardid;
+    public void setStandardId(Integer standardId) {
+        this.standardId = standardId;
     }
 
-    public Integer getLevelid() {
-        return levelid;
+    public Integer getLevelId() {
+        return levelId;
     }
 
-    public void setLevelid(Integer levelid) {
-        this.levelid = levelid;
+    public void setLevelId(Integer levelId) {
+        this.levelId = levelId;
     }
 
-    public Integer getPrizeid() {
-        return prizeid;
+    public Integer getPrizeId() {
+        return prizeId;
     }
 
-    public void setPrizeid(Integer prizeid) {
-        this.prizeid = prizeid;
+    public void setPrizeId(Integer prizeId) {
+        this.prizeId = prizeId;
     }
 
     public Integer getStudent() {

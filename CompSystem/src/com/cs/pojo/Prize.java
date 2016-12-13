@@ -1,22 +1,22 @@
 package com.cs.pojo;
 public class Prize {
-    private Integer prizeid;
+    private Integer prizeId;
 
-    private String prizename;
+    private String prizeName;
 
-    public Integer getPrizeid() {
-        return prizeid;
+    public Integer getPrizeId() {
+        return prizeId;
     }
 
-    public void setPrizeid(Integer prizeid) {
-        this.prizeid = prizeid;
+    public void setPrizeId(Integer prizeId) {
+        this.prizeId = prizeId;
     }
 
-    public String getPrizename() {
-        return prizename;
+    public String getPrizeName() {
+        return prizeName;
     }
 
-    public void setPrizename(String prizename) {
-        this.prizename = prizename == null ? null : prizename.trim();
+    public void setPrizeName(String prizeName) {
+        this.prizeName = prizeName == null ? null : prizeName.trim();
     }
 }

@@ -3,26 +3,26 @@ package com.cs.pojo;
 import java.util.Date;
 
 public class Article {
-    private Integer articleid;
+    private Integer articleId;
 
     private String title;
 
-    private Date pubdate;
+    private Date pubDate;
 
-    private String pubuser;
+    private String pubUser;
 
-    private Integer articletype;
+    private Integer articleType;
 
-    private Integer comid;
+    private Integer comId;
 
     private String content;
 
-    public Integer getArticleid() {
-        return articleid;
+    public Integer getArticleId() {
+        return articleId;
     }
 
-    public void setArticleid(Integer articleid) {
-        this.articleid = articleid;
+    public void setArticleId(Integer articleid) {
+        this.articleId = articleid;
     }
 
     public String getTitle() {
@@ -33,36 +33,36 @@ public class Article {
         this.title = title == null ? null : title.trim();
     }
 
-    public Date getPubdate() {
-        return pubdate;
+    public Date getPubDate() {
+        return pubDate;
     }
 
-    public void setPubdate(Date pubdate) {
-        this.pubdate = pubdate;
+    public void setPubDate(Date pubdate) {
+        this.pubDate = pubdate;
     }
 
-    public String getPubuser() {
-        return pubuser;
+    public String getPubUser() {
+        return pubUser;
     }
 
-    public void setPubuser(String pubuser) {
-        this.pubuser = pubuser == null ? null : pubuser.trim();
+    public void setPubUser(String pubuser) {
+        this.pubUser = pubuser == null ? null : pubuser.trim();
     }
 
-    public Integer getArticletype() {
-        return articletype;
+    public Integer getArticleType() {
+        return articleType;
     }
 
-    public void setArticletype(Integer articletype) {
-        this.articletype = articletype;
+    public void setArticleType(Integer articletype) {
+        this.articleType = articletype;
     }
 
-    public Integer getComid() {
-        return comid;
+    public Integer getComId() {
+        return comId;
     }
 
-    public void setComid(Integer comid) {
-        this.comid = comid;
+    public void setComId(Integer comid) {
+        this.comId = comid;
     }
 
     public String getContent() {

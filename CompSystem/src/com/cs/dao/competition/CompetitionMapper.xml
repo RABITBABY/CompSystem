@@ -2,14 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cs.dao.competition.CompetitionMapper">
   <resultMap id="BaseResultMap" type="com.cs.pojo.Competition">
-    <id column="comId" jdbcType="INTEGER" property="comid" />
-    <result column="comName" jdbcType="VARCHAR" property="comname" />
-    <result column="teacherNo" jdbcType="INTEGER" property="teacherno" />
+    <id column="comId" jdbcType="INTEGER" property="comId" />
+    <result column="comName" jdbcType="VARCHAR" property="comName" />
+    <result column="teacherNo" jdbcType="INTEGER" property="teacherNo" />
     <result column="unit" jdbcType="VARCHAR" property="unit" />
-    <result column="levelId" jdbcType="INTEGER" property="levelid" />
+    <result column="levelId" jdbcType="INTEGER" property="levelId" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="email" jdbcType="VARCHAR" property="email" />
-    <result column="departmentId" jdbcType="INTEGER" property="departmentid" />
+    <result column="departmentId" jdbcType="INTEGER" property="departmentId" />
     <result column="date" jdbcType="DATE" property="date" />
     <result column="host" jdbcType="VARCHAR" property="host" />
     <result column="time" jdbcType="DATE" property="time" />
@@ -39,16 +39,21 @@
     time, place, introduce, object, people, sponsor, plan, tgoal, wgoal, sopinion, slsign, 
     slsdate, uopinion, dsign, dsdate, tdopinion, olsign, olsdate, lsign, lsdate, status
   </sql>
+  <!--根据ID查找  -->
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from competition
-    where comId = #{comid,jdbcType=INTEGER}
+    where comId = #{comId,jdbcType=INTEGER}
   </select>
+  
+   <!--根据ID删除  -->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from competition
-    where comId = #{comid,jdbcType=INTEGER}
+    where comId = #{comId,jdbcType=INTEGER}
   </delete>
+  
+   <!--全部插入 -->
   <insert id="insert" parameterType="com.cs.pojo.Competition">
     insert into competition (comId, comName, teacherNo, 
       unit, levelId, phone, 
@@ -60,9 +65,9 @@
       uopinion, dsign, dsdate, 
       tdopinion, olsign, olsdate, 
       lsign, lsdate, status)
-    values (#{comid,jdbcType=INTEGER}, #{comname,jdbcType=VARCHAR}, #{teacherno,jdbcType=INTEGER}, 
-      #{unit,jdbcType=VARCHAR}, #{levelid,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, 
-      #{email,jdbcType=VARCHAR}, #{departmentid,jdbcType=INTEGER}, #{date,jdbcType=DATE}, 
+    values (#{comId,jdbcType=INTEGER}, #{comName,jdbcType=VARCHAR}, #{teacherNo,jdbcType=INTEGER}, 
+      #{unit,jdbcType=VARCHAR}, #{levelId,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{departmentId,jdbcType=INTEGER}, #{date,jdbcType=DATE}, 
       #{host,jdbcType=VARCHAR}, #{time,jdbcType=DATE}, #{place,jdbcType=VARCHAR}, #{introduce,jdbcType=VARCHAR}, 
       #{object,jdbcType=VARCHAR}, #{people,jdbcType=INTEGER}, #{sponsor,jdbcType=VARCHAR}, 
       #{plan,jdbcType=VARCHAR}, #{tgoal,jdbcType=VARCHAR}, #{wgoal,jdbcType=VARCHAR}, 
@@ -71,22 +76,24 @@
       #{tdopinion,jdbcType=VARCHAR}, #{olsign,jdbcType=VARCHAR}, #{olsdate,jdbcType=DATE}, 
       #{lsign,jdbcType=VARCHAR}, #{lsdate,jdbcType=DATE}, #{status,jdbcType=INTEGER})
   </insert>
+  
+   <!--动态插入数据  -->
   <insert id="insertSelective" parameterType="com.cs.pojo.Competition">
     insert into competition
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="comid != null">
+      <if test="comId != null">
         comId,
       </if>
-      <if test="comname != null">
+      <if test="comName != null">
         comName,
       </if>
-      <if test="teacherno != null">
+      <if test="teacherNo != null">
         teacherNo,
       </if>
       <if test="unit != null">
         unit,
       </if>
-      <if test="levelid != null">
+      <if test="levelId != null">
         levelId,
       </if>
       <if test="phone != null">
@@ -95,7 +102,7 @@
       <if test="email != null">
         email,
       </if>
-      <if test="departmentid != null">
+      <if test="departmentId != null">
         departmentId,
       </if>
       <if test="date != null">
@@ -169,20 +176,20 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="comid != null">
-        #{comid,jdbcType=INTEGER},
+      <if test="comId != null">
+        #{comId,jdbcType=INTEGER},
       </if>
-      <if test="comname != null">
-        #{comname,jdbcType=VARCHAR},
+      <if test="comName != null">
+        #{comName,jdbcType=VARCHAR},
       </if>
-      <if test="teacherno != null">
-        #{teacherno,jdbcType=INTEGER},
+      <if test="teacherNo != null">
+        #{teacherNo,jdbcType=INTEGER},
       </if>
       <if test="unit != null">
         #{unit,jdbcType=VARCHAR},
       </if>
-      <if test="levelid != null">
-        #{levelid,jdbcType=INTEGER},
+      <if test="levelId != null">
+        #{levelId,jdbcType=INTEGER},
       </if>
       <if test="phone != null">
         #{phone,jdbcType=VARCHAR},
@@ -190,8 +197,8 @@
       <if test="email != null">
         #{email,jdbcType=VARCHAR},
       </if>
-      <if test="departmentid != null">
-        #{departmentid,jdbcType=INTEGER},
+      <if test="departmentId != null">
+        #{departmentId,jdbcType=INTEGER},
       </if>
       <if test="date != null">
         #{date,jdbcType=DATE},
@@ -264,20 +271,22 @@
       </if>
     </trim>
   </insert>
+  
+   <!-- 动态更新数据 -->
   <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Competition">
     update competition
     <set>
-      <if test="comname != null">
-        comName = #{comname,jdbcType=VARCHAR},
+      <if test="comName != null">
+        comName = #{comName,jdbcType=VARCHAR},
       </if>
-      <if test="teacherno != null">
-        teacherNo = #{teacherno,jdbcType=INTEGER},
+      <if test="teacherNo != null">
+        teacherNo = #{teacherNo,jdbcType=INTEGER},
       </if>
       <if test="unit != null">
         unit = #{unit,jdbcType=VARCHAR},
       </if>
-      <if test="levelid != null">
-        levelId = #{levelid,jdbcType=INTEGER},
+      <if test="levelId != null">
+        levelId = #{levelId,jdbcType=INTEGER},
       </if>
       <if test="phone != null">
         phone = #{phone,jdbcType=VARCHAR},
@@ -285,8 +294,8 @@
       <if test="email != null">
         email = #{email,jdbcType=VARCHAR},
       </if>
-      <if test="departmentid != null">
-        departmentId = #{departmentid,jdbcType=INTEGER},
+      <if test="departmentId != null">
+        departmentId = #{departmentId,jdbcType=INTEGER},
       </if>
       <if test="date != null">
         date = #{date,jdbcType=DATE},
@@ -358,17 +367,18 @@
         status = #{status,jdbcType=INTEGER},
       </if>
     </set>
-    where comId = #{comid,jdbcType=INTEGER}
+    where comId = #{comId,jdbcType=INTEGER}
   </update>
+   <!-- 更新全部数据 -->
   <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Competition">
     update competition
-    set comName = #{comname,jdbcType=VARCHAR},
-      teacherNo = #{teacherno,jdbcType=INTEGER},
+    set comName = #{comName,jdbcType=VARCHAR},
+      teacherNo = #{teacherNo,jdbcType=INTEGER},
       unit = #{unit,jdbcType=VARCHAR},
-      levelId = #{levelid,jdbcType=INTEGER},
+      levelId = #{levelId,jdbcType=INTEGER},
       phone = #{phone,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
-      departmentId = #{departmentid,jdbcType=INTEGER},
+      departmentId = #{departmentId,jdbcType=INTEGER},
       date = #{date,jdbcType=DATE},
       host = #{host,jdbcType=VARCHAR},
       time = #{time,jdbcType=DATE},
@@ -392,6 +402,6 @@
       lsign = #{lsign,jdbcType=VARCHAR},
       lsdate = #{lsdate,jdbcType=DATE},
       status = #{status,jdbcType=INTEGER}
-    where comId = #{comid,jdbcType=INTEGER}
+    where comId = #{comId,jdbcType=INTEGER}
   </update>
 </mapper>

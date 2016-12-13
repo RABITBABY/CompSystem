@@ -3,9 +3,9 @@ package com.cs.pojo;
 import java.util.Date;
 
 public class Awards {
-    private Integer awardsid;
+    private Integer awardsId;
 
-    private Integer comid;
+    private Integer comId;
 
     private String name;
 
@@ -13,28 +13,28 @@ public class Awards {
 
     private String hunit;
 
-    private Integer prizeid;
+    private Integer prizeId;
 
-    private Integer levelid;
+    private Integer levelId;
 
-    private Integer groupsno;
+    private Integer groupsNo;
 
-    private Integer ispublish;
+    private Integer isPublish;
 
-    public Integer getAwardsid() {
-        return awardsid;
+    public Integer getAwardsId() {
+        return awardsId;
     }
 
-    public void setAwardsid(Integer awardsid) {
-        this.awardsid = awardsid;
+    public void setAwardsId(Integer awardsid) {
+        this.awardsId = awardsid;
     }
 
-    public Integer getComid() {
-        return comid;
+    public Integer getComId() {
+        return comId;
     }
 
-    public void setComid(Integer comid) {
-        this.comid = comid;
+    public void setComId(Integer comid) {
+        this.comId = comid;
     }
 
     public String getName() {
@@ -61,35 +61,35 @@ public class Awards {
         this.hunit = hunit == null ? null : hunit.trim();
     }
 
-    public Integer getPrizeid() {
-        return prizeid;
+    public Integer getPrizeId() {
+        return prizeId;
     }
 
-    public void setPrizeid(Integer prizeid) {
-        this.prizeid = prizeid;
+    public void setPrizeId(Integer prizeid) {
+        this.prizeId = prizeid;
     }
 
-    public Integer getLevelid() {
-        return levelid;
+    public Integer getLevelId() {
+        return levelId;
     }
 
-    public void setLevelid(Integer levelid) {
-        this.levelid = levelid;
+    public void setLevelId(Integer levelid) {
+        this.levelId = levelid;
     }
 
-    public Integer getGroupsno() {
-        return groupsno;
+    public Integer getGroupsNo() {
+        return groupsNo;
     }
 
-    public void setGroupsno(Integer groupsno) {
-        this.groupsno = groupsno;
+    public void setGroupsNo(Integer groupsno) {
+        this.groupsNo = groupsno;
     }
 
-    public Integer getIspublish() {
-        return ispublish;
+    public Integer getIsPublish() {
+        return isPublish;
     }
 
-    public void setIspublish(Integer ispublish) {
-        this.ispublish = ispublish;
+    public void setIsPublish(Integer ispublish) {
+        this.isPublish = ispublish;
     }
 }

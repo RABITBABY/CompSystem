@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cs.dao.group.GroupsMapper">
   <resultMap id="BaseResultMap" type="com.cs.pojo.Groups">
-    <id column="groupsNo" jdbcType="INTEGER" property="groupsno" />
-    <result column="comId" jdbcType="INTEGER" property="comid" />
-    <result column="groupsName" jdbcType="VARCHAR" property="groupsname" />
-    <result column="teacherNo" jdbcType="INTEGER" property="teacherno" />
+    <id column="groupsNo" jdbcType="INTEGER" property="groupsNo" />
+    <result column="comId" jdbcType="INTEGER" property="comId" />
+    <result column="groupsName" jdbcType="VARCHAR" property="groupsName" />
+    <result column="teacherNo" jdbcType="INTEGER" property="teacherNo" />
     <result column="status" jdbcType="INTEGER" property="status" />
   </resultMap>
   <sql id="Base_Column_List">
@@ -15,31 +15,31 @@
     select 
     <include refid="Base_Column_List" />
     from groups
-    where groupsNo = #{groupsno,jdbcType=INTEGER}
+    where groupsNo = #{groupsNo,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from groups
-    where groupsNo = #{groupsno,jdbcType=INTEGER}
+    where groupsNo = #{groupsNo,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.cs.pojo.Groups">
     insert into groups (groupsNo, comId, groupsName, 
       teacherNo, status)
-    values (#{groupsno,jdbcType=INTEGER}, #{comid,jdbcType=INTEGER}, #{groupsname,jdbcType=VARCHAR}, 
-      #{teacherno,jdbcType=INTEGER}, #{status,jdbcType=INTEGER})
+    values (#{groupsNo,jdbcType=INTEGER}, #{comId,jdbcType=INTEGER}, #{groupsName,jdbcType=VARCHAR}, 
+      #{teacherNo,jdbcType=INTEGER}, #{status,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.cs.pojo.Groups">
     insert into groups
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="groupsno != null">
+      <if test="groupsNo != null">
         groupsNo,
       </if>
-      <if test="comid != null">
+      <if test="comId != null">
         comId,
       </if>
-      <if test="groupsname != null">
+      <if test="groupsName != null">
         groupsName,
       </if>
-      <if test="teacherno != null">
+      <if test="teacherNo != null">
         teacherNo,
       </if>
       <if test="status != null">
@@ -47,17 +47,17 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="groupsno != null">
-        #{groupsno,jdbcType=INTEGER},
+      <if test="groupsNo != null">
+        #{groupsNo,jdbcType=INTEGER},
       </if>
-      <if test="comid != null">
-        #{comid,jdbcType=INTEGER},
+      <if test="comId != null">
+        #{comId,jdbcType=INTEGER},
       </if>
-      <if test="groupsname != null">
-        #{groupsname,jdbcType=VARCHAR},
+      <if test="groupsName != null">
+        #{groupsName,jdbcType=VARCHAR},
       </if>
-      <if test="teacherno != null">
-        #{teacherno,jdbcType=INTEGER},
+      <if test="teacherNo != null">
+        #{teacherNo,jdbcType=INTEGER},
       </if>
       <if test="status != null">
         #{status,jdbcType=INTEGER},
@@ -67,27 +67,27 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Groups">
     update groups
     <set>
-      <if test="comid != null">
-        comId = #{comid,jdbcType=INTEGER},
+      <if test="comId != null">
+        comId = #{comId,jdbcType=INTEGER},
       </if>
-      <if test="groupsname != null">
-        groupsName = #{groupsname,jdbcType=VARCHAR},
+      <if test="groupsName != null">
+        groupsName = #{groupsName,jdbcType=VARCHAR},
       </if>
-      <if test="teacherno != null">
-        teacherNo = #{teacherno,jdbcType=INTEGER},
+      <if test="teacherNo != null">
+        teacherNo = #{teacherNo,jdbcType=INTEGER},
       </if>
       <if test="status != null">
         status = #{status,jdbcType=INTEGER},
       </if>
     </set>
-    where groupsNo = #{groupsno,jdbcType=INTEGER}
+    where groupsNo = #{groupsNo,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Groups">
     update groups
-    set comId = #{comid,jdbcType=INTEGER},
-      groupsName = #{groupsname,jdbcType=VARCHAR},
-      teacherNo = #{teacherno,jdbcType=INTEGER},
+    set comId = #{comId,jdbcType=INTEGER},
+      groupsName = #{groupsName,jdbcType=VARCHAR},
+      teacherNo = #{teacherNo,jdbcType=INTEGER},
       status = #{status,jdbcType=INTEGER}
-    where groupsNo = #{groupsno,jdbcType=INTEGER}
+    where groupsNo = #{groupsNo,jdbcType=INTEGER}
   </update>
 </mapper>

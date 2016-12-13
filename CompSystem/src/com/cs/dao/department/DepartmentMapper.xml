@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cs.dao.department.DepartmentMapper">
   <resultMap id="BaseResultMap" type="com.cs.pojo.Department">
-    <id column="departmentId" jdbcType="INTEGER" property="departmentid" />
-    <result column="departmentName" jdbcType="VARCHAR" property="departmentname" />
+    <id column="departmentId" jdbcType="INTEGER" property="departmentId" />
+    <result column="departmentName" jdbcType="VARCHAR" property="departmentName" />
   </resultMap>
   <sql id="Base_Column_List">
     departmentId, departmentName
@@ -12,47 +12,47 @@
     select 
     <include refid="Base_Column_List" />
     from department
-    where departmentId = #{departmentid,jdbcType=INTEGER}
+    where departmentId = #{departmentId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from department
-    where departmentId = #{departmentid,jdbcType=INTEGER}
+    where departmentId = #{departmentId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.cs.pojo.Department">
     insert into department (departmentId, departmentName)
-    values (#{departmentid,jdbcType=INTEGER}, #{departmentname,jdbcType=VARCHAR})
+    values (#{departmentId,jdbcType=INTEGER}, #{departmentName,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.cs.pojo.Department">
     insert into department
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="departmentid != null">
+      <if test="departmentId != null">
         departmentId,
       </if>
-      <if test="departmentname != null">
+      <if test="departmentName != null">
         departmentName,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="departmentid != null">
-        #{departmentid,jdbcType=INTEGER},
+      <if test="departmentId != null">
+        #{departmentId,jdbcType=INTEGER},
       </if>
-      <if test="departmentname != null">
-        #{departmentname,jdbcType=VARCHAR},
+      <if test="departmentName != null">
+        #{departmentName,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Department">
     update department
     <set>
-      <if test="departmentname != null">
-        departmentName = #{departmentname,jdbcType=VARCHAR},
+      <if test="departmentName != null">
+        departmentName = #{departmentName,jdbcType=VARCHAR},
       </if>
     </set>
-    where departmentId = #{departmentid,jdbcType=INTEGER}
+    where departmentId = #{departmentId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Department">
     update department
-    set departmentName = #{departmentname,jdbcType=VARCHAR}
-    where departmentId = #{departmentid,jdbcType=INTEGER}
+    set departmentName = #{departmentName,jdbcType=VARCHAR}
+    where departmentId = #{departmentId,jdbcType=INTEGER}
   </update>
 </mapper>

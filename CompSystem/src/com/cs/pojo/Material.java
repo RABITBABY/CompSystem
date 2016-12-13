@@ -1,43 +1,43 @@
 package com.cs.pojo;
 
 public class Material {
-    private Integer materialid;
+    private Integer materialId;
 
-    private Integer studentno;
+    private Integer studentNo;
 
-    private String materialname;
+    private String materialName;
 
-    private String materialpic;
+    private String materialPic;
 
-    public Integer getMaterialid() {
-        return materialid;
+    public Integer getMaterialId() {
+        return materialId;
     }
 
-    public void setMaterialid(Integer materialid) {
-        this.materialid = materialid;
+    public void setMaterialId(Integer materialId) {
+        this.materialId = materialId;
     }
 
-    public Integer getStudentno() {
-        return studentno;
+    public Integer getStudentNo() {
+        return studentNo;
     }
 
-    public void setStudentno(Integer studentno) {
-        this.studentno = studentno;
+    public void setStudentNo(Integer studentNo) {
+        this.studentNo = studentNo;
     }
 
-    public String getMaterialname() {
-        return materialname;
+    public String getMaterialName() {
+        return materialName;
     }
 
-    public void setMaterialname(String materialname) {
-        this.materialname = materialname == null ? null : materialname.trim();
+    public void setMaterialName(String materialName) {
+        this.materialName = materialName == null ? null : materialName.trim();
     }
 
-    public String getMaterialpic() {
-        return materialpic;
+    public String getMaterialPic() {
+        return materialPic;
     }
 
-    public void setMaterialpic(String materialpic) {
-        this.materialpic = materialpic == null ? null : materialpic.trim();
+    public void setMaterialPic(String materialPic) {
+        this.materialPic = materialPic == null ? null : materialPic.trim();
     }
 }
