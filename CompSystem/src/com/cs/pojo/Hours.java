@@ -1,9 +1,9 @@
 package com.cs.pojo;
 
 public class Hours {
-    private Integer hoursid;
+    private Integer hoursId;
 
-    private Integer comid;
+    private Integer comId;
 
     private String type;
 
@@ -11,20 +11,20 @@ public class Hours {
 
     private String remarks;
 
-    public Integer getHoursid() {
-        return hoursid;
+    public Integer getHoursId() {
+        return hoursId;
     }
 
-    public void setHoursid(Integer hoursid) {
-        this.hoursid = hoursid;
+    public void setHoursId(Integer hoursId) {
+        this.hoursId = hoursId;
     }
 
-    public Integer getComid() {
-        return comid;
+    public Integer getComId() {
+        return comId;
     }
 
-    public void setComid(Integer comid) {
-        this.comid = comid;
+    public void setComId(Integer comId) {
+        this.comId = comId;
     }
 
     public String getType() {

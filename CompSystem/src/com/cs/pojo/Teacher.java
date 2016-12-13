@@ -3,15 +3,15 @@ package com.cs.pojo;
 import java.util.Date;
 
 public class Teacher {
-    private Integer teacherno;
+    private Integer teacherNo;
 
-    private String teachername;
+    private String teacherName;
 
     private String gender;
 
     private Date birth;
 
-    private Integer departmentid;
+    private Integer departmentId;
 
     private String subject;
 
@@ -35,20 +35,20 @@ public class Teacher {
 
     private Integer examiner;
 
-    public Integer getTeacherno() {
-        return teacherno;
+    public Integer getTeacherNo() {
+        return teacherNo;
     }
 
-    public void setTeacherno(Integer teacherno) {
-        this.teacherno = teacherno;
+    public void setTeacherNo(Integer teacherNo) {
+        this.teacherNo = teacherNo;
     }
 
-    public String getTeachername() {
-        return teachername;
+    public String getTeacherName() {
+        return teacherName;
     }
 
-    public void setTeachername(String teachername) {
-        this.teachername = teachername == null ? null : teachername.trim();
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName == null ? null : teacherName.trim();
     }
 
     public String getGender() {
@@ -67,12 +67,12 @@ public class Teacher {
         this.birth = birth;
     }
 
-    public Integer getDepartmentid() {
-        return departmentid;
+    public Integer getDepartmentId() {
+        return departmentId;
     }
 
-    public void setDepartmentid(Integer departmentid) {
-        this.departmentid = departmentid;
+    public void setDepartmentId(Integer departmentId) {
+        this.departmentId = departmentId;
     }
 
     public String getSubject() {

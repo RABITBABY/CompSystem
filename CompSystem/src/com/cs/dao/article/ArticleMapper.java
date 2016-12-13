@@ -2,19 +2,23 @@ package com.cs.dao.article;
 
 import com.cs.pojo.Article;
 
-
 public interface ArticleMapper {
-    int deleteByPrimaryKey(Integer articleid);
+	// 根据ID删除
+	int deleteByID(Integer articleid);
 
-    int insert(Article record);
+	// 插入增加一篇文章
+	int insert(Article record);
 
-    int insertSelective(Article record);
+	// 选择性插入 空的就不插入
+	int insertSelective(Article record);
 
-    Article selectByPrimaryKey(Integer articleid);
+	// 根据Id查找
+	Article selectByID(Integer articleid);
 
-    int updateByPrimaryKeySelective(Article record);
+	// 更新文章 选择性更新
+	int updateByIDSelective(Article record);
 
-    int updateByPrimaryKeyWithBLOBs(Article record);
+	// 跟新全部
+	int updateByIDWithBLOBs(Article record);
 
-    int updateByPrimaryKey(Article record);
 }

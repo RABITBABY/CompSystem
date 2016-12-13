@@ -3,9 +3,9 @@ package com.cs.pojo;
 public class GroupsDetail {
     private Integer id;
 
-    private Integer groupsno;
+    private Integer groupsNo;
 
-    private Integer studentno;
+    private Integer studentNo;
 
     public Integer getId() {
         return id;
@@ -15,19 +15,19 @@ public class GroupsDetail {
         this.id = id;
     }
 
-    public Integer getGroupsno() {
-        return groupsno;
+    public Integer getGroupsNo() {
+        return groupsNo;
     }
 
-    public void setGroupsno(Integer groupsno) {
-        this.groupsno = groupsno;
+    public void setGroupsNo(Integer groupsNo) {
+        this.groupsNo = groupsNo;
     }
 
-    public Integer getStudentno() {
-        return studentno;
+    public Integer getStudentNo() {
+        return studentNo;
     }
 
-    public void setStudentno(Integer studentno) {
-        this.studentno = studentno;
+    public void setStudentNo(Integer studentNo) {
+        this.studentNo = studentNo;
     }
 }

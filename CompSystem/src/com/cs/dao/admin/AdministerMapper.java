@@ -5,15 +5,12 @@ import com.cs.pojo.Administer;
 
 
 public interface AdministerMapper {
-    int deleteByPrimaryKey(String adminno);
+	//删除根据Id
+    int deleteByID(String adminno);
+    //根据ID查找
+    Administer selectByID(String adminno);
+    
+//    int insert(Administer record);
+//    int insertSelective(Administer record);
 
-    int insert(Administer record);
-
-    int insertSelective(Administer record);
-
-    Administer selectByPrimaryKey(String adminno);
-
-    int updateByPrimaryKeySelective(Administer record);
-
-    int updateByPrimaryKey(Administer record);
 }

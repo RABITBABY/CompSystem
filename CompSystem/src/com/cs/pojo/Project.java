@@ -4,52 +4,52 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class Project {
-    private Integer comid;
+    private Integer comId;
 
-    private String comname;
+    private String comName;
 
-    private Integer levelid;
+    private Integer levelId;
 
     private String hunit;
 
     private String sorganizer;
 
-    private Date applybegindate;
+    private Date applyBeginDate;
 
-    private Date applyenddate;
+    private Date applyEndDate;
 
-    private Date comdate;
+    private Date comDate;
 
     private BigDecimal cost;
 
     private Integer status;
 
-    private Integer ispublish;
+    private Integer isPublish;
 
     private String introduction;
 
-    public Integer getComid() {
-        return comid;
+    public Integer getComId() {
+        return comId;
     }
 
-    public void setComid(Integer comid) {
-        this.comid = comid;
+    public void setComId(Integer comId) {
+        this.comId = comId;
     }
 
-    public String getComname() {
-        return comname;
+    public String getComName() {
+        return comName;
     }
 
-    public void setComname(String comname) {
-        this.comname = comname == null ? null : comname.trim();
+    public void setComName(String comName) {
+        this.comName = comName == null ? null : comName.trim();
     }
 
-    public Integer getLevelid() {
-        return levelid;
+    public Integer getLevelId() {
+        return levelId;
     }
 
-    public void setLevelid(Integer levelid) {
-        this.levelid = levelid;
+    public void setLevelId(Integer levelId) {
+        this.levelId = levelId;
     }
 
     public String getHunit() {
@@ -68,28 +68,28 @@ public class Project {
         this.sorganizer = sorganizer == null ? null : sorganizer.trim();
     }
 
-    public Date getApplybegindate() {
-        return applybegindate;
+    public Date getApplyBeginDate() {
+        return applyBeginDate;
     }
 
-    public void setApplybegindate(Date applybegindate) {
-        this.applybegindate = applybegindate;
+    public void setApplyBeginDate(Date applyBeginDate) {
+        this.applyBeginDate = applyBeginDate;
     }
 
-    public Date getApplyenddate() {
-        return applyenddate;
+    public Date getApplyEndDate() {
+        return applyEndDate;
     }
 
-    public void setApplyenddate(Date applyenddate) {
-        this.applyenddate = applyenddate;
+    public void setApplyEndDate(Date applyEndDate) {
+        this.applyEndDate = applyEndDate;
     }
 
-    public Date getComdate() {
-        return comdate;
+    public Date getComDate() {
+        return comDate;
     }
 
-    public void setComdate(Date comdate) {
-        this.comdate = comdate;
+    public void setComDate(Date comDate) {
+        this.comDate = comDate;
     }
 
     public BigDecimal getCost() {
@@ -108,12 +108,12 @@ public class Project {
         this.status = status;
     }
 
-    public Integer getIspublish() {
-        return ispublish;
+    public Integer getIsPublish() {
+        return isPublish;
     }
 
-    public void setIspublish(Integer ispublish) {
-        this.ispublish = ispublish;
+    public void setIsPublish(Integer isPublish) {
+        this.isPublish = isPublish;
     }
 
     public String getIntroduction() {

@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cs.dao.fileUpload.FileUploadMapper">
   <resultMap id="BaseResultMap" type="com.cs.pojo.FileUpload">
-    <id column="fileId" jdbcType="INTEGER" property="fileid" />
-    <result column="fileName" jdbcType="INTEGER" property="filename" />
-    <result column="saveName" jdbcType="VARCHAR" property="savename" />
-    <result column="uploadDate" jdbcType="DATE" property="uploaddate" />
-    <result column="uploadUser" jdbcType="VARCHAR" property="uploaduser" />
+    <id column="fileId" jdbcType="INTEGER" property="fileId" />
+    <result column="fileName" jdbcType="INTEGER" property="fileName" />
+    <result column="saveName" jdbcType="VARCHAR" property="saveName" />
+    <result column="uploadDate" jdbcType="DATE" property="uploadDate" />
+    <result column="uploadUser" jdbcType="VARCHAR" property="uploadUser" />
   </resultMap>
   <sql id="Base_Column_List">
     fileId, fileName, saveName, uploadDate, uploadUser
@@ -15,79 +15,79 @@
     select 
     <include refid="Base_Column_List" />
     from fileupload
-    where fileId = #{fileid,jdbcType=INTEGER}
+    where fileId = #{fileId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from fileupload
-    where fileId = #{fileid,jdbcType=INTEGER}
+    where fileId = #{fileId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.cs.pojo.FileUpload">
     insert into fileupload (fileId, fileName, saveName, 
       uploadDate, uploadUser)
-    values (#{fileid,jdbcType=INTEGER}, #{filename,jdbcType=INTEGER}, #{savename,jdbcType=VARCHAR}, 
-      #{uploaddate,jdbcType=DATE}, #{uploaduser,jdbcType=VARCHAR})
+    values (#{fileId,jdbcType=INTEGER}, #{fileName,jdbcType=INTEGER}, #{saveName,jdbcType=VARCHAR}, 
+      #{uploadDate,jdbcType=DATE}, #{uploadUser,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.cs.pojo.FileUpload">
     insert into fileupload
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="fileid != null">
+      <if test="fileId != null">
         fileId,
       </if>
-      <if test="filename != null">
+      <if test="fileName != null">
         fileName,
       </if>
-      <if test="savename != null">
+      <if test="saveName != null">
         saveName,
       </if>
-      <if test="uploaddate != null">
+      <if test="uploadDate != null">
         uploadDate,
       </if>
-      <if test="uploaduser != null">
+      <if test="uploadUser != null">
         uploadUser,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="fileid != null">
-        #{fileid,jdbcType=INTEGER},
+      <if test="fileId != null">
+        #{fileId,jdbcType=INTEGER},
       </if>
-      <if test="filename != null">
-        #{filename,jdbcType=INTEGER},
+      <if test="fileName != null">
+        #{fileName,jdbcType=INTEGER},
       </if>
-      <if test="savename != null">
-        #{savename,jdbcType=VARCHAR},
+      <if test="saveName != null">
+        #{saveName,jdbcType=VARCHAR},
       </if>
-      <if test="uploaddate != null">
-        #{uploaddate,jdbcType=DATE},
+      <if test="uploadDate != null">
+        #{uploadDate,jdbcType=DATE},
       </if>
-      <if test="uploaduser != null">
-        #{uploaduser,jdbcType=VARCHAR},
+      <if test="uploadUser != null">
+        #{uploadUser,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.FileUpload">
     update fileupload
     <set>
-      <if test="filename != null">
-        fileName = #{filename,jdbcType=INTEGER},
+      <if test="fileName != null">
+        fileName = #{fileName,jdbcType=INTEGER},
       </if>
-      <if test="savename != null">
-        saveName = #{savename,jdbcType=VARCHAR},
+      <if test="saveName != null">
+        saveName = #{saveName,jdbcType=VARCHAR},
       </if>
-      <if test="uploaddate != null">
-        uploadDate = #{uploaddate,jdbcType=DATE},
+      <if test="uploadDate != null">
+        uploadDate = #{uploadDate,jdbcType=DATE},
       </if>
-      <if test="uploaduser != null">
-        uploadUser = #{uploaduser,jdbcType=VARCHAR},
+      <if test="uploadUser != null">
+        uploadUser = #{uploadUser,jdbcType=VARCHAR},
       </if>
     </set>
-    where fileId = #{fileid,jdbcType=INTEGER}
+    where fileId = #{fileId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.cs.pojo.FileUpload">
     update fileupload
-    set fileName = #{filename,jdbcType=INTEGER},
-      saveName = #{savename,jdbcType=VARCHAR},
-      uploadDate = #{uploaddate,jdbcType=DATE},
-      uploadUser = #{uploaduser,jdbcType=VARCHAR}
-    where fileId = #{fileid,jdbcType=INTEGER}
+    set fileName = #{fileName,jdbcType=INTEGER},
+      saveName = #{saveName,jdbcType=VARCHAR},
+      uploadDate = #{uploadDate,jdbcType=DATE},
+      uploadUser = #{uploadUser,jdbcType=VARCHAR}
+    where fileId = #{fileId,jdbcType=INTEGER}
   </update>
 </mapper>

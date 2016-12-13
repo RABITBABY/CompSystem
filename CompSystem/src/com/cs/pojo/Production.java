@@ -1,31 +1,31 @@
 package com.cs.pojo;
 public class Production {
-    private Integer proid;
+    private Integer proId;
 
-    private String proname;
+    private String proName;
 
     private String award;
 
-    private String membersname;
+    private String membersName;
 
     private String pic;
 
     private String introduction;
 
-    public Integer getProid() {
-        return proid;
+    public Integer getProId() {
+        return proId;
     }
 
-    public void setProid(Integer proid) {
-        this.proid = proid;
+    public void setProId(Integer proId) {
+        this.proId = proId;
     }
 
-    public String getProname() {
-        return proname;
+    public String getProName() {
+        return proName;
     }
 
-    public void setProname(String proname) {
-        this.proname = proname == null ? null : proname.trim();
+    public void setProName(String proName) {
+        this.proName = proName == null ? null : proName.trim();
     }
 
     public String getAward() {
@@ -36,12 +36,12 @@ public class Production {
         this.award = award == null ? null : award.trim();
     }
 
-    public String getMembersname() {
-        return membersname;
+    public String getMembersName() {
+        return membersName;
     }
 
-    public void setMembersname(String membersname) {
-        this.membersname = membersname == null ? null : membersname.trim();
+    public void setMembersName(String membersName) {
+        this.membersName = membersName == null ? null : membersName.trim();
     }
 
     public String getPic() {

@@ -1,16 +1,16 @@
 package com.cs.pojo;
 public class Student {
-    private Integer studentno;
+    private Integer studentNo;
 
-    private String studentname;
+    private String studentName;
 
     private String gender;
 
-    private Integer departmentid;
+    private Integer departmentId;
 
     private String profession;
 
-    private Integer classno;
+    private Integer classNo;
 
     private Integer grade;
 
@@ -20,20 +20,20 @@ public class Student {
 
     private String password;
 
-    public Integer getStudentno() {
-        return studentno;
+    public Integer getStudentNo() {
+        return studentNo;
     }
 
-    public void setStudentno(Integer studentno) {
-        this.studentno = studentno;
+    public void setStudentNo(Integer studentNo) {
+        this.studentNo = studentNo;
     }
 
-    public String getStudentname() {
-        return studentname;
+    public String getStudentName() {
+        return studentName;
     }
 
-    public void setStudentname(String studentname) {
-        this.studentname = studentname == null ? null : studentname.trim();
+    public void setStudentName(String studentName) {
+        this.studentName = studentName == null ? null : studentName.trim();
     }
 
     public String getGender() {
@@ -44,12 +44,12 @@ public class Student {
         this.gender = gender == null ? null : gender.trim();
     }
 
-    public Integer getDepartmentid() {
-        return departmentid;
+    public Integer getDepartmentId() {
+        return departmentId;
     }
 
-    public void setDepartmentid(Integer departmentid) {
-        this.departmentid = departmentid;
+    public void setDepartmentId(Integer departmentId) {
+        this.departmentId = departmentId;
     }
 
     public String getProfession() {
@@ -60,12 +60,12 @@ public class Student {
         this.profession = profession == null ? null : profession.trim();
     }
 
-    public Integer getClassno() {
-        return classno;
+    public Integer getClassNo() {
+        return classNo;
     }
 
-    public void setClassno(Integer classno) {
-        this.classno = classno;
+    public void setClassNo(Integer classNo) {
+        this.classNo = classNo;
     }
 
     public Integer getGrade() {

@@ -1,20 +1,20 @@
 package com.cs.pojo;
 
 public class Administer {
-    private String adminno;
+    private String adminNo;
 
     private String password;
 
-    private String adminname;
+    private String adminName;
 
-    private Integer departmentid;
+    private Integer departmentId;
 
-    public String getAdminno() {
-        return adminno;
+    public String getAdminNo() {
+        return adminNo;
     }
 
-    public void setAdminno(String adminno) {
-        this.adminno = adminno == null ? null : adminno.trim();
+    public void setAdminNo(String adminno) {
+        this.adminNo = adminno == null ? null : adminno.trim();
     }
 
     public String getPassword() {
@@ -25,19 +25,19 @@ public class Administer {
         this.password = password == null ? null : password.trim();
     }
 
-    public String getAdminname() {
-        return adminname;
+    public String getAdminName() {
+        return adminName;
     }
 
-    public void setAdminname(String adminname) {
-        this.adminname = adminname == null ? null : adminname.trim();
+    public void setAdminName(String adminname) {
+        this.adminName = adminname == null ? null : adminname.trim();
     }
 
-    public Integer getDepartmentid() {
-        return departmentid;
+    public Integer getDepartmentId() {
+        return departmentId;
     }
 
-    public void setDepartmentid(Integer departmentid) {
-        this.departmentid = departmentid;
+    public void setDepartmentId(Integer departmentid) {
+        this.departmentId = departmentid;
     }
 }
