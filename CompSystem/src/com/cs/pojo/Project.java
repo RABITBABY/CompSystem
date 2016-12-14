@@ -27,6 +27,8 @@ public class Project {
     private Integer isPublish;
 
     private String introduction;
+    
+    private Integer isGroup;
 
     public Integer getComId() {
         return comId;
@@ -123,4 +125,14 @@ public class Project {
     public void setIntroduction(String introduction) {
         this.introduction = introduction == null ? null : introduction.trim();
     }
+
+	public Integer getIsGroup() {
+		return isGroup;
+	}
+
+	public void setIsGroup(Integer isGroup) {
+		this.isGroup = isGroup;
+	}
+    
+    
 }
