@@ -8,12 +8,12 @@
     <result column="pubUser" jdbcType="VARCHAR" property="pubUser" />
     <result column="articleType" jdbcType="INTEGER" property="articleType" />
     <result column="comId" jdbcType="INTEGER" property="comId" />
+  
   </resultMap>
   
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.cs.pojo.Article">
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
   </resultMap>
-  
   
   <sql id="Base_Column_List">
     articleId, title, pubDate, pubUser, articleType, comId
@@ -22,6 +22,18 @@
   <sql id="Blob_Column_List">
     content
   </sql>
+  
+  <select id="findByType" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+  	select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from article
+    where articleType=#{type,jdbcType=INTEGER}
+  </select>
+  
+  
+  
   <!--根据Id查找  -->
   <select id="selectByID" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
     select 

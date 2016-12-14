@@ -3,6 +3,8 @@ package com.cs.pojo;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+@Component
 public class Project {
     private Integer comId;
 

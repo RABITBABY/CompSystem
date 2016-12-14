@@ -1,5 +1,8 @@
 package com.cs.pojo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Standard {
     private Integer standardId;
 

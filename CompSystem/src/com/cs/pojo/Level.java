@@ -1,5 +1,8 @@
 package com.cs.pojo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Level {
     private Integer levelId;
 

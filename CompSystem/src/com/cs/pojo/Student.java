@@ -1,4 +1,8 @@
 package com.cs.pojo;
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class Student {
     private Integer studentNo;
 

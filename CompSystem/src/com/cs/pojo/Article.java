@@ -2,6 +2,8 @@ package com.cs.pojo;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+@Component
 public class Article {
     private Integer articleId;
 
@@ -72,4 +74,13 @@ public class Article {
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
     }
+
+	@Override
+	public String toString() {
+		return "Article [articleId=" + articleId + ", title=" + title
+				+ ", pubDate=" + pubDate + ", pubUser=" + pubUser
+				+ ", articleType=" + articleType + ", comId=" + comId
+				+ ", content=" + content + "]";
+	}
+    
 }
