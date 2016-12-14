@@ -3,15 +3,26 @@ package com.cs.dao.teacher;
 import com.cs.pojo.Teacher;
 
 public interface TeacherMapper {
-    int deleteByPrimaryKey(Integer teacherno);
+	
+    /**
+     * 根据教师职工号查找
+     * @param teacherno
+     * @return
+     */
+    Teacher selectByTeacherNo(Integer teacherno);
 
-    int insert(Teacher record);
-
+    /**
+     * 修改教师信息
+     * @param record
+     * @return
+     */
+    void updateTeacher(Teacher record);
+  
+    /**
+     * 添加老师 
+     * @param record
+     * @return
+     */
     int insertSelective(Teacher record);
 
-    Teacher selectByPrimaryKey(Integer teacherno);
-
-    int updateByPrimaryKeySelective(Teacher record);
-
-    int updateByPrimaryKey(Teacher record);
 }
