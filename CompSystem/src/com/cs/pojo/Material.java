@@ -7,6 +7,8 @@ public class Material {
     private Integer materialId;
 
     private Integer studentNo;
+    
+    private Integer conditionId;
 
     private String materialName;
 
@@ -43,4 +45,15 @@ public class Material {
     public void setMaterialPic(String materialPic) {
         this.materialPic = materialPic == null ? null : materialPic.trim();
     }
+
+	public Integer getConditionId() {
+		return conditionId;
+	}
+
+	public void setConditionId(Integer conditionId) {
+		this.conditionId = conditionId;
+	}
+    
+    
+    
 }

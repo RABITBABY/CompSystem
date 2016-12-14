@@ -24,30 +24,13 @@
     teacherNo, teacherName, gender, birth, departmentId, subject, phone, title, post, 
     email, type, direction, education, lab, password, examiner
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByTeacherNo" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from teacher
     where teacherNo = #{teacherNo,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from teacher
-    where teacherNo = #{teacherNo,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.cs.pojo.Teacher">
-    insert into teacher (teacherNo, teacherName, gender, 
-      birth, departmentId, subject, 
-      phone, title, post, 
-      email, type, direction, 
-      education, lab, password, 
-      examiner)
-    values (#{teacherNo,jdbcType=INTEGER}, #{teacherName,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, 
-      #{birth,jdbcType=DATE}, #{departmentId,jdbcType=INTEGER}, #{subject,jdbcType=VARCHAR}, 
-      #{phone,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{post,jdbcType=VARCHAR}, 
-      #{email,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{direction,jdbcType=VARCHAR}, 
-      #{education,jdbcType=VARCHAR}, #{lab,jdbcType=INTEGER}, #{password,jdbcType=VARCHAR}, 
-      #{examiner,jdbcType=INTEGER})
-  </insert>
+
   <insert id="insertSelective" parameterType="com.cs.pojo.Teacher">
     insert into teacher
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -151,7 +134,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Teacher">
+  <update id="updateTeacher" parameterType="com.cs.pojo.Teacher">
     update teacher
     <set>
       <if test="teacherName != null">
@@ -202,23 +185,5 @@
     </set>
     where teacherNo = #{teacherNo,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Teacher">
-    update teacher
-    set teacherName = #{teacherName,jdbcType=VARCHAR},
-      gender = #{gender,jdbcType=VARCHAR},
-      birth = #{birth,jdbcType=DATE},
-      departmentId = #{departmentId,jdbcType=INTEGER},
-      subject = #{subject,jdbcType=VARCHAR},
-      phone = #{phone,jdbcType=VARCHAR},
-      title = #{title,jdbcType=VARCHAR},
-      post = #{post,jdbcType=VARCHAR},
-      email = #{email,jdbcType=VARCHAR},
-      type = #{type,jdbcType=VARCHAR},
-      direction = #{direction,jdbcType=VARCHAR},
-      education = #{education,jdbcType=VARCHAR},
-      lab = #{lab,jdbcType=INTEGER},
-      password = #{password,jdbcType=VARCHAR},
-      examiner = #{examiner,jdbcType=INTEGER}
-    where teacherNo = #{teacherNo,jdbcType=INTEGER}
-  </update>
+  
 </mapper>
