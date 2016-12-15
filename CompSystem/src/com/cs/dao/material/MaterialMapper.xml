@@ -79,4 +79,5 @@
 		materialPic = #{materialPic,jdbcType=VARCHAR} where materialId = #{materialId,jdbcType=INTEGER} 
 		</update> -->
 
+
 </mapper>
