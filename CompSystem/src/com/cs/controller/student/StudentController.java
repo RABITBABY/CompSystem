@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.cs.pojo.Awards;
 import com.cs.pojo.Budget;
 import com.cs.pojo.Competition;
 import com.cs.pojo.Department;
@@ -38,9 +40,9 @@ public class StudentController {
 	 */
 	@ResponseBody
 	@RequestMapping("/getMaterial.do")
-	public List<Material> getInfo(){
+	public List<Material> getInfo(@Param("studentNo") Integer studentNo){
 		//假学生
-		List<Material> materials = studentService.getMaterials(1);
+		List<Material> materials = studentService.getMaterials(studentNo);
 		return materials;
 	}
 	
@@ -50,10 +52,22 @@ public class StudentController {
 	 */
 	@ResponseBody
 	@RequestMapping("/getComp.do")
-	public List<Project> getCompInfo(){
+	public List<Project> getCompInfo(@Param("studentNo") Integer studentNo){
 		//假学生
-		List<Project> projects = studentService.selectCompByStudentNo(1);
+		List<Project> projects = studentService.selectCompByStudentNo(studentNo);
 		return projects;
+	}
+	
+	/**
+	 * 获取学生获得的奖项
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/getAwards.do")
+	public List<Awards> getAwards(@Param("studentNo") Integer studentNo){
+		//假学生
+		List<Awards> awards=studentService.selectAwardsByStudentNo(studentNo);
+		return awards;
 	}
 	
 	
