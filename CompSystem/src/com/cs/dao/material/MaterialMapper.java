@@ -1,8 +1,18 @@
 package com.cs.dao.material;
 
+import java.util.List;
+
+import com.cs.pojo.Condition;
 import com.cs.pojo.Material;
 
 public interface MaterialMapper {
+	/**
+	 * 根据学生No，获取学生材料
+	 * @param conditionId
+	 * @return
+	 */
+	List<Material> selectByStudentNo(Integer studentNo);
+	
     int deleteByPrimaryKey(Integer materialid);
 
     int insert(Material record);
