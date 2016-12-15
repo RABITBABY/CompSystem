@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cs.dao.condition.ConditionMapper">
+  <resultMap id="BaseResultMap" type="com.cs.pojo.Condition">
+    <id column="conditionId" jdbcType="INTEGER" property="conditionId" />
+    <result column="conditionName" jdbcType="VARCHAR" property="conditionName" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+  </resultMap>
+
+  <select id="selectByConditionId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select *
+    from condition
+    where conditionId = #{conditionId,jdbcType=INTEGER}
+  </select>
+  
+ 
+</mapper>

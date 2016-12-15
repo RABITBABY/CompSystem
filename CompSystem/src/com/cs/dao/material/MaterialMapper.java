@@ -9,7 +9,7 @@ public interface MaterialMapper {
 
     int insertSelective(Material record);
 
-    Material selectByPrimaryKey(Integer materialid);
+    Material selectByMaterialId(Integer materialid);
 
     int updateByPrimaryKeySelective(Material record);
 

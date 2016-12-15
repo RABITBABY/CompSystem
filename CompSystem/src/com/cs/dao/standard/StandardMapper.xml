@@ -3,17 +3,23 @@
 <mapper namespace="com.cs.dao.standard.StandardMapper">
   <resultMap id="BaseResultMap" type="com.cs.pojo.Standard">
     <id column="standardId" jdbcType="INTEGER" property="standardId" />
-    <result column="levelId" jdbcType="INTEGER" property="levelId" />
-    <result column="prizeId" jdbcType="INTEGER" property="prizeId" />
     <result column="student" jdbcType="INTEGER" property="student" />
     <result column="teacher" jdbcType="INTEGER" property="teacher" />
+    <association property="level" column="levelId" 
+     select="com.cs.dao.level.LevelMapper.selectByLevelId">  
+       
+    </association>
+    <association property="prize" column="prizeId" 
+     select="com.cs.dao.prize.PrizeMapper.selectByPrizeId">  
+       
+    </association>
   </resultMap>
   <sql id="Base_Column_List">
     standardId, levelId, prizeId, student, teacher
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
-    <include refid="Base_Column_List" />
+    *
     from standard
     where standardId = #{standardId,jdbcType=INTEGER}
   </select>
@@ -21,7 +27,7 @@
     delete from standard
     where standardId = #{standardId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.cs.pojo.Standard">
+ <!--  <insert id="insert" parameterType="com.cs.pojo.Standard">
     insert into standard (standardId, levelId, prizeId, 
       student, teacher)
     values (#{standardId,jdbcType=INTEGER}, #{levelId,jdbcType=INTEGER}, #{prizeId,jdbcType=INTEGER}, 
@@ -89,5 +95,5 @@
       student = #{student,jdbcType=INTEGER},
       teacher = #{teacher,jdbcType=INTEGER}
     where standardId = #{standardId,jdbcType=INTEGER}
-  </update>
+  </update> -->
 </mapper>

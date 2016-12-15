@@ -1,8 +1,10 @@
 package com.cs.dao.project;
 
+import com.cs.pojo.Condition;
 import com.cs.pojo.Project;
 
 public interface ProjectMapper {
+	
     int deleteByPrimaryKey(Integer comid);
 
     int insert(Project record);

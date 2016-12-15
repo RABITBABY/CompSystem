@@ -3,16 +3,23 @@
 <mapper namespace="com.cs.dao.material.MaterialMapper">
   <resultMap id="BaseResultMap" type="com.cs.pojo.Material">
     <id column="materialId" jdbcType="INTEGER" property="materialId" />
-    <result column="studentNo" jdbcType="INTEGER" property="studentNo" />
     <result column="materialName" jdbcType="VARCHAR" property="materialName" />
     <result column="materialPic" jdbcType="VARCHAR" property="materialPic" />
+    <association property="student" column="studentNo" 
+     select="com.cs.dao.student.StudentMapper.selectByStudentNo">  
+       
+    </association>
+    <association property="condition" column="conditionId" 
+     select="com.cs.dao.condition.ConditionMapper.selectByConditionId">  
+       
+    </association>
   </resultMap>
   <sql id="Base_Column_List">
     materialId, studentNo, materialName, materialPic
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByMaterialId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
-    <include refid="Base_Column_List" />
+    *
     from material
     where materialId = #{materialId,jdbcType=INTEGER}
   </select>
@@ -20,7 +27,7 @@
     delete from material
     where materialId = #{materialId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.cs.pojo.Material">
+  <!-- <insert id="insert" parameterType="com.cs.pojo.Material">
     insert into material (materialId, studentNo, materialName, 
       materialPic)
     values (#{materialId,jdbcType=INTEGER}, #{studentNo,jdbcType=INTEGER}, #{materialName,jdbcType=VARCHAR}, 
@@ -78,5 +85,5 @@
       materialName = #{materialName,jdbcType=VARCHAR},
       materialPic = #{materialPic,jdbcType=VARCHAR}
     where materialId = #{materialId,jdbcType=INTEGER}
-  </update>
+  </update> -->
 </mapper>

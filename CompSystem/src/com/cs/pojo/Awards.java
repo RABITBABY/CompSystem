@@ -5,7 +5,7 @@ import java.util.Date;
 public class Awards {
     private Integer awardsId;
 
-    private Integer comId;
+    private Competition competition;
 
     private String name;
 
@@ -13,83 +13,87 @@ public class Awards {
 
     private String hunit;
 
-    private Integer prizeId;
+    private Prize prize;
 
-    private Integer levelId;
+    private Level level;
 
-    private Integer groupsNo;
+    private Groups groups;
 
     private Integer isPublish;
 
-    public Integer getAwardsId() {
-        return awardsId;
-    }
+	public Integer getAwardsId() {
+		return awardsId;
+	}
 
-    public void setAwardsId(Integer awardsid) {
-        this.awardsId = awardsid;
-    }
+	public void setAwardsId(Integer awardsId) {
+		this.awardsId = awardsId;
+	}
 
-    public Integer getComId() {
-        return comId;
-    }
+	public Competition getCompetition() {
+		return competition;
+	}
 
-    public void setComId(Integer comid) {
-        this.comId = comid;
-    }
+	public void setCompetition(Competition competition) {
+		this.competition = competition;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public Date getDate() {
-        return date;
-    }
+	public Date getDate() {
+		return date;
+	}
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
+	public void setDate(Date date) {
+		this.date = date;
+	}
 
-    public String getHunit() {
-        return hunit;
-    }
+	public String getHunit() {
+		return hunit;
+	}
 
-    public void setHunit(String hunit) {
-        this.hunit = hunit == null ? null : hunit.trim();
-    }
+	public void setHunit(String hunit) {
+		this.hunit = hunit;
+	}
 
-    public Integer getPrizeId() {
-        return prizeId;
-    }
+	public Prize getPrize() {
+		return prize;
+	}
 
-    public void setPrizeId(Integer prizeid) {
-        this.prizeId = prizeid;
-    }
+	public void setPrize(Prize prize) {
+		this.prize = prize;
+	}
 
-    public Integer getLevelId() {
-        return levelId;
-    }
+	public Level getLevel() {
+		return level;
+	}
 
-    public void setLevelId(Integer levelid) {
-        this.levelId = levelid;
-    }
+	public void setLevel(Level level) {
+		this.level = level;
+	}
 
-    public Integer getGroupsNo() {
-        return groupsNo;
-    }
+	public Groups getGroups() {
+		return groups;
+	}
 
-    public void setGroupsNo(Integer groupsno) {
-        this.groupsNo = groupsno;
-    }
+	public void setGroups(Groups groups) {
+		this.groups = groups;
+	}
 
-    public Integer getIsPublish() {
-        return isPublish;
-    }
+	public Integer getIsPublish() {
+		return isPublish;
+	}
 
-    public void setIsPublish(Integer ispublish) {
-        this.isPublish = ispublish;
-    }
+	public void setIsPublish(Integer isPublish) {
+		this.isPublish = isPublish;
+	}
+
+    
+    
+    
 }

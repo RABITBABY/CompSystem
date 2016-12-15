@@ -9,7 +9,7 @@ public interface GroupsMapper {
 
     int insertSelective(Groups record);
 
-    Groups selectByPrimaryKey(Integer groupsno);
+    Groups selectByGroupsNo(Integer groupsno);
 
     int updateByPrimaryKeySelective(Groups record);
 

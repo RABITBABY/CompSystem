@@ -9,7 +9,7 @@ public interface DepartmentMapper {
 
     int insertSelective(Department record);
 
-    Department selectByPrimaryKey(Integer departmentid);
+    Department selectByDepartId(Integer departmentid);
 
     int updateByPrimaryKeySelective(Department record);
 

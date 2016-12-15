@@ -2,9 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cs.dao.project.ProjectMapper">
   <resultMap id="BaseResultMap" type="com.cs.pojo.Project">
-    <id column="comId" jdbcType="INTEGER" property="comId" />
     <result column="comName" jdbcType="VARCHAR" property="comName" />
-    <result column="levelId" jdbcType="INTEGER" property="levelId" />
     <result column="hunit" jdbcType="VARCHAR" property="hunit" />
     <result column="sOrganizer" jdbcType="VARCHAR" property="sorganizer" />
     <result column="applyBeginDate" jdbcType="DATE" property="applyBeginDate" />
@@ -13,6 +11,12 @@
     <result column="cost" jdbcType="DECIMAL" property="cost" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="isPublish" jdbcType="INTEGER" property="isPublish" />
+    <association property="competition" column="comId" 
+     select="com.cs.dao.competition.CompetitionMapper.selectByComId">  
+    </association>
+    <association property="level" column="levelId" 
+     select="com.cs.dao.level.LevelMapper.selectByLevelId">        
+    </association>
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.cs.pojo.Project">
     <result column="introduction" jdbcType="LONGVARCHAR" property="introduction" />
@@ -24,19 +28,20 @@
   <sql id="Blob_Column_List">
     introduction
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+  
+ <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
     select 
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
     from project
-    where comId = #{comId,jdbcType=INTEGER}
+    where comId = #{competition.comId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from project
     where comId = #{comId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.cs.pojo.Project">
+  <!--  <insert id="insert" parameterType="com.cs.pojo.Project">
     insert into project (comId, comName, levelId, 
       hunit, sOrganizer, applyBeginDate, 
       applyEndDate, comDate, cost, 
@@ -194,5 +199,5 @@
       status = #{status,jdbcType=INTEGER},
       isPublish = #{isPublish,jdbcType=INTEGER}
     where comId = #{comId,jdbcType=INTEGER}
-  </update>
+  </update> -->
 </mapper>

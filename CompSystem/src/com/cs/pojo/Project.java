@@ -4,11 +4,11 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class Project {
-    private Integer comId;
+    private Competition competition;
 
     private String comName;
 
-    private Integer levelId;
+    private Level level;
 
     private String hunit;
 
@@ -30,14 +30,6 @@ public class Project {
     
     private Integer isGroup;
 
-    public Integer getComId() {
-        return comId;
-    }
-
-    public void setComId(Integer comId) {
-        this.comId = comId;
-    }
-
     public String getComName() {
         return comName;
     }
@@ -45,16 +37,26 @@ public class Project {
     public void setComName(String comName) {
         this.comName = comName == null ? null : comName.trim();
     }
+    
+    
 
-    public Integer getLevelId() {
-        return levelId;
-    }
+    public Competition getCompetition() {
+		return competition;
+	}
 
-    public void setLevelId(Integer levelId) {
-        this.levelId = levelId;
-    }
+	public void setCompetition(Competition competition) {
+		this.competition = competition;
+	}
 
-    public String getHunit() {
+	public Level getLevel() {
+		return level;
+	}
+
+	public void setLevel(Level level) {
+		this.level = level;
+	}
+
+	public String getHunit() {
         return hunit;
     }
 

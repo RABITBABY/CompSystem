@@ -14,7 +14,7 @@ public interface CompetitionMapper {
     
     int insertSelective(Competition record);
 
-    Competition selectByPrimaryKey(Integer comid);
+    Competition selectByComId(Integer comid);
 
     int updateByPrimaryKeySelective(Competition record);
 

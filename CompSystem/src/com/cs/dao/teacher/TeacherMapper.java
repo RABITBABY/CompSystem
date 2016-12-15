@@ -13,16 +13,8 @@ public interface TeacherMapper {
 
     /**
      * 修改教师信息
-     * @param record
-     * @return
      */
-    void updateTeacher(Teacher record);
-  
-    /**
-     * 添加老师 
-     * @param record
-     * @return
-     */
-    int insertSelective(Teacher record);
+    boolean updateByTeacherNo(Teacher teacher);
+    
 
 }

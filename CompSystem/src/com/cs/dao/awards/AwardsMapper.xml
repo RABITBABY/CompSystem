@@ -12,16 +12,34 @@
     <result column="levelId" jdbcType="INTEGER" property="levelId" />
     <result column="groupsNo" jdbcType="INTEGER" property="groupsNo" />
     <result column="isPublish" jdbcType="INTEGER" property="isPublish" />
+    <association property="competition" column="comId" 
+     select="com.cs.dao.competition.CompetitionMapper.selectByComId">         
+    </association>
+    
+    <association property="prize" column="prizeId" 
+     select="com.cs.dao.prize.PrizeMapper.selectByPrizeId">  
+       
+    </association>
+    
+    <association property="level" column="levelId" 
+     select="com.cs.dao.level.LevelMapper.selectByLevelId">  
+       
+    </association>
+    
+    <association property="groups" column="groupsNo" 
+     select="com.cs.dao.group.GroupsMapper.selectByGroupsNo">  
+       
+    </association>
   </resultMap>
   
   
   <sql id="Base_Column_List">
-    awardsId, comId, name, date, hunit, prizeId, levelId, groupsNo, isPublish
+   <!--  awardsId, comId, name, date, hunit, prizeId, levelId, groupsNo, isPublish -->
   </sql>
   <!-- 根据ID查找 -->
   <select id="selectByID" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
-    <include refid="Base_Column_List" />
+    *
     from awards
     where awardsId = #{awardsId,jdbcType=INTEGER}
   </select>
@@ -33,7 +51,7 @@
   </delete>
   
   <!-- 全部数据插入 -->
-  <insert id="insert" parameterType="com.cs.pojo.Awards">
+ <!--  <insert id="insert" parameterType="com.cs.pojo.Awards">
     insert into awards (awardsId, comId, name, 
       date, hunit, prizeId, 
       levelId, groupsNo, isPublish
@@ -42,11 +60,11 @@
       #{date,jdbcType=DATE}, #{hunit,jdbcType=VARCHAR}, #{prizeId,jdbcType=INTEGER}, 
       #{levelId,jdbcType=INTEGER}, #{groupsNo,jdbcType=INTEGER}, #{isPublish,jdbcType=INTEGER}
       )
-  </insert>
+  </insert> -->
   
   
   <!--动态进行数据插入  -->
-  <insert id="insertSelective" parameterType="com.cs.pojo.Awards">
+  <!-- <insert id="insertSelective" parameterType="com.cs.pojo.Awards">
     insert into awards
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="awardsId != null">
@@ -107,10 +125,10 @@
       </if>
     </trim>
   </insert>
-  
+   -->
   
   <!-- 根据有的内容动态更新 -->
-  <update id="updateByIDSelective" parameterType="com.cs.pojo.Awards">
+  <!-- <update id="updateByIDSelective" parameterType="com.cs.pojo.Awards">
     update awards
     <set>
       <if test="comId != null">
@@ -139,10 +157,10 @@
       </if>
     </set>
     where awardsId = #{awardsId,jdbcType=INTEGER}
-  </update>
+  </update> -->
   
   <!-- 根据Id更新全部 -->
-  <update id="updateByID" parameterType="com.cs.pojo.Awards">
+  <!-- <update id="updateByID" parameterType="com.cs.pojo.Awards">
     update awards
     set comId = #{comId,jdbcType=INTEGER},
       name = #{name,jdbcType=VARCHAR},
@@ -153,5 +171,5 @@
       groupsNo = #{groupsNo,jdbcType=INTEGER},
       isPublish = #{isPublish,jdbcType=INTEGER}
     where awardsId = #{awardsId,jdbcType=INTEGER}
-  </update>
+  </update> -->
 </mapper>

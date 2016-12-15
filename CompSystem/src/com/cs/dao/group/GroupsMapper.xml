@@ -7,13 +7,21 @@
     <result column="groupsName" jdbcType="VARCHAR" property="groupsName" />
     <result column="teacherNo" jdbcType="INTEGER" property="teacherNo" />
     <result column="status" jdbcType="INTEGER" property="status" />
+    <association property="competition" column="comId" 
+     select="com.cs.dao.competition.CompetitionMapper.selectByComId">  
+       
+    </association>
+    <association property="teacher" column="teacherNo" 
+     select="com.cs.dao.teacher.TeacherMapper.selectByTeacherNo">  
+       
+    </association>
   </resultMap>
   <sql id="Base_Column_List">
     groupsNo, comId, groupsName, teacherNo, status
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByGroupsNo" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
-    <include refid="Base_Column_List" />
+    *
     from groups
     where groupsNo = #{groupsNo,jdbcType=INTEGER}
   </select>

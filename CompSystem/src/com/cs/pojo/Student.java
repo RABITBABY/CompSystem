@@ -6,7 +6,7 @@ public class Student {
 
     private String gender;
 
-    private Integer departmentId;
+    private Department department;
 
     private String profession;
 
@@ -44,15 +44,17 @@ public class Student {
         this.gender = gender == null ? null : gender.trim();
     }
 
-    public Integer getDepartmentId() {
-        return departmentId;
-    }
+    
 
-    public void setDepartmentId(Integer departmentId) {
-        this.departmentId = departmentId;
-    }
+    public Department getDepartment() {
+		return department;
+	}
 
-    public String getProfession() {
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
+	public String getProfession() {
         return profession;
     }
 

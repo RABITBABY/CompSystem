@@ -9,7 +9,7 @@ public interface ScheduleMapper {
 
     int insertSelective(Schedule record);
 
-    Schedule selectByPrimaryKey(Integer scheduleid);
+    Schedule selectByScheduleId(Integer scheduleid);
 
     int updateByPrimaryKeySelective(Schedule record);
 

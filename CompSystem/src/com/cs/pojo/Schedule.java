@@ -5,9 +5,9 @@ import java.util.Date;
 public class Schedule {
     private Integer scheduleId;
 
-    private Integer comId;
+    private Competition competition;
 
-    private Integer teacherNo;
+    private Teacher teacher;
 
     private String content;
 
@@ -17,59 +17,61 @@ public class Schedule {
 
     private Integer hours;
 
-    public Integer getScheduleId() {
-        return scheduleId;
-    }
+	public Integer getScheduleId() {
+		return scheduleId;
+	}
 
-    public void setScheduleId(Integer scheduleId) {
-        this.scheduleId = scheduleId;
-    }
+	public void setScheduleId(Integer scheduleId) {
+		this.scheduleId = scheduleId;
+	}
 
-    public Integer getComId() {
-        return comId;
-    }
+	public Competition getCompetition() {
+		return competition;
+	}
 
-    public void setComId(Integer comId) {
-        this.comId = comId;
-    }
+	public void setCompetition(Competition competition) {
+		this.competition = competition;
+	}
 
-    public Integer getTeacherNo() {
-        return teacherNo;
-    }
+	public Teacher getTeacher() {
+		return teacher;
+	}
 
-    public void setTeacherNo(Integer teacherNo) {
-        this.teacherNo = teacherNo;
-    }
+	public void setTeacher(Teacher teacher) {
+		this.teacher = teacher;
+	}
 
-    public String getContent() {
-        return content;
-    }
+	public String getContent() {
+		return content;
+	}
 
-    public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
-    }
+	public void setContent(String content) {
+		this.content = content;
+	}
 
-    public String getPosition() {
-        return position;
-    }
+	public String getPosition() {
+		return position;
+	}
 
-    public void setPosition(String position) {
-        this.position = position == null ? null : position.trim();
-    }
+	public void setPosition(String position) {
+		this.position = position;
+	}
 
-    public Date getDate() {
-        return date;
-    }
+	public Date getDate() {
+		return date;
+	}
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
+	public void setDate(Date date) {
+		this.date = date;
+	}
 
-    public Integer getHours() {
-        return hours;
-    }
+	public Integer getHours() {
+		return hours;
+	}
 
-    public void setHours(Integer hours) {
-        this.hours = hours;
-    }
+	public void setHours(Integer hours) {
+		this.hours = hours;
+	}
+
+    
 }

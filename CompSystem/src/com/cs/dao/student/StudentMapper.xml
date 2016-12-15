@@ -12,14 +12,19 @@
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="password" jdbcType="VARCHAR" property="password" />
+    
+    <association property="department" column="departmentId" 
+     select="com.cs.dao.department.DepartmentMapper.selectByDepartId">  
+       
+    </association>
   </resultMap>
   <sql id="Base_Column_List">
     studentNo, studentName, gender, departmentId, profession, classNo, grade, phone, 
     email, password
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByStudentNo" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
-    <include refid="Base_Column_List" />
+    *
     from student
     where studentNo = #{studentNo,jdbcType=INTEGER}
   </select>
@@ -27,7 +32,7 @@
     delete from student
     where studentNo = #{studentNo,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.cs.pojo.Student">
+  <!-- <insert id="insert" parameterType="com.cs.pojo.Student">
     insert into student (studentNo, studentName, gender, 
       departmentId, profession, classNo, 
       grade, phone, email, 
@@ -149,5 +154,5 @@
       email = #{email,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR}
     where studentNo = #{studentNo,jdbcType=INTEGER}
-  </update>
+  </update> -->
 </mapper>
