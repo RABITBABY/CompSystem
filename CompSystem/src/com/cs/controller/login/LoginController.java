@@ -41,6 +41,7 @@ public class LoginController {
 			Teacher teacher=teachImpl.selectByTeacherNo(Integer.parseInt(acount));
 			if(teacher!=null){
 				if(password.equals(teacher.getPassword())){
+					System.out.println(teacher);
 					session.setAttribute("user", teacher); 
 					if(teacher.getExaminer()==0){//教师
 						return teacher;
@@ -57,6 +58,7 @@ public class LoginController {
 			Student stu =stuImpl.selectByNo(Integer.parseInt(acount));
 			if(stu!=null){
 				if(password.equals(stu.getPassword())){
+					System.out.println(stu);
 					session.setAttribute("user", stu); 
 					return stu;
 				}else{
@@ -69,6 +71,7 @@ public class LoginController {
 			Administer admin=adminImpl.IsAdmin(acount);
 			if(admin!=null){
 				if(password.equals(admin.getPassword())){
+					System.out.println(admin);
 					session.setAttribute("user", admin); 
 					return admin;
 				}else{
