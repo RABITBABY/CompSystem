@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cs.pojo.Administer;
@@ -33,9 +34,9 @@ public class LoginController {
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping(value = "/login")
+	@RequestMapping(value = "/login",method=RequestMethod.POST)
 	public Object IsAdmin(String acount,String password,String role,HttpSession session){
-		
+		System.out.println(password+"---"+acount+"--"+role);
 		//获取前台页面的信息---先判断角色色
 		if("1".equals(role)){//教师
 			Teacher teacher=teachImpl.selectByTeacherNo(Integer.parseInt(acount));
