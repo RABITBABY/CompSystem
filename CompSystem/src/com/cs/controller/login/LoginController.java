@@ -2,10 +2,12 @@ package com.cs.controller.login;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cs.pojo.Administer;
@@ -34,12 +36,15 @@ public class LoginController {
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping(value = "/login",method=RequestMethod.POST)
-	public Object IsAdmin(String acount,String password,String role,HttpSession session){
-		System.out.println(password+"---"+acount+"--"+role);
+	@RequestMapping(value = "/login" ,method=RequestMethod.POST)
+	public Object IsAdmin(@RequestParam(value = "account",required=false) String account,
+			@RequestParam(value = "password",required=false)String password,
+			@RequestParam(value = "role",required=false) String role, 
+			HttpSession session){
+		System.out.println(password+"---"+account+"--"+role);
 		//获取前台页面的信息---先判断角色色
-		if("1".equals(role)){//教师
-			Teacher teacher=teachImpl.selectByTeacherNo(Integer.parseInt(acount));
+		if("teacher".equals(role)){//教师
+			Teacher teacher=teachImpl.selectByTeacherNo(Integer.parseInt(account));
 			if(teacher!=null){
 				if(password.equals(teacher.getPassword())){
 					System.out.println(teacher);
@@ -55,8 +60,8 @@ public class LoginController {
 			}else{
 				return "wrongAccount";
 			}
-		}else if("2".equals(role)){//学生
-			Student stu =stuImpl.selectByNo(Integer.parseInt(acount));
+		}else if("student".equals(role)){//学生
+			Student stu =stuImpl.selectByNo(Integer.parseInt(account));
 			if(stu!=null){
 				if(password.equals(stu.getPassword())){
 					System.out.println(stu);
@@ -68,8 +73,8 @@ public class LoginController {
 			} else{
 				return "wrongAcount";
 			}
-		}else if("3".equals(role)){//管理员
-			Administer admin=adminImpl.IsAdmin(acount);
+		}else if("admin".equals(role)){//管理员
+			Administer admin=adminImpl.IsAdmin(account);
 			if(admin!=null){
 				if(password.equals(admin.getPassword())){
 					System.out.println(admin);

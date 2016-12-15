@@ -23,11 +23,14 @@
 <body>
 	<button onclick="location='login?acount=12345&password=123456&role=1'">dianji</button>
 
-	<form name="serForm" action="admin/saveFile" method="post"
-		enctype="multipart/form-data">
-		<h1>采用流的方式上传文件</h1>
-		<input type="file" name="file"> <input type="submit"
-			value="upload" />
+	<form  action="login" method="post"
+		>
+		<!-- <h1>采用流的方式上传文件</h1>
+		<input type="file" name="file"> -->
+		<input type="text" name="account" />
+		<input type="text" name="password" />
+		<input type="text" name="role" />
+		 <input type="submit" />
 	</form>
 </body>
 </html>
