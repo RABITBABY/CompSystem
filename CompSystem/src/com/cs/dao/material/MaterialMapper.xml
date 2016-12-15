@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cs.dao.material.MaterialMapper">
+
 	<resultMap id="BaseResultMap" type="com.cs.pojo.Material">
 		<id column="materialId" jdbcType="INTEGER" property="materialId" />
 		<result column="materialName" jdbcType="VARCHAR" property="materialName" />
@@ -12,6 +13,9 @@
 			select="com.cs.dao.condition.ConditionMapper.selectByConditionId">
 		</association>
 	</resultMap>
+	
+	
+	
 	<sql id="Base_Column_List">
 		materialId, studentNo, materialName, materialPic
 	</sql>
@@ -23,6 +27,7 @@
 		where materialId =
 		#{materialId,jdbcType=INTEGER}
 	</select>
+	
 
 	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
 		delete from

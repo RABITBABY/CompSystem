@@ -1,6 +1,7 @@
 package com.cs.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.stereotype.Component;
 @Component
@@ -66,6 +67,7 @@ public class Competition {
     private Date lsdate;
 
     private Integer status;
+    
 
 	public Integer getComId() {
 		return comId;
