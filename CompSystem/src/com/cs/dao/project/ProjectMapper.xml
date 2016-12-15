@@ -51,6 +51,9 @@
     where comId = #{comId,jdbcType=INTEGER}
   </delete>
   
+  <select id="AvailableCom" resultMap="ResultMapWithBLOBs">
+  select * from project where applyEndDate> now()
+  </select>
   
   <!--根据StudentNo查找 -->
 	<select id="selectProjectByStudentNo" parameterType="java.lang.Integer"

@@ -12,6 +12,11 @@ public interface ProjectMapper {
 	 * @return
 	 */
 	List<Project> selectProjectByStudentNo(Integer studentNo);
+	/**
+	 * 获取还能报名的竞赛信息
+	 * @return
+	 */
+	List<Project> AvailableCom();
 	
     int deleteByPrimaryKey(Integer comid);
 

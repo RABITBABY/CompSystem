@@ -8,5 +8,4 @@ public interface AdministerService {
 
 	public Administer IsAdmin(String adminNo);
 	
-	
 }
