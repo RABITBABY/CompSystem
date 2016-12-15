@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cs.pojo.Administer;
@@ -33,14 +34,15 @@ public class LoginController {
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping(value = "/login")
+	@RequestMapping(value = "/login",method=RequestMethod.POST)
 	public Object IsAdmin(String acount,String password,String role,HttpSession session){
-		
+		System.out.println(password+"---"+acount+"--"+role);
 		//获取前台页面的信息---先判断角色色
 		if("1".equals(role)){//教师
 			Teacher teacher=teachImpl.selectByTeacherNo(Integer.parseInt(acount));
 			if(teacher!=null){
 				if(password.equals(teacher.getPassword())){
+					System.out.println(teacher);
 					session.setAttribute("user", teacher); 
 					if(teacher.getExaminer()==0){//教师
 						return teacher;
@@ -57,6 +59,7 @@ public class LoginController {
 			Student stu =stuImpl.selectByNo(Integer.parseInt(acount));
 			if(stu!=null){
 				if(password.equals(stu.getPassword())){
+					System.out.println(stu);
 					session.setAttribute("user", stu); 
 					return stu;
 				}else{
@@ -69,6 +72,7 @@ public class LoginController {
 			Administer admin=adminImpl.IsAdmin(acount);
 			if(admin!=null){
 				if(password.equals(admin.getPassword())){
+					System.out.println(admin);
 					session.setAttribute("user", admin); 
 					return admin;
 				}else{
