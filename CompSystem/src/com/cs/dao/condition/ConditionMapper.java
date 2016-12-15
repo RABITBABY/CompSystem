@@ -1,5 +1,7 @@
 package com.cs.dao.condition;
 
+import java.util.List;
+
 import com.cs.pojo.Condition;
 import com.cs.pojo.Teacher;
 
@@ -11,8 +13,6 @@ public interface ConditionMapper {
      * @return
      */
     Condition selectByConditionId(Integer conditionId);
-
-  
     
 
 }

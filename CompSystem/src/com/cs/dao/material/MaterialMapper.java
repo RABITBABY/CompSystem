@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.cs.pojo.Condition;
 import com.cs.pojo.Material;
+import com.cs.pojo.Student;
 
 public interface MaterialMapper {
 	/**
@@ -11,7 +12,7 @@ public interface MaterialMapper {
 	 * @param conditionId
 	 * @return
 	 */
-	List<Material> selectByStudentNo(Integer studentNo);
+	Student selectByStudentNo(Integer studentNo);
 	
     int deleteByPrimaryKey(Integer materialid);
 

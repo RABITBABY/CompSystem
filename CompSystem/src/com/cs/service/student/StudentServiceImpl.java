@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.cs.dao.material.MaterialMapper;
 import com.cs.pojo.Material;
+import com.cs.pojo.Student;
 
 @Service("studentService")
 public class StudentServiceImpl implements StudentService{
@@ -16,7 +17,8 @@ public class StudentServiceImpl implements StudentService{
 	
 	@Override
 	public List<Material> getMaterials(Integer studentNo) {
-		List<Material> selectByStudentNo = materialMapper.selectByStudentNo(studentNo);
+		Student student  = materialMapper.selectByStudentNo(studentNo);
+		List<Material> selectByStudentNo = student.getMaterials();
 		return selectByStudentNo;
 	}
 

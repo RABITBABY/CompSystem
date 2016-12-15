@@ -1,7 +1,10 @@
 package com.cs.pojo;
+
+import java.util.List;
+
 public class Student {
     private Integer studentNo;
-
+    
     private String studentName;
 
     private String gender;
@@ -19,8 +22,29 @@ public class Student {
     private String email;
 
     private String password;
+    
+    private List<Material> materials;
+    
+    private List<Condition> conditions;
+    
+    
+    public List<Condition> getConditions() {
+		return conditions;
+	}
 
-    public Integer getStudentNo() {
+	public void setConditions(List<Condition> conditions) {
+		this.conditions = conditions;
+	}
+
+	public List<Material> getMaterials() {
+		return materials;
+	}
+
+	public void setMaterials(List<Material> materials) {
+		this.materials = materials;
+	}
+
+	public Integer getStudentNo() {
         return studentNo;
     }
 
