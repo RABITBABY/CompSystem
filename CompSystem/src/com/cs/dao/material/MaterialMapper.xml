@@ -8,6 +8,9 @@
 		<association property="student" column="studentNo"
 			select="com.cs.dao.student.StudentMapper.selectByStudentNo">
 		</association>
+		<association property="condition" column="conditionId"
+			select="com.cs.dao.condition.ConditionMapper.selectByConditionId">
+		</association>
 	</resultMap>
 	<sql id="Base_Column_List">
 		materialId, studentNo, materialName, materialPic
@@ -75,4 +78,5 @@
 		material set studentNo = #{studentNo,jdbcType=INTEGER}, materialName = #{materialName,jdbcType=VARCHAR}, 
 		materialPic = #{materialPic,jdbcType=VARCHAR} where materialId = #{materialId,jdbcType=INTEGER} 
 		</update> -->
+
 </mapper>

@@ -2,18 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cs.dao.article.ArticleMapper">
   <resultMap id="BaseResultMap" type="com.cs.pojo.Article">
-    <id column="articleId" jdbcType="INTEGER" property="articleId" />
-    <result column="title" jdbcType="VARCHAR" property="title" />
-    <result column="pubDate" jdbcType="TIMESTAMP" property="pubDate" />
-    <result column="pubUser" jdbcType="VARCHAR" property="pubUser" />
-    <result column="articleType" jdbcType="INTEGER" property="articleType" />
-    <result column="comId" jdbcType="INTEGER" property="comId" />
+    <id column="articleId"  property="articleId" />
+    <result column="title"  property="title" />
+    <result column="pubDate"  property="pubDate" />
+    <result column="articleType"  property="articleType" />
+  	 <result column="content"  property="content" />
+  	<association property="pubUser" column="pubUser"  
+    select="com.cs.dao.admin.AdministerMapper.selectByID" />
+    <association property="project" column="comId" 
+    select="com.cs.dao.project.ProjectMapper.selectByID" /> 
   </resultMap>
   
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.cs.pojo.Article">
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
   </resultMap>
-  
   
   <sql id="Base_Column_List">
     articleId, title, pubDate, pubUser, articleType, comId
@@ -22,37 +24,42 @@
   <sql id="Blob_Column_List">
     content
   </sql>
+  
+  <select id="findByType" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  	select  *
+    from article
+    where articleType=#{type,jdbcType=INTEGER}
+  </select>
+  
+  
+  
   <!--根据Id查找  -->
-  <select id="selectByID" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
-    select 
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
-    
+  <select id="selectByID" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select *
     from article
     where articleId = #{articleId,jdbcType=INTEGER}
   </select>
   
   
   <!--根据ID删除  -->
-  <delete id="deleteByID" parameterType="java.lang.Integer">
+<!--   <delete id="deleteByID" parameterType="java.lang.Integer">
     delete from article
     where articleId = #{articleId,jdbcType=INTEGER}
-  </delete>
+  </delete> -->
   
   <!-- 插入增加文章 全部插入 -->
-  <insert id="insert" parameterType="com.cs.pojo.Article">
+ <!--  <insert id="insert" parameterType="com.cs.pojo.Article">
     insert into article (articleId, title, pubDate, 
       pubUser, articleType, comId, 
       content)
     values (#{articleId,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{pubDate,jdbcType=TIMESTAMP}, 
-      #{pubUser,jdbcType=VARCHAR}, #{articleType,jdbcType=INTEGER}, #{comId,jdbcType=INTEGER}, 
+      #{pubUser,jdbcType=VARCHAR}, #{articleType,jdbcType=INTEGER}, #{project.comId,jdbcType=INTEGER}, 
       #{content,jdbcType=LONGVARCHAR})
-  </insert>
+  </insert> -->
   
   
   <!-- 选择性插入 空的就不插入 -->
-  <insert id="insertSelective" parameterType="com.cs.pojo.Article">
+<!--   <insert id="insertSelective" parameterType="com.cs.pojo.Article">
     insert into article
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="articleId != null">
@@ -94,16 +101,16 @@
         #{articleType,jdbcType=INTEGER},
       </if>
       <if test="comId != null">
-        #{comId,jdbcType=INTEGER},
+        #{project.comId,jdbcType=INTEGER},
       </if>
       <if test="content != null">
         #{content,jdbcType=LONGVARCHAR},
       </if>
     </trim>
-  </insert>
+  </insert> -->
   
   <!--更新文章   选择性更新 -->
-  <update id="updateByIDSelective" parameterType="com.cs.pojo.Article">
+ <!--  <update id="updateByIDSelective" parameterType="com.cs.pojo.Article">
     update article
     <set>
       <if test="title != null">
@@ -119,27 +126,27 @@
         articleType = #{articleType,jdbcType=INTEGER},
       </if>
       <if test="comId != null">
-        comId = #{comId,jdbcType=INTEGER},
+        comId = #{project.comId,jdbcType=INTEGER},
       </if>
       <if test="content != null">
         content = #{content,jdbcType=LONGVARCHAR},
       </if>
     </set>
     where articleId = #{articleId,jdbcType=INTEGER}
-  </update>
+  </update> -->
   
   
   <!-- 跟新全部 -->
-  <update id="updateByIDWithBLOBs" parameterType="com.cs.pojo.Article">
+  <!-- <update id="updateByIDWithBLOBs" parameterType="com.cs.pojo.Article">
     update article
     set title = #{title,jdbcType=VARCHAR},
       pubDate = #{pubDate,jdbcType=TIMESTAMP},
       pubUser = #{pubUser,jdbcType=VARCHAR},
       articleType = #{articleType,jdbcType=INTEGER},
-      comId = #{comId,jdbcType=INTEGER},
+      comId = #{project.comId,jdbcType=INTEGER},
       content = #{content,jdbcType=LONGVARCHAR}
     where articleId = #{articleId,jdbcType=INTEGER}
   </update>
-  
+   -->
 
 </mapper>

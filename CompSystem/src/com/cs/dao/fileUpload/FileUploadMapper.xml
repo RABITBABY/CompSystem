@@ -1,26 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cs.dao.fileUpload.FileUploadMapper">
+
   <resultMap id="BaseResultMap" type="com.cs.pojo.FileUpload">
     <id column="fileId" jdbcType="INTEGER" property="fileId" />
     <result column="fileName" jdbcType="INTEGER" property="fileName" />
     <result column="saveName" jdbcType="VARCHAR" property="saveName" />
     <result column="uploadDate" jdbcType="DATE" property="uploadDate" />
-    <result column="uploadUser" jdbcType="VARCHAR" property="uploadUser" />
+    <association property="uploadUser" column="uploadUser"  
+    select="com.cs.dao.admin.AdministerMapper.selectByID" />
   </resultMap>
+  
   <sql id="Base_Column_List">
     fileId, fileName, saveName, uploadDate, uploadUser
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
+  
+  <select id="selectByID" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select  *
     from fileupload
     where fileId = #{fileId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  
+  
+ <!--  <delete id="deleteByID" parameterType="java.lang.Integer">
     delete from fileupload
     where fileId = #{fileId,jdbcType=INTEGER}
   </delete>
+  
   <insert id="insert" parameterType="com.cs.pojo.FileUpload">
     insert into fileupload (fileId, fileName, saveName, 
       uploadDate, uploadUser)
@@ -64,7 +70,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.FileUpload">
+  
+  <update id="updateByIDSelective" parameterType="com.cs.pojo.FileUpload">
     update fileupload
     <set>
       <if test="fileName != null">
@@ -82,12 +89,12 @@
     </set>
     where fileId = #{fileId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.FileUpload">
+  <update id="updateByID" parameterType="com.cs.pojo.FileUpload">
     update fileupload
     set fileName = #{fileName,jdbcType=INTEGER},
       saveName = #{saveName,jdbcType=VARCHAR},
       uploadDate = #{uploadDate,jdbcType=DATE},
       uploadUser = #{uploadUser,jdbcType=VARCHAR}
     where fileId = #{fileId,jdbcType=INTEGER}
-  </update>
+  </update> -->
 </mapper>

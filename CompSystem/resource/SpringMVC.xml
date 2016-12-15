@@ -30,7 +30,8 @@
         <property name="maxUploadSize" value="10485760000"/>
         <property name="maxInMemorySize" value="40960"/>
     </bean>
-
+-->
+<!--  -->
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"
           p:ignoreDefaultModelOnRedirect="true">
         <property name="messageConverters">
@@ -38,5 +39,5 @@
                 <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
             </list>
         </property>
-    </bean> -->
+    </bean> 
 </beans>

@@ -1,5 +1,8 @@
 package com.cs.pojo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Budget {
     private Integer budgetId;
 
@@ -50,7 +53,4 @@ public class Budget {
 	public void setReasons(String reasons) {
 		this.reasons = reasons;
 	}
-
-    
-    
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cs.dao.teacher.TeacherMapper">
+
   <resultMap id="BaseResultMap" type="com.cs.pojo.Teacher">
     <id column="teacherNo" jdbcType="INTEGER" property="teacherNo" />
     <result column="teacherName" jdbcType="VARCHAR" property="teacherName" />
@@ -80,5 +81,5 @@
     </set>
     where teacherNo = #{teacherNo,jdbcType=INTEGER}
   </update>
-
+  
 </mapper>

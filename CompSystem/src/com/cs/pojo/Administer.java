@@ -1,5 +1,8 @@
 package com.cs.pojo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Administer {
     private String adminNo;
 
@@ -7,7 +10,7 @@ public class Administer {
 
     private String adminName;
 
-    private Integer departmentId;
+    private Department department;
 
     public String getAdminNo() {
         return adminNo;
@@ -33,11 +36,20 @@ public class Administer {
         this.adminName = adminname == null ? null : adminname.trim();
     }
 
-    public Integer getDepartmentId() {
-        return departmentId;
-    }
+	public Department getDepartment() {
+		return department;
+	}
 
-    public void setDepartmentId(Integer departmentid) {
-        this.departmentId = departmentid;
-    }
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
+	@Override
+	public String toString() {
+		return "Administer [adminNo=" + adminNo + ", password=" + password
+				+ ", adminName=" + adminName + ", department=" + department
+				+ "]";
+	}
+
+ 
 }

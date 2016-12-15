@@ -2,6 +2,8 @@ package com.cs.pojo;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+@Component
 public class Awards {
     private Integer awardsId;
 
@@ -93,7 +95,4 @@ public class Awards {
 		this.isPublish = isPublish;
 	}
 
-    
-    
-    
 }

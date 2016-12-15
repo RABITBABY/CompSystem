@@ -14,7 +14,6 @@
     
     <association property="department" column="departmentId" 
      select="com.cs.dao.department.DepartmentMapper.selectByDepartId">  
-       
     </association>
   </resultMap>
   <sql id="Base_Column_List">
@@ -27,7 +26,7 @@
     from student
     where studentNo = #{studentNo,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByID" parameterType="java.lang.Integer">
     delete from student
     where studentNo = #{studentNo,jdbcType=INTEGER}
   </delete>
@@ -108,7 +107,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Student">
+  <update id="updateByIDSelective" parameterType="com.cs.pojo.Student">
     update student
     <set>
       <if test="studentName != null">
@@ -141,7 +140,7 @@
     </set>
     where studentNo = #{studentNo,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Student">
+  <update id="updateByID" parameterType="com.cs.pojo.Student">
     update student
     set studentName = #{studentName,jdbcType=VARCHAR},
       gender = #{gender,jdbcType=VARCHAR},

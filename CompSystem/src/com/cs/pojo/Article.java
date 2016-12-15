@@ -2,6 +2,8 @@ package com.cs.pojo;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+@Component
 public class Article {
     private Integer articleId;
 
@@ -9,11 +11,11 @@ public class Article {
 
     private Date pubDate;
 
-    private String pubUser;
+    private Administer pubUser;
 
     private Integer articleType;
 
-    private Integer comId;
+    private Project project;
 
     private String content;
 
@@ -41,13 +43,6 @@ public class Article {
         this.pubDate = pubdate;
     }
 
-    public String getPubUser() {
-        return pubUser;
-    }
-
-    public void setPubUser(String pubuser) {
-        this.pubUser = pubuser == null ? null : pubuser.trim();
-    }
 
     public Integer getArticleType() {
         return articleType;
@@ -57,13 +52,6 @@ public class Article {
         this.articleType = articletype;
     }
 
-    public Integer getComId() {
-        return comId;
-    }
-
-    public void setComId(Integer comid) {
-        this.comId = comid;
-    }
 
     public String getContent() {
         return content;
@@ -72,4 +60,30 @@ public class Article {
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
     }
+
+	public Administer getPubUser() {
+		return pubUser;
+	}
+
+	public void setPubUser(Administer pubUser) {
+		this.pubUser = pubUser;
+	}
+
+	public Project getProject() {
+		return project;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
+	}
+
+	@Override
+	public String toString() {
+		return "Article [articleId=" + articleId + ", title=" + title
+				+ ", pubDate=" + pubDate + ", pubUser=" + pubUser
+				+ ", articleType=" + articleType + ", project=" + project
+				+ ", content=" + content + "]";
+	}
+
+    
 }

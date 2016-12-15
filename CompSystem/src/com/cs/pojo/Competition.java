@@ -2,6 +2,8 @@ package com.cs.pojo;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+@Component
 public class Competition {
     private Integer comId;
 
@@ -312,6 +314,4 @@ public class Competition {
 	public void setStatus(Integer status) {
 		this.status = status;
 	}
-
-   
 }

@@ -14,7 +14,7 @@
     from prize
     where prizeId = #{prizeId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByID" parameterType="java.lang.Integer">
     delete from prize
     where prizeId = #{prizeId,jdbcType=INTEGER}
   </delete>
@@ -41,7 +41,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Prize">
+  <update id="updateByIDSelective" parameterType="com.cs.pojo.Prize">
     update prize
     <set>
       <if test="prizeName != null">
@@ -50,7 +50,7 @@
     </set>
     where prizeId = #{prizeId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Prize">
+  <update id="updateByID" parameterType="com.cs.pojo.Prize">
     update prize
     set prizeName = #{prizeName,jdbcType=VARCHAR}
     where prizeId = #{prizeId,jdbcType=INTEGER}

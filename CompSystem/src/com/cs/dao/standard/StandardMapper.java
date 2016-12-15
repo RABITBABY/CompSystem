@@ -3,15 +3,15 @@ package com.cs.dao.standard;
 import com.cs.pojo.Standard;
 
 public interface StandardMapper {
-    int deleteByPrimaryKey(Integer standardid);
+    int deleteByID(Integer standardid);
 
     int insert(Standard record);
 
     int insertSelective(Standard record);
 
-    Standard selectByPrimaryKey(Integer standardid);
+    Standard selectByID(Integer standardid);
 
-    int updateByPrimaryKeySelective(Standard record);
+    int updateByIDSelective(Standard record);
 
-    int updateByPrimaryKey(Standard record);
+    int updateByID(Standard record);
 }

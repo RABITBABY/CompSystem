@@ -1,5 +1,8 @@
 package com.cs.pojo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Standard {
     private Integer standardId;
 
@@ -18,8 +21,6 @@ public class Standard {
 	public void setStandardId(Integer standardId) {
 		this.standardId = standardId;
 	}
-
-	
 
 	public Level getLevel() {
 		return level;
@@ -52,6 +53,5 @@ public class Standard {
 	public void setTeacher(Integer teacher) {
 		this.teacher = teacher;
 	}
-
-    
+	
 }

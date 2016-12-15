@@ -5,7 +5,7 @@ import java.util.List;
 import com.cs.pojo.Student;
 
 public interface StudentMapper {
-    int deleteByPrimaryKey(Integer studentno);
+    int deleteByID(Integer studentno);
 
     int insert(Student record);
 
@@ -14,7 +14,7 @@ public interface StudentMapper {
     Student selectByStudentNo(Integer studentno);
     
 
-    int updateByPrimaryKeySelective(Student record);
+    int updateByIDSelective(Student record);
 
-    int updateByPrimaryKey(Student record);
+    int updateByID(Student record);
 }

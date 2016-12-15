@@ -1,6 +1,8 @@
 package com.cs.pojo;
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+@Component
 public class FileUpload {
     private Integer fileId;
 
@@ -10,7 +12,7 @@ public class FileUpload {
 
     private Date uploadDate;
 
-    private String uploadUser;
+    private Administer uploadUser;
 
     public Integer getFileId() {
         return fileId;
@@ -44,11 +46,19 @@ public class FileUpload {
         this.uploadDate = uploadDate;
     }
 
-    public String getUploadUser() {
-        return uploadUser;
-    }
+	public Administer getUploadUser() {
+		return uploadUser;
+	}
 
-    public void setUploadUser(String uploadUser) {
-        this.uploadUser = uploadUser == null ? null : uploadUser.trim();
-    }
+	public void setUploadUser(Administer uploadUser) {
+		this.uploadUser = uploadUser;
+	}
+
+	@Override
+	public String toString() {
+		return "FileUpload [fileId=" + fileId + ", fileName=" + fileName
+				+ ", saveName=" + saveName + ", uploadDate=" + uploadDate
+				+ ", uploadUser=" + uploadUser + "]";
+	}
+
 }

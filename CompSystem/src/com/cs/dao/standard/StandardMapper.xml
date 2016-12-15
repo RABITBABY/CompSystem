@@ -14,19 +14,23 @@
        
     </association>
   </resultMap>
+  
+  
   <sql id="Base_Column_List">
     standardId, levelId, prizeId, student, teacher
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    *
+  
+  <select id="selectByID" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select  *
     from standard
     where standardId = #{standardId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  
+  
+  <!-- <delete id="deleteByID" parameterType="java.lang.Integer">
     delete from standard
     where standardId = #{standardId,jdbcType=INTEGER}
-  </delete>
+  </delete>-->
  <!--  <insert id="insert" parameterType="com.cs.pojo.Standard">
     insert into standard (standardId, levelId, prizeId, 
       student, teacher)
@@ -70,7 +74,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Standard">
+  <update id="updateByIDSelective" parameterType="com.cs.pojo.Standard">
     update standard
     <set>
       <if test="levelId != null">
@@ -88,7 +92,7 @@
     </set>
     where standardId = #{standardId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Standard">
+  <update id="updateByID" parameterType="com.cs.pojo.Standard">
     update standard
     set levelId = #{levelId,jdbcType=INTEGER},
       prizeId = #{prizeId,jdbcType=INTEGER},
