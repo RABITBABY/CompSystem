@@ -8,7 +8,7 @@
   <sql id="Base_Column_List">
     levelId, levelName
   </sql>
-  <select id="selectByID" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByLevelId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from level

@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cs.pojo.Budget;
+import com.cs.pojo.Competition;
 import com.cs.pojo.Department;
 import com.cs.pojo.Hours;
 import com.cs.pojo.Material;
+import com.cs.pojo.Project;
 import com.cs.pojo.Schedule;
 import com.cs.pojo.Teacher;
 import com.cs.service.student.StudentService;
@@ -40,6 +42,18 @@ public class StudentController {
 		//假学生
 		List<Material> materials = studentService.getMaterials(1);
 		return materials;
+	}
+	
+	/**
+	 * 获取学生报名的比赛
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/getComp.do")
+	public List<Project> getCompInfo(){
+		//假学生
+		List<Project> projects = studentService.selectCompByStudentNo(1);
+		return projects;
 	}
 	
 	

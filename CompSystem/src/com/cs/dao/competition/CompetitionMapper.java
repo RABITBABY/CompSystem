@@ -1,5 +1,7 @@
 package com.cs.dao.competition;
 
+import java.util.List;
+
 import com.cs.pojo.Competition;
 
 public interface CompetitionMapper {
@@ -9,6 +11,7 @@ public interface CompetitionMapper {
 	 * @return
 	 */
     int deleteByPrimaryKey(Integer comid);
+    
     
     int insert(Competition record);
     

@@ -28,6 +28,7 @@ public class Student {
     private List<Condition> conditions;
     
     
+    
     public List<Condition> getConditions() {
 		return conditions;
 	}

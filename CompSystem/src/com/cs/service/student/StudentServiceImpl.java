@@ -5,17 +5,23 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cs.dao.competition.CompetitionMapper;
 import com.cs.dao.material.MaterialMapper;
+import com.cs.dao.project.ProjectMapper;
 import com.cs.dao.student.StudentMapper;
+import com.cs.pojo.Competition;
 import com.cs.pojo.Material;
+import com.cs.pojo.Project;
 import com.cs.pojo.Student;
 
 @Service("studentService")
 public class StudentServiceImpl implements StudentService {
 	@Autowired
-	StudentMapper mapper;
+	private StudentMapper mapper;
 	@Autowired
 	private MaterialMapper materialMapper;
+	@Autowired
+	private ProjectMapper projectMapper;
 	
 	@Override
 	public Student stuLogin(Student stu) {
@@ -33,6 +39,11 @@ public class StudentServiceImpl implements StudentService {
 		Student student  = materialMapper.selectByStudentNo(studentNo);
 		List<Material> selectByStudentNo = student.getMaterials();
 		return selectByStudentNo;
+	}
+
+	@Override
+	public List<Project> selectCompByStudentNo(Integer studentNo) {
+		 return projectMapper.selectProjectByStudentNo(studentNo);
 	}
 
 }

@@ -9,7 +9,7 @@ public interface LevelMapper {
 
     int insertSelective(Level record);
 
-    Level selectByID(Integer levelid);
+    Level selectByLevelId(Integer levelid);
 
     int updateByIDSelective(Level record);
 
