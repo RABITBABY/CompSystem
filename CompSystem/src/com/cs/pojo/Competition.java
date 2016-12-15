@@ -314,6 +314,4 @@ public class Competition {
 	public void setStatus(Integer status) {
 		this.status = status;
 	}
-
-   
 }

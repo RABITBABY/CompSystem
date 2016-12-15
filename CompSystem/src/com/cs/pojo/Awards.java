@@ -95,7 +95,4 @@ public class Awards {
 		this.isPublish = isPublish;
 	}
 
-    
-    
-    
 }

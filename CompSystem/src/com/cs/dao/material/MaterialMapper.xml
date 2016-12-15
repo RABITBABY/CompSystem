@@ -7,12 +7,12 @@
     <result column="materialPic" jdbcType="VARCHAR" property="materialPic" />
     <association property="student" column="studentNo" 
      select="com.cs.dao.student.StudentMapper.selectByStudentNo">  
-       
     </association>
+    
     <association property="condition" column="conditionId" 
      select="com.cs.dao.condition.ConditionMapper.selectByConditionId">  
-       
     </association>
+    
   </resultMap>
   <sql id="Base_Column_List">
     materialId, studentNo, materialName, materialPic
@@ -23,10 +23,20 @@
     from material
     where materialId = #{materialId,jdbcType=INTEGER}
   </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from material
     where materialId = #{materialId,jdbcType=INTEGER}
   </delete>
+  
+  <select id="selectByStudentNo" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    *
+    from material
+    where studentNo= #{studentNo,jdbcType=INTEGER}
+  </select>
+  
+  
   <!-- <insert id="insert" parameterType="com.cs.pojo.Material">
     insert into material (materialId, studentNo, materialName, 
       materialPic)

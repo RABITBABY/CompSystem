@@ -5,15 +5,14 @@
     <id column="standardId" jdbcType="INTEGER" property="standardId" />
     <result column="student" jdbcType="INTEGER" property="student" />
     <result column="teacher" jdbcType="INTEGER" property="teacher" />
-    
     <association property="level" column="levelId" 
      select="com.cs.dao.level.LevelMapper.selectByLevelId">  
+       
     </association>
-    
     <association property="prize" column="prizeId" 
      select="com.cs.dao.prize.PrizeMapper.selectByPrizeId">  
+       
     </association>
-    
   </resultMap>
   
   
@@ -32,8 +31,6 @@
     delete from standard
     where standardId = #{standardId,jdbcType=INTEGER}
   </delete>-->
-  
-  
  <!--  <insert id="insert" parameterType="com.cs.pojo.Standard">
     insert into standard (standardId, levelId, prizeId, 
       student, teacher)

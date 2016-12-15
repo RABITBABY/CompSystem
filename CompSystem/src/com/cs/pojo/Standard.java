@@ -22,6 +22,9 @@ public class Standard {
 		this.standardId = standardId;
 	}
 
+	public Level getLevel() {
+		return level;
+	}
 
 	public void setLevel(Level level) {
 		this.level = level;
@@ -50,17 +53,5 @@ public class Standard {
 	public void setTeacher(Integer teacher) {
 		this.teacher = teacher;
 	}
-
-	public Level getLevel() {
-		return level;
-	}
-
-	@Override
-	public String toString() {
-		return "Standard [standardId=" + standardId + ", level=" + level
-				+ ", prize=" + prize + ", student=" + student + ", teacher="
-				+ teacher + "]";
-	}
-	
 	
 }

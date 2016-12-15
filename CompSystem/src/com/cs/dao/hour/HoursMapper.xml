@@ -3,7 +3,6 @@
 <mapper namespace="com.cs.dao.hour.HoursMapper">
   <resultMap id="BaseResultMap" type="com.cs.pojo.Hours">
     <id column="hoursId" jdbcType="INTEGER" property="hoursId" />
-    <result column="comId" jdbcType="INTEGER" property="comId" />
     <result column="type" jdbcType="VARCHAR" property="type" />
     <result column="hours" jdbcType="INTEGER" property="hours" />
     <result column="remarks" jdbcType="VARCHAR" property="remarks" />

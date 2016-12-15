@@ -4,13 +4,9 @@
 
   <resultMap id="BaseResultMap" type="com.cs.pojo.Awards">
     <id column="awardsId" jdbcType="INTEGER" property="awardsId" />
-    <result column="comId" jdbcType="INTEGER" property="comId" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="date" jdbcType="DATE" property="date" />
     <result column="hunit" jdbcType="VARCHAR" property="hunit" />
-    <result column="prizeId" jdbcType="INTEGER" property="prizeId" />
-    <result column="levelId" jdbcType="INTEGER" property="levelId" />
-    <result column="groupsNo" jdbcType="INTEGER" property="groupsNo" />
     <result column="isPublish" jdbcType="INTEGER" property="isPublish" />
     <association property="competition" column="comId" 
      select="com.cs.dao.competition.CompetitionMapper.selectByComId">         

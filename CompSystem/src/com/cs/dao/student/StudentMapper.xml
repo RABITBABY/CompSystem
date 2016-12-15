@@ -5,7 +5,6 @@
     <id column="studentNo" jdbcType="INTEGER" property="studentNo" />
     <result column="studentName" jdbcType="VARCHAR" property="studentName" />
     <result column="gender" jdbcType="VARCHAR" property="gender" />
-    <result column="departmentId" jdbcType="INTEGER" property="departmentId" />
     <result column="profession" jdbcType="VARCHAR" property="profession" />
     <result column="classNo" jdbcType="INTEGER" property="classNo" />
     <result column="grade" jdbcType="INTEGER" property="grade" />
@@ -21,9 +20,9 @@
     studentNo, studentName, gender, departmentId, profession, classNo, grade, phone, 
     email, password
   </sql>
-  
   <select id="selectByStudentNo" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select *
+    select 
+    *
     from student
     where studentNo = #{studentNo,jdbcType=INTEGER}
   </select>

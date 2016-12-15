@@ -53,7 +53,4 @@ public class Budget {
 	public void setReasons(String reasons) {
 		this.reasons = reasons;
 	}
-
-    
-    
 }
