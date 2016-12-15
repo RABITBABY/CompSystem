@@ -30,7 +30,7 @@
 
 
 	<sql id="Base_Column_List">
-		a.awardsId, a.comId, a.name, a.date, a.hunit, a.prizeId, a.levelId, a.groupsNo, a.isPublish
+		a.awardsId, a.name, a.date, a.hunit, a.prizeId, a.levelId, a.groupsNo, a.isPublish
 	</sql>
 	<!-- 根据ID查找 -->
 	<select id="selectByID" parameterType="java.lang.Integer"

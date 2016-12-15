@@ -54,7 +54,7 @@ public class StudentController {
 	@RequestMapping("/getComp.do")
 	public List<Project> getCompInfo(@Param("studentNo") Integer studentNo){
 		//假学生
-		List<Project> projects = studentService.selectCompByStudentNo(studentNo);
+		List<Project> projects = studentService.selectCompByStudentNo(1);
 		return projects;
 	}
 	
