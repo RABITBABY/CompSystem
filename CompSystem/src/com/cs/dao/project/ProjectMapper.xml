@@ -12,6 +12,7 @@
     <result column="cost" jdbcType="DECIMAL" property="cost" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="isPublish" jdbcType="INTEGER" property="isPublish" />
+    <result column="isGroup" jdbcType="INTEGER" property="isGroup" />
     <association property="competition" column="comId" 
      select="com.cs.dao.competition.CompetitionMapper.selectByComId">  
     </association>
@@ -27,7 +28,7 @@
   
   <sql id="Base_Column_List">
     comId, comName, levelId, hunit, sOrganizer, applyBeginDate, applyEndDate, comDate, 
-    cost, status, isPublish
+    cost, status, isPublish,isGroup
   </sql>
   <sql id="Blob_Column_List">
     introduction

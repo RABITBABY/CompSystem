@@ -19,7 +19,7 @@
   </sql>
   <select id="selectByGroupsNo" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
-    *
+    groupsNo, groupsName
     from groups
     where groupsNo = #{groupsNo,jdbcType=INTEGER}
   </select>

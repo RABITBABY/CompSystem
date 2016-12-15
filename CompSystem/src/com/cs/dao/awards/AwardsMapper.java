@@ -1,5 +1,7 @@
 package com.cs.dao.awards;
 
+import java.util.List;
+
 import com.cs.pojo.Awards;
 public interface AwardsMapper {
 	/**
@@ -39,4 +41,6 @@ public interface AwardsMapper {
      * @return
      */
     int updateByID(Awards record);
+    
+    List<Awards> selectAwardsByStudentNo(Integer studentNo);
 }

@@ -2,170 +2,105 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cs.dao.awards.AwardsMapper">
 
-  <resultMap id="BaseResultMap" type="com.cs.pojo.Awards">
-    <id column="awardsId" jdbcType="INTEGER" property="awardsId" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="date" jdbcType="DATE" property="date" />
-    <result column="hunit" jdbcType="VARCHAR" property="hunit" />
-    <result column="isPublish" jdbcType="INTEGER" property="isPublish" />
-    <association property="competition" column="comId" 
-     select="com.cs.dao.competition.CompetitionMapper.selectByComId">         
-    </association>
-    
-    <association property="prize" column="prizeId" 
-     select="com.cs.dao.prize.PrizeMapper.selectByPrizeId">  
-       
-    </association>
-    
-    <association property="level" column="levelId" 
-     select="com.cs.dao.level.LevelMapper.selectByLevelId">  
-       
-    </association>
-    
-    <association property="groups" column="groupsNo" 
-     select="com.cs.dao.group.GroupsMapper.selectByGroupsNo">  
-       
-    </association>
-  </resultMap>
-  
-  
-  <sql id="Base_Column_List">
-   <!--  awardsId, comId, name, date, hunit, prizeId, levelId, groupsNo, isPublish -->
-  </sql>
-  <!-- 根据ID查找 -->
-  <select id="selectByID" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    *
-    from awards
-    where awardsId = #{awardsId,jdbcType=INTEGER}
-  </select>
-  
-  <!-- 根据Id删除 -->
-  <delete id="deleteByID" parameterType="java.lang.Integer">
-    delete from awards
-    where awardsId = #{awardsId,jdbcType=INTEGER}
-  </delete>
-  
-  <!-- 全部数据插入 -->
- <!--  <insert id="insert" parameterType="com.cs.pojo.Awards">
-    insert into awards (awardsId, comId, name, 
-      date, hunit, prizeId, 
-      levelId, groupsNo, isPublish
-      )
-    values (#{awardsId,jdbcType=INTEGER}, #{comId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
-      #{date,jdbcType=DATE}, #{hunit,jdbcType=VARCHAR}, #{prizeId,jdbcType=INTEGER}, 
-      #{levelId,jdbcType=INTEGER}, #{groupsNo,jdbcType=INTEGER}, #{isPublish,jdbcType=INTEGER}
-      )
-  </insert> -->
-  
-  
-  <!--动态进行数据插入  -->
-  <!-- <insert id="insertSelective" parameterType="com.cs.pojo.Awards">
-    insert into awards
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="awardsId != null">
-        awardsId,
-      </if>
-      <if test="comId != null">
-        comId,
-      </if>
-      <if test="name != null">
-        name,
-      </if>
-      <if test="date != null">
-        date,
-      </if>
-      <if test="hunit != null">
-        hunit,
-      </if>
-      <if test="prizeId != null">
-        prizeId,
-      </if>
-      <if test="levelId != null">
-        levelId,
-      </if>
-      <if test="groupsNo != null">
-        groupsNo,
-      </if>
-      <if test="isPublish != null">
-        isPublish,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="awardsId != null">
-        #{awardsId,jdbcType=INTEGER},
-      </if>
-      <if test="comId != null">
-        #{comId,jdbcType=INTEGER},
-      </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="date != null">
-        #{date,jdbcType=DATE},
-      </if>
-      <if test="hunit != null">
-        #{hunit,jdbcType=VARCHAR},
-      </if>
-      <if test="prizeId != null">
-        #{prizeId,jdbcType=INTEGER},
-      </if>
-      <if test="levelId != null">
-        #{levelId,jdbcType=INTEGER},
-      </if>
-      <if test="groupsNo != null">
-        #{groupsNo,jdbcType=INTEGER},
-      </if>
-      <if test="isPublish != null">
-        #{isPublish,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
-   -->
-  
-  <!-- 根据有的内容动态更新 -->
-  <!-- <update id="updateByIDSelective" parameterType="com.cs.pojo.Awards">
-    update awards
-    <set>
-      <if test="comId != null">
-        comId = #{comId,jdbcType=INTEGER},
-      </if>
-      <if test="name != null">
-        name = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="date != null">
-        date = #{date,jdbcType=DATE},
-      </if>
-      <if test="hunit != null">
-        hunit = #{hunit,jdbcType=VARCHAR},
-      </if>
-      <if test="prizeId != null">
-        prizeId = #{prizeId,jdbcType=INTEGER},
-      </if>
-      <if test="levelId != null">
-        levelId = #{levelId,jdbcType=INTEGER},
-      </if>
-      <if test="groupsNo != null">
-        groupsNo = #{groupsNo,jdbcType=INTEGER},
-      </if>
-      <if test="isPublish != null">
-        isPublish = #{isPublish,jdbcType=INTEGER},
-      </if>
-    </set>
-    where awardsId = #{awardsId,jdbcType=INTEGER}
-  </update> -->
-  
-  <!-- 根据Id更新全部 -->
-  <!-- <update id="updateByID" parameterType="com.cs.pojo.Awards">
-    update awards
-    set comId = #{comId,jdbcType=INTEGER},
-      name = #{name,jdbcType=VARCHAR},
-      date = #{date,jdbcType=DATE},
-      hunit = #{hunit,jdbcType=VARCHAR},
-      prizeId = #{prizeId,jdbcType=INTEGER},
-      levelId = #{levelId,jdbcType=INTEGER},
-      groupsNo = #{groupsNo,jdbcType=INTEGER},
-      isPublish = #{isPublish,jdbcType=INTEGER}
-    where awardsId = #{awardsId,jdbcType=INTEGER}
-  </update> -->
+	<resultMap id="BaseResultMap" type="com.cs.pojo.Awards">
+		<id column="awardsId" jdbcType="INTEGER" property="awardsId" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="date" jdbcType="DATE" property="date" />
+		<result column="hunit" jdbcType="VARCHAR" property="hunit" />
+		<result column="isPublish" jdbcType="INTEGER" property="isPublish" />
+		<association property="competition" column="comId"
+			select="com.cs.dao.competition.CompetitionMapper.selectByComId">
+		</association>
+
+		<association property="prize" column="prizeId"
+			select="com.cs.dao.prize.PrizeMapper.selectByPrizeId">
+
+		</association>
+
+		<association property="level" column="levelId"
+			select="com.cs.dao.level.LevelMapper.selectByLevelId">
+
+		</association>
+
+		<association property="groups" column="groupsNo"
+			select="com.cs.dao.group.GroupsMapper.selectByGroupsNo">
+
+		</association>
+	</resultMap>
+
+
+	<sql id="Base_Column_List">
+		a.awardsId, a.name, a.date, a.hunit, a.prizeId, a.levelId, a.groupsNo, a.isPublish
+	</sql>
+	<!-- 根据ID查找 -->
+	<select id="selectByID" parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
+		select
+		*
+		from awards
+		where awardsId = #{awardsId,jdbcType=INTEGER}
+	</select>
+
+	<!-- 根据Id删除 -->
+	<delete id="deleteByID" parameterType="java.lang.Integer">
+		delete from awards
+		where awardsId = #{awardsId,jdbcType=INTEGER}
+	</delete>
+
+    <!-- 根据学生no查找 -->
+	<select id="selectAwardsByStudentNo" parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
+		SELECT 
+        <include refid="Base_Column_List"/>
+        FROM awards a 
+		join groups g on a.groupsNo=g.groupsNo 
+		join groupsdetail gd on g.groupsNo=gd.groupsNo 
+		where gd.studentNo=#{studentNo,jdbcType=INTEGER}
+	</select>
+
+	<!-- 全部数据插入 -->
+	<!-- <insert id="insert" parameterType="com.cs.pojo.Awards"> insert into 
+		awards (awardsId, comId, name, date, hunit, prizeId, levelId, groupsNo, isPublish 
+		) values (#{awardsId,jdbcType=INTEGER}, #{comId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+		#{date,jdbcType=DATE}, #{hunit,jdbcType=VARCHAR}, #{prizeId,jdbcType=INTEGER}, 
+		#{levelId,jdbcType=INTEGER}, #{groupsNo,jdbcType=INTEGER}, #{isPublish,jdbcType=INTEGER} 
+		) </insert> -->
+
+
+	<!--动态进行数据插入 -->
+	<!-- <insert id="insertSelective" parameterType="com.cs.pojo.Awards"> insert 
+		into awards <trim prefix="(" suffix=")" suffixOverrides=","> <if test="awardsId 
+		!= null"> awardsId, </if> <if test="comId != null"> comId, </if> <if test="name 
+		!= null"> name, </if> <if test="date != null"> date, </if> <if test="hunit 
+		!= null"> hunit, </if> <if test="prizeId != null"> prizeId, </if> <if test="levelId 
+		!= null"> levelId, </if> <if test="groupsNo != null"> groupsNo, </if> <if 
+		test="isPublish != null"> isPublish, </if> </trim> <trim prefix="values (" 
+		suffix=")" suffixOverrides=","> <if test="awardsId != null"> #{awardsId,jdbcType=INTEGER}, 
+		</if> <if test="comId != null"> #{comId,jdbcType=INTEGER}, </if> <if test="name 
+		!= null"> #{name,jdbcType=VARCHAR}, </if> <if test="date != null"> #{date,jdbcType=DATE}, 
+		</if> <if test="hunit != null"> #{hunit,jdbcType=VARCHAR}, </if> <if test="prizeId 
+		!= null"> #{prizeId,jdbcType=INTEGER}, </if> <if test="levelId != null"> 
+		#{levelId,jdbcType=INTEGER}, </if> <if test="groupsNo != null"> #{groupsNo,jdbcType=INTEGER}, 
+		</if> <if test="isPublish != null"> #{isPublish,jdbcType=INTEGER}, </if> 
+		</trim> </insert> -->
+
+	<!-- 根据有的内容动态更新 -->
+	<!-- <update id="updateByIDSelective" parameterType="com.cs.pojo.Awards"> 
+		update awards <set> <if test="comId != null"> comId = #{comId,jdbcType=INTEGER}, 
+		</if> <if test="name != null"> name = #{name,jdbcType=VARCHAR}, </if> <if 
+		test="date != null"> date = #{date,jdbcType=DATE}, </if> <if test="hunit 
+		!= null"> hunit = #{hunit,jdbcType=VARCHAR}, </if> <if test="prizeId != null"> 
+		prizeId = #{prizeId,jdbcType=INTEGER}, </if> <if test="levelId != null"> 
+		levelId = #{levelId,jdbcType=INTEGER}, </if> <if test="groupsNo != null"> 
+		groupsNo = #{groupsNo,jdbcType=INTEGER}, </if> <if test="isPublish != null"> 
+		isPublish = #{isPublish,jdbcType=INTEGER}, </if> </set> where awardsId = 
+		#{awardsId,jdbcType=INTEGER} </update> -->
+
+	<!-- 根据Id更新全部 -->
+	<!-- <update id="updateByID" parameterType="com.cs.pojo.Awards"> update 
+		awards set comId = #{comId,jdbcType=INTEGER}, name = #{name,jdbcType=VARCHAR}, 
+		date = #{date,jdbcType=DATE}, hunit = #{hunit,jdbcType=VARCHAR}, prizeId 
+		= #{prizeId,jdbcType=INTEGER}, levelId = #{levelId,jdbcType=INTEGER}, groupsNo 
+		= #{groupsNo,jdbcType=INTEGER}, isPublish = #{isPublish,jdbcType=INTEGER} 
+		where awardsId = #{awardsId,jdbcType=INTEGER} </update> -->
 </mapper>
