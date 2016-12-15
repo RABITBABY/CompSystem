@@ -30,7 +30,8 @@
 
 
 	<sql id="Base_Column_List">
-		a.awardsId, a.name, a.date, a.hunit, a.prizeId, a.levelId, a.groupsNo, a.isPublish
+		a.awardsId, a.name, a.date, a.hunit, a.prizeId, a.levelId,
+		a.groupsNo, a.isPublish
 	</sql>
 	<!-- 根据ID查找 -->
 	<select id="selectByID" parameterType="java.lang.Integer"
@@ -38,33 +39,41 @@
 		select
 		*
 		from awards
-		where awardsId = #{awardsId,jdbcType=INTEGER}
+		where awardsId =
+		#{awardsId,jdbcType=INTEGER}
 	</select>
 
 	<!-- 根据Id删除 -->
 	<delete id="deleteByID" parameterType="java.lang.Integer">
 		delete from awards
-		where awardsId = #{awardsId,jdbcType=INTEGER}
+		where
+		awardsId = #{awardsId,jdbcType=INTEGER}
 	</delete>
 
-    <!-- 根据学生no查找 -->
+	<!-- 根据学生no查找 -->
 	<select id="selectAwardsByStudentNo" parameterType="java.lang.Integer"
 		resultMap="BaseResultMap">
-		SELECT 
-        <include refid="Base_Column_List"/>
-        FROM awards a 
-		join groups g on a.groupsNo=g.groupsNo 
-		join groupsdetail gd on g.groupsNo=gd.groupsNo 
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM awards a
+		join groups g on a.groupsNo=g.groupsNo
+		join groupsdetail gd on g.groupsNo=gd.groupsNo
 		where gd.studentNo=#{studentNo,jdbcType=INTEGER}
 	</select>
 
+
+
 	<!-- 全部数据插入 -->
-	<!-- <insert id="insert" parameterType="com.cs.pojo.Awards"> insert into 
-		awards (awardsId, comId, name, date, hunit, prizeId, levelId, groupsNo, isPublish 
-		) values (#{awardsId,jdbcType=INTEGER}, #{comId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
-		#{date,jdbcType=DATE}, #{hunit,jdbcType=VARCHAR}, #{prizeId,jdbcType=INTEGER}, 
-		#{levelId,jdbcType=INTEGER}, #{groupsNo,jdbcType=INTEGER}, #{isPublish,jdbcType=INTEGER} 
-		) </insert> -->
+	<insert id="addAwards" parameterType="com.cs.pojo.Awards">
+	    insert into
+		awards (awardsId, comId, name, date, hunit, prizeId, levelId, groupsNo,isPublish)
+		values (#{awardsId,jdbcType=INTEGER}, #{comId,jdbcType=INTEGER},
+		#{name,jdbcType=VARCHAR},
+		#{date,jdbcType=DATE}, #{hunit,jdbcType=VARCHAR}, #{prizeId,jdbcType=INTEGER},
+		#{levelId,jdbcType=INTEGER}, #{groupsNo,jdbcType=INTEGER},
+		#{isPublish,jdbcType=INTEGER}
+		)
+	</insert>
 
 
 	<!--动态进行数据插入 -->

@@ -67,6 +67,18 @@
 		delete from competition
 		where comId = #{comId,jdbcType=INTEGER}
 	</delete>
+	
+	<!-- 系部审批： 修改申报表状态，申报意见，签字 -->
+	<update id="updateByDepart" parameterType="com.cs.pojo.Competition"> 
+       update competition set uopinion=#{uopinion,jdbcType=VARCHAR}, 
+            dsign=#{dsign,jdbcType=VARCHAR}, dsdate=#{dsdate,jdbcType=DATE},status=#{status,jdbcType=INTEGER}
+    </update> 
+
+    <!-- 教学处审批： 修改申报表状态，申报意见，签字 -->
+	<update id="updateByTeach" parameterType="com.cs.pojo.Competition"> 
+       update competition set tdopinion=#{tdopinion,jdbcType=VARCHAR}, 
+            olsign=#{olsign,jdbcType=VARCHAR}, olsdate=#{olsdate,jdbcType=DATE},status=#{status,jdbcType=INTEGER}
+    </update> 
 
 	<!--全部插入 -->
 	<!-- <insert id="insert" parameterType="com.cs.pojo.Competition"> insert 

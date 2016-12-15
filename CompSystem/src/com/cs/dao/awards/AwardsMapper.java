@@ -11,11 +11,11 @@ public interface AwardsMapper {
 	 */
     int deleteByPrimaryKey(Integer awardsid);
     /**
-     * 全部数据插入
+     * 增加学生获奖情况
      * @param record
      * @return
      */
-    int insert(Awards record);
+    int addAwards(Awards record);
     /**
      * 动态进行数据插入
      * @param record
@@ -42,5 +42,10 @@ public interface AwardsMapper {
      */
     int updateByID(Awards record);
     
+    /**
+     * 根据学号查看获奖情况
+     * @param studentNo
+     * @return
+     */
     List<Awards> selectAwardsByStudentNo(Integer studentNo);
 }

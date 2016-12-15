@@ -88,12 +88,9 @@
     </set>
     where groupsNo = #{groupsNo,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Groups">
+  <update id="updateGroupsStatus" parameterType="com.cs.pojo.Groups">
     update groups
-    set comId = #{comId,jdbcType=INTEGER},
-      groupsName = #{groupsName,jdbcType=VARCHAR},
-      teacherNo = #{teacherNo,jdbcType=INTEGER},
-      status = #{status,jdbcType=INTEGER}
+    set  status = #{status,jdbcType=INTEGER}
     where groupsNo = #{groupsNo,jdbcType=INTEGER}
   </update>
 </mapper>

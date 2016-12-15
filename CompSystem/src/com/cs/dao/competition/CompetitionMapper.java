@@ -12,6 +12,20 @@ public interface CompetitionMapper {
 	 */
     int deleteByPrimaryKey(Integer comid);
     
+    /**
+     * 系部：审批申报表
+     * @param competition
+     * @return
+     */
+    int updateByDepart(Competition competition);
+    
+    /**
+     * 教学处：审批申报表
+     * @param competition
+     * @return
+     */
+    int updateByTeach(Competition competition);
+    
     
     int insert(Competition record);
     
