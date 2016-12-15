@@ -20,9 +20,8 @@ public class TeacherServiceImpl implements TeacherService{
 	}
 
 	@Override
-	public void updateTeacher(Teacher teacher) {
-		teacherMapper.updateTeacher(teacher);
+	public boolean updateByTeacherNo(Teacher teacher) {
+		return teacherMapper.updateByTeacherNo(teacher);
 	}
 
-	
 }

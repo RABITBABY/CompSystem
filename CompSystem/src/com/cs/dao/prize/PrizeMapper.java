@@ -9,7 +9,7 @@ public interface PrizeMapper {
 
     int insertSelective(Prize record);
 
-    Prize selectByID(Integer prizeid);
+    Prize selectByPrizeId(Integer prizeid);
 
     int updateByIDSelective(Prize record);
 

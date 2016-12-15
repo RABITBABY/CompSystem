@@ -7,7 +7,7 @@
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="adminName" jdbcType="VARCHAR" property="adminName" />
     <association property="department" column="departmentId" 
-    select="com.cs.dao.department.DepartmentMapper.selectByPrimaryKey" />
+    select="com.cs.dao.department.DepartmentMapper.selectByDepartId" />
   </resultMap>
   
   

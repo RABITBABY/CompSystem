@@ -6,51 +6,53 @@ import org.springframework.stereotype.Component;
 public class Groups {
     private Integer groupsNo;
 
-    private Integer comId;
+    private Competition competition;
 
     private String groupsName;
 
-    private Integer teacherNo;
+    private Teacher teacher;
 
     private Integer status;
 
-    public Integer getGroupsNo() {
-        return groupsNo;
-    }
+	public Integer getGroupsNo() {
+		return groupsNo;
+	}
 
-    public void setGroupsNo(Integer groupsNo) {
-        this.groupsNo = groupsNo;
-    }
+	public void setGroupsNo(Integer groupsNo) {
+		this.groupsNo = groupsNo;
+	}
 
-    public Integer getComId() {
-        return comId;
-    }
+	public Competition getCompetition() {
+		return competition;
+	}
 
-    public void setComId(Integer comId) {
-        this.comId = comId;
-    }
+	public void setCompetition(Competition competition) {
+		this.competition = competition;
+	}
 
-    public String getGroupsName() {
-        return groupsName;
-    }
+	public String getGroupsName() {
+		return groupsName;
+	}
 
-    public void setGroupsName(String groupsName) {
-        this.groupsName = groupsName == null ? null : groupsName.trim();
-    }
+	public void setGroupsName(String groupsName) {
+		this.groupsName = groupsName;
+	}
 
-    public Integer getTeacherNo() {
-        return teacherNo;
-    }
+	public Teacher getTeacher() {
+		return teacher;
+	}
 
-    public void setTeacheNo(Integer teacherNo) {
-        this.teacherNo = teacherNo;
-    }
+	public void setTeacher(Teacher teacher) {
+		this.teacher = teacher;
+	}
 
-    public Integer getStatus() {
-        return status;
-    }
+	public Integer getStatus() {
+		return status;
+	}
 
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
+   
 }

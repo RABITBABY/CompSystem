@@ -6,11 +6,11 @@ import java.util.Date;
 import org.springframework.stereotype.Component;
 @Component
 public class Project {
-    private Integer comId;
+    private Competition competition;
 
     private String comName;
 
-    private Integer levelId;
+    private Level level;
 
     private String hunit;
 
@@ -29,14 +29,8 @@ public class Project {
     private Integer isPublish;
 
     private String introduction;
-
-    public Integer getComId() {
-        return comId;
-    }
-
-    public void setComId(Integer comId) {
-        this.comId = comId;
-    }
+    
+    private Integer isGroup;
 
     public String getComName() {
         return comName;
@@ -45,16 +39,26 @@ public class Project {
     public void setComName(String comName) {
         this.comName = comName == null ? null : comName.trim();
     }
+    
+    
 
-    public Integer getLevelId() {
-        return levelId;
-    }
+    public Competition getCompetition() {
+		return competition;
+	}
 
-    public void setLevelId(Integer levelId) {
-        this.levelId = levelId;
-    }
+	public void setCompetition(Competition competition) {
+		this.competition = competition;
+	}
 
-    public String getHunit() {
+	public Level getLevel() {
+		return level;
+	}
+
+	public void setLevel(Level level) {
+		this.level = level;
+	}
+
+	public String getHunit() {
         return hunit;
     }
 
@@ -125,4 +129,14 @@ public class Project {
     public void setIntroduction(String introduction) {
         this.introduction = introduction == null ? null : introduction.trim();
     }
+
+	public Integer getIsGroup() {
+		return isGroup;
+	}
+
+	public void setIsGroup(Integer isGroup) {
+		this.isGroup = isGroup;
+	}
+    
+    
 }

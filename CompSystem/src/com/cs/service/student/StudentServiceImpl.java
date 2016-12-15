@@ -18,7 +18,6 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public Student selectByNo(int studentNo) {
-		return mapper.selectByID(studentNo);
+		return mapper.selectByStudentNo(studentNo);
 	}
-
 }

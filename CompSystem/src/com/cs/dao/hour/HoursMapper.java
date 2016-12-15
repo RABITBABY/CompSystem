@@ -9,7 +9,7 @@ public interface HoursMapper {
 
     int insertSelective(Hours record);
 
-    Hours selectByPrimaryKey(Integer hoursid);
+    Hours selectByHoursId(Integer hoursid);
 
     int updateByPrimaryKeySelective(Hours record);
 

@@ -6,8 +6,7 @@
     <id column="teacherNo" jdbcType="INTEGER" property="teacherNo" />
     <result column="teacherName" jdbcType="VARCHAR" property="teacherName" />
     <result column="gender" jdbcType="VARCHAR" property="gender" />
-    <result column="birth" jdbcType="DATE" property="birth" />
-    <result column="departmentId" jdbcType="INTEGER" property="departmentId" />
+    <result column="birth" jdbcType="DATE" property="birth" />   
     <result column="subject" jdbcType="VARCHAR" property="subject" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="title" jdbcType="VARCHAR" property="title" />
@@ -19,168 +18,65 @@
     <result column="lab" jdbcType="INTEGER" property="lab" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="examiner" jdbcType="INTEGER" property="examiner" />
+    <association property="department" column="departmentId" 
+     select="com.cs.dao.department.DepartmentMapper.selectByDepartId">  
+       
+    </association>
   </resultMap>
   <sql id="Base_Column_List">
     teacherNo, teacherName, gender, birth, departmentId, subject, phone, title, post, 
     email, type, direction, education, lab, password, examiner
   </sql>
   <select id="selectByTeacherNo" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
+    select *
     from teacher
     where teacherNo = #{teacherNo,jdbcType=INTEGER}
   </select>
-
-  <insert id="insertSelective" parameterType="com.cs.pojo.Teacher">
-    insert into teacher
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="teacherNo != null">
-        teacherNo,
-      </if>
-      <if test="teacherName != null">
-        teacherName,
-      </if>
-      <if test="gender != null">
-        gender,
-      </if>
-      <if test="birth != null">
-        birth,
-      </if>
-      <if test="departmentId != null">
-        departmentId,
-      </if>
-      <if test="subject != null">
-        subject,
-      </if>
-      <if test="phone != null">
-        phone,
-      </if>
-      <if test="title != null">
-        title,
-      </if>
-      <if test="post != null">
-        post,
-      </if>
-      <if test="email != null">
-        email,
-      </if>
-      <if test="type != null">
-        type,
-      </if>
-      <if test="direction != null">
-        direction,
-      </if>
-      <if test="education != null">
-        education,
-      </if>
-      <if test="lab != null">
-        lab,
-      </if>
-      <if test="password != null">
-        password,
-      </if>
-      <if test="examiner != null">
-        examiner,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="teacherNo != null">
-        #{teacherNo,jdbcType=INTEGER},
-      </if>
-      <if test="teacherName != null">
-        #{teacherName,jdbcType=VARCHAR},
-      </if>
-      <if test="gender != null">
-        #{gender,jdbcType=VARCHAR},
-      </if>
-      <if test="birth != null">
-        #{birth,jdbcType=DATE},
-      </if>
-      <if test="departmentId != null">
-        #{departmentId,jdbcType=INTEGER},
-      </if>
-      <if test="subject != null">
-        #{subject,jdbcType=VARCHAR},
-      </if>
-      <if test="phone != null">
-        #{phone,jdbcType=VARCHAR},
-      </if>
-      <if test="title != null">
-        #{title,jdbcType=VARCHAR},
-      </if>
-      <if test="post != null">
-        #{post,jdbcType=VARCHAR},
-      </if>
-      <if test="email != null">
-        #{email,jdbcType=VARCHAR},
-      </if>
-      <if test="type != null">
-        #{type,jdbcType=VARCHAR},
-      </if>
-      <if test="direction != null">
-        #{direction,jdbcType=VARCHAR},
-      </if>
-      <if test="education != null">
-        #{education,jdbcType=VARCHAR},
-      </if>
-      <if test="lab != null">
-        #{lab,jdbcType=INTEGER},
-      </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="examiner != null">
-        #{examiner,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateTeacher" parameterType="com.cs.pojo.Teacher">
+  
+  <update id="updateByTeacherNo" parameterType="com.cs.pojo.Teacher">
     update teacher
     <set>
       <if test="teacherName != null">
         teacherName = #{teacherName,jdbcType=VARCHAR},
       </if>
       <if test="gender != null">
-        gender = #{gender,jdbcType=VARCHAR},
+       gender = #{gender,jdbcType=VARCHAR},
       </if>
       <if test="birth != null">
-        birth = #{birth,jdbcType=DATE},
+         birth = #{birth,jdbcType=DATE},
       </if>
-      <if test="departmentId != null">
-        departmentId = #{departmentId,jdbcType=INTEGER},
+      <if test="department.departmentId != null">
+        departmentId = #{department.departmentId,jdbcType=INTEGER},
       </if>
       <if test="subject != null">
-        subject = #{subject,jdbcType=VARCHAR},
+         subject = #{subject,jdbcType=VARCHAR},
       </if>
       <if test="phone != null">
-        phone = #{phone,jdbcType=VARCHAR},
+         phone = #{phone,jdbcType=VARCHAR},
       </if>
       <if test="title != null">
-        title = #{title,jdbcType=VARCHAR},
-      </if>
-      <if test="post != null">
-        post = #{post,jdbcType=VARCHAR},
+         title = #{title,jdbcType=VARCHAR},
       </if>
       <if test="email != null">
-        email = #{email,jdbcType=VARCHAR},
+         email = #{email,jdbcType=VARCHAR},
       </if>
       <if test="type != null">
         type = #{type,jdbcType=VARCHAR},
       </if>
       <if test="direction != null">
-        direction = #{direction,jdbcType=VARCHAR},
+         direction = #{direction,jdbcType=VARCHAR},
       </if>
       <if test="education != null">
-        education = #{education,jdbcType=VARCHAR},
+         education = #{education,jdbcType=VARCHAR},
       </if>
-      <if test="lab != null">
-        lab = #{lab,jdbcType=INTEGER},
+       <if test="lab != null">
+         lab = #{lab,jdbcType=INTEGER},
       </if>
-      <if test="password != null">
-        password = #{password,jdbcType=VARCHAR},
+       <if test="password != null">
+         password = #{password,jdbcType=VARCHAR},
       </if>
       <if test="examiner != null">
-        examiner = #{examiner,jdbcType=INTEGER},
+         examiner = #{examiner,jdbcType=INTEGER},
       </if>
     </set>
     where teacherNo = #{teacherNo,jdbcType=INTEGER}

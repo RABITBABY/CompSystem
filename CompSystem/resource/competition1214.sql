@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50614
 File Encoding         : 65001
 
-Date: 2016-12-14 20:25:24
+Date: 2016-12-14 20:58:42
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -191,7 +191,7 @@ INSERT INTO `competition` VALUES ('6', '小数据比赛', '1', '信息技术与�
 -- ----------------------------
 DROP TABLE IF EXISTS `condition`;
 CREATE TABLE `condition` (
-  `conditionId` int(11) NOT NULL,
+  `conditionId` int(11) NOT NULL AUTO_INCREMENT,
   `conditionName` varchar(255) DEFAULT NULL,
   `type` int(11) DEFAULT NULL COMMENT '0.默认，给予选择的。1.需要上传图片的  2.根据系别',
   PRIMARY KEY (`conditionId`)
@@ -434,6 +434,7 @@ CREATE TABLE `project` (
   `cost` decimal(10,2) DEFAULT NULL COMMENT '报名费',
   `status` int(11) DEFAULT NULL COMMENT '比赛状态(0.赛前准备 1比赛结束 2.已反馈)',
   `isPublish` int(11) NOT NULL DEFAULT '0' COMMENT '发布状态',
+  `isGroup` int(11) DEFAULT '0' COMMENT '0不需要组队 1 需要组队',
   PRIMARY KEY (`comId`),
   KEY `pro_gra` (`levelId`),
   CONSTRAINT `level_pro` FOREIGN KEY (`levelId`) REFERENCES `level` (`levelId`) ON UPDATE CASCADE
@@ -442,10 +443,10 @@ CREATE TABLE `project` (
 -- ----------------------------
 -- Records of project
 -- ----------------------------
-INSERT INTO `project` VALUES ('1', '甲骨文', '1', null, null, null, '2016-10-01', '2016-10-03', '2016-10-11', '300.00', '1', '0');
-INSERT INTO `project` VALUES ('2', '软件设计比赛', '2', null, null, null, '2016-11-01', '2016-11-02', '2016-11-22', '200.00', '1', '0');
-INSERT INTO `project` VALUES ('3', '美术杯', '2', null, null, null, '2016-01-01', '2016-01-10', '2016-03-10', '0.00', '2', '0');
-INSERT INTO `project` VALUES ('4', '小马哥杯', '1', null, null, null, null, null, '2016-07-08', '200.00', '1', '0');
+INSERT INTO `project` VALUES ('1', '甲骨文', '1', null, null, null, '2016-10-01', '2016-10-03', '2016-10-11', '300.00', '1', '0', '0');
+INSERT INTO `project` VALUES ('2', '软件设计比赛', '2', null, null, null, '2016-11-01', '2016-11-02', '2016-11-22', '200.00', '1', '0', '0');
+INSERT INTO `project` VALUES ('3', '美术杯', '2', null, null, null, '2016-01-01', '2016-01-10', '2016-03-10', '0.00', '2', '0', '0');
+INSERT INTO `project` VALUES ('4', '小马哥杯', '1', null, null, null, null, null, '2016-07-08', '200.00', '1', '0', '0');
 
 -- ----------------------------
 -- Table structure for `projectcondition`
@@ -455,8 +456,8 @@ CREATE TABLE `projectcondition` (
   `proId` int(11) DEFAULT NULL COMMENT '比赛id',
   `conditionId` int(11) DEFAULT NULL COMMENT '条件id',
   KEY `pro_fk` (`proId`),
-  KEY `cond_fk` (`conditionId`),
-  CONSTRAINT `cond_fk` FOREIGN KEY (`conditionId`) REFERENCES `condition` (`conditionId`),
+  KEY `con_fk` (`conditionId`),
+  CONSTRAINT `con_fk` FOREIGN KEY (`conditionId`) REFERENCES `condition` (`conditionId`),
   CONSTRAINT `pro_fk` FOREIGN KEY (`proId`) REFERENCES `project` (`comId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

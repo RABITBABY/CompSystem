@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cs.pojo.Budget;
+import com.cs.pojo.Department;
 import com.cs.pojo.Hours;
 import com.cs.pojo.Schedule;
 import com.cs.pojo.Teacher;
@@ -47,13 +48,23 @@ public class TeacherController {
 	}
 	
 	/**
-	 * 修改老师个人信息
-	 * @param teacher
+	 * 修改教师信息
 	 */
 	@ResponseBody
 	@RequestMapping("/updateInfo.do")
-	public void updateInfo(Teacher teacher){
-		teacherService.updateTeacher(teacher);
+	public boolean updateTeacher() {
+		Teacher teacher=new Teacher();
+		teacher.setTeacherNo(2);
+		teacher.setGender("女");
+		
+		Department department=new Department();
+		department.setDepartmentId(2);
+		teacher.setDepartment(department);
+		
+		boolean updateByTeacherNo = teacherService.updateByTeacherNo(teacher);
+		
+		System.out.println(updateByTeacherNo);
+		return updateByTeacherNo;
 	}
 	
 	/*@ResponseBody

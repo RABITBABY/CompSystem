@@ -4,19 +4,22 @@
 
   <resultMap id="BaseResultMap" type="com.cs.pojo.Budget">
     <id column="budgetId" jdbcType="INTEGER" property="budgetId" />
-    <result column="comId" jdbcType="INTEGER" property="comId" />
     <result column="subject" jdbcType="VARCHAR" property="subject" />
     <result column="sum" jdbcType="INTEGER" property="sum" />
     <result column="reasons" jdbcType="VARCHAR" property="reasons" />
+    <association property="competition" column="comId" 
+     select="com.cs.dao.competition.CompetitionMapper.selectByComId">  
+       
+    </association>
   </resultMap>
   
   <sql id="Base_Column_List">
-    budgetId, comId, subject, sum, reasons
+    budgetId, competition.comId, subject, sum, reasons
   </sql>
   
   <select id="selectByID" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
-    <include refid="Base_Column_List" />
+    *
     from budget
     where budgetId = #{budgetId,jdbcType=INTEGER}
   </select>
@@ -28,16 +31,16 @@
   </delete>
   
   
-  <insert id="insert" parameterType="com.cs.pojo.Budget">
+  <!-- <insert id="insert" parameterType="com.cs.pojo.Budget">
     insert into budget (budgetId, comId, subject, 
       sum, reasons)
     values (#{budgetId,jdbcType=INTEGER}, #{comId,jdbcType=INTEGER}, #{subject,jdbcType=VARCHAR}, 
       #{sum,jdbcType=INTEGER}, #{reasons,jdbcType=VARCHAR})
-  </insert>
+  </insert> -->
   
   
   
-  <insert id="insertSelective" parameterType="com.cs.pojo.Budget">
+  <!-- <insert id="insertSelective" parameterType="com.cs.pojo.Budget">
     insert into budget
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="budgetId != null">
@@ -103,5 +106,5 @@
       sum = #{sum,jdbcType=INTEGER},
       reasons = #{reasons,jdbcType=VARCHAR}
     where budgetId = #{budgetId,jdbcType=INTEGER}
-  </update>
+  </update> -->
 </mapper>

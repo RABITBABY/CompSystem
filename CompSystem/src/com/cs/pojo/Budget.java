@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class Budget {
     private Integer budgetId;
 
-    private Integer comId;
+    private Competition competition;
 
     private String subject;
 
@@ -14,43 +14,46 @@ public class Budget {
 
     private String reasons;
 
-    public Integer getBudgetId() {
-        return budgetId;
-    }
+	public Integer getBudgetId() {
+		return budgetId;
+	}
 
-    public void setBudgetid(Integer budgetId) {
-        this.budgetId = budgetId;
-    }
+	public void setBudgetId(Integer budgetId) {
+		this.budgetId = budgetId;
+	}
 
-    public Integer getComId() {
-        return comId;
-    }
+	public Competition getCompetition() {
+		return competition;
+	}
 
-    public void setComId(Integer comId) {
-        this.comId = comId;
-    }
+	public void setCompetition(Competition competition) {
+		this.competition = competition;
+	}
 
-    public String getSubject() {
-        return subject;
-    }
+	public String getSubject() {
+		return subject;
+	}
 
-    public void setSubject(String subject) {
-        this.subject = subject == null ? null : subject.trim();
-    }
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
 
-    public Integer getSum() {
-        return sum;
-    }
+	public Integer getSum() {
+		return sum;
+	}
 
-    public void setSum(Integer sum) {
-        this.sum = sum;
-    }
+	public void setSum(Integer sum) {
+		this.sum = sum;
+	}
 
-    public String getReasons() {
-        return reasons;
-    }
+	public String getReasons() {
+		return reasons;
+	}
 
-    public void setReasons(String reasons) {
-        this.reasons = reasons == null ? null : reasons.trim();
-    }
+	public void setReasons(String reasons) {
+		this.reasons = reasons;
+	}
+
+    
+    
 }

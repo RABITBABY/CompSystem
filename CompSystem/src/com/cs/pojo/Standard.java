@@ -10,22 +10,18 @@ public class Standard {
 
     private Prize prize;
 
-    private Integer student;
+    private Integer student;//学生标准
 
-    private Integer teacher;
+    private Integer teacher;//教师标准
 
-    public Integer getStandardId() {
-        return standardId;
-    }
-
-    public void setStandardId(Integer standardId) {
-        this.standardId = standardId;
-    }
-
-
-    public Level getLevel() {
-		return level;
+	public Integer getStandardId() {
+		return standardId;
 	}
+
+	public void setStandardId(Integer standardId) {
+		this.standardId = standardId;
+	}
+
 
 	public void setLevel(Level level) {
 		this.level = level;
@@ -40,20 +36,24 @@ public class Standard {
 	}
 
 	public Integer getStudent() {
-        return student;
-    }
+		return student;
+	}
 
-    public void setStudent(Integer student) {
-        this.student = student;
-    }
+	public void setStudent(Integer student) {
+		this.student = student;
+	}
 
-    public Integer getTeacher() {
-        return teacher;
-    }
+	public Integer getTeacher() {
+		return teacher;
+	}
 
-    public void setTeacher(Integer teacher) {
-        this.teacher = teacher;
-    }
+	public void setTeacher(Integer teacher) {
+		this.teacher = teacher;
+	}
+
+	public Level getLevel() {
+		return level;
+	}
 
 	@Override
 	public String toString() {
@@ -61,5 +61,6 @@ public class Standard {
 				+ ", prize=" + prize + ", student=" + student + ", teacher="
 				+ teacher + "]";
 	}
-    
+	
+	
 }

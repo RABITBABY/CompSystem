@@ -8,9 +8,9 @@
   <sql id="Base_Column_List">
     prizeId, prizeName
   </sql>
-  <select id="selectByID" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrizeId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
-    <include refid="Base_Column_List" />
+    *
     from prize
     where prizeId = #{prizeId,jdbcType=INTEGER}
   </select>

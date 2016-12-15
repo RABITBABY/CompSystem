@@ -13,9 +13,9 @@ public interface TeacherService {
 	Teacher selectByTeacherNo(Integer teacherNo);
 	
 	/**
-	 * 修改教师信息
+	 * 根据教师id修改信息
 	 * @param teacher
+	 * @return
 	 */
-	void updateTeacher(Teacher teacher);
-	
+	boolean updateByTeacherNo(Teacher teacher); 
 }

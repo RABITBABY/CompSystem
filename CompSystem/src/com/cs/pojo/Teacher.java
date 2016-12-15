@@ -13,7 +13,7 @@ public class Teacher {
 
     private Date birth;
 
-    private Integer departmentId;
+    private Department department;
 
     private String subject;
 
@@ -69,15 +69,17 @@ public class Teacher {
         this.birth = birth;
     }
 
-    public Integer getDepartmentId() {
-        return departmentId;
-    }
+    
+   
+    public Department getDepartment() {
+		return department;
+	}
 
-    public void setDepartmentId(Integer departmentId) {
-        this.departmentId = departmentId;
-    }
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
 
-    public String getSubject() {
+	public String getSubject() {
         return subject;
     }
 

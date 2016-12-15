@@ -7,13 +7,17 @@
     <result column="type" jdbcType="VARCHAR" property="type" />
     <result column="hours" jdbcType="INTEGER" property="hours" />
     <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    <association property="competition" column="comId" 
+     select="com.cs.dao.competition.CompetitionMapper.selectByComId">  
+       
+    </association>
   </resultMap>
   <sql id="Base_Column_List">
     hoursId, comId, type, hours, remarks
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByHoursId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
-    <include refid="Base_Column_List" />
+    *
     from hours
     where hoursId = #{hoursId,jdbcType=INTEGER}
   </select>

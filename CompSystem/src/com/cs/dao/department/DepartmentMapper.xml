@@ -9,7 +9,7 @@
     departmentId, departmentName
   </sql>
   
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByDepartId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from department
@@ -17,7 +17,7 @@
   </select>
   
   
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByDepartmentId" parameterType="java.lang.Integer">
     delete from department
     where departmentId = #{departmentId,jdbcType=INTEGER}
   </delete>
@@ -44,7 +44,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Department">
+  
+  <update id="updateByDepartmentIdSelective" parameterType="com.cs.pojo.Department">
     update department
     <set>
       <if test="departmentName != null">
@@ -53,7 +54,8 @@
     </set>
     where departmentId = #{departmentId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Department">
+  
+  <update id="updateByDepartmentId" parameterType="com.cs.pojo.Department">
     update department
     set departmentName = #{departmentName,jdbcType=VARCHAR}
     where departmentId = #{departmentId,jdbcType=INTEGER}

@@ -3,19 +3,25 @@
 <mapper namespace="com.cs.dao.schedule.ScheduleMapper">
   <resultMap id="BaseResultMap" type="com.cs.pojo.Schedule">
     <id column="scheduleId" jdbcType="INTEGER" property="scheduleId" />
-    <result column="comId" jdbcType="INTEGER" property="comId" />
-    <result column="teacherNo" jdbcType="INTEGER" property="teacherNo" />
     <result column="content" jdbcType="VARCHAR" property="content" />
     <result column="position" jdbcType="VARCHAR" property="position" />
     <result column="date" jdbcType="DATE" property="date" />
     <result column="hours" jdbcType="INTEGER" property="hours" />
+    <association property="competition" column="comId" 
+     select="com.cs.dao.competition.CompetitionMapper.selectByComId">  
+       
+    </association>
+    <association property="teacher" column="teacherNo" 
+     select="com.cs.dao.teacher.TeacherMapper.selectByTeacherNo">  
+       
+    </association>
   </resultMap>
   <sql id="Base_Column_List">
     scheduleId, comId, teacherNo, content, position, date, hours
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByScheduleId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
-    <include refid="Base_Column_List" />
+    *
     from schedule
     where scheduleId = #{scheduleId,jdbcType=INTEGER}
   </select>
@@ -23,7 +29,7 @@
     delete from schedule
     where scheduleId = #{scheduleId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.cs.pojo.Schedule">
+ <!--  <insert id="insert" parameterType="com.cs.pojo.Schedule">
     insert into schedule (scheduleId, comId, teacherNo, 
       content, position, date, 
       hours)
@@ -113,5 +119,5 @@
       date = #{date,jdbcType=DATE},
       hours = #{hours,jdbcType=INTEGER}
     where scheduleId = #{scheduleId,jdbcType=INTEGER}
-  </update>
+  </update> -->
 </mapper>

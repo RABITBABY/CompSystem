@@ -9,17 +9,17 @@ public class Competition {
 
     private String comName;
 
-    private Integer teacherNo;
+    private Teacher teacher;
 
     private String unit;
 
-    private Integer levelId;
+    private Level level;
 
     private String phone;
 
     private String email;
 
-    private Integer departmentId;
+    private Department department;
 
     private Date date;
 
@@ -67,251 +67,253 @@ public class Competition {
 
     private Integer status;
 
-    public Integer getComId() {
-        return comId;
-    }
+	public Integer getComId() {
+		return comId;
+	}
 
-    public void setComId(Integer comId) {
-        this.comId = comId;
-    }
+	public void setComId(Integer comId) {
+		this.comId = comId;
+	}
 
-    public String getComName() {
-        return comName;
-    }
+	public String getComName() {
+		return comName;
+	}
 
-    public void setComName(String comName) {
-        this.comName = comName == null ? null : comName.trim();
-    }
+	public void setComName(String comName) {
+		this.comName = comName;
+	}
 
-    public Integer getTeacherNo() {
-        return teacherNo;
-    }
+	public Teacher getTeacher() {
+		return teacher;
+	}
 
-    public void setTeacherNo(Integer teacherNo) {
-        this.teacherNo = teacherNo;
-    }
+	public void setTeacher(Teacher teacher) {
+		this.teacher = teacher;
+	}
 
-    public String getUnit() {
-        return unit;
-    }
+	public String getUnit() {
+		return unit;
+	}
 
-    public void setUnit(String unit) {
-        this.unit = unit == null ? null : unit.trim();
-    }
+	public void setUnit(String unit) {
+		this.unit = unit;
+	}
 
-    public Integer getLevelId() {
-        return levelId;
-    }
+	public Level getLevel() {
+		return level;
+	}
 
-    public void setLevelId(Integer levelId) {
-        this.levelId = levelId;
-    }
+	public void setLevel(Level level) {
+		this.level = level;
+	}
 
-    public String getPhone() {
-        return phone;
-    }
+	public String getPhone() {
+		return phone;
+	}
 
-    public void setPhone(String phone) {
-        this.phone = phone == null ? null : phone.trim();
-    }
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public Integer getDepartmentId() {
-        return departmentId;
-    }
+	public Department getDepartment() {
+		return department;
+	}
 
-    public void setDepartmentId(Integer departmentId) {
-        this.departmentId = departmentId;
-    }
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
 
-    public Date getDate() {
-        return date;
-    }
+	public Date getDate() {
+		return date;
+	}
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
+	public void setDate(Date date) {
+		this.date = date;
+	}
 
-    public String getHost() {
-        return host;
-    }
+	public String getHost() {
+		return host;
+	}
 
-    public void setHost(String host) {
-        this.host = host == null ? null : host.trim();
-    }
+	public void setHost(String host) {
+		this.host = host;
+	}
 
-    public Date getTime() {
-        return time;
-    }
+	public Date getTime() {
+		return time;
+	}
 
-    public void setTime(Date time) {
-        this.time = time;
-    }
+	public void setTime(Date time) {
+		this.time = time;
+	}
 
-    public String getPlace() {
-        return place;
-    }
+	public String getPlace() {
+		return place;
+	}
 
-    public void setPlace(String place) {
-        this.place = place == null ? null : place.trim();
-    }
+	public void setPlace(String place) {
+		this.place = place;
+	}
 
-    public String getIntroduce() {
-        return introduce;
-    }
+	public String getIntroduce() {
+		return introduce;
+	}
 
-    public void setIntroduce(String introduce) {
-        this.introduce = introduce == null ? null : introduce.trim();
-    }
+	public void setIntroduce(String introduce) {
+		this.introduce = introduce;
+	}
 
-    public String getObject() {
-        return object;
-    }
+	public String getObject() {
+		return object;
+	}
 
-    public void setObject(String object) {
-        this.object = object == null ? null : object.trim();
-    }
+	public void setObject(String object) {
+		this.object = object;
+	}
 
-    public Integer getPeople() {
-        return people;
-    }
+	public Integer getPeople() {
+		return people;
+	}
 
-    public void setPeople(Integer people) {
-        this.people = people;
-    }
+	public void setPeople(Integer people) {
+		this.people = people;
+	}
 
-    public String getSponsor() {
-        return sponsor;
-    }
+	public String getSponsor() {
+		return sponsor;
+	}
 
-    public void setSponsor(String sponsor) {
-        this.sponsor = sponsor == null ? null : sponsor.trim();
-    }
+	public void setSponsor(String sponsor) {
+		this.sponsor = sponsor;
+	}
 
-    public String getPlan() {
-        return plan;
-    }
+	public String getPlan() {
+		return plan;
+	}
 
-    public void setPlan(String plan) {
-        this.plan = plan == null ? null : plan.trim();
-    }
+	public void setPlan(String plan) {
+		this.plan = plan;
+	}
 
-    public String getTgoal() {
-        return tgoal;
-    }
+	public String getTgoal() {
+		return tgoal;
+	}
 
-    public void setTgoal(String tgoal) {
-        this.tgoal = tgoal == null ? null : tgoal.trim();
-    }
+	public void setTgoal(String tgoal) {
+		this.tgoal = tgoal;
+	}
 
-    public String getWgoal() {
-        return wgoal;
-    }
+	public String getWgoal() {
+		return wgoal;
+	}
 
-    public void setWgoal(String wgoal) {
-        this.wgoal = wgoal == null ? null : wgoal.trim();
-    }
+	public void setWgoal(String wgoal) {
+		this.wgoal = wgoal;
+	}
 
-    public String getSopinion() {
-        return sopinion;
-    }
+	public String getSopinion() {
+		return sopinion;
+	}
 
-    public void setSopinion(String sopinion) {
-        this.sopinion = sopinion == null ? null : sopinion.trim();
-    }
+	public void setSopinion(String sopinion) {
+		this.sopinion = sopinion;
+	}
 
-    public String getSlsign() {
-        return slsign;
-    }
+	public String getSlsign() {
+		return slsign;
+	}
 
-    public void setSlsign(String slsign) {
-        this.slsign = slsign == null ? null : slsign.trim();
-    }
+	public void setSlsign(String slsign) {
+		this.slsign = slsign;
+	}
 
-    public Date getSlsdate() {
-        return slsdate;
-    }
+	public Date getSlsdate() {
+		return slsdate;
+	}
 
-    public void setSlsdate(Date slsdate) {
-        this.slsdate = slsdate;
-    }
+	public void setSlsdate(Date slsdate) {
+		this.slsdate = slsdate;
+	}
 
-    public String getUopinion() {
-        return uopinion;
-    }
+	public String getUopinion() {
+		return uopinion;
+	}
 
-    public void setUopinion(String uopinion) {
-        this.uopinion = uopinion == null ? null : uopinion.trim();
-    }
+	public void setUopinion(String uopinion) {
+		this.uopinion = uopinion;
+	}
 
-    public String getDsign() {
-        return dsign;
-    }
+	public String getDsign() {
+		return dsign;
+	}
 
-    public void setDsign(String dsign) {
-        this.dsign = dsign == null ? null : dsign.trim();
-    }
+	public void setDsign(String dsign) {
+		this.dsign = dsign;
+	}
 
-    public Date getDsdate() {
-        return dsdate;
-    }
+	public Date getDsdate() {
+		return dsdate;
+	}
 
-    public void setDsdate(Date dsdate) {
-        this.dsdate = dsdate;
-    }
+	public void setDsdate(Date dsdate) {
+		this.dsdate = dsdate;
+	}
 
-    public String getTdopinion() {
-        return tdopinion;
-    }
+	public String getTdopinion() {
+		return tdopinion;
+	}
 
-    public void setTdopinion(String tdopinion) {
-        this.tdopinion = tdopinion == null ? null : tdopinion.trim();
-    }
+	public void setTdopinion(String tdopinion) {
+		this.tdopinion = tdopinion;
+	}
 
-    public String getOlsign() {
-        return olsign;
-    }
+	public String getOlsign() {
+		return olsign;
+	}
 
-    public void setOlsign(String olsign) {
-        this.olsign = olsign == null ? null : olsign.trim();
-    }
+	public void setOlsign(String olsign) {
+		this.olsign = olsign;
+	}
 
-    public Date getOlsdate() {
-        return olsdate;
-    }
+	public Date getOlsdate() {
+		return olsdate;
+	}
 
-    public void setOlsdate(Date olsdate) {
-        this.olsdate = olsdate;
-    }
+	public void setOlsdate(Date olsdate) {
+		this.olsdate = olsdate;
+	}
 
-    public String getLsign() {
-        return lsign;
-    }
+	public String getLsign() {
+		return lsign;
+	}
 
-    public void setLsign(String lsign) {
-        this.lsign = lsign == null ? null : lsign.trim();
-    }
+	public void setLsign(String lsign) {
+		this.lsign = lsign;
+	}
 
-    public Date getLsdate() {
-        return lsdate;
-    }
+	public Date getLsdate() {
+		return lsdate;
+	}
 
-    public void setLsdate(Date lsdate) {
-        this.lsdate = lsdate;
-    }
+	public void setLsdate(Date lsdate) {
+		this.lsdate = lsdate;
+	}
 
-    public Integer getStatus() {
-        return status;
-    }
+	public Integer getStatus() {
+		return status;
+	}
 
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
+   
 }
