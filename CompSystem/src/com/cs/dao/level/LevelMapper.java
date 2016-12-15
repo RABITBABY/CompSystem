@@ -3,15 +3,15 @@ package com.cs.dao.level;
 import com.cs.pojo.Level;
 
 public interface LevelMapper {
-    int deleteByPrimaryKey(Integer levelid);
+    int deleteByID(Integer levelid);
 
     int insert(Level record);
 
     int insertSelective(Level record);
 
-    Level selectByPrimaryKey(Integer levelid);
+    Level selectByID(Integer levelid);
 
-    int updateByPrimaryKeySelective(Level record);
+    int updateByIDSelective(Level record);
 
-    int updateByPrimaryKey(Level record);
+    int updateByID(Level record);
 }

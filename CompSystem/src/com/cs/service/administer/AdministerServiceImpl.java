@@ -13,9 +13,9 @@ public class AdministerServiceImpl implements AdministerService{
 	
 	@Override
 	public Administer IsAdmin(String adminNo) {
-		
-		
-		return null;
+		Administer admin=adminMap.selectByID(adminNo);
+		return admin;
 	}
+
 
 }

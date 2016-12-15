@@ -6,21 +6,21 @@
     <id column="adminNo" jdbcType="VARCHAR" property="adminNo" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="adminName" jdbcType="VARCHAR" property="adminName" />
-    <result column="departmentId" jdbcType="INTEGER" property="departmentId" />
- 
+    <association property="department" column="departmentId" 
+    select="com.cs.dao.department.DepartmentMapper.selectByPrimaryKey" />
   </resultMap>
   
   
   <sql id="Base_Column_List">
-    adminNo, password, adminName, departmentId
+    adminNo, password, adminName, department
   </sql>
   
   
   <select id="selectByID" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
+    select   *
     from administer
     where adminNo = #{adminNo,jdbcType=VARCHAR}
+    
   </select>
 
   

@@ -3,21 +3,26 @@
 <mapper namespace="com.cs.dao.standard.StandardMapper">
   <resultMap id="BaseResultMap" type="com.cs.pojo.Standard">
     <id column="standardId" jdbcType="INTEGER" property="standardId" />
-    <result column="levelId" jdbcType="INTEGER" property="levelId" />
-    <result column="prizeId" jdbcType="INTEGER" property="prizeId" />
     <result column="student" jdbcType="INTEGER" property="student" />
     <result column="teacher" jdbcType="INTEGER" property="teacher" />
+    
+     <association property="level" column="levelId"  
+    select="com.cs.dao.level.LevelMapper.selectByID" />
+    
+     <association property="prize" column="prizeId"  
+    select="com.cs.dao.prize.PrizeMapper.selectByID" />
+    
   </resultMap>
   <sql id="Base_Column_List">
     standardId, levelId, prizeId, student, teacher
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
+  
+  <select id="selectByID" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select *
     from standard
     where standardId = #{standardId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <!-- <delete id="deleteByID" parameterType="java.lang.Integer">
     delete from standard
     where standardId = #{standardId,jdbcType=INTEGER}
   </delete>
@@ -64,7 +69,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Standard">
+  <update id="updateByIDSelective" parameterType="com.cs.pojo.Standard">
     update standard
     <set>
       <if test="levelId != null">
@@ -82,12 +87,12 @@
     </set>
     where standardId = #{standardId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Standard">
+  <update id="updateByID" parameterType="com.cs.pojo.Standard">
     update standard
     set levelId = #{levelId,jdbcType=INTEGER},
       prizeId = #{prizeId,jdbcType=INTEGER},
       student = #{student,jdbcType=INTEGER},
       teacher = #{teacher,jdbcType=INTEGER}
     where standardId = #{standardId,jdbcType=INTEGER}
-  </update>
+  </update> -->
 </mapper>

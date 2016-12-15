@@ -7,4 +7,6 @@ import com.cs.pojo.Administer;
 public interface AdministerService {
 
 	public Administer IsAdmin(String adminNo);
+	
+	
 }

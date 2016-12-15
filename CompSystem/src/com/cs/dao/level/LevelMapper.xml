@@ -8,13 +8,13 @@
   <sql id="Base_Column_List">
     levelId, levelName
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByID" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from level
     where levelId = #{levelId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByID" parameterType="java.lang.Integer">
     delete from level
     where levelId = #{levelId,jdbcType=INTEGER}
   </delete>
@@ -41,7 +41,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Level">
+  <update id="updateByIDSelective" parameterType="com.cs.pojo.Level">
     update level
     <set>
       <if test="levelName != null">
@@ -50,7 +50,7 @@
     </set>
     where levelId = #{levelId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Level">
+  <update id="updateByID" parameterType="com.cs.pojo.Level">
     update level
     set levelName = #{levelName,jdbcType=VARCHAR}
     where levelId = #{levelId,jdbcType=INTEGER}

@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 public class Standard {
     private Integer standardId;
 
-    private Integer levelId;
+    private Level level;
 
-    private Integer prizeId;
+    private Prize prize;
 
     private Integer student;
 
@@ -22,23 +22,24 @@ public class Standard {
         this.standardId = standardId;
     }
 
-    public Integer getLevelId() {
-        return levelId;
-    }
 
-    public void setLevelId(Integer levelId) {
-        this.levelId = levelId;
-    }
+    public Level getLevel() {
+		return level;
+	}
 
-    public Integer getPrizeId() {
-        return prizeId;
-    }
+	public void setLevel(Level level) {
+		this.level = level;
+	}
 
-    public void setPrizeId(Integer prizeId) {
-        this.prizeId = prizeId;
-    }
+	public Prize getPrize() {
+		return prize;
+	}
 
-    public Integer getStudent() {
+	public void setPrize(Prize prize) {
+		this.prize = prize;
+	}
+
+	public Integer getStudent() {
         return student;
     }
 
@@ -53,4 +54,12 @@ public class Standard {
     public void setTeacher(Integer teacher) {
         this.teacher = teacher;
     }
+
+	@Override
+	public String toString() {
+		return "Standard [standardId=" + standardId + ", level=" + level
+				+ ", prize=" + prize + ", student=" + student + ", teacher="
+				+ teacher + "]";
+	}
+    
 }
