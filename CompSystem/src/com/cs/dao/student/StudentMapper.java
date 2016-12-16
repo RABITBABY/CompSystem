@@ -11,6 +11,11 @@ public interface StudentMapper {
 
     int insertSelective(Student record);
 
+    /**
+     * 根据学号no查询学生信息
+     * @param studentno
+     * @return
+     */
     Student selectByStudentNo(Integer studentno);
     
 

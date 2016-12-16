@@ -40,7 +40,7 @@ public class TeacherController {
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping("/getInfo.do")
+	@RequestMapping("/getInfo")
 	public Teacher getInfo(){
 		//使用session获取登录的教师，此处先使用假的老师:1号
 		Teacher teacherInfo = teacherService.selectByTeacherNo(1);
@@ -51,7 +51,7 @@ public class TeacherController {
 	 * 修改教师信息
 	 */
 	@ResponseBody
-	@RequestMapping("/updateInfo.do")
+	@RequestMapping("/updateInfo")
 	public boolean updateTeacher() {
 		Teacher teacher=new Teacher();
 		teacher.setTeacherNo(2);

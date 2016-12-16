@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.cs.pojo.Awards;
 import com.cs.pojo.Competition;
+import com.cs.pojo.Condition;
 import com.cs.pojo.Material;
 import com.cs.pojo.Project;
 import com.cs.pojo.Student;
@@ -32,6 +33,13 @@ public interface StudentService {
 	List<Material> getMaterials(Integer studentNo);
 	
 	/**
+	 * 根据学号查找符合的条件
+	 * @param studentNo
+	 * @return
+	 */
+	List<Condition> getConditions(Integer studentNo);
+	
+	/**
 	 * 根据学号查找报名的竞赛
 	 * @param studentNo
 	 * @return
@@ -44,5 +52,13 @@ public interface StudentService {
 	 * @return
 	 */
 	List<Awards> selectAwardsByStudentNo(Integer studentNo);
+	
+	
+	/**
+	 * 根据学号查询学生信息
+	 * @param studentNo
+	 * @return
+	 */
+	Student selectByStudentNo(Integer studentNo);
 	
 }

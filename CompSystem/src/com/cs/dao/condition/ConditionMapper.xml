@@ -12,6 +12,14 @@
 		select *
 		from conditions where conditionId =#{conditionId,jdbcType=INTEGER}
 	</select>
+	<!-- 通过studentNo 查找通过审核的条件 -->
+	<select id="selectPassConditions" parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
+		select
+		c.conditionId,c.conditionName,c.type
+		from conditions c join material m  on  m.conditionId=c.conditionId
+		where studentNo=#{studentNo,jdbcType=INTEGER} and status =1
+	</select>
 
 
 </mapper>

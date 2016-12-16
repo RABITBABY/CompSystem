@@ -6,6 +6,7 @@
 		<id column="materialId" jdbcType="INTEGER" property="materialId" />
 		<result column="materialName" jdbcType="VARCHAR" property="materialName" />
 		<result column="materialPic" jdbcType="VARCHAR" property="materialPic" />
+		<result column="status" jdbcType="INTEGER" property="status" />
 		<association property="student" column="studentNo"
 			select="com.cs.dao.student.StudentMapper.selectByStudentNo">
 		</association>
@@ -19,6 +20,7 @@
 	<sql id="Base_Column_List">
 		materialId, studentNo, materialName, materialPic
 	</sql>
+
 	<select id="selectByMaterialId" parameterType="java.lang.Integer"
 		resultMap="BaseResultMap">
 		select
@@ -28,23 +30,26 @@
 		#{materialId,jdbcType=INTEGER}
 	</select>
 	
+	
+	
 
 	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
 		delete from
 		material
 		where materialId = #{materialId,jdbcType=INTEGER}
 	</delete>
-
+	<!-- 根据学号查找材料 -->
 	<select id="selectByStudentNo" parameterType="java.lang.Integer"
-		resultMap="StudentBaseResult">
+		resultMap="BaseResultMap">
 		select
-		*
+		materialId,conditionId,materialPic,status
 		from material
 		where studentNo=
 		#{studentNo,jdbcType=INTEGER}
 	</select>
+	
 
-	<resultMap type="com.cs.pojo.Student" id="StudentBaseResult">
+<!-- 	<resultMap type="com.cs.pojo.Student" id="StudentBaseResult">
 		<id column="studentNo" property="studentNo" />
 		<collection property="materials" ofType="com.cs.pojo.Material">
 			<id column="materialId" property="materialId" />
@@ -59,7 +64,7 @@
 		<collection property="conditions" ofType="com.cs.pojo.Condition">
 			<id column="conditionId" property="conditionId" />
 		</collection>
-	</resultMap>
+	</resultMap> -->
 
 
 	<!-- <insert id="insert" parameterType="com.cs.pojo.Material"> insert into 

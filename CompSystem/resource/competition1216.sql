@@ -1,22 +1,22 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : hw
-Source Server Version : 50614
-Source Host           : localhost:3306
+Source Server         : study
+Source Server Version : 50619
+Source Host           : 127.0.0.1:3306
 Source Database       : competition
 
 Target Server Type    : MYSQL
-Target Server Version : 50614
+Target Server Version : 50619
 File Encoding         : 65001
 
-Date: 2016-12-15 11:05:55
+Date: 2016-12-16 19:31:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `administer`
+-- Table structure for administer
 -- ----------------------------
 DROP TABLE IF EXISTS `administer`;
 CREATE TABLE `administer` (
@@ -38,13 +38,13 @@ INSERT INTO `administer` VALUES ('201306114450', '111111', null, null);
 INSERT INTO `administer` VALUES ('201306114451', '000000', null, null);
 
 -- ----------------------------
--- Table structure for `article`
+-- Table structure for article
 -- ----------------------------
 DROP TABLE IF EXISTS `article`;
 CREATE TABLE `article` (
   `articleId` int(11) NOT NULL AUTO_INCREMENT COMMENT '序号',
   `title` varchar(100) DEFAULT NULL COMMENT '标题',
-  `content` text COMMENT '内容',
+  `content` mediumtext COMMENT '内容',
   `pubDate` datetime DEFAULT NULL COMMENT '发布日期',
   `pubUser` varchar(50) DEFAULT NULL COMMENT '发布用户',
   `articleType` int(30) DEFAULT NULL COMMENT '发布的类型（1--竞赛信息,2—动态,3—预告）\r\n',
@@ -78,7 +78,7 @@ INSERT INTO `article` VALUES ('44', 'App设计大赛开始报名啦~~3', '<p>&nb
 INSERT INTO `article` VALUES ('45', 'App设计大赛开始报名啦~~3', '<p>&nbsp; app设计大赛是有广州商学院举办的创新创意大赛，只要你有好的创意，好的构思，你就是最棒的！！快来展示你的大脑洞</p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p style=\"text-align: right;\">&nbsp;&nbsp;&nbsp;&nbsp;竞赛负责老师：王新宗 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br/></p><p style=\"text-align: right;\">&nbsp; &nbsp; 竞赛主办单位：信息技术与工程学院 &nbsp;&nbsp;<br/></p><p style=\"text-align: right;\">&nbsp; &nbsp;竞赛报名时间：2016.12.25--2016.12.30&nbsp;</p>', '2016-12-06 00:00:00', '12345', '3', null);
 
 -- ----------------------------
--- Table structure for `awards`
+-- Table structure for awards
 -- ----------------------------
 DROP TABLE IF EXISTS `awards`;
 CREATE TABLE `awards` (
@@ -97,10 +97,10 @@ CREATE TABLE `awards` (
   KEY `FKAC40D1B68EA1F525` (`prizeId`),
   KEY `FKAC40D1B6A549AF89` (`levelId`),
   KEY `FKAC40D1B6EDBA9C01` (`comId`),
-  CONSTRAINT `FKAC40D1B6EDBA9C01` FOREIGN KEY (`comId`) REFERENCES `project` (`comId`),
   CONSTRAINT `FKAC40D1B68EA1F525` FOREIGN KEY (`prizeId`) REFERENCES `prize` (`prizeId`),
   CONSTRAINT `FKAC40D1B69954ECC3` FOREIGN KEY (`groupsNo`) REFERENCES `groups` (`groupsNo`),
-  CONSTRAINT `FKAC40D1B6A549AF89` FOREIGN KEY (`levelId`) REFERENCES `level` (`levelId`)
+  CONSTRAINT `FKAC40D1B6A549AF89` FOREIGN KEY (`levelId`) REFERENCES `level` (`levelId`),
+  CONSTRAINT `FKAC40D1B6EDBA9C01` FOREIGN KEY (`comId`) REFERENCES `project` (`comId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -110,7 +110,7 @@ INSERT INTO `awards` VALUES ('1', '3', '美术杯', '2016-11-15', '甲骨文公�
 INSERT INTO `awards` VALUES ('2', '3', '美术杯', '2016-11-21', '蓝桥杯公司', '1', '2', '2', '0');
 
 -- ----------------------------
--- Table structure for `budget`
+-- Table structure for budget
 -- ----------------------------
 DROP TABLE IF EXISTS `budget`;
 CREATE TABLE `budget` (
@@ -131,7 +131,7 @@ CREATE TABLE `budget` (
 INSERT INTO `budget` VALUES ('1', '1', '车费', '100', '赛场远');
 
 -- ----------------------------
--- Table structure for `competition`
+-- Table structure for competition
 -- ----------------------------
 DROP TABLE IF EXISTS `competition`;
 CREATE TABLE `competition` (
@@ -187,25 +187,24 @@ INSERT INTO `competition` VALUES ('5', '大数据比赛', '1', '信息技术与�
 INSERT INTO `competition` VALUES ('6', '小数据比赛', '1', '信息技术与工程学院', '1', '111222', 'b@qq.com', '1', '2016-11-06', '小马哥', '2016-11-29', '华农', '好玩的比赛', '计算机系学生', '2', '娇兰佳人', '就这么干吧', '就这么干吧', '要达到这个目标', null, null, null, null, null, null, null, null, null, null, null, '0');
 
 -- ----------------------------
--- Table structure for `conditions`
+-- Table structure for conditions
 -- ----------------------------
 DROP TABLE IF EXISTS `conditions`;
 CREATE TABLE `conditions` (
   `conditionId` int(11) NOT NULL AUTO_INCREMENT,
   `conditionName` varchar(255) DEFAULT NULL,
-  `type` int(11) DEFAULT NULL COMMENT '0.默认，给予选择的。1.需要上传图片的  2.根据系别',
+  `type` int(11) DEFAULT NULL COMMENT '0.需要上传图片的  1.根据系别',
   PRIMARY KEY (`conditionId`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of conditions
 -- ----------------------------
 INSERT INTO `conditions` VALUES ('1', '学生证', '0');
-INSERT INTO `conditions` VALUES ('2', '2证书', '0');
-INSERT INTO `conditions` VALUES ('3', '3证书', '0');
+INSERT INTO `conditions` VALUES ('2', '无敌证', '0');
 
 -- ----------------------------
--- Table structure for `department`
+-- Table structure for department
 -- ----------------------------
 DROP TABLE IF EXISTS `department`;
 CREATE TABLE `department` (
@@ -223,7 +222,7 @@ INSERT INTO `department` VALUES ('3', '会计系');
 INSERT INTO `department` VALUES ('4', '教学处');
 
 -- ----------------------------
--- Table structure for `fileupload`
+-- Table structure for fileupload
 -- ----------------------------
 DROP TABLE IF EXISTS `fileupload`;
 CREATE TABLE `fileupload` (
@@ -242,7 +241,7 @@ CREATE TABLE `fileupload` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `groups`
+-- Table structure for groups
 -- ----------------------------
 DROP TABLE IF EXISTS `groups`;
 CREATE TABLE `groups` (
@@ -272,7 +271,7 @@ INSERT INTO `groups` VALUES ('4', '2', '二货', '1', '3');
 INSERT INTO `groups` VALUES ('5', '3', '无敌', '1', '0');
 
 -- ----------------------------
--- Table structure for `groupsdetail`
+-- Table structure for groupsdetail
 -- ----------------------------
 DROP TABLE IF EXISTS `groupsdetail`;
 CREATE TABLE `groupsdetail` (
@@ -299,7 +298,7 @@ INSERT INTO `groupsdetail` VALUES ('5', '4', '1');
 INSERT INTO `groupsdetail` VALUES ('6', '4', '2');
 
 -- ----------------------------
--- Table structure for `guideteacher`
+-- Table structure for guideteacher
 -- ----------------------------
 DROP TABLE IF EXISTS `guideteacher`;
 CREATE TABLE `guideteacher` (
@@ -322,7 +321,7 @@ INSERT INTO `guideteacher` VALUES ('2', '1', '2');
 INSERT INTO `guideteacher` VALUES ('3', '2', '1');
 
 -- ----------------------------
--- Table structure for `hours`
+-- Table structure for hours
 -- ----------------------------
 DROP TABLE IF EXISTS `hours`;
 CREATE TABLE `hours` (
@@ -343,7 +342,7 @@ CREATE TABLE `hours` (
 INSERT INTO `hours` VALUES ('1', '1', '基础课程', '2', '无');
 
 -- ----------------------------
--- Table structure for `level`
+-- Table structure for level
 -- ----------------------------
 DROP TABLE IF EXISTS `level`;
 CREATE TABLE `level` (
@@ -361,29 +360,28 @@ INSERT INTO `level` VALUES ('3', '市级');
 INSERT INTO `level` VALUES ('4', '校级 ');
 
 -- ----------------------------
--- Table structure for `material`
+-- Table structure for material
 -- ----------------------------
 DROP TABLE IF EXISTS `material`;
 CREATE TABLE `material` (
   `materialId` int(11) NOT NULL AUTO_INCREMENT COMMENT '序号',
   `studentNo` int(11) DEFAULT NULL COMMENT '学号',
-  `conditionId` int(11) DEFAULT NULL COMMENT '条件id',
-  `materialName` varchar(50) DEFAULT NULL COMMENT '材料名称',
+  `conditionId` int(11) DEFAULT NULL,
   `materialPic` varchar(50) DEFAULT NULL COMMENT '材料图片',
+  `status` int(255) DEFAULT NULL COMMENT '材料审核状态。0未通过，1通过',
   PRIMARY KEY (`materialId`),
   KEY `FK11D36527F2872A5D` (`studentNo`),
   CONSTRAINT `FK11D36527F2872A5D` FOREIGN KEY (`studentNo`) REFERENCES `student` (`studentNo`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of material
 -- ----------------------------
-INSERT INTO `material` VALUES ('1', '1', '1', '学生证', null);
-INSERT INTO `material` VALUES ('2', '1', '2', '3证书', null);
-INSERT INTO `material` VALUES ('3', '1', '3', '2证书', null);
+INSERT INTO `material` VALUES ('1', '1', '1', null, '0');
+INSERT INTO `material` VALUES ('2', '1', '2', null, '0');
 
 -- ----------------------------
--- Table structure for `prize`
+-- Table structure for prize
 -- ----------------------------
 DROP TABLE IF EXISTS `prize`;
 CREATE TABLE `prize` (
@@ -401,7 +399,7 @@ INSERT INTO `prize` VALUES ('3', '三等奖');
 INSERT INTO `prize` VALUES ('4', '优秀奖');
 
 -- ----------------------------
--- Table structure for `production`
+-- Table structure for production
 -- ----------------------------
 DROP TABLE IF EXISTS `production`;
 CREATE TABLE `production` (
@@ -424,7 +422,7 @@ INSERT INTO `production` VALUES ('2', '四则运算App', '不知道什么比赛�
 INSERT INTO `production` VALUES ('3', '数据统计小程序', '剁手赛之优秀奖', '李尚、王湾', '数据分析', '007b2653-5fae-4d9c-ba57-4aad6873dd8f.png');
 
 -- ----------------------------
--- Table structure for `project`
+-- Table structure for project
 -- ----------------------------
 DROP TABLE IF EXISTS `project`;
 CREATE TABLE `project` (
@@ -455,7 +453,7 @@ INSERT INTO `project` VALUES ('3', '美术杯', '2', null, null, null, '2016-01-
 INSERT INTO `project` VALUES ('4', '小马哥杯', '1', null, null, null, null, null, '2016-07-08', '200.00', '1', '0', '0');
 
 -- ----------------------------
--- Table structure for `projectcondition`
+-- Table structure for projectcondition
 -- ----------------------------
 DROP TABLE IF EXISTS `projectcondition`;
 CREATE TABLE `projectcondition` (
@@ -470,9 +468,10 @@ CREATE TABLE `projectcondition` (
 -- ----------------------------
 -- Records of projectcondition
 -- ----------------------------
+INSERT INTO `projectcondition` VALUES ('1', '1');
 
 -- ----------------------------
--- Table structure for `schedule`
+-- Table structure for schedule
 -- ----------------------------
 DROP TABLE IF EXISTS `schedule`;
 CREATE TABLE `schedule` (
@@ -498,7 +497,7 @@ CREATE TABLE `schedule` (
 INSERT INTO `schedule` VALUES ('1', '1', '1', 'java基础', 'A栋202', '2016-12-18', '2');
 
 -- ----------------------------
--- Table structure for `standard`
+-- Table structure for standard
 -- ----------------------------
 DROP TABLE IF EXISTS `standard`;
 CREATE TABLE `standard` (
@@ -520,7 +519,7 @@ CREATE TABLE `standard` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `student`
+-- Table structure for student
 -- ----------------------------
 DROP TABLE IF EXISTS `student`;
 CREATE TABLE `student` (
@@ -546,7 +545,7 @@ INSERT INTO `student` VALUES ('1', 'max', '女', '1', '商业软件工程', '1',
 INSERT INTO `student` VALUES ('2', 'huanwen', '女', '1', '商业软件工程', '1', '2013', '18829839888', '53635657@qq.com', '111111');
 
 -- ----------------------------
--- Table structure for `teacher`
+-- Table structure for teacher
 -- ----------------------------
 DROP TABLE IF EXISTS `teacher`;
 CREATE TABLE `teacher` (
@@ -576,5 +575,5 @@ CREATE TABLE `teacher` (
 -- Records of teacher
 -- ----------------------------
 INSERT INTO `teacher` VALUES ('1', 'max', null, null, '1', null, null, '外聘老师', '助教', null, null, null, null, '0', '123456', '1');
-INSERT INTO `teacher` VALUES ('2', 'admin', null, null, '1', null, null, '', '助教', null, null, null, null, '0', '000000', '0');
+INSERT INTO `teacher` VALUES ('2', 'admin', '女', null, '2', null, null, '', '助教', null, null, null, null, '0', '000000', '0');
 INSERT INTO `teacher` VALUES ('3', 'hw', null, null, '4', null, null, '教学处老师', '教师', null, null, null, null, '0', '123', '1');

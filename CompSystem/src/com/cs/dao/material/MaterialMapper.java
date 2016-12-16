@@ -12,8 +12,8 @@ public interface MaterialMapper {
 	 * @param conditionId
 	 * @return
 	 */
-	Student selectByStudentNo(Integer studentNo);
-	
+	List<Material> selectByStudentNo(Integer studentNo);
+		
     int deleteByPrimaryKey(Integer materialid);
 
     int insert(Material record);
