@@ -26,13 +26,6 @@ public interface StudentService {
 	Student selectByNo(int studentNo);
 	
 	/**
-	 * 根据学号查找材料
-	 * @param studentNo
-	 * @return
-	 */
-	List<Material> getMaterials(Integer studentNo);
-	
-	/**
 	 * 根据学号查找符合的条件
 	 * @param studentNo
 	 * @return
@@ -53,12 +46,12 @@ public interface StudentService {
 	 */
 	List<Awards> selectAwardsByStudentNo(Integer studentNo);
 	
-	
 	/**
-	 * 根据学号查询学生信息
+	 * 根据学号查询学生详细信息，包括材料等。
 	 * @param studentNo
 	 * @return
 	 */
-	Student selectByStudentNo(Integer studentNo);
+	Student selectMaterialByNo(Integer studentNo);
+	
 	
 }

@@ -43,11 +43,6 @@ public class StudentServiceImpl implements StudentService {
 		return stuMapper.selectByStudentNo(studentNo);
 	}
 
-	@Override
-	public List<Material> getMaterials(Integer studentNo) {
-		List<Material> materials = materialMapper.selectByStudentNo(studentNo);
-		return materials;
-	}
 
 	@Override
 	public List<Project> selectCompByStudentNo(Integer studentNo) {
@@ -60,14 +55,15 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public Student selectByStudentNo(Integer studentNo) {
-	   return stuMapper.selectByStudentNo(studentNo);
-	}
-
-	@Override
 	public List<Condition> getConditions(Integer studentNo) {
 		List<Condition> conditions = conditionMapper.selectPassConditions(studentNo);
 		return conditions;
+	}
+
+	@Override
+	public Student selectMaterialByNo(Integer studentNo) {
+		Student student = stuMapper.selectMaterialByNo(studentNo);
+		return student;
 	}
 
 }

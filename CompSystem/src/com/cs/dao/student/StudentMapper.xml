@@ -15,6 +15,17 @@
     <association property="department" column="departmentId" 
      select="com.cs.dao.department.DepartmentMapper.selectByDepartId">  
     </association>
+    
+    <collection property="materials" ofType="com.cs.pojo.Material">  
+       <id column="materialId" jdbcType="INTEGER" property="materialId" />
+       <result column="materialName" jdbcType="VARCHAR" property="materialName" />
+       <result column="materialPic" jdbcType="VARCHAR" property="materialPic" />
+       <result column="status" jdbcType="VARCHAR" property="status" />
+       <association property="condition" column="conditionId"
+			select="com.cs.dao.condition.ConditionMapper.selectByConditionId">
+		</association>
+    </collection>
+ 
   </resultMap>
   <sql id="Base_Column_List">
     studentNo, studentName, gender, departmentId, profession, classNo, grade, phone, 
@@ -23,9 +34,20 @@
   <select id="selectByStudentNo" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     *
-    from student
+    from student 
     where studentNo = #{studentNo,jdbcType=INTEGER}
   </select>
+  
+  <select id="selectMaterialByNo" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    s.studentNo, studentName, gender, departmentId, profession, classNo, grade, phone, 
+    email,m.materialId,conditionId,materialPic,status
+    from student s 
+    join material m on s.studentNo=m.studentNo 
+    where s.studentNo = #{studentNo,jdbcType=INTEGER}
+  </select>
+  
+  
   <delete id="deleteByID" parameterType="java.lang.Integer">
     delete from student
     where studentNo = #{studentNo,jdbcType=INTEGER}

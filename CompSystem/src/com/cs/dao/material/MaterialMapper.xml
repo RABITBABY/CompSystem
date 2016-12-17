@@ -7,9 +7,9 @@
 		<result column="materialName" jdbcType="VARCHAR" property="materialName" />
 		<result column="materialPic" jdbcType="VARCHAR" property="materialPic" />
 		<result column="status" jdbcType="INTEGER" property="status" />
-		<association property="student" column="studentNo"
+		<!-- <association property="student" column="studentNo"
 			select="com.cs.dao.student.StudentMapper.selectByStudentNo">
-		</association>
+		</association> -->
 		<association property="condition" column="conditionId"
 			select="com.cs.dao.condition.ConditionMapper.selectByConditionId">
 		</association>

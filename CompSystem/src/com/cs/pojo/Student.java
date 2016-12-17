@@ -25,18 +25,7 @@ public class Student {
     
     private List<Material> materials;
     
-    private List<Condition> conditions;
-    
-    
-    
-    public List<Condition> getConditions() {
-		return conditions;
-	}
-
-	public void setConditions(List<Condition> conditions) {
-		this.conditions = conditions;
-	}
-
+   
 	public List<Material> getMaterials() {
 		return materials;
 	}

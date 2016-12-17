@@ -19,6 +19,7 @@ import com.cs.pojo.Budget;
 import com.cs.pojo.Competition;
 import com.cs.pojo.Condition;
 import com.cs.pojo.Department;
+import com.cs.pojo.Groups;
 import com.cs.pojo.Hours;
 import com.cs.pojo.Material;
 import com.cs.pojo.Project;
@@ -35,31 +36,9 @@ public class StudentController {
 	
 	@Autowired
 	private StudentService studentService;
-	
+		
 	/**
-	 * 获取学生材料信息：
-	 * @return
-	 */
-	@ResponseBody
-	@RequestMapping("/getMaterials")
-	public List<Material> getMaterials(@Param("studentNo") Integer studentNo){
-		List<Material> materials = studentService.getMaterials(studentNo);
-		return materials;
-	}
-	
-	/**
-	 * 获取学生参数满足的条件：状态为1
-	 * @return
-	 */
-	@ResponseBody
-	@RequestMapping("/getConditions")
-	public List<Condition> getConditions(@Param("studentNo") Integer studentNo){
-		List<Condition> conditions = studentService.getConditions(studentNo);
-		return conditions;
-	}
-	
-	/**
-	 * 获取学生报名的比赛
+	 * 获取学生已经报名的比赛
 	 * @return
 	 */
 	@ResponseBody
@@ -80,15 +59,98 @@ public class StudentController {
 		return awards;
 	}
 	
+	
 	/**
-	 * 获取学生信息
+	 * 获取学生信息:包括基本信息和材料（包括已审批和等待审批）
 	 * @param studentNo
 	 * @return
 	 */
 	@ResponseBody
 	@RequestMapping("/getStuInfo")
 	public Student getStuInfo(@Param("studentNo") Integer studentNo){
-		return studentService.selectByStudentNo(studentNo);
+		return studentService.selectMaterialByNo(studentNo);
+	}
+	
+	/**
+	 * 学生报名竞赛：
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/toEntered")
+	public void toEntered(@Param("comId") Integer comId,@Param("studentNo") Integer studentNo){
+		//拿到竞赛id,找到竞赛所需的条件
+		
+		//根据学生id，找到符合的条件
+		//比较，找出不满足的条件返回。
+		/**
+		 * class A{
+		 *   isGroup:是否需要组队
+		 *   a:判断是否符合条件。
+		 *   List<Teacher>：指导老师
+		 *   
+		 * }
+		 * 
+		 * 拿到竞赛id,找到竞赛所需的条件
+		 * if(竞赛所需的条件.type=1){//根据系别
+		 *    判断学生的系别是否符合
+		 *    if(不符合)--return 0;//系别不符合
+		 *    if(符合){
+		 *       if(竞赛所需的条件.type=0){//需要上传的图片的类型。
+		 *           判断是否符合所需条件。
+		 *           if(不符合){
+		 *             返回，-1;//其他条件不符合
+		 *           }else{
+		 *             //符合，那么判断该比赛是否可以组队，
+		 *             if(可以组队)
+		 *             {
+		 *                return Aclass;
+		 *             }
+		 *             else(不可以返回2){
+		 *             
+		 *             }
+           
+		 *           }
+		 *           
+		 *       }
+		 *    }
+		 * }
+		 *
+		 */
+		
+		
+	}
+	
+	
+	/**
+	 * 保存学生报名信息。
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/saveEntered")
+	public void saveEntered(Groups groups,List<Student> students){
+	    //将学生保存到groups，和groupsDetail中
+		
+		
+	}
+	
+	/**
+	 * 修改学生个人信息。?随便保存上传资料？
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/updateInfo")
+	public void updateInfo(Student student){
+	    
+	}
+	
+	/**
+	 * 上传辅助材料。个人中心有上传按钮。点击上传，弹出框框，选择要上传什么材料，然后上传。
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/uploadMaterial")
+	public void uploadMaterial(Material material){
+	    
 	}
 	
 }

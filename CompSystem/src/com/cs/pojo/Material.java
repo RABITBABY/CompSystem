@@ -15,7 +15,7 @@ public class Material {
     private String materialPic;
     
     private Integer status;
-    
+      
     public Integer getStatus() {
 		return status;
 	}

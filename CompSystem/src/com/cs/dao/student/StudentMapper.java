@@ -18,6 +18,12 @@ public interface StudentMapper {
      */
     Student selectByStudentNo(Integer studentno);
     
+    /**
+     * 查询学生信息，包括材料。
+     * @param studentno
+     * @return
+     */
+    Student selectMaterialByNo(Integer studentno);
 
     int updateByIDSelective(Student record);
 
