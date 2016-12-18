@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class Hours {
     private Integer hoursId;
 
-    private Competition competition;
+    private Integer comId;
 
     private String type;
 
@@ -22,15 +22,17 @@ public class Hours {
         this.hoursId = hoursId;
     }
 
-    public Competition getCompetition() {
-		return competition;
-	}
-    
-    public void setCompetition(Competition competition) {
-		this.competition = competition;
+   
+
+    public Integer getComId() {
+		return comId;
 	}
 
-    public String getType() {
+	public void setComId(Integer comId) {
+		this.comId = comId;
+	}
+
+	public String getType() {
         return type;
     }
 

@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 public class Schedule {
     private Integer scheduleId;
 
-    private Competition competition;
+    private Integer comId;
 
-    private Teacher teacher;
+    private Integer teacherNo;
 
     private String content;
 
@@ -27,20 +27,24 @@ public class Schedule {
 		this.scheduleId = scheduleId;
 	}
 
-	public Competition getCompetition() {
-		return competition;
+	
+
+	public Integer getComId() {
+		return comId;
 	}
 
-	public void setCompetition(Competition competition) {
-		this.competition = competition;
+	public void setComId(Integer comId) {
+		this.comId = comId;
 	}
 
-	public Teacher getTeacher() {
-		return teacher;
+	
+
+	public Integer getTeacherNo() {
+		return teacherNo;
 	}
 
-	public void setTeacher(Teacher teacher) {
-		this.teacher = teacher;
+	public void setTeacherNo(Integer teacherNo) {
+		this.teacherNo = teacherNo;
 	}
 
 	public String getContent() {

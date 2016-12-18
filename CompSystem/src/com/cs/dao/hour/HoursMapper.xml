@@ -3,17 +3,29 @@
 <mapper namespace="com.cs.dao.hour.HoursMapper">
   <resultMap id="BaseResultMap" type="com.cs.pojo.Hours">
     <id column="hoursId" jdbcType="INTEGER" property="hoursId" />
+    <result column="comId" jdbcType="INTEGER" property="comId" />
     <result column="type" jdbcType="VARCHAR" property="type" />
     <result column="hours" jdbcType="INTEGER" property="hours" />
     <result column="remarks" jdbcType="VARCHAR" property="remarks" />
-    <association property="competition" column="comId" 
-     select="com.cs.dao.competition.CompetitionMapper.selectByComId">  
-       
-    </association>
   </resultMap>
   <sql id="Base_Column_List">
     hoursId, comId, type, hours, remarks
   </sql>
+  
+  <!-- 批量插入经费预算 -->
+	<insert id="addHoursBatch" parameterType="ArrayList">
+		insert into
+		hours(hoursId,comId,type,hours,remarks) values
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.hoursId,jdbcType=INTEGER},
+			#{item.comId,jdbcType=INTEGER},
+			#{item.type,jdbcType=VARCHAR},
+			#{item.hours,jdbcType=INTEGER},
+			#{item.remarks,jdbcType=VARCHAR})
+		</foreach>
+	</insert>
+  
   <select id="selectByHoursId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     *

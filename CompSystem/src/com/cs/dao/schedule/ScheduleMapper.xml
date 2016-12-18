@@ -3,22 +3,40 @@
 <mapper namespace="com.cs.dao.schedule.ScheduleMapper">
   <resultMap id="BaseResultMap" type="com.cs.pojo.Schedule">
     <id column="scheduleId" jdbcType="INTEGER" property="scheduleId" />
+    <result column="comId" jdbcType="INTEGER" property="comId" />
+    <result column="teacherNo" jdbcType="INTEGER" property="teacherNo" />
     <result column="content" jdbcType="VARCHAR" property="content" />
     <result column="position" jdbcType="VARCHAR" property="position" />
     <result column="date" jdbcType="DATE" property="date" />
     <result column="hours" jdbcType="INTEGER" property="hours" />
-    <association property="competition" column="comId" 
+    <!-- <association property="competition" column="comId" 
      select="com.cs.dao.competition.CompetitionMapper.selectByComId">  
        
     </association>
     <association property="teacher" column="teacherNo" 
      select="com.cs.dao.teacher.TeacherMapper.selectByTeacherNo">  
        
-    </association>
+    </association> -->
   </resultMap>
   <sql id="Base_Column_List">
     scheduleId, comId, teacherNo, content, position, date, hours
   </sql>
+  
+  <!-- 批量插入培训工作安排 -->
+	<insert id="addScheduleBatch" parameterType="ArrayList">
+		insert into
+		schedule(comId,teacherNo,content,position,date,hours) values
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.comId,jdbcType=INTEGER},
+			#{item.teacherNo,jdbcType=INTEGER},
+			#{item.content,jdbcType=VARCHAR},
+			#{item.position,jdbcType=VARCHAR},
+			#{item.date,jdbcType=DATE},
+			#{item.hours,jdbcType=INTEGER})
+		</foreach>
+	</insert>
+  
   <select id="selectByScheduleId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     *
@@ -29,6 +47,7 @@
     delete from schedule
     where scheduleId = #{scheduleId,jdbcType=INTEGER}
   </delete>
+ 
  <!--  <insert id="insert" parameterType="com.cs.pojo.Schedule">
     insert into schedule (scheduleId, comId, teacherNo, 
       content, position, date, 

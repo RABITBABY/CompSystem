@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50619
 File Encoding         : 65001
 
-Date: 2016-12-16 19:31:05
+Date: 2016-12-19 00:01:38
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -123,7 +123,7 @@ CREATE TABLE `budget` (
   KEY `decl_bud` (`comId`),
   KEY `FKADDAAF4589FF68C5` (`budgetId`),
   CONSTRAINT `com_bud` FOREIGN KEY (`comId`) REFERENCES `competition` (`comId`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of budget
@@ -174,7 +174,7 @@ CREATE TABLE `competition` (
   CONSTRAINT `FKBEB591BF6741EFEB` FOREIGN KEY (`teacherNo`) REFERENCES `teacher` (`teacherNo`),
   CONSTRAINT `FKBEB591BF77CD9A99` FOREIGN KEY (`departmentId`) REFERENCES `department` (`departmentId`),
   CONSTRAINT `level_com` FOREIGN KEY (`levelId`) REFERENCES `level` (`levelId`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of competition
@@ -311,7 +311,7 @@ CREATE TABLE `guideteacher` (
   KEY `FKE7E27D66E81376C0` (`id`),
   CONSTRAINT `FKE7E27D666741EFEB` FOREIGN KEY (`teacherNo`) REFERENCES `teacher` (`teacherNo`),
   CONSTRAINT `FKE7E27D66EDBA9C01` FOREIGN KEY (`comId`) REFERENCES `competition` (`comId`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of guideteacher
@@ -325,7 +325,7 @@ INSERT INTO `guideteacher` VALUES ('3', '2', '1');
 -- ----------------------------
 DROP TABLE IF EXISTS `hours`;
 CREATE TABLE `hours` (
-  `hoursId` int(11) NOT NULL DEFAULT '0',
+  `hoursId` int(11) NOT NULL AUTO_INCREMENT,
   `comId` int(11) DEFAULT NULL COMMENT '序号',
   `type` varchar(45) DEFAULT NULL COMMENT '课时类型',
   `hours` int(11) DEFAULT NULL COMMENT '课时数',
@@ -334,7 +334,7 @@ CREATE TABLE `hours` (
   KEY `decl_hour` (`comId`),
   KEY `FK5EDC70F29ABB60F` (`hoursId`),
   CONSTRAINT `com_hour` FOREIGN KEY (`comId`) REFERENCES `competition` (`comId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of hours
@@ -377,7 +377,7 @@ CREATE TABLE `material` (
 -- ----------------------------
 -- Records of material
 -- ----------------------------
-INSERT INTO `material` VALUES ('1', '1', '1', null, '0');
+INSERT INTO `material` VALUES ('1', '1', '1', null, '1');
 INSERT INTO `material` VALUES ('2', '1', '2', null, '0');
 
 -- ----------------------------
@@ -489,7 +489,7 @@ CREATE TABLE `schedule` (
   KEY `FKD6669297BF1FBF97` (`scheduleId`),
   CONSTRAINT `com_sch` FOREIGN KEY (`comId`) REFERENCES `competition` (`comId`),
   CONSTRAINT `FKD66692976741EFEB` FOREIGN KEY (`teacherNo`) REFERENCES `teacher` (`teacherNo`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of schedule

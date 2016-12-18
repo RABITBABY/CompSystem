@@ -27,12 +27,13 @@
     teacherNo, teacherName, gender, birth, departmentId, subject, phone, title, post, 
     email, type, direction, education, lab, password, examiner
   </sql>
+  <!-- 根据no查找教师 -->
   <select id="selectByTeacherNo" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select *
     from teacher
     where teacherNo = #{teacherNo,jdbcType=INTEGER}
   </select>
-  
+  <!-- 修改更新教师信息 -->
   <update id="updateByTeacherNo" parameterType="com.cs.pojo.Teacher">
     update teacher
     <set>
@@ -81,5 +82,12 @@
     </set>
     where teacherNo = #{teacherNo,jdbcType=INTEGER}
   </update>
+  
+  <!-- 为竞赛添加指导老师 -->
+  <insert id="addGuideTeacher" parameterType="java.lang.Integer">
+		insert into
+		guideteacher(comId,teacherNo) values
+		(#{comId,jdbcType=INTEGER},#{teacherNo,jdbcType=INTEGER})
+ </insert>
   
 </mapper>

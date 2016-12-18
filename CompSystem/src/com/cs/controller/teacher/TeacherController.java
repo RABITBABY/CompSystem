@@ -48,28 +48,47 @@ public class TeacherController {
 	@ResponseBody
 	@RequestMapping(value="/saveComp",method=RequestMethod.POST)
 	public boolean saveComp(Competition competition){
-		/*Teacher teacher=new Teacher();
+		/*测试数据
+		//申报的老师
+		Teacher teacher=new Teacher();
 		teacher.setTeacherNo(1);
 		Competition competition=new Competition();
 		competition.setComName("测试budget2");
 		competition.setTeacher(teacher);
+		//指导老师
+		Teacher guideTeacher=new Teacher();
+		guideTeacher.setTeacherNo(2);
+		List<Teacher> teachers=new ArrayList<Teacher>();
+		teachers.add(guideTeacher);
+		competition.setGuideTeachers(teachers);
+		//工作安排
+		Schedule schedule=new Schedule();
+		schedule.setContent("ssss");
+		schedule.setHours(9);
+		List<Schedule> schedules=new ArrayList<Schedule>();
+		schedules.add(schedule);
+		competition.setSchedules(schedules);
 		
-		List<Budget> budgets=new ArrayList<Budget>();
-		
+		//经费预算
+		List<Budget> budgets=new ArrayList<Budget>();		
 		Budget budget=new Budget();
 		budget.setReasons("ssss");
 		budget.setSubject("ddd");
-		budget.setSum(1);
-		
+		budget.setSum(1);		
 		Budget budget1=new Budget();
 		budget1.setReasons("ssss2");
 		budget1.setSubject("ddd2");
 		budget1.setSum(2);
 		
 		budgets.add(budget);
-		budgets.add(budget1);
-		
-		competition.setBudgets(budgets);*/
+		budgets.add(budget1);		
+		competition.setBudgets(budgets);
+		//课时预算
+		Hours hours=new Hours();
+		hours.setHours(4);
+		List<Hours> hList=new ArrayList<Hours>();
+		hList.add(hours);		
+		competition.setHours(hList);*/
 				
 		return teacherService.saveCompetition(competition);
 	}
@@ -84,6 +103,11 @@ public class TeacherController {
 		
 		return null;
 	}
+	
+	/**
+	 * 查看申报表：根据comId;查找出来的包括经费预算等。要记得配置collection
+	 * @return
+	 */
 	
 	/**
 	 * 审核通过后完善信息，竞赛条件。负责人签名。报名开始时间等。

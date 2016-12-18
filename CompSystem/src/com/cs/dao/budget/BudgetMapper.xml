@@ -32,7 +32,7 @@
 		where budgetId = #{budgetId,jdbcType=INTEGER}
 	</delete>
 
-    <!-- 批量插入预算 -->
+    <!-- 批量插入经费预算 -->
 	<insert id="addBudgetBatch" parameterType="ArrayList">
 		insert into
 		budget(subject,sum,reasons,comId) values
@@ -41,7 +41,7 @@
 			(#{item.subject,jdbcType=VARCHAR},
 			#{item.sum,jdbcType=INTEGER},
 			#{item.reasons,jdbcType=VARCHAR},
-			#{item.comId,jdbcType=VARCHAR})
+			#{item.comId,jdbcType=INTEGER})
 		</foreach>
 	</insert>
 

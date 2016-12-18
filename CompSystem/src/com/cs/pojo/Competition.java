@@ -74,7 +74,7 @@ public class Competition {
     
     private List<Schedule> schedules;
     
-    private List<Groups> groups;
+    private List<Teacher> guideTeachers;
     
     
 
@@ -349,14 +349,15 @@ public class Competition {
 	public void setSchedules(List<Schedule> schedules) {
 		this.schedules = schedules;
 	}
-
-	public List<Groups> getGroups() {
-		return groups;
+	
+	public List<Teacher> getGuideTeachers() {
+		return guideTeachers;
 	}
 
-	public void setGroups(List<Groups> groups) {
-		this.groups = groups;
+	public void setGuideTeachers(List<Teacher> guideTeachers) {
+		this.guideTeachers = guideTeachers;
 	}
+	
 	
 	
 }
