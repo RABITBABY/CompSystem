@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class Budget {
     private Integer budgetId;
 
-    private Competition competition;
+    private Integer comId;
 
     private String subject;
 
@@ -22,12 +22,14 @@ public class Budget {
 		this.budgetId = budgetId;
 	}
 
-	public Competition getCompetition() {
-		return competition;
+	
+
+	public Integer getComId() {
+		return comId;
 	}
 
-	public void setCompetition(Competition competition) {
-		this.competition = competition;
+	public void setComId(Integer comId) {
+		this.comId = comId;
 	}
 
 	public String getSubject() {

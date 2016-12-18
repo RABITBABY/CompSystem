@@ -1,8 +1,26 @@
 package com.cs.dao.budget;
 
+import java.util.List;
+
 import com.cs.pojo.Budget;
 
 public interface BudgetMapper {
+	
+	/**
+	 * 根据ID查找
+	 * 
+	 * @param budgetid
+	 * @return
+	 */
+	Budget selectByID(Integer budgetid);
+	
+	/**
+	 * 批量插入预算。
+	 * @param budgetid
+	 * @return
+	 */
+	int addBudgetBatch(List<Budget> budgets);
+	
 	/**
 	 * 根据Id删除
 	 * 
@@ -26,14 +44,6 @@ public interface BudgetMapper {
 	 * @return
 	 */
 	int insertSelective(Budget record);
-
-	/**
-	 * 根据ID查找
-	 * 
-	 * @param budgetid
-	 * @return
-	 */
-	Budget selectByID(Integer budgetid);
 
 	/**
 	 * 动态更新

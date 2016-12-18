@@ -13,19 +13,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.cs.pojo.Administer;
 import com.cs.pojo.Student;
 import com.cs.pojo.Teacher;
+import com.cs.service.administer.AdministerService;
 import com.cs.service.administer.AdministerServiceImpl;
+import com.cs.service.student.StudentService;
 import com.cs.service.student.StudentServiceImpl;
+import com.cs.service.teacher.TeacherService;
 import com.cs.service.teacher.TeacherServiceImpl;
 
 @Controller
 public class LoginController {
 	
 	@Autowired
-	AdministerServiceImpl adminImpl;
+	AdministerService adminImpl;
 	@Autowired
-	StudentServiceImpl stuImpl;
+	StudentService stuImpl;
 	@Autowired
-	TeacherServiceImpl teachImpl;
+	TeacherService teachImpl;
 	
 	
 	/**

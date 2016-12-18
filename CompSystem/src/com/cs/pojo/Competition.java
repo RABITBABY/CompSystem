@@ -68,6 +68,15 @@ public class Competition {
 
     private Integer status;
     
+    private List<Budget> budgets;
+    
+    private List<Hours> hours;
+    
+    private List<Schedule> schedules;
+    
+    private List<Groups> groups;
+    
+    
 
 	public Integer getComId() {
 		return comId;
@@ -316,4 +325,38 @@ public class Competition {
 	public void setStatus(Integer status) {
 		this.status = status;
 	}
+
+	public List<Budget> getBudgets() {
+		return budgets;
+	}
+
+	public void setBudgets(List<Budget> budgets) {
+		this.budgets = budgets;
+	}
+
+	public List<Hours> getHours() {
+		return hours;
+	}
+
+	public void setHours(List<Hours> hours) {
+		this.hours = hours;
+	}
+
+	public List<Schedule> getSchedules() {
+		return schedules;
+	}
+
+	public void setSchedules(List<Schedule> schedules) {
+		this.schedules = schedules;
+	}
+
+	public List<Groups> getGroups() {
+		return groups;
+	}
+
+	public void setGroups(List<Groups> groups) {
+		this.groups = groups;
+	}
+	
+	
 }

@@ -26,12 +26,21 @@ public interface CompetitionMapper {
      */
     int updateByTeach(Competition competition);
     
+    /**
+     * 添加竞赛申报表
+     * @param record
+     * @return
+     */
+    int addCompetition(Competition competition);
     
-    int insert(Competition record);
-    
-    int insertSelective(Competition record);
-
+    /**
+     * 根据comId查找申报表
+     * @param comid
+     * @return
+     */
     Competition selectByComId(Integer comid);
+    
+    int insert(Competition record);    
 
     int updateByPrimaryKeySelective(Competition record);
 

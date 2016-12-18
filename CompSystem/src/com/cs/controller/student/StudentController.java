@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -76,7 +77,7 @@ public class StudentController {
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping("/toEntered")
+	@RequestMapping(value="/toEntered",method = RequestMethod.POST)
 	public void toEntered(@Param("comId") Integer comId,@Param("studentNo") Integer studentNo){
 		//拿到竞赛id,找到竞赛所需的条件
 		
@@ -126,7 +127,7 @@ public class StudentController {
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping("/saveEntered")
+	@RequestMapping(value="/saveEntered",method=RequestMethod.POST)
 	public void saveEntered(Groups groups,List<Student> students){
 	    //将学生保存到groups，和groupsDetail中
 		
@@ -134,7 +135,7 @@ public class StudentController {
 	}
 	
 	/**
-	 * 修改学生个人信息。?随便保存上传资料？
+	 * 修改学生个人信息。
 	 * @return
 	 */
 	@ResponseBody
