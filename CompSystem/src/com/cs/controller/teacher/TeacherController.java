@@ -110,7 +110,7 @@ public class TeacherController {
 	
 	
 	/**
-	 * 3.查看申报表：根据comId;查找出来的包括经费预算等。要记得配置collection
+	 * 3.查看申报表：根据comId;查找出来的包括经费预算，比赛条件等。要记得配置collection
 	 * @return
 	 */
 	@ResponseBody

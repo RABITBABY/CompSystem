@@ -2,6 +2,7 @@ package com.cs.pojo;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.stereotype.Component;
 @Component
@@ -31,6 +32,8 @@ public class Project {
     private String introduction;
     
     private Integer isGroup;
+    
+    private List<Condition> conditions;
 
     public String getComName() {
         return comName;
@@ -136,6 +139,14 @@ public class Project {
 
 	public void setIsGroup(Integer isGroup) {
 		this.isGroup = isGroup;
+	}
+
+	public List<Condition> getConditions() {
+		return conditions;
+	}
+
+	public void setConditions(List<Condition> conditions) {
+		this.conditions = conditions;
 	}
     
     

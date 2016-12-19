@@ -259,7 +259,13 @@
 			<result column="shours" jdbcType="INTEGER" property="hours" />
 		</collection>
 		<collection property="guideTeachers" ofType="com.cs.pojo.Teacher">
-			<result column="gtteacherNo" jdbcType="INTEGER" property="teacherNo" />
+			<id column="gtteacherNo" jdbcType="INTEGER" property="teacherNo" />
+			<result column="tteacherName" jdbcType="VARCHAR" property="teacherName" />
+			<result column="ttitle" jdbcType="VARCHAR" property="title" />
+			<result column="tpost" jdbcType="VARCHAR" property="post" />
+			<association property="department" column="tdepartmentId"
+				select="com.cs.dao.department.DepartmentMapper.selectByDepartId">
+			</association>
 		</collection>
 
 		<collection property="project" ofType="com.cs.pojo.Project">
@@ -269,8 +275,12 @@
 			<result column="pcost" jdbcType="DECIMAL" property="cost" />
 			<result column="pstatus" jdbcType="INTEGER" property="status" />
 			<result column="pisGroup" jdbcType="INTEGER" property="isGroup" />
+			<collection property="conditions" ofType="com.cs.pojo.Condition">
+				<id column="pcconditionId" jdbcType="INTEGER" property="conditionId" />
+				<result column="ccconditionName" jdbcType="VARCHAR" property="conditionName" />
+				<result column="cctype" jdbcType="INTEGER" property="type" />
+			</collection>
 		</collection>
-
 	</resultMap>
 	<sql id="Detail_List">
 		c.comId ccomId, c.comName ccomName, c.teacherNo cteacherNo,
@@ -278,22 +288,35 @@
 		c.departmentId cdepartmentId, c.date cdate, c.host chost, c.time
 		ctime, c.place cplace, c.introduce cintroduce, c.object cobject,
 		c.people cpeople,
-		c.sponsor csponsor, c.plan cplan, c.tgoal ctgoal, c.wgoal cwgoal, c.sopinion
-		csopinion, c.slsign cslsign, c.slsdate cslsdate, c.uopinion cuopinion,
-		c.dsign cdsign, c.dsdate cdsdate, c.tdopinion ctdopinion, c.olsign
-		colsign, c.olsdate colsdate, c.lsign clsign, c.lsdate clsdate,
+		c.sponsor csponsor, c.plan cplan, c.tgoal ctgoal,
+		c.wgoal cwgoal, c.sopinion
+		csopinion, c.slsign cslsign, c.slsdate
+		cslsdate, c.uopinion cuopinion,
+		c.dsign cdsign, c.dsdate cdsdate,
+		c.tdopinion ctdopinion, c.olsign
+		colsign, c.olsdate colsdate, c.lsign
+		clsign, c.lsdate clsdate,
 		c.status cstatus,
-		b.budgetId bbudgetId,b.subject bsubject, b.sum bsum,
+		b.budgetId
+		bbudgetId,b.subject bsubject, b.sum bsum,
 		b.reasons breasons,
-		s.scheduleId sscheduleId,s.teacherNo steacherNo, s.content scontent, s.position
+		s.scheduleId sscheduleId,s.teacherNo steacherNo, s.content scontent,
+		s.position
 		sposition, s.date sdate, s.hours shours,
-		h.hoursId hhoursId, h.type
+		h.hoursId hhoursId,
+		h.type
 		htype, h.hours hhours, h.remarks hremarks,
-		gt.id gtid,gt.teacherNo
+		gt.id
+		gtid,gt.teacherNo
 		gtteacherNo,
 		p.applyBeginDate papplyBeginDate,
 		p.applyEndDate papplyEndDate, p.comDate pcomDate,
-		p.cost pcost, p.status pstatus, p.isGroup pisGroup
+		p.cost pcost,
+		p.status pstatus, p.isGroup pisGroup,
+		pc.proId pcproId,pc.conditionId
+		pcconditionId,
+		cc.conditionName ccconditionName ,cc.type cctype,
+        t.teacherName tteacherName,t.departmentId tdepartmentId,t.post tpost,t.subject tsubject,t.title ttitle
 	</sql>
 	<select id="selectALlByComId" parameterType="java.lang.Integer"
 		resultMap="DetailResultMap">
@@ -315,6 +338,12 @@
 		project p
 		on
 		c.comId=p.comId
+		LEFT JOIN projectcondition pc
+		on p.comId=pc.proId
+		left join conditions cc
+		on cc.conditionId=pc.conditionId
+		left JOIN teacher  t
+        on t.teacherNo=gt.teacherNo
 		where c.comId=#{comId,jdbcType=INTEGER}
 	</select>
 
