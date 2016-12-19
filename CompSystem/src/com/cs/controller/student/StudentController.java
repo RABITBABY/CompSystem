@@ -43,8 +43,8 @@ public class StudentController {
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping("/getComp")
-	public List<Project> getCompInfo(@Param("studentNo") Integer studentNo){
+	@RequestMapping("/getPro")
+	public List<Project> getProInfo(@Param("studentNo") Integer studentNo){
 		List<Project> projects = studentService.selectCompByStudentNo(studentNo);
 		return projects;
 	}

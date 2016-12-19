@@ -31,18 +31,10 @@ public class TeacherController {
 	
 	@Autowired
 	private TeacherService teacherService;
-	/*
-	@InitBinder("hours")
-    public void initBinderFormBean1(WebDataBinder binder) {  
-        binder.setFieldDefaultPrefix("hours.");  
-    }
-    @InitBinder("schedule")
-    public void initBinderFormBean2(WebDataBinder binder) {  
-        binder.setFieldDefaultPrefix("schedule.");  
-    }*/
 	
 	/**
-	 * 竞赛申报表保存：一般添加返回什么呢？
+	 * 竞赛申报:
+	 * 申报表保存：
 	 * @return
 	 */
 	@ResponseBody
@@ -93,26 +85,41 @@ public class TeacherController {
 		return teacherService.saveCompetition(competition);
 	}
 	
+	/*
+	 * 查看审批结果：
+	 * 1.根据教师id查看竞赛申报表列表：
+	 * 2.申报成功的列表可以进行补全竞赛详细材料:对project表进行添加。
+	 * 3.根据id查看申报表详情。project 
+	 * *4.根据审批结果搜索
+	 */
 	/**
-	 * 根据教师id查看竞赛申报表列表：
+	 * 1.根据教师id查看竞赛申报表列表：
+	 * @param teacherNo
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping(value="/getComp")
-	public List<Competition> getComp(@Param("teacherNo") Integer teacherNo){
-		
-		return null;
+	@RequestMapping(value="/getCompList")
+	public List<Competition> getCompList(@Param("teacherNo") Integer teacherNo){		
+		return teacherService.findCompByTeacherNo(1);
+	}
+	/**
+	 * 2.审核通过后完善信息，竞赛条件。负责人签名。报名开始时间等。
+	 * 操作condition表，project表，以及competition表
+	 * @return
+	 */
+	
+	
+	/**
+	 * 3.查看申报表：根据comId;查找出来的包括经费预算等。要记得配置collection
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value="/getCompByComId")
+	public Competition getCompByComId(@Param("comId") Integer comId){		
+		return teacherService.findByComId(comId);
 	}
 	
-	/**
-	 * 查看申报表：根据comId;查找出来的包括经费预算等。要记得配置collection
-	 * @return
-	 */
 	
-	/**
-	 * 审核通过后完善信息，竞赛条件。负责人签名。报名开始时间等。
-	 * @return
-	 */
 	
 	/**
 	 * 查看什么竞赛有那些学生。

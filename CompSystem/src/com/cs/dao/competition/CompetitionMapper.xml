@@ -40,8 +40,43 @@
 		</association>
 		<association property="department" column="departmentId"
 			select="com.cs.dao.department.DepartmentMapper.selectByDepartId">
-
 		</association>
+		<association property="project" column="comId"
+			select="com.cs.dao.project.ProjectMapper.selectBriefByComId">
+		</association>
+		<collection property="budgets" ofType="com.cs.pojo.Budget">
+			<id column="budgetId" jdbcType="INTEGER" property="budgetId" />
+			<result column="subject" jdbcType="VARCHAR" property="subject" />
+			<result column="sum" jdbcType="INTEGER" property="sum" />
+			<result column="reasons" jdbcType="VARCHAR" property="reasons" />
+		</collection>
+		<collection property="hours" ofType="com.cs.pojo.Hours">
+			<id column="hoursId" jdbcType="INTEGER" property="hoursId" />
+			<result column="type" jdbcType="VARCHAR" property="type" />
+			<result column="hours" jdbcType="INTEGER" property="hours" />
+			<result column="remarks" jdbcType="VARCHAR" property="remarks" />
+		</collection>
+		<collection property="schedules" ofType="com.cs.pojo.Schedule">
+			<id column="scheduleId" jdbcType="INTEGER" property="scheduleId" />
+			<result column="teacherNo" jdbcType="INTEGER" property="teacherNo" />
+			<result column="content" jdbcType="VARCHAR" property="content" />
+			<result column="position" jdbcType="VARCHAR" property="position" />
+			<result column="date" jdbcType="DATE" property="date" />
+			<result column="hours" jdbcType="INTEGER" property="hours" />
+		</collection>
+		<collection property="guideTeachers" ofType="com.cs.pojo.Teacher">
+			<id column="teacherNo" jdbcType="INTEGER" property="teacherNo" />
+			<result column="teacherName" jdbcType="VARCHAR" property="teacherName" />
+			<result column="subject" jdbcType="VARCHAR" property="subject" />
+			<result column="title" jdbcType="VARCHAR" property="title" />
+			<result column="post" jdbcType="VARCHAR" property="post" />
+			<result column="direction" jdbcType="VARCHAR" property="direction" />
+			<result column="lab" jdbcType="INTEGER" property="lab" />
+			<association property="department" column="departmentId"
+				select="com.cs.dao.department.DepartmentMapper.selectByDepartId">
+			</association>
+		</collection>
+
 	</resultMap>
 
 	<sql id="Base_Column_List">
@@ -50,16 +85,6 @@
 			c.sponsor, c.plan, c.tgoal, c.wgoal, c.sopinion, c.slsign, c.slsdate, c.uopinion, 
 			c.dsign, c.dsdate, c.tdopinion, c.olsign, c.olsdate, c.lsign, c.lsdate, c.status -->
 	</sql>
-	<!--根据ID查找 -->
-	<select id="selectByComId" parameterType="java.lang.Integer"
-		resultMap="BaseResultMap">
-		select
-		*
-		from competition
-		where comId =
-		#{comId,jdbcType=INTEGER}
-	</select>
-
 
 	<!--根据ID删除 -->
 	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
@@ -70,20 +95,26 @@
 
 	<!-- 系部审批： 修改申报表状态，申报意见，签字 -->
 	<update id="updateByDepart" parameterType="com.cs.pojo.Competition">
-		update competition set uopinion=#{uopinion,jdbcType=VARCHAR},
+		update competition set
+		uopinion=#{uopinion,jdbcType=VARCHAR},
 		dsign=#{dsign,jdbcType=VARCHAR},
 		dsdate=#{dsdate,jdbcType=DATE},status=#{status,jdbcType=INTEGER}
+		where
+		comId=#{comId,jdbcType=INTEGER}
 	</update>
 
 	<!-- 教学处审批： 修改申报表状态，申报意见，签字 -->
 	<update id="updateByTeach" parameterType="com.cs.pojo.Competition">
-		update competition set tdopinion=#{tdopinion,jdbcType=VARCHAR},
+		update competition set
+		tdopinion=#{tdopinion,jdbcType=VARCHAR},
 		olsign=#{olsign,jdbcType=VARCHAR},
 		olsdate=#{olsdate,jdbcType=DATE},status=#{status,jdbcType=INTEGER}
+		where comId=#{comId,jdbcType=INTEGER}
 	</update>
 
 	<!--教师：填写申报表保存，设置状态默认为0 -->
-	<insert id="addCompetition"  useGeneratedKeys="true" keyProperty="comId" parameterType="com.cs.pojo.Competition">
+	<insert id="addCompetition" useGeneratedKeys="true" keyProperty="comId"
+		parameterType="com.cs.pojo.Competition">
 		insert into competition
 		<trim prefix="(" suffix=")" suffixOverrides=",">
 			<if test="comName != null"> comName,
@@ -147,27 +178,155 @@
 			<if test="sopinion != null"> #{sopinion,jdbcType=VARCHAR}, </if>
 			<if test="slsign != null"> #{slsign,jdbcType=VARCHAR}, </if>
 			<if test="slsdate != null"> #{slsdate,jdbcType=DATE}, </if>
-			0, 
+			0,
 		</trim>
 	</insert>
 
-	<!--全部插入 -->
-	<!-- <insert id="insert" parameterType="com.cs.pojo.Competition"> insert 
-		into competition (comId, comName, teacherNo, unit, levelId, phone, email, 
-		departmentId, date, host, time, place, introduce, object, people, sponsor, 
-		plan, tgoal, wgoal, sopinion, slsign, slsdate, uopinion, dsign, dsdate, tdopinion, 
-		olsign, olsdate, lsign, lsdate, status) values (#{comId,jdbcType=INTEGER}, 
-		#{comName,jdbcType=VARCHAR}, #{teacherNo,jdbcType=INTEGER}, #{unit,jdbcType=VARCHAR}, 
-		#{levelId,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
-		#{departmentId,jdbcType=INTEGER}, #{date,jdbcType=DATE}, #{host,jdbcType=VARCHAR}, 
-		#{time,jdbcType=DATE}, #{place,jdbcType=VARCHAR}, #{introduce,jdbcType=VARCHAR}, 
-		#{object,jdbcType=VARCHAR}, #{people,jdbcType=INTEGER}, #{sponsor,jdbcType=VARCHAR}, 
-		#{plan,jdbcType=VARCHAR}, #{tgoal,jdbcType=VARCHAR}, #{wgoal,jdbcType=VARCHAR}, 
-		#{sopinion,jdbcType=VARCHAR}, #{slsign,jdbcType=VARCHAR}, #{slsdate,jdbcType=DATE}, 
-		#{uopinion,jdbcType=VARCHAR}, #{dsign,jdbcType=VARCHAR}, #{dsdate,jdbcType=DATE}, 
-		#{tdopinion,jdbcType=VARCHAR}, #{olsign,jdbcType=VARCHAR}, #{olsdate,jdbcType=DATE}, 
-		#{lsign,jdbcType=VARCHAR}, #{lsdate,jdbcType=DATE}, #{status,jdbcType=INTEGER}) 
-		</insert> -->
+	<!--根据教师no查找申报表 -->
+	<select id="selectByTeacherNo" parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
+		select
+		comId, comName, levelId,
+		departmentId, host, time,
+		place, introduce, object,status
+		from competition
+		where teacherNo =
+		#{teacherNo,jdbcType=INTEGER}
+	</select>
+
+	<!--根据comId查找申报表，预算、详细信息等等。 自己写一个resultMap -->
+	<resultMap id="DetailResultMap" type="com.cs.pojo.Competition">
+		<id column="ccomId" jdbcType="INTEGER" property="comId" />
+		<result column="ccomName" jdbcType="VARCHAR" property="comName" />
+		<result column="cunit" jdbcType="VARCHAR" property="unit" />
+		<result column="cphone" jdbcType="VARCHAR" property="phone" />
+		<result column="cemail" jdbcType="VARCHAR" property="email" />
+		<result column="cdate" jdbcType="DATE" property="date" />
+		<result column="chost" jdbcType="VARCHAR" property="host" />
+		<result column="ctime" jdbcType="DATE" property="time" />
+		<result column="cplace" jdbcType="VARCHAR" property="place" />
+		<result column="cintroduce" jdbcType="VARCHAR" property="introduce" />
+		<result column="cobject" jdbcType="VARCHAR" property="object" />
+		<result column="cpeople" jdbcType="INTEGER" property="people" />
+		<result column="csponsor" jdbcType="VARCHAR" property="sponsor" />
+		<result column="cplan" jdbcType="VARCHAR" property="plan" />
+		<result column="ctgoal" jdbcType="VARCHAR" property="tgoal" />
+		<result column="cwgoal" jdbcType="VARCHAR" property="wgoal" />
+		<result column="csopinion" jdbcType="VARCHAR" property="sopinion" />
+		<result column="cslsign" jdbcType="VARCHAR" property="slsign" />
+		<result column="cslsdate" jdbcType="DATE" property="slsdate" />
+		<result column="cuopinion" jdbcType="VARCHAR" property="uopinion" />
+		<result column="cdsign" jdbcType="VARCHAR" property="dsign" />
+		<result column="cdsdate" jdbcType="DATE" property="dsdate" />
+		<result column="ctdopinion" jdbcType="VARCHAR" property="tdopinion" />
+		<result column="colsign" jdbcType="VARCHAR" property="olsign" />
+		<result column="colsdate" jdbcType="DATE" property="olsdate" />
+		<result column="clsign" jdbcType="VARCHAR" property="lsign" />
+		<result column="clsdate" jdbcType="DATE" property="lsdate" />
+		<result column="cstatus" jdbcType="INTEGER" property="status" />
+		<association property="teacher" column="cteacherNo"
+			select="com.cs.dao.teacher.TeacherMapper.selectByTeacherNo">
+
+		</association>
+		<association property="level" column="clevelId"
+			select="com.cs.dao.level.LevelMapper.selectByLevelId">
+
+		</association>
+		<association property="department" column="cdepartmentId"
+			select="com.cs.dao.department.DepartmentMapper.selectByDepartId">
+		</association>
+		<association property="project" column="pcomId"
+			select="com.cs.dao.project.ProjectMapper.selectBriefByComId">
+		</association>
+		<collection property="budgets" ofType="com.cs.pojo.Budget">
+			<id column="bbudgetId" jdbcType="INTEGER" property="budgetId" />
+			<result column="bsubject" jdbcType="VARCHAR" property="subject" />
+			<result column="bsum" jdbcType="INTEGER" property="sum" />
+			<result column="breasons" jdbcType="VARCHAR" property="reasons" />
+		</collection>
+		<collection property="hours" ofType="com.cs.pojo.Hours">
+			<id column="hhoursId" jdbcType="INTEGER" property="hoursId" />
+			<result column="htype" jdbcType="VARCHAR" property="type" />
+			<result column="hhours" jdbcType="INTEGER" property="hours" />
+			<result column="hremarks" jdbcType="VARCHAR" property="remarks" />
+		</collection>
+		<collection property="schedules" ofType="com.cs.pojo.Schedule">
+			<id column="sscheduleId" jdbcType="INTEGER" property="scheduleId" />
+			<result column="steacherNo" jdbcType="INTEGER" property="teacherNo" />
+			<result column="scontent" jdbcType="VARCHAR" property="content" />
+			<result column="sposition" jdbcType="VARCHAR" property="position" />
+			<result column="sdate" jdbcType="DATE" property="date" />
+			<result column="shours" jdbcType="INTEGER" property="hours" />
+		</collection>
+		<collection property="guideTeachers" ofType="com.cs.pojo.Teacher">
+			<result column="gtteacherNo" jdbcType="INTEGER" property="teacherNo" />
+		</collection>
+
+		<collection property="project" ofType="com.cs.pojo.Project">
+			<result column="papplyBeginDate" jdbcType="DATE" property="applyBeginDate" />
+			<result column="papplyEndDate" jdbcType="DATE" property="applyEndDate" />
+			<result column="pcomDate" jdbcType="DATE" property="comDate" />
+			<result column="pcost" jdbcType="DECIMAL" property="cost" />
+			<result column="pstatus" jdbcType="INTEGER" property="status" />
+			<result column="pisGroup" jdbcType="INTEGER" property="isGroup" />
+		</collection>
+
+	</resultMap>
+	<sql id="Detail_List">
+		c.comId ccomId, c.comName ccomName, c.teacherNo cteacherNo,
+		c.unit cunit, c.levelId clevelId, c.phone cphone, c.email cemail,
+		c.departmentId cdepartmentId, c.date cdate, c.host chost, c.time
+		ctime, c.place cplace, c.introduce cintroduce, c.object cobject,
+		c.people cpeople,
+		c.sponsor csponsor, c.plan cplan, c.tgoal ctgoal, c.wgoal cwgoal, c.sopinion
+		csopinion, c.slsign cslsign, c.slsdate cslsdate, c.uopinion cuopinion,
+		c.dsign cdsign, c.dsdate cdsdate, c.tdopinion ctdopinion, c.olsign
+		colsign, c.olsdate colsdate, c.lsign clsign, c.lsdate clsdate,
+		c.status cstatus,
+		b.budgetId bbudgetId,b.subject bsubject, b.sum bsum,
+		b.reasons breasons,
+		s.scheduleId sscheduleId,s.teacherNo steacherNo, s.content scontent, s.position
+		sposition, s.date sdate, s.hours shours,
+		h.hoursId hhoursId, h.type
+		htype, h.hours hhours, h.remarks hremarks,
+		gt.id gtid,gt.teacherNo
+		gtteacherNo,
+		p.applyBeginDate papplyBeginDate,
+		p.applyEndDate papplyEndDate, p.comDate pcomDate,
+		p.cost pcost, p.status pstatus, p.isGroup pisGroup
+	</sql>
+	<select id="selectALlByComId" parameterType="java.lang.Integer"
+		resultMap="DetailResultMap">
+		select
+		<include refid="Detail_List" />
+		from
+		competition c
+		left JOIN budget b
+		ON b.comId=c.comId
+		LEFT JOIN
+		schedule s
+		on s.comId=c.comId
+		LEFT JOIN hours h
+		on h.comId=c.comId
+		LEFT
+		JOIN guideteacher gt
+		on gt.comId=c.comId
+		LEFT JOIN
+		project p
+		on
+		c.comId=p.comId
+		where c.comId=#{comId,jdbcType=INTEGER}
+	</select>
+
+	<!--根据comId查找申报表,只查competition。 -->
+	<select id="selectByComId" parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
+		select
+		*
+		from
+		competition
+		where comId=#{comId,jdbcType=INTEGER}
+	</select>
 
 
 	<!-- 动态更新数据 -->

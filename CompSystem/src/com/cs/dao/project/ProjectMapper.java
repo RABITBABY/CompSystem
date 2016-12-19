@@ -25,10 +25,17 @@ public interface ProjectMapper {
     int insertSelective(Project record);
 
     Project selectByPrimaryKey(Integer comid);
+    /**
+     * 根据
+     * @param comid
+     * @return
+     */
+    Project selectBriefByComId(Integer comId);
 
     int updateByPrimaryKeySelective(Project record);
 
     int updateByPrimaryKeyWithBLOBs(Project record);
 
     int updateByPrimaryKey(Project record);
+    
 }

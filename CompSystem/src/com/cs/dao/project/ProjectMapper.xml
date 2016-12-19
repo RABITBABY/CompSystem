@@ -21,7 +21,6 @@
     </association>
   </resultMap>
   
-  
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.cs.pojo.Project">
     <result column="introduction" jdbcType="LONGVARCHAR" property="introduction" />
   </resultMap>
@@ -38,9 +37,20 @@
     p.comId, comName, levelId, hunit, sOrganizer, applyBeginDate, applyEndDate, comDate, cost, p.status, isPublish
   </sql>
   
- <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
     select 
     <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from project
+    where comId = #{competition.comId,jdbcType=INTEGER}
+  </select>
+  
+  <!-- 为了防止competition查找project产生死循环，此处，去掉comId -->
+  <select id="selectBriefByComId" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    comName, levelId, hunit, sOrganizer, applyBeginDate, applyEndDate, comDate, 
+    cost, status,isGroup
     ,
     <include refid="Blob_Column_List" />
     from project
@@ -66,6 +76,8 @@
 		join project p on g.comId=p.comId
 		where gd.studentNo=#{studentNo,jdbcType=INTEGER}
 	</select>
+	
+	
   
   <!--  <insert id="insert" parameterType="com.cs.pojo.Project">
     insert into project (comId, comName, levelId, 

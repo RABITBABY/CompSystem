@@ -75,8 +75,8 @@ public class Competition {
     private List<Schedule> schedules;
     
     private List<Teacher> guideTeachers;
-    
-    
+ 
+    private Project project;
 
 	public Integer getComId() {
 		return comId;
@@ -357,7 +357,15 @@ public class Competition {
 	public void setGuideTeachers(List<Teacher> guideTeachers) {
 		this.guideTeachers = guideTeachers;
 	}
-	
+
+	public Project getProject() {
+		return project;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
+	}
+
 	
 	
 }

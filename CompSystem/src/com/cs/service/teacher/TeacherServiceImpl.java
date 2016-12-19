@@ -82,4 +82,14 @@ public class TeacherServiceImpl implements TeacherService{
 		return false;
 	}
 
+	@Override
+	public List<Competition> findCompByTeacherNo(Integer teacherNo) {
+		return compMapper.selectByTeacherNo(teacherNo);
+	}
+
+	@Override
+	public Competition findByComId(Integer comId) {
+		return compMapper.selectALlByComId(comId);
+	}
+
 }
