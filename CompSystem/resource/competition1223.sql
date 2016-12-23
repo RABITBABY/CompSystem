@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50619
 File Encoding         : 65001
 
-Date: 2016-12-19 00:01:38
+Date: 2016-12-23 16:13:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -123,12 +123,14 @@ CREATE TABLE `budget` (
   KEY `decl_bud` (`comId`),
   KEY `FKADDAAF4589FF68C5` (`budgetId`),
   CONSTRAINT `com_bud` FOREIGN KEY (`comId`) REFERENCES `competition` (`comId`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of budget
 -- ----------------------------
 INSERT INTO `budget` VALUES ('1', '1', '车费', '100', '赛场远');
+INSERT INTO `budget` VALUES ('13', '40', 'ddd', '1', 'ssss');
+INSERT INTO `budget` VALUES ('14', '40', 'ddd2', '2', 'ssss2');
 
 -- ----------------------------
 -- Table structure for competition
@@ -174,7 +176,7 @@ CREATE TABLE `competition` (
   CONSTRAINT `FKBEB591BF6741EFEB` FOREIGN KEY (`teacherNo`) REFERENCES `teacher` (`teacherNo`),
   CONSTRAINT `FKBEB591BF77CD9A99` FOREIGN KEY (`departmentId`) REFERENCES `department` (`departmentId`),
   CONSTRAINT `level_com` FOREIGN KEY (`levelId`) REFERENCES `level` (`levelId`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of competition
@@ -185,6 +187,7 @@ INSERT INTO `competition` VALUES ('3', '美术杯', '1', '信息技术与工程�
 INSERT INTO `competition` VALUES ('4', '小马哥杯', '1', '信息技术与工程学院', '2', '111222', 'b@qq.com', '1', '2016-11-06', '小马哥', '2016-11-29', '华农', '好玩的比赛', '计算机系学生', '2', '娇兰佳人', '就这么干吧', '就这么干吧', '要达到这个目标', null, null, null, null, null, null, null, null, null, null, null, '0');
 INSERT INTO `competition` VALUES ('5', '大数据比赛', '1', '信息技术与工程学院', '2', '111222', 'b@qq.com', '1', '2016-11-06', '小马哥', '2016-11-29', '华农', '好玩的比赛', '计算机系学生', '2', '娇兰佳人', '就这么干吧', '就这么干吧', '要达到这个目标', null, null, null, null, null, null, null, null, null, null, null, '0');
 INSERT INTO `competition` VALUES ('6', '小数据比赛', '1', '信息技术与工程学院', '1', '111222', 'b@qq.com', '1', '2016-11-06', '小马哥', '2016-11-29', '华农', '好玩的比赛', '计算机系学生', '2', '娇兰佳人', '就这么干吧', '就这么干吧', '要达到这个目标', null, null, null, null, null, null, null, null, null, null, null, '0');
+INSERT INTO `competition` VALUES ('40', '测试budget2', '1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '0');
 
 -- ----------------------------
 -- Table structure for conditions
@@ -227,7 +230,7 @@ INSERT INTO `department` VALUES ('4', '教学处');
 DROP TABLE IF EXISTS `fileupload`;
 CREATE TABLE `fileupload` (
   `fileId` int(11) NOT NULL AUTO_INCREMENT COMMENT '序号',
-  `fileName` int(11) DEFAULT NULL COMMENT '文件名',
+  `fileName` varchar(11) DEFAULT NULL COMMENT '文件名',
   `saveName` varchar(100) DEFAULT NULL COMMENT '存储名',
   `uploadDate` date DEFAULT NULL COMMENT '上传日期',
   `uploadUser` varchar(50) DEFAULT NULL COMMENT '上传用户',
@@ -311,7 +314,7 @@ CREATE TABLE `guideteacher` (
   KEY `FKE7E27D66E81376C0` (`id`),
   CONSTRAINT `FKE7E27D666741EFEB` FOREIGN KEY (`teacherNo`) REFERENCES `teacher` (`teacherNo`),
   CONSTRAINT `FKE7E27D66EDBA9C01` FOREIGN KEY (`comId`) REFERENCES `competition` (`comId`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of guideteacher
@@ -319,6 +322,8 @@ CREATE TABLE `guideteacher` (
 INSERT INTO `guideteacher` VALUES ('1', '1', '1');
 INSERT INTO `guideteacher` VALUES ('2', '1', '2');
 INSERT INTO `guideteacher` VALUES ('3', '2', '1');
+INSERT INTO `guideteacher` VALUES ('6', '40', '2');
+INSERT INTO `guideteacher` VALUES ('7', '40', '1');
 
 -- ----------------------------
 -- Table structure for hours
@@ -334,12 +339,14 @@ CREATE TABLE `hours` (
   KEY `decl_hour` (`comId`),
   KEY `FK5EDC70F29ABB60F` (`hoursId`),
   CONSTRAINT `com_hour` FOREIGN KEY (`comId`) REFERENCES `competition` (`comId`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of hours
 -- ----------------------------
 INSERT INTO `hours` VALUES ('1', '1', '基础课程', '2', '无');
+INSERT INTO `hours` VALUES ('2', '40', 'sss', '4', null);
+INSERT INTO `hours` VALUES ('3', '40', 'xxx', '2', null);
 
 -- ----------------------------
 -- Table structure for level
@@ -469,6 +476,7 @@ CREATE TABLE `projectcondition` (
 -- Records of projectcondition
 -- ----------------------------
 INSERT INTO `projectcondition` VALUES ('1', '1');
+INSERT INTO `projectcondition` VALUES ('1', '2');
 
 -- ----------------------------
 -- Table structure for schedule
@@ -489,12 +497,13 @@ CREATE TABLE `schedule` (
   KEY `FKD6669297BF1FBF97` (`scheduleId`),
   CONSTRAINT `com_sch` FOREIGN KEY (`comId`) REFERENCES `competition` (`comId`),
   CONSTRAINT `FKD66692976741EFEB` FOREIGN KEY (`teacherNo`) REFERENCES `teacher` (`teacherNo`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of schedule
 -- ----------------------------
 INSERT INTO `schedule` VALUES ('1', '1', '1', 'java基础', 'A栋202', '2016-12-18', '2');
+INSERT INTO `schedule` VALUES ('3', '40', null, 'ssss', null, null, '9');
 
 -- ----------------------------
 -- Table structure for standard

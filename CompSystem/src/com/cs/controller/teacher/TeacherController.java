@@ -104,7 +104,7 @@ public class TeacherController {
 	}
 	/**
 	 * 2.审核通过后完善信息，竞赛条件。负责人签名。报名开始时间等。
-	 * 操作condition表，project表，以及competition表
+	 * 操作【condition表，project表】，以及competition表
 	 * @return
 	 */
 	

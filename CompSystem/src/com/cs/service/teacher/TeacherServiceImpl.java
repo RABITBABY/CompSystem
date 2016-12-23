@@ -89,6 +89,9 @@ public class TeacherServiceImpl implements TeacherService{
 
 	@Override
 	public Competition findByComId(Integer comId) {
+		/*
+		 * 加一个队伍详细表信息
+		 */
 		return compMapper.selectALlByComId(comId);
 	}
 

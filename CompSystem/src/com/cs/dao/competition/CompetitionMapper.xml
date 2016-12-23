@@ -194,7 +194,7 @@
 		#{teacherNo,jdbcType=INTEGER}
 	</select>
 
-	<!--根据comId查找申报表，预算、详细信息等等。 自己写一个resultMap -->
+	<!--根据comId查找申报表，预算、详细信息等等。 -->
 	<resultMap id="DetailResultMap" type="com.cs.pojo.Competition">
 		<id column="ccomId" jdbcType="INTEGER" property="comId" />
 		<result column="ccomName" jdbcType="VARCHAR" property="comName" />
