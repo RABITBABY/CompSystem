@@ -1,103 +1,82 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.cs.dao.standard.StandardMapper">
-  <resultMap id="BaseResultMap" type="com.cs.pojo.Standard">
-    <id column="standardId" jdbcType="INTEGER" property="standardId" />
-    <result column="student" jdbcType="INTEGER" property="student" />
-    <result column="teacher" jdbcType="INTEGER" property="teacher" />
-    <association property="level" column="levelId" 
-     select="com.cs.dao.level.LevelMapper.selectByLevelId">  
-       
-    </association>
-    <association property="prize" column="prizeId" 
-     select="com.cs.dao.prize.PrizeMapper.selectByPrizeId">  
-       
-    </association>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cs.dao.standard.StandardMapper" >
+  <resultMap id="BaseResultMap" type="com.cs.dao.standard.StandardMapper" >
+    <id column="standardId" property="standardid" jdbcType="INTEGER" />
+    <result column="levelId" property="levelid" jdbcType="INTEGER" />
+    <result column="student" property="student" jdbcType="VARCHAR" />
+    <result column="teacher" property="teacher" jdbcType="VARCHAR" />
   </resultMap>
-  
-  
-  <sql id="Base_Column_List">
-    standardId, levelId, prizeId, student, teacher
+  <sql id="Base_Column_List" >
+    standardId, levelId, student, teacher
   </sql>
-  
-  <select id="selectByID" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select  *
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
     from standard
-    where standardId = #{standardId,jdbcType=INTEGER}
+    where standardId = #{standardid,jdbcType=INTEGER}
   </select>
-  
-  
-  <!-- <delete id="deleteByID" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from standard
-    where standardId = #{standardId,jdbcType=INTEGER}
-  </delete>-->
- <!--  <insert id="insert" parameterType="com.cs.pojo.Standard">
-    insert into standard (standardId, levelId, prizeId, 
-      student, teacher)
-    values (#{standardId,jdbcType=INTEGER}, #{levelId,jdbcType=INTEGER}, #{prizeId,jdbcType=INTEGER}, 
-      #{student,jdbcType=INTEGER}, #{teacher,jdbcType=INTEGER})
+    where standardId = #{standardid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="andy.model.Standard" >
+    insert into standard (standardId, levelId, student, 
+      teacher)
+    values (#{standardid,jdbcType=INTEGER}, #{levelid,jdbcType=INTEGER}, #{student,jdbcType=VARCHAR}, 
+      #{teacher,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.cs.pojo.Standard">
+  <insert id="insertSelective" parameterType="andy.model.Standard" >
     insert into standard
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="standardId != null">
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="standardid != null" >
         standardId,
       </if>
-      <if test="levelId != null">
+      <if test="levelid != null" >
         levelId,
       </if>
-      <if test="prizeId != null">
-        prizeId,
-      </if>
-      <if test="student != null">
+      <if test="student != null" >
         student,
       </if>
-      <if test="teacher != null">
+      <if test="teacher != null" >
         teacher,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="standardId != null">
-        #{standardId,jdbcType=INTEGER},
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="standardid != null" >
+        #{standardid,jdbcType=INTEGER},
       </if>
-      <if test="levelId != null">
-        #{levelId,jdbcType=INTEGER},
+      <if test="levelid != null" >
+        #{levelid,jdbcType=INTEGER},
       </if>
-      <if test="prizeId != null">
-        #{prizeId,jdbcType=INTEGER},
+      <if test="student != null" >
+        #{student,jdbcType=VARCHAR},
       </if>
-      <if test="student != null">
-        #{student,jdbcType=INTEGER},
-      </if>
-      <if test="teacher != null">
-        #{teacher,jdbcType=INTEGER},
+      <if test="teacher != null" >
+        #{teacher,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByIDSelective" parameterType="com.cs.pojo.Standard">
+  <update id="updateByPrimaryKeySelective" parameterType="andy.model.Standard" >
     update standard
-    <set>
-      <if test="levelId != null">
-        levelId = #{levelId,jdbcType=INTEGER},
+    <set >
+      <if test="levelid != null" >
+        levelId = #{levelid,jdbcType=INTEGER},
       </if>
-      <if test="prizeId != null">
-        prizeId = #{prizeId,jdbcType=INTEGER},
+      <if test="student != null" >
+        student = #{student,jdbcType=VARCHAR},
       </if>
-      <if test="student != null">
-        student = #{student,jdbcType=INTEGER},
-      </if>
-      <if test="teacher != null">
-        teacher = #{teacher,jdbcType=INTEGER},
+      <if test="teacher != null" >
+        teacher = #{teacher,jdbcType=VARCHAR},
       </if>
     </set>
-    where standardId = #{standardId,jdbcType=INTEGER}
+    where standardId = #{standardid,jdbcType=INTEGER}
   </update>
-  <update id="updateByID" parameterType="com.cs.pojo.Standard">
+  <update id="updateByPrimaryKey" parameterType="andy.model.Standard" >
     update standard
-    set levelId = #{levelId,jdbcType=INTEGER},
-      prizeId = #{prizeId,jdbcType=INTEGER},
-      student = #{student,jdbcType=INTEGER},
-      teacher = #{teacher,jdbcType=INTEGER}
-    where standardId = #{standardId,jdbcType=INTEGER}
-  </update> -->
+    set levelId = #{levelid,jdbcType=INTEGER},
+      student = #{student,jdbcType=VARCHAR},
+      teacher = #{teacher,jdbcType=VARCHAR}
+    where standardId = #{standardid,jdbcType=INTEGER}
+  </update>
 </mapper>

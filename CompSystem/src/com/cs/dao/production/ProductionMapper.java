@@ -1,9 +1,7 @@
 package com.cs.dao.production;
 
-import org.springframework.stereotype.Component;
-
 import com.cs.pojo.Production;
-@Component
+
 public interface ProductionMapper {
     int deleteByPrimaryKey(Integer proid);
 

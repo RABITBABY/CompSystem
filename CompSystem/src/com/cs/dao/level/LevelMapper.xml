@@ -1,58 +1,71 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.cs.dao.level.LevelMapper">
-  <resultMap id="BaseResultMap" type="com.cs.pojo.Level">
-    <id column="levelId" jdbcType="INTEGER" property="levelId" />
-    <result column="levelName" jdbcType="VARCHAR" property="levelName" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cs.dao.level.LevelMapper" >
+  <resultMap id="BaseResultMap" type="com.cs.dao.level.LevelMapper" >
+    <id column="levelId" property="levelid" jdbcType="INTEGER" />
+    <result column="levelName" property="levelname" jdbcType="VARCHAR" />
+    <result column="prizeName" property="prizename" jdbcType="VARCHAR" />
   </resultMap>
-  <sql id="Base_Column_List">
-    levelId, levelName
+  <sql id="Base_Column_List" >
+    levelId, levelName, prizeName
   </sql>
-  <select id="selectByLevelId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from level
-    where levelId = #{levelId,jdbcType=INTEGER}
+    where levelId = #{levelid,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByID" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from level
-    where levelId = #{levelId,jdbcType=INTEGER}
+    where levelId = #{levelid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.cs.pojo.Level">
-    insert into level (levelId, levelName)
-    values (#{levelId,jdbcType=INTEGER}, #{levelName,jdbcType=VARCHAR})
+  <insert id="insert" parameterType="andy.model.Level" >
+    insert into level (levelId, levelName, prizeName
+      )
+    values (#{levelid,jdbcType=INTEGER}, #{levelname,jdbcType=VARCHAR}, #{prizename,jdbcType=VARCHAR}
+      )
   </insert>
-  <insert id="insertSelective" parameterType="com.cs.pojo.Level">
+  <insert id="insertSelective" parameterType="andy.model.Level" >
     insert into level
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="levelId != null">
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="levelid != null" >
         levelId,
       </if>
-      <if test="levelName != null">
+      <if test="levelname != null" >
         levelName,
       </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="levelId != null">
-        #{levelId,jdbcType=INTEGER},
+      <if test="prizename != null" >
+        prizeName,
       </if>
-      <if test="levelName != null">
-        #{levelName,jdbcType=VARCHAR},
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="levelid != null" >
+        #{levelid,jdbcType=INTEGER},
+      </if>
+      <if test="levelname != null" >
+        #{levelname,jdbcType=VARCHAR},
+      </if>
+      <if test="prizename != null" >
+        #{prizename,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByIDSelective" parameterType="com.cs.pojo.Level">
+  <update id="updateByPrimaryKeySelective" parameterType="andy.model.Level" >
     update level
-    <set>
-      <if test="levelName != null">
-        levelName = #{levelName,jdbcType=VARCHAR},
+    <set >
+      <if test="levelname != null" >
+        levelName = #{levelname,jdbcType=VARCHAR},
+      </if>
+      <if test="prizename != null" >
+        prizeName = #{prizename,jdbcType=VARCHAR},
       </if>
     </set>
-    where levelId = #{levelId,jdbcType=INTEGER}
+    where levelId = #{levelid,jdbcType=INTEGER}
   </update>
-  <update id="updateByID" parameterType="com.cs.pojo.Level">
+  <update id="updateByPrimaryKey" parameterType="andy.model.Level" >
     update level
-    set levelName = #{levelName,jdbcType=VARCHAR}
-    where levelId = #{levelId,jdbcType=INTEGER}
+    set levelName = #{levelname,jdbcType=VARCHAR},
+      prizeName = #{prizename,jdbcType=VARCHAR}
+    where levelId = #{levelid,jdbcType=INTEGER}
   </update>
 </mapper>

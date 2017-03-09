@@ -1,8 +1,7 @@
 package com.cs.dao.prize;
 
-import com.cs.pojo.Prize;
 
-public interface PrizeMapper {
+/*public interface PrizeMapper {
     int deleteByID(Integer prizeid);
 
     int insert(Prize record);
@@ -14,4 +13,4 @@ public interface PrizeMapper {
     int updateByIDSelective(Prize record);
 
     int updateByID(Prize record);
-}
+}*/

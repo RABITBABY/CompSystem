@@ -1,63 +1,58 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.cs.dao.department.DepartmentMapper">
-  <resultMap id="BaseResultMap" type="com.cs.pojo.Department">
-    <id column="departmentId" jdbcType="INTEGER" property="departmentId" />
-    <result column="departmentName" jdbcType="VARCHAR" property="departmentName" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cs.dao.department.DepartmentMapper" >
+  <resultMap id="BaseResultMap" type="com.cs.dao.department.DepartmentMapper" >
+    <id column="departmentID" property="departmentid" jdbcType="INTEGER" />
+    <result column="departmentName" property="departmentname" jdbcType="VARCHAR" />
   </resultMap>
-  <sql id="Base_Column_List">
-    departmentId, departmentName
+  <sql id="Base_Column_List" >
+    departmentID, departmentName
   </sql>
-  
-  <select id="selectByDepartId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from department
-    where departmentId = #{departmentId,jdbcType=INTEGER}
+    where departmentID = #{departmentid,jdbcType=INTEGER}
   </select>
-  
-  
-  <delete id="deleteByDepartmentId" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from department
-    where departmentId = #{departmentId,jdbcType=INTEGER}
+    where departmentID = #{departmentid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.cs.pojo.Department">
-    insert into department (departmentId, departmentName)
-    values (#{departmentId,jdbcType=INTEGER}, #{departmentName,jdbcType=VARCHAR})
+  <insert id="insert" parameterType="andy.model.Department" >
+    insert into department (departmentID, departmentName)
+    values (#{departmentid,jdbcType=INTEGER}, #{departmentname,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.cs.pojo.Department">
+  <insert id="insertSelective" parameterType="andy.model.Department" >
     insert into department
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="departmentId != null">
-        departmentId,
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="departmentid != null" >
+        departmentID,
       </if>
-      <if test="departmentName != null">
+      <if test="departmentname != null" >
         departmentName,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="departmentId != null">
-        #{departmentId,jdbcType=INTEGER},
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="departmentid != null" >
+        #{departmentid,jdbcType=INTEGER},
       </if>
-      <if test="departmentName != null">
-        #{departmentName,jdbcType=VARCHAR},
+      <if test="departmentname != null" >
+        #{departmentname,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  
-  <update id="updateByDepartmentIdSelective" parameterType="com.cs.pojo.Department">
+  <update id="updateByPrimaryKeySelective" parameterType="andy.model.Department" >
     update department
-    <set>
-      <if test="departmentName != null">
-        departmentName = #{departmentName,jdbcType=VARCHAR},
+    <set >
+      <if test="departmentname != null" >
+        departmentName = #{departmentname,jdbcType=VARCHAR},
       </if>
     </set>
-    where departmentId = #{departmentId,jdbcType=INTEGER}
+    where departmentID = #{departmentid,jdbcType=INTEGER}
   </update>
-  
-  <update id="updateByDepartmentId" parameterType="com.cs.pojo.Department">
+  <update id="updateByPrimaryKey" parameterType="andy.model.Department" >
     update department
-    set departmentName = #{departmentName,jdbcType=VARCHAR}
-    where departmentId = #{departmentId,jdbcType=INTEGER}
+    set departmentName = #{departmentname,jdbcType=VARCHAR}
+    where departmentID = #{departmentid,jdbcType=INTEGER}
   </update>
 </mapper>

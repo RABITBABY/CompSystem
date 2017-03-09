@@ -1,93 +1,223 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.cs.dao.teacher.TeacherMapper">
-
-  <resultMap id="BaseResultMap" type="com.cs.pojo.Teacher">
-    <id column="teacherNo" jdbcType="INTEGER" property="teacherNo" />
-    <result column="teacherName" jdbcType="VARCHAR" property="teacherName" />
-    <result column="gender" jdbcType="VARCHAR" property="gender" />
-    <result column="birth" jdbcType="DATE" property="birth" />   
-    <result column="subject" jdbcType="VARCHAR" property="subject" />
-    <result column="phone" jdbcType="VARCHAR" property="phone" />
-    <result column="title" jdbcType="VARCHAR" property="title" />
-    <result column="post" jdbcType="VARCHAR" property="post" />
-    <result column="email" jdbcType="VARCHAR" property="email" />
-    <result column="type" jdbcType="VARCHAR" property="type" />
-    <result column="direction" jdbcType="VARCHAR" property="direction" />
-    <result column="education" jdbcType="VARCHAR" property="education" />
-    <result column="lab" jdbcType="INTEGER" property="lab" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="examiner" jdbcType="INTEGER" property="examiner" />
-    <association property="department" column="departmentId" 
-     select="com.cs.dao.department.DepartmentMapper.selectByDepartId">  
-       
-    </association>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cs.dao.teacher.TeacherMapper" >
+  <resultMap id="BaseResultMap" type="com.cs.dao.teacher.TeacherMapper" >
+    <id column="teacherNo" property="teacherno" jdbcType="INTEGER" />
+    <result column="teacherName" property="teachername" jdbcType="VARCHAR" />
+    <result column="gender" property="gender" jdbcType="VARCHAR" />
+    <result column="birth" property="birth" jdbcType="DATE" />
+    <result column="departmentId" property="departmentid" jdbcType="INTEGER" />
+    <result column="subject" property="subject" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="post" property="post" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="direction" property="direction" jdbcType="VARCHAR" />
+    <result column="education" property="education" jdbcType="VARCHAR" />
+    <result column="lab" property="lab" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="examiner" property="examiner" jdbcType="INTEGER" />
   </resultMap>
-  <sql id="Base_Column_List">
+  <sql id="Base_Column_List" >
     teacherNo, teacherName, gender, birth, departmentId, subject, phone, title, post, 
     email, type, direction, education, lab, password, examiner
   </sql>
-  <!-- 根据no查找教师 -->
-  <select id="selectByTeacherNo" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select *
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
     from teacher
-    where teacherNo = #{teacherNo,jdbcType=INTEGER}
+    where teacherNo = #{teacherno,jdbcType=INTEGER}
   </select>
-  <!-- 修改更新教师信息 -->
-  <update id="updateByTeacherNo" parameterType="com.cs.pojo.Teacher">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from teacher
+    where teacherNo = #{teacherno,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="andy.model.Teacher" >
+    insert into teacher (teacherNo, teacherName, gender, 
+      birth, departmentId, subject, 
+      phone, title, post, 
+      email, type, direction, 
+      education, lab, password, 
+      examiner)
+    values (#{teacherno,jdbcType=INTEGER}, #{teachername,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, 
+      #{birth,jdbcType=DATE}, #{departmentid,jdbcType=INTEGER}, #{subject,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{post,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{direction,jdbcType=VARCHAR}, 
+      #{education,jdbcType=VARCHAR}, #{lab,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{examiner,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="andy.model.Teacher" >
+    insert into teacher
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="teacherno != null" >
+        teacherNo,
+      </if>
+      <if test="teachername != null" >
+        teacherName,
+      </if>
+      <if test="gender != null" >
+        gender,
+      </if>
+      <if test="birth != null" >
+        birth,
+      </if>
+      <if test="departmentid != null" >
+        departmentId,
+      </if>
+      <if test="subject != null" >
+        subject,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="post != null" >
+        post,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="direction != null" >
+        direction,
+      </if>
+      <if test="education != null" >
+        education,
+      </if>
+      <if test="lab != null" >
+        lab,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="examiner != null" >
+        examiner,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="teacherno != null" >
+        #{teacherno,jdbcType=INTEGER},
+      </if>
+      <if test="teachername != null" >
+        #{teachername,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="birth != null" >
+        #{birth,jdbcType=DATE},
+      </if>
+      <if test="departmentid != null" >
+        #{departmentid,jdbcType=INTEGER},
+      </if>
+      <if test="subject != null" >
+        #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="post != null" >
+        #{post,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="direction != null" >
+        #{direction,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null" >
+        #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="lab != null" >
+        #{lab,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="examiner != null" >
+        #{examiner,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="andy.model.Teacher" >
     update teacher
-    <set>
-      <if test="teacherName != null">
-        teacherName = #{teacherName,jdbcType=VARCHAR},
+    <set >
+      <if test="teachername != null" >
+        teacherName = #{teachername,jdbcType=VARCHAR},
       </if>
-      <if test="gender != null">
-       gender = #{gender,jdbcType=VARCHAR},
+      <if test="gender != null" >
+        gender = #{gender,jdbcType=VARCHAR},
       </if>
-      <if test="birth != null">
-         birth = #{birth,jdbcType=DATE},
+      <if test="birth != null" >
+        birth = #{birth,jdbcType=DATE},
       </if>
-      <if test="department.departmentId != null">
-        departmentId = #{department.departmentId,jdbcType=INTEGER},
+      <if test="departmentid != null" >
+        departmentId = #{departmentid,jdbcType=INTEGER},
       </if>
-      <if test="subject != null">
-         subject = #{subject,jdbcType=VARCHAR},
+      <if test="subject != null" >
+        subject = #{subject,jdbcType=VARCHAR},
       </if>
-      <if test="phone != null">
-         phone = #{phone,jdbcType=VARCHAR},
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
       </if>
-      <if test="title != null">
-         title = #{title,jdbcType=VARCHAR},
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
       </if>
-      <if test="email != null">
-         email = #{email,jdbcType=VARCHAR},
+      <if test="post != null" >
+        post = #{post,jdbcType=VARCHAR},
       </if>
-      <if test="type != null">
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
         type = #{type,jdbcType=VARCHAR},
       </if>
-      <if test="direction != null">
-         direction = #{direction,jdbcType=VARCHAR},
+      <if test="direction != null" >
+        direction = #{direction,jdbcType=VARCHAR},
       </if>
-      <if test="education != null">
-         education = #{education,jdbcType=VARCHAR},
+      <if test="education != null" >
+        education = #{education,jdbcType=VARCHAR},
       </if>
-       <if test="lab != null">
-         lab = #{lab,jdbcType=INTEGER},
+      <if test="lab != null" >
+        lab = #{lab,jdbcType=VARCHAR},
       </if>
-       <if test="password != null">
-         password = #{password,jdbcType=VARCHAR},
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="examiner != null">
-         examiner = #{examiner,jdbcType=INTEGER},
+      <if test="examiner != null" >
+        examiner = #{examiner,jdbcType=INTEGER},
       </if>
     </set>
-    where teacherNo = #{teacherNo,jdbcType=INTEGER}
+    where teacherNo = #{teacherno,jdbcType=INTEGER}
   </update>
-  
-  <!-- 为竞赛添加指导老师 -->
-  <insert id="addGuideTeacher" parameterType="java.lang.Integer">
-		insert into
-		guideteacher(comId,teacherNo) values
-		(#{comId,jdbcType=INTEGER},#{teacherNo,jdbcType=INTEGER})
- </insert>
-  
+  <update id="updateByPrimaryKey" parameterType="andy.model.Teacher" >
+    update teacher
+    set teacherName = #{teachername,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=VARCHAR},
+      birth = #{birth,jdbcType=DATE},
+      departmentId = #{departmentid,jdbcType=INTEGER},
+      subject = #{subject,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      post = #{post,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      direction = #{direction,jdbcType=VARCHAR},
+      education = #{education,jdbcType=VARCHAR},
+      lab = #{lab,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      examiner = #{examiner,jdbcType=INTEGER}
+    where teacherNo = #{teacherno,jdbcType=INTEGER}
+  </update>
 </mapper>

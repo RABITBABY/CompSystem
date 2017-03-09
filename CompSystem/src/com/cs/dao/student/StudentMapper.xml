@@ -1,178 +1,153 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.cs.dao.student.StudentMapper">
-  <resultMap id="BaseResultMap" type="com.cs.pojo.Student">
-    <id column="studentNo" jdbcType="INTEGER" property="studentNo" />
-    <result column="studentName" jdbcType="VARCHAR" property="studentName" />
-    <result column="gender" jdbcType="VARCHAR" property="gender" />
-    <result column="profession" jdbcType="VARCHAR" property="profession" />
-    <result column="classNo" jdbcType="INTEGER" property="classNo" />
-    <result column="grade" jdbcType="INTEGER" property="grade" />
-    <result column="phone" jdbcType="VARCHAR" property="phone" />
-    <result column="email" jdbcType="VARCHAR" property="email" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    
-    <association property="department" column="departmentId" 
-     select="com.cs.dao.department.DepartmentMapper.selectByDepartId">  
-    </association>
-    
-    <collection property="materials" ofType="com.cs.pojo.Material">  
-       <id column="materialId" jdbcType="INTEGER" property="materialId" />
-       <result column="materialName" jdbcType="VARCHAR" property="materialName" />
-       <result column="materialPic" jdbcType="VARCHAR" property="materialPic" />
-       <result column="status" jdbcType="VARCHAR" property="status" />
-       <association property="condition" column="conditionId"
-			select="com.cs.dao.condition.ConditionMapper.selectByConditionId">
-		</association>
-    </collection>
- 
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cs.dao.student.StudentMapper" >
+  <resultMap id="BaseResultMap" type="com.cs.dao.student.StudentMapper" >
+    <id column="studentNo" property="studentno" jdbcType="INTEGER" />
+    <result column="studentName" property="studentname" jdbcType="VARCHAR" />
+    <result column="gender" property="gender" jdbcType="VARCHAR" />
+    <result column="departmentId" property="departmentid" jdbcType="INTEGER" />
+    <result column="profession" property="profession" jdbcType="VARCHAR" />
+    <result column="classNo" property="classno" jdbcType="INTEGER" />
+    <result column="grade" property="grade" jdbcType="INTEGER" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
   </resultMap>
-  <sql id="Base_Column_List">
+  <sql id="Base_Column_List" >
     studentNo, studentName, gender, departmentId, profession, classNo, grade, phone, 
     email, password
   </sql>
-  <select id="selectByStudentNo" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
-    *
-    from student 
-    where studentNo = #{studentNo,jdbcType=INTEGER}
+    <include refid="Base_Column_List" />
+    from student
+    where studentNo = #{studentno,jdbcType=INTEGER}
   </select>
-  
-  <select id="selectMaterialByNo" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    s.studentNo, studentName, gender, departmentId, profession, classNo, grade, phone, 
-    email,m.materialId,conditionId,materialPic,status
-    from student s 
-    join material m on s.studentNo=m.studentNo 
-    where s.studentNo = #{studentNo,jdbcType=INTEGER}
-  </select>
-  
-  
-  <delete id="deleteByID" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from student
-    where studentNo = #{studentNo,jdbcType=INTEGER}
+    where studentNo = #{studentno,jdbcType=INTEGER}
   </delete>
-  <!-- <insert id="insert" parameterType="com.cs.pojo.Student">
+  <insert id="insert" parameterType="andy.model.Student" >
     insert into student (studentNo, studentName, gender, 
       departmentId, profession, classNo, 
       grade, phone, email, 
       password)
-    values (#{studentNo,jdbcType=INTEGER}, #{studentName,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, 
-      #{departmentId,jdbcType=INTEGER}, #{profession,jdbcType=VARCHAR}, #{classNo,jdbcType=INTEGER}, 
+    values (#{studentno,jdbcType=INTEGER}, #{studentname,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, 
+      #{departmentid,jdbcType=INTEGER}, #{profession,jdbcType=VARCHAR}, #{classno,jdbcType=INTEGER}, 
       #{grade,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
       #{password,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.cs.pojo.Student">
+  <insert id="insertSelective" parameterType="andy.model.Student" >
     insert into student
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="studentNo != null">
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="studentno != null" >
         studentNo,
       </if>
-      <if test="studentName != null">
+      <if test="studentname != null" >
         studentName,
       </if>
-      <if test="gender != null">
+      <if test="gender != null" >
         gender,
       </if>
-      <if test="departmentId != null">
+      <if test="departmentid != null" >
         departmentId,
       </if>
-      <if test="profession != null">
+      <if test="profession != null" >
         profession,
       </if>
-      <if test="classNo != null">
+      <if test="classno != null" >
         classNo,
       </if>
-      <if test="grade != null">
+      <if test="grade != null" >
         grade,
       </if>
-      <if test="phone != null">
+      <if test="phone != null" >
         phone,
       </if>
-      <if test="email != null">
+      <if test="email != null" >
         email,
       </if>
-      <if test="password != null">
+      <if test="password != null" >
         password,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="studentNo != null">
-        #{studentNo,jdbcType=INTEGER},
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="studentno != null" >
+        #{studentno,jdbcType=INTEGER},
       </if>
-      <if test="studentName != null">
-        #{studentName,jdbcType=VARCHAR},
+      <if test="studentname != null" >
+        #{studentname,jdbcType=VARCHAR},
       </if>
-      <if test="gender != null">
+      <if test="gender != null" >
         #{gender,jdbcType=VARCHAR},
       </if>
-      <if test="departmentId != null">
-        #{departmentId,jdbcType=INTEGER},
+      <if test="departmentid != null" >
+        #{departmentid,jdbcType=INTEGER},
       </if>
-      <if test="profession != null">
+      <if test="profession != null" >
         #{profession,jdbcType=VARCHAR},
       </if>
-      <if test="classNo != null">
-        #{classNo,jdbcType=INTEGER},
+      <if test="classno != null" >
+        #{classno,jdbcType=INTEGER},
       </if>
-      <if test="grade != null">
+      <if test="grade != null" >
         #{grade,jdbcType=INTEGER},
       </if>
-      <if test="phone != null">
+      <if test="phone != null" >
         #{phone,jdbcType=VARCHAR},
       </if>
-      <if test="email != null">
+      <if test="email != null" >
         #{email,jdbcType=VARCHAR},
       </if>
-      <if test="password != null">
+      <if test="password != null" >
         #{password,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByIDSelective" parameterType="com.cs.pojo.Student">
+  <update id="updateByPrimaryKeySelective" parameterType="andy.model.Student" >
     update student
-    <set>
-      <if test="studentName != null">
-        studentName = #{studentName,jdbcType=VARCHAR},
+    <set >
+      <if test="studentname != null" >
+        studentName = #{studentname,jdbcType=VARCHAR},
       </if>
-      <if test="gender != null">
+      <if test="gender != null" >
         gender = #{gender,jdbcType=VARCHAR},
       </if>
-      <if test="departmentId != null">
-        departmentId = #{departmentId,jdbcType=INTEGER},
+      <if test="departmentid != null" >
+        departmentId = #{departmentid,jdbcType=INTEGER},
       </if>
-      <if test="profession != null">
+      <if test="profession != null" >
         profession = #{profession,jdbcType=VARCHAR},
       </if>
-      <if test="classNo != null">
-        classNo = #{classNo,jdbcType=INTEGER},
+      <if test="classno != null" >
+        classNo = #{classno,jdbcType=INTEGER},
       </if>
-      <if test="grade != null">
+      <if test="grade != null" >
         grade = #{grade,jdbcType=INTEGER},
       </if>
-      <if test="phone != null">
+      <if test="phone != null" >
         phone = #{phone,jdbcType=VARCHAR},
       </if>
-      <if test="email != null">
+      <if test="email != null" >
         email = #{email,jdbcType=VARCHAR},
       </if>
-      <if test="password != null">
+      <if test="password != null" >
         password = #{password,jdbcType=VARCHAR},
       </if>
     </set>
-    where studentNo = #{studentNo,jdbcType=INTEGER}
+    where studentNo = #{studentno,jdbcType=INTEGER}
   </update>
-  <update id="updateByID" parameterType="com.cs.pojo.Student">
+  <update id="updateByPrimaryKey" parameterType="andy.model.Student" >
     update student
-    set studentName = #{studentName,jdbcType=VARCHAR},
+    set studentName = #{studentname,jdbcType=VARCHAR},
       gender = #{gender,jdbcType=VARCHAR},
-      departmentId = #{departmentId,jdbcType=INTEGER},
+      departmentId = #{departmentid,jdbcType=INTEGER},
       profession = #{profession,jdbcType=VARCHAR},
-      classNo = #{classNo,jdbcType=INTEGER},
+      classNo = #{classno,jdbcType=INTEGER},
       grade = #{grade,jdbcType=INTEGER},
       phone = #{phone,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR}
-    where studentNo = #{studentNo,jdbcType=INTEGER}
-  </update> -->
+    where studentNo = #{studentno,jdbcType=INTEGER}
+  </update>
 </mapper>

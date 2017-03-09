@@ -1,31 +1,17 @@
 package com.cs.dao.student;
 
-import java.util.List;
-
 import com.cs.pojo.Student;
 
 public interface StudentMapper {
-    int deleteByID(Integer studentno);
+    int deleteByPrimaryKey(Integer studentno);
 
     int insert(Student record);
 
     int insertSelective(Student record);
 
-    /**
-     * 根据学号no查询学生信息
-     * @param studentno
-     * @return
-     */
-    Student selectByStudentNo(Integer studentno);
-    
-    /**
-     * 查询学生信息，包括材料。
-     * @param studentno
-     * @return
-     */
-    Student selectMaterialByNo(Integer studentno);
+    Student selectByPrimaryKey(Integer studentno);
 
-    int updateByIDSelective(Student record);
+    int updateByPrimaryKeySelective(Student record);
 
-    int updateByID(Student record);
+    int updateByPrimaryKey(Student record);
 }

@@ -1,121 +1,121 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.cs.dao.production.ProductionMapper">
-  <resultMap id="BaseResultMap" type="com.cs.pojo.Production">
-    <id column="proId" jdbcType="INTEGER" property="proId" />
-    <result column="proName" jdbcType="VARCHAR" property="proName" />
-    <result column="award" jdbcType="VARCHAR" property="award" />
-    <result column="membersName" jdbcType="VARCHAR" property="membersName" />
-    <result column="pic" jdbcType="VARCHAR" property="pic" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cs.dao.production.ProductionMapper" >
+  <resultMap id="BaseResultMap" type="com.cs.dao.production.ProductionMapper" >
+    <id column="proId" property="proid" jdbcType="INTEGER" />
+    <result column="proName" property="proname" jdbcType="VARCHAR" />
+    <result column="award" property="award" jdbcType="VARCHAR" />
+    <result column="membersName" property="membersname" jdbcType="VARCHAR" />
+    <result column="pic" property="pic" jdbcType="VARCHAR" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.cs.pojo.Production">
-    <result column="introduction" jdbcType="LONGVARCHAR" property="introduction" />
+  <resultMap id="ResultMapWithBLOBs" type="andy.model.Production" extends="BaseResultMap" >
+    <result column="introduction" property="introduction" jdbcType="LONGVARCHAR" />
   </resultMap>
-  <sql id="Base_Column_List">
+  <sql id="Base_Column_List" >
     proId, proName, award, membersName, pic
   </sql>
-  <sql id="Blob_Column_List">
+  <sql id="Blob_Column_List" >
     introduction
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
     from production
-    where proId = #{proId,jdbcType=INTEGER}
+    where proId = #{proid,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from production
-    where proId = #{proId,jdbcType=INTEGER}
+    where proId = #{proid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.cs.pojo.Production">
+  <insert id="insert" parameterType="andy.model.Production" >
     insert into production (proId, proName, award, 
       membersName, pic, introduction
       )
-    values (#{proId,jdbcType=INTEGER}, #{proName,jdbcType=VARCHAR}, #{award,jdbcType=VARCHAR}, 
-      #{membersName,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, #{introduction,jdbcType=LONGVARCHAR}
+    values (#{proid,jdbcType=INTEGER}, #{proname,jdbcType=VARCHAR}, #{award,jdbcType=VARCHAR}, 
+      #{membersname,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, #{introduction,jdbcType=LONGVARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.cs.pojo.Production">
+  <insert id="insertSelective" parameterType="andy.model.Production" >
     insert into production
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="proId != null">
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="proid != null" >
         proId,
       </if>
-      <if test="proName != null">
+      <if test="proname != null" >
         proName,
       </if>
-      <if test="award != null">
+      <if test="award != null" >
         award,
       </if>
-      <if test="membersName != null">
+      <if test="membersname != null" >
         membersName,
       </if>
-      <if test="pic != null">
+      <if test="pic != null" >
         pic,
       </if>
-      <if test="introduction != null">
+      <if test="introduction != null" >
         introduction,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="proId != null">
-        #{proId,jdbcType=INTEGER},
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="proid != null" >
+        #{proid,jdbcType=INTEGER},
       </if>
-      <if test="proName != null">
-        #{proName,jdbcType=VARCHAR},
+      <if test="proname != null" >
+        #{proname,jdbcType=VARCHAR},
       </if>
-      <if test="award != null">
+      <if test="award != null" >
         #{award,jdbcType=VARCHAR},
       </if>
-      <if test="membersName != null">
-        #{membersName,jdbcType=VARCHAR},
+      <if test="membersname != null" >
+        #{membersname,jdbcType=VARCHAR},
       </if>
-      <if test="pic != null">
+      <if test="pic != null" >
         #{pic,jdbcType=VARCHAR},
       </if>
-      <if test="introduction != null">
+      <if test="introduction != null" >
         #{introduction,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Production">
+  <update id="updateByPrimaryKeySelective" parameterType="andy.model.Production" >
     update production
-    <set>
-      <if test="proName != null">
-        proName = #{proName,jdbcType=VARCHAR},
+    <set >
+      <if test="proname != null" >
+        proName = #{proname,jdbcType=VARCHAR},
       </if>
-      <if test="award != null">
+      <if test="award != null" >
         award = #{award,jdbcType=VARCHAR},
       </if>
-      <if test="membersName != null">
-        membersName = #{membersName,jdbcType=VARCHAR},
+      <if test="membersname != null" >
+        membersName = #{membersname,jdbcType=VARCHAR},
       </if>
-      <if test="pic != null">
+      <if test="pic != null" >
         pic = #{pic,jdbcType=VARCHAR},
       </if>
-      <if test="introduction != null">
+      <if test="introduction != null" >
         introduction = #{introduction,jdbcType=LONGVARCHAR},
       </if>
     </set>
-    where proId = #{proId,jdbcType=INTEGER}
+    where proId = #{proid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.cs.pojo.Production">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="andy.model.Production" >
     update production
-    set proName = #{proName,jdbcType=VARCHAR},
+    set proName = #{proname,jdbcType=VARCHAR},
       award = #{award,jdbcType=VARCHAR},
-      membersName = #{membersName,jdbcType=VARCHAR},
+      membersName = #{membersname,jdbcType=VARCHAR},
       pic = #{pic,jdbcType=VARCHAR},
       introduction = #{introduction,jdbcType=LONGVARCHAR}
-    where proId = #{proId,jdbcType=INTEGER}
+    where proId = #{proid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Production">
+  <update id="updateByPrimaryKey" parameterType="andy.model.Production" >
     update production
-    set proName = #{proName,jdbcType=VARCHAR},
+    set proName = #{proname,jdbcType=VARCHAR},
       award = #{award,jdbcType=VARCHAR},
-      membersName = #{membersName,jdbcType=VARCHAR},
+      membersName = #{membersname,jdbcType=VARCHAR},
       pic = #{pic,jdbcType=VARCHAR}
-    where proId = #{proId,jdbcType=INTEGER}
+    where proId = #{proid,jdbcType=INTEGER}
   </update>
 </mapper>

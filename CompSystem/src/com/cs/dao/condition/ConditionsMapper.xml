@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cs.dao.condition.ConditionsMapper" >
+  <resultMap id="BaseResultMap" type="com.cs.dao.condition.ConditionsMapper" >
+    <id column="conditionId" property="conditionid" jdbcType="INTEGER" />
+    <result column="conditionName" property="conditionname" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    conditionId, conditionName, type
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from conditions
+    where conditionId = #{conditionid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from conditions
+    where conditionId = #{conditionid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="andy.model.Conditions" >
+    insert into conditions (conditionId, conditionName, type
+      )
+    values (#{conditionid,jdbcType=INTEGER}, #{conditionname,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="andy.model.Conditions" >
+    insert into conditions
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="conditionid != null" >
+        conditionId,
+      </if>
+      <if test="conditionname != null" >
+        conditionName,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="conditionid != null" >
+        #{conditionid,jdbcType=INTEGER},
+      </if>
+      <if test="conditionname != null" >
+        #{conditionname,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="andy.model.Conditions" >
+    update conditions
+    <set >
+      <if test="conditionname != null" >
+        conditionName = #{conditionname,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=INTEGER},
+      </if>
+    </set>
+    where conditionId = #{conditionid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="andy.model.Conditions" >
+    update conditions
+    set conditionName = #{conditionname,jdbcType=VARCHAR},
+      type = #{type,jdbcType=INTEGER}
+    where conditionId = #{conditionid,jdbcType=INTEGER}
+  </update>
+</mapper>

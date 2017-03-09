@@ -1,108 +1,93 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.cs.dao.hour.HoursMapper">
-  <resultMap id="BaseResultMap" type="com.cs.pojo.Hours">
-    <id column="hoursId" jdbcType="INTEGER" property="hoursId" />
-    <result column="comId" jdbcType="INTEGER" property="comId" />
-    <result column="type" jdbcType="VARCHAR" property="type" />
-    <result column="hours" jdbcType="INTEGER" property="hours" />
-    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cs.dao.hour.HoursMapper" >
+  <resultMap id="BaseResultMap" type="com.cs.dao.hour.HoursMapper" >
+    <id column="hoursId" property="hoursid" jdbcType="INTEGER" />
+    <result column="comId" property="comid" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="hours" property="hours" jdbcType="INTEGER" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
   </resultMap>
-  <sql id="Base_Column_List">
+  <sql id="Base_Column_List" >
     hoursId, comId, type, hours, remarks
   </sql>
-  
-  <!-- 批量插入经费预算 -->
-	<insert id="addHoursBatch" parameterType="ArrayList">
-		insert into
-		hours(hoursId,comId,type,hours,remarks) values
-		<foreach collection="list" item="item" index="index"
-			separator=",">
-			(#{item.hoursId,jdbcType=INTEGER},
-			#{item.comId,jdbcType=INTEGER},
-			#{item.type,jdbcType=VARCHAR},
-			#{item.hours,jdbcType=INTEGER},
-			#{item.remarks,jdbcType=VARCHAR})
-		</foreach>
-	</insert>
-  
-  <select id="selectByHoursId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
-    *
+    <include refid="Base_Column_List" />
     from hours
-    where hoursId = #{hoursId,jdbcType=INTEGER}
+    where hoursId = #{hoursid,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from hours
-    where hoursId = #{hoursId,jdbcType=INTEGER}
+    where hoursId = #{hoursid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.cs.pojo.Hours">
+  <insert id="insert" parameterType="andy.model.Hours" >
     insert into hours (hoursId, comId, type, 
       hours, remarks)
-    values (#{hoursId,jdbcType=INTEGER}, #{comId,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, 
+    values (#{hoursid,jdbcType=INTEGER}, #{comid,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, 
       #{hours,jdbcType=INTEGER}, #{remarks,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.cs.pojo.Hours">
+  <insert id="insertSelective" parameterType="andy.model.Hours" >
     insert into hours
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="hoursId != null">
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="hoursid != null" >
         hoursId,
       </if>
-      <if test="comId != null">
+      <if test="comid != null" >
         comId,
       </if>
-      <if test="type != null">
+      <if test="type != null" >
         type,
       </if>
-      <if test="hours != null">
+      <if test="hours != null" >
         hours,
       </if>
-      <if test="remarks != null">
+      <if test="remarks != null" >
         remarks,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="hoursId != null">
-        #{hoursId,jdbcType=INTEGER},
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="hoursid != null" >
+        #{hoursid,jdbcType=INTEGER},
       </if>
-      <if test="comId != null">
-        #{comId,jdbcType=INTEGER},
+      <if test="comid != null" >
+        #{comid,jdbcType=INTEGER},
       </if>
-      <if test="type != null">
+      <if test="type != null" >
         #{type,jdbcType=VARCHAR},
       </if>
-      <if test="hours != null">
+      <if test="hours != null" >
         #{hours,jdbcType=INTEGER},
       </if>
-      <if test="remarks != null">
+      <if test="remarks != null" >
         #{remarks,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Hours">
+  <update id="updateByPrimaryKeySelective" parameterType="andy.model.Hours" >
     update hours
-    <set>
-      <if test="comId != null">
-        comId = #{comId,jdbcType=INTEGER},
+    <set >
+      <if test="comid != null" >
+        comId = #{comid,jdbcType=INTEGER},
       </if>
-      <if test="type != null">
+      <if test="type != null" >
         type = #{type,jdbcType=VARCHAR},
       </if>
-      <if test="hours != null">
+      <if test="hours != null" >
         hours = #{hours,jdbcType=INTEGER},
       </if>
-      <if test="remarks != null">
+      <if test="remarks != null" >
         remarks = #{remarks,jdbcType=VARCHAR},
       </if>
     </set>
-    where hoursId = #{hoursId,jdbcType=INTEGER}
+    where hoursId = #{hoursid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Hours">
+  <update id="updateByPrimaryKey" parameterType="andy.model.Hours" >
     update hours
-    set comId = #{comId,jdbcType=INTEGER},
+    set comId = #{comid,jdbcType=INTEGER},
       type = #{type,jdbcType=VARCHAR},
       hours = #{hours,jdbcType=INTEGER},
       remarks = #{remarks,jdbcType=VARCHAR}
-    where hoursId = #{hoursId,jdbcType=INTEGER}
+    where hoursId = #{hoursid,jdbcType=INTEGER}
   </update>
 </mapper>

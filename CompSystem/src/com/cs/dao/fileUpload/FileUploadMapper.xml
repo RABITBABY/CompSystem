@@ -1,100 +1,93 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.cs.dao.fileUpload.FileUploadMapper">
-
-  <resultMap id="BaseResultMap" type="com.cs.pojo.FileUpload">
-    <id column="fileId" jdbcType="INTEGER" property="fileId" />
-    <result column="fileName" jdbcType="INTEGER" property="fileName" />
-    <result column="saveName" jdbcType="VARCHAR" property="saveName" />
-    <result column="uploadDate" jdbcType="DATE" property="uploadDate" />
-    <association property="uploadUser" column="uploadUser"  
-    select="com.cs.dao.admin.AdministerMapper.selectByID" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cs.dao.fileUpload.FileUploadMapper" >
+  <resultMap id="BaseResultMap" type="com.cs.dao.fileUpload.FileUploadMapper" >
+    <id column="fileId" property="fileid" jdbcType="INTEGER" />
+    <result column="fileName" property="filename" jdbcType="VARCHAR" />
+    <result column="saveName" property="savename" jdbcType="VARCHAR" />
+    <result column="uploadDate" property="uploaddate" jdbcType="DATE" />
+    <result column="uploadUserNo" property="uploaduserno" jdbcType="INTEGER" />
   </resultMap>
-  
-  <sql id="Base_Column_List">
-    fileId, fileName, saveName, uploadDate, uploadUser
+  <sql id="Base_Column_List" >
+    fileId, fileName, saveName, uploadDate, uploadUserNo
   </sql>
-  
-  <select id="selectByID" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select  *
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
     from fileupload
-    where fileId = #{fileId,jdbcType=INTEGER}
+    where fileId = #{fileid,jdbcType=INTEGER}
   </select>
-  
-  
- <!--  <delete id="deleteByID" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from fileupload
-    where fileId = #{fileId,jdbcType=INTEGER}
+    where fileId = #{fileid,jdbcType=INTEGER}
   </delete>
-  
-  <insert id="insert" parameterType="com.cs.pojo.FileUpload">
+  <insert id="insert" parameterType="andy.model.FileUpload" >
     insert into fileupload (fileId, fileName, saveName, 
-      uploadDate, uploadUser)
-    values (#{fileId,jdbcType=INTEGER}, #{fileName,jdbcType=INTEGER}, #{saveName,jdbcType=VARCHAR}, 
-      #{uploadDate,jdbcType=DATE}, #{uploadUser,jdbcType=VARCHAR})
+      uploadDate, uploadUserNo)
+    values (#{fileid,jdbcType=INTEGER}, #{filename,jdbcType=VARCHAR}, #{savename,jdbcType=VARCHAR}, 
+      #{uploaddate,jdbcType=DATE}, #{uploaduserno,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.cs.pojo.FileUpload">
+  <insert id="insertSelective" parameterType="andy.model.FileUpload" >
     insert into fileupload
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="fileId != null">
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fileid != null" >
         fileId,
       </if>
-      <if test="fileName != null">
+      <if test="filename != null" >
         fileName,
       </if>
-      <if test="saveName != null">
+      <if test="savename != null" >
         saveName,
       </if>
-      <if test="uploadDate != null">
+      <if test="uploaddate != null" >
         uploadDate,
       </if>
-      <if test="uploadUser != null">
-        uploadUser,
+      <if test="uploaduserno != null" >
+        uploadUserNo,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="fileId != null">
-        #{fileId,jdbcType=INTEGER},
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fileid != null" >
+        #{fileid,jdbcType=INTEGER},
       </if>
-      <if test="fileName != null">
-        #{fileName,jdbcType=INTEGER},
+      <if test="filename != null" >
+        #{filename,jdbcType=VARCHAR},
       </if>
-      <if test="saveName != null">
-        #{saveName,jdbcType=VARCHAR},
+      <if test="savename != null" >
+        #{savename,jdbcType=VARCHAR},
       </if>
-      <if test="uploadDate != null">
-        #{uploadDate,jdbcType=DATE},
+      <if test="uploaddate != null" >
+        #{uploaddate,jdbcType=DATE},
       </if>
-      <if test="uploadUser != null">
-        #{uploadUser,jdbcType=VARCHAR},
+      <if test="uploaduserno != null" >
+        #{uploaduserno,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
-  
-  <update id="updateByIDSelective" parameterType="com.cs.pojo.FileUpload">
+  <update id="updateByPrimaryKeySelective" parameterType="andy.model.FileUpload" >
     update fileupload
-    <set>
-      <if test="fileName != null">
-        fileName = #{fileName,jdbcType=INTEGER},
+    <set >
+      <if test="filename != null" >
+        fileName = #{filename,jdbcType=VARCHAR},
       </if>
-      <if test="saveName != null">
-        saveName = #{saveName,jdbcType=VARCHAR},
+      <if test="savename != null" >
+        saveName = #{savename,jdbcType=VARCHAR},
       </if>
-      <if test="uploadDate != null">
-        uploadDate = #{uploadDate,jdbcType=DATE},
+      <if test="uploaddate != null" >
+        uploadDate = #{uploaddate,jdbcType=DATE},
       </if>
-      <if test="uploadUser != null">
-        uploadUser = #{uploadUser,jdbcType=VARCHAR},
+      <if test="uploaduserno != null" >
+        uploadUserNo = #{uploaduserno,jdbcType=INTEGER},
       </if>
     </set>
-    where fileId = #{fileId,jdbcType=INTEGER}
+    where fileId = #{fileid,jdbcType=INTEGER}
   </update>
-  <update id="updateByID" parameterType="com.cs.pojo.FileUpload">
+  <update id="updateByPrimaryKey" parameterType="andy.model.FileUpload" >
     update fileupload
-    set fileName = #{fileName,jdbcType=INTEGER},
-      saveName = #{saveName,jdbcType=VARCHAR},
-      uploadDate = #{uploadDate,jdbcType=DATE},
-      uploadUser = #{uploadUser,jdbcType=VARCHAR}
-    where fileId = #{fileId,jdbcType=INTEGER}
-  </update> -->
+    set fileName = #{filename,jdbcType=VARCHAR},
+      saveName = #{savename,jdbcType=VARCHAR},
+      uploadDate = #{uploaddate,jdbcType=DATE},
+      uploadUserNo = #{uploaduserno,jdbcType=INTEGER}
+    where fileId = #{fileid,jdbcType=INTEGER}
+  </update>
 </mapper>
