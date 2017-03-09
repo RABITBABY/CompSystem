@@ -1,15 +1,13 @@
 package com.cs.pojo;
-import java.util.List;
-import org.springframework.stereotype.Component;
-@Component
+
 public class Student {
     private Integer studentNo;
-    
+
     private String studentName;
 
     private String gender;
 
-    private Department department;
+    private Integer departmentId;
 
     private String profession;
 
@@ -22,97 +20,86 @@ public class Student {
     private String email;
 
     private String password;
-    
-    private List<Material> materials;
-    
-   
-	public List<Material> getMaterials() {
-		return materials;
-	}
-
-	public void setMaterials(List<Material> materials) {
-		this.materials = materials;
-	}
 
 	public Integer getStudentNo() {
-        return studentNo;
-    }
-
-    public void setStudentNo(Integer studentNo) {
-        this.studentNo = studentNo;
-    }
-
-    public String getStudentName() {
-        return studentName;
-    }
-
-    public void setStudentName(String studentName) {
-        this.studentName = studentName == null ? null : studentName.trim();
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender == null ? null : gender.trim();
-    }
-
-    
-
-    public Department getDepartment() {
-		return department;
+		return studentNo;
 	}
 
-	public void setDepartment(Department department) {
-		this.department = department;
+	public void setStudentNo(Integer studentNo) {
+		this.studentNo = studentNo;
+	}
+
+	public String getStudentName() {
+		return studentName;
+	}
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public Integer getDepartmentId() {
+		return departmentId;
+	}
+
+	public void setDepartmentId(Integer departmentId) {
+		this.departmentId = departmentId;
 	}
 
 	public String getProfession() {
-        return profession;
-    }
+		return profession;
+	}
 
-    public void setProfession(String profession) {
-        this.profession = profession == null ? null : profession.trim();
-    }
+	public void setProfession(String profession) {
+		this.profession = profession;
+	}
 
-    public Integer getClassNo() {
-        return classNo;
-    }
+	public Integer getClassNo() {
+		return classNo;
+	}
 
-    public void setClassNo(Integer classNo) {
-        this.classNo = classNo;
-    }
+	public void setClassNo(Integer classNo) {
+		this.classNo = classNo;
+	}
 
-    public Integer getGrade() {
-        return grade;
-    }
+	public Integer getGrade() {
+		return grade;
+	}
 
-    public void setGrade(Integer grade) {
-        this.grade = grade;
-    }
+	public void setGrade(Integer grade) {
+		this.grade = grade;
+	}
 
-    public String getPhone() {
-        return phone;
-    }
+	public String getPhone() {
+		return phone;
+	}
 
-    public void setPhone(String phone) {
-        this.phone = phone == null ? null : phone.trim();
-    }
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
+    
+
 }

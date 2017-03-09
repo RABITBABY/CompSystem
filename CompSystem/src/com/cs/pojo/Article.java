@@ -2,8 +2,6 @@ package com.cs.pojo;
 
 import java.util.Date;
 
-import org.springframework.stereotype.Component;
-@Component
 public class Article {
     private Integer articleId;
 
@@ -11,79 +9,69 @@ public class Article {
 
     private Date pubDate;
 
-    private Administer pubUser;
+    private Integer pubUserNo;
 
     private Integer articleType;
 
-    private Project project;
+    private Integer comId;
 
     private String content;
 
-    public Integer getArticleId() {
-        return articleId;
-    }
-
-    public void setArticleId(Integer articleid) {
-        this.articleId = articleid;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title == null ? null : title.trim();
-    }
-
-    public Date getPubDate() {
-        return pubDate;
-    }
-
-    public void setPubDate(Date pubdate) {
-        this.pubDate = pubdate;
-    }
-
-
-    public Integer getArticleType() {
-        return articleType;
-    }
-
-    public void setArticleType(Integer articletype) {
-        this.articleType = articletype;
-    }
-
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
-    }
-
-	public Administer getPubUser() {
-		return pubUser;
+	public Integer getArticleId() {
+		return articleId;
 	}
 
-	public void setPubUser(Administer pubUser) {
-		this.pubUser = pubUser;
+	public void setArticleId(Integer articleId) {
+		this.articleId = articleId;
 	}
 
-	public Project getProject() {
-		return project;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setProject(Project project) {
-		this.project = project;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	@Override
-	public String toString() {
-		return "Article [articleId=" + articleId + ", title=" + title
-				+ ", pubDate=" + pubDate + ", pubUser=" + pubUser
-				+ ", articleType=" + articleType + ", project=" + project
-				+ ", content=" + content + "]";
+	public Date getPubDate() {
+		return pubDate;
 	}
 
+	public void setPubDate(Date pubDate) {
+		this.pubDate = pubDate;
+	}
+
+	public Integer getPubUserNo() {
+		return pubUserNo;
+	}
+
+	public void setPubUserNo(Integer pubUserNo) {
+		this.pubUserNo = pubUserNo;
+	}
+
+	public Integer getArticleType() {
+		return articleType;
+	}
+
+	public void setArticleType(Integer articleType) {
+		this.articleType = articleType;
+	}
+
+	public Integer getComId() {
+		return comId;
+	}
+
+	public void setComId(Integer comId) {
+		this.comId = comId;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
     
+
 }

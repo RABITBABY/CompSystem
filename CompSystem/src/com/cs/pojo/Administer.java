@@ -1,55 +1,45 @@
 package com.cs.pojo;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Administer {
-    private String adminNo;
+    private Integer adminNo;
 
     private String password;
 
     private String adminName;
 
-    private Department department;
+    private Integer departmentId;
 
-    public String getAdminNo() {
-        return adminNo;
-    }
-
-    public void setAdminNo(String adminno) {
-        this.adminNo = adminno == null ? null : adminno.trim();
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
-
-    public String getAdminName() {
-        return adminName;
-    }
-
-    public void setAdminName(String adminname) {
-        this.adminName = adminname == null ? null : adminname.trim();
-    }
-
-	public Department getDepartment() {
-		return department;
+	public Integer getAdminNo() {
+		return adminNo;
 	}
 
-	public void setDepartment(Department department) {
-		this.department = department;
+	public void setAdminNo(Integer adminNo) {
+		this.adminNo = adminNo;
 	}
 
-	@Override
-	public String toString() {
-		return "Administer [adminNo=" + adminNo + ", password=" + password
-				+ ", adminName=" + adminName + ", department=" + department
-				+ "]";
+	public String getPassword() {
+		return password;
 	}
 
- 
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getAdminName() {
+		return adminName;
+	}
+
+	public void setAdminName(String adminName) {
+		this.adminName = adminName;
+	}
+
+	public Integer getDepartmentId() {
+		return departmentId;
+	}
+
+	public void setDepartmentId(Integer departmentId) {
+		this.departmentId = departmentId;
+	}
+
+   
 }

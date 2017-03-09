@@ -1,18 +1,13 @@
 package com.cs.pojo;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Standard {
     private Integer standardId;
 
-    private Level level;
+    private Integer levelId;
 
-    private Prize prize;
+    private String student;
 
-    private Integer student;//学生标准
-
-    private Integer teacher;//教师标准
+    private String teacher;
 
 	public Integer getStandardId() {
 		return standardId;
@@ -22,36 +17,29 @@ public class Standard {
 		this.standardId = standardId;
 	}
 
-	public Level getLevel() {
-		return level;
+	public Integer getLevelId() {
+		return levelId;
 	}
 
-	public void setLevel(Level level) {
-		this.level = level;
+	public void setLevelId(Integer levelId) {
+		this.levelId = levelId;
 	}
 
-	public Prize getPrize() {
-		return prize;
-	}
-
-	public void setPrize(Prize prize) {
-		this.prize = prize;
-	}
-
-	public Integer getStudent() {
+	public String getStudent() {
 		return student;
 	}
 
-	public void setStudent(Integer student) {
+	public void setStudent(String student) {
 		this.student = student;
 	}
 
-	public Integer getTeacher() {
+	public String getTeacher() {
 		return teacher;
 	}
 
-	public void setTeacher(Integer teacher) {
+	public void setTeacher(String teacher) {
 		this.teacher = teacher;
 	}
-	
+    
+
 }

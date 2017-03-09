@@ -1,26 +1,35 @@
 package com.cs.pojo;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Level {
     private Integer levelId;
 
     private String levelName;
 
-    public Integer getLevelId() {
-        return levelId;
-    }
+    private String prizeName;
 
-    public void setLevelId(Integer levelId) {
-        this.levelId = levelId;
-    }
+	public Integer getLevelId() {
+		return levelId;
+	}
 
-    public String getLevelName() {
-        return levelName;
-    }
+	public void setLevelId(Integer levelId) {
+		this.levelId = levelId;
+	}
 
-    public void setLevelName(String levelName) {
-        this.levelName = levelName == null ? null : levelName.trim();
-    }
+	public String getLevelName() {
+		return levelName;
+	}
+
+	public void setLevelName(String levelName) {
+		this.levelName = levelName;
+	}
+
+	public String getPrizeName() {
+		return prizeName;
+	}
+
+	public void setPrizeName(String prizeName) {
+		this.prizeName = prizeName;
+	}
+
+  
 }

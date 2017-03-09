@@ -1,26 +1,19 @@
 package com.cs.pojo;
 
 import java.util.Date;
-import java.util.List;
 
-import org.springframework.stereotype.Component;
-@Component
 public class Competition {
     private Integer comId;
 
     private String comName;
 
-    private Teacher teacher;
+    private Integer teacherNo;
 
     private String unit;
 
-    private Level level;
+    private Integer levelId;
 
-    private String phone;
-
-    private String email;
-
-    private Department department;
+    private Integer departmentId;
 
     private Date date;
 
@@ -46,37 +39,43 @@ public class Competition {
 
     private String sopinion;
 
-    private String slsign;
+    private String slSign;
 
-    private Date slsdate;
+    private Date slsDate;
 
-    private String uopinion;
+    private String uOpinion;
 
-    private String dsign;
+    private String dSign;
 
-    private Date dsdate;
+    private Date dsDate;
 
-    private String tdopinion;
+    private String tdOpinion;
 
-    private String olsign;
+    private String olSign;
 
-    private Date olsdate;
+    private Date olsDate;
 
-    private String lsign;
+    private String lSign;
 
-    private Date lsdate;
+    private Date lsDate;
 
-    private Integer status;
-    
-    private List<Budget> budgets;
-    
-    private List<Hours> hours;
-    
-    private List<Schedule> schedules;
-    
-    private List<Teacher> guideTeachers;
- 
-    private Project project;
+    private Integer depspStatus;
+
+    private Integer teaspStatus;
+
+    private Integer completeStatus;
+
+    private Date applyBeginDate;
+
+    private Date applyEndDate;
+
+    private Date comDate;
+
+    private Long cost;
+
+    private Integer compStatus;
+
+    private Integer isPublish;
 
 	public Integer getComId() {
 		return comId;
@@ -94,12 +93,12 @@ public class Competition {
 		this.comName = comName;
 	}
 
-	public Teacher getTeacher() {
-		return teacher;
+	public Integer getTeacherNo() {
+		return teacherNo;
 	}
 
-	public void setTeacher(Teacher teacher) {
-		this.teacher = teacher;
+	public void setTeacherNo(Integer teacherNo) {
+		this.teacherNo = teacherNo;
 	}
 
 	public String getUnit() {
@@ -110,36 +109,20 @@ public class Competition {
 		this.unit = unit;
 	}
 
-	public Level getLevel() {
-		return level;
+	public Integer getLevelId() {
+		return levelId;
 	}
 
-	public void setLevel(Level level) {
-		this.level = level;
+	public void setLevelId(Integer levelId) {
+		this.levelId = levelId;
 	}
 
-	public String getPhone() {
-		return phone;
+	public Integer getDepartmentId() {
+		return departmentId;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public Department getDepartment() {
-		return department;
-	}
-
-	public void setDepartment(Department department) {
-		this.department = department;
+	public void setDepartmentId(Integer departmentId) {
+		this.departmentId = departmentId;
 	}
 
 	public Date getDate() {
@@ -238,134 +221,157 @@ public class Competition {
 		this.sopinion = sopinion;
 	}
 
-	public String getSlsign() {
-		return slsign;
+	public String getSlSign() {
+		return slSign;
 	}
 
-	public void setSlsign(String slsign) {
-		this.slsign = slsign;
+	public void setSlSign(String slSign) {
+		this.slSign = slSign;
 	}
 
-	public Date getSlsdate() {
-		return slsdate;
+	public Date getSlsDate() {
+		return slsDate;
 	}
 
-	public void setSlsdate(Date slsdate) {
-		this.slsdate = slsdate;
+	public void setSlsDate(Date slsDate) {
+		this.slsDate = slsDate;
 	}
 
-	public String getUopinion() {
-		return uopinion;
+	public String getuOpinion() {
+		return uOpinion;
 	}
 
-	public void setUopinion(String uopinion) {
-		this.uopinion = uopinion;
+	public void setuOpinion(String uOpinion) {
+		this.uOpinion = uOpinion;
 	}
 
-	public String getDsign() {
-		return dsign;
+	public String getdSign() {
+		return dSign;
 	}
 
-	public void setDsign(String dsign) {
-		this.dsign = dsign;
+	public void setdSign(String dSign) {
+		this.dSign = dSign;
 	}
 
-	public Date getDsdate() {
-		return dsdate;
+	public Date getDsDate() {
+		return dsDate;
 	}
 
-	public void setDsdate(Date dsdate) {
-		this.dsdate = dsdate;
+	public void setDsDate(Date dsDate) {
+		this.dsDate = dsDate;
 	}
 
-	public String getTdopinion() {
-		return tdopinion;
+	public String getTdOpinion() {
+		return tdOpinion;
 	}
 
-	public void setTdopinion(String tdopinion) {
-		this.tdopinion = tdopinion;
+	public void setTdOpinion(String tdOpinion) {
+		this.tdOpinion = tdOpinion;
 	}
 
-	public String getOlsign() {
-		return olsign;
+	public String getOlSign() {
+		return olSign;
 	}
 
-	public void setOlsign(String olsign) {
-		this.olsign = olsign;
+	public void setOlSign(String olSign) {
+		this.olSign = olSign;
 	}
 
-	public Date getOlsdate() {
-		return olsdate;
+	public Date getOlsDate() {
+		return olsDate;
 	}
 
-	public void setOlsdate(Date olsdate) {
-		this.olsdate = olsdate;
+	public void setOlsDate(Date olsDate) {
+		this.olsDate = olsDate;
 	}
 
-	public String getLsign() {
-		return lsign;
+	public String getlSign() {
+		return lSign;
 	}
 
-	public void setLsign(String lsign) {
-		this.lsign = lsign;
+	public void setlSign(String lSign) {
+		this.lSign = lSign;
 	}
 
-	public Date getLsdate() {
-		return lsdate;
+	public Date getLsDate() {
+		return lsDate;
 	}
 
-	public void setLsdate(Date lsdate) {
-		this.lsdate = lsdate;
+	public void setLsDate(Date lsDate) {
+		this.lsDate = lsDate;
 	}
 
-	public Integer getStatus() {
-		return status;
+	public Integer getDepspStatus() {
+		return depspStatus;
 	}
 
-	public void setStatus(Integer status) {
-		this.status = status;
+	public void setDepspStatus(Integer depspStatus) {
+		this.depspStatus = depspStatus;
 	}
 
-	public List<Budget> getBudgets() {
-		return budgets;
+	public Integer getTeaspStatus() {
+		return teaspStatus;
 	}
 
-	public void setBudgets(List<Budget> budgets) {
-		this.budgets = budgets;
+	public void setTeaspStatus(Integer teaspStatus) {
+		this.teaspStatus = teaspStatus;
 	}
 
-	public List<Hours> getHours() {
-		return hours;
+	public Integer getCompleteStatus() {
+		return completeStatus;
 	}
 
-	public void setHours(List<Hours> hours) {
-		this.hours = hours;
+	public void setCompleteStatus(Integer completeStatus) {
+		this.completeStatus = completeStatus;
 	}
 
-	public List<Schedule> getSchedules() {
-		return schedules;
+	public Date getApplyBeginDate() {
+		return applyBeginDate;
 	}
 
-	public void setSchedules(List<Schedule> schedules) {
-		this.schedules = schedules;
-	}
-	
-	public List<Teacher> getGuideTeachers() {
-		return guideTeachers;
+	public void setApplyBeginDate(Date applyBeginDate) {
+		this.applyBeginDate = applyBeginDate;
 	}
 
-	public void setGuideTeachers(List<Teacher> guideTeachers) {
-		this.guideTeachers = guideTeachers;
+	public Date getApplyEndDate() {
+		return applyEndDate;
 	}
 
-	public Project getProject() {
-		return project;
+	public void setApplyEndDate(Date applyEndDate) {
+		this.applyEndDate = applyEndDate;
 	}
 
-	public void setProject(Project project) {
-		this.project = project;
+	public Date getComDate() {
+		return comDate;
 	}
 
-	
-	
+	public void setComDate(Date comDate) {
+		this.comDate = comDate;
+	}
+
+	public Long getCost() {
+		return cost;
+	}
+
+	public void setCost(Long cost) {
+		this.cost = cost;
+	}
+
+	public Integer getCompStatus() {
+		return compStatus;
+	}
+
+	public void setCompStatus(Integer compStatus) {
+		this.compStatus = compStatus;
+	}
+
+	public Integer getIsPublish() {
+		return isPublish;
+	}
+
+	public void setIsPublish(Integer isPublish) {
+		this.isPublish = isPublish;
+	}
+    
+
 }

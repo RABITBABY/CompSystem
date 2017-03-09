@@ -1,64 +1,57 @@
 package com.cs.pojo;
+
 import java.util.Date;
 
-import org.springframework.stereotype.Component;
-@Component
 public class FileUpload {
     private Integer fileId;
 
-    private Integer fileName;
+    private String fileName;
 
     private String saveName;
 
     private Date uploadDate;
 
-    private Administer uploadUser;
+    private Integer uploadUserNo;
 
-    public Integer getFileId() {
-        return fileId;
-    }
-
-    public void setFileId(Integer fileId) {
-        this.fileId = fileId;
-    }
-
-    public Integer getFileName() {
-        return fileName;
-    }
-
-    public void setFileName(Integer fileName) {
-        this.fileName = fileName;
-    }
-
-    public String getSaveName() {
-        return saveName;
-    }
-
-    public void setSaveName(String saveName) {
-        this.saveName = saveName == null ? null : saveName.trim();
-    }
-
-    public Date getUploadDate() {
-        return uploadDate;
-    }
-
-    public void setUploadDate(Date uploadDate) {
-        this.uploadDate = uploadDate;
-    }
-
-	public Administer getUploadUser() {
-		return uploadUser;
+	public Integer getFileId() {
+		return fileId;
 	}
 
-	public void setUploadUser(Administer uploadUser) {
-		this.uploadUser = uploadUser;
+	public void setFileId(Integer fileId) {
+		this.fileId = fileId;
 	}
 
-	@Override
-	public String toString() {
-		return "FileUpload [fileId=" + fileId + ", fileName=" + fileName
-				+ ", saveName=" + saveName + ", uploadDate=" + uploadDate
-				+ ", uploadUser=" + uploadUser + "]";
+	public String getFileName() {
+		return fileName;
 	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public String getSaveName() {
+		return saveName;
+	}
+
+	public void setSaveName(String saveName) {
+		this.saveName = saveName;
+	}
+
+	public Date getUploadDate() {
+		return uploadDate;
+	}
+
+	public void setUploadDate(Date uploadDate) {
+		this.uploadDate = uploadDate;
+	}
+
+	public Integer getUploadUserNo() {
+		return uploadUserNo;
+	}
+
+	public void setUploadUserNo(Integer uploadUserNo) {
+		this.uploadUserNo = uploadUserNo;
+	}
+    
 
 }

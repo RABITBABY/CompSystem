@@ -2,8 +2,6 @@ package com.cs.pojo;
 
 import java.util.Date;
 
-import org.springframework.stereotype.Component;
-@Component
 public class Teacher {
     private Integer teacherNo;
 
@@ -13,7 +11,7 @@ public class Teacher {
 
     private Date birth;
 
-    private Department department;
+    private Integer departmentId;
 
     private String subject;
 
@@ -31,139 +29,139 @@ public class Teacher {
 
     private String education;
 
-    private Integer lab;
+    private String lab;
 
     private String password;
 
     private Integer examiner;
 
-    public Integer getTeacherNo() {
-        return teacherNo;
-    }
-
-    public void setTeacherNo(Integer teacherNo) {
-        this.teacherNo = teacherNo;
-    }
-
-    public String getTeacherName() {
-        return teacherName;
-    }
-
-    public void setTeacherName(String teacherName) {
-        this.teacherName = teacherName == null ? null : teacherName.trim();
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender == null ? null : gender.trim();
-    }
-
-    public Date getBirth() {
-        return birth;
-    }
-
-    public void setBirth(Date birth) {
-        this.birth = birth;
-    }
-
-    
-   
-    public Department getDepartment() {
-		return department;
+	public Integer getTeacherNo() {
+		return teacherNo;
 	}
 
-	public void setDepartment(Department department) {
-		this.department = department;
+	public void setTeacherNo(Integer teacherNo) {
+		this.teacherNo = teacherNo;
+	}
+
+	public String getTeacherName() {
+		return teacherName;
+	}
+
+	public void setTeacherName(String teacherName) {
+		this.teacherName = teacherName;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public Date getBirth() {
+		return birth;
+	}
+
+	public void setBirth(Date birth) {
+		this.birth = birth;
+	}
+
+	public Integer getDepartmentId() {
+		return departmentId;
+	}
+
+	public void setDepartmentId(Integer departmentId) {
+		this.departmentId = departmentId;
 	}
 
 	public String getSubject() {
-        return subject;
-    }
+		return subject;
+	}
 
-    public void setSubject(String subject) {
-        this.subject = subject == null ? null : subject.trim();
-    }
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
 
-    public String getPhone() {
-        return phone;
-    }
+	public String getPhone() {
+		return phone;
+	}
 
-    public void setPhone(String phone) {
-        this.phone = phone == null ? null : phone.trim();
-    }
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
-    public String getTitle() {
-        return title;
-    }
+	public String getTitle() {
+		return title;
+	}
 
-    public void setTitle(String title) {
-        this.title = title == null ? null : title.trim();
-    }
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
-    public String getPost() {
-        return post;
-    }
+	public String getPost() {
+		return post;
+	}
 
-    public void setPost(String post) {
-        this.post = post == null ? null : post.trim();
-    }
+	public void setPost(String post) {
+		this.post = post;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public String getType() {
-        return type;
-    }
+	public String getType() {
+		return type;
+	}
 
-    public void setType(String type) {
-        this.type = type == null ? null : type.trim();
-    }
+	public void setType(String type) {
+		this.type = type;
+	}
 
-    public String getDirection() {
-        return direction;
-    }
+	public String getDirection() {
+		return direction;
+	}
 
-    public void setDirection(String direction) {
-        this.direction = direction == null ? null : direction.trim();
-    }
+	public void setDirection(String direction) {
+		this.direction = direction;
+	}
 
-    public String getEducation() {
-        return education;
-    }
+	public String getEducation() {
+		return education;
+	}
 
-    public void setEducation(String education) {
-        this.education = education == null ? null : education.trim();
-    }
+	public void setEducation(String education) {
+		this.education = education;
+	}
 
-    public Integer getLab() {
-        return lab;
-    }
+	public String getLab() {
+		return lab;
+	}
 
-    public void setLab(Integer lab) {
-        this.lab = lab;
-    }
+	public void setLab(String lab) {
+		this.lab = lab;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    public Integer getExaminer() {
-        return examiner;
-    }
+	public Integer getExaminer() {
+		return examiner;
+	}
 
-    public void setExaminer(Integer examiner) {
-        this.examiner = examiner;
-    }
+	public void setExaminer(Integer examiner) {
+		this.examiner = examiner;
+	}
+
+    
 }

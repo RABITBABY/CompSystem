@@ -1,16 +1,15 @@
 package com.cs.pojo;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Groups {
     private Integer groupsNo;
 
-    private Competition competition;
+    private Integer comId;
 
     private String groupsName;
 
-    private Teacher teacher;
+    private Integer teacherNo;
+
+    private Integer studentNo;
 
     private Integer status;
 
@@ -22,12 +21,12 @@ public class Groups {
 		this.groupsNo = groupsNo;
 	}
 
-	public Competition getCompetition() {
-		return competition;
+	public Integer getComId() {
+		return comId;
 	}
 
-	public void setCompetition(Competition competition) {
-		this.competition = competition;
+	public void setComId(Integer comId) {
+		this.comId = comId;
 	}
 
 	public String getGroupsName() {
@@ -38,12 +37,20 @@ public class Groups {
 		this.groupsName = groupsName;
 	}
 
-	public Teacher getTeacher() {
-		return teacher;
+	public Integer getTeacherNo() {
+		return teacherNo;
 	}
 
-	public void setTeacher(Teacher teacher) {
-		this.teacher = teacher;
+	public void setTeacherNo(Integer teacherNo) {
+		this.teacherNo = teacherNo;
+	}
+
+	public Integer getStudentNo() {
+		return studentNo;
+	}
+
+	public void setStudentNo(Integer studentNo) {
+		this.studentNo = studentNo;
 	}
 
 	public Integer getStatus() {
@@ -54,5 +61,4 @@ public class Groups {
 		this.status = status;
 	}
 
-   
 }

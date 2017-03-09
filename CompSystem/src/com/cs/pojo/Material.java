@@ -1,28 +1,15 @@
 package com.cs.pojo;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Material {
     private Integer materialId;
 
-    private Student student;
-    
-    private Condition condition;
+    private Integer studentNo;
 
-    private String materialName;
+    private Integer conditionId;
 
     private String materialPic;
-    
+
     private Integer status;
-      
-    public Integer getStatus() {
-		return status;
-	}
-    
-    public void setStatus(Integer status) {
-		this.status = status;
-	}
 
 	public Integer getMaterialId() {
 		return materialId;
@@ -32,28 +19,20 @@ public class Material {
 		this.materialId = materialId;
 	}
 
-	public Student getStudent() {
-		return student;
+	public Integer getStudentNo() {
+		return studentNo;
 	}
 
-	public void setStudent(Student student) {
-		this.student = student;
+	public void setStudentNo(Integer studentNo) {
+		this.studentNo = studentNo;
 	}
 
-	public Condition getCondition() {
-		return condition;
+	public Integer getConditionId() {
+		return conditionId;
 	}
 
-	public void setCondition(Condition condition) {
-		this.condition = condition;
-	}
-
-	public String getMaterialName() {
-		return materialName;
-	}
-
-	public void setMaterialName(String materialName) {
-		this.materialName = materialName;
+	public void setConditionId(Integer conditionId) {
+		this.conditionId = conditionId;
 	}
 
 	public String getMaterialPic() {
@@ -64,7 +43,13 @@ public class Material {
 		this.materialPic = materialPic;
 	}
 
-    
-    
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
     
 }

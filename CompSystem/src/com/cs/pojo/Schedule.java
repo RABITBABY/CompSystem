@@ -2,11 +2,7 @@ package com.cs.pojo;
 
 import java.util.Date;
 
-import org.springframework.stereotype.Component;
-@Component
 public class Schedule {
-    private Integer scheduleId;
-
     private Integer comId;
 
     private Integer teacherNo;
@@ -19,16 +15,6 @@ public class Schedule {
 
     private Integer hours;
 
-	public Integer getScheduleId() {
-		return scheduleId;
-	}
-
-	public void setScheduleId(Integer scheduleId) {
-		this.scheduleId = scheduleId;
-	}
-
-	
-
 	public Integer getComId() {
 		return comId;
 	}
@@ -36,8 +22,6 @@ public class Schedule {
 	public void setComId(Integer comId) {
 		this.comId = comId;
 	}
-
-	
 
 	public Integer getTeacherNo() {
 		return teacherNo;
@@ -78,6 +62,6 @@ public class Schedule {
 	public void setHours(Integer hours) {
 		this.hours = hours;
 	}
-
     
+
 }

@@ -1,8 +1,5 @@
 package com.cs.pojo;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Production {
     private Integer proId;
 
@@ -16,51 +13,53 @@ public class Production {
 
     private String introduction;
 
-    public Integer getProId() {
-        return proId;
-    }
+	public Integer getProId() {
+		return proId;
+	}
 
-    public void setProId(Integer proId) {
-        this.proId = proId;
-    }
+	public void setProId(Integer proId) {
+		this.proId = proId;
+	}
 
-    public String getProName() {
-        return proName;
-    }
+	public String getProName() {
+		return proName;
+	}
 
-    public void setProName(String proName) {
-        this.proName = proName == null ? null : proName.trim();
-    }
+	public void setProName(String proName) {
+		this.proName = proName;
+	}
 
-    public String getAward() {
-        return award;
-    }
+	public String getAward() {
+		return award;
+	}
 
-    public void setAward(String award) {
-        this.award = award == null ? null : award.trim();
-    }
+	public void setAward(String award) {
+		this.award = award;
+	}
 
-    public String getMembersName() {
-        return membersName;
-    }
+	public String getMembersName() {
+		return membersName;
+	}
 
-    public void setMembersName(String membersName) {
-        this.membersName = membersName == null ? null : membersName.trim();
-    }
+	public void setMembersName(String membersName) {
+		this.membersName = membersName;
+	}
 
-    public String getPic() {
-        return pic;
-    }
+	public String getPic() {
+		return pic;
+	}
 
-    public void setPic(String pic) {
-        this.pic = pic == null ? null : pic.trim();
-    }
+	public void setPic(String pic) {
+		this.pic = pic;
+	}
 
-    public String getIntroduction() {
-        return introduction;
-    }
+	public String getIntroduction() {
+		return introduction;
+	}
 
-    public void setIntroduction(String introduction) {
-        this.introduction = introduction == null ? null : introduction.trim();
-    }
+	public void setIntroduction(String introduction) {
+		this.introduction = introduction;
+	}
+    
+
 }
