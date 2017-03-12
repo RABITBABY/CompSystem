@@ -18,12 +18,10 @@ import org.springframework.web.servlet.ModelAndView;
 import com.cs.pojo.Awards;
 import com.cs.pojo.Budget;
 import com.cs.pojo.Competition;
-import com.cs.pojo.Condition;
 import com.cs.pojo.Department;
 import com.cs.pojo.Groups;
 import com.cs.pojo.Hours;
 import com.cs.pojo.Material;
-import com.cs.pojo.Project;
 import com.cs.pojo.Schedule;
 import com.cs.pojo.Student;
 import com.cs.pojo.Teacher;
@@ -42,12 +40,12 @@ public class StudentController {
 	 * 获取学生已经报名的比赛
 	 * @return
 	 */
-	@ResponseBody
+	/*@ResponseBody
 	@RequestMapping("/getPro")
 	public List<Project> getProInfo(@Param("studentNo") Integer studentNo){
 		List<Project> projects = studentService.selectCompByStudentNo(studentNo);
 		return projects;
-	}
+	}*/
 	
 	/**
 	 * 获取学生获得的奖项
