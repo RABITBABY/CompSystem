@@ -20,13 +20,13 @@
     delete from standard
     where standardId = #{standardid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="andy.model.Standard" >
+  <insert id="insert" parameterType="com.cs.pojo.Standard" >
     insert into standard (standardId, levelId, student, 
       teacher)
     values (#{standardid,jdbcType=INTEGER}, #{levelid,jdbcType=INTEGER}, #{student,jdbcType=VARCHAR}, 
       #{teacher,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="andy.model.Standard" >
+  <insert id="insertSelective" parameterType="com.cs.pojo.Standard" >
     insert into standard
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="standardid != null" >
@@ -57,7 +57,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="andy.model.Standard" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Standard" >
     update standard
     <set >
       <if test="levelid != null" >
@@ -72,7 +72,7 @@
     </set>
     where standardId = #{standardid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="andy.model.Standard" >
+  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Standard" >
     update standard
     set levelId = #{levelid,jdbcType=INTEGER},
       student = #{student,jdbcType=VARCHAR},

@@ -21,13 +21,13 @@
     delete from fileupload
     where fileId = #{fileid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="andy.model.FileUpload" >
+  <insert id="insert" parameterType="com.cs.pojo.FileUpload" >
     insert into fileupload (fileId, fileName, saveName, 
       uploadDate, uploadUserNo)
     values (#{fileid,jdbcType=INTEGER}, #{filename,jdbcType=VARCHAR}, #{savename,jdbcType=VARCHAR}, 
       #{uploaddate,jdbcType=DATE}, #{uploaduserno,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="andy.model.FileUpload" >
+  <insert id="insertSelective" parameterType="com.cs.pojo.FileUpload" >
     insert into fileupload
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fileid != null" >
@@ -64,7 +64,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="andy.model.FileUpload" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.FileUpload" >
     update fileupload
     <set >
       <if test="filename != null" >
@@ -82,7 +82,7 @@
     </set>
     where fileId = #{fileid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="andy.model.FileUpload" >
+  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.FileUpload" >
     update fileupload
     set fileName = #{filename,jdbcType=VARCHAR},
       saveName = #{savename,jdbcType=VARCHAR},

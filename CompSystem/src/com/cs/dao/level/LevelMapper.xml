@@ -19,13 +19,13 @@
     delete from level
     where levelId = #{levelid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="andy.model.Level" >
+  <insert id="insert" parameterType="com.cs.pojo.Level" >
     insert into level (levelId, levelName, prizeName
       )
     values (#{levelid,jdbcType=INTEGER}, #{levelname,jdbcType=VARCHAR}, #{prizename,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="andy.model.Level" >
+  <insert id="insertSelective" parameterType="com.cs.pojo.Level" >
     insert into level
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="levelid != null" >
@@ -50,7 +50,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="andy.model.Level" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Level" >
     update level
     <set >
       <if test="levelname != null" >
@@ -62,7 +62,7 @@
     </set>
     where levelId = #{levelid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="andy.model.Level" >
+  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Level" >
     update level
     set levelName = #{levelname,jdbcType=VARCHAR},
       prizeName = #{prizename,jdbcType=VARCHAR}

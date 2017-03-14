@@ -19,13 +19,13 @@
     delete from conditions
     where conditionId = #{conditionid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="andy.model.Conditions" >
+  <insert id="insert" parameterType="com.cs.pojo.Conditions" >
     insert into conditions (conditionId, conditionName, type
       )
     values (#{conditionid,jdbcType=INTEGER}, #{conditionname,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="andy.model.Conditions" >
+  <insert id="insertSelective" parameterType="com.cs.pojo.Conditions" >
     insert into conditions
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="conditionid != null" >
@@ -50,7 +50,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="andy.model.Conditions" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Conditions" >
     update conditions
     <set >
       <if test="conditionname != null" >
@@ -62,7 +62,7 @@
     </set>
     where conditionId = #{conditionid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="andy.model.Conditions" >
+  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Conditions" >
     update conditions
     set conditionName = #{conditionname,jdbcType=VARCHAR},
       type = #{type,jdbcType=INTEGER}

@@ -8,7 +8,7 @@
     <result column="membersName" property="membersname" jdbcType="VARCHAR" />
     <result column="pic" property="pic" jdbcType="VARCHAR" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="andy.model.Production" extends="BaseResultMap" >
+  <resultMap id="ResultMapWithBLOBs" type="com.cs.pojo.Production" extends="BaseResultMap" >
     <result column="introduction" property="introduction" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
@@ -29,7 +29,7 @@
     delete from production
     where proId = #{proid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="andy.model.Production" >
+  <insert id="insert" parameterType="com.cs.pojo.Production" >
     insert into production (proId, proName, award, 
       membersName, pic, introduction
       )
@@ -37,7 +37,7 @@
       #{membersname,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, #{introduction,jdbcType=LONGVARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="andy.model.Production" >
+  <insert id="insertSelective" parameterType="com.cs.pojo.Production" >
     insert into production
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="proid != null" >
@@ -80,7 +80,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="andy.model.Production" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Production" >
     update production
     <set >
       <if test="proname != null" >
@@ -101,7 +101,7 @@
     </set>
     where proId = #{proid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="andy.model.Production" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.cs.pojo.Production" >
     update production
     set proName = #{proname,jdbcType=VARCHAR},
       award = #{award,jdbcType=VARCHAR},
@@ -110,7 +110,7 @@
       introduction = #{introduction,jdbcType=LONGVARCHAR}
     where proId = #{proid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="andy.model.Production" >
+  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Production" >
     update production
     set proName = #{proname,jdbcType=VARCHAR},
       award = #{award,jdbcType=VARCHAR},
