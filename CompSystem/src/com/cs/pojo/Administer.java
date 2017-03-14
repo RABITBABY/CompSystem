@@ -1,7 +1,7 @@
 package com.cs.pojo;
 
 public class Administer {
-    private Integer adminNo;
+    private String adminNo;
 
     private String password;
 
@@ -9,11 +9,13 @@ public class Administer {
 
     private Integer departmentId;
 
-	public Integer getAdminNo() {
+	
+
+	public String getAdminNo() {
 		return adminNo;
 	}
 
-	public void setAdminNo(Integer adminNo) {
+	public void setAdminNo(String adminNo) {
 		this.adminNo = adminNo;
 	}
 
