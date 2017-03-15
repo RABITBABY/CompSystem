@@ -51,12 +51,12 @@ public class StudentController {
 	 * 获取学生获得的奖项
 	 * @return
 	 */
-	/*@ResponseBody
+	@ResponseBody
 	@RequestMapping("/getAwards")
 	public List<Awards> getAwards(@Param("studentNo") Integer studentNo){
 		List<Awards> awards=studentService.selectAwardsByStudentNo(studentNo);
 		return awards;
-	}*/
+	}
 	
 	
 	/**
@@ -64,7 +64,11 @@ public class StudentController {
 	 * @param studentNo
 	 * @return
 	 */
-	/*s*/
+	@ResponseBody
+	@RequestMapping("/getStuInfo")
+	public Student getStuInfo(@Param("studentNo") Integer studentNo){
+		return studentService.selectMaterialByNo(studentNo);
+	}
 	
 	/**
 	 * 学生报名竞赛：
