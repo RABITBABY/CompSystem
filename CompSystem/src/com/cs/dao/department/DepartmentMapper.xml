@@ -18,11 +18,11 @@
     delete from department
     where departmentID = #{departmentid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="andy.model.Department" >
+  <insert id="insert" parameterType="com.cs.pojo.Department" >
     insert into department (departmentID, departmentName)
     values (#{departmentid,jdbcType=INTEGER}, #{departmentname,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="andy.model.Department" >
+  <insert id="insertSelective" parameterType="com.cs.pojo.Department" >
     insert into department
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="departmentid != null" >
@@ -41,7 +41,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="andy.model.Department" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Department" >
     update department
     <set >
       <if test="departmentname != null" >
@@ -50,7 +50,7 @@
     </set>
     where departmentID = #{departmentid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="andy.model.Department" >
+  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Department" >
     update department
     set departmentName = #{departmentname,jdbcType=VARCHAR}
     where departmentID = #{departmentid,jdbcType=INTEGER}

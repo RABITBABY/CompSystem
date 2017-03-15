@@ -57,7 +57,7 @@
     delete from competition
     where comId = #{comid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="andy.model.Competition" >
+  <insert id="insert" parameterType="com.cs.pojo.Competition" >
     insert into competition (comId, comName, teacherNo, 
       unit, levelId, departmentId, 
       date, host, time, place, 
@@ -85,7 +85,7 @@
       #{cost,jdbcType=DECIMAL}, #{compstatus,jdbcType=INTEGER}, #{ispublish,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="andy.model.Competition" >
+  <insert id="insertSelective" parameterType="com.cs.pojo.Competition" >
     insert into competition
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="comid != null" >
@@ -314,7 +314,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="andy.model.Competition" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Competition" >
     update competition
     <set >
       <if test="comname != null" >
@@ -428,7 +428,7 @@
     </set>
     where comId = #{comid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="andy.model.Competition" >
+  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Competition" >
     update competition
     set comName = #{comname,jdbcType=VARCHAR},
       teacherNo = #{teacherno,jdbcType=INTEGER},

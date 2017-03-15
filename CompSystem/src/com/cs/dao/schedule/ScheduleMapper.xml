@@ -9,13 +9,13 @@
     <result column="date" property="date" jdbcType="DATE" />
     <result column="hours" property="hours" jdbcType="INTEGER" />
   </resultMap>
-  <insert id="insert" parameterType="andy.model.Schedule" >
+  <insert id="insert" parameterType="com.cs.pojo.Schedule" >
     insert into schedule (comId, teacherNo, content, 
       position, date, hours)
     values (#{comid,jdbcType=INTEGER}, #{teacherno,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR}, 
       #{position,jdbcType=VARCHAR}, #{date,jdbcType=DATE}, #{hours,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="andy.model.Schedule" >
+  <insert id="insertSelective" parameterType="com.cs.pojo.Schedule" >
     insert into schedule
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="comid != null" >

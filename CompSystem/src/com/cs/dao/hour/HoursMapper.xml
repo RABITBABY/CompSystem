@@ -21,13 +21,13 @@
     delete from hours
     where hoursId = #{hoursid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="andy.model.Hours" >
+  <insert id="insert" parameterType="com.cs.pojo.Hours" >
     insert into hours (hoursId, comId, type, 
       hours, remarks)
     values (#{hoursid,jdbcType=INTEGER}, #{comid,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, 
       #{hours,jdbcType=INTEGER}, #{remarks,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="andy.model.Hours" >
+  <insert id="insertSelective" parameterType="com.cs.pojo.Hours" >
     insert into hours
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="hoursid != null" >
@@ -64,7 +64,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="andy.model.Hours" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Hours" >
     update hours
     <set >
       <if test="comid != null" >
@@ -82,7 +82,7 @@
     </set>
     where hoursId = #{hoursid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="andy.model.Hours" >
+  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Hours" >
     update hours
     set comId = #{comid,jdbcType=INTEGER},
       type = #{type,jdbcType=VARCHAR},

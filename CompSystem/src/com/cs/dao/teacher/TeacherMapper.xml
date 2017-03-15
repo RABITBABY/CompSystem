@@ -33,7 +33,7 @@
     delete from teacher
     where teacherNo = #{teacherno,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="andy.model.Teacher" >
+  <insert id="insert" parameterType="com.cs.pojo.Teacher" >
     insert into teacher (teacherNo, teacherName, gender, 
       birth, departmentId, subject, 
       phone, title, post, 
@@ -47,7 +47,7 @@
       #{education,jdbcType=VARCHAR}, #{lab,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{examiner,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="andy.model.Teacher" >
+  <insert id="insertSelective" parameterType="com.cs.pojo.Teacher" >
     insert into teacher
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="teacherno != null" >
@@ -150,7 +150,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="andy.model.Teacher" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Teacher" >
     update teacher
     <set >
       <if test="teachername != null" >
@@ -201,7 +201,7 @@
     </set>
     where teacherNo = #{teacherno,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="andy.model.Teacher" >
+  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Teacher" >
     update teacher
     set teacherName = #{teachername,jdbcType=VARCHAR},
       gender = #{gender,jdbcType=VARCHAR},

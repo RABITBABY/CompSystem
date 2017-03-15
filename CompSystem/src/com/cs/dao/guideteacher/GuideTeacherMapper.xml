@@ -19,13 +19,13 @@
     delete from guideteacher
     where guideTeaId = #{guideteaid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="andy.model.GuideTeacher" >
+  <insert id="insert" parameterType="com.cs.pojo.GuideTeacher" >
     insert into guideteacher (guideTeaId, teacherNo, comId
       )
     values (#{guideteaid,jdbcType=INTEGER}, #{teacherno,jdbcType=INTEGER}, #{comid,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="andy.model.GuideTeacher" >
+  <insert id="insertSelective" parameterType="com.cs.pojo.GuideTeacher" >
     insert into guideteacher
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="guideteaid != null" >
@@ -50,7 +50,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="andy.model.GuideTeacher" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.GuideTeacher" >
     update guideteacher
     <set >
       <if test="teacherno != null" >
@@ -62,7 +62,7 @@
     </set>
     where guideTeaId = #{guideteaid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="andy.model.GuideTeacher" >
+  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.GuideTeacher" >
     update guideteacher
     set teacherNo = #{teacherno,jdbcType=INTEGER},
       comId = #{comid,jdbcType=INTEGER}
