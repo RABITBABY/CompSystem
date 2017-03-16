@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.dao.department.DepartmentMapper" >
-  <resultMap id="BaseResultMap" type="com.cs.dao.department.DepartmentMapper" >
+  <resultMap id="BaseResultMap" type="com.cs.pojo.Department" >
     <id column="departmentID" property="departmentid" jdbcType="INTEGER" />
     <result column="departmentName" property="departmentname" jdbcType="VARCHAR" />
   </resultMap>

@@ -40,12 +40,12 @@ public class StudentController {
 	 * 获取学生已经报名的比赛
 	 * @return
 	 */
-	/*@ResponseBody
+	@ResponseBody
 	@RequestMapping("/getPro")
-	public List<Project> getProInfo(@Param("studentNo") Integer studentNo){
-		List<Project> projects = studentService.selectCompByStudentNo(studentNo);
-		return projects;
-	}*/
+	public boolean getProInfo(){
+		
+		return false;
+	}
 	
 	/**
 	 * 获取学生获得的奖项
@@ -67,7 +67,7 @@ public class StudentController {
 	@ResponseBody
 	@RequestMapping("/getStuInfo")
 	public Student getStuInfo(@Param("studentNo") Integer studentNo){
-		return studentService.selectMaterialByNo(studentNo);
+		return studentService.selectByNo(studentNo);
 	}
 	
 	/**

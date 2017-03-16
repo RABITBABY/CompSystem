@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.dao.guideteacher.GuideTeacherMapper" >
-  <resultMap id="BaseResultMap" type="com.cs.dao.guideteacher.GuideTeacherMapper" >
+  <resultMap id="BaseResultMap" type="com.cs.pojo.GuideTeacher" >
     <id column="guideTeaId" property="guideteaid" jdbcType="INTEGER" />
     <result column="teacherNo" property="teacherno" jdbcType="INTEGER" />
     <result column="comId" property="comid" jdbcType="INTEGER" />

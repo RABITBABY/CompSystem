@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.dao.fileUpload.FileUploadMapper" >
-  <resultMap id="BaseResultMap" type="com.cs.dao.fileUpload.FileUploadMapper" >
+  <resultMap id="BaseResultMap" type="com.cs.pojo.FileUpload" >
     <id column="fileId" property="fileid" jdbcType="INTEGER" />
     <result column="fileName" property="filename" jdbcType="VARCHAR" />
     <result column="saveName" property="savename" jdbcType="VARCHAR" />

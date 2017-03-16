@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.dao.standard.StandardMapper" >
-  <resultMap id="BaseResultMap" type="com.cs.dao.standard.StandardMapper" >
+  <resultMap id="BaseResultMap" type="com.cs.pojo.Standard" >
     <id column="standardId" property="standardid" jdbcType="INTEGER" />
     <result column="levelId" property="levelid" jdbcType="INTEGER" />
     <result column="student" property="student" jdbcType="VARCHAR" />

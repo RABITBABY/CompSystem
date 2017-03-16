@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.dao.hour.HoursMapper" >
-  <resultMap id="BaseResultMap" type="com.cs.dao.hour.HoursMapper" >
+  <resultMap id="BaseResultMap" type="com.cs.pojo.Hours" >
     <id column="hoursId" property="hoursid" jdbcType="INTEGER" />
     <result column="comId" property="comid" jdbcType="INTEGER" />
     <result column="type" property="type" jdbcType="VARCHAR" />

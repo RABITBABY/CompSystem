@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.dao.competition.CompetitionMapper" >
-  <resultMap id="BaseResultMap" type="com.cs.dao.competition.CompetitionMapper" >
+  <resultMap id="BaseResultMap" type="com.cs.pojo.Competition" >
     <id column="comId" property="comid" jdbcType="INTEGER" />
     <result column="comName" property="comname" jdbcType="VARCHAR" />
     <result column="teacherNo" property="teacherno" jdbcType="INTEGER" />

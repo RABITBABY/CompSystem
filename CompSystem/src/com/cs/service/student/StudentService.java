@@ -21,7 +21,7 @@ public interface StudentService {
 	 * @param studentNo
 	 * @return
 	 */
-	Student selectByNo(int studentNo);
+	Student selectByNo(int studentno);
 	
 	/**
 	 * 根据学号查找符合的条件
