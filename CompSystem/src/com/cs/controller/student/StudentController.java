@@ -66,8 +66,9 @@ public class StudentController {
 	 */
 	@ResponseBody
 	@RequestMapping("/getStuInfo")
-	public Student getStuInfo(@Param("studentNo") Integer studentNo){
-		return studentService.selectByNo(studentNo);
+	public Student getStuInfo(){
+		//@Param("studentNo") Integer studentNo
+		return studentService.selectByNo(1);
 	}
 	
 	/**

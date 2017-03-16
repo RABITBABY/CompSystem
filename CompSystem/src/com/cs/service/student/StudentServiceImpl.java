@@ -22,8 +22,8 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public Student selectByNo(int studentno) {
-		return studentMapper.selectByPrimaryKey(studentno);
+	public Student selectByNo(int studentNo) {
+		return studentMapper.selectByPrimaryKey(studentNo);
 	}
 
 	@Override

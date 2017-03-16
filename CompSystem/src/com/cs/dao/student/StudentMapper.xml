@@ -2,12 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.dao.student.StudentMapper" >
   <resultMap id="BaseResultMap" type="com.cs.pojo.Student" >
-    <id column="studentNo" property="studentno" jdbcType="INTEGER" />
-    <result column="studentName" property="studentname" jdbcType="VARCHAR" />
+    <id column="studentNo" property="studentNo" jdbcType="INTEGER" />
+    <result column="studentName" property="studentName" jdbcType="VARCHAR" />
     <result column="gender" property="gender" jdbcType="VARCHAR" />
-    <result column="departmentId" property="departmentid" jdbcType="INTEGER" />
+    <result column="departmentId" property="departmentId" jdbcType="INTEGER" />
     <result column="profession" property="profession" jdbcType="VARCHAR" />
-    <result column="classNo" property="classno" jdbcType="INTEGER" />
+    <result column="classNo" property="classNo" jdbcType="INTEGER" />
     <result column="grade" property="grade" jdbcType="INTEGER" />
     <result column="phone" property="phone" jdbcType="VARCHAR" />
     <result column="email" property="email" jdbcType="VARCHAR" />
@@ -21,41 +21,41 @@
     select 
     <include refid="Base_Column_List" />
     from student
-    where studentNo = #{studentno,jdbcType=INTEGER}
+    where studentNo = #{studentNo,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from student
-    where studentNo = #{studentno,jdbcType=INTEGER}
+    where studentNo = #{studentNo,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.cs.pojo.Student" >
     insert into student (studentNo, studentName, gender, 
       departmentId, profession, classNo, 
       grade, phone, email, 
       password)
-    values (#{studentno,jdbcType=INTEGER}, #{studentname,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, 
-      #{departmentid,jdbcType=INTEGER}, #{profession,jdbcType=VARCHAR}, #{classno,jdbcType=INTEGER}, 
+    values (#{studentNo,jdbcType=INTEGER}, #{studentName,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, 
+      #{departmentId,jdbcType=INTEGER}, #{profession,jdbcType=VARCHAR}, #{classNo,jdbcType=INTEGER}, 
       #{grade,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
       #{password,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.cs.pojo.Student" >
     insert into student
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="studentno != null" >
+      <if test="studentNo != null" >
         studentNo,
       </if>
-      <if test="studentname != null" >
+      <if test="studentName != null" >
         studentName,
       </if>
       <if test="gender != null" >
         gender,
       </if>
-      <if test="departmentid != null" >
+      <if test="departmentId != null" >
         departmentId,
       </if>
       <if test="profession != null" >
         profession,
       </if>
-      <if test="classno != null" >
+      <if test="classNo != null" >
         classNo,
       </if>
       <if test="grade != null" >
@@ -72,23 +72,23 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="studentno != null" >
-        #{studentno,jdbcType=INTEGER},
+      <if test="studentNo != null" >
+        #{studentNo,jdbcType=INTEGER},
       </if>
-      <if test="studentname != null" >
-        #{studentname,jdbcType=VARCHAR},
+      <if test="studentName != null" >
+        #{studentName,jdbcType=VARCHAR},
       </if>
       <if test="gender != null" >
         #{gender,jdbcType=VARCHAR},
       </if>
-      <if test="departmentid != null" >
-        #{departmentid,jdbcType=INTEGER},
+      <if test="departmentId != null" >
+        #{departmentId,jdbcType=INTEGER},
       </if>
       <if test="profession != null" >
         #{profession,jdbcType=VARCHAR},
       </if>
-      <if test="classno != null" >
-        #{classno,jdbcType=INTEGER},
+      <if test="classNo != null" >
+        #{classNo,jdbcType=INTEGER},
       </if>
       <if test="grade != null" >
         #{grade,jdbcType=INTEGER},
@@ -107,20 +107,20 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Student" >
     update student
     <set >
-      <if test="studentname != null" >
-        studentName = #{studentname,jdbcType=VARCHAR},
+      <if test="studentName != null" >
+        studentName = #{studentName,jdbcType=VARCHAR},
       </if>
       <if test="gender != null" >
         gender = #{gender,jdbcType=VARCHAR},
       </if>
-      <if test="departmentid != null" >
-        departmentId = #{departmentid,jdbcType=INTEGER},
+      <if test="departmentId != null" >
+        departmentId = #{departmentId,jdbcType=INTEGER},
       </if>
       <if test="profession != null" >
         profession = #{profession,jdbcType=VARCHAR},
       </if>
-      <if test="classno != null" >
-        classNo = #{classno,jdbcType=INTEGER},
+      <if test="classNo != null" >
+        classNo = #{classNo,jdbcType=INTEGER},
       </if>
       <if test="grade != null" >
         grade = #{grade,jdbcType=INTEGER},
@@ -135,19 +135,19 @@
         password = #{password,jdbcType=VARCHAR},
       </if>
     </set>
-    where studentNo = #{studentno,jdbcType=INTEGER}
+    where studentNo = #{studentNo,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Student" >
     update student
-    set studentName = #{studentname,jdbcType=VARCHAR},
+    set studentName = #{studentName,jdbcType=VARCHAR},
       gender = #{gender,jdbcType=VARCHAR},
-      departmentId = #{departmentid,jdbcType=INTEGER},
+      departmentId = #{departmentId,jdbcType=INTEGER},
       profession = #{profession,jdbcType=VARCHAR},
-      classNo = #{classno,jdbcType=INTEGER},
+      classNo = #{classNo,jdbcType=INTEGER},
       grade = #{grade,jdbcType=INTEGER},
       phone = #{phone,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR}
-    where studentNo = #{studentno,jdbcType=INTEGER}
+    where studentNo = #{studentNo,jdbcType=INTEGER}
   </update>
 </mapper>
