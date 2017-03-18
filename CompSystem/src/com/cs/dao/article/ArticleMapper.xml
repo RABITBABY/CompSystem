@@ -2,12 +2,132 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.dao.article.ArticleMapper" >
   <resultMap id="BaseResultMap" type="com.cs.pojo.Article" >
-    <id column="articleId" property="articleId" jdbcType="INTEGER" />
+    <id column="articleId" property="articleid" jdbcType="INTEGER" />
     <result column="title" property="title" jdbcType="VARCHAR" />
-    <result column="pubDate" property="pubDate" jdbcType="DATE" />
-    <result column="pubUserNo" property="pubUserNo" jdbcType="INTEGER" />
-    <result column="articleType" property="articleType" jdbcType="INTEGER" />
-    <result column="comId" property="comId" jdbcType="INTEGER" />
+    <result column="pubDate" property="pubdate" jdbcType="DATE" />
+    <result column="pubUserNo" property="pubuserno" jdbcType="INTEGER" />
+    <result column="articleType" property="articletype" jdbcType="INTEGER" />
+    <result column="comId" property="comid" jdbcType="INTEGER" />
   </resultMap>
-
+  <resultMap id="ResultMapWithBLOBs" type="com.cs.pojo.Article" extends="BaseResultMap" >
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    articleId, title, pubDate, pubUserNo, articleType, comId
+  </sql>
+  <sql id="Blob_Column_List" >
+    content
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from article
+    where articleId = #{articleid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from article
+    where articleId = #{articleid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cs.pojo.Article" >
+    insert into article (articleId, title, pubDate, 
+      pubUserNo, articleType, comId, 
+      content)
+    values (#{articleid,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{pubdate,jdbcType=DATE}, 
+      #{pubuserno,jdbcType=INTEGER}, #{articletype,jdbcType=INTEGER}, #{comid,jdbcType=INTEGER}, 
+      #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cs.pojo.Article" >
+    insert into article
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="articleid != null" >
+        articleId,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="pubdate != null" >
+        pubDate,
+      </if>
+      <if test="pubuserno != null" >
+        pubUserNo,
+      </if>
+      <if test="articletype != null" >
+        articleType,
+      </if>
+      <if test="comid != null" >
+        comId,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="articleid != null" >
+        #{articleid,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="pubdate != null" >
+        #{pubdate,jdbcType=DATE},
+      </if>
+      <if test="pubuserno != null" >
+        #{pubuserno,jdbcType=INTEGER},
+      </if>
+      <if test="articletype != null" >
+        #{articletype,jdbcType=INTEGER},
+      </if>
+      <if test="comid != null" >
+        #{comid,jdbcType=INTEGER},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Article" >
+    update article
+    <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="pubdate != null" >
+        pubDate = #{pubdate,jdbcType=DATE},
+      </if>
+      <if test="pubuserno != null" >
+        pubUserNo = #{pubuserno,jdbcType=INTEGER},
+      </if>
+      <if test="articletype != null" >
+        articleType = #{articletype,jdbcType=INTEGER},
+      </if>
+      <if test="comid != null" >
+        comId = #{comid,jdbcType=INTEGER},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where articleId = #{articleid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.cs.pojo.Article" >
+    update article
+    set title = #{title,jdbcType=VARCHAR},
+      pubDate = #{pubdate,jdbcType=DATE},
+      pubUserNo = #{pubuserno,jdbcType=INTEGER},
+      articleType = #{articletype,jdbcType=INTEGER},
+      comId = #{comid,jdbcType=INTEGER},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where articleId = #{articleid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Article" >
+    update article
+    set title = #{title,jdbcType=VARCHAR},
+      pubDate = #{pubdate,jdbcType=DATE},
+      pubUserNo = #{pubuserno,jdbcType=INTEGER},
+      articleType = #{articletype,jdbcType=INTEGER},
+      comId = #{comid,jdbcType=INTEGER}
+    where articleId = #{articleid,jdbcType=INTEGER}
+  </update>
 </mapper>

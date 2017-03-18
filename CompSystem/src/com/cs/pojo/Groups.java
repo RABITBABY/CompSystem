@@ -1,64 +1,63 @@
 package com.cs.pojo;
 
 public class Groups {
-    private Integer groupsNo;
+    private Integer groupsno;
 
-    private Integer comId;
+    private Integer comid;
 
-    private String groupsName;
+    private String groupsname;
 
-    private Integer teacherNo;
+    private Integer teacherno;
 
-    private Integer studentNo;
+    private Integer studentno;
 
     private Integer status;
 
-	public Integer getGroupsNo() {
-		return groupsNo;
-	}
+    public Integer getGroupsno() {
+        return groupsno;
+    }
 
-	public void setGroupsNo(Integer groupsNo) {
-		this.groupsNo = groupsNo;
-	}
+    public void setGroupsno(Integer groupsno) {
+        this.groupsno = groupsno;
+    }
 
-	public Integer getComId() {
-		return comId;
-	}
+    public Integer getComid() {
+        return comid;
+    }
 
-	public void setComId(Integer comId) {
-		this.comId = comId;
-	}
+    public void setComid(Integer comid) {
+        this.comid = comid;
+    }
 
-	public String getGroupsName() {
-		return groupsName;
-	}
+    public String getGroupsname() {
+        return groupsname;
+    }
 
-	public void setGroupsName(String groupsName) {
-		this.groupsName = groupsName;
-	}
+    public void setGroupsname(String groupsname) {
+        this.groupsname = groupsname == null ? null : groupsname.trim();
+    }
 
-	public Integer getTeacherNo() {
-		return teacherNo;
-	}
+    public Integer getTeacherno() {
+        return teacherno;
+    }
 
-	public void setTeacherNo(Integer teacherNo) {
-		this.teacherNo = teacherNo;
-	}
+    public void setTeacherno(Integer teacherno) {
+        this.teacherno = teacherno;
+    }
 
-	public Integer getStudentNo() {
-		return studentNo;
-	}
+    public Integer getStudentno() {
+        return studentno;
+    }
 
-	public void setStudentNo(Integer studentNo) {
-		this.studentNo = studentNo;
-	}
+    public void setStudentno(Integer studentno) {
+        this.studentno = studentno;
+    }
 
-	public Integer getStatus() {
-		return status;
-	}
+    public Integer getStatus() {
+        return status;
+    }
 
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
-
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 }

@@ -1,65 +1,63 @@
 package com.cs.pojo;
 
 public class Production {
-    private Integer proId;
+    private Integer proid;
 
-    private String proName;
+    private String proname;
 
     private String award;
 
-    private String membersName;
+    private String membersname;
 
     private String pic;
 
     private String introduction;
 
-	public Integer getProId() {
-		return proId;
-	}
+    public Integer getProid() {
+        return proid;
+    }
 
-	public void setProId(Integer proId) {
-		this.proId = proId;
-	}
+    public void setProid(Integer proid) {
+        this.proid = proid;
+    }
 
-	public String getProName() {
-		return proName;
-	}
+    public String getProname() {
+        return proname;
+    }
 
-	public void setProName(String proName) {
-		this.proName = proName;
-	}
+    public void setProname(String proname) {
+        this.proname = proname == null ? null : proname.trim();
+    }
 
-	public String getAward() {
-		return award;
-	}
+    public String getAward() {
+        return award;
+    }
 
-	public void setAward(String award) {
-		this.award = award;
-	}
+    public void setAward(String award) {
+        this.award = award == null ? null : award.trim();
+    }
 
-	public String getMembersName() {
-		return membersName;
-	}
+    public String getMembersname() {
+        return membersname;
+    }
 
-	public void setMembersName(String membersName) {
-		this.membersName = membersName;
-	}
+    public void setMembersname(String membersname) {
+        this.membersname = membersname == null ? null : membersname.trim();
+    }
 
-	public String getPic() {
-		return pic;
-	}
+    public String getPic() {
+        return pic;
+    }
 
-	public void setPic(String pic) {
-		this.pic = pic;
-	}
+    public void setPic(String pic) {
+        this.pic = pic == null ? null : pic.trim();
+    }
 
-	public String getIntroduction() {
-		return introduction;
-	}
+    public String getIntroduction() {
+        return introduction;
+    }
 
-	public void setIntroduction(String introduction) {
-		this.introduction = introduction;
-	}
-    
-
+    public void setIntroduction(String introduction) {
+        this.introduction = introduction == null ? null : introduction.trim();
+    }
 }

@@ -1,9 +1,9 @@
 package com.cs.pojo;
 
 public class Budget {
-    private Integer budgetId;
+    private Integer budgetid;
 
-    private Integer comId;
+    private Integer comid;
 
     private String subject;
 
@@ -11,45 +11,43 @@ public class Budget {
 
     private String reasons;
 
-	public Integer getBudgetId() {
-		return budgetId;
-	}
+    public Integer getBudgetid() {
+        return budgetid;
+    }
 
-	public void setBudgetId(Integer budgetId) {
-		this.budgetId = budgetId;
-	}
+    public void setBudgetid(Integer budgetid) {
+        this.budgetid = budgetid;
+    }
 
-	public Integer getComId() {
-		return comId;
-	}
+    public Integer getComid() {
+        return comid;
+    }
 
-	public void setComId(Integer comId) {
-		this.comId = comId;
-	}
+    public void setComid(Integer comid) {
+        this.comid = comid;
+    }
 
-	public String getSubject() {
-		return subject;
-	}
+    public String getSubject() {
+        return subject;
+    }
 
-	public void setSubject(String subject) {
-		this.subject = subject;
-	}
+    public void setSubject(String subject) {
+        this.subject = subject == null ? null : subject.trim();
+    }
 
-	public Integer getSum() {
-		return sum;
-	}
+    public Integer getSum() {
+        return sum;
+    }
 
-	public void setSum(Integer sum) {
-		this.sum = sum;
-	}
+    public void setSum(Integer sum) {
+        this.sum = sum;
+    }
 
-	public String getReasons() {
-		return reasons;
-	}
+    public String getReasons() {
+        return reasons;
+    }
 
-	public void setReasons(String reasons) {
-		this.reasons = reasons;
-	}
-
-   
+    public void setReasons(String reasons) {
+        this.reasons = reasons == null ? null : reasons.trim();
+    }
 }

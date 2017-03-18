@@ -3,9 +3,9 @@ package com.cs.pojo;
 import java.util.Date;
 
 public class Schedule {
-    private Integer comId;
+    private Integer comid;
 
-    private Integer teacherNo;
+    private Integer teacherno;
 
     private String content;
 
@@ -15,53 +15,51 @@ public class Schedule {
 
     private Integer hours;
 
-	public Integer getComId() {
-		return comId;
-	}
+    public Integer getComid() {
+        return comid;
+    }
 
-	public void setComId(Integer comId) {
-		this.comId = comId;
-	}
+    public void setComid(Integer comid) {
+        this.comid = comid;
+    }
 
-	public Integer getTeacherNo() {
-		return teacherNo;
-	}
+    public Integer getTeacherno() {
+        return teacherno;
+    }
 
-	public void setTeacherNo(Integer teacherNo) {
-		this.teacherNo = teacherNo;
-	}
+    public void setTeacherno(Integer teacherno) {
+        this.teacherno = teacherno;
+    }
 
-	public String getContent() {
-		return content;
-	}
+    public String getContent() {
+        return content;
+    }
 
-	public void setContent(String content) {
-		this.content = content;
-	}
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
+    }
 
-	public String getPosition() {
-		return position;
-	}
+    public String getPosition() {
+        return position;
+    }
 
-	public void setPosition(String position) {
-		this.position = position;
-	}
+    public void setPosition(String position) {
+        this.position = position == null ? null : position.trim();
+    }
 
-	public Date getDate() {
-		return date;
-	}
+    public Date getDate() {
+        return date;
+    }
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
-	public Integer getHours() {
-		return hours;
-	}
+    public Integer getHours() {
+        return hours;
+    }
 
-	public void setHours(Integer hours) {
-		this.hours = hours;
-	}
-    
-
+    public void setHours(Integer hours) {
+        this.hours = hours;
+    }
 }

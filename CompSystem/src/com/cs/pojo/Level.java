@@ -1,35 +1,33 @@
 package com.cs.pojo;
 
 public class Level {
-    private Integer levelId;
+    private Integer levelid;
 
-    private String levelName;
+    private String levelname;
 
-    private String prizeName;
+    private String prizename;
 
-	public Integer getLevelId() {
-		return levelId;
-	}
+    public Integer getLevelid() {
+        return levelid;
+    }
 
-	public void setLevelId(Integer levelId) {
-		this.levelId = levelId;
-	}
+    public void setLevelid(Integer levelid) {
+        this.levelid = levelid;
+    }
 
-	public String getLevelName() {
-		return levelName;
-	}
+    public String getLevelname() {
+        return levelname;
+    }
 
-	public void setLevelName(String levelName) {
-		this.levelName = levelName;
-	}
+    public void setLevelname(String levelname) {
+        this.levelname = levelname == null ? null : levelname.trim();
+    }
 
-	public String getPrizeName() {
-		return prizeName;
-	}
+    public String getPrizename() {
+        return prizename;
+    }
 
-	public void setPrizeName(String prizeName) {
-		this.prizeName = prizeName;
-	}
-
-  
+    public void setPrizename(String prizename) {
+        this.prizename = prizename == null ? null : prizename.trim();
+    }
 }

@@ -1,33 +1,33 @@
 package com.cs.pojo;
-public class Conditions {
-    private Integer conditionId;
 
-    private String conditioNname;
+public class Conditions {
+    private Integer conditionid;
+
+    private String conditionname;
 
     private Integer type;
 
-	public Integer getConditionId() {
-		return conditionId;
-	}
+    public Integer getConditionid() {
+        return conditionid;
+    }
 
-	public void setConditionId(Integer conditionId) {
-		this.conditionId = conditionId;
-	}
+    public void setConditionid(Integer conditionid) {
+        this.conditionid = conditionid;
+    }
 
-	public String getConditioNname() {
-		return conditioNname;
-	}
+    public String getConditionname() {
+        return conditionname;
+    }
 
-	public void setConditioNname(String conditioNname) {
-		this.conditioNname = conditioNname;
-	}
+    public void setConditionname(String conditionname) {
+        this.conditionname = conditionname == null ? null : conditionname.trim();
+    }
 
-	public Integer getType() {
-		return type;
-	}
+    public Integer getType() {
+        return type;
+    }
 
-	public void setType(Integer type) {
-		this.type = type;
-	}
-
+    public void setType(Integer type) {
+        this.type = type;
+    }
 }

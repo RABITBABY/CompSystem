@@ -1,25 +1,23 @@
 package com.cs.pojo;
 
 public class CompCondition {
-    private Integer proId;
+    private Integer comid;
 
-    private Integer conditionId;
+    private Integer conditionid;
 
-	public Integer getProId() {
-		return proId;
-	}
+    public Integer getComid() {
+        return comid;
+    }
 
-	public void setProId(Integer proId) {
-		this.proId = proId;
-	}
+    public void setComid(Integer comid) {
+        this.comid = comid;
+    }
 
-	public Integer getConditionId() {
-		return conditionId;
-	}
+    public Integer getConditionid() {
+        return conditionid;
+    }
 
-	public void setConditionId(Integer conditionId) {
-		this.conditionId = conditionId;
-	}
-
-    
+    public void setConditionid(Integer conditionid) {
+        this.conditionid = conditionid;
+    }
 }

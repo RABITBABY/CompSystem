@@ -1,34 +1,33 @@
 package com.cs.pojo;
+
 public class GuideTeacher {
-    private Integer guideteaId;
+    private Integer guideteaid;
 
-    private Integer teacherNo;
+    private Integer teacherno;
 
-    private Integer comId;
+    private Integer comid;
 
-	public Integer getGuideteaId() {
-		return guideteaId;
-	}
+    public Integer getGuideteaid() {
+        return guideteaid;
+    }
 
-	public void setGuideteaId(Integer guideteaId) {
-		this.guideteaId = guideteaId;
-	}
+    public void setGuideteaid(Integer guideteaid) {
+        this.guideteaid = guideteaid;
+    }
 
-	public Integer getTeacherNo() {
-		return teacherNo;
-	}
+    public Integer getTeacherno() {
+        return teacherno;
+    }
 
-	public void setTeacherNo(Integer teacherNo) {
-		this.teacherNo = teacherNo;
-	}
+    public void setTeacherno(Integer teacherno) {
+        this.teacherno = teacherno;
+    }
 
-	public Integer getComId() {
-		return comId;
-	}
+    public Integer getComid() {
+        return comid;
+    }
 
-	public void setComId(Integer comId) {
-		this.comId = comId;
-	}
-
-   
+    public void setComid(Integer comid) {
+        this.comid = comid;
+    }
 }
