@@ -1,9 +1,5 @@
 package com.cs.controller.login;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.print.attribute.HashAttributeSet;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Param;
@@ -41,16 +37,14 @@ public class LoginController {
 	 * @param password  密码
 	 * @param role  角色
 	 * @return
-	 *login?account=10002&password=123456&role=admin
 	 */
 	@ResponseBody
-	@RequestMapping(value = "/login" ,method=RequestMethod.GET)
+	@RequestMapping(value = "/login" ,method=RequestMethod.POST)
 	public Object IsAdmin(@RequestParam(value = "account",required=false) String account,
 			@RequestParam(value = "password",required=false)String password,
 			@RequestParam(value = "role",required=false) String role, 
 			HttpSession session){
 		System.out.println(password+"---"+account+"--"+role);
-		Map map=new HashMap<String, Object>();
 		//获取前台页面的信息---先判断角色色
 		if("teacher".equals(role)){//教师
 			Teacher teacher=teachImpl.selectByTeacherNo(Integer.parseInt(account));

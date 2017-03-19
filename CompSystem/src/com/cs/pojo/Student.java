@@ -1,17 +1,17 @@
 package com.cs.pojo;
 
 public class Student {
-    private Integer studentNo;
+    private Integer studentno;
 
-    private String studentName;
+    private String studentname;
 
     private String gender;
 
-    private Integer departmentId;
+    private String department;
 
     private String profession;
 
-    private Integer classNo;
+    private Integer classno;
 
     private Integer grade;
 
@@ -21,85 +21,83 @@ public class Student {
 
     private String password;
 
-	public Integer getStudentNo() {
-		return studentNo;
-	}
+    public Integer getStudentno() {
+        return studentno;
+    }
 
-	public void setStudentNo(Integer studentNo) {
-		this.studentNo = studentNo;
-	}
+    public void setStudentno(Integer studentno) {
+        this.studentno = studentno;
+    }
 
-	public String getStudentName() {
-		return studentName;
-	}
+    public String getStudentname() {
+        return studentname;
+    }
 
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
-	}
+    public void setStudentname(String studentname) {
+        this.studentname = studentname == null ? null : studentname.trim();
+    }
 
-	public String getGender() {
-		return gender;
-	}
+    public String getGender() {
+        return gender;
+    }
 
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+    public void setGender(String gender) {
+        this.gender = gender == null ? null : gender.trim();
+    }
 
-	public Integer getDepartmentId() {
-		return departmentId;
-	}
+    public String getDepartment() {
+        return department;
+    }
 
-	public void setDepartmentId(Integer departmentId) {
-		this.departmentId = departmentId;
-	}
+    public void setDepartment(String department) {
+        this.department = department == null ? null : department.trim();
+    }
 
-	public String getProfession() {
-		return profession;
-	}
+    public String getProfession() {
+        return profession;
+    }
 
-	public void setProfession(String profession) {
-		this.profession = profession;
-	}
+    public void setProfession(String profession) {
+        this.profession = profession == null ? null : profession.trim();
+    }
 
-	public Integer getClassNo() {
-		return classNo;
-	}
+    public Integer getClassno() {
+        return classno;
+    }
 
-	public void setClassNo(Integer classNo) {
-		this.classNo = classNo;
-	}
+    public void setClassno(Integer classno) {
+        this.classno = classno;
+    }
 
-	public Integer getGrade() {
-		return grade;
-	}
+    public Integer getGrade() {
+        return grade;
+    }
 
-	public void setGrade(Integer grade) {
-		this.grade = grade;
-	}
+    public void setGrade(Integer grade) {
+        this.grade = grade;
+    }
 
-	public String getPhone() {
-		return phone;
-	}
+    public String getPhone() {
+        return phone;
+    }
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
-    
-
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
+    }
 }

@@ -6,7 +6,7 @@
     <result column="teacherName" property="teachername" jdbcType="VARCHAR" />
     <result column="gender" property="gender" jdbcType="VARCHAR" />
     <result column="birth" property="birth" jdbcType="DATE" />
-    <result column="departmentId" property="departmentid" jdbcType="INTEGER" />
+    <result column="department" property="department" jdbcType="VARCHAR" />
     <result column="subject" property="subject" jdbcType="VARCHAR" />
     <result column="phone" property="phone" jdbcType="VARCHAR" />
     <result column="title" property="title" jdbcType="VARCHAR" />
@@ -20,8 +20,8 @@
     <result column="examiner" property="examiner" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    teacherNo, teacherName, gender, birth, departmentId, subject, phone, title, post, 
-    email, type, direction, education, lab, password, examiner
+    teacherNo, teacherName, gender, birth, department, subject, phone, title, post, email, 
+    type, direction, education, lab, password, examiner
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -35,13 +35,13 @@
   </delete>
   <insert id="insert" parameterType="com.cs.pojo.Teacher" >
     insert into teacher (teacherNo, teacherName, gender, 
-      birth, departmentId, subject, 
+      birth, department, subject, 
       phone, title, post, 
       email, type, direction, 
       education, lab, password, 
       examiner)
     values (#{teacherno,jdbcType=INTEGER}, #{teachername,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, 
-      #{birth,jdbcType=DATE}, #{departmentid,jdbcType=INTEGER}, #{subject,jdbcType=VARCHAR}, 
+      #{birth,jdbcType=DATE}, #{department,jdbcType=VARCHAR}, #{subject,jdbcType=VARCHAR}, 
       #{phone,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{post,jdbcType=VARCHAR}, 
       #{email,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{direction,jdbcType=VARCHAR}, 
       #{education,jdbcType=VARCHAR}, #{lab,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
@@ -62,8 +62,8 @@
       <if test="birth != null" >
         birth,
       </if>
-      <if test="departmentid != null" >
-        departmentId,
+      <if test="department != null" >
+        department,
       </if>
       <if test="subject != null" >
         subject,
@@ -112,8 +112,8 @@
       <if test="birth != null" >
         #{birth,jdbcType=DATE},
       </if>
-      <if test="departmentid != null" >
-        #{departmentid,jdbcType=INTEGER},
+      <if test="department != null" >
+        #{department,jdbcType=VARCHAR},
       </if>
       <if test="subject != null" >
         #{subject,jdbcType=VARCHAR},
@@ -162,8 +162,8 @@
       <if test="birth != null" >
         birth = #{birth,jdbcType=DATE},
       </if>
-      <if test="departmentid != null" >
-        departmentId = #{departmentid,jdbcType=INTEGER},
+      <if test="department != null" >
+        department = #{department,jdbcType=VARCHAR},
       </if>
       <if test="subject != null" >
         subject = #{subject,jdbcType=VARCHAR},
@@ -206,7 +206,7 @@
     set teacherName = #{teachername,jdbcType=VARCHAR},
       gender = #{gender,jdbcType=VARCHAR},
       birth = #{birth,jdbcType=DATE},
-      departmentId = #{departmentid,jdbcType=INTEGER},
+      department = #{department,jdbcType=VARCHAR},
       subject = #{subject,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
       title = #{title,jdbcType=VARCHAR},

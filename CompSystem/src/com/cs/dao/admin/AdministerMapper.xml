@@ -2,13 +2,81 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.dao.admin.AdministerMapper" >
   <resultMap id="BaseResultMap" type="com.cs.pojo.Administer" >
+    <id column="adminNo" property="adminno" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="adminName" property="adminname" jdbcType="VARCHAR" />
+    <result column="department" property="department" jdbcType="VARCHAR" />
   </resultMap>
-  
-  
-   <select id="selectByID" resultMap="BaseResultMap" parameterType="String" >
-    select * from administer
-    where adminNo = #{adminNo}
+  <sql id="Base_Column_List" >
+    adminNo, password, adminName, department
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from administer
+    where adminNo = #{adminno,jdbcType=VARCHAR}
   </select>
-  
-  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from administer
+    where adminNo = #{adminno,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cs.pojo.Administer" >
+    insert into administer (adminNo, password, adminName, 
+      department)
+    values (#{adminno,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{adminname,jdbcType=VARCHAR}, 
+      #{department,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cs.pojo.Administer" >
+    insert into administer
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="adminno != null" >
+        adminNo,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="adminname != null" >
+        adminName,
+      </if>
+      <if test="department != null" >
+        department,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="adminno != null" >
+        #{adminno,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="adminname != null" >
+        #{adminname,jdbcType=VARCHAR},
+      </if>
+      <if test="department != null" >
+        #{department,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Administer" >
+    update administer
+    <set >
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="adminname != null" >
+        adminName = #{adminname,jdbcType=VARCHAR},
+      </if>
+      <if test="department != null" >
+        department = #{department,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where adminNo = #{adminno,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Administer" >
+    update administer
+    set password = #{password,jdbcType=VARCHAR},
+      adminName = #{adminname,jdbcType=VARCHAR},
+      department = #{department,jdbcType=VARCHAR}
+    where adminNo = #{adminno,jdbcType=VARCHAR}
+  </update>
 </mapper>

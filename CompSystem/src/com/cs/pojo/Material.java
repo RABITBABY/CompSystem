@@ -1,55 +1,53 @@
 package com.cs.pojo;
 
 public class Material {
-    private Integer materialId;
+    private Integer materialid;
 
-    private Integer studentNo;
+    private Integer studentno;
 
-    private Integer conditionId;
+    private Integer conditionid;
 
-    private String materialPic;
+    private String materialpic;
 
     private Integer status;
 
-	public Integer getMaterialId() {
-		return materialId;
-	}
+    public Integer getMaterialid() {
+        return materialid;
+    }
 
-	public void setMaterialId(Integer materialId) {
-		this.materialId = materialId;
-	}
+    public void setMaterialid(Integer materialid) {
+        this.materialid = materialid;
+    }
 
-	public Integer getStudentNo() {
-		return studentNo;
-	}
+    public Integer getStudentno() {
+        return studentno;
+    }
 
-	public void setStudentNo(Integer studentNo) {
-		this.studentNo = studentNo;
-	}
+    public void setStudentno(Integer studentno) {
+        this.studentno = studentno;
+    }
 
-	public Integer getConditionId() {
-		return conditionId;
-	}
+    public Integer getConditionid() {
+        return conditionid;
+    }
 
-	public void setConditionId(Integer conditionId) {
-		this.conditionId = conditionId;
-	}
+    public void setConditionid(Integer conditionid) {
+        this.conditionid = conditionid;
+    }
 
-	public String getMaterialPic() {
-		return materialPic;
-	}
+    public String getMaterialpic() {
+        return materialpic;
+    }
 
-	public void setMaterialPic(String materialPic) {
-		this.materialPic = materialPic;
-	}
+    public void setMaterialpic(String materialpic) {
+        this.materialpic = materialpic == null ? null : materialpic.trim();
+    }
 
-	public Integer getStatus() {
-		return status;
-	}
+    public Integer getStatus() {
+        return status;
+    }
 
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
-
-    
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 }

@@ -2,60 +2,60 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.dao.student.StudentMapper" >
   <resultMap id="BaseResultMap" type="com.cs.pojo.Student" >
-    <id column="studentNo" property="studentNo" jdbcType="INTEGER" />
-    <result column="studentName" property="studentName" jdbcType="VARCHAR" />
+    <id column="studentNo" property="studentno" jdbcType="INTEGER" />
+    <result column="studentName" property="studentname" jdbcType="VARCHAR" />
     <result column="gender" property="gender" jdbcType="VARCHAR" />
-    <result column="departmentId" property="departmentId" jdbcType="INTEGER" />
+    <result column="department" property="department" jdbcType="VARCHAR" />
     <result column="profession" property="profession" jdbcType="VARCHAR" />
-    <result column="classNo" property="classNo" jdbcType="INTEGER" />
+    <result column="classNo" property="classno" jdbcType="INTEGER" />
     <result column="grade" property="grade" jdbcType="INTEGER" />
     <result column="phone" property="phone" jdbcType="VARCHAR" />
     <result column="email" property="email" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    studentNo, studentName, gender, departmentId, profession, classNo, grade, phone, 
-    email, password
+    studentNo, studentName, gender, department, profession, classNo, grade, phone, email, 
+    password
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from student
-    where studentNo = #{studentNo,jdbcType=INTEGER}
+    where studentNo = #{studentno,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from student
-    where studentNo = #{studentNo,jdbcType=INTEGER}
+    where studentNo = #{studentno,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.cs.pojo.Student" >
     insert into student (studentNo, studentName, gender, 
-      departmentId, profession, classNo, 
+      department, profession, classNo, 
       grade, phone, email, 
       password)
-    values (#{studentNo,jdbcType=INTEGER}, #{studentName,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, 
-      #{departmentId,jdbcType=INTEGER}, #{profession,jdbcType=VARCHAR}, #{classNo,jdbcType=INTEGER}, 
+    values (#{studentno,jdbcType=INTEGER}, #{studentname,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, 
+      #{department,jdbcType=VARCHAR}, #{profession,jdbcType=VARCHAR}, #{classno,jdbcType=INTEGER}, 
       #{grade,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
       #{password,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.cs.pojo.Student" >
     insert into student
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="studentNo != null" >
+      <if test="studentno != null" >
         studentNo,
       </if>
-      <if test="studentName != null" >
+      <if test="studentname != null" >
         studentName,
       </if>
       <if test="gender != null" >
         gender,
       </if>
-      <if test="departmentId != null" >
-        departmentId,
+      <if test="department != null" >
+        department,
       </if>
       <if test="profession != null" >
         profession,
       </if>
-      <if test="classNo != null" >
+      <if test="classno != null" >
         classNo,
       </if>
       <if test="grade != null" >
@@ -72,23 +72,23 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="studentNo != null" >
-        #{studentNo,jdbcType=INTEGER},
+      <if test="studentno != null" >
+        #{studentno,jdbcType=INTEGER},
       </if>
-      <if test="studentName != null" >
-        #{studentName,jdbcType=VARCHAR},
+      <if test="studentname != null" >
+        #{studentname,jdbcType=VARCHAR},
       </if>
       <if test="gender != null" >
         #{gender,jdbcType=VARCHAR},
       </if>
-      <if test="departmentId != null" >
-        #{departmentId,jdbcType=INTEGER},
+      <if test="department != null" >
+        #{department,jdbcType=VARCHAR},
       </if>
       <if test="profession != null" >
         #{profession,jdbcType=VARCHAR},
       </if>
-      <if test="classNo != null" >
-        #{classNo,jdbcType=INTEGER},
+      <if test="classno != null" >
+        #{classno,jdbcType=INTEGER},
       </if>
       <if test="grade != null" >
         #{grade,jdbcType=INTEGER},
@@ -107,20 +107,20 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Student" >
     update student
     <set >
-      <if test="studentName != null" >
-        studentName = #{studentName,jdbcType=VARCHAR},
+      <if test="studentname != null" >
+        studentName = #{studentname,jdbcType=VARCHAR},
       </if>
       <if test="gender != null" >
         gender = #{gender,jdbcType=VARCHAR},
       </if>
-      <if test="departmentId != null" >
-        departmentId = #{departmentId,jdbcType=INTEGER},
+      <if test="department != null" >
+        department = #{department,jdbcType=VARCHAR},
       </if>
       <if test="profession != null" >
         profession = #{profession,jdbcType=VARCHAR},
       </if>
-      <if test="classNo != null" >
-        classNo = #{classNo,jdbcType=INTEGER},
+      <if test="classno != null" >
+        classNo = #{classno,jdbcType=INTEGER},
       </if>
       <if test="grade != null" >
         grade = #{grade,jdbcType=INTEGER},
@@ -135,19 +135,19 @@
         password = #{password,jdbcType=VARCHAR},
       </if>
     </set>
-    where studentNo = #{studentNo,jdbcType=INTEGER}
+    where studentNo = #{studentno,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Student" >
     update student
-    set studentName = #{studentName,jdbcType=VARCHAR},
+    set studentName = #{studentname,jdbcType=VARCHAR},
       gender = #{gender,jdbcType=VARCHAR},
-      departmentId = #{departmentId,jdbcType=INTEGER},
+      department = #{department,jdbcType=VARCHAR},
       profession = #{profession,jdbcType=VARCHAR},
-      classNo = #{classNo,jdbcType=INTEGER},
+      classNo = #{classno,jdbcType=INTEGER},
       grade = #{grade,jdbcType=INTEGER},
       phone = #{phone,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR}
-    where studentNo = #{studentNo,jdbcType=INTEGER}
+    where studentNo = #{studentno,jdbcType=INTEGER}
   </update>
 </mapper>

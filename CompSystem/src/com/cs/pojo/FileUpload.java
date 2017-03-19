@@ -3,55 +3,53 @@ package com.cs.pojo;
 import java.util.Date;
 
 public class FileUpload {
-    private Integer fileId;
+    private Integer fileid;
 
-    private String fileName;
+    private String filename;
 
-    private String saveName;
+    private String savename;
 
-    private Date uploadDate;
+    private Date uploaddate;
 
-    private Integer uploadUserNo;
+    private Integer uploaduserno;
 
-	public Integer getFileId() {
-		return fileId;
-	}
+    public Integer getFileid() {
+        return fileid;
+    }
 
-	public void setFileId(Integer fileId) {
-		this.fileId = fileId;
-	}
+    public void setFileid(Integer fileid) {
+        this.fileid = fileid;
+    }
 
-	public String getFileName() {
-		return fileName;
-	}
+    public String getFilename() {
+        return filename;
+    }
 
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-	}
+    public void setFilename(String filename) {
+        this.filename = filename == null ? null : filename.trim();
+    }
 
-	public String getSaveName() {
-		return saveName;
-	}
+    public String getSavename() {
+        return savename;
+    }
 
-	public void setSaveName(String saveName) {
-		this.saveName = saveName;
-	}
+    public void setSavename(String savename) {
+        this.savename = savename == null ? null : savename.trim();
+    }
 
-	public Date getUploadDate() {
-		return uploadDate;
-	}
+    public Date getUploaddate() {
+        return uploaddate;
+    }
 
-	public void setUploadDate(Date uploadDate) {
-		this.uploadDate = uploadDate;
-	}
+    public void setUploaddate(Date uploaddate) {
+        this.uploaddate = uploaddate;
+    }
 
-	public Integer getUploadUserNo() {
-		return uploadUserNo;
-	}
+    public Integer getUploaduserno() {
+        return uploaduserno;
+    }
 
-	public void setUploadUserNo(Integer uploadUserNo) {
-		this.uploadUserNo = uploadUserNo;
-	}
-    
-
+    public void setUploaduserno(Integer uploaduserno) {
+        this.uploaduserno = uploaduserno;
+    }
 }

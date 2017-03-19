@@ -3,75 +3,73 @@ package com.cs.pojo;
 import java.util.Date;
 
 public class Article {
-    private Integer articleId;
+    private Integer articleid;
 
     private String title;
 
-    private Date pubDate;
+    private Date pubdate;
 
-    private Integer pubUserNo;
+    private Integer pubuserno;
 
-    private Integer articleType;
+    private Integer articletype;
 
-    private Integer comId;
+    private Integer comid;
 
     private String content;
 
-	public Integer getArticleId() {
-		return articleId;
-	}
+    public Integer getArticleid() {
+        return articleid;
+    }
 
-	public void setArticleId(Integer articleId) {
-		this.articleId = articleId;
-	}
+    public void setArticleid(Integer articleid) {
+        this.articleid = articleid;
+    }
 
-	public String getTitle() {
-		return title;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public void setTitle(String title) {
+        this.title = title == null ? null : title.trim();
+    }
 
-	public Date getPubDate() {
-		return pubDate;
-	}
+    public Date getPubdate() {
+        return pubdate;
+    }
 
-	public void setPubDate(Date pubDate) {
-		this.pubDate = pubDate;
-	}
+    public void setPubdate(Date pubdate) {
+        this.pubdate = pubdate;
+    }
 
-	public Integer getPubUserNo() {
-		return pubUserNo;
-	}
+    public Integer getPubuserno() {
+        return pubuserno;
+    }
 
-	public void setPubUserNo(Integer pubUserNo) {
-		this.pubUserNo = pubUserNo;
-	}
+    public void setPubuserno(Integer pubuserno) {
+        this.pubuserno = pubuserno;
+    }
 
-	public Integer getArticleType() {
-		return articleType;
-	}
+    public Integer getArticletype() {
+        return articletype;
+    }
 
-	public void setArticleType(Integer articleType) {
-		this.articleType = articleType;
-	}
+    public void setArticletype(Integer articletype) {
+        this.articletype = articletype;
+    }
 
-	public Integer getComId() {
-		return comId;
-	}
+    public Integer getComid() {
+        return comid;
+    }
 
-	public void setComId(Integer comId) {
-		this.comId = comId;
-	}
+    public void setComid(Integer comid) {
+        this.comid = comid;
+    }
 
-	public String getContent() {
-		return content;
-	}
+    public String getContent() {
+        return content;
+    }
 
-	public void setContent(String content) {
-		this.content = content;
-	}
-    
-
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
+    }
 }

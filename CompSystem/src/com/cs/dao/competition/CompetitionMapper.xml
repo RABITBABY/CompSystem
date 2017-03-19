@@ -6,8 +6,8 @@
     <result column="comName" property="comname" jdbcType="VARCHAR" />
     <result column="teacherNo" property="teacherno" jdbcType="INTEGER" />
     <result column="unit" property="unit" jdbcType="VARCHAR" />
-    <result column="levelId" property="levelid" jdbcType="INTEGER" />
-    <result column="departmentId" property="departmentid" jdbcType="INTEGER" />
+    <result column="levelName" property="levelname" jdbcType="VARCHAR" />
+    <result column="department" property="department" jdbcType="VARCHAR" />
     <result column="date" property="date" jdbcType="DATE" />
     <result column="host" property="host" jdbcType="VARCHAR" />
     <result column="time" property="time" jdbcType="DATE" />
@@ -35,17 +35,15 @@
     <result column="completeStatus" property="completestatus" jdbcType="INTEGER" />
     <result column="applyBeginDate" property="applybegindate" jdbcType="DATE" />
     <result column="applyEndDate" property="applyenddate" jdbcType="DATE" />
-    <result column="comDate" property="comdate" jdbcType="DATE" />
     <result column="cost" property="cost" jdbcType="DECIMAL" />
     <result column="compStatus" property="compstatus" jdbcType="INTEGER" />
     <result column="isPublish" property="ispublish" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    comId, comName, teacherNo, unit, levelId, departmentId, date, host, time, place, 
+    comId, comName, teacherNo, unit, levelName, department, date, host, time, place, 
     introduce, object, people, sponsor, plan, tgoal, wgoal, sopinion, slsign, slsdate, 
     uopinion, dsign, dsdate, tdopinion, olsign, olsdate, lsign, lsdate, depSpStatus, 
-    teaSpStatus, completeStatus, applyBeginDate, applyEndDate, comDate, cost, compStatus, 
-    isPublish
+    teaSpStatus, completeStatus, applyBeginDate, applyEndDate, cost, compStatus, isPublish
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -59,7 +57,7 @@
   </delete>
   <insert id="insert" parameterType="com.cs.pojo.Competition" >
     insert into competition (comId, comName, teacherNo, 
-      unit, levelId, departmentId, 
+      unit, levelName, department, 
       date, host, time, place, 
       introduce, object, people, 
       sponsor, plan, tgoal, 
@@ -68,11 +66,10 @@
       dsdate, tdopinion, olsign, 
       olsdate, lsign, lsdate, 
       depSpStatus, teaSpStatus, completeStatus, 
-      applyBeginDate, applyEndDate, comDate, 
-      cost, compStatus, isPublish
-      )
+      applyBeginDate, applyEndDate, cost, 
+      compStatus, isPublish)
     values (#{comid,jdbcType=INTEGER}, #{comname,jdbcType=VARCHAR}, #{teacherno,jdbcType=INTEGER}, 
-      #{unit,jdbcType=VARCHAR}, #{levelid,jdbcType=INTEGER}, #{departmentid,jdbcType=INTEGER}, 
+      #{unit,jdbcType=VARCHAR}, #{levelname,jdbcType=VARCHAR}, #{department,jdbcType=VARCHAR}, 
       #{date,jdbcType=DATE}, #{host,jdbcType=VARCHAR}, #{time,jdbcType=DATE}, #{place,jdbcType=VARCHAR}, 
       #{introduce,jdbcType=VARCHAR}, #{object,jdbcType=VARCHAR}, #{people,jdbcType=INTEGER}, 
       #{sponsor,jdbcType=VARCHAR}, #{plan,jdbcType=VARCHAR}, #{tgoal,jdbcType=VARCHAR}, 
@@ -81,9 +78,8 @@
       #{dsdate,jdbcType=DATE}, #{tdopinion,jdbcType=VARCHAR}, #{olsign,jdbcType=VARCHAR}, 
       #{olsdate,jdbcType=TIMESTAMP}, #{lsign,jdbcType=VARCHAR}, #{lsdate,jdbcType=DATE}, 
       #{depspstatus,jdbcType=INTEGER}, #{teaspstatus,jdbcType=INTEGER}, #{completestatus,jdbcType=INTEGER}, 
-      #{applybegindate,jdbcType=DATE}, #{applyenddate,jdbcType=DATE}, #{comdate,jdbcType=DATE}, 
-      #{cost,jdbcType=DECIMAL}, #{compstatus,jdbcType=INTEGER}, #{ispublish,jdbcType=INTEGER}
-      )
+      #{applybegindate,jdbcType=DATE}, #{applyenddate,jdbcType=DATE}, #{cost,jdbcType=DECIMAL}, 
+      #{compstatus,jdbcType=INTEGER}, #{ispublish,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.cs.pojo.Competition" >
     insert into competition
@@ -100,11 +96,11 @@
       <if test="unit != null" >
         unit,
       </if>
-      <if test="levelid != null" >
-        levelId,
+      <if test="levelname != null" >
+        levelName,
       </if>
-      <if test="departmentid != null" >
-        departmentId,
+      <if test="department != null" >
+        department,
       </if>
       <if test="date != null" >
         date,
@@ -187,9 +183,6 @@
       <if test="applyenddate != null" >
         applyEndDate,
       </if>
-      <if test="comdate != null" >
-        comDate,
-      </if>
       <if test="cost != null" >
         cost,
       </if>
@@ -213,11 +206,11 @@
       <if test="unit != null" >
         #{unit,jdbcType=VARCHAR},
       </if>
-      <if test="levelid != null" >
-        #{levelid,jdbcType=INTEGER},
+      <if test="levelname != null" >
+        #{levelname,jdbcType=VARCHAR},
       </if>
-      <if test="departmentid != null" >
-        #{departmentid,jdbcType=INTEGER},
+      <if test="department != null" >
+        #{department,jdbcType=VARCHAR},
       </if>
       <if test="date != null" >
         #{date,jdbcType=DATE},
@@ -300,9 +293,6 @@
       <if test="applyenddate != null" >
         #{applyenddate,jdbcType=DATE},
       </if>
-      <if test="comdate != null" >
-        #{comdate,jdbcType=DATE},
-      </if>
       <if test="cost != null" >
         #{cost,jdbcType=DECIMAL},
       </if>
@@ -326,11 +316,11 @@
       <if test="unit != null" >
         unit = #{unit,jdbcType=VARCHAR},
       </if>
-      <if test="levelid != null" >
-        levelId = #{levelid,jdbcType=INTEGER},
+      <if test="levelname != null" >
+        levelName = #{levelname,jdbcType=VARCHAR},
       </if>
-      <if test="departmentid != null" >
-        departmentId = #{departmentid,jdbcType=INTEGER},
+      <if test="department != null" >
+        department = #{department,jdbcType=VARCHAR},
       </if>
       <if test="date != null" >
         date = #{date,jdbcType=DATE},
@@ -413,9 +403,6 @@
       <if test="applyenddate != null" >
         applyEndDate = #{applyenddate,jdbcType=DATE},
       </if>
-      <if test="comdate != null" >
-        comDate = #{comdate,jdbcType=DATE},
-      </if>
       <if test="cost != null" >
         cost = #{cost,jdbcType=DECIMAL},
       </if>
@@ -433,8 +420,8 @@
     set comName = #{comname,jdbcType=VARCHAR},
       teacherNo = #{teacherno,jdbcType=INTEGER},
       unit = #{unit,jdbcType=VARCHAR},
-      levelId = #{levelid,jdbcType=INTEGER},
-      departmentId = #{departmentid,jdbcType=INTEGER},
+      levelName = #{levelname,jdbcType=VARCHAR},
+      department = #{department,jdbcType=VARCHAR},
       date = #{date,jdbcType=DATE},
       host = #{host,jdbcType=VARCHAR},
       time = #{time,jdbcType=DATE},
@@ -462,7 +449,6 @@
       completeStatus = #{completestatus,jdbcType=INTEGER},
       applyBeginDate = #{applybegindate,jdbcType=DATE},
       applyEndDate = #{applyenddate,jdbcType=DATE},
-      comDate = #{comdate,jdbcType=DATE},
       cost = #{cost,jdbcType=DECIMAL},
       compStatus = #{compstatus,jdbcType=INTEGER},
       isPublish = #{ispublish,jdbcType=INTEGER}

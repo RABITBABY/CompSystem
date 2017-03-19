@@ -1,9 +1,9 @@
 package com.cs.pojo;
 
 public class Hours {
-    private Integer hoursId;
+    private Integer hoursid;
 
-    private Integer comId;
+    private Integer comid;
 
     private String type;
 
@@ -11,44 +11,43 @@ public class Hours {
 
     private String remarks;
 
-	public Integer getHoursId() {
-		return hoursId;
-	}
+    public Integer getHoursid() {
+        return hoursid;
+    }
 
-	public void setHoursId(Integer hoursId) {
-		this.hoursId = hoursId;
-	}
+    public void setHoursid(Integer hoursid) {
+        this.hoursid = hoursid;
+    }
 
-	public Integer getComId() {
-		return comId;
-	}
+    public Integer getComid() {
+        return comid;
+    }
 
-	public void setComId(Integer comId) {
-		this.comId = comId;
-	}
+    public void setComid(Integer comid) {
+        this.comid = comid;
+    }
 
-	public String getType() {
-		return type;
-	}
+    public String getType() {
+        return type;
+    }
 
-	public void setType(String type) {
-		this.type = type;
-	}
+    public void setType(String type) {
+        this.type = type == null ? null : type.trim();
+    }
 
-	public Integer getHours() {
-		return hours;
-	}
+    public Integer getHours() {
+        return hours;
+    }
 
-	public void setHours(Integer hours) {
-		this.hours = hours;
-	}
+    public void setHours(Integer hours) {
+        this.hours = hours;
+    }
 
-	public String getRemarks() {
-		return remarks;
-	}
+    public String getRemarks() {
+        return remarks;
+    }
 
-	public void setRemarks(String remarks) {
-		this.remarks = remarks;
-	}
-
+    public void setRemarks(String remarks) {
+        this.remarks = remarks == null ? null : remarks.trim();
+    }
 }

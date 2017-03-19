@@ -4,11 +4,12 @@
   <resultMap id="BaseResultMap" type="com.cs.pojo.Awards" >
     <id column="awardsId" property="awardsid" jdbcType="INTEGER" />
     <result column="comId" property="comid" jdbcType="INTEGER" />
+    <result column="prizeName" property="prizename" jdbcType="VARCHAR" />
     <result column="groupsNo" property="groupsno" jdbcType="INTEGER" />
     <result column="isPublish" property="ispublish" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    awardsId, comId, groupsNo, isPublish
+    awardsId, comId, prizeName, groupsNo, isPublish
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -21,10 +22,10 @@
     where awardsId = #{awardsid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.cs.pojo.Awards" >
-    insert into awards (awardsId, comId, groupsNo, 
-      isPublish)
-    values (#{awardsid,jdbcType=INTEGER}, #{comid,jdbcType=INTEGER}, #{groupsno,jdbcType=INTEGER}, 
-      #{ispublish,jdbcType=INTEGER})
+    insert into awards (awardsId, comId, prizeName, 
+      groupsNo, isPublish)
+    values (#{awardsid,jdbcType=INTEGER}, #{comid,jdbcType=INTEGER}, #{prizename,jdbcType=VARCHAR}, 
+      #{groupsno,jdbcType=INTEGER}, #{ispublish,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.cs.pojo.Awards" >
     insert into awards
@@ -34,6 +35,9 @@
       </if>
       <if test="comid != null" >
         comId,
+      </if>
+      <if test="prizename != null" >
+        prizeName,
       </if>
       <if test="groupsno != null" >
         groupsNo,
@@ -49,6 +53,9 @@
       <if test="comid != null" >
         #{comid,jdbcType=INTEGER},
       </if>
+      <if test="prizename != null" >
+        #{prizename,jdbcType=VARCHAR},
+      </if>
       <if test="groupsno != null" >
         #{groupsno,jdbcType=INTEGER},
       </if>
@@ -63,6 +70,9 @@
       <if test="comid != null" >
         comId = #{comid,jdbcType=INTEGER},
       </if>
+      <if test="prizename != null" >
+        prizeName = #{prizename,jdbcType=VARCHAR},
+      </if>
       <if test="groupsno != null" >
         groupsNo = #{groupsno,jdbcType=INTEGER},
       </if>
@@ -75,6 +85,7 @@
   <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Awards" >
     update awards
     set comId = #{comid,jdbcType=INTEGER},
+      prizeName = #{prizename,jdbcType=VARCHAR},
       groupsNo = #{groupsno,jdbcType=INTEGER},
       isPublish = #{ispublish,jdbcType=INTEGER}
     where awardsId = #{awardsid,jdbcType=INTEGER}

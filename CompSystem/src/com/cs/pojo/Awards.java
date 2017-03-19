@@ -1,44 +1,53 @@
 package com.cs.pojo;
+
 public class Awards {
-    private Integer awardsId;
+    private Integer awardsid;
 
-    private Integer comId;
+    private Integer comid;
 
-    private Integer groupsNo;
+    private String prizename;
 
-    private Integer isPublish;
+    private Integer groupsno;
 
-	public Integer getAwardsId() {
-		return awardsId;
-	}
+    private Integer ispublish;
 
-	public void setAwardsId(Integer awardsId) {
-		this.awardsId = awardsId;
-	}
+    public Integer getAwardsid() {
+        return awardsid;
+    }
 
-	public Integer getComId() {
-		return comId;
-	}
+    public void setAwardsid(Integer awardsid) {
+        this.awardsid = awardsid;
+    }
 
-	public void setComId(Integer comId) {
-		this.comId = comId;
-	}
+    public Integer getComid() {
+        return comid;
+    }
 
-	public Integer getGroupsNo() {
-		return groupsNo;
-	}
+    public void setComid(Integer comid) {
+        this.comid = comid;
+    }
 
-	public void setGroupsNo(Integer groupsNo) {
-		this.groupsNo = groupsNo;
-	}
+    public String getPrizename() {
+        return prizename;
+    }
 
-	public Integer getIsPublish() {
-		return isPublish;
-	}
+    public void setPrizename(String prizename) {
+        this.prizename = prizename == null ? null : prizename.trim();
+    }
 
-	public void setIsPublish(Integer isPublish) {
-		this.isPublish = isPublish;
-	}
-    
-   
+    public Integer getGroupsno() {
+        return groupsno;
+    }
+
+    public void setGroupsno(Integer groupsno) {
+        this.groupsno = groupsno;
+    }
+
+    public Integer getIspublish() {
+        return ispublish;
+    }
+
+    public void setIspublish(Integer ispublish) {
+        this.ispublish = ispublish;
+    }
 }
