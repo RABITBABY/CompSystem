@@ -1,3 +1,3 @@
 eclipse.preferences.version=1
-validator.Checked=WebRoot/dist,node_modules/angular-cli/blueprints/ng2/files/angular-cli.json,node_modules/angular-cli/blueprints/ng2/files/package.json,WebRoot/amazeui,WebRoot/ueditor1_4_3-utf8-jsp,WebRoot/WEB-INF
+validator.Checked=WebRoot/dist/out-tsc/src/app/user/admin/admin.service.js,WebRoot/dist/main.bundle.js,node_modules/angular-cli/blueprints/ng2/files/angular-cli.json,WebRoot/dist/out-tsc/src/app/user/admin/shared/admin.service.js,node_modules/angular-cli/blueprints/ng2/files/package.json,WebRoot/amazeui,WebRoot/WEB-INF,WebRoot/ueditor1_4_3-utf8-jsp
 validator.Unchecked=
