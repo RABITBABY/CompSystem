@@ -35,7 +35,8 @@ public class LoginController {
 	 * 判断登录的方法
 	 * @param username  用户名
 	 * @param password  密码
-	 * @param role  角色4
+	 * @param role  角色0
+	 * skdfkj 
 	 * @return
 	 */
 	@ResponseBody
