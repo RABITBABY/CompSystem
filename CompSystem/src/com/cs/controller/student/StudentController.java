@@ -1,6 +1,7 @@
 package com.cs.controller.student;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -35,29 +36,6 @@ public class StudentController {
 	
 	@Autowired
 	private StudentService studentService;
-		
-	/**
-	 * 获取学生已经报名的比赛
-	 * @return
-	 */
-	@ResponseBody
-	@RequestMapping("/getPro")
-	public boolean getProInfo(){
-		
-		return false;
-	}
-	
-	/**
-	 * 获取学生获得的奖项
-	 * @return
-	 */
-	@ResponseBody
-	@RequestMapping("/getAwards")
-	public List<Awards> getAwards(@Param("studentNo") Integer studentNo){
-		List<Awards> awards=studentService.selectAwardsByStudentNo(studentNo);
-		return awards;
-	}
-	
 	
 	/**
 	 * 获取学生信息:包括基本信息和材料（包括已审批和等待审批）
@@ -66,10 +44,44 @@ public class StudentController {
 	 */
 	@ResponseBody
 	@RequestMapping("/getStuInfo")
-	public Student getStuInfo(){
-		//@Param("studentNo") Integer studentNo
-		return studentService.selectByNo(1);
+	public Student getStuInfo(@Param("studentNo") Integer studentNo){
+		return studentService.selectByNo(studentNo);
 	}
+	
+	/**
+	 * 修改学生个人信息。
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/updateInfo")
+	public int updateStuInfo(Student student){
+	    return studentService.updateByNo(student);
+	}
+		
+	/**
+	 * 获取学生已经报名的比赛:
+	 * groups表和competition表
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/getComp")
+	public List<Map<String, Object>> getComp(){
+		return studentService.getCompByStudentNo(1);
+	}
+	
+	/**
+	 * 获取学生获得的奖项
+	 * @return
+	 */
+	/*@ResponseBody
+	@RequestMapping("/getAwards")
+	public List<Awards> getAwards(@Param("studentNo") Integer studentNo){
+		List<Awards> awards=studentService.selectAwardsByStudentNo(studentNo);
+		return awards;
+	}*/
+	
+	
+	
 	
 	/**
 	 * 学生报名竞赛：
@@ -133,15 +145,7 @@ public class StudentController {
 		
 	}
 	
-	/**
-	 * 修改学生个人信息。
-	 * @return
-	 */
-	@ResponseBody
-	@RequestMapping("/updateInfo")
-	public void updateInfo(Student student){
-	    
-	}
+	
 	
 	/**
 	 * 上传辅助材料。个人中心有上传按钮。点击上传，弹出框框，选择要上传什么材料，然后上传。

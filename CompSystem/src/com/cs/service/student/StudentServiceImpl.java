@@ -1,12 +1,16 @@
 package com.cs.service.student;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cs.dao.group.GroupsMapper;
 import com.cs.dao.student.StudentMapper;
 import com.cs.pojo.Awards;
+import com.cs.pojo.Competition;
+import com.cs.pojo.Groups;
 import com.cs.pojo.Student;
 
 
@@ -15,11 +19,9 @@ public class StudentServiceImpl implements StudentService {
 
 	@Autowired
 	private StudentMapper studentMapper;
-	@Override
-	public Student stuLogin(Student stu) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
+	@Autowired
+	private GroupsMapper groupsMapper;
 
 	@Override
 	public Student selectByNo(int studentNo) {
@@ -27,15 +29,15 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public List<Awards> selectAwardsByStudentNo(Integer studentNo) {
-		// TODO Auto-generated method stub
-		return null;
+	public int updateByNo(Student student) {
+	   return studentMapper.updateByPrimaryKeySelective(student);
 	}
 
 	@Override
-	public Student selectMaterialByNo(Integer studentNo) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Map<String, Object>> getCompByStudentNo(Integer studentNo) {
+		return groupsMapper.selectByStuNo(studentNo);
 	}
+
+	
 	
 }

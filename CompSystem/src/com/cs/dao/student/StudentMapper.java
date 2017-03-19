@@ -3,15 +3,10 @@ package com.cs.dao.student;
 import com.cs.pojo.Student;
 
 public interface StudentMapper {
-    int deleteByPrimaryKey(Integer studentno);
-
-    int insert(Student record);
-
-    int insertSelective(Student record);
-
-    Student selectByPrimaryKey(Integer studentno);
-
-    int updateByPrimaryKeySelective(Student record);
-
-    int updateByPrimaryKey(Student record);
+	
+	//查看学生个人信息
+	Student selectByPrimaryKey(Integer studentno);
+	//修改学生个人信息
+	int updateByPrimaryKeySelective(Student record);
+	
 }
