@@ -2,12 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.dao.article.ArticleMapper" >
   <resultMap id="BaseResultMap" type="com.cs.pojo.Article" >
-    <id column="articleId" property="articleId" jdbcType="INTEGER" />
-    <result column="title" property="title" jdbcType="VARCHAR" />
-    <result column="pubDate" property="pubDate" jdbcType="DATE" />
-    <result column="pubUserNo" property="pubUserNo" jdbcType="INTEGER" />
-    <result column="articleType" property="articleType" jdbcType="INTEGER" />
-    <result column="comId" property="comId" jdbcType="INTEGER" />
   </resultMap>
 
+
+  <select id="findByType" resultMap="BaseResultMap" parameterType="int" >
+    select  *  from article
+    where articleType = #{type}
+  </select>
+  <select id="findByType" resultMap="Map" parameterType="int" >
+    select  a.*,ad.adminName,ad.department  from article a,administer ad
+    where articleType = #{type}
+  </select>
 </mapper>
