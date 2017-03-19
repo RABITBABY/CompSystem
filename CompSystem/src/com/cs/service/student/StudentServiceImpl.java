@@ -33,6 +33,9 @@ public class StudentServiceImpl implements StudentService {
 	   return studentMapper.updateByPrimaryKeySelective(student);
 	}
 
+	/**
+	 * sdf
+	 */
 	@Override
 	public List<Map<String, Object>> getCompByStudentNo(Integer studentNo) {
 		return groupsMapper.selectByStuNo(studentNo);
