@@ -12,6 +12,17 @@
   <sql id="Base_Column_List" >
     groupsNo, comId, groupsName, teacherNo, studentNo, status
   </sql>
+  
+  <select id="selectByStuNo" resultType="java.util.HashMap" parameterType="java.lang.Integer" >
+    select g.studentNo,g.comId,g.groupsNo,g.groupsName,g.status,t.teacherName,c.comName
+    from groups g
+    INNER JOIN competition c
+    on g.comId=c.comId
+    INNER JOIN teacher t
+    on t.teacherNo=g.teacherNo
+    where studentNo = #{studentno,jdbcType=INTEGER}
+  </select>
+  
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

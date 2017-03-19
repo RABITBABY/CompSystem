@@ -11,6 +11,13 @@
   <sql id="Base_Column_List" >
     awardsId, comId, prizeName, groupsNo, isPublish
   </sql>
+  <!-- <select id="">
+     select a.prizeName
+	from groups g
+	INNER JOIN awards a
+	on g.groupsNo=a.groupsNo
+	where g.studentNo =1 and a.awardsId=1;
+  </select> -->
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
