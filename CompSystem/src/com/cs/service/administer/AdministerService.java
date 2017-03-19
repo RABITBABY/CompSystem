@@ -6,6 +6,6 @@ import com.cs.pojo.Administer;
 @Service
 public interface AdministerService {
 
-	public Administer IsAdmin(String adminNo);
+	public Administer selectByID(String adminNo);
 	
 }

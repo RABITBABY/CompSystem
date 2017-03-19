@@ -11,11 +11,14 @@ public class AdministerServiceImpl implements AdministerService{
 	@Autowired
 	AdministerMapper adminMap;
 	
+
 	@Override
-	public Administer IsAdmin(String adminNo) {
+	public Administer selectByID(String adminNo) {
 		Administer admin=adminMap.selectByID(adminNo);
 		return admin;
 	}
+
+	
 
 
 }

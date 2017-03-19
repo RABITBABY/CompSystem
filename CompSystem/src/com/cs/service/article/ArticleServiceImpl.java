@@ -16,8 +16,8 @@ public class ArticleServiceImpl implements ArticleService {
 	
 	@Override
 	public List<Article> findByType(int type) {
-		List<Article> articles= mapper.findByType(type);
-		return articles;
+	//	List<Article> articles= mapper.findByType(type);
+		return null;
 	}
 
 }

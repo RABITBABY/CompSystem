@@ -77,7 +77,7 @@ public class LoginController {
 				return "wrongAcount";
 			}
 		}else if("admin".equals(role)){//管理员
-			Administer admin=adminImpl.IsAdmin(account);
+			Administer admin=adminImpl.selectByID(account);
 			if(admin!=null){
 				if(password.equals(admin.getPassword())){
 					System.out.println(admin);
