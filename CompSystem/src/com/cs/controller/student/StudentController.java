@@ -1,5 +1,6 @@
 package com.cs.controller.student;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -65,24 +66,24 @@ public class StudentController {
 	 */
 	@ResponseBody
 	@RequestMapping("/getComp")
-	public List<Map<String, Object>> getComp(){
-		return studentService.getCompByStudentNo(1);
+	public Map<String, Object> getComp(){
+		Map<String, Object> map=new HashMap<String, Object>();
+		map.put("stuCom", studentService.getCompByStudentNo(1));
+		return map;
 	}
 	
 	/**
 	 * 获取学生获得的奖项
 	 * @return
 	 */
-	/*@ResponseBody
+	@ResponseBody
 	@RequestMapping("/getAwards")
-	public List<Awards> getAwards(@Param("studentNo") Integer studentNo){
-		List<Awards> awards=studentService.selectAwardsByStudentNo(studentNo);
-		return awards;
-	}*/
-	
-	
-	
-	
+	public Map<String, Object> getAwards(){
+		Map<String, Object> map=new HashMap<String, Object>();
+		map.put("stuAwards", studentService.selectAwardsByStudentNo(1));
+		return map;
+	}
+		
 	/**
 	 * 学生报名竞赛：
 	 * @return
@@ -93,43 +94,8 @@ public class StudentController {
 		//拿到竞赛id,找到竞赛所需的条件
 		
 		//根据学生id，找到符合的条件
-		//比较，找出不满足的条件返回。
-		/**
-		 * class A{
-		 *   isGroup:是否需要组队
-		 *   a:判断是否符合条件。
-		 *   List<Teacher>：指导老师
-		 *   
-		 * }
-		 * 
-		 * 拿到竞赛id,找到竞赛所需的条件
-		 * if(竞赛所需的条件.type=1){//根据系别
-		 *    判断学生的系别是否符合
-		 *    if(不符合)--return 0;//系别不符合
-		 *    if(符合){
-		 *       if(竞赛所需的条件.type=0){//需要上传的图片的类型。
-		 *           判断是否符合所需条件。
-		 *           if(不符合){
-		 *             返回，-1;//其他条件不符合
-		 *           }else{
-		 *             //符合，那么判断该比赛是否可以组队，
-		 *             if(可以组队)
-		 *             {
-		 *                return Aclass;
-		 *             }
-		 *             else(不可以返回2){
-		 *             
-		 *             }
-           
-		 *           }
-		 *           
-		 *       }
-		 *    }
-		 * }
-		 *
-		 */
 		
-		
+		//比较，找出不满足的条件返回。	
 	}
 	
 	
@@ -141,8 +107,7 @@ public class StudentController {
 	@RequestMapping(value="/saveEntered",method=RequestMethod.POST)
 	public void saveEntered(Groups groups,List<Student> students){
 	    //将学生保存到groups，和groupsDetail中
-		
-		
+
 	}
 	
 	
