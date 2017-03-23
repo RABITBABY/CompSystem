@@ -33,6 +33,17 @@ public class TeacherController {
 	private TeacherService teacherService;
 	
 	/**
+	 * 查看教师个人信息
+	 * @param teacherNo
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value="/getTeacherInfo")
+	public Teacher getTeacherInfo(Integer teacherNo) {
+	   return teacherService.selectByTeacherNo(teacherNo);
+	}
+	
+	/**
 	 * 竞赛申报:
 	 * 申报表保存：
 	 * @return
