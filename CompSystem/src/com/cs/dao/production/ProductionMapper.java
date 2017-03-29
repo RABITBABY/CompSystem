@@ -1,19 +1,14 @@
 package com.cs.dao.production;
 
+import java.util.List;
+import java.util.Map;
+
 import com.cs.pojo.Production;
 
+
 public interface ProductionMapper {
-    int deleteByPrimaryKey(Integer proid);
-
-    int insert(Production record);
-
-    int insertSelective(Production record);
-
-    Production selectByPrimaryKey(Integer proid);
-
-    int updateByPrimaryKeySelective(Production record);
-
-    int updateByPrimaryKeyWithBLOBs(Production record);
-
-    int updateByPrimaryKey(Production record);
+   List<Production> getAllProduction(Map map); 
+   Production getProductionByID(int proId); 
+   int insertProduction(Production production);
+   int updateByPrimaryId(Production production);
 }

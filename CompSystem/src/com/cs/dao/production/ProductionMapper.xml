@@ -2,42 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.dao.production.ProductionMapper" >
   <resultMap id="BaseResultMap" type="com.cs.pojo.Production" >
-    <id column="proId" property="proid" jdbcType="INTEGER" />
-    <result column="proName" property="proname" jdbcType="VARCHAR" />
-    <result column="award" property="award" jdbcType="VARCHAR" />
-    <result column="membersName" property="membersname" jdbcType="VARCHAR" />
-    <result column="pic" property="pic" jdbcType="VARCHAR" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.cs.pojo.Production" extends="BaseResultMap" >
-    <result column="introduction" property="introduction" jdbcType="LONGVARCHAR" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    proId, proName, award, membersName, pic
-  </sql>
-  <sql id="Blob_Column_List" >
-    introduction
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
-    from production
-    where proId = #{proid,jdbcType=INTEGER}
+  
+  <select id="getAllProduction" resultMap="BaseResultMap" >
+    select *  from production
+    where proId = #{proid} limits 0,3
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from production
-    where proId = #{proid,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.cs.pojo.Production" >
-    insert into production (proId, proName, award, 
-      membersName, pic, introduction
-      )
-    values (#{proid,jdbcType=INTEGER}, #{proname,jdbcType=VARCHAR}, #{award,jdbcType=VARCHAR}, 
-      #{membersname,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, #{introduction,jdbcType=LONGVARCHAR}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="com.cs.pojo.Production" >
+  
+  
+  
+   <select id="getProductionByID" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select *  from production where proId=#{proId}
+  </select>
+  
+   <insert id="insertProduction" parameterType="com.cs.pojo.Production"  >
+  <!--  <selectKey resultType="java.lang.Short" order="AFTER" keyProperty="id">
+	SELECT LAST_INSERT_ID() AS proid
+	</selectKey> -->
     insert into production
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="proid != null" >
@@ -61,61 +42,46 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="proid != null" >
-        #{proid,jdbcType=INTEGER},
+        #{proid},
       </if>
       <if test="proname != null" >
-        #{proname,jdbcType=VARCHAR},
+        #{proname},
       </if>
       <if test="award != null" >
-        #{award,jdbcType=VARCHAR},
+        #{award},
       </if>
       <if test="membersname != null" >
-        #{membersname,jdbcType=VARCHAR},
+        #{membersname},
       </if>
       <if test="pic != null" >
-        #{pic,jdbcType=VARCHAR},
+        #{pic},
       </if>
       <if test="introduction != null" >
-        #{introduction,jdbcType=LONGVARCHAR},
+        #{introduction},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Production" >
+  
+  <update id="updateByPrimaryId" parameterType="com.cs.pojo.Production" >
     update production
     <set >
       <if test="proname != null" >
-        proName = #{proname,jdbcType=VARCHAR},
+        proName = #{proname},
       </if>
       <if test="award != null" >
-        award = #{award,jdbcType=VARCHAR},
+        award = #{award},
       </if>
       <if test="membersname != null" >
-        membersName = #{membersname,jdbcType=VARCHAR},
+        membersName = #{membersname},
       </if>
       <if test="pic != null" >
-        pic = #{pic,jdbcType=VARCHAR},
+        pic = #{pic},
       </if>
       <if test="introduction != null" >
-        introduction = #{introduction,jdbcType=LONGVARCHAR},
+        introduction = #{introduction},
       </if>
     </set>
-    where proId = #{proid,jdbcType=INTEGER}
+    where proId = #{proid}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.cs.pojo.Production" >
-    update production
-    set proName = #{proname,jdbcType=VARCHAR},
-      award = #{award,jdbcType=VARCHAR},
-      membersName = #{membersname,jdbcType=VARCHAR},
-      pic = #{pic,jdbcType=VARCHAR},
-      introduction = #{introduction,jdbcType=LONGVARCHAR}
-    where proId = #{proid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Production" >
-    update production
-    set proName = #{proname,jdbcType=VARCHAR},
-      award = #{award,jdbcType=VARCHAR},
-      membersName = #{membersname,jdbcType=VARCHAR},
-      pic = #{pic,jdbcType=VARCHAR}
-    where proId = #{proid,jdbcType=INTEGER}
-  </update>
+  
 </mapper>
