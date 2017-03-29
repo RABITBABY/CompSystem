@@ -32,6 +32,13 @@ public interface StudentService {
 	List<Map<String, Object>> getCompByStudentNo(Integer studentNo);
 	
 	/**
+	 * 根据学号查询获奖情况
+	 * @param studentNo
+	 * @return
+	 */
+	List<Map<String, Object>> selectAwardsByStudentNo(Integer studentNo);
+	
+	/**
 	 * 根据学号查找符合的条件
 	 * @param studentNo
 	 * @return
@@ -45,12 +52,6 @@ public interface StudentService {
 	 */
 	//List<Project> selectCompByStudentNo(Integer studentNo);
 	
-	/**
-	 * 根据学号查询获奖情况
-	 * @param studentNo
-	 * @return
-	 */
-	/*List<Awards> selectAwardsByStudentNo(Integer studentNo);*/
 	
 	/**
 	 * 根据学号查询学生详细信息，包括材料等。

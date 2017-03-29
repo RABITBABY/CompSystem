@@ -22,10 +22,12 @@ import com.cs.pojo.Teacher;
 @Service("teacherService")
 public class TeacherServiceImpl implements TeacherService{
 
+	@Autowired
+	private TeacherMapper teacherMapper;
+	
 	@Override
 	public Teacher selectByTeacherNo(Integer teacherNo) {
-		// TODO Auto-generated method stub
-		return null;
+		return teacherMapper.selectByPrimaryKey(teacherNo);
 	}
 
 	@Override

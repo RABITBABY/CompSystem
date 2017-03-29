@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cs.dao.awards.AwardsMapper;
 import com.cs.dao.group.GroupsMapper;
 import com.cs.dao.student.StudentMapper;
 import com.cs.pojo.Awards;
@@ -22,6 +23,9 @@ public class StudentServiceImpl implements StudentService {
 	
 	@Autowired
 	private GroupsMapper groupsMapper;
+	
+	@Autowired
+	private AwardsMapper awardsMapper;
 
 	@Override
 	public Student selectByNo(int studentNo) {
@@ -33,12 +37,14 @@ public class StudentServiceImpl implements StudentService {
 	   return studentMapper.updateByPrimaryKeySelective(student);
 	}
 
-	/**
-	 * sdf
-	 */
 	@Override
 	public List<Map<String, Object>> getCompByStudentNo(Integer studentNo) {
 		return groupsMapper.selectByStuNo(studentNo);
+	}
+
+	@Override
+	public List<Map<String, Object>> selectAwardsByStudentNo(Integer studentNo) {
+	     return	awardsMapper.selectAwardsByStuNo(studentNo);
 	}
 
 	

@@ -1,8 +1,15 @@
 package com.cs.dao.awards;
 
+import java.util.List;
+import java.util.Map;
+
 import com.cs.pojo.Awards;
 
 public interface AwardsMapper {
+	
+	/*根据学生no查找学生获奖情况*/
+	List<Map<String, Object>> selectAwardsByStuNo(Integer studentno);
+	
     int deleteByPrimaryKey(Integer awardsid);
 
     int insert(Awards record);
