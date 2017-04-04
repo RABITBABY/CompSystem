@@ -45,11 +45,30 @@
     uopinion, dsign, dsdate, tdopinion, olsign, olsdate, lsign, lsdate, depSpStatus, 
     teaSpStatus, completeStatus, applyBeginDate, applyEndDate, cost, compStatus, isPublish
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <!-- 根据状态查找申报表，比如，查找所有审批通过的申报表 -->
+   <select id="selectBySpStatus" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from competition
+    where depSpStatus = #{depspstatus,jdbcType=INTEGER} and
+     teaSpStatus = #{teaspstatus,jdbcType=INTEGER}  and
+     teacherNo=#{teacherno,jdbcType=INTEGER}
+  </select>
+  
+   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.cs.pojo.Competition" >
     select 
     <include refid="Base_Column_List" />
     from competition
     where comId = #{comid,jdbcType=INTEGER}
+  </select>
+ 
+  
+  
+  <select id="selectByTeacherno" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from competition
+    where teacherno = #{teacherno,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from competition

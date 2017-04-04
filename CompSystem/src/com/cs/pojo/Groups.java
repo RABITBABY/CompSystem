@@ -1,6 +1,9 @@
 package com.cs.pojo;
 
 public class Groups {
+	
+	private Integer id;
+	
     private Integer groupsno;
 
     private Integer comid;
@@ -13,7 +16,17 @@ public class Groups {
 
     private Integer status;
 
-    public Integer getGroupsno() {
+    
+    
+    public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Integer getGroupsno() {
         return groupsno;
     }
 

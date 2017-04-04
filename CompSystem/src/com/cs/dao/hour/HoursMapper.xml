@@ -11,6 +11,12 @@
   <sql id="Base_Column_List" >
     hoursId, comId, type, hours, remarks
   </sql>
+  <select id="selectByComId" resultType="com.cs.pojo.Hours" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from hours
+    where comId = #{comId,jdbcType=INTEGER}
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

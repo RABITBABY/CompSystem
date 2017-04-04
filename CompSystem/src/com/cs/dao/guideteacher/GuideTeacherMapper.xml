@@ -9,6 +9,13 @@
   <sql id="Base_Column_List" >
     guideTeaId, teacherNo, comId
   </sql>
+  <select id="selectComId" resultType="com.cs.pojo.Teacher" parameterType="java.lang.Integer" >
+    select t.*
+    from guideteacher gt
+    LEFT JOIN teacher t
+    on gt.teacherNo=t.teacherNo
+    where comId = #{comId,jdbcType=INTEGER}
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

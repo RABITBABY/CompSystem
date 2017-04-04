@@ -9,6 +9,15 @@
     <result column="date" property="date" jdbcType="DATE" />
     <result column="hours" property="hours" jdbcType="INTEGER" />
   </resultMap>
+  
+  <!-- 根据comId查找schedule -->
+  <select id="selectByComId" resultType="com.cs.pojo.Schedule" parameterType="java.lang.Integer" >
+    select 
+    *
+    from schedule
+    where comId = #{comId,jdbcType=INTEGER}
+  </select>
+  
   <insert id="insert" parameterType="com.cs.pojo.Schedule" >
     insert into schedule (comId, teacherNo, content, 
       position, date, hours)

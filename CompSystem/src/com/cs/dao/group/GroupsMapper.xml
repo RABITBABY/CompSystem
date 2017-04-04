@@ -2,7 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.dao.group.GroupsMapper" >
   <resultMap id="BaseResultMap" type="com.cs.pojo.Groups" >
-    <id column="groupsNo" property="groupsno" jdbcType="INTEGER" />
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="groupsNo" property="groupsno" jdbcType="INTEGER" />
     <result column="comId" property="comid" jdbcType="INTEGER" />
     <result column="groupsName" property="groupsname" jdbcType="VARCHAR" />
     <result column="teacherNo" property="teacherno" jdbcType="INTEGER" />
@@ -22,6 +23,13 @@
     INNER JOIN teacher t
     on t.teacherNo=g.teacherNo
     where studentNo = #{studentno,jdbcType=INTEGER}
+  </select>
+  
+  <!-- 根据comId查找该竞赛参与的组别 -->
+  <select id="selectByComId" resultType="com.cs.pojo.Groups" parameterType="java.lang.Integer" >
+    select *
+    from groups
+    where comId = #{comId,jdbcType=INTEGER}
   </select>
   
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >

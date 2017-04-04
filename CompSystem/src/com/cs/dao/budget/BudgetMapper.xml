@@ -11,6 +11,13 @@
   <sql id="Base_Column_List" >
     budgetId, comId, subject, sum, reasons
   </sql>
+  <!-- 根据comId查找bugget -->
+  <select id="selectByComId" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from budget
+    where comId = #{comId,jdbcType=INTEGER}
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

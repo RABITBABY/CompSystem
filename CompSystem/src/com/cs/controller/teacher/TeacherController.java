@@ -2,6 +2,7 @@ package com.cs.controller.teacher;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -19,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.cs.pojo.Budget;
 import com.cs.pojo.Competition;
 import com.cs.pojo.Department;
+import com.cs.pojo.Groups;
 import com.cs.pojo.Hours;
 import com.cs.pojo.Schedule;
 import com.cs.pojo.Teacher;
@@ -28,12 +30,27 @@ import com.cs.service.teacher.TeacherService;
 @Controller
 @RequestMapping("/teacher")
 public class TeacherController {
+	/**
+	 * 1.查看、修改教师个人信息
+	 * 2.管理申报表。
+	 *   2.1）查看所有申报书审批结果（列表以及结果。）
+	 *      2.1.1）根据结果查看申报书，比如，查找所有通过的申报书
+	 *      2.1.2）查看申报书详情
+	 *   2.2）新增
+	 *   2.3）修改、删除。仅限申报不通过时。
+	 * 3.查看审批通过的竞赛。
+	 *   3.1）查看某个竞赛参与的组别。
+	 *      3.1.1）查看某个组别中的成员
+	 *   3.2）管理（删除）某个报名竞赛的组别
+	 * 4.查看已经结束的竞赛。
+	 *   4.1）反馈竞赛结果
+	 */
 	
 	@Autowired
 	private TeacherService teacherService;
-	
+
 	/**
-	 * 查看教师个人信息
+	 * 1.查看教师个人信息
 	 * @param teacherNo
 	 * @return
 	 */
@@ -44,147 +61,78 @@ public class TeacherController {
 	}
 	
 	/**
-	 * 竞赛申报:
-	 * 申报表保存：
-	 * @return
+	 * 1.修改教师信息
 	 */
 	@ResponseBody
-	@RequestMapping(value="/saveComp",method=RequestMethod.POST)
-	public boolean saveComp(Competition competition){
-		/*测试数据
-		//申报的老师
-		Teacher teacher=new Teacher();
-		teacher.setTeacherNo(1);
-		Competition competition=new Competition();
-		competition.setComName("测试budget2");
-		competition.setTeacher(teacher);
-		//指导老师
-		Teacher guideTeacher=new Teacher();
-		guideTeacher.setTeacherNo(2);
-		List<Teacher> teachers=new ArrayList<Teacher>();
-		teachers.add(guideTeacher);
-		competition.setGuideTeachers(teachers);
-		//工作安排
-		Schedule schedule=new Schedule();
-		schedule.setContent("ssss");
-		schedule.setHours(9);
-		List<Schedule> schedules=new ArrayList<Schedule>();
-		schedules.add(schedule);
-		competition.setSchedules(schedules);
-		
-		//经费预算
-		List<Budget> budgets=new ArrayList<Budget>();		
-		Budget budget=new Budget();
-		budget.setReasons("ssss");
-		budget.setSubject("ddd");
-		budget.setSum(1);		
-		Budget budget1=new Budget();
-		budget1.setReasons("ssss2");
-		budget1.setSubject("ddd2");
-		budget1.setSum(2);
-		
-		budgets.add(budget);
-		budgets.add(budget1);		
-		competition.setBudgets(budgets);
-		//课时预算
-		Hours hours=new Hours();
-		hours.setHours(4);
-		List<Hours> hList=new ArrayList<Hours>();
-		hList.add(hours);		
-		competition.setHours(hList);*/
-				
-		return teacherService.saveCompetition(competition);
+	@RequestMapping(value="/updateTeacherInfo",method=RequestMethod.POST)
+	public boolean updateTeacherInfo(Teacher teacher) {
+	    return teacherService.updateByTeacherNo(teacher);
 	}
 	
-	/*
-	 * 查看审批结果：
-	 * 1.根据教师id查看竞赛申报表列表：
-	 * 2.申报成功的列表可以进行补全竞赛详细材料:对project表进行添加。
-	 * 3.根据id查看申报表详情。project 
-	 * *4.根据审批结果搜索
-	 */
 	/**
-	 * 1.根据教师id查看竞赛申报表列表：
+	 * 2.1根据teacherno查看申报列表及结果
 	 * @param teacherNo
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping(value="/getCompList")
-	public List<Competition> getCompList(@Param("teacherNo") Integer teacherNo){		
-		return teacherService.findCompByTeacherNo(1);
+	@RequestMapping(value="/getCompResult")
+	public List<Competition> getCompResult(Integer teacherNo) {
+	   return teacherService.getCompResults(teacherNo);
 	}
-	/**
-	 * 2.审核通过后完善信息，竞赛条件。负责人签名。报名开始时间等。
-	 * 操作【condition表，project表】，以及competition表
-	 * @return
-	 */
-	
 	
 	/**
-	 * 3.查看申报表：根据comId;查找出来的包括经费预算，比赛条件等。要记得配置collection
+	 *  2.1.1）根据结果查看申报书，比如，查找所有通过的申报书
+	 * @param competition
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping(value="/getCompByComId")
-	public Competition getCompByComId(@Param("comId") Integer comId){		
-		return teacherService.findByComId(comId);
+	@RequestMapping(value="/getCompBySpStatus")
+	public List<Competition> getCompBySpStatus() {
+		Integer depStatus=1;
+		Integer teaStatusInteger=1;
+		Competition competition=new Competition();
+		competition.setDepspstatus(depStatus);
+		competition.setTeaspstatus(teaStatusInteger);
+		competition.setTeacherno(1);
+	   return teacherService.getCompBySpStatus(competition);
 	}
 	
-	
-	
 	/**
-	 * 查看什么竞赛有那些学生。
-	 * @return
-	 */
-	
-	/**
-	 * 审核报名学生。修改状态
-	 * @return
-	 */
-	
-	/**
-	 * 查看已经比赛完毕的竞赛，反馈竞赛结果
-	 * 将结果加入awards表
-	 * @return
-	 */
-
-	
-	/**
-	 * 获取老师个人信息
+	 *  2.1.2）查看申报书详情
+	 * @param comId
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping("/getInfo")
-	public Teacher getInfo(){
-		//使用session获取登录的教师，此处先使用假的老师:1号
-		Teacher teacherInfo = teacherService.selectByTeacherNo(1);
-		return teacherInfo;
+	@RequestMapping(value="/getCompDetail")
+	public Competition getCompDetail() {
+	   return teacherService.getCompDetail(1);
 	}
 	
 	/**
-	 * 修改教师信息
+	 * 删除申报表
+	 * @param teacherNo
+	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping(value="/updateInfo",method=RequestMethod.POST)
-	public boolean updateTeacher(Teacher teacher) {
-
-		boolean updateByTeacherNo = teacherService.updateByTeacherNo(teacher);
-	    return updateByTeacherNo;
+	@RequestMapping(value="/deleteComp")
+	public boolean deleteComp(Integer comId) {
+	   return teacherService.deleteComp(comId);
 	}
 	
-	/*@ResponseBody
-	@RequestMapping("/get.do")
-	private void get(Hours hours,Schedule schedule){
-		System.out.println(hours.getHours());
-		System.out.println(hours.getHours());
-		System.out.println(sch.getHours());
+	
+	
+	/**
+	 * 根据comId查看参与该竞赛的组别
+	 * @param teacherNo
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value="/getCompGroups")
+	public List<Groups> getCompGroups(Integer comId) {
+	   return teacherService.getCompGroups(comId);
 	}
 	
-	@RequestMapping("/toget.do")
-	private String toget(){
-		return "test";
-	}
-	*/
+	
 	
 	
 }

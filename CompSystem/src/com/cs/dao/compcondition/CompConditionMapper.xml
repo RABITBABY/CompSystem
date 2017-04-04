@@ -5,6 +5,13 @@
     <result column="comId" property="comid" jdbcType="INTEGER" />
     <result column="conditionId" property="conditionid" jdbcType="INTEGER" />
   </resultMap>
+  <select id="selectComId" resultType="com.cs.pojo.Conditions" parameterType="java.lang.Integer" >
+    select c.*
+	from compcondition cc
+	LEFT JOIN conditions c
+	on cc.conditionId=c.conditionId
+	where cc.comId=#{comid,jdbcType=INTEGER}
+  </select>
   <insert id="insert" parameterType="com.cs.pojo.CompCondition" >
     insert into compcondition (comId, conditionId)
     values (#{comid,jdbcType=INTEGER}, #{conditionid,jdbcType=INTEGER})

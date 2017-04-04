@@ -1,6 +1,7 @@
 package com.cs.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class Competition {
     private Integer comid;
@@ -74,6 +75,62 @@ public class Competition {
     private Integer compstatus;
 
     private Integer ispublish;
+    
+    private List<Budget> budgets;
+    
+    private List<Schedule> schedules;
+    
+    private List<Hours> hours;
+    
+    /**
+     * 指导老师
+     */
+    private List<Teacher> teachers;
+    
+    private List<Conditions> conditions;
+    
+    
+    
+    
+    public List<Schedule> getSchedules() {
+		return schedules;
+	}
+
+	public void setSchedules(List<Schedule> schedules) {
+		this.schedules = schedules;
+	}
+
+	public List<Hours> getHours() {
+		return hours;
+	}
+
+	public void setHours(List<Hours> hours) {
+		this.hours = hours;
+	}
+
+	public List<Teacher> getTeachers() {
+		return teachers;
+	}
+
+	public void setTeachers(List<Teacher> teachers) {
+		this.teachers = teachers;
+	}
+
+	public List<Conditions> getConditions() {
+		return conditions;
+	}
+
+	public void setConditions(List<Conditions> conditions) {
+		this.conditions = conditions;
+	}
+
+	public List<Budget> getBudgets() {
+		return budgets;
+	}
+    
+    public void setBudgets(List<Budget> budgets) {
+		this.budgets = budgets;
+	}
 
     public Integer getComid() {
         return comid;
