@@ -23,6 +23,7 @@ import com.cs.pojo.Department;
 import com.cs.pojo.Groups;
 import com.cs.pojo.Hours;
 import com.cs.pojo.Schedule;
+import com.cs.pojo.Student;
 import com.cs.pojo.Teacher;
 import com.cs.service.teacher.TeacherService;
 
@@ -31,19 +32,20 @@ import com.cs.service.teacher.TeacherService;
 @RequestMapping("/teacher")
 public class TeacherController {
 	/**
-	 * 1.查看、修改教师个人信息
+	 * 1.查看、修改教师个人信息√
 	 * 2.管理申报表。
-	 *   2.1）查看所有申报书审批结果（列表以及结果。）
-	 *      2.1.1）根据结果查看申报书，比如，查找所有通过的申报书
-	 *      2.1.2）查看申报书详情
+	 *   2.1）查看所有申报书审批结果（列表以及结果。）√
+	 *      2.1.1）根据结果查看申报书，比如，查找所有通过的申报书√
+	 *      2.1.2）查看申报书详情√
 	 *   2.2）新增
-	 *   2.3）修改、删除。仅限申报不通过时。
+	 *   2.3）修改、删除√。仅限申报不通过时。
 	 * 3.查看审批通过的竞赛。
-	 *   3.1）查看某个竞赛参与的组别。
-	 *      3.1.1）查看某个组别中的成员
-	 *   3.2）管理（删除）某个报名竞赛的组别
-	 * 4.查看已经结束的竞赛。
+	 *   3.1）查看某个竞赛参与的组别。√
+	 *      3.1.1）查看某个组别中的成员√
+	 *   3.2）管理（删除/允许）某个报名竞赛的组别√
+	 * 4.查看已经结束的竞赛。√
 	 *   4.1）反馈竞赛结果
+	 * 5.导出申报表
 	 */
 	
 	@Autowired
@@ -104,13 +106,13 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value="/getCompDetail")
-	public Competition getCompDetail() {
+	public Map<String, Object> getCompDetail() {
 	   return teacherService.getCompDetail(1);
 	}
 	
 	/**
-	 * 删除申报表
-	 * @param teacherNo
+	 * 2.3删除申报表
+	 * @param comId
 	 * @return
 	 */
 	@ResponseBody
@@ -122,8 +124,8 @@ public class TeacherController {
 	
 	
 	/**
-	 * 根据comId查看参与该竞赛的组别
-	 * @param teacherNo
+	 * 3.1）查看某个竞赛参与的组别。
+	 * @param comId
 	 * @return
 	 */
 	@ResponseBody
@@ -133,6 +135,36 @@ public class TeacherController {
 	}
 	
 	
+	/**
+	 * 3.1.1）查看某个组别中的成员
+	 * @param groupsNo
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value="/getGroupsMember")
+	public List<Student> getGroupsMember(Integer groupsNo) {
+	   return teacherService.getGroupsMember(1);
+	}
 	
+	/**
+	 * 3.2）管理（删除/允许）某个报名竞赛的组别
+	 * @param teacherNo
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value="/manageGroupsMember")
+	public boolean manageGroupsMember(Groups groups) {
+	   return teacherService.approveGroups(groups);
+	}
 	
+	/**
+	 * 4.查看已经结束的竞赛。
+	 * @param teacherNo
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value="/getEndCompetition")
+	public List<Competition> getEndCompetition(Integer teacherNo) {
+	   return teacherService.getEndCompetition(1);
+	}
 }

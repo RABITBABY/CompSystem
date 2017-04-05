@@ -1,6 +1,7 @@
 package com.cs.service.teacher;
 
 import java.util.List;
+import java.util.Map;
 
 import com.cs.pojo.Competition;
 import com.cs.pojo.Groups;
@@ -52,8 +53,24 @@ public interface TeacherService {
 	 * 根据comId查找竞赛详情
 	 * @return
 	 */
-	public Competition getCompDetail(Integer comId);
+	public Map<String,Object> getCompDetail(Integer comId);
 	
+	/**
+	 * 根据groupsNo该组组员
+	 * @return
+	 */
+	public List<Student> getGroupsMember(Integer groupsNo);
 	
+	/**
+	 * 修改队伍状态：教师审批参赛学生
+	 * @return
+	 */
+	public boolean approveGroups(Groups groups);
+	
+	/**
+	 * 查找结束的竞赛
+	 * @return
+	 */
+	public List<Competition> getEndCompetition(Integer teacherNo);
 	
 }

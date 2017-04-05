@@ -1,7 +1,9 @@
 package com.cs.service.teacher;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +19,7 @@ import com.cs.dao.schedule.ScheduleMapper;
 import com.cs.dao.teacher.TeacherMapper;
 import com.cs.pojo.Budget;
 import com.cs.pojo.Competition;
+import com.cs.pojo.Conditions;
 import com.cs.pojo.Groups;
 import com.cs.pojo.Hours;
 import com.cs.pojo.Schedule;
@@ -83,15 +86,43 @@ public class TeacherServiceImpl implements TeacherService{
 	}
 
 	@Override
-	public Competition getCompDetail(Integer comId) {
+	public Map<String,Object> getCompDetail(Integer comId) {
 		//根据comId查找基本信息
 		Competition competition = comMapper.selectByPrimaryKey(comId);
-		competition.setBudgets(budgetMapper.selectByComId(comId));
-		competition.setSchedules(scheduleMapper.selectByComId(comId));
-		competition.setHours(hoursMapper.selectByComId(comId));
-		competition.setTeachers(guideTeacherMapper.selectComId(comId));
-		competition.setConditions(compConditionMapper.selectComId(comId));
-		return competition;
+		List<Budget> budgets=budgetMapper.selectByComId(comId);
+		List<Schedule> schedules=scheduleMapper.selectByComId(comId);
+		List<Hours> hours = hoursMapper.selectByComId(comId);
+		List<Teacher> teachers = guideTeacherMapper.selectComId(comId);
+		List<Conditions> conditions = compConditionMapper.selectComId(comId);
+		Map<String,Object> map=new HashMap<String, Object>();
+		map.put("competition", competition);
+		map.put("budgets", budgets);
+		map.put("schedules", schedules);
+		map.put("hours", hours);
+		map.put("teachers", teachers);
+		map.put("conditions", conditions);
+		return map;
+	}
+
+	@Override
+	public List<Student> getGroupsMember(Integer groupsNo) {
+		
+		return groupsMapper.selectByGroupsNo(groupsNo);
+	}
+
+	@Override
+	public boolean approveGroups(Groups groups) {
+		int updateStatus = groupsMapper.updateStatus(groups);
+		if (updateStatus>0) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public List<Competition> getEndCompetition(Integer teacherNo) {
+		
+		return comMapper.selectEndComp(teacherNo);
 	}
 
 

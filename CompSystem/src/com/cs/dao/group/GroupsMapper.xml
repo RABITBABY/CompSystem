@@ -32,6 +32,21 @@
     where comId = #{comId,jdbcType=INTEGER}
   </select>
   
+  <!-- 根据groupNo查找该组成员 -->
+  <select id="selectByGroupsNo" resultType="com.cs.pojo.Student" parameterType="java.lang.Integer" >
+    select s.*
+	from groups g
+	left JOIN student s
+	on g.studentNo =s.studentNo
+	where g.groupsNo=#{groupsNo,jdbcType=INTEGER}
+  </select>
+  <!-- 修改状态 -->
+  <update id="updateStatus" parameterType="com.cs.pojo.Groups" >
+    update groups
+    set status = #{status,jdbcType=INTEGER}
+    where groupsNo = #{groupsno,jdbcType=INTEGER}
+  </update>
+  
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
