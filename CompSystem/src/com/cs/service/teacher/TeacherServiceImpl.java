@@ -1,14 +1,21 @@
 package com.cs.service.teacher;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.Trigger;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.cs.dao.awards.AwardsMapper;
 import com.cs.dao.budget.BudgetMapper;
 import com.cs.dao.compcondition.CompConditionMapper;
 import com.cs.dao.competition.CompetitionMapper;
@@ -17,6 +24,7 @@ import com.cs.dao.guideteacher.GuideTeacherMapper;
 import com.cs.dao.hour.HoursMapper;
 import com.cs.dao.schedule.ScheduleMapper;
 import com.cs.dao.teacher.TeacherMapper;
+import com.cs.pojo.Awards;
 import com.cs.pojo.Budget;
 import com.cs.pojo.Competition;
 import com.cs.pojo.Conditions;
@@ -25,6 +33,9 @@ import com.cs.pojo.Hours;
 import com.cs.pojo.Schedule;
 import com.cs.pojo.Student;
 import com.cs.pojo.Teacher;
+
+import freemarker.template.Configuration;
+import freemarker.template.Template;
 
 @Service("teacherService")
 public class TeacherServiceImpl implements TeacherService{
@@ -45,6 +56,8 @@ public class TeacherServiceImpl implements TeacherService{
 	private GuideTeacherMapper guideTeacherMapper;
 	@Autowired
 	private CompConditionMapper compConditionMapper;
+	@Autowired
+	private AwardsMapper awardsMapper;
 	
 	@Override
 	public Teacher selectByTeacherNo(Integer teacherNo) {
@@ -125,8 +138,37 @@ public class TeacherServiceImpl implements TeacherService{
 		return comMapper.selectEndComp(teacherNo);
 	}
 
-
+	@Override
+	public boolean setCompResult(Awards awards) {
+		int insertSelective = awardsMapper.insertSelective(awards);
+		if (insertSelective>0) {
+			return true;
+		}
+		return false;
+	}
 	
+	@Override
+    public boolean createWord(Integer comId) {
+    	Configuration configuration= new Configuration();
+        configuration.setDefaultEncoding("UTF-8");
+        Map<String, Object> dataMap = new HashMap<String, Object>();
+        try {
+              Competition competition = comMapper.selectByPrimaryKey(comId);
+                dataMap.put("comName", competition.getComname());
+                
+                configuration.setClassForTemplateLoading(this.getClass(), "/file"); // FTL文件所存在的位置
+                Template template = configuration.getTemplate("approveTable.ftl");
+
+                File outFile = new File("E:/temp/"+competition.getComname()+"申报书.doc");
+                Writer out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outFile),"UTF-8"));
+                template.process(dataMap, out);
+                out.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
 	
 
 }

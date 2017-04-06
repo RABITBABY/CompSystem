@@ -3,6 +3,7 @@ package com.cs.service.teacher;
 import java.util.List;
 import java.util.Map;
 
+import com.cs.pojo.Awards;
 import com.cs.pojo.Competition;
 import com.cs.pojo.Groups;
 import com.cs.pojo.Student;
@@ -72,5 +73,20 @@ public interface TeacherService {
 	 * @return
 	 */
 	public List<Competition> getEndCompetition(Integer teacherNo);
+	
+	/**
+	 * 反馈比赛结果
+	 * @return
+	 */
+	public boolean setCompResult(Awards awards);
+
+	/**
+	 * 导出申报表
+	 * @param comId
+	 * @return
+	 */
+	public boolean createWord(Integer comId);
+	
+	
 	
 }

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.cs.pojo.Awards;
 import com.cs.pojo.Budget;
 import com.cs.pojo.Competition;
 import com.cs.pojo.Department;
@@ -44,7 +45,7 @@ public class TeacherController {
 	 *      3.1.1）查看某个组别中的成员√
 	 *   3.2）管理（删除/允许）某个报名竞赛的组别√
 	 * 4.查看已经结束的竞赛。√
-	 *   4.1）反馈竞赛结果
+	 *   4.1）反馈竞赛结果 √
 	 * 5.导出申报表
 	 */
 	
@@ -166,5 +167,28 @@ public class TeacherController {
 	@RequestMapping(value="/getEndCompetition")
 	public List<Competition> getEndCompetition(Integer teacherNo) {
 	   return teacherService.getEndCompetition(1);
+	}
+	
+	 /**
+     * 4.1）反馈竞赛结果
+     * @param awards
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value="/setCompResult")
+	public boolean setCompResult(Awards awards) {
+		return teacherService.setCompResult(awards);
+	}
+	
+	
+	 /**
+     * 5.导出申报表
+     * @param comId
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value="/getAprroveTable")
+	public boolean getAprroveTable() {
+		return teacherService.createWord(1);
 	}
 }
