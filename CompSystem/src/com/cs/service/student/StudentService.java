@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.cs.pojo.Awards;
 import com.cs.pojo.Competition;
+import com.cs.pojo.Conditions;
 import com.cs.pojo.Material;
 import com.cs.pojo.Student;
 
@@ -39,26 +40,10 @@ public interface StudentService {
 	List<Map<String, Object>> selectAwardsByStudentNo(Integer studentNo);
 	
 	/**
-	 * 根据学号查找符合的条件
+	 * 判断学生不满足的竞赛条件
 	 * @param studentNo
 	 * @return
 	 */
-	//List<Condition> getConditions(Integer studentNo);
-	
-	/**
-	 * 根据学号查找报名的竞赛
-	 * @param studentNo
-	 * @return
-	 */
-	//List<Project> selectCompByStudentNo(Integer studentNo);
-	
-	
-	/**
-	 * 根据学号查询学生详细信息，包括材料等。
-	 * @param studentNo
-	 * @return
-	 */
-	/*Student selectMaterialByNo(Integer studentNo);*/
-	
+	List<Conditions> getDissatisfyConditions(Integer studentNo,Integer comId);
 	
 }

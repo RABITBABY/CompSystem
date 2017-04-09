@@ -1,8 +1,13 @@
 package com.cs.dao.material;
 
+import java.util.List;
+
 import com.cs.pojo.Material;
 
 public interface MaterialMapper {
+	
+	List<Material> selectByStudentno(Object object);
+	
     int deleteByPrimaryKey(Integer materialid);
 
     int insert(Material record);

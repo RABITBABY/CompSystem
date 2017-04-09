@@ -11,6 +11,14 @@
   <sql id="Base_Column_List" >
     materialId, studentNo, conditionId, materialPic, status
   </sql>
+  <!-- 根据学号查找材料。已审核通过的 -->
+  <select id="selectByStudentno" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from material
+    where studentNo = #{studentNo,jdbcType=INTEGER} and status=1
+  </select>
+  
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

@@ -20,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.cs.pojo.Awards;
 import com.cs.pojo.Budget;
 import com.cs.pojo.Competition;
+import com.cs.pojo.Conditions;
 import com.cs.pojo.Department;
 import com.cs.pojo.Groups;
 import com.cs.pojo.Hours;
@@ -27,6 +28,7 @@ import com.cs.pojo.Material;
 import com.cs.pojo.Schedule;
 import com.cs.pojo.Student;
 import com.cs.pojo.Teacher;
+import com.cs.service.condition.ConditionService;
 import com.cs.service.student.StudentService;
 import com.cs.service.teacher.TeacherService;
 
@@ -34,33 +36,50 @@ import com.cs.service.teacher.TeacherService;
 @Controller
 @RequestMapping("/student")
 public class StudentController {
-	
+	/**
+	 * 1.报名
+	 *   1.1获取该竞赛所需的条件√
+	 *   1.2判断该学生不符合的条件√
+	 *   1.3个人信息：证书、学生证等的上传
+	 *   1.4报名竞赛
+	 *   1.5加入一个队伍
+	 *   1.6创建队伍
+	 * 2.查看报名结果√
+	 * 3.缴纳比赛费用
+	 * 4.查询获奖情况√
+	 * 5.下载相关文件（获奖证书）
+	 * 6.查看个人信息。√
+	 *   6.1修改个人信息。√
+	 */
 	@Autowired
 	private StudentService studentService;
+	@Autowired
+	private ConditionService conditionService;
 	
 	/**
-	 * 获取学生信息:包括基本信息和材料（包括已审批和等待审批）
-	 * @param studentNo
+	 * 1.1获取该竞赛所需的条件
+	 * groups表和competition表
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping("/getStuInfo")
-	public Student getStuInfo(@Param("studentNo") Integer studentNo){
-		return studentService.selectByNo(studentNo);
+	@RequestMapping("/getCompConditions")
+	public List<Conditions> getCompConditions(){
+		return conditionService.getCompCondition(1);
 	}
 	
+	
 	/**
-	 * 修改学生个人信息。
+	 * 1.2判断该学生不符合的条件
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping("/updateInfo")
-	public int updateStuInfo(Student student){
-	    return studentService.updateByNo(student);
+	@RequestMapping("/getDissatisfyConditions")
+	public List<Conditions> getDissatisfyConditions(){
+		return studentService.getDissatisfyConditions(1, 1);
 	}
-		
+	
 	/**
-	 * 获取学生已经报名的比赛:
+	 * 2.查看报名结果
 	 * groups表和competition表
 	 * @return
 	 */
@@ -73,7 +92,7 @@ public class StudentController {
 	}
 	
 	/**
-	 * 获取学生获得的奖项
+	 * 3.缴纳比赛费用
 	 * @return
 	 */
 	@ResponseBody
@@ -83,43 +102,28 @@ public class StudentController {
 		map.put("stuAwards", studentService.selectAwardsByStudentNo(1));
 		return map;
 	}
-		
+	
+	
 	/**
-	 * 学生报名竞赛：
+	 * 6.查看个人信息。
+	 * 获取学生信息:包括基本信息和材料（包括已审批和等待审批）
+	 * @param studentNo
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping(value="/toEntered",method = RequestMethod.POST)
-	public void toEntered(@Param("comId") Integer comId,@Param("studentNo") Integer studentNo){
-		//拿到竞赛id,找到竞赛所需的条件
-		
-		//根据学生id，找到符合的条件
-		
-		//比较，找出不满足的条件返回。	
+	@RequestMapping("/getStuInfo")
+	public Student getStuInfo(@Param("studentNo") Integer studentNo){
+		return studentService.selectByNo(studentNo);
 	}
 	
-	
 	/**
-	 * 保存学生报名信息。
+	 * 6.1修改个人信息。
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping(value="/saveEntered",method=RequestMethod.POST)
-	public void saveEntered(Groups groups,List<Student> students){
-	    //将学生保存到groups，和groupsDetail中
-
-	}
-	
-	
-	
-	/**
-	 * 上传辅助材料。个人中心有上传按钮。点击上传，弹出框框，选择要上传什么材料，然后上传。
-	 * @return
-	 */
-	@ResponseBody
-	@RequestMapping("/uploadMaterial")
-	public void uploadMaterial(Material material){
-	    
+	@RequestMapping("/updateInfo")
+	public int updateStuInfo(Student student){
+	    return studentService.updateByNo(student);
 	}
 	
 }
