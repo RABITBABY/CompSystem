@@ -24,7 +24,18 @@
 	<form name="Form2" action="<%=path%>/student/saveMaterial" method="post"  enctype="multipart/form-data">
 	<h1>使用spring mvc提供的类的方法上传文件</h1>
 	<input type="file" name="file">
-	<input type="submit" value="upload"/>
+	<input  type="submit" value="upload"/>
+	<input type="text" value="1" name="studentno" id="st">
+	<input type="text" value="2" name=conditionid>
+	<p>${studentno}</p>
 	</form>
+	
+	<form name="Form1" action="<%=path%>/student/test" method="post">
+	 内容<textarea rows="2" cols="3" name="context"></textarea>
+	 <input  type="submit" value="提交内容"/>
+	</form>
+	
+	<div class="context"></div>
 </body>
 </html>
+

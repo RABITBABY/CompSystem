@@ -17,8 +17,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.cs.dao.material.MaterialMapper;
 import com.cs.pojo.Conditions;
+import com.cs.pojo.Material;
 import com.cs.pojo.Student;
 import com.cs.service.condition.ConditionService;
 import com.cs.service.student.StudentService;
@@ -32,7 +35,7 @@ public class StudentController {
 	 * 1.报名
 	 *   1.1获取该竞赛所需的条件√
 	 *   1.2判断该学生不符合的条件√
-	 *   1.3个人信息：证书、学生证等的上传
+	 *   1.3个人信息：证书、学生证等的上传√
 	 *   1.4报名竞赛
 	 *   1.5加入一个队伍
 	 *   1.6创建队伍
@@ -47,6 +50,8 @@ public class StudentController {
 	private StudentService studentService;
 	@Autowired
 	private ConditionService conditionService;
+	@Autowired
+	private MaterialMapper materialMapper;
 	
 	/**
 	 * 1.1获取该竞赛所需的条件
@@ -78,7 +83,7 @@ public class StudentController {
 	 */
 	@ResponseBody
 	@RequestMapping("/saveMaterial")
-	public void saveMaterial(HttpServletRequest request) throws IllegalStateException, IOException{
+	public void saveMaterial(HttpServletRequest request,Material material) throws IllegalStateException, IOException{
 		//将当前上下文初始化给CommonsMultipartResolver（多部分解析器）
 		CommonsMultipartResolver multipartResolver=new CommonsMultipartResolver(
 				request.getSession().getServletContext());
@@ -92,14 +97,21 @@ public class StudentController {
 				//一次遍历所有文件
 				MultipartFile file=multiRquest.getFile(iter.next().toString());
 				if(file!=null){//文件不为空
-					//下载的位置-----------------------------------------
-					String path="E:/temp/"+file.getOriginalFilename();
+					String imageName=material.getStudentno().toString()+System.currentTimeMillis();
+					//上传的位置-----------------------------------------
+					String path=request.getSession().getServletContext().getRealPath(File.separator)+"fileUpload\\material\\"+imageName;
 					//上传
 					file.transferTo(new File(path));
+					
+					//保存进数据库
+					material.setMaterialpic(imageName);
+					materialMapper.insert(material);
 				}
 			}
 		
 		}
+		
+		
 	}
 	
 	/**
