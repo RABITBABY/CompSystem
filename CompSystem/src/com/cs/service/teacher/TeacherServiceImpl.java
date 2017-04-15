@@ -181,27 +181,44 @@ public class TeacherServiceImpl implements TeacherService{
 		int comId=compVo.getCompetition().getComid();
 		//经费预算
 		List<Budget> bList=compVo.getBudgets();
-		for(int i=0;i<bList.size();i++){
-			bList.get(i).setComid(comId);
+		if (bList!=null) {
+			for(int i=0;i<bList.size();i++){
+				bList.get(i).setComid(comId);
+			}
+			budgetMapper.addCompBudgetBatch(bList);
 		}
-		budgetMapper.addCompBudgetBatch(bList);
 		//竞赛条件
 		List<CompCondition> compConditionsList=compVo.getCompConditions();
-		for(int i=0;i<compConditionsList.size();i++){
-			compConditionsList.get(i).setComid(comId);
+		if(compConditionsList!=null){
+			for(int i=0;i<compConditionsList.size();i++){
+				compConditionsList.get(i).setComid(comId);
+			}
+			compConditionMapper.addCompConditionBatch(compConditionsList);
 		}
-		compConditionMapper.addCompConditionBatch(compConditionsList);
 		//指导老师
 		List<GuideTeacher> guideList=compVo.getGuideTeachers();
-		for(int i=0;i<guideList.size();i++){
-			guideList.get(i).setComid(comId);
+		if(guideList!=null){
+			for(int i=0;i<guideList.size();i++){
+				guideList.get(i).setComid(comId);
+			}
+			guideTeacherMapper.addCompGuideTeacherBatch(guideList);
 		}
-		guideTeacherMapper.addCompGuideTeacherBatch(guideList);
-		//private List<Teacher> guideTeachers;
 		//课时预算
-		//private List<Hours> hours;
+		List<Hours> hoursList=compVo.getHours();
+		if (hoursList!=null) {
+			for(int i=0;i<hoursList.size();i++){
+				hoursList.get(i).setComid(comId);
+			}
+			hoursMapper.addCompHoursBatch(hoursList);
+		}
 		//培训安排
-		//private List<Schedule> schedules;
+		List<Schedule> scheduleList=compVo.getSchedules();
+		if (scheduleList!=null) {
+			for(int i=0;i<scheduleList.size();i++){
+				scheduleList.get(i).setComid(comId);
+			}
+			scheduleMapper.addCompScheduleBatch(scheduleList);
+		}
 	}
 	
 

@@ -18,7 +18,15 @@
     from schedule
     where comId = #{comId,jdbcType=INTEGER}
   </select>
-  
+  <!-- 批量插入 -->
+  <insert id="addCompScheduleBatch" useGeneratedKeys="true" parameterType="java.util.List">  
+    insert into schedule (id,comId, teacherNo, content,position, date, hours) values
+    <foreach collection="list" item="item" index="index" separator="," >  
+      (#{item.id,jdbcType=INTEGER},#{item.comid,jdbcType=INTEGER}, #{item.teacherno,jdbcType=INTEGER}, #{item.content,jdbcType=VARCHAR}, 
+      #{item.position,jdbcType=VARCHAR}, #{item.date,jdbcType=DATE}, #{item.hours,jdbcType=INTEGER})
+    </foreach>  
+</insert>  
+
   <insert id="insert" useGeneratedKeys="true" parameterType="com.cs.pojo.Schedule" >
     insert into schedule (id,comId, teacherNo, content, 
       position, date, hours)

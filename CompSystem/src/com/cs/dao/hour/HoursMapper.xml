@@ -27,6 +27,14 @@
     delete from hours
     where hoursId = #{hoursid,jdbcType=INTEGER}
   </delete>
+  <!-- 批量插入 -->
+  <insert id="addCompHoursBatch" useGeneratedKeys="true" parameterType="java.util.List">  
+    insert into hours (hoursId, comId, type,hours, remarks) values
+    <foreach collection="list" item="item" index="index" separator="," >  
+       (#{item.hoursid,jdbcType=INTEGER}, #{item.comid,jdbcType=INTEGER}, #{item.type,jdbcType=VARCHAR}, 
+      #{item.hours,jdbcType=INTEGER}, #{item.remarks,jdbcType=VARCHAR})
+    </foreach>  
+</insert>  
   <insert id="insert" useGeneratedKeys="true" parameterType="com.cs.pojo.Hours" >
     insert into hours (hoursId, comId, type, 
       hours, remarks)

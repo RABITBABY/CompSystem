@@ -7,6 +7,9 @@ import com.cs.pojo.Hours;
 public interface HoursMapper {
 	
 	List<Hours> selectByComId(Integer comId);
+	
+	int addCompHoursBatch(List<Hours> hoursList);
+	
     int deleteByPrimaryKey(Integer hoursid);
 
     int insert(Hours record);
