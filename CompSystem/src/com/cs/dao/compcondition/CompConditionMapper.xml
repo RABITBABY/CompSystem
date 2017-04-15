@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.dao.compcondition.CompConditionMapper" >
   <resultMap id="BaseResultMap" type="com.cs.pojo.CompCondition" >
+    <result column="id" property="id" jdbcType="INTEGER" />
     <result column="comId" property="comid" jdbcType="INTEGER" />
     <result column="conditionId" property="conditionid" jdbcType="INTEGER" />
   </resultMap>
@@ -12,13 +13,24 @@
 	on cc.conditionId=c.conditionId
 	where cc.comId=#{comid,jdbcType=INTEGER}
   </select>
-  <insert id="insert" parameterType="com.cs.pojo.CompCondition" >
-    insert into compcondition (comId, conditionId)
-    values (#{comid,jdbcType=INTEGER}, #{conditionid,jdbcType=INTEGER})
+  <!-- 批量插入 -->
+  <insert id="addCompConditionBatch" useGeneratedKeys="true" parameterType="java.util.List">  
+    insert into compcondition (id,comId, conditionId) values
+    <foreach collection="list" item="item" index="index" separator="," >  
+       #{item.id,jdbcType=INTEGER},#{item.comid,jdbcType=INTEGER}, #{item.conditionid,jdbcType=INTEGER}
+    </foreach>  
+ </insert>  
+
+  <insert id="insert" useGeneratedKeys="true" parameterType="com.cs.pojo.CompCondition" >
+    insert into compcondition (id,comId, conditionId)
+    values (#{id,jdbcType=INTEGER},#{comid,jdbcType=INTEGER}, #{conditionid,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.cs.pojo.CompCondition" >
+  <insert id="insertSelective" useGeneratedKeys="true" parameterType="com.cs.pojo.CompCondition" >
     insert into compcondition
     <trim prefix="(" suffix=")" suffixOverrides="," >
+       <if test="id != null" >
+        id,
+      </if>
       <if test="comid != null" >
         comId,
       </if>
@@ -27,6 +39,9 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
       <if test="comid != null" >
         #{comid,jdbcType=INTEGER},
       </if>

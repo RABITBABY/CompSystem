@@ -26,13 +26,16 @@ import com.cs.dao.schedule.ScheduleMapper;
 import com.cs.dao.teacher.TeacherMapper;
 import com.cs.pojo.Awards;
 import com.cs.pojo.Budget;
+import com.cs.pojo.CompCondition;
 import com.cs.pojo.Competition;
 import com.cs.pojo.Conditions;
 import com.cs.pojo.Groups;
+import com.cs.pojo.GuideTeacher;
 import com.cs.pojo.Hours;
 import com.cs.pojo.Schedule;
 import com.cs.pojo.Student;
 import com.cs.pojo.Teacher;
+import com.cs.vo.CompetitionInfoVo;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -169,6 +172,37 @@ public class TeacherServiceImpl implements TeacherService{
         }
         return true;
     }
+
+	@Override
+	@Transactional
+	public void addComp(CompetitionInfoVo compVo) {
+		int insertCom = comMapper.insertSelective(compVo.getCompetition());
+		//得到竞赛id
+		int comId=compVo.getCompetition().getComid();
+		//经费预算
+		List<Budget> bList=compVo.getBudgets();
+		for(int i=0;i<bList.size();i++){
+			bList.get(i).setComid(comId);
+		}
+		budgetMapper.addCompBudgetBatch(bList);
+		//竞赛条件
+		List<CompCondition> compConditionsList=compVo.getCompConditions();
+		for(int i=0;i<compConditionsList.size();i++){
+			compConditionsList.get(i).setComid(comId);
+		}
+		compConditionMapper.addCompConditionBatch(compConditionsList);
+		//指导老师
+		List<GuideTeacher> guideList=compVo.getGuideTeachers();
+		for(int i=0;i<guideList.size();i++){
+			guideList.get(i).setComid(comId);
+		}
+		guideTeacherMapper.addCompGuideTeacherBatch(guideList);
+		//private List<Teacher> guideTeachers;
+		//课时预算
+		//private List<Hours> hours;
+		//培训安排
+		//private List<Schedule> schedules;
+	}
 	
 
 }

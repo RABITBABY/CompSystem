@@ -19,13 +19,13 @@
     delete from conditions
     where conditionId = #{conditionid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.cs.pojo.Conditions" >
+  <insert id="insert" useGeneratedKeys="true" parameterType="com.cs.pojo.Conditions" >
     insert into conditions (conditionId, conditionName, type
       )
     values (#{conditionid,jdbcType=INTEGER}, #{conditionname,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.cs.pojo.Conditions" >
+  <insert id="insertSelective" useGeneratedKeys="true" parameterType="com.cs.pojo.Conditions" >
     insert into conditions
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="conditionid != null" >

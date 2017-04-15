@@ -18,6 +18,15 @@
     from budget
     where comId = #{comId,jdbcType=INTEGER}
   </select>
+  <!-- 批量插入 -->
+  <insert id="addCompBudgetBatch" useGeneratedKeys="true" parameterType="java.util.List">  
+    insert into budget (budgetId, comId, subject,sum, reasons) values
+    <foreach collection="list" item="item" index="index" separator="," >  
+       (#{item.budgetid,jdbcType=INTEGER}, #{item.comid,jdbcType=INTEGER}, #{item.subject,jdbcType=VARCHAR}, 
+      #{item.sum,jdbcType=INTEGER}, #{item.reasons,jdbcType=VARCHAR})
+    </foreach>  
+</insert>  
+  
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
@@ -28,13 +37,13 @@
     delete from budget
     where budgetId = #{budgetid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.cs.pojo.Budget" >
+  <insert id="insert" useGeneratedKeys="true" parameterType="com.cs.pojo.Budget" >
     insert into budget (budgetId, comId, subject, 
       sum, reasons)
     values (#{budgetid,jdbcType=INTEGER}, #{comid,jdbcType=INTEGER}, #{subject,jdbcType=VARCHAR}, 
       #{sum,jdbcType=INTEGER}, #{reasons,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.cs.pojo.Budget" >
+  <insert id="insertSelective" useGeneratedKeys="true" parameterType="com.cs.pojo.Budget" >
     insert into budget
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="budgetid != null" >

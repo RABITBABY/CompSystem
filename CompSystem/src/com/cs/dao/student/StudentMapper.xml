@@ -27,7 +27,7 @@
     delete from student
     where studentNo = #{studentno,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.cs.pojo.Student" >
+  <insert id="insert" useGeneratedKeys="true" parameterType="com.cs.pojo.Student" >
     insert into student (studentNo, studentName, gender, 
       department, profession, classNo, 
       grade, phone, email, 
@@ -37,7 +37,7 @@
       #{grade,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
       #{password,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.cs.pojo.Student" >
+  <insert id="insertSelective" useGeneratedKeys="true" parameterType="com.cs.pojo.Student" >
     insert into student
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="studentno != null" >

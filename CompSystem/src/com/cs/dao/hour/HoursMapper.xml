@@ -27,13 +27,13 @@
     delete from hours
     where hoursId = #{hoursid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.cs.pojo.Hours" >
+  <insert id="insert" useGeneratedKeys="true" parameterType="com.cs.pojo.Hours" >
     insert into hours (hoursId, comId, type, 
       hours, remarks)
     values (#{hoursid,jdbcType=INTEGER}, #{comid,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, 
       #{hours,jdbcType=INTEGER}, #{remarks,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.cs.pojo.Hours" >
+  <insert id="insertSelective" useGeneratedKeys="true" parameterType="com.cs.pojo.Hours" >
     insert into hours
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="hoursid != null" >

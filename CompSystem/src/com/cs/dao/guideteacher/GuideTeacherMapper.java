@@ -9,6 +9,8 @@ public interface GuideTeacherMapper {
 	/*根据comId查找指导老师列表*/
     List<Teacher> selectComId(Integer comId);
     
+    int addCompGuideTeacherBatch(List<GuideTeacher> guideTeachers);
+    
     int deleteByPrimaryKey(Integer guideteaid);
 
     int insert(GuideTeacher record);

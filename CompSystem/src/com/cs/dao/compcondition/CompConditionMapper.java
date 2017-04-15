@@ -6,6 +6,8 @@ import com.cs.pojo.CompCondition;
 import com.cs.pojo.Conditions;
 
 public interface CompConditionMapper {
+	int addCompConditionBatch(List<CompCondition> compConditions);
+	
 	List<Conditions> selectComId(Integer comId);
 	
     int insert(CompCondition record);

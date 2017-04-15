@@ -3,6 +3,8 @@ package com.cs.pojo;
 import java.util.Date;
 
 public class Schedule {
+	private Integer id;
+	
     private Integer comid;
 
     private Integer teacherno;
@@ -14,6 +16,14 @@ public class Schedule {
     private Date date;
 
     private Integer hours;
+    
+    public Integer getId() {
+		return id;
+	}
+    
+    public void setId(Integer id) {
+		this.id = id;
+	}
 
     public Integer getComid() {
         return comid;

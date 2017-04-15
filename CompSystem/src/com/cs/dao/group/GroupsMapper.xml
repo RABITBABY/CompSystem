@@ -57,7 +57,7 @@
     delete from groups
     where groupsNo = #{groupsno,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.cs.pojo.Groups" >
+  <insert id="insert" useGeneratedKeys="true" parameterType="com.cs.pojo.Groups" >
     insert into groups (groupsNo, comId, groupsName, 
       teacherNo, studentNo, status
       )
@@ -65,7 +65,7 @@
       #{teacherno,jdbcType=INTEGER}, #{studentno,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.cs.pojo.Groups" >
+  <insert id="insertSelective" useGeneratedKeys="true" parameterType="com.cs.pojo.Groups" >
     insert into groups
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="groupsno != null" >

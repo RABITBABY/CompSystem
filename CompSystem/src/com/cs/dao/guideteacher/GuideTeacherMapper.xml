@@ -16,6 +16,13 @@
     on gt.teacherNo=t.teacherNo
     where comId = #{comId,jdbcType=INTEGER}
   </select>
+  <!-- 批量插入 -->
+  <insert id="addCompGuideTeacherBatch" useGeneratedKeys="true" parameterType="java.util.List">  
+    insert into guideteacher (guideTeaId, teacherNo, comId) values
+    <foreach collection="list" item="item" index="index" separator="," >  
+       (#{item.guideteaid,jdbcType=INTEGER}, #{item.teacherno,jdbcType=INTEGER}, #{item.comid,jdbcType=INTEGER})
+    </foreach>  
+  </insert>  
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
@@ -26,13 +33,13 @@
     delete from guideteacher
     where guideTeaId = #{guideteaid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.cs.pojo.GuideTeacher" >
+  <insert id="insert" useGeneratedKeys="true" parameterType="com.cs.pojo.GuideTeacher" >
     insert into guideteacher (guideTeaId, teacherNo, comId
       )
     values (#{guideteaid,jdbcType=INTEGER}, #{teacherno,jdbcType=INTEGER}, #{comid,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.cs.pojo.GuideTeacher" >
+  <insert id="insertSelective" useGeneratedKeys="true" parameterType="com.cs.pojo.GuideTeacher" >
     insert into guideteacher
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="guideteaid != null" >

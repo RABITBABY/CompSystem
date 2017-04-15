@@ -8,6 +8,7 @@ import com.cs.pojo.Competition;
 import com.cs.pojo.Groups;
 import com.cs.pojo.Student;
 import com.cs.pojo.Teacher;
+import com.cs.vo.CompetitionInfoVo;
 
 public interface TeacherService {
 
@@ -31,6 +32,13 @@ public interface TeacherService {
 	 * @return
 	 */
 	public boolean deleteComp(Integer comId);
+	
+	/**
+	 * 新增申报表
+	 * @param comId
+	 * @return
+	 */
+	public void addComp(CompetitionInfoVo compVo);
 	
 	/**
 	 * 根据teacherno查找申报列表/以及结果

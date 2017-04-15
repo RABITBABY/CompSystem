@@ -32,13 +32,13 @@
     delete from awards
     where awardsId = #{awardsid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.cs.pojo.Awards" >
+  <insert id="insert" useGeneratedKeys="true" parameterType="com.cs.pojo.Awards" >
     insert into awards (awardsId, comId, prizeName, 
       groupsNo, isPublish)
     values (#{awardsid,jdbcType=INTEGER}, #{comid,jdbcType=INTEGER}, #{prizename,jdbcType=VARCHAR}, 
       #{groupsno,jdbcType=INTEGER}, #{ispublish,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.cs.pojo.Awards" >
+  <insert id="insertSelective" useGeneratedKeys="true" parameterType="com.cs.pojo.Awards" >
     insert into awards
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="awardsid != null" >

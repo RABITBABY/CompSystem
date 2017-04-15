@@ -80,7 +80,7 @@
     delete from competition
     where comId = #{comid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.cs.pojo.Competition" >
+  <insert id="insert" useGeneratedKeys="true" keyProperty="comid" parameterType="com.cs.pojo.Competition" >
     insert into competition (comId, comName, teacherNo, 
       unit, levelName, department, 
       date, host, time, place, 
@@ -106,7 +106,7 @@
       #{applybegindate,jdbcType=DATE}, #{applyenddate,jdbcType=DATE}, #{cost,jdbcType=DECIMAL}, 
       #{compstatus,jdbcType=INTEGER}, #{ispublish,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.cs.pojo.Competition" >
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="comid" parameterType="com.cs.pojo.Competition" >
     insert into competition
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="comid != null" >

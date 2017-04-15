@@ -29,13 +29,13 @@
     delete from material
     where materialId = #{materialid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.cs.pojo.Material" >
+  <insert id="insert" useGeneratedKeys="true" parameterType="com.cs.pojo.Material" >
     insert into material (materialId, studentNo, conditionId, 
       materialPic, status)
     values (#{materialid,jdbcType=INTEGER}, #{studentno,jdbcType=INTEGER}, #{conditionid,jdbcType=INTEGER}, 
       #{materialpic,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.cs.pojo.Material" >
+  <insert id="insertSelective" useGeneratedKeys="true" parameterType="com.cs.pojo.Material" >
     insert into material
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="materialid != null" >

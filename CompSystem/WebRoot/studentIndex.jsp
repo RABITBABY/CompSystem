@@ -35,7 +35,13 @@
 	 <input  type="submit" value="提交内容"/>
 	</form>
 	
-	<div class="context"></div>
+	<!-- 提交多个对象 -->
+	<form name="Form3" action="<%=path%>/teacher/addComp" method="post">
+	 <input  type="text" name="competition.comname" value="蓝桥杯"/>
+	 <input  type="text" name="budgets[0].subject" value="车费"/>
+	 <input  type="text" name="budgets[1].subject" value="午餐"/>
+	 <input  type="submit" value="提交内容"/>
+	</form>
 </body>
 </html>
 
