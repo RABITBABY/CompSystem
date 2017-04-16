@@ -1,12 +1,11 @@
 package com.cs.service.article;
 
-import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import com.cs.pojo.Article;
+import com.cs.util.PageInfo;
 @Service
 public interface ArticleService {
-	List<Article> findByType(int type);
-
+	PageInfo getMtypeList(Map<String,Object> map);
 }
