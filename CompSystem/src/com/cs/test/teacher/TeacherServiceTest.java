@@ -38,4 +38,24 @@ public class TeacherServiceTest extends AbstractJUnit4SpringContextTests {
 		compVo.setBudgets(buList);
 		teacherService.addComp(compVo);
 	}
+	
+	@Test
+	public void updateComp() {
+		CompetitionInfoVo compVo = new CompetitionInfoVo();
+		Competition competition = new Competition();
+		competition.setComname("那个啥赛改一下");
+		competition.setComid(4);
+		Budget budget1 = new Budget();
+		budget1.setSubject("那个啥赛的预算");
+		budget1.setBudgetid(10);
+		Budget budget2 = new Budget();
+		budget2.setSubject("测试2那个啥赛的预算");
+		budget2.setBudgetid(11);
+		List<Budget> buList = new ArrayList<Budget>();
+		buList.add(budget1);
+		buList.add(budget2);
+		compVo.setCompetition(competition);
+		compVo.setBudgets(buList);
+		teacherService.updateComp(compVo);
+	}
 }

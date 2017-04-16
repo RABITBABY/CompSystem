@@ -9,6 +9,8 @@ public interface BudgetMapper {
 	List<Budget> selectByComId(Integer comId);
 	/*批量插入*/
 	int addCompBudgetBatch(List<Budget> budgets);
+	/*根据comId删除*/
+	int deleteByComId(Integer comId);
 	
     int deleteByPrimaryKey(Integer budgetid);
 

@@ -104,4 +104,7 @@
       remarks = #{remarks,jdbcType=VARCHAR}
     where hoursId = #{hoursid,jdbcType=INTEGER}
   </update>
+  <delete id="deleteByComId" parameterType="java.lang.Integer">
+        delete from hours where comId=#{comId}
+  </delete>
 </mapper>

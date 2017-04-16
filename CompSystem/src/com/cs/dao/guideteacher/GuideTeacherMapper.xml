@@ -82,4 +82,8 @@
       comId = #{comid,jdbcType=INTEGER}
     where guideTeaId = #{guideteaid,jdbcType=INTEGER}
   </update>
+  
+  <delete id="deleteByComId" parameterType="java.lang.Integer">
+        delete from guideteacher where comId=#{comId}
+  </delete>
 </mapper>

@@ -41,7 +41,7 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 
 @Service("teacherService")
-public class TeacherServiceImpl implements TeacherService{
+public class TeacherServiceImpl implements TeacherService {
 
 	@Autowired
 	private TeacherMapper teacherMapper;
@@ -61,26 +61,34 @@ public class TeacherServiceImpl implements TeacherService{
 	private CompConditionMapper compConditionMapper;
 	@Autowired
 	private AwardsMapper awardsMapper;
-	
+
 	@Override
 	public Teacher selectByTeacherNo(Integer teacherNo) {
 		return teacherMapper.selectByPrimaryKey(teacherNo);
 	}
-	
+
 	@Override
-	public boolean deleteComp(Integer comId) {
-		int count = comMapper.deleteByPrimaryKey(comId);
-		if (count>0) {
-			return true;
-		}
-		return false;
+	@Transactional
+	public void deleteComp(CompetitionInfoVo compVo) {
+		Competition competition = compVo.getCompetition();
+		comMapper.deleteByPrimaryKey(competition.getComid());
+		// 经费预算
+		budgetMapper.deleteByComId(competition.getComid());
+		// 竞赛条件
+		compConditionMapper.deleteByComId(competition.getComid());
+		// 指导老师
+		guideTeacherMapper.deleteByComId(competition.getComid());
+		// 课时预算
+		hoursMapper.deleteByComId(competition.getComid());
+		// 培训安排
+		scheduleMapper.deleteByComId(competition.getComid());
 	}
 
 	@Override
 	public List<Competition> getCompResults(Integer teacherNo) {
 		return comMapper.selectByTeacherno(teacherNo);
 	}
-	
+
 	@Override
 	public List<Groups> getCompGroups(Integer comId) {
 		return groupsMapper.selectByComId(comId);
@@ -89,7 +97,7 @@ public class TeacherServiceImpl implements TeacherService{
 	@Override
 	public boolean updateByTeacherNo(Teacher teacher) {
 		int updateByPrimaryKey = teacherMapper.updateByPrimaryKey(teacher);
-		if (updateByPrimaryKey>0) {
+		if (updateByPrimaryKey > 0) {
 			return true;
 		}
 		return false;
@@ -97,20 +105,20 @@ public class TeacherServiceImpl implements TeacherService{
 
 	@Override
 	public List<Competition> getCompBySpStatus(Competition competition) {
-		
+
 		return comMapper.selectBySpStatus(competition);
 	}
 
 	@Override
-	public Map<String,Object> getCompDetail(Integer comId) {
-		//根据comId查找基本信息
+	public Map<String, Object> getCompDetail(Integer comId) {
+		// 根据comId查找基本信息
 		Competition competition = comMapper.selectByPrimaryKey(comId);
-		List<Budget> budgets=budgetMapper.selectByComId(comId);
-		List<Schedule> schedules=scheduleMapper.selectByComId(comId);
+		List<Budget> budgets = budgetMapper.selectByComId(comId);
+		List<Schedule> schedules = scheduleMapper.selectByComId(comId);
 		List<Hours> hours = hoursMapper.selectByComId(comId);
 		List<Teacher> teachers = guideTeacherMapper.selectComId(comId);
 		List<Conditions> conditions = compConditionMapper.selectComId(comId);
-		Map<String,Object> map=new HashMap<String, Object>();
+		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("competition", competition);
 		map.put("budgets", budgets);
 		map.put("schedules", schedules);
@@ -122,14 +130,14 @@ public class TeacherServiceImpl implements TeacherService{
 
 	@Override
 	public List<Student> getGroupsMember(Integer groupsNo) {
-		
+
 		return groupsMapper.selectByGroupsNo(groupsNo);
 	}
 
 	@Override
 	public boolean approveGroups(Groups groups) {
 		int updateStatus = groupsMapper.updateStatus(groups);
-		if (updateStatus>0) {
+		if (updateStatus > 0) {
 			return true;
 		}
 		return false;
@@ -137,89 +145,133 @@ public class TeacherServiceImpl implements TeacherService{
 
 	@Override
 	public List<Competition> getEndCompetition(Integer teacherNo) {
-		
+
 		return comMapper.selectEndComp(teacherNo);
 	}
 
 	@Override
 	public boolean setCompResult(Awards awards) {
 		int insertSelective = awardsMapper.insertSelective(awards);
-		if (insertSelective>0) {
+		if (insertSelective > 0) {
 			return true;
 		}
 		return false;
 	}
-	
-	@Override
-    public boolean createWord(Integer comId) {
-    	Configuration configuration= new Configuration();
-        configuration.setDefaultEncoding("UTF-8");
-        Map<String, Object> dataMap = new HashMap<String, Object>();
-        try {
-              Competition competition = comMapper.selectByPrimaryKey(comId);
-                dataMap.put("comName", competition.getComname());
-                
-                configuration.setClassForTemplateLoading(this.getClass(), "/file"); // FTL文件所存在的位置
-                Template template = configuration.getTemplate("approveTable.ftl");
 
-                File outFile = new File("E:/temp/"+competition.getComname()+"申报书.doc");
-                Writer out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outFile),"UTF-8"));
-                template.process(dataMap, out);
-                out.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
-        return true;
-    }
+	@Override
+	public boolean createWord(Integer comId) {
+		Configuration configuration = new Configuration();
+		configuration.setDefaultEncoding("UTF-8");
+		Map<String, Object> dataMap = new HashMap<String, Object>();
+		try {
+			Competition competition = comMapper.selectByPrimaryKey(comId);
+			dataMap.put("comName", competition.getComname());
+
+			configuration.setClassForTemplateLoading(this.getClass(), "/file"); // FTL文件所存在的位置
+			Template template = configuration.getTemplate("approveTable.ftl");
+
+			File outFile = new File("E:/temp/" + competition.getComname()
+					+ "申报书.doc");
+			Writer out = new BufferedWriter(new OutputStreamWriter(
+					new FileOutputStream(outFile), "UTF-8"));
+			template.process(dataMap, out);
+			out.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
 
 	@Override
 	@Transactional
 	public void addComp(CompetitionInfoVo compVo) {
 		int insertCom = comMapper.insertSelective(compVo.getCompetition());
-		//得到竞赛id
-		int comId=compVo.getCompetition().getComid();
-		//经费预算
-		List<Budget> bList=compVo.getBudgets();
-		if (bList!=null) {
-			for(int i=0;i<bList.size();i++){
+		// 得到竞赛id
+		int comId = compVo.getCompetition().getComid();
+		// 经费预算
+		List<Budget> bList = compVo.getBudgets();
+		if (bList != null) {
+			for (int i = 0; i < bList.size(); i++) {
 				bList.get(i).setComid(comId);
 			}
 			budgetMapper.addCompBudgetBatch(bList);
 		}
-		//竞赛条件
-		List<CompCondition> compConditionsList=compVo.getCompConditions();
-		if(compConditionsList!=null){
-			for(int i=0;i<compConditionsList.size();i++){
+		// 竞赛条件
+		List<CompCondition> compConditionsList = compVo.getCompConditions();
+		if (compConditionsList != null) {
+			for (int i = 0; i < compConditionsList.size(); i++) {
 				compConditionsList.get(i).setComid(comId);
 			}
 			compConditionMapper.addCompConditionBatch(compConditionsList);
 		}
-		//指导老师
-		List<GuideTeacher> guideList=compVo.getGuideTeachers();
-		if(guideList!=null){
-			for(int i=0;i<guideList.size();i++){
+		// 指导老师
+		List<GuideTeacher> guideList = compVo.getGuideTeachers();
+		if (guideList != null) {
+			for (int i = 0; i < guideList.size(); i++) {
 				guideList.get(i).setComid(comId);
 			}
 			guideTeacherMapper.addCompGuideTeacherBatch(guideList);
 		}
-		//课时预算
-		List<Hours> hoursList=compVo.getHours();
-		if (hoursList!=null) {
-			for(int i=0;i<hoursList.size();i++){
+		// 课时预算
+		List<Hours> hoursList = compVo.getHours();
+		if (hoursList != null) {
+			for (int i = 0; i < hoursList.size(); i++) {
 				hoursList.get(i).setComid(comId);
 			}
 			hoursMapper.addCompHoursBatch(hoursList);
 		}
-		//培训安排
-		List<Schedule> scheduleList=compVo.getSchedules();
-		if (scheduleList!=null) {
-			for(int i=0;i<scheduleList.size();i++){
+		// 培训安排
+		List<Schedule> scheduleList = compVo.getSchedules();
+		if (scheduleList != null) {
+			for (int i = 0; i < scheduleList.size(); i++) {
 				scheduleList.get(i).setComid(comId);
 			}
 			scheduleMapper.addCompScheduleBatch(scheduleList);
 		}
 	}
-	
+
+	@Override
+	@Transactional
+	public void updateComp(CompetitionInfoVo compVo) {
+		comMapper.updateByPrimaryKeySelective(compVo.getCompetition());
+		// 经费预算
+		List<Budget> bList = compVo.getBudgets();
+		if (bList != null) {
+			for (int i = 0; i < bList.size(); i++) {
+				budgetMapper.updateByPrimaryKeySelective(bList.get(i));
+			}
+		}
+		// 竞赛条件
+		List<CompCondition> compConditionsList = compVo.getCompConditions();
+		if (compConditionsList != null) {
+			for (int i = 0; i < compConditionsList.size(); i++) {
+				compConditionMapper
+						.updateByPrimaryKeySelective(compConditionsList.get(i));
+			}
+		}
+		// 指导老师
+		List<GuideTeacher> guideList = compVo.getGuideTeachers();
+		if (guideList != null) {
+			for (int i = 0; i < guideList.size(); i++) {
+				guideTeacherMapper
+						.updateByPrimaryKeySelective(guideList.get(i));
+			}
+		}
+		// 课时预算
+		List<Hours> hoursList = compVo.getHours();
+		if (hoursList != null) {
+			for (int i = 0; i < hoursList.size(); i++) {
+				hoursMapper.updateByPrimaryKeySelective(hoursList.get(i));
+			}
+		}
+		// 培训安排
+		List<Schedule> scheduleList = compVo.getSchedules();
+		if (scheduleList != null) {
+			for (int i = 0; i < scheduleList.size(); i++) {
+				scheduleMapper.updateByPrimaryKeySelective(scheduleList.get(i));
+			}
+		}
+	}
 
 }

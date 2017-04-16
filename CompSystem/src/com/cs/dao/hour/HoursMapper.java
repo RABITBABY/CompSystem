@@ -10,6 +10,8 @@ public interface HoursMapper {
 	
 	int addCompHoursBatch(List<Hours> hoursList);
 	
+	int deleteByComId(Integer comId);
+	
     int deleteByPrimaryKey(Integer hoursid);
 
     int insert(Hours record);

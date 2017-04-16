@@ -33,10 +33,20 @@ import com.cs.vo.CompetitionInfoVo;
 @RequestMapping("/teacher")
 public class TeacherController {
 	/**
-	 * 1.查看、修改教师个人信息√ 2.管理申报表。 2.1）查看所有申报书审批结果（列表以及结果。）√
-	 * 2.1.1）根据结果查看申报书，比如，查找所有通过的申报书√ 2.1.2）查看申报书详情√ 2.2）新增 2.3）修改、删除√。仅限申报不通过时。
-	 * 3.查看审批通过的竞赛。 3.1）查看某个竞赛参与的组别。√ 3.1.1）查看某个组别中的成员√ 3.2）管理（删除/允许）某个报名竞赛的组别√
-	 * 4.查看已经结束的竞赛。√ 4.1）反馈竞赛结果 √ 5.导出申报表√
+	 * 1.查看、修改教师个人信息√ 
+	 * 2.管理申报表。 
+	 *   2.1）查看所有申报书审批结果（列表以及结果。）√
+	 *     2.1.1）根据结果查看申报书，比如，查找所有通过的申报书√ 
+	 *     2.1.2）查看申报书详情√ 
+	 *   2.2）新增 √
+	 *   2.3）修改√、删除√。仅限申报不通过时。
+	 * 3.查看审批通过的竞赛。 ——》2.1.1）根据结果查看申报书：这两个差不多
+	 *   3.1）查看某个竞赛参与的组别。√ 
+	 *     3.1.1）查看某个组别中的成员√ 
+	 *   3.2）管理（删除/允许）某个报名竞赛的组别√
+	 * 4.查看已经结束的竞赛。√ 
+	 *   4.1）反馈竞赛结果 √ 
+	 * 5.导出申报表√
 	 */
 
 	@Autowired
@@ -76,7 +86,7 @@ public class TeacherController {
 	}
 
 	/**
-	 * 2.1.1）根据结果查看申报书，比如，查找所有通过的申报书
+	 * 2.1.1）根据申报结果查看申报书，比如，查找所有通过的申报书
 	 * 
 	 * @param competition
 	 * @return
@@ -125,8 +135,20 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/deleteComp")
-	public boolean deleteComp(Integer comId) {
-		return teacherService.deleteComp(comId);
+	public void deleteComp(CompetitionInfoVo compVo) {
+		teacherService.deleteComp(compVo);
+	} 
+	
+	/**
+	 * 2.3）修改申报书
+	 * 
+	 * @param comId
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/updateComp")
+	public void updateComp(CompetitionInfoVo compVo) {
+		teacherService.updateComp(compVo);
 	}
 
 	/**

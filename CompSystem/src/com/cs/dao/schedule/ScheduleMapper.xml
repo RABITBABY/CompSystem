@@ -82,4 +82,33 @@
       </if>
     </trim>
   </insert>
+  
+    <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.Schedule" >
+    update schedule
+    <set >
+      <if test="comid != null" >
+       comId= #{comid,jdbcType=INTEGER},
+      </if>
+      <if test="teacherno != null" >
+        teacherNo=#{teacherno,jdbcType=INTEGER},
+      </if>
+      <if test="content != null" >
+        content=#{content,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null" >
+        position=#{position,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null" >
+       date=#{date,jdbcType=DATE},
+      </if>
+      <if test="hours != null" >
+       hours=#{hours,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id=#{id,jdbcType=INTEGER}
+  </update>
+  
+  <delete id="deleteByComId" parameterType="java.lang.Integer">
+        delete from schedule where comId=#{comId}
+  </delete>
 </mapper>

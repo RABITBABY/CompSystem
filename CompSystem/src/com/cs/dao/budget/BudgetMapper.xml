@@ -106,4 +106,8 @@
       reasons = #{reasons,jdbcType=VARCHAR}
     where budgetId = #{budgetid,jdbcType=INTEGER}
   </update>
+  
+  <delete id="deleteByComId" parameterType="java.lang.Integer">
+        delete from budget where comId=#{comId}
+  </delete>
 </mapper>

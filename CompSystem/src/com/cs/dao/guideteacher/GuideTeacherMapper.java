@@ -12,6 +12,8 @@ public interface GuideTeacherMapper {
     int addCompGuideTeacherBatch(List<GuideTeacher> guideTeachers);
     
     int deleteByPrimaryKey(Integer guideteaid);
+    
+    int deleteByComId(Integer comId);
 
     int insert(GuideTeacher record);
 

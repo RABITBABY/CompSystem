@@ -8,6 +8,10 @@ public interface ScheduleMapper {
 	
 	int addCompScheduleBatch(List<Schedule> schedules);
 	
+	int updateByPrimaryKeySelective(Schedule schedule);
+	
+	int deleteByComId(Integer comId);
+	
 	List<Schedule> selectByComId(Integer comId);
 	
     int insert(Schedule record);

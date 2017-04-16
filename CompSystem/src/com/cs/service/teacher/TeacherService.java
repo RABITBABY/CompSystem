@@ -31,7 +31,7 @@ public interface TeacherService {
 	 * @param comId
 	 * @return
 	 */
-	public boolean deleteComp(Integer comId);
+	public void deleteComp(CompetitionInfoVo compVo);
 	
 	/**
 	 * 新增申报表
@@ -94,6 +94,13 @@ public interface TeacherService {
 	 * @return
 	 */
 	public boolean createWord(Integer comId);
+	
+	/**
+	 * 修改申报表
+	 * @param comId
+	 * @return
+	 */
+	public void updateComp(CompetitionInfoVo compVo);
 	
 	
 	
