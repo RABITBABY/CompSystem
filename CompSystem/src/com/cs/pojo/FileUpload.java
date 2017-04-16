@@ -11,7 +11,7 @@ public class FileUpload {
 
     private Date uploaddate;
 
-    private Integer uploaduserno;
+    private String uploaduserno;
 
     public Integer getFileid() {
         return fileid;
@@ -45,11 +45,20 @@ public class FileUpload {
         this.uploaddate = uploaddate;
     }
 
-    public Integer getUploaduserno() {
-        return uploaduserno;
-    }
+	public String getUploaduserno() {
+		return uploaduserno;
+	}
 
-    public void setUploaduserno(Integer uploaduserno) {
-        this.uploaduserno = uploaduserno;
-    }
+	public void setUploaduserno(String uploaduserno) {
+		this.uploaduserno = uploaduserno;
+	}
+
+	@Override
+	public String toString() {
+		return "FileUpload [fileid=" + fileid + ", filename=" + filename
+				+ ", savename=" + savename + ", uploaddate=" + uploaddate
+				+ ", uploaduserno=" + uploaduserno + "]";
+	}
+
+   
 }

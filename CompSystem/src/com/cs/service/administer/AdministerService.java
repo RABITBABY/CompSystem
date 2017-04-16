@@ -9,3 +9,4 @@ public interface AdministerService {
 	public Administer selectByID(String adminNo);
 	
 }
+

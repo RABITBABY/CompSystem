@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.dao.fileUpload.FileUploadMapper" >
+
   <resultMap id="BaseResultMap" type="com.cs.pojo.FileUpload" >
-    <id column="fileId" property="fileid" jdbcType="INTEGER" />
-    <result column="fileName" property="filename" jdbcType="VARCHAR" />
-    <result column="saveName" property="savename" jdbcType="VARCHAR" />
-    <result column="uploadDate" property="uploaddate" jdbcType="DATE" />
-    <result column="uploadUserNo" property="uploaduserno" jdbcType="INTEGER" />
   </resultMap>
+  
+  
   <sql id="Base_Column_List" >
     fileId, fileName, saveName, uploadDate, uploadUserNo
   </sql>
+  
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
@@ -21,10 +20,11 @@
     delete from fileupload
     where fileId = #{fileid,jdbcType=INTEGER}
   </delete>
+  
   <insert id="insert" parameterType="com.cs.pojo.FileUpload" >
-    insert into fileupload (fileId, fileName, saveName, 
+    insert into fileupload ( fileName, saveName, 
       uploadDate, uploadUserNo)
-    values (#{fileid,jdbcType=INTEGER}, #{filename,jdbcType=VARCHAR}, #{savename,jdbcType=VARCHAR}, 
+    values ( #{filename,jdbcType=VARCHAR}, #{savename,jdbcType=VARCHAR}, 
       #{uploaddate,jdbcType=DATE}, #{uploaduserno,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.cs.pojo.FileUpload" >

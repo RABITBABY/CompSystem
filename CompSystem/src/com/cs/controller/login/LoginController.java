@@ -1,8 +1,10 @@
 package com.cs.controller.login;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,11 +16,8 @@ import com.cs.pojo.Administer;
 import com.cs.pojo.Student;
 import com.cs.pojo.Teacher;
 import com.cs.service.administer.AdministerService;
-import com.cs.service.administer.AdministerServiceImpl;
 import com.cs.service.student.StudentService;
-import com.cs.service.student.StudentServiceImpl;
 import com.cs.service.teacher.TeacherService;
-import com.cs.service.teacher.TeacherServiceImpl;
 
 @Controller
 public class LoginController {
@@ -42,57 +41,91 @@ public class LoginController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/login" ,method=RequestMethod.POST)
-	public Object IsAdmin(@RequestParam(value = "account",required=false) String account,
+	public Map IsAdmin(@RequestParam(value = "account",required=false) String account,
 			@RequestParam(value = "password",required=false)String password,
 			@RequestParam(value = "role",required=false) String role, 
 			HttpSession session){
+		
+		Map<String , Object> resultMap=new HashMap<String, Object>();
+		String stateCode="1";
+		String info="";
+		String userId="";
+		String userName="";
+		String roleNum="";//1--教师，2--审批员，3--学生，4--管理员
+		//显示传递的数据
 		System.out.println(password+"---"+account+"--"+role);
+		
+		
 		//获取前台页面的信息---先判断角色色
 		if("teacher".equals(role)){//教师
+			
 			Teacher teacher=teachImpl.selectByTeacherNo(Integer.parseInt(account));
+			
 			if(teacher!=null){
 				if(password.equals(teacher.getPassword())){
 					System.out.println(teacher);
 					session.setAttribute("user", teacher); 
 					if(teacher.getExaminer()==0){//教师
-						return teacher;
+						roleNum="1";
 					}else{//审批员
-						return teacher;
+						roleNum="2";
 					}
+					userId=String.valueOf(teacher.getTeacherno());
+					userName=teacher.getTeachername();
+					info= "success";
 				}else{
-					return "wrongPassword";
+					stateCode="0";
+					info= "wrongPassword";
 				}
 			}else{
-				return "wrongAccount";
+				stateCode="0";
+				info= "wrongAccount";
 			}
+			
 		}else if("student".equals(role)){//学生
 			Student stu =stuImpl.selectByNo(Integer.parseInt(account));
 			if(stu!=null){
 				if(password.equals(stu.getPassword())){
-					System.out.println(stu);
-					session.setAttribute("user", stu); 
-					return stu;
+					roleNum="3";
+					userId=String.valueOf(stu.getStudentno());
+					userName=stu.getStudentname();
+					info= "success";
 				}else{
-					return "wrongPassword";
+					stateCode="0";
+					info= "wrongPassword";
 				}
 			} else{
-				return "wrongAcount";
+				stateCode="0";
+				info= "wrongAcount";
 			}
 		}else if("admin".equals(role)){//管理员
 			Administer admin=adminImpl.selectByID(account);
 			if(admin!=null){
 				if(password.equals(admin.getPassword())){
-					System.out.println(admin);
-					session.setAttribute("user", admin); 
-					return admin;
+					roleNum="4";
+					userId=admin.getAdminno();
+					userName=admin.getAdminname();
+					info= "success";
 				}else{
-					return "wrongPassword";
+					stateCode="0";
+					info= "wrongPassword";
 				}
 			}else{
-				return "wrongAcount";
+				stateCode="0";
+				info= "wrongAcount";
 			}
 		}
-		return "wrongRole";
+		resultMap.put("stateCode", stateCode);
+		resultMap.put("info", info);
+		resultMap.put("userId", userId);
+		resultMap.put("userName", userName);
+		resultMap.put("roleNum", roleNum);
+		System.out.println("resultMap"+resultMap);
+		if("1".equals(stateCode)){
+			
+			session.setAttribute("loginInfo", resultMap);
+		}
+		return resultMap;
 	}
 
 	/**
@@ -102,12 +135,14 @@ public class LoginController {
 	 */
 	@ResponseBody
 	@RequestMapping("loginInfo")
-	public Object LoginInfo(HttpSession session){
-		Object obj=session.getAttribute("user");
-		if(obj==null){
-			return "null";
+	public Map LoginInfo(HttpSession session){
+		Map< String, Object> resultMap=new HashMap<String, Object>();
+		String stateCode="1";
+		resultMap=(Map)session.getAttribute("loginInfo");
+		if(resultMap==null){
+			stateCode="0";
 		}
-		return obj;
+		return resultMap;
 	}
 	/**
 	 * 登出--删除用户登录的信息
@@ -116,7 +151,7 @@ public class LoginController {
 	@ResponseBody
 	@RequestMapping("logOut")
 	public void logOut(HttpSession session){
-		session.removeAttribute("user");
+		session.removeAttribute("loginInfo");
 	}
 	
 }
