@@ -54,7 +54,7 @@ public class StudentController {
 	private MaterialMapper materialMapper;
 	
 	/**
-	 * 1.1获取该竞赛所需的条件
+	 * 1.1 获取该竞赛所需的条件
 	 * groups表和competition表
 	 * @return
 	 */
