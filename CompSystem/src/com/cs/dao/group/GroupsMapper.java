@@ -21,13 +21,13 @@ public interface GroupsMapper {
 	//修改队伍状态
 	int updateStatus(Groups groups);
 	
-    int deleteByPrimaryKey(Integer groupsno);
-
+    int deleteByGroupsNo(Integer groupsno);
+    //插入
     int insert(Groups record);
 
     int insertSelective(Groups record);
 
-    Groups selectByPrimaryKey(Integer groupsno);
+    Groups selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(Groups record);
 

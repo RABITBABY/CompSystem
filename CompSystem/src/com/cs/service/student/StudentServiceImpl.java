@@ -76,6 +76,16 @@ public class StudentServiceImpl implements StudentService {
 		return dissatisfyCon;
 	}
 
+	@Override
+	public void joinGroup(Integer groupsid,Integer studentNo) {
+		
+		Groups groups = groupsMapper.selectByPrimaryKey(groupsid);
+		groups.setStudentno(studentNo);
+		groups.setIscaptain(0);
+		groups.setCaptainstatus(0);//队长未审核
+		groupsMapper.insert(groups);
+	}
+
 	
 	
 }

@@ -40,7 +40,7 @@ public class StudentController {
 	 *   1.3个人信息：证书、学生证等的上传√
 	 *   1.4报名竞赛
 	 *      1.4.0获取所有队伍的信息√
-	 *      1.4.1加入一个队伍.
+	 *      1.4.1加入一个队伍.√
 	 *          1.4.1.1查看加队伍的状态.(是否已经通过队长同意)
 	 *      1.4.2创建队伍。(当不需要组队时。为一人一组)
 	 *      1.4.3查找该竞赛所有指导老师。
@@ -131,6 +131,16 @@ public class StudentController {
 	 @RequestMapping("/getAllGroups")
 	 public List<Groups> getAllGroups(Integer comId){
 		 return groupsService.getCompGroups(comId);
+	 }
+	 /**
+	  * 1.4.1加入一个队伍.
+	  * groups表和competition表
+	  * @return
+	  */
+	 @ResponseBody
+	 @RequestMapping("/joinGroup")
+	 public void joinGroup(Integer groupsNo,Integer studentNo){
+		 studentService.joinGroup(groupsNo, studentNo);
 	 }
 	 
 	/**

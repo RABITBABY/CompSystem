@@ -31,7 +31,7 @@
   <select id="selectByComId" resultType="com.cs.pojo.Groups" parameterType="java.lang.Integer" >
     select *
     from groups
-    where comId = #{comId,jdbcType=INTEGER}
+    where comId = #{comId,jdbcType=INTEGER} GROUP BY groupsNo
   </select>
   
   <!-- 根据groupNo查找该组成员 -->
@@ -53,17 +53,18 @@
     select 
     <include refid="Base_Column_List" />
     from groups
-    where groupsNo = #{groupsno,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="deleteByGroupsNo" parameterType="java.lang.Integer" >
     delete from groups
     where groupsNo = #{groupsno,jdbcType=INTEGER}
   </delete>
+  <!-- 插入 -->
   <insert id="insert" useGeneratedKeys="true" parameterType="com.cs.pojo.Groups" >
-    insert into groups (id,groupsNo, comId, groupsName, 
+    insert into groups (groupsNo, comId, groupsName, 
       teacherNo, studentNo, status,captainStatus,isCaptain
       )
-    values (#{id,jdbcType=INTEGER},#{groupsno,jdbcType=INTEGER}, #{comid,jdbcType=INTEGER}, #{groupsname,jdbcType=VARCHAR}, 
+    values (#{groupsno,jdbcType=INTEGER}, #{comid,jdbcType=INTEGER}, #{groupsname,jdbcType=VARCHAR}, 
       #{teacherno,jdbcType=INTEGER}, #{studentno,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{captainstatus,jdbcType=INTEGER}
       , #{iscaptain,jdbcType=INTEGER})
   </insert>

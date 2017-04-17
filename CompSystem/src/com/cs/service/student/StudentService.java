@@ -6,6 +6,7 @@ import java.util.Map;
 import com.cs.pojo.Awards;
 import com.cs.pojo.Competition;
 import com.cs.pojo.Conditions;
+import com.cs.pojo.Groups;
 import com.cs.pojo.Material;
 import com.cs.pojo.Student;
 
@@ -46,4 +47,10 @@ public interface StudentService {
 	 */
 	List<Conditions> getDissatisfyConditions(Integer studentNo,Integer comId);
 	
+	/**
+	 * 加入队伍
+	 * @param 
+	 * @return
+	 */
+	void joinGroup(Integer groupsNo,Integer studentNo);
 }
