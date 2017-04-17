@@ -10,9 +10,10 @@
     <result column="studentNo" property="studentno" jdbcType="INTEGER" />
     <result column="status" property="status" jdbcType="INTEGER" />
     <result column="captainStatus" property="captainstatus" jdbcType="INTEGER" />
+    <result column="isCaptain" property="iscaptain" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id,groupsNo, comId, groupsName, teacherNo, studentNo, status,captainStatus
+    id,groupsNo, comId, groupsName, teacherNo, studentNo, status,captainStatus,isCaptain
   </sql>
   
   <!-- 查找学生所报名的竞赛 -->
@@ -60,11 +61,11 @@
   </delete>
   <insert id="insert" useGeneratedKeys="true" parameterType="com.cs.pojo.Groups" >
     insert into groups (id,groupsNo, comId, groupsName, 
-      teacherNo, studentNo, status,captainStatus
+      teacherNo, studentNo, status,captainStatus,isCaptain
       )
     values (#{id,jdbcType=INTEGER},#{groupsno,jdbcType=INTEGER}, #{comid,jdbcType=INTEGER}, #{groupsname,jdbcType=VARCHAR}, 
       #{teacherno,jdbcType=INTEGER}, #{studentno,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{captainstatus,jdbcType=INTEGER}
-      )
+      , #{iscaptain,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" useGeneratedKeys="true" parameterType="com.cs.pojo.Groups" >
     insert into groups
@@ -93,6 +94,9 @@
       <if test="captainstatus != null" >
         captainStatus,
       </if>
+      <if test="iscaptain != null" >
+        isCaptain,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -118,6 +122,9 @@
       </if>
       <if test="captainstatus != null" >
         #{captainstatus,jdbcType=INTEGER},
+      </if>
+       <if test="iscaptain != null" >
+        #{iscaptain,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>

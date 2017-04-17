@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50018
 File Encoding         : 65001
 
-Date: 2017-04-18 00:02:10
+Date: 2017-04-18 00:20:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -228,17 +228,18 @@ CREATE TABLE `groups` (
   `studentNo` int(11) default NULL COMMENT '学生',
   `status` int(11) default NULL COMMENT '报名状态(等待审核0，报名成功1，报名失败2)',
   `captainStatus` int(11) default NULL COMMENT '队长审批状态(0未审核1同意2不同意)',
+  `isCaptain` int(11) default NULL COMMENT '是否为队长',
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of groups
 -- ----------------------------
-INSERT INTO `groups` VALUES ('1', '1', '1', '火星组', '1', '1', '1', null);
-INSERT INTO `groups` VALUES ('2', '2', '1', '木星组', '1', '8', '1', null);
-INSERT INTO `groups` VALUES ('3', '3', '1', '地球组', '1', '9', '1', null);
-INSERT INTO `groups` VALUES ('4', '4', '2', '超艺术', '5', '5', '1', null);
-INSERT INTO `groups` VALUES ('5', '1', '1', '火星组', '1', '2', '1', null);
+INSERT INTO `groups` VALUES ('1', '1', '1', '火星组', '1', '1', '1', null, null);
+INSERT INTO `groups` VALUES ('2', '2', '1', '木星组', '1', '8', '1', null, null);
+INSERT INTO `groups` VALUES ('3', '3', '1', '地球组', '1', '9', '1', null, null);
+INSERT INTO `groups` VALUES ('4', '4', '2', '超艺术', '5', '5', '1', null, null);
+INSERT INTO `groups` VALUES ('5', '1', '1', '火星组', '1', '2', '1', null, null);
 
 -- ----------------------------
 -- Table structure for guideteacher

@@ -18,6 +18,8 @@ public class Groups {
 
     private Integer captainstatus;
     
+    private Integer iscaptain;
+    
     public Integer getId() {
 		return id;
 	}
@@ -81,6 +83,15 @@ public class Groups {
 	public void setCaptainstatus(Integer captainstatus) {
 		this.captainstatus = captainstatus;
 	}
+
+	public Integer getIscaptain() {
+		return iscaptain;
+	}
+
+	public void setIscaptain(Integer iscaptain) {
+		this.iscaptain = iscaptain;
+	}
     
+	
     
 }
