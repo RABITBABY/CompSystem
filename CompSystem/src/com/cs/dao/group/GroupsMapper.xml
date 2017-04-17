@@ -9,9 +9,10 @@
     <result column="teacherNo" property="teacherno" jdbcType="INTEGER" />
     <result column="studentNo" property="studentno" jdbcType="INTEGER" />
     <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="captainStatus" property="captainstatus" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    groupsNo, comId, groupsName, teacherNo, studentNo, status
+    id,groupsNo, comId, groupsName, teacherNo, studentNo, status,captainStatus
   </sql>
   
   <!-- 查找学生所报名的竞赛 -->
@@ -40,7 +41,7 @@
 	on g.studentNo =s.studentNo
 	where g.groupsNo=#{groupsNo,jdbcType=INTEGER}
   </select>
-  <!-- 修改状态 -->
+  <!-- 修改教师审批状态 -->
   <update id="updateStatus" parameterType="com.cs.pojo.Groups" >
     update groups
     set status = #{status,jdbcType=INTEGER}
@@ -58,16 +59,19 @@
     where groupsNo = #{groupsno,jdbcType=INTEGER}
   </delete>
   <insert id="insert" useGeneratedKeys="true" parameterType="com.cs.pojo.Groups" >
-    insert into groups (groupsNo, comId, groupsName, 
-      teacherNo, studentNo, status
+    insert into groups (id,groupsNo, comId, groupsName, 
+      teacherNo, studentNo, status,captainStatus
       )
-    values (#{groupsno,jdbcType=INTEGER}, #{comid,jdbcType=INTEGER}, #{groupsname,jdbcType=VARCHAR}, 
-      #{teacherno,jdbcType=INTEGER}, #{studentno,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}
+    values (#{id,jdbcType=INTEGER},#{groupsno,jdbcType=INTEGER}, #{comid,jdbcType=INTEGER}, #{groupsname,jdbcType=VARCHAR}, 
+      #{teacherno,jdbcType=INTEGER}, #{studentno,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{captainstatus,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" useGeneratedKeys="true" parameterType="com.cs.pojo.Groups" >
     insert into groups
     <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
       <if test="groupsno != null" >
         groupsNo,
       </if>
@@ -86,8 +90,14 @@
       <if test="status != null" >
         status,
       </if>
+      <if test="captainstatus != null" >
+        captainStatus,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
       <if test="groupsno != null" >
         #{groupsno,jdbcType=INTEGER},
       </if>
@@ -105,6 +115,9 @@
       </if>
       <if test="status != null" >
         #{status,jdbcType=INTEGER},
+      </if>
+      <if test="captainstatus != null" >
+        #{captainstatus,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -126,8 +139,11 @@
       <if test="status != null" >
         status = #{status,jdbcType=INTEGER},
       </if>
+      <if test="captainstatus != null" >
+        captainStatus = #{captainstatus,jdbcType=INTEGER},
+      </if>
     </set>
-    where groupsNo = #{groupsno,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Groups" >
     update groups
@@ -135,7 +151,8 @@
       groupsName = #{groupsname,jdbcType=VARCHAR},
       teacherNo = #{teacherno,jdbcType=INTEGER},
       studentNo = #{studentno,jdbcType=INTEGER},
-      status = #{status,jdbcType=INTEGER}
-    where groupsNo = #{groupsno,jdbcType=INTEGER}
+      status = #{status,jdbcType=INTEGER},
+      captainStatus = #{captainstatus,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

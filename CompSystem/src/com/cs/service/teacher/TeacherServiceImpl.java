@@ -89,11 +89,7 @@ public class TeacherServiceImpl implements TeacherService {
 		return comMapper.selectByTeacherno(teacherNo);
 	}
 
-	@Override
-	public List<Groups> getCompGroups(Integer comId) {
-		return groupsMapper.selectByComId(comId);
-	}
-
+	
 	@Override
 	public boolean updateByTeacherNo(Teacher teacher) {
 		int updateByPrimaryKey = teacherMapper.updateByPrimaryKey(teacher);

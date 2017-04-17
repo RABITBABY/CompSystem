@@ -75,6 +75,10 @@ public class Competition {
     private Integer compstatus;
 
     private Integer ispublish;
+    
+    private Integer isneedgroup;
+    
+    private Integer groupnum;
    
     public Integer getComid() {
         return comid;
@@ -363,4 +367,21 @@ public class Competition {
     public void setIspublish(Integer ispublish) {
         this.ispublish = ispublish;
     }
+
+	public Integer getIsneedgroup() {
+		return isneedgroup;
+	}
+
+	public void setIsneedgroup(Integer isneedgroup) {
+		this.isneedgroup = isneedgroup;
+	}
+
+	public Integer getGroupnum() {
+		return groupnum;
+	}
+
+	public void setGroupnum(Integer groupnum) {
+		this.groupnum = groupnum;
+	}
+    
 }

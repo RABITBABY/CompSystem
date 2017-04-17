@@ -21,9 +21,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.cs.dao.material.MaterialMapper;
 import com.cs.pojo.Conditions;
+import com.cs.pojo.Groups;
 import com.cs.pojo.Material;
 import com.cs.pojo.Student;
 import com.cs.service.condition.ConditionService;
+import com.cs.service.groups.GroupsService;
 import com.cs.service.student.StudentService;
 
 
@@ -37,8 +39,11 @@ public class StudentController {
 	 *   1.2判断该学生不符合的条件√
 	 *   1.3个人信息：证书、学生证等的上传√
 	 *   1.4报名竞赛
-	 *   1.5加入一个队伍
-	 *   1.6创建队伍
+	 *      1.4.0获取所有队伍的信息√
+	 *      1.4.1加入一个队伍.
+	 *      1.4.2创建队伍。(当不需要组队时。为一人一组)
+	 *      1.4.3查找该竞赛所有指导老师。
+	 *      1.4.4队长审核加入的成员
 	 * 2.查看报名结果√
 	 * 3.缴纳比赛费用
 	 * 4.查询获奖情况√
@@ -52,6 +57,8 @@ public class StudentController {
 	private ConditionService conditionService;
 	@Autowired
 	private MaterialMapper materialMapper;
+	@Autowired
+	private GroupsService groupsService;
 	
 	/**
 	 * 1.1 获取该竞赛所需的条件
@@ -113,7 +120,18 @@ public class StudentController {
 		
 		
 	}
-	
+	 
+	 /**
+	  * 1.4.0获取所有队伍的信息
+	  * groups表和competition表
+	  * @return
+	  */
+	 @ResponseBody
+	 @RequestMapping("/getAllGroups")
+	 public List<Groups> getAllGroups(Integer comId){
+		 return groupsService.getCompGroups(comId);
+	 }
+	 
 	/**
 	 * 2.查看报名结果
 	 * groups表和competition表

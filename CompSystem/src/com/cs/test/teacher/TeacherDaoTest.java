@@ -25,10 +25,10 @@ public class TeacherDaoTest extends AbstractJUnit4SpringContextTests{
    public void testAddComp(){
 	   Budget budget1=new Budget();
 	   budget1.setComid(1);
-	   budget1.setSubject("测试1");
+	   budget1.setSubject("ceshi");
 	   Budget budget2=new Budget();
 	   budget2.setComid(1);
-	   budget2.setSubject("测试2");
+	   budget2.setSubject("ceshi试2");
 	   List<Budget> buList=new ArrayList<Budget>();
 	   buList.add(budget1);
 	   buList.add(budget2);

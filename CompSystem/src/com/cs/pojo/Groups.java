@@ -16,7 +16,7 @@ public class Groups {
 
     private Integer status;
 
-    
+    private Integer captainstatus;
     
     public Integer getId() {
 		return id;
@@ -73,4 +73,14 @@ public class Groups {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+	public Integer getCaptainstatus() {
+		return captainstatus;
+	}
+
+	public void setCaptainstatus(Integer captainstatus) {
+		this.captainstatus = captainstatus;
+	}
+    
+    
 }

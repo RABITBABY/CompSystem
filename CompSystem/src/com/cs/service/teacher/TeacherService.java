@@ -46,11 +46,7 @@ public interface TeacherService {
 	 */
 	public List<Competition> getCompResults(Integer teacherNo);
 	
-	/**
-	 * 根据comId查找该竞赛参与的组别
-	 * @return
-	 */
-	public List<Groups> getCompGroups(Integer comId);
+	
 	
 	/**
 	 * 根据SpStatus状态查找竞赛

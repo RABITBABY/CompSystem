@@ -26,6 +26,7 @@ import com.cs.pojo.Hours;
 import com.cs.pojo.Schedule;
 import com.cs.pojo.Student;
 import com.cs.pojo.Teacher;
+import com.cs.service.groups.GroupsService;
 import com.cs.service.teacher.TeacherService;
 import com.cs.vo.CompetitionInfoVo;
 
@@ -51,6 +52,8 @@ public class TeacherController {
 
 	@Autowired
 	private TeacherService teacherService;
+	@Autowired
+	private GroupsService groupsService;
 
 	/**
 	 * 1.查看教师个人信息
@@ -160,7 +163,7 @@ public class TeacherController {
 	@ResponseBody
 	@RequestMapping(value = "/getCompGroups")
 	public List<Groups> getCompGroups(Integer comId) {
-		return teacherService.getCompGroups(comId);
+		return groupsService.getCompGroups(comId);
 	}
 
 	/**

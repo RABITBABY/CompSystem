@@ -38,12 +38,15 @@
     <result column="cost" property="cost" jdbcType="DECIMAL" />
     <result column="compStatus" property="compstatus" jdbcType="INTEGER" />
     <result column="isPublish" property="ispublish" jdbcType="INTEGER" />
+    <result column="isNeedGroup" property="isneedgroup" jdbcType="INTEGER" />
+    <result column="groupNum" property="groupnum" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
     comId, comName, teacherNo, unit, levelName, department, date, host, time, place, 
     introduce, object, people, sponsor, plan, tgoal, wgoal, sopinion, slsign, slsdate, 
     uopinion, dsign, dsdate, tdopinion, olsign, olsdate, lsign, lsdate, depSpStatus, 
-    teaSpStatus, completeStatus, applyBeginDate, applyEndDate, cost, compStatus, isPublish
+    teaSpStatus, completeStatus, applyBeginDate, applyEndDate, cost, compStatus, isPublish,
+    isNeedGroup,groupNum
   </sql>
   <!-- 根据状态查找申报表，比如，查找所有审批通过的申报表 -->
    <select id="selectBySpStatus" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
@@ -67,9 +70,6 @@
     from competition
     where comId = #{comid,jdbcType=INTEGER}
   </select>
- 
-  
-  
   <select id="selectByTeacherno" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
@@ -92,7 +92,7 @@
       olsdate, lsign, lsdate, 
       depSpStatus, teaSpStatus, completeStatus, 
       applyBeginDate, applyEndDate, cost, 
-      compStatus, isPublish)
+      compStatus, isPublish,isNeedGroup,groupNum)
     values (#{comid,jdbcType=INTEGER}, #{comname,jdbcType=VARCHAR}, #{teacherno,jdbcType=INTEGER}, 
       #{unit,jdbcType=VARCHAR}, #{levelname,jdbcType=VARCHAR}, #{department,jdbcType=VARCHAR}, 
       #{date,jdbcType=DATE}, #{host,jdbcType=VARCHAR}, #{time,jdbcType=DATE}, #{place,jdbcType=VARCHAR}, 
@@ -104,7 +104,7 @@
       #{olsdate,jdbcType=TIMESTAMP}, #{lsign,jdbcType=VARCHAR}, #{lsdate,jdbcType=DATE}, 
       #{depspstatus,jdbcType=INTEGER}, #{teaspstatus,jdbcType=INTEGER}, #{completestatus,jdbcType=INTEGER}, 
       #{applybegindate,jdbcType=DATE}, #{applyenddate,jdbcType=DATE}, #{cost,jdbcType=DECIMAL}, 
-      #{compstatus,jdbcType=INTEGER}, #{ispublish,jdbcType=INTEGER})
+      #{compstatus,jdbcType=INTEGER}, #{ispublish,jdbcType=INTEGER}, #{isneedgroup,jdbcType=INTEGER}, #{groupnum,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" useGeneratedKeys="true" keyProperty="comid" parameterType="com.cs.pojo.Competition" >
     insert into competition
@@ -217,6 +217,12 @@
       <if test="ispublish != null" >
         isPublish,
       </if>
+      <if test="isneedgroup != null" >
+        isNeedGroup,
+      </if>
+      <if test="groupnum != null" >
+        groupNum,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="comid != null" >
@@ -326,6 +332,12 @@
       </if>
       <if test="ispublish != null" >
         #{ispublish,jdbcType=INTEGER},
+      </if>
+      <if test="isneedgroup != null" >
+        #{isNeedGroup,jdbcType=INTEGER},
+      </if>
+      <if test="groupnum != null" >
+        #{groupNum,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -437,6 +449,12 @@
       <if test="ispublish != null" >
         isPublish = #{ispublish,jdbcType=INTEGER},
       </if>
+      <if test="isneedgroup != null" >
+        isNeedGroup = #{isneedgroup,jdbcType=INTEGER},
+      </if>
+      <if test="groupnum != null" >
+        groupNum = #{groupnum,jdbcType=INTEGER},
+      </if>
     </set>
     where comId = #{comid,jdbcType=INTEGER}
   </update>
@@ -476,7 +494,9 @@
       applyEndDate = #{applyenddate,jdbcType=DATE},
       cost = #{cost,jdbcType=DECIMAL},
       compStatus = #{compstatus,jdbcType=INTEGER},
-      isPublish = #{ispublish,jdbcType=INTEGER}
+      isPublish = #{ispublish,jdbcType=INTEGER},
+      isNeedGroup = #{isneedgroup,jdbcType=INTEGER},
+      groupNum = #{groupnum,jdbcType=INTEGER}
     where comId = #{comid,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50018
 File Encoding         : 65001
 
-Date: 2017-04-16 01:04:33
+Date: 2017-04-18 00:02:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -105,10 +105,6 @@ INSERT INTO `budget` VALUES ('2', '1', '午餐费', '300', '路途遥远，又�
 INSERT INTO `budget` VALUES ('3', '1', '早餐费', '300', '路途遥远');
 INSERT INTO `budget` VALUES ('4', '2', '车费', '600', '路途遥远');
 INSERT INTO `budget` VALUES ('5', '2', '午餐费', '600', '路途遥远');
-INSERT INTO `budget` VALUES ('6', '1', '测试1', null, null);
-INSERT INTO `budget` VALUES ('7', '1', '测试2', null, null);
-INSERT INTO `budget` VALUES ('8', '1', '测试1', null, null);
-INSERT INTO `budget` VALUES ('9', '1', '测试2', null, null);
 
 -- ----------------------------
 -- Table structure for compcondition
@@ -170,15 +166,18 @@ CREATE TABLE `competition` (
   `cost` decimal(10,0) default NULL COMMENT '报名费用',
   `compStatus` int(11) default NULL COMMENT '竞赛过程状态（比赛前，比赛中，比赛后）',
   `isPublish` int(11) default NULL COMMENT '发布状态',
+  `isNeedGroup` int(11) default NULL COMMENT '是否需要组队',
+  `groupNum` int(11) default NULL COMMENT '需要组队时，人数限制。',
   PRIMARY KEY  (`comId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of competition
 -- ----------------------------
-INSERT INTO `competition` VALUES ('1', '蓝桥杯', '1', '计算机系', '校级', '计算机系', '2017-03-15', '计算机系', '2017-04-01', '校内', '蓝桥杯是一款炫酷安林匹克竞赛', '全校学生', '10', '娇兰佳人', '实施方案是这样的', '能力训练目标是使学生学习能力更好', '目标是一等奖', '娇兰佳人同意', '娇兰佳人', '2017-03-18', '计算机系举办单位同意', '林树青', '2017-03-18', '教学处同意', '林教学', '2017-03-18 20:56:33', '邱珍珍', '2017-03-18', '1', '1', '1', '2017-03-18', '2017-03-31', '100', '1', '1');
-INSERT INTO `competition` VALUES ('2', '艺术杯', '2', '艺术系', '省级', '艺术系', '2017-03-13', '艺术系', '2017-04-01', '大学城', '艺术杯旨在培养大学生艺术感', '艺术系学生', '10', '娇兰佳人', '实施方案是这样的', '能力训练目标是使学生学习能力更好', '目标是一等奖', '娇兰佳人同意', '娇兰佳人', '2017-03-18', '艺术系举办单位同意', '林小树', '2017-03-18', '', '', '2017-03-18 20:56:57', '吴广裕', '2017-03-18', '1', '0', '0', '2017-03-18', '2017-03-23', '100', '1', '1');
-INSERT INTO `competition` VALUES ('3', '文化杯', '3', '经济系', '校级', '经济系', '2017-03-13', '经济系', '2017-04-01', '校内', '文化杯培养文化水平', '全校学生', '10', '娇兰佳人', '实施方案是这样的', '能力训练目标是使学生学习能力更好', '目标是一等奖', '娇兰佳人同意', '娇兰佳人', '2017-03-18', '经济系举办单位同意', '林大树', '2017-03-18', '', '', null, '吴明珠', '2017-03-18', '1', '0', '0', null, null, null, '0', '0');
+INSERT INTO `competition` VALUES ('1', '蓝桥杯', '1', '计算机系', '校级', '计算机系', '2017-03-15', '计算机系', '2017-04-01', '校内', '蓝桥杯是一款炫酷安林匹克竞赛', '全校学生', '10', '娇兰佳人', '实施方案是这样的', '能力训练目标是使学生学习能力更好', '目标是一等奖', '娇兰佳人同意', '娇兰佳人', '2017-03-18', '计算机系举办单位同意', '林树青', '2017-03-18', '教学处同意', '林教学', '2017-03-18 20:56:33', '邱珍珍', '2017-03-18', '1', '1', '1', '2017-03-18', '2017-03-31', '100', '1', '1', null, null);
+INSERT INTO `competition` VALUES ('2', '艺术杯', '2', '艺术系', '省级', '艺术系', '2017-03-13', '艺术系', '2017-04-01', '大学城', '艺术杯旨在培养大学生艺术感', '艺术系学生', '10', '娇兰佳人', '实施方案是这样的', '能力训练目标是使学生学习能力更好', '目标是一等奖', '娇兰佳人同意', '娇兰佳人', '2017-03-18', '艺术系举办单位同意', '林小树', '2017-03-18', '', '', '2017-03-18 20:56:57', '吴广裕', '2017-03-18', '1', '0', '0', '2017-03-18', '2017-03-23', '100', '1', '1', null, null);
+INSERT INTO `competition` VALUES ('3', '文化杯', '3', '经济系', '校级', '经济系', '2017-03-13', '经济系', '2017-04-01', '校内', '文化杯培养文化水平', '全校学生', '10', '娇兰佳人', '实施方案是这样的', '能力训练目标是使学生学习能力更好', '目标是一等奖', '娇兰佳人同意', '娇兰佳人', '2017-03-18', '经济系举办单位同意', '林大树', '2017-03-18', '', '', null, '吴明珠', '2017-03-18', '1', '0', '0', null, null, null, '0', '0', null, null);
+INSERT INTO `competition` VALUES ('4', '那个啥赛改一下', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for conditions
@@ -228,17 +227,18 @@ CREATE TABLE `groups` (
   `teacherNo` int(11) default NULL COMMENT '指导老师',
   `studentNo` int(11) default NULL COMMENT '学生',
   `status` int(11) default NULL COMMENT '报名状态(等待审核0，报名成功1，报名失败2)',
+  `captainStatus` int(11) default NULL COMMENT '队长审批状态(0未审核1同意2不同意)',
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of groups
 -- ----------------------------
-INSERT INTO `groups` VALUES ('1', '1', '1', '火星组', '1', '1', '1');
-INSERT INTO `groups` VALUES ('2', '2', '1', '木星组', '1', '8', '1');
-INSERT INTO `groups` VALUES ('3', '3', '1', '地球组', '1', '9', '1');
-INSERT INTO `groups` VALUES ('4', '4', '2', '超艺术', '5', '5', '1');
-INSERT INTO `groups` VALUES ('5', '1', '1', '火星组', '1', '2', '1');
+INSERT INTO `groups` VALUES ('1', '1', '1', '火星组', '1', '1', '1', null);
+INSERT INTO `groups` VALUES ('2', '2', '1', '木星组', '1', '8', '1', null);
+INSERT INTO `groups` VALUES ('3', '3', '1', '地球组', '1', '9', '1', null);
+INSERT INTO `groups` VALUES ('4', '4', '2', '超艺术', '5', '5', '1', null);
+INSERT INTO `groups` VALUES ('5', '1', '1', '火星组', '1', '2', '1', null);
 
 -- ----------------------------
 -- Table structure for guideteacher
