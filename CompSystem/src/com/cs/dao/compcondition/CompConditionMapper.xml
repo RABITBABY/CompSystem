@@ -50,4 +50,20 @@
       </if>
     </trim>
   </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cs.pojo.CompCondition" >
+    update compcondition
+    <set >
+      <if test="comid != null" >
+       comId=#{comid,jdbcType=INTEGER},
+      </if>
+      <if test="conditionid != null" >
+        conditionId=#{conditionid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <delete id="deleteByComId" parameterType="java.lang.Integer">
+        delete from compcondition where comId=#{comId}
+  </delete>
 </mapper>
