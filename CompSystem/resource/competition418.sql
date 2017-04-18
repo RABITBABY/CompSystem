@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50018
 File Encoding         : 65001
 
-Date: 2017-04-18 00:20:04
+Date: 2017-04-18 21:28:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -72,6 +72,7 @@ CREATE TABLE `awards` (
   `prizeName` varchar(11) default NULL COMMENT '获奖等级',
   `groupsNo` int(11) default NULL COMMENT '获奖组别',
   `awardsImg` varchar(255) default NULL COMMENT '获奖证书照片',
+  `awardTime` date default NULL COMMENT '获奖时间',
   `isPublish` int(11) default NULL COMMENT '发布状态',
   PRIMARY KEY  (`awardsId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -79,10 +80,10 @@ CREATE TABLE `awards` (
 -- ----------------------------
 -- Records of awards
 -- ----------------------------
-INSERT INTO `awards` VALUES ('1', '1', '一等奖', '1', null, '1');
-INSERT INTO `awards` VALUES ('2', '1', '二等奖', '2', null, '1');
-INSERT INTO `awards` VALUES ('3', '1', '三等奖', '3', null, '0');
-INSERT INTO `awards` VALUES ('4', '2', '三等奖', '4', null, '1');
+INSERT INTO `awards` VALUES ('1', '1', '一等奖', '1', null, null, '1');
+INSERT INTO `awards` VALUES ('2', '1', '二等奖', '2', null, null, '1');
+INSERT INTO `awards` VALUES ('3', '1', '三等奖', '3', null, null, '0');
+INSERT INTO `awards` VALUES ('4', '2', '三等奖', '4', null, null, '1');
 
 -- ----------------------------
 -- Table structure for budget
@@ -235,11 +236,11 @@ CREATE TABLE `groups` (
 -- ----------------------------
 -- Records of groups
 -- ----------------------------
-INSERT INTO `groups` VALUES ('1', '1', '1', '火星组', '1', '1', '1', null, null);
-INSERT INTO `groups` VALUES ('2', '2', '1', '木星组', '1', '8', '1', null, null);
-INSERT INTO `groups` VALUES ('3', '3', '1', '地球组', '1', '9', '1', null, null);
-INSERT INTO `groups` VALUES ('4', '4', '2', '超艺术', '5', '5', '1', null, null);
-INSERT INTO `groups` VALUES ('5', '1', '1', '火星组', '1', '2', '1', null, null);
+INSERT INTO `groups` VALUES ('1', '1', '1', '火星组', '1', '1', '1', '1', '1');
+INSERT INTO `groups` VALUES ('2', '2', '1', '木星组', '1', '8', '1', '1', '1');
+INSERT INTO `groups` VALUES ('3', '3', '1', '地球组', '1', '9', '1', '1', '1');
+INSERT INTO `groups` VALUES ('4', '4', '2', '超艺术', '5', '5', '1', '1', '1');
+INSERT INTO `groups` VALUES ('5', '1', '1', '火星组', '1', '2', '1', '1', '0');
 
 -- ----------------------------
 -- Table structure for guideteacher

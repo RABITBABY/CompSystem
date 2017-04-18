@@ -1,5 +1,7 @@
 package com.cs.pojo;
 
+import java.util.Date;
+
 public class Awards {
     private Integer awardsid;
 
@@ -8,6 +10,8 @@ public class Awards {
     private String prizename;
 
     private Integer groupsno;
+    
+    private Date awardtime;
 
     private Integer ispublish;
 
@@ -50,4 +54,14 @@ public class Awards {
     public void setIspublish(Integer ispublish) {
         this.ispublish = ispublish;
     }
+
+	public Date getAwardtime() {
+		return awardtime;
+	}
+
+	public void setAwardtime(Date awardtime) {
+		this.awardtime = awardtime;
+	}
+    
+    
 }

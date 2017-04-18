@@ -7,13 +7,14 @@
     <result column="prizeName" property="prizename" jdbcType="VARCHAR" />
     <result column="groupsNo" property="groupsno" jdbcType="INTEGER" />
     <result column="isPublish" property="ispublish" jdbcType="INTEGER" />
+    <result column="awardTime" property="awardtime" jdbcType="DATE" />
   </resultMap>
   <sql id="Base_Column_List" >
-    awardsId, comId, prizeName, groupsNo, isPublish
+    awardsId, comId, prizeName, groupsNo, isPublish,awardTime
   </sql>
   <!-- 查找学生获奖情况 -->
   <select id="selectAwardsByStuNo" resultType="java.util.HashMap" parameterType="java.lang.Integer" >
-    select g.groupsNo,g.groupsName,g.comId,a.prizeName,a.awardsImg,c.comName
+    select g.groupsNo,g.groupsName,g.comId,a.prizeName,a.awardsImg,c.comName,a.awardTime
 	from groups g
 	INNER JOIN awards a
 	on g.groupsNo=a.groupsNo
@@ -34,9 +35,9 @@
   </delete>
   <insert id="insert" useGeneratedKeys="true" parameterType="com.cs.pojo.Awards" >
     insert into awards (awardsId, comId, prizeName, 
-      groupsNo, isPublish)
+      groupsNo,awardTime, isPublish)
     values (#{awardsid,jdbcType=INTEGER}, #{comid,jdbcType=INTEGER}, #{prizename,jdbcType=VARCHAR}, 
-      #{groupsno,jdbcType=INTEGER}, #{ispublish,jdbcType=INTEGER})
+      #{groupsno,jdbcType=INTEGER}, #{awardtime,jdbcType=DATE}, #{ispublish,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" useGeneratedKeys="true" parameterType="com.cs.pojo.Awards" >
     insert into awards
@@ -52,6 +53,9 @@
       </if>
       <if test="groupsno != null" >
         groupsNo,
+      </if>
+      <if test="awardtime != null" >
+        awardTime,
       </if>
       <if test="ispublish != null" >
         isPublish,
@@ -70,6 +74,9 @@
       <if test="groupsno != null" >
         #{groupsno,jdbcType=INTEGER},
       </if>
+      <if test="awardtime != null" >
+        #{awardtime,jdbcType=DATE},
+      </if>
       <if test="ispublish != null" >
         #{ispublish,jdbcType=INTEGER},
       </if>
@@ -87,6 +94,9 @@
       <if test="groupsno != null" >
         groupsNo = #{groupsno,jdbcType=INTEGER},
       </if>
+      <if test="awardtime != null" >
+        awardTime = #{awardtime,jdbcType=INTEGER},
+      </if>
       <if test="ispublish != null" >
         isPublish = #{ispublish,jdbcType=INTEGER},
       </if>
@@ -98,6 +108,7 @@
     set comId = #{comid,jdbcType=INTEGER},
       prizeName = #{prizename,jdbcType=VARCHAR},
       groupsNo = #{groupsno,jdbcType=INTEGER},
+      awardTime = #{awardtime,jdbcType=INTEGER},
       isPublish = #{ispublish,jdbcType=INTEGER}
     where awardsId = #{awardsid,jdbcType=INTEGER}
   </update>
