@@ -11,5 +11,16 @@ public interface GroupsService {
 	 * @return
 	 */
 	public List<Groups> getCompGroups(Integer comId);
+	
+	/**
+	 * 通过id删除，即退出队伍
+	 */
+	public void outGroups(Integer id);
+	
+	/**
+	 * 创建队伍
+	 * @param groups
+	 */
+	public void createGroups(Groups groups);
 
 }

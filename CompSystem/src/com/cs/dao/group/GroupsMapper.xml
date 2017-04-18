@@ -42,6 +42,11 @@
 	on g.studentNo =s.studentNo
 	where g.groupsNo=#{groupsNo,jdbcType=INTEGER}
   </select>
+  <!-- 查找最大的groupsNo -->
+  <select id="selectMaxGroupsNo"  resultType="java.lang.Integer">
+    select MAX(groupsNo)
+    from groups
+  </select>
   <!-- 修改教师审批状态 -->
   <update id="updateStatus" parameterType="com.cs.pojo.Groups" >
     update groups
@@ -58,6 +63,10 @@
   <delete id="deleteByGroupsNo" parameterType="java.lang.Integer" >
     delete from groups
     where groupsNo = #{groupsno,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByid" parameterType="java.lang.Integer" >
+    delete from groups
+    where id = #{id,jdbcType=INTEGER}
   </delete>
   <!-- 插入 -->
   <insert id="insert" useGeneratedKeys="true" parameterType="com.cs.pojo.Groups" >

@@ -41,7 +41,7 @@ public class StudentController {
 	 *   1.4报名竞赛
 	 *      1.4.0获取所有队伍的信息√
 	 *      1.4.1加入一个队伍.√
-	 *          1.4.1.2取消加入队伍.(当队长长时间没有审核时，可取消加入队伍)
+	 *          1.4.1.2取消加入队伍.(当队长长时间没有审核时，可取消加入队伍)√
 	 *      1.4.2创建队伍。(当不需要组队时。为一人一组)
 	 *      1.4.3查找该竞赛所有指导老师。
 	 *      1.4.4队长审核加入的成员
@@ -142,6 +142,17 @@ public class StudentController {
 	 @RequestMapping("/joinGroup")
 	 public void joinGroup(Integer groupsNo,Integer studentNo){
 		 studentService.joinGroup(groupsNo, studentNo);
+	 }
+	 
+	 /**
+	  * 1.4.1.2取消加入队伍.(当队长长时间没有审核时，可取消加入队伍)
+	  * 通过group表主键删除
+	  * @return
+	  */
+	 @ResponseBody
+	 @RequestMapping("/outGroup")
+	 public void outGroup(Integer id){
+		 groupsService.outGroups(id);
 	 }
 	 
 	/**

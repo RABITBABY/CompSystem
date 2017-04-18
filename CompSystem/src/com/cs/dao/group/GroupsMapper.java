@@ -21,9 +21,14 @@ public interface GroupsMapper {
 	//修改队伍状态
 	int updateStatus(Groups groups);
 	
+	//根据groupsno删除
     int deleteByGroupsNo(Integer groupsno);
+    //根据id删除
+    int deleteByid(Integer id);
     //插入
     int insert(Groups record);
+    //查找最大的groupsNo
+    int selectMaxGroupsNo();
 
     int insertSelective(Groups record);
 
