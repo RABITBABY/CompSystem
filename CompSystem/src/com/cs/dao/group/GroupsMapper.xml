@@ -18,7 +18,7 @@
   
   <!-- 查找学生所报名的竞赛 -->
   <select id="selectByStuNo" resultType="java.util.HashMap" parameterType="java.lang.Integer" >
-    select g.studentNo,g.comId,g.groupsNo,g.groupsName,g.status,t.teacherName,c.comName
+    select g.studentNo,g.comId,g.groupsNo,g.groupsName,g.status,g.captainstatus,t.teacherName,c.comName
     from groups g
     INNER JOIN competition c
     on g.comId=c.comId
