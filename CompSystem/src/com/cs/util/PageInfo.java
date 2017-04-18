@@ -4,8 +4,24 @@ import java.util.List;
 
 public class PageInfo {
 
-	private int total;
-	private List list;
+	private int total;//总页数
+	private List list;//集合
+	private int index;//当前页
+	private int pageSize;//每页多少条
+	
+	
+	public int getPageSize() {
+		return pageSize;
+	}
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
+	}
+	public int getIndex() {
+		return index;
+	}
+	public void setIndex(int index) {
+		this.index = index;
+	}
 	public int getTotal() {
 		return total;
 	}

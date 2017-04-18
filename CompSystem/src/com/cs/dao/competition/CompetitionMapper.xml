@@ -499,4 +499,17 @@
       groupNum = #{groupnum,jdbcType=INTEGER}
     where comId = #{comid,jdbcType=INTEGER}
   </update>
+  
+  
+  <!--Max  -->
+  <select id="selectByAdmin" resultType="Map" parameterType="Map" >
+     select com.*,t.teacherName,t.gender,t.department,t.phone,t.email  from competition com,teacher t
+    where com.teacherNo=t.teacherNo
+		and com.applyEndDate>=now()
+	ORDER BY com.applyEndDate desc limit #{page},#{pageSize}
+  </select>
+  
+   <select id="getTotal" resultType="int" >
+  	select COUNT(*) from competition   where applyEndDate>=now()
+	</select>
 </mapper>

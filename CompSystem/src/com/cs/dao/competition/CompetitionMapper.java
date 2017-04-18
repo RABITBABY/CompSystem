@@ -1,6 +1,7 @@
 package com.cs.dao.competition;
 
 import java.util.List;
+import java.util.Map;
 
 import com.cs.pojo.Competition;
 
@@ -23,4 +24,8 @@ public interface CompetitionMapper {
     int updateByPrimaryKeySelective(Competition record);
 
     int updateByPrimaryKey(Competition record);
+    
+    //max
+    List<Map<String,Object>> selectByAdmin(Map map);
+    int getTotal();
 }

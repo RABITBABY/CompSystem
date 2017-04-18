@@ -2,8 +2,11 @@ package com.cs.controller.admin;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,50 +15,96 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
+import com.cs.pojo.Competition;
 import com.cs.pojo.FileUpload;
 import com.cs.service.administer.AdministerServiceImpl;
 import com.cs.service.article.ArticleServiceImpl;
 import com.cs.service.fileUpload.FileUploadService;
+import com.cs.util.PageInfo;
+import com.cs.util.ParamUtil;
 
 
 
 @Controller
 @RequestMapping("/admin")
 public class AdministerController {
-	
-	@Autowired
-	ArticleServiceImpl articlImpl;
-	
+
 	@Autowired
 	AdministerServiceImpl adminImpl;
 	
-	@Autowired
-	FileUploadService fileImpl;
+	
+	
 	
 	/**
-	 * 获取不同类型的文章---前台需要传递一个参数type--文章类型
-	 * @param request
+	 * 获取近期的竞赛（可以报名）
+	 * @param type
 	 * @return
-	 *//*
+	 */
 	@ResponseBody
-	@RequestMapping("/article")
-	public  List<Article> findByType(int type) {
-		if(request.getParameter("type")!=null){
-			
-			int type=Integer.parseInt(request.getParameter("type"));
-			System.out.println("---------------type"+type);
-		}
-		List<Article> articles=articlImpl.findByType(type);
-		for (Article a : articles	) {
-			System.out.println(a);
-		}
-		return articles;
-	}*/
+	@RequestMapping("/CompetionList")
+	public  Map CompetitionList(String department,String time,String index,String pageSize) {
+		Map<String ,Object> resultMap=new HashMap<String, Object>();
+		Map<String ,Object> param=new HashMap<String, Object>();
+		department=ParamUtil.getStr(department, "");
+		time=ParamUtil.getStr(time, "");
+		index=ParamUtil.getStr(index, "1");
+		pageSize=ParamUtil.getStr(pageSize, "10");
+		int page=(Integer.parseInt(index)-1)*Integer.parseInt(pageSize);
+		param.put("department", department);
+		param.put("time", time);	
+		param.put("index", index);	
+		param.put("page", page);	
+		param.put("pageSize", pageSize);	
+		
+		PageInfo pageInfo=new PageInfo();
+		
+		pageInfo=adminImpl.CompetitionList(param);
+		
+		resultMap.put("comPageInfo", pageInfo);
+		System.out.println(param+"\n"+resultMap);
+		
+		return resultMap;
+	}
+	
+	/**
+	 * 分页根据文章类型找到相关文章
+	 * @param type 文章类型
+	 * @param page 页数
+	 * @param pageSize 每页数量 
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value="/article", method = RequestMethod.GET)
+	public  Map findArticleByType(String type,String index,String pageSize) {
+		
+		Map<String,Object> result=new HashMap<String, Object>();
+		Map<String,Object> param=new HashMap<String, Object>();
+		
+		
+		type=ParamUtil.getStr(type, "1");
+		index=ParamUtil.getStr(index, "1");
+		pageSize=ParamUtil.getStr(pageSize, "10");
+		
+		
+		param.put("type", type);
+		param.put("index", index);
+		param.put("pageSize",pageSize);
+		
+		PageInfo pageInfo=adminImpl.getArticleList(param);
+		result.put("articlePageInfo",pageInfo );
+		return result;
+	}
+	
+	
+	
+	
+
 	
 	@RequestMapping("/saveArticle")
 	public void saveArticle(){
@@ -109,7 +158,7 @@ public class AdministerController {
                 fileUpload.setFilename(fileName);
                 fileUpload.setUploaduserno(adminNo);
                 System.out.println(fileUpload);
-               int insertStatue= fileImpl.insertFile(fileUpload);
+               int insertStatue= adminImpl.insertFile(fileUpload);
                if(insertStatue>0){
             	   statueCode="1";
                }
@@ -117,6 +166,30 @@ public class AdministerController {
 		}
         return statueCode;
 	}
+	
+	
+	/**
+	 * 优秀作品列表
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	
+	
+	/**
+	 * 上传优秀作品
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping("/uploadProduction")
+	public Map uploadProduction(HttpServletRequest request,HttpServletResponse response){
+		
+		
+		return null;
+	}
+	
+	
 	
 	
 	
