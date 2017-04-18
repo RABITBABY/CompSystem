@@ -18,7 +18,7 @@ public class ArticleServiceImpl implements ArticleService {
 
 
 	@Override
-	public PageInfo getMtypeList(Map<String,Object> map) {
+	public PageInfo getMtypeList(Map map) {
 		int indexpage=Integer.parseInt(map.get("page").toString());
 		int pageSize=Integer.parseInt(map.get("pageSize").toString());
 		indexpage=(indexpage-1)*pageSize;
@@ -30,6 +30,8 @@ public class ArticleServiceImpl implements ArticleService {
 		PageInfo page=new PageInfo();
 		page.setList(list);
 		page.setTotal(total);
+		//page.setIndex((Integer)map.get("index"));
+		
 		return page;
 	}
 
