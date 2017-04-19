@@ -9,6 +9,7 @@ import com.cs.pojo.Conditions;
 import com.cs.pojo.Groups;
 import com.cs.pojo.Material;
 import com.cs.pojo.Student;
+import com.cs.pojo.Teacher;
 
 public interface StudentService {
 	
@@ -53,4 +54,18 @@ public interface StudentService {
 	 * @return
 	 */
 	void joinGroup(Integer groupsNo,Integer studentNo);
+	
+	/**
+	 * 获取该竞赛的指导老师
+	 * @param comId
+	 * @return
+	 */
+	List<Teacher> getCompGuideTeacher(Integer comId);
+	
+	/**
+	 * 队长审批意见
+	 * @param comId
+	 * @return
+	 */
+	void setCaptainStatus(Groups groups);
 }

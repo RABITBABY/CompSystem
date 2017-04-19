@@ -7,6 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.cs.pojo.Groups;
 import com.cs.pojo.Student;
 import com.cs.service.student.StudentService;
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -18,6 +19,14 @@ public class TestStudentService extends AbstractJUnit4SpringContextTests {
 	@Test
 	public void testJoinGroup(){
 		studentService.joinGroup(1, 7);
+	}
+	
+	@Test
+	public void testGroupsCaptainStatus(){
+		Groups groups=new Groups();
+		groups.setId(5);
+		groups.setCaptainstatus(2);
+		studentService.setCaptainStatus(groups);
 	}
 	
 }

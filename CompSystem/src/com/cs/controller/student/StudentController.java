@@ -24,6 +24,7 @@ import com.cs.pojo.Conditions;
 import com.cs.pojo.Groups;
 import com.cs.pojo.Material;
 import com.cs.pojo.Student;
+import com.cs.pojo.Teacher;
 import com.cs.service.condition.ConditionService;
 import com.cs.service.groups.GroupsService;
 import com.cs.service.student.StudentService;
@@ -42,9 +43,9 @@ public class StudentController {
 	 *      1.4.0获取所有队伍的信息√
 	 *      1.4.1加入一个队伍.√
 	 *          1.4.1.2取消加入队伍.(当队长长时间没有审核时，可取消加入队伍)√
-	 *      1.4.2创建队伍。(当不需要组队时。为一人一组)
-	 *      1.4.3查找该竞赛所有指导老师。
-	 *      1.4.4队长审核加入的成员
+	 *      1.4.2创建队伍。(当不需要组队时。为一人一组)√
+	 *      1.4.3查找该竞赛所有指导老师。√
+	 *      1.4.4队长审核加入的成员√
 	 * 2.查看报名结果√
 	 *     报名结果：即xx竞赛  等待队长审核  等待老师审核
 	 * 3.缴纳比赛费用
@@ -154,6 +155,37 @@ public class StudentController {
 	 public void outGroup(Integer id){
 		 groupsService.outGroups(id);
 	 }
+	 
+	 /**
+	  * 1.4.2创建队伍。(当不需要组队时。为一人一组)
+	  * @return
+	  */
+	 @ResponseBody
+	 @RequestMapping("/createGroup")
+	 public void createGroup(Groups groups){
+		 groupsService.createGroups(groups);
+	 }
+	 
+	 /**
+	  * 1.4.3查找该竞赛所有指导老师。
+	  * 通过group表主键删除
+	  * @return
+	  */
+	 @ResponseBody
+	 @RequestMapping("/getCompGuideTeacher")
+	 public List<Teacher> getCompGuideTeacher(Integer comId){
+		 return studentService.getCompGuideTeacher(comId);
+	 }
+	 /**
+	  * 1.4.4队长审核加入的成员
+	  * @return
+	  */
+	 @ResponseBody
+	 @RequestMapping("/setCaptainStatus")
+	 public void setCaptainStatus(Groups groups){
+		 studentService.setCaptainStatus(groups);
+	 }
+	 
 	 
 	/**
 	 * 2.查看报名结果

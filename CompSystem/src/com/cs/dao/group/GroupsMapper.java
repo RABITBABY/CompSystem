@@ -21,6 +21,9 @@ public interface GroupsMapper {
 	//修改队伍状态
 	int updateStatus(Groups groups);
 	
+	//修改队长意见
+	int updateCaptainStatus(Groups groups);
+	
 	//根据groupsno删除
     int deleteByGroupsNo(Integer groupsno);
     //根据id删除

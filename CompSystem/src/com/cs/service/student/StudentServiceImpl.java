@@ -11,6 +11,7 @@ import com.cs.dao.awards.AwardsMapper;
 import com.cs.dao.compcondition.CompConditionMapper;
 import com.cs.dao.condition.ConditionsMapper;
 import com.cs.dao.group.GroupsMapper;
+import com.cs.dao.guideteacher.GuideTeacherMapper;
 import com.cs.dao.material.MaterialMapper;
 import com.cs.dao.student.StudentMapper;
 import com.cs.pojo.Awards;
@@ -19,6 +20,7 @@ import com.cs.pojo.Conditions;
 import com.cs.pojo.Groups;
 import com.cs.pojo.Material;
 import com.cs.pojo.Student;
+import com.cs.pojo.Teacher;
 
 
 @Service("studentService")
@@ -38,6 +40,9 @@ public class StudentServiceImpl implements StudentService {
 	
 	@Autowired
 	private CompConditionMapper compConditionMapper;
+	
+	@Autowired
+	private GuideTeacherMapper guideTeacherMapper;
 
 	@Override
 	public Student selectByNo(int studentNo) {
@@ -84,6 +89,16 @@ public class StudentServiceImpl implements StudentService {
 		groups.setIscaptain(0);
 		groups.setCaptainstatus(0);//队长未审核
 		groupsMapper.insert(groups);
+	}
+
+	@Override
+	public List<Teacher> getCompGuideTeacher(Integer comId) {
+		return guideTeacherMapper.selectComId(comId);
+	}
+
+	@Override
+	public void setCaptainStatus(Groups groups) {
+		groupsMapper.updateCaptainStatus(groups);
 	}
 
 	
