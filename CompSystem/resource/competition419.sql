@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50018
 File Encoding         : 65001
 
-Date: 2017-04-18 21:28:45
+Date: 2017-04-19 20:02:02
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -333,6 +333,7 @@ CREATE TABLE `production` (
   `membersName` varchar(255) default NULL COMMENT '组员名称',
   `introduction` text COMMENT '作品介绍',
   `pic` varchar(255) default NULL COMMENT '作品图片',
+  `createDate` date default NULL COMMENT '上传日期日期',
   PRIMARY KEY  (`proId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
