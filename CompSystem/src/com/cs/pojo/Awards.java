@@ -11,6 +11,8 @@ public class Awards {
 
     private Integer groupsno;
     
+    private String awardsimg;
+    
     private Date awardtime;
 
     private Integer ispublish;
@@ -61,6 +63,14 @@ public class Awards {
 
 	public void setAwardtime(Date awardtime) {
 		this.awardtime = awardtime;
+	}
+
+	public String getAwardsimg() {
+		return awardsimg;
+	}
+
+	public void setAwardsimg(String awardsimg) {
+		this.awardsimg = awardsimg;
 	}
     
     

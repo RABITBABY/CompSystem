@@ -1,9 +1,13 @@
 package com.cs.controller.teacher;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 
@@ -15,6 +19,9 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cs.pojo.Awards;
@@ -23,6 +30,7 @@ import com.cs.pojo.Competition;
 import com.cs.pojo.Department;
 import com.cs.pojo.Groups;
 import com.cs.pojo.Hours;
+import com.cs.pojo.Material;
 import com.cs.pojo.Schedule;
 import com.cs.pojo.Student;
 import com.cs.pojo.Teacher;
@@ -210,9 +218,34 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/setCompResult")
-	public boolean setCompResult(Awards awards) {
-		return teacherService.setCompResult(awards);
+	public void setCompResult(HttpServletRequest request,Awards awards) throws IllegalStateException, IOException{
+		//将当前上下文初始化给CommonsMultipartResolver（多部分解析器）
+				CommonsMultipartResolver multipartResolver=new CommonsMultipartResolver(
+						request.getSession().getServletContext());
+				//检查表单是否有enctype="multipart/form-data"属性
+				if(multipartResolver.isMultipart(request)){
+					//将request变成多部分request
+					MultipartHttpServletRequest multiRquest=(MultipartHttpServletRequest)request;
+					//获取multiRquest的所有文件名
+					Iterator iter=multiRquest.getFileNames();
+					while (iter.hasNext()) {
+						//一次遍历所有文件
+						MultipartFile file=multiRquest.getFile(iter.next().toString());
+						if(file!=null){//文件不为空
+							String imageName=awards.getAwardsid().toString()+System.currentTimeMillis();
+							//上传的位置-----------------------------------------
+							String path=request.getSession().getServletContext().getRealPath(File.separator)+"fileUpload\\awards\\"+imageName;
+							//上传
+							file.transferTo(new File(path));
+							
+							//保存进数据库
+							awards.setAwardsimg(imageName);
+							teacherService.setCompResult(awards);
+						}
+					}
+				}
 	}
+		
 
 	/**
 	 * 5.导出申报表
