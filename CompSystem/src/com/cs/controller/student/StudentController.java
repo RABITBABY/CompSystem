@@ -9,17 +9,25 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.cs.dao.awards.AwardsMapper;
 import com.cs.dao.material.MaterialMapper;
+import com.cs.pojo.Awards;
 import com.cs.pojo.Conditions;
 import com.cs.pojo.Groups;
 import com.cs.pojo.Material;
@@ -50,7 +58,7 @@ public class StudentController {
 	 *     报名结果：即xx竞赛  等待队长审核  等待老师审核
 	 * 3.缴纳比赛费用
 	 * 4.查询获奖情况√
-	 * 5.下载相关文件（获奖证书）
+	 * 5.下载相关文件（获奖证书）√
 	 * 6.查看个人信息。√
 	 *   6.1修改个人信息。√
 	 */
@@ -62,6 +70,8 @@ public class StudentController {
 	private MaterialMapper materialMapper;
 	@Autowired
 	private GroupsService groupsService;
+	@Autowired
+	private AwardsMapper awardsMapper;
 	
 	/**
 	 * 1.1 获取该竞赛所需的条件
@@ -106,15 +116,16 @@ public class StudentController {
 			while (iter.hasNext()) {
 				//一次遍历所有文件
 				MultipartFile file=multiRquest.getFile(iter.next().toString());
+				//String file.getOriginalFilename().split(".");
 				if(file!=null){//文件不为空
 					String imageName=material.getStudentno().toString()+System.currentTimeMillis();
 					//上传的位置-----------------------------------------
-					String path=request.getSession().getServletContext().getRealPath(File.separator)+"fileUpload\\material\\"+imageName;
+					String path=request.getSession().getServletContext().getRealPath(File.separator)+"fileUpload\\material\\"+imageName+".jpg";
 					//上传
 					file.transferTo(new File(path));
 					
 					//保存进数据库
-					material.setMaterialpic(imageName);
+					material.setMaterialpic(imageName+".jpg");
 					materialMapper.insert(material);
 				}
 			}
@@ -201,16 +212,37 @@ public class StudentController {
 	}
 	
 	/**
-	 * 3.缴纳比赛费用
+	 * 3.查询获奖情况
 	 * @return
 	 */
 	@ResponseBody
 	@RequestMapping("/getAwards")
-	public Map<String, Object> getAwards(){
-		Map<String, Object> map=new HashMap<String, Object>();
-		map.put("stuAwards", studentService.selectAwardsByStudentNo(1));
-		return map;
+	public List<Map<String, Object>> getAwards(){
+		return  studentService.selectAwardsByStudentNo(1);
 	}
+	
+	/**
+	 * 5.下载文件。获奖证书
+	 * @return
+	 */
+	@RequestMapping("/downloadAwards")    
+    public ResponseEntity<byte[]> downloadAwards(HttpServletRequest request,Awards awards) throws IOException {    
+    	//文件所在的位置
+        String path=request.getSession().getServletContext().getRealPath(File.separator)+"fileUpload\\awards\\"+awards.getAwardsimg();  
+
+        File file=new File(path);  
+
+        HttpHeaders headers = new HttpHeaders();    
+
+        String fileName=new String(awards.getAwardsimg().getBytes("UTF-8"),"iso-8859-1");
+
+        headers.setContentDispositionFormData("attachment", fileName);   
+
+        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);   
+
+        return new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(file), headers, HttpStatus.CREATED);    
+
+    } 
 	
 	
 	/**

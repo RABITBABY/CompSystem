@@ -42,6 +42,12 @@
 	 <input  type="text" name="budgets[1].subject" value="午餐"/>
 	 <input  type="submit" value="提交内容"/>
 	</form>
+	
+	<!-- 下载awards -->
+	<form name="Form4" action="<%=path%>/student/downloadAwards" method="post">
+	 <input  type="text" name="awardsimg" value="1.jpg"/>
+	 <input  type="submit" value="下载"/>
+	</form>
 </body>
 </html>
 
