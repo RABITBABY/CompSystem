@@ -56,6 +56,9 @@ public class TeacherController {
 	 * 4.查看已经结束的竞赛。√ 
 	 *   4.1）反馈竞赛结果 √ 
 	 * 5.导出申报表√
+	 * 6.审批员的功能
+	 *    6.1系主任审批申报书√
+	 *    6.2教学处审批申报书√
 	 */
 
 	@Autowired
@@ -260,5 +263,27 @@ public class TeacherController {
 	@RequestMapping(value = "/getAprroveTable")
 	public boolean getAprroveTable() {
 		return teacherService.createWord(1);
+	}
+	
+	/**
+	 * 6.1系主任审批申报书
+	 * @param comId
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/updateCompStatusByDept")
+	public void updateCompStatusByDept(Competition comp) {
+		teacherService.updateCompStatusByDept(comp);
+	}
+	
+	/**
+	 * 6.2教学处审批申报书
+	 * @param comId
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/updateCompStatusByTea")
+	public void updateCompStatusByTea(Competition comp) {
+		teacherService.updateCompStatusByTea(comp);
 	}
 }

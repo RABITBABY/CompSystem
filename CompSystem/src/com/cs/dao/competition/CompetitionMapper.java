@@ -9,6 +9,12 @@ public interface CompetitionMapper {
 	/*根据状态查找竞赛。比如，所有通过申报的竞赛*/
 	List<Competition> selectBySpStatus(Competition competition);
 	
+	/*系主任审批*/
+	int updateByDeptAdmin(Competition competition);
+	
+	/*教学处审批*/
+	int updateByTea(Competition competition);
+	
 	List<Competition> selectEndComp(Integer teacherNo);
 	
     int deleteByPrimaryKey(Integer comid);

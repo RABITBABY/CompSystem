@@ -1,6 +1,7 @@
 package com.cs.test.teacher;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Test;
@@ -57,5 +58,16 @@ public class TeacherServiceTest extends AbstractJUnit4SpringContextTests {
 		compVo.setCompetition(competition);
 		compVo.setBudgets(buList);
 		teacherService.updateComp(compVo);
+	}
+	
+	
+	@Test
+	public void updateCompStatusByDept() {
+		Competition competition=new Competition();
+		competition.setComid(1);
+		competition.setUopinion("我就是不同意");
+		competition.setDsdate(new Date());
+		competition.setDepspstatus(0);
+		teacherService.updateCompStatusByDept(competition);
 	}
 }

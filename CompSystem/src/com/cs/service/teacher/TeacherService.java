@@ -98,6 +98,19 @@ public interface TeacherService {
 	 */
 	public void updateComp(CompetitionInfoVo compVo);
 	
+	/**
+	 * 系主任审批
+	 * @param comId
+	 * @return
+	 */
+	public void updateCompStatusByDept(Competition comp);
+	
+	/**
+	 * 教学处审批
+	 * @param comId
+	 * @return
+	 */
+	public void updateCompStatusByTea(Competition comp);
 	
 	
 }

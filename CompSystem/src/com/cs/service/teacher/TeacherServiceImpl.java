@@ -270,4 +270,16 @@ public class TeacherServiceImpl implements TeacherService {
 		}
 	}
 
+	@Override
+	public void updateCompStatusByDept(Competition competition) {
+		// TODO Auto-generated method stub
+		comMapper.updateByDeptAdmin(competition);
+	}
+
+	@Override
+	public void updateCompStatusByTea(Competition competition) {
+		// TODO Auto-generated method stub
+		comMapper.updateByTea(competition);
+	}
+
 }
