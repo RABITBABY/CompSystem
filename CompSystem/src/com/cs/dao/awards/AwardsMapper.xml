@@ -5,12 +5,13 @@
     <id column="awardsId" property="awardsid" jdbcType="INTEGER" />
     <result column="comId" property="comid" jdbcType="INTEGER" />
     <result column="prizeName" property="prizename" jdbcType="VARCHAR" />
+    <result column="awardsImg" property="awardsimg" jdbcType="VARCHAR" />
     <result column="groupsNo" property="groupsno" jdbcType="INTEGER" />
     <result column="isPublish" property="ispublish" jdbcType="INTEGER" />
     <result column="awardTime" property="awardtime" jdbcType="DATE" />
   </resultMap>
   <sql id="Base_Column_List" >
-    awardsId, comId, prizeName, groupsNo, isPublish,awardTime
+    awardsId, comId, prizeName, groupsNo, isPublish,awardTime,awardsImg
   </sql>
   <!-- 查找学生获奖情况 -->
   <select id="selectAwardsByStuNo" resultType="java.util.HashMap" parameterType="java.lang.Integer" >
@@ -35,9 +36,9 @@
   </delete>
   <insert id="insert" useGeneratedKeys="true" parameterType="com.cs.pojo.Awards" >
     insert into awards (awardsId, comId, prizeName, 
-      groupsNo,awardTime, isPublish)
+      groupsNo,awardTime, isPublish,awardsImg)
     values (#{awardsid,jdbcType=INTEGER}, #{comid,jdbcType=INTEGER}, #{prizename,jdbcType=VARCHAR}, 
-      #{groupsno,jdbcType=INTEGER}, #{awardtime,jdbcType=DATE}, #{ispublish,jdbcType=INTEGER})
+      #{groupsno,jdbcType=INTEGER}, #{awardtime,jdbcType=DATE}, #{ispublish,jdbcType=INTEGER}, #{awardsimg,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" useGeneratedKeys="true" parameterType="com.cs.pojo.Awards" >
     insert into awards
@@ -53,6 +54,9 @@
       </if>
       <if test="groupsno != null" >
         groupsNo,
+      </if>
+      <if test="awardsimg != null" >
+        awardsImg,
       </if>
       <if test="awardtime != null" >
         awardTime,
@@ -74,6 +78,9 @@
       <if test="groupsno != null" >
         #{groupsno,jdbcType=INTEGER},
       </if>
+      <if test="awardsimg != null" >
+        #{awardsimg,jdbcType=VARCHAR},
+      </if>
       <if test="awardtime != null" >
         #{awardtime,jdbcType=DATE},
       </if>
@@ -94,8 +101,11 @@
       <if test="groupsno != null" >
         groupsNo = #{groupsno,jdbcType=INTEGER},
       </if>
+       <if test="awardsimg != null" >
+        awardsImg = #{awardsimg,jdbcType=VARCHAR},
+      </if>
       <if test="awardtime != null" >
-        awardTime = #{awardtime,jdbcType=INTEGER},
+        awardTime = #{awardtime,jdbcType=DATE},
       </if>
       <if test="ispublish != null" >
         isPublish = #{ispublish,jdbcType=INTEGER},
@@ -108,8 +118,31 @@
     set comId = #{comid,jdbcType=INTEGER},
       prizeName = #{prizename,jdbcType=VARCHAR},
       groupsNo = #{groupsno,jdbcType=INTEGER},
-      awardTime = #{awardtime,jdbcType=INTEGER},
+       awardsImg = #{awardsimg,jdbcType=VARCHAR},
+      awardTime = #{awardtime,jdbcType=DATE},
       isPublish = #{ispublish,jdbcType=INTEGER}
     where awardsId = #{awardsid,jdbcType=INTEGER}
   </update>
+  
+  
+  <!--  max-->
+  <select id="getAwards" parameterType="Map" resultType="Map">
+   select a.*,com.comName,g.* from awards a,competition com ,(select g.groupsNo as groupsNo , g.groupsName as groupsName, GROUP_CONCAT(s.studentName) AS groupNumber,t.teacherName as teacher from groups g  ,student s,teacher t
+	where  g.studentNo=s.studentNo and g.teacherNo=t.teacherNo
+	GROUP BY g.groupsNo )g
+	where a.comId=com.comId and a.groupsNo=g.groupsNo
+	ORDER by awardTime desc limit #{page},#{pageSize}
+  </select>
+  <select id="getAwardByID" parameterType="String" resultType="Map">
+    select a.*,com.comName,g.* from awards a,competition com ,(select g.groupsNo as groupsNo , g.groupsName as groupsName, GROUP_CONCAT(s.studentName) AS groupNumber,t.teacherName as teacher from groups g  ,student s,teacher t
+    where  g.studentNo=s.studentNo and g.teacherNo=t.teacherNo
+	GROUP BY g.groupsNo )g
+ 	where a.comId=com.comId and a.groupsNo=g.groupsNo and a.awardsId=#{awardsId}
+	
+  </select>
+  
+  <select id="getTotal" resultType="int">
+  select count(*) from awards  
+  </select>
+  
 </mapper>
