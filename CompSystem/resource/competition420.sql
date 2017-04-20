@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50018
 File Encoding         : 65001
 
-Date: 2017-04-19 20:02:02
+Date: 2017-04-20 22:47:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -80,7 +80,7 @@ CREATE TABLE `awards` (
 -- ----------------------------
 -- Records of awards
 -- ----------------------------
-INSERT INTO `awards` VALUES ('1', '1', '一等奖', '1', null, null, '1');
+INSERT INTO `awards` VALUES ('1', '1', '一等奖', '1', '1.jpg', null, '1');
 INSERT INTO `awards` VALUES ('2', '1', '二等奖', '2', null, null, '1');
 INSERT INTO `awards` VALUES ('3', '1', '三等奖', '3', null, null, '0');
 INSERT INTO `awards` VALUES ('4', '2', '三等奖', '4', null, null, '1');
@@ -161,7 +161,7 @@ CREATE TABLE `competition` (
   `lsdate` date default NULL COMMENT '负责人签字日期',
   `depSpStatus` int(11) default NULL COMMENT '系主任审批状态0,1',
   `teaSpStatus` int(11) default NULL COMMENT '教学处审批状态0,1',
-  `completeStatus` int(11) default NULL COMMENT '竞赛资料完善状态0,1',
+  `completeStatus` int(11) default NULL,
   `applyBeginDate` date default NULL COMMENT '报名开始时间',
   `applyEndDate` date default NULL COMMENT '报名结束时间',
   `cost` decimal(10,0) default NULL COMMENT '报名费用',
@@ -175,9 +175,9 @@ CREATE TABLE `competition` (
 -- ----------------------------
 -- Records of competition
 -- ----------------------------
-INSERT INTO `competition` VALUES ('1', '蓝桥杯', '1', '计算机系', '校级', '计算机系', '2017-03-15', '计算机系', '2017-04-01', '校内', '蓝桥杯是一款炫酷安林匹克竞赛', '全校学生', '10', '娇兰佳人', '实施方案是这样的', '能力训练目标是使学生学习能力更好', '目标是一等奖', '娇兰佳人同意', '娇兰佳人', '2017-03-18', '计算机系举办单位同意', '林树青', '2017-03-18', '教学处同意', '林教学', '2017-03-18 20:56:33', '邱珍珍', '2017-03-18', '1', '1', '1', '2017-03-18', '2017-03-31', '100', '1', '1', null, null);
-INSERT INTO `competition` VALUES ('2', '艺术杯', '2', '艺术系', '省级', '艺术系', '2017-03-13', '艺术系', '2017-04-01', '大学城', '艺术杯旨在培养大学生艺术感', '艺术系学生', '10', '娇兰佳人', '实施方案是这样的', '能力训练目标是使学生学习能力更好', '目标是一等奖', '娇兰佳人同意', '娇兰佳人', '2017-03-18', '艺术系举办单位同意', '林小树', '2017-03-18', '', '', '2017-03-18 20:56:57', '吴广裕', '2017-03-18', '1', '0', '0', '2017-03-18', '2017-03-23', '100', '1', '1', null, null);
-INSERT INTO `competition` VALUES ('3', '文化杯', '3', '经济系', '校级', '经济系', '2017-03-13', '经济系', '2017-04-01', '校内', '文化杯培养文化水平', '全校学生', '10', '娇兰佳人', '实施方案是这样的', '能力训练目标是使学生学习能力更好', '目标是一等奖', '娇兰佳人同意', '娇兰佳人', '2017-03-18', '经济系举办单位同意', '林大树', '2017-03-18', '', '', null, '吴明珠', '2017-03-18', '1', '0', '0', null, null, null, '0', '0', null, null);
+INSERT INTO `competition` VALUES ('1', '蓝桥杯', '1', '计算机系', '校级', '计算机系', '2017-03-15', '计算机系', '2017-04-01', '校内', '蓝桥杯是一款炫酷安林匹克竞赛', '全校学生', '10', '娇兰佳人', '实施方案是这样的', '能力训练目标是使学生学习能力更好', '目标是一等奖', '娇兰佳人同意', '娇兰佳人', '2017-03-18', '同意', '林树青', '2017-03-18', '教学处同意', '林教学', '2017-03-18 20:56:33', '邱珍珍', '2017-03-18', '1', '1', null, '2017-03-18', '2017-03-31', '100', '1', '1', null, null);
+INSERT INTO `competition` VALUES ('2', '艺术杯', '2', '艺术系', '省级', '艺术系', '2017-03-13', '艺术系', '2017-04-01', '大学城', '艺术杯旨在培养大学生艺术感', '艺术系学生', '10', '娇兰佳人', '实施方案是这样的', '能力训练目标是使学生学习能力更好', '目标是一等奖', '娇兰佳人同意', '娇兰佳人', '2017-03-18', '艺术系举办单位同意', '林小树', '2017-03-18', '', '', '2017-03-18 20:56:57', '吴广裕', '2017-03-18', '1', '0', null, '2017-03-18', '2017-03-23', '100', '1', '1', null, null);
+INSERT INTO `competition` VALUES ('3', '文化杯', '3', '经济系', '校级', '经济系', '2017-03-13', '经济系', '2017-04-01', '校内', '文化杯培养文化水平', '全校学生', '10', '娇兰佳人', '实施方案是这样的', '能力训练目标是使学生学习能力更好', '目标是一等奖', '娇兰佳人同意', '娇兰佳人', '2017-03-18', '经济系举办单位同意', '林大树', '2017-03-18', '', '', null, '吴明珠', '2017-03-18', '1', '0', null, null, null, null, '0', '0', null, null);
 INSERT INTO `competition` VALUES ('4', '那个啥赛改一下', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
@@ -240,7 +240,7 @@ INSERT INTO `groups` VALUES ('1', '1', '1', '火星组', '1', '1', '1', '1', '1'
 INSERT INTO `groups` VALUES ('2', '2', '1', '木星组', '1', '8', '1', '1', '1');
 INSERT INTO `groups` VALUES ('3', '3', '1', '地球组', '1', '9', '1', '1', '1');
 INSERT INTO `groups` VALUES ('4', '4', '2', '超艺术', '5', '5', '1', '1', '1');
-INSERT INTO `groups` VALUES ('5', '1', '1', '火星组', '1', '2', '1', '1', '0');
+INSERT INTO `groups` VALUES ('5', '1', '1', '火星组', '1', '2', '1', '2', '0');
 
 -- ----------------------------
 -- Table structure for guideteacher
@@ -321,6 +321,27 @@ CREATE TABLE `material` (
 -- ----------------------------
 INSERT INTO `material` VALUES ('1', '1', '1', null, '1');
 INSERT INTO `material` VALUES ('2', '1', '2', '11492099080121', null);
+INSERT INTO `material` VALUES ('3', '1', '2', '11492617498310.jpg', null);
+INSERT INTO `material` VALUES ('4', '1', '2', '11492617498310.jpg', null);
+INSERT INTO `material` VALUES ('5', '1', '2', '11492617567158.jpg', null);
+
+-- ----------------------------
+-- Table structure for message
+-- ----------------------------
+DROP TABLE IF EXISTS `message`;
+CREATE TABLE `message` (
+  `id` int(255) NOT NULL auto_increment,
+  `no` int(20) default NULL COMMENT '工号',
+  `role` int(20) default NULL COMMENT '角色0学生1老师2管理员',
+  `from` int(255) default NULL COMMENT '消息来自谁（填入工号）',
+  `message` varchar(255) default NULL COMMENT '消息内容',
+  `sendDate` date default NULL COMMENT '消息发送的日期',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of message
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for production
@@ -382,7 +403,7 @@ INSERT INTO `standard` VALUES ('1', '1', '100块', '1000块');
 -- ----------------------------
 DROP TABLE IF EXISTS `student`;
 CREATE TABLE `student` (
-  `studentNo` int(11) NOT NULL auto_increment,
+  `studentNo` int(11) NOT NULL,
   `studentName` varchar(14) default NULL,
   `gender` varchar(2) default NULL COMMENT '性别',
   `department` varchar(12) default NULL COMMENT '学院或者系',
@@ -413,7 +434,7 @@ INSERT INTO `student` VALUES ('9', '林小雯', '女', '计算机系', '计算�
 -- ----------------------------
 DROP TABLE IF EXISTS `teacher`;
 CREATE TABLE `teacher` (
-  `teacherNo` int(11) NOT NULL auto_increment,
+  `teacherNo` int(11) NOT NULL,
   `teacherName` varchar(255) default NULL,
   `gender` varchar(255) default NULL,
   `birth` date default NULL,
