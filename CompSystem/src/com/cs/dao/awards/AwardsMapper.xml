@@ -140,9 +140,11 @@
  	where a.comId=com.comId and a.groupsNo=g.groupsNo and a.awardsId=#{awardsId}
 	
   </select>
-  
   <select id="getTotal" resultType="int">
   select count(*) from awards  
   </select>
+  <update id="updatePubState" parameterType="Map">
+	update awards set isPublish=#{isPub} where awardsId =#{rID}
+</update>
   
 </mapper>

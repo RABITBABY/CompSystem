@@ -14,10 +14,10 @@ public interface AdministerService {
 
 	public Administer selectByID(String adminNo);
 	
-	PageInfo getArticleList(Map map);
-	
 	int insertFile(FileUpload file);
 	
 	PageInfo CompetitionList(Map map);
+	 
+	FileUpload getFile(int fileId);
 }
 

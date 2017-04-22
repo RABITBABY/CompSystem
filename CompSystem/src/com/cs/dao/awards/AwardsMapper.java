@@ -26,6 +26,7 @@ public interface AwardsMapper {
     List<Map> getAwards(Map map);
     Map getAwardByID(String awardsId);
     int getTotal();
+    int updatePubState(Map map);
     
     
 }

@@ -4,8 +4,17 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
+import com.cs.pojo.Article;
 import com.cs.util.PageInfo;
 @Service
 public interface ArticleService {
-	PageInfo getMtypeList(Map map);
+	PageInfo getArticleList(Map map);
+	
+	Map getArticleByID(int articleID);
+	
+	int insertArticle(Article article);
+	
+	int deleteArticle(int articleId,int rid,int type );
+	
+	int updateArticle(int articleId,String title,String content);
 }

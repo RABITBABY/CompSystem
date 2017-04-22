@@ -499,6 +499,24 @@
       groupNum = #{groupnum,jdbcType=INTEGER}
     where comId = #{comid,jdbcType=INTEGER}
   </update>
+  <!-- 系主任审批 -->
+  <update id="updateByDeptAdmin" parameterType="com.cs.pojo.Competition" >
+    update competition
+    set 
+      uopinion = #{uopinion,jdbcType=VARCHAR},
+      dsdate = #{dsdate,jdbcType=DATE},
+      depSpStatus = #{depspstatus,jdbcType=INTEGER}
+    where comId = #{comid,jdbcType=INTEGER}
+  </update>
+  <!-- 教学处审批 -->
+  <update id="updateByTea" parameterType="com.cs.pojo.Competition" >
+    update competition
+    set 
+      tdopinion = #{tdopinion,jdbcType=VARCHAR},
+      olsdate = #{olsdate,jdbcType=TIMESTAMP},
+      teaSpStatus = #{teaspstatus,jdbcType=INTEGER}
+    where comId = #{comid,jdbcType=INTEGER}
+  </update>
   
   
   <!--Max  -->
@@ -512,4 +530,7 @@
    <select id="getTotal" resultType="int" >
   	select COUNT(*) from competition   where applyEndDate>=now()
 	</select>
+	<update id="updatePubState" parameterType="Map">
+		update competition set isPublish=#{isPub} where comId = #{rID}
+	</update>
 </mapper>

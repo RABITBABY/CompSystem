@@ -9,11 +9,11 @@ public class Article {
 
     private Date pubdate;
 
-    private Integer pubuserno;
+    private String pubuserno;
 
     private Integer articletype;
 
-    private Integer comid;
+    private Integer relationId;
 
     private String content;
 
@@ -41,15 +41,16 @@ public class Article {
         this.pubdate = pubdate;
     }
 
-    public Integer getPubuserno() {
-        return pubuserno;
-    }
 
-    public void setPubuserno(Integer pubuserno) {
-        this.pubuserno = pubuserno;
-    }
+    public String getPubuserno() {
+		return pubuserno;
+	}
 
-    public Integer getArticletype() {
+	public void setPubuserno(String pubuserno) {
+		this.pubuserno = pubuserno;
+	}
+
+	public Integer getArticletype() {
         return articletype;
     }
 
@@ -57,13 +58,15 @@ public class Article {
         this.articletype = articletype;
     }
 
-    public Integer getComid() {
-        return comid;
-    }
 
-    public void setComid(Integer comid) {
-        this.comid = comid;
-    }
+    public Integer getRelationId() {
+		return relationId;
+	}
+
+	public void setRelationId(Integer relationId) {
+		this.relationId = relationId;
+	}
+
 
     public String getContent() {
         return content;
@@ -72,4 +75,15 @@ public class Article {
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
     }
+
+	@Override
+	public String toString() {
+		return "Article [articleid=" + articleid + ", title=" + title
+				+ ", pubdate=" + pubdate + ", pubuserno=" + pubuserno
+				+ ", articletype=" + articletype + ", relationId=" + relationId
+				+ ", content=" + content + "]";
+	}
+
+    
+    
 }
