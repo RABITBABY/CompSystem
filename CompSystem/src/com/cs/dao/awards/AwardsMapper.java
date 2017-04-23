@@ -21,4 +21,12 @@ public interface AwardsMapper {
     int updateByPrimaryKeySelective(Awards record);
 
     int updateByPrimaryKey(Awards record);
+    
+//    max
+    List<Map> getAwards(Map map);
+    Map getAwardByID(String awardsId);
+    int getTotal();
+    int updatePubState(Map map);
+    
+    
 }

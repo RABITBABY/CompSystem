@@ -515,12 +515,11 @@
     set 
       tdopinion = #{tdopinion,jdbcType=VARCHAR},
       olsign = #{olsign,jdbcType=VARCHAR},
-      olsdate = #{olsdate,jdbcType=TIMESTAMP},
-      teaSpStatus = #{teaspstatus,jdbcType=INTEGER}
+      dsdate = #{dsdate,jdbcType=DATE},
+      depSpStatus = #{depspstatus,jdbcType=INTEGER}
     where comId = #{comid,jdbcType=INTEGER}
   </update>
-  
-  
+
   <!--Max  -->
   <select id="selectByAdmin" resultType="Map" parameterType="Map" >
      select com.*,t.teacherName,t.gender,t.department,t.phone,t.email  from competition com,teacher t
@@ -532,4 +531,7 @@
    <select id="getTotal" resultType="int" >
   	select COUNT(*) from competition   where applyEndDate>=now()
 	</select>
+	<update id="updatePubState" parameterType="Map">
+		update competition set isPublish=#{isPub} where comId = #{rID}
+	</update>
 </mapper>

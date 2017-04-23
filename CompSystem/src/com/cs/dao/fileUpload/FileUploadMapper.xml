@@ -10,12 +10,13 @@
     fileId, fileName, saveName, uploadDate, uploadUserNo
   </sql>
   
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="int" >
+    select *
     from fileupload
-    where fileId = #{fileid,jdbcType=INTEGER}
+    where fileId = #{fileid}
   </select>
+  
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from fileupload
     where fileId = #{fileid,jdbcType=INTEGER}

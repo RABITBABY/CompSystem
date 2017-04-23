@@ -9,11 +9,14 @@ import org.springframework.stereotype.Service;
 
 import com.cs.dao.admin.AdministerMapper;
 import com.cs.dao.article.ArticleMapper;
+import com.cs.dao.awards.AwardsMapper;
 import com.cs.dao.competition.CompetitionMapper;
 import com.cs.dao.fileUpload.FileUploadMapper;
+import com.cs.dao.production.ProductionMapper;
 import com.cs.pojo.Administer;
 import com.cs.pojo.Competition;
 import com.cs.pojo.FileUpload;
+import com.cs.pojo.Production;
 import com.cs.util.PageInfo;
 @Service
 public class AdministerServiceImpl implements AdministerService{
@@ -29,6 +32,14 @@ public class AdministerServiceImpl implements AdministerService{
 	
 	@Autowired
 	CompetitionMapper compeMapper;
+	
+	@Autowired
+	private AwardsMapper awardsMapper;
+	
+	@Autowired
+	private ProductionMapper productionMapper;
+	
+	
 	/**
 	 * 上传文件
 	 */
@@ -45,35 +56,6 @@ public class AdministerServiceImpl implements AdministerService{
 		Administer admin=adminMapper.selectByID(adminNo);
 		return admin;
 	}
-
-	
-	/**
-	 * 获取文章列表分页
-	 */
-	@Override
-	public PageInfo getArticleList(Map map) {
-		
-		System.out.println("参数"+map);
-		int index=Integer.parseInt(map.get("index").toString());
-		int pageSize=Integer.parseInt(map.get("pageSize").toString());
-		int page=(index-1)*pageSize;
-		String type=map.get("type").toString();
-		Map param=new HashMap();
-		param.put("page", page);
-		param.put("pageSize", pageSize);
-		param.put("type", type);
-		
-		List<Map> list=articleMapper.getMtypeList(param);
-		
-		int total=articleMapper.getTotal(type);
-		
-		int totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
-		PageInfo pageInfo=new PageInfo();
-		pageInfo.setIndex(index);
-		pageInfo.setList(list);
-		pageInfo.setTotal(totalPage);
-		return pageInfo;
-	}
 	
 	
 	/**
@@ -81,22 +63,42 @@ public class AdministerServiceImpl implements AdministerService{
 	 */
 	@Override
 	public PageInfo CompetitionList(Map map) {
+		Map param=new HashMap();
+		int index=Integer.parseInt(map.get("index").toString());
+		int pageSize=Integer.parseInt(map.get("pageSize").toString());
+		int page=(index-1)*pageSize;
+		param.put("page", page);
+		param.put("pageSize", pageSize);
+		param.put("department", map.get("department"));
+		param.put("time", map.get("time"));
 		
-		List<Map<String,Object>> list=compeMapper.selectByAdmin(map);
+		System.out.println("CompetitionList--param"+param);
+		List<Map<String,Object>> list=compeMapper.selectByAdmin(param);
 		
 		int total=compeMapper.getTotal();
-		int pageSize=Integer.parseInt((String)map.get("pageSize"));
 		int totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
 		PageInfo pageInfo=new PageInfo();
 		pageInfo.setList(list);
 		pageInfo.setTotal(totalPage);
 		pageInfo.setPageSize(pageSize);
-		pageInfo.setIndex(Integer.parseInt((String)map.get("index")));
+		pageInfo.setIndex(index);
 		return pageInfo;
 	}
 
+	
+
+	
 public static void main(String[] args) {
 	int totalPage=(int) Math.ceil(3/(2*1.0));
 	System.out.println(totalPage);
+}
+
+/**
+ * 根据id找文件
+ */
+@Override
+public FileUpload getFile(int fileId) {
+	FileUpload file=fileMapper.selectByPrimaryKey(fileId);
+	return file;
 }
 }

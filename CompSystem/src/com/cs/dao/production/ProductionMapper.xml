@@ -4,11 +4,13 @@
   <resultMap id="BaseResultMap" type="com.cs.pojo.Production" >
   </resultMap>
   
-  <select id="getAllProduction" resultMap="BaseResultMap" >
-    select *  from production
-    where proId = #{proid} limits 0,3
+  <select id="getProduction" resultMap="BaseResultMap" parameterType="Map" >
+    select * from production ORDER BY createDate desc limit #{page},#{pageSize}
   </select>
   
+    <select id="getTotal" resultType="int">
+  select count(*) from awards  
+  </select>
   
   
    <select id="getProductionByID" resultMap="BaseResultMap" parameterType="java.lang.Integer" >

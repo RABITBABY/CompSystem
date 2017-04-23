@@ -8,26 +8,15 @@ import com.cs.pojo.Article;
 
 public interface ArticleMapper {
 	
-	/**
-	 * 获取某类型的一定数量文章
-	 * @param map
-	 * @return
-	 */
+	/** 获取某类型的一定数量文章*/
 	List<Map> getMtypeList(Map map);
-	/**
-	 * 获取所有该类型的文章数量
-	 * @param type
-	 * @return
-	 */
+	/**  获取所有该类型的文章数量   */
 	int getTotal(String type);
-	
-	/**
-	 * 根据文章id获取文章的详细内容
-	 * @param id
-	 * @return
-	 */
+	/**  根据文章id获取文章的详细内容 */
 	Map findById(int id);
-	
-	
-	
+	/**发布文章*/
+	int insertArticle(Article article);
+	/**删除文章*/
+	int deleteArticle(int articleId );
+	int updateArticle(Map map );
 }

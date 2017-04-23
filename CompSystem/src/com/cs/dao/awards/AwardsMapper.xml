@@ -123,4 +123,28 @@
       isPublish = #{ispublish,jdbcType=INTEGER}
     where awardsId = #{awardsid,jdbcType=INTEGER}
   </update>
+  
+  
+  <!--  max-->
+  <select id="getAwards" parameterType="Map" resultType="Map">
+   select a.*,com.comName,g.* from awards a,competition com ,(select g.groupsNo as groupsNo , g.groupsName as groupsName, GROUP_CONCAT(s.studentName) AS groupNumber,t.teacherName as teacher from groups g  ,student s,teacher t
+	where  g.studentNo=s.studentNo and g.teacherNo=t.teacherNo
+	GROUP BY g.groupsNo )g
+	where a.comId=com.comId and a.groupsNo=g.groupsNo
+	ORDER by awardTime desc limit #{page},#{pageSize}
+  </select>
+  <select id="getAwardByID" parameterType="String" resultType="Map">
+    select a.*,com.comName,g.* from awards a,competition com ,(select g.groupsNo as groupsNo , g.groupsName as groupsName, GROUP_CONCAT(s.studentName) AS groupNumber,t.teacherName as teacher from groups g  ,student s,teacher t
+    where  g.studentNo=s.studentNo and g.teacherNo=t.teacherNo
+	GROUP BY g.groupsNo )g
+ 	where a.comId=com.comId and a.groupsNo=g.groupsNo and a.awardsId=#{awardsId}
+	
+  </select>
+  <select id="getTotal" resultType="int">
+  select count(*) from awards  
+  </select>
+  <update id="updatePubState" parameterType="Map">
+	update awards set isPublish=#{isPub} where awardsId =#{rID}
+</update>
+  
 </mapper>

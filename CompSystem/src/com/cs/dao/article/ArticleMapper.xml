@@ -19,4 +19,20 @@
    where ar.pubuserno=ad.adminno and ar.articleid=#{id}
 </select>
 
+<insert id="insertArticle" parameterType="com.cs.pojo.Article">
+    insert into article ( title, pubDate, 
+      pubUserNo, articleType, relationId,  content)
+    values ( #{title}, #{pubdate}, 
+      #{pubuserno}, #{articletype}, #{relationId}, 
+      #{content})
+
+</insert>
+<delete id="deleteArticle" parameterType="int">
+	DELETE  from  article where articleId=#{articleId}
+</delete>
+
+<update id="updateArticle" parameterType="Map">
+	update article set title=#{title},content=#{content},pubDate=SYSDATE()  where articleId=#{articleId}
+
+</update>
 </mapper>

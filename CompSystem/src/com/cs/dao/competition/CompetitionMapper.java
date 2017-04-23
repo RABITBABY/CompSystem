@@ -34,4 +34,5 @@ public interface CompetitionMapper {
     //max
     List<Map<String,Object>> selectByAdmin(Map map);
     int getTotal();
+    int updatePubState(Map map);
 }
