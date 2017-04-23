@@ -46,7 +46,7 @@ public class ProductionServiceImpl implements ProductionService {
 	public int insertProduction(Production production) {
 		int stateCode=0;
 		if(production!=null){
-			productionMapper.insertProduction(production);
+			stateCode=	productionMapper.insertProduction(production);
 		}
 		return stateCode;
 	}
@@ -65,5 +65,11 @@ public class ProductionServiceImpl implements ProductionService {
 	public int delectProduction(int pId) {
 		int stateCode=productionMapper.deleteProduction(pId);
 		return stateCode;
+	}
+
+	@Override
+	public Production findProByID(int pId) {
+		Production p=productionMapper.getProductionByID(pId);
+		return p;
 	}
 }

@@ -10,6 +10,16 @@
     fileId, fileName, saveName, uploadDate, uploadUserNo
   </sql>
   
+  
+  <select id="allFile" resultType="Map" parameterType="Map" >
+    select f.*,a.adminName from fileupload f,administer a 
+    where f.uploadUserNo=a.adminNo ORDER BY f.uploadDate limit #{page},#{pageSize}
+  </select>
+  
+    <select id="getTotal" resultType="int"  >
+    select count(*) from fileupload 
+  </select>
+  
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="int" >
     select *
     from fileupload
@@ -19,7 +29,7 @@
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from fileupload
-    where fileId = #{fileid,jdbcType=INTEGER}
+    where fileId = #{fileid}
   </delete>
   
   <insert id="insert" parameterType="com.cs.pojo.FileUpload" >

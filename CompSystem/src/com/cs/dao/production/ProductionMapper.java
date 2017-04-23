@@ -12,5 +12,5 @@ public interface ProductionMapper {
    Production getProductionByID(int proId); 
    int insertProduction(Production production);
    int updateByPrimaryId(Production production);
-   int deleteProduction(int pId);
+   int deleteProduction(int proId);
 }

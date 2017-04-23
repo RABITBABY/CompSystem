@@ -17,6 +17,10 @@
     select *  from production where proId=#{proId}
   </select>
   
+  <delete id="deleteProduction" parameterType="int">
+ DELETE  from  production where proId=#{proId}
+  </delete>
+  
    <insert id="insertProduction" parameterType="com.cs.pojo.Production"  >
   <!--  <selectKey resultType="java.lang.Short" order="AFTER" keyProperty="id">
 	SELECT LAST_INSERT_ID() AS proid
@@ -41,6 +45,9 @@
       <if test="introduction != null" >
         introduction,
       </if>
+      <if test="createDate != null" >
+        createDate,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="proid != null" >
@@ -61,26 +68,32 @@
       <if test="introduction != null" >
         #{introduction},
       </if>
+      <if test="createDate != null" >
+        #{createDate},
+      </if>
     </trim>
   </insert>
   
   <update id="updateByPrimaryId" parameterType="com.cs.pojo.Production" >
     update production
     <set >
-      <if test="proname != null" >
+      <if test="proname != null and proname!=''" >
         proName = #{proname},
       </if>
-      <if test="award != null" >
+      <if test="award != null and award!=''" >
         award = #{award},
       </if>
-      <if test="membersname != null" >
+      <if test="membersname != null and membersname!='' " >
         membersName = #{membersname},
       </if>
-      <if test="pic != null" >
+      <if test="pic != null and pic!=''" >
         pic = #{pic},
       </if>
-      <if test="introduction != null" >
+      <if test="introduction != null and introduction!='' " >
         introduction = #{introduction},
+      </if>
+      <if test="createDate != null" >
+        createDate= #{createDate},
       </if>
     </set>
     where proId = #{proid}

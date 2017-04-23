@@ -1,7 +1,11 @@
 package com.cs.pojo;
 
+import java.util.Date;
+
 public class Production {
-    private Integer proid;
+  
+
+	private Integer proid;
 
     private String proname;
 
@@ -12,8 +16,19 @@ public class Production {
     private String pic;
 
     private String introduction;
+    
+    private Date createDate;
 
-    public Integer getProid() {
+    
+    public Date getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+
+	public Integer getProid() {
         return proid;
     }
 
@@ -60,4 +75,14 @@ public class Production {
     public void setIntroduction(String introduction) {
         this.introduction = introduction == null ? null : introduction.trim();
     }
+
+	@Override
+	public String toString() {
+		return "Production [proid=" + proid + ", proname=" + proname
+				+ ", award=" + award + ", membersname=" + membersname
+				+ ", pic=" + pic + ", introduction=" + introduction
+				+ ", createDate=" + createDate + "]";
+	}
+    
+   
 }

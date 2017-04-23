@@ -12,5 +12,6 @@ public interface ProductionService {
 	 int insertProduction(Production production);
 	 int updateProduction(Production production);
 	 int delectProduction(int pId);
+	 Production findProByID(int pId);
 	
 }

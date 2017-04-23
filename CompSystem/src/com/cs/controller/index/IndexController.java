@@ -1,11 +1,16 @@
 package com.cs.controller.index;
 
-import java.util.ArrayList;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,9 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.cs.dao.competition.CompetitionMapper;
+import com.cs.pojo.FileUpload;
 import com.cs.service.article.ArticleService;
 import com.cs.service.competition.CompetitionService;
+import com.cs.service.fileUpload.FileUploadService;
 import com.cs.service.production.ProductionService;
 import com.cs.util.PageInfo;
 import com.cs.util.ParamUtil;
@@ -32,6 +38,8 @@ public class IndexController {
 	
 	@Autowired
 	CompetitionService compeService;
+	@Autowired
+	FileUploadService fileService;
 	
 	
 	/**
@@ -157,6 +165,86 @@ public class IndexController {
 		System.out.println(param+"\n"+resultMap);
 		
 		return resultMap;
+	}
+	
+	/**
+	 * 文件下载
+	 * @param department
+	 * @param time
+	 * @param index
+	 * @param pageSize
+	 * @return
+	 * @throws UnsupportedEncodingException 
+	 */
+	@ResponseBody
+	@RequestMapping("/fileDownload")
+	public  void fileDownload(String fileId,HttpServletRequest request,HttpServletResponse response) throws UnsupportedEncodingException {
+		FileUpload fileupload=fileService.findFileById(Integer.parseInt(fileId));
+		System.out.println(fileupload);
+		String fileName=fileupload.getFilename();
+		String saveName=fileupload.getSavename();
+		System.out.println(fileName);
+		String path = request.getSession().getServletContext().getRealPath("/WEB-INF/uploadFile");
+		path+="/"+saveName;
+		File file = new File(path);
+		String name= new String(fileName.getBytes("GBK"), "ISO-8859-1");
+        if (file.exists()) {
+            response.setContentType("application/force-download");// 设置强制下载不打开
+            response.addHeader("Content-Disposition",
+                    "attachment;fileName="+name);// 设置文件名
+            byte[] buffer = new byte[1024];
+            FileInputStream fis = null;
+            BufferedInputStream bis = null;
+            try {
+                fis = new FileInputStream(file);
+                bis = new BufferedInputStream(fis);
+                OutputStream os = response.getOutputStream();
+                int i = bis.read(buffer);
+                while (i != -1) {
+                    os.write(buffer, 0, i);
+                    i = bis.read(buffer);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if (bis != null) {
+                    try {
+                        bis.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (fis != null) {
+                    try {
+                        fis.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+		
+	}
+	
+	/**
+	 * 文件列表
+	 * @param index
+	 * @param pageSize
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/allFile")
+	public Map allFile(String index,String pageSize){
+		Map result=new HashMap<String,Object>();
+		Map param=new HashMap<String,Object>();
+		PageInfo pageinfo=new PageInfo();
+		index=ParamUtil.getStr(index, "1");
+		pageSize=ParamUtil.getStr(pageSize, "10");
+		param.put("index",index);
+		param.put("pageSize",pageSize);
+		pageinfo=fileService.allFile(param);
+		result.put("filePage", pageinfo);
+		return result;
 	}
 	
 	
