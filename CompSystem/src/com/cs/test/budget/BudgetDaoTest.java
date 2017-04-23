@@ -22,4 +22,10 @@ public class BudgetDaoTest extends AbstractJUnit4SpringContextTests{
 	   public void testdeleteBudgetBycomid(){
 		   budgetMapper.deleteByComId(4);
 	   }
+	   
+	   @Test
+	   public void testSelect(){
+		   List<Budget> selectByComId = budgetMapper.selectByComId(1);
+		   System.out.println(selectByComId.get(0).getSubject());
+	   }
 }

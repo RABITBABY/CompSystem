@@ -1,11 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<!-- <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0"> -->
+<web-app>
   <!-- 加载 Spring 配置文件 -->
     <context-param>
       <param-name>contextConfigLocation</param-name>
       <param-value>
           classpath:SpringMybatis.xml
-          <!-- classpath:SpringWebSocket.xml
+         <!-- classpath:SpringWebSocket.xml
           classpath:SpringShiro.xml -->
       </param-value>
     </context-param>
@@ -62,7 +65,7 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
     <!-- 激活 Tomcat 的 defaultServlet 来处理静态文件 -->
-    <!-- <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>*.jpg</url-pattern>
     </servlet-mapping>
@@ -85,7 +88,7 @@
     <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>*.html</url-pattern>
-    </servlet-mapping> -->
+    </servlet-mapping>
     <!-- 程序Session配置 -->
     <session-config>
         <!-- Session过期时间(单位：分) -->

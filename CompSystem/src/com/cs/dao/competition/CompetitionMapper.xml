@@ -504,6 +504,7 @@
     update competition
     set 
       uopinion = #{uopinion,jdbcType=VARCHAR},
+      dsign = #{dsign,jdbcType=VARCHAR},
       dsdate = #{dsdate,jdbcType=DATE},
       depSpStatus = #{depspstatus,jdbcType=INTEGER}
     where comId = #{comid,jdbcType=INTEGER}
@@ -513,6 +514,7 @@
     update competition
     set 
       tdopinion = #{tdopinion,jdbcType=VARCHAR},
+      olsign = #{olsign,jdbcType=VARCHAR},
       olsdate = #{olsdate,jdbcType=TIMESTAMP},
       teaSpStatus = #{teaspstatus,jdbcType=INTEGER}
     where comId = #{comid,jdbcType=INTEGER}
