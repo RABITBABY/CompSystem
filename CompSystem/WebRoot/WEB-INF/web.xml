@@ -9,7 +9,7 @@
       <param-value>
           classpath:SpringMybatis.xml
          <!-- classpath:SpringWebSocket.xml
-          classpath:SpringShiro.xml -->
+           classpath:SpringShiro.xml -->
       </param-value>
     </context-param>
     <!-- < 字符编码配置 -->
@@ -65,7 +65,7 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
     <!-- 激活 Tomcat 的 defaultServlet 来处理静态文件 -->
-    <servlet-mapping>
+   <!--  <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>*.jpg</url-pattern>
     </servlet-mapping>
@@ -88,7 +88,7 @@
     <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>*.html</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping> -->
     <!-- 程序Session配置 -->
     <session-config>
         <!-- Session过期时间(单位：分) -->
