@@ -29,6 +29,7 @@ import com.cs.service.administer.AdministerServiceImpl;
 import com.cs.service.article.ArticleService;
 import com.cs.service.article.ArticleServiceImpl;
 import com.cs.service.award.AwardsService;
+import com.cs.service.competition.CompetitionService;
 import com.cs.service.fileUpload.FileUploadService;
 import com.cs.service.production.ProductionService;
 import com.cs.util.PageInfo;
@@ -54,6 +55,8 @@ public class AdministerController {
 	
 	@Autowired
 	ArticleService articleService;
+	@Autowired
+	CompetitionService compeService;
 	
 	
 	/**
@@ -79,7 +82,7 @@ public class AdministerController {
 		
 		PageInfo pageInfo=new PageInfo();
 		
-		pageInfo=adminImpl.CompetitionList(param);
+		pageInfo=compeService.CompetitionList(param);
 		
 		resultMap.put("comPageInfo", pageInfo);
 		System.out.println(param+"\n"+resultMap);
@@ -152,7 +155,7 @@ public class AdministerController {
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping(value="/article", method = RequestMethod.GET)
+	@RequestMapping(value="/article")
 	public  Map findArticleByType(String type,String index,String pageSize) {
 		Map<String,Object> result=new HashMap<String, Object>();
 		Map<String,Object> param=new HashMap<String, Object>();
@@ -261,7 +264,7 @@ public class AdministerController {
 	 * @return
 	 * @throws IOException 
 	 * @throws IllegalStateException 
-	 *//*
+	 */
 	@RequestMapping("/uploadProduction")
 	public String uploadProduction(String proName,String award,String membersName,String introduction, HttpServletRequest request,HttpServletResponse response) throws IllegalStateException, IOException{
 		//上传图片 //进行转换  
@@ -306,7 +309,7 @@ public class AdministerController {
 		return "1";
 	}
 	
-	*/
+	
 	
 	
 	//---------文件相关

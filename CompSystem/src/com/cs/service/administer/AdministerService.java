@@ -16,7 +16,7 @@ public interface AdministerService {
 	
 	int insertFile(FileUpload file);
 	
-	PageInfo CompetitionList(Map map);
+	
 	 
 	FileUpload getFile(int fileId);
 }
