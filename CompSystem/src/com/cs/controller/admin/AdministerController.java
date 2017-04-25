@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -522,4 +523,44 @@ public class AdministerController {
 	}
 	
 	
+	/**
+	 * 所有的材料
+	 * @param index
+	 * @param pageSize
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/allMaterial")
+	public Map allMaterial(String index,String pageSize){
+		Map result=new HashMap<String,Object>();
+		Map param=new HashMap<String,Object>();
+		
+		PageInfo pageinfo=new PageInfo();
+		index=ParamUtil.getStr(index, "1");
+		pageSize=ParamUtil.getStr(pageSize, "10");
+		param.put("index",index);
+		param.put("pageSize",pageSize);
+		
+		pageinfo =adminImpl.allMaterial(param);
+		result.put("materials", pageinfo);
+		return result;
+	}
+	
+	
+	/**
+	 * 审核材料
+	 * @param index
+	 * @param pageSize
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/reviewMaterial")
+	public Map reviewMaterial(String mid){
+		Map result=new HashMap<String,Object>();
+		int  stateCode=0;
+		int id=Integer.parseInt(ParamUtil.getStr(mid, "0"));
+		stateCode=adminImpl.updateMaterialState(id);
+		result.put("stateCode", stateCode);
+		return result;
+	}
 }

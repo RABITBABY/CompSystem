@@ -273,7 +273,6 @@ public class IndexController {
 		}else{
 			for(int i=0;i<departments.length;i++){
 				param.put("department", departments[i]);
-				System.out.println(departments[i]+"\n");
 				List<Map> awardMap=awardsService.analysisAwards(param);
 				System.out.println("888");
 				result.put(departments[i], awardMap);
@@ -301,7 +300,6 @@ public class IndexController {
 		}else{
 			for(int i=0;i<departments.length;i++){
 				param.put("department", departments[i]);
-				System.out.println(departments[i]+"\n");
 				List<Map> awardMap=compeService.analysisComp(param);
 				result.put(departments[i], awardMap);
 			}
