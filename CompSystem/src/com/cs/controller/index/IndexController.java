@@ -6,7 +6,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.cs.pojo.Competition;
 import com.cs.pojo.FileUpload;
 import com.cs.service.article.ArticleService;
 import com.cs.service.competition.CompetitionService;
@@ -145,6 +148,35 @@ public class IndexController {
 	@RequestMapping("/CompetionList")
 	public  Map CompetitionList(String department,String time,String index,String pageSize) {
 		Map<String ,Object> resultMap=new HashMap<String, Object>();
+		
+		List<Competition> todayList=new ArrayList<Competition>();
+		List<Competition> yestedayList=new ArrayList<Competition>();
+		List<Competition> tomorrowList=new ArrayList<Competition>();
+		List<Competition> lastWeekList=new ArrayList<Competition>();
+		List<Competition> nextWeekList=new ArrayList<Competition>();
+		List<Competition> lastMoonList=new ArrayList<Competition>();
+		
+		todayList=compeService.todayCompetition();
+		yestedayList=compeService.yesterdayCompetition();
+		tomorrowList=compeService.tomorrowCompetition();
+		lastWeekList=compeService.lastWeekCompetition();
+		nextWeekList=compeService.nextWeekCompetition();
+		lastMoonList=compeService.lastMoonCompetition();
+		
+		resultMap.put("today", todayList);
+		resultMap.put("yesterday", yestedayList);
+		resultMap.put("tomorrow", tomorrowList);
+		resultMap.put("lastWeek", lastWeekList);
+		resultMap.put("nextWeek", nextWeekList);
+		resultMap.put("lastMoon", lastMoonList);
+		
+		return resultMap;
+	}
+	
+	/*@ResponseBody
+	@RequestMapping("/CompetionList")
+	public  Map CompetitionList(String department,String time,String index,String pageSize) {
+		Map<String ,Object> resultMap=new HashMap<String, Object>();
 		Map<String ,Object> param=new HashMap<String, Object>();
 		department=ParamUtil.getStr(department, "");
 		time=ParamUtil.getStr(time, "");
@@ -165,7 +197,7 @@ public class IndexController {
 		System.out.println(param+"\n"+resultMap);
 		
 		return resultMap;
-	}
+	}*/
 	
 	/**
 	 * 文件下载

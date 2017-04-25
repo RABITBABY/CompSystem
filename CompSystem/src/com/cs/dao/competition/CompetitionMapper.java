@@ -35,4 +35,18 @@ public interface CompetitionMapper {
     List<Map<String,Object>> selectByAdmin(Map map);
     int getTotal();
     int updatePubState(Map map);
+    
+    List<Competition> todayCompetition();
+    List<Competition> yesterdayCompetition();
+    List<Competition> tomorrowCompetition();
+    List<Competition> lastWeekCompetition();
+    List<Competition> nextWeekCompetition();
+    List<Competition> lastMoonCompetition();
+    
+    
+    
+    
+    
+    
+    
 }

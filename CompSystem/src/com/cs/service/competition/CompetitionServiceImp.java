@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cs.dao.competition.CompetitionMapper;
+import com.cs.pojo.Competition;
 import com.cs.util.PageInfo;
 
 @Service
@@ -40,6 +41,42 @@ private CompetitionMapper compeMapper;
 		pageInfo.setPageSize(pageSize);
 		pageInfo.setIndex(index);
 		return pageInfo;
+	}
+
+	@Override
+	public List<Competition> todayCompetition() {
+		List<Competition> list=compeMapper.todayCompetition();
+		return list;
+	}
+
+	@Override
+	public List<Competition> yesterdayCompetition() {
+		List<Competition> list=compeMapper.yesterdayCompetition();
+		return list;
+	}
+
+	@Override
+	public List<Competition> tomorrowCompetition() {
+		List<Competition> list=compeMapper.tomorrowCompetition();
+		return list;
+	}
+
+	@Override
+	public List<Competition> lastWeekCompetition() {
+		List<Competition> list=compeMapper.lastWeekCompetition();
+		return list;
+	}
+
+	@Override
+	public List<Competition> nextWeekCompetition() {
+		List<Competition> list=compeMapper.nextWeekCompetition();
+		return list;
+	}
+
+	@Override
+	public List<Competition> lastMoonCompetition() {
+		List<Competition> list=compeMapper.lastMoonCompetition();
+		return list;
 	}
 
 	

@@ -534,4 +534,33 @@
 	<update id="updatePubState" parameterType="Map">
 		update competition set isPublish=#{isPub} where comId = #{rID}
 	</update>
+<!-- 今天 -->
+	 <select id="todayCompetition" resultType="com.cs.pojo.Competition" >
+  	select   c.* from competition c where c.time=CURDATE()
+	</select>
+	<!-- 昨天 -->
+	 <select id="yesterdayCompetition" resultType="com.cs.pojo.Competition" >
+  		select   c.* from competition c where c.time=SUBDATE(CURDATE(),1)
+	</select>
+	<!-- 明天 -->
+	 <select id="tomorrowCompetition" resultType="com.cs.pojo.Competition" >
+  		select   c.* from competition c where c.time=SUBDATE(CURDATE(),-1)
+	</select>
+	<!-- 上周 -->
+	 <select id="lastWeekCompetition" resultType="com.cs.pojo.Competition" >
+  		select c.*  from competition c 
+	where   c.time between SUBDATE(CURDATE(),DATE_FORMAT(CURDATE(),'%w')+7) and SUBDATE(CURDATE(),DATE_FORMAT(CURDATE(),'%w')+1)
+	</select>
+	<!-- 下周 -->
+	 <select id="nextWeekCompetition" resultType="com.cs.pojo.Competition" >
+  		select c.* from competition c
+		where	c.time between SUBDATE(CURDATE(),DATE_FORMAT(CURDATE(),'%w')-7) 
+		and SUBDATE(CURDATE(),DATE_FORMAT(CURDATE(),'%w')-7-6)
+	</select>
+	<!-- 上个月 -->
+	 <select id="lastMoonCompetition" resultType="com.cs.pojo.Competition" >
+  		select c.* from competition c
+		where	DATE_FORMAT(c.time,'%Y%m') = DATE_FORMAT( date_sub(now(),interval 1 month) ,'%Y%m')
+	</select>
+	
 </mapper>
