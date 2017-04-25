@@ -43,7 +43,7 @@ public interface CompetitionMapper {
     List<Competition> nextWeekCompetition();
     List<Competition> lastMoonCompetition();
     
-    
+    List<Map> analysisCom(Map map);
     
     
     

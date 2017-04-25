@@ -1,5 +1,6 @@
 package com.cs.service.competition;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -77,6 +78,13 @@ private CompetitionMapper compeMapper;
 	public List<Competition> lastMoonCompetition() {
 		List<Competition> list=compeMapper.lastMoonCompetition();
 		return list;
+	}
+
+	@Override
+	public List<Map> analysisComp(Map map) {
+		List<Map> result=new ArrayList<Map>();
+		result=compeMapper.analysisCom(map);
+		return result;
 	}
 
 	

@@ -1,5 +1,6 @@
 package com.cs.service.award;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,5 +43,17 @@ public class AwardsServiceImpl implements AwardsService{
 		pageInfo.setPageSize(pageSize);
 		return pageInfo;
 	}
+	/**
+	 * 获奖分析
+	 */
+	@Override
+	public List<Map> analysisAwards(Map map) {
+		List<Map> result =new ArrayList<Map>();
+		result=awardsMapper.analysisAwards(map);
+		return result;
+	}
+	
+	
+	
 	
 }

@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.cs.pojo.Competition;
 import com.cs.pojo.FileUpload;
 import com.cs.service.article.ArticleService;
+import com.cs.service.award.AwardsService;
 import com.cs.service.competition.CompetitionService;
 import com.cs.service.fileUpload.FileUploadService;
 import com.cs.service.production.ProductionService;
@@ -43,6 +44,8 @@ public class IndexController {
 	CompetitionService compeService;
 	@Autowired
 	FileUploadService fileService;
+	@Autowired
+	AwardsService awardsService;
 	
 	
 	/**
@@ -173,31 +176,6 @@ public class IndexController {
 		return resultMap;
 	}
 	
-	/*@ResponseBody
-	@RequestMapping("/CompetionList")
-	public  Map CompetitionList(String department,String time,String index,String pageSize) {
-		Map<String ,Object> resultMap=new HashMap<String, Object>();
-		Map<String ,Object> param=new HashMap<String, Object>();
-		department=ParamUtil.getStr(department, "");
-		time=ParamUtil.getStr(time, "");
-		index=ParamUtil.getStr(index, "1");
-		pageSize=ParamUtil.getStr(pageSize, "10");
-		
-		param.put("department", department);
-		param.put("time", time);	
-		param.put("index", index);	
-		
-		param.put("pageSize", pageSize);	
-		
-		PageInfo pageInfo=new PageInfo();
-		
-		pageInfo=compeService.CompetitionList(param);
-		
-		resultMap.put("comPageInfo", pageInfo);
-		System.out.println(param+"\n"+resultMap);
-		
-		return resultMap;
-	}*/
 	
 	/**
 	 * 文件下载
@@ -278,6 +256,61 @@ public class IndexController {
 		result.put("filePage", pageinfo);
 		return result;
 	}
+	
+	
+	@ResponseBody
+	@RequestMapping("/analysisAwars")
+	public  Map analysisAward(String department){
+		String []departments={"计算机系","外语系","艺术系","会计系","经济系","旅游管理系","法律系"};
+		Map result=new HashMap<String,Object>();
+		Map param=new HashMap<String,Object>();
+		//计算机系，外语系，艺术系，会计系，经济系，旅游管理系，法律系
+		if(department!=null && !"".equals(department)){
+			param.put("department", department);
+			param.put("single", "1");
+			List<Map> awardMap=awardsService.analysisAwards(param);
+			result.put(department, awardMap);
+		}else{
+			for(int i=0;i<departments.length;i++){
+				param.put("department", departments[i]);
+				System.out.println(departments[i]+"\n");
+				List<Map> awardMap=awardsService.analysisAwards(param);
+				System.out.println("888");
+				result.put(departments[i], awardMap);
+			}
+		}
+		
+		return result;
+	}
+	
+	
+	
+	@ResponseBody
+	@RequestMapping("/analysisComp")
+	public  Map analysisComp(String department){
+		String []departments={"计算机系","外语系","艺术系","会计系","经济系","旅游管理系","法律系"};
+		Map result=new HashMap<String,Object>();
+		Map param=new HashMap<String,Object>();
+		//计算机系，外语系，艺术系，会计系，经济系，旅游管理系，法律系
+		
+		if(department!=null && !"".equals(department)){
+			param.put("department", department);
+			param.put("single", "1");
+			List<Map> awardMap=compeService.analysisComp(param);
+			result.put(department, awardMap);
+		}else{
+			for(int i=0;i<departments.length;i++){
+				param.put("department", departments[i]);
+				System.out.println(departments[i]+"\n");
+				List<Map> awardMap=compeService.analysisComp(param);
+				result.put(departments[i], awardMap);
+			}
+		}
+		
+		return result;
+	}
+	
+	
 	
 	
 	

@@ -18,4 +18,5 @@ public interface CompetitionService {
 	List<Competition> lastWeekCompetition();
 	List<Competition> nextWeekCompetition();
 	List<Competition> lastMoonCompetition();
+	List<Map> analysisComp(Map map);
 }
