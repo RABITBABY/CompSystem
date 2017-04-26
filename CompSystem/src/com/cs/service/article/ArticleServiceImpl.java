@@ -43,9 +43,12 @@ public class ArticleServiceImpl implements ArticleService {
 		System.out.println("参数"+param);
 		List<Map> list=articleMapper.getMtypeList(param);
 		System.out.println(type+"++++");
-		int total=articleMapper.getTotal(type);
+		int totalPage=0;
+		if(list.size() > 0){
+			int total=articleMapper.getTotal(type);
+			totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
+		}
 		
-		int totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
 		PageInfo pageInfo=new PageInfo();
 		pageInfo.setIndex(index);
 		pageInfo.setList(list);

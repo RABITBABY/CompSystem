@@ -33,9 +33,12 @@ private CompetitionMapper compeMapper;
 		
 		System.out.println("CompetitionList--param"+param);
 		List<Map<String,Object>> list=compeMapper.selectByAdmin(param);
+		int totalPage=0;
+		if(list.size() > 0){
+			int total=compeMapper.getTotal();
+			totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
+		}
 		
-		int total=compeMapper.getTotal();
-		int totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
 		PageInfo pageInfo=new PageInfo();
 		pageInfo.setList(list);
 		pageInfo.setTotal(totalPage);

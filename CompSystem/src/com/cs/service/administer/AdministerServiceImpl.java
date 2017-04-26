@@ -87,9 +87,11 @@ public PageInfo allMaterial(Map map) {
 	param.put("page", page);
 	param.put("pageSize", pageSize);
 	List<Map> list =materialMapper.allMaterial(param);
-	
-	int total=materialMapper.MaterialCount();
-	int totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
+	int totalPage=0;
+	if(list.size()>0){
+		int total=materialMapper.MaterialCount();
+		totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
+	}
 	PageInfo pageInfo=new PageInfo();
 	pageInfo.setIndex(index);
 	pageInfo.setList(list);

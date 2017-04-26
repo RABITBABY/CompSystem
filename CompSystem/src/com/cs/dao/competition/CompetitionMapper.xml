@@ -525,6 +525,9 @@
      select com.*,t.teacherName,t.gender,t.department,t.phone,t.email  from competition com,teacher t
     where com.teacherNo=t.teacherNo
 		and com.applyEndDate>=now()
+		<if test=" department != '' ">
+			and com.department=#{department}
+		</if>
 	ORDER BY com.applyEndDate desc limit #{page},#{pageSize}
   </select>
   

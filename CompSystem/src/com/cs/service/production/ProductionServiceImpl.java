@@ -31,9 +31,11 @@ public class ProductionServiceImpl implements ProductionService {
 		System.out.println("productioList--param"+param);
 		
 		List<Production> list=productionMapper.getProduction(param);
-		
-		int total=productionMapper.getTotal();
-		int totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
+		int totalPage=0;
+		if(list.size()>0){
+			int total=productionMapper.getTotal();
+			totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
+		}
 		PageInfo pageInfo=new PageInfo();
 		pageInfo.setList(list);
 		pageInfo.setTotal(totalPage);
