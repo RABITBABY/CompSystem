@@ -42,12 +42,13 @@ public class LoginController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/login" ,method=RequestMethod.POST)
-	public String IsAdmin(@RequestParam(value = "account",required=false) String account,
+	public Map IsAdmin(@RequestParam(value = "account",required=false) String account,
 			@RequestParam(value = "password",required=false)String password,
 			@RequestParam(value = "role",required=false) String role, 
 			HttpSession session){
 		
 		Map<String , Object> resultMap=new HashMap<String, Object>();
+		Map<String , Object> resultMap1=new HashMap<String, Object>();
 		String stateCode="1";
 		String info="";
 		String userId="";
@@ -76,6 +77,7 @@ public class LoginController {
 					}
 					userId=String.valueOf(teacher.getTeacherno());
 					userName=teacher.getTeachername();
+					resultMap1.put("user", teacher);
 					info= "success";
 				}else{
 					stateCode="0";
@@ -95,6 +97,7 @@ public class LoginController {
 					userName=stu.getStudentname();
 					info= "success";
 					resultStr="student";
+					resultMap1.put("user", stu);
 				}else{
 					stateCode="0";
 					info= "wrongPassword";
@@ -112,6 +115,7 @@ public class LoginController {
 					userName=admin.getAdminname();
 					info= "success";
 					resultStr="admin";
+					resultMap1.put("user", admin);
 				}else{
 					stateCode="0";
 					info= "wrongPassword";
@@ -126,12 +130,13 @@ public class LoginController {
 		resultMap.put("userId", userId);
 		resultMap.put("userName", userName);
 		resultMap.put("roleNum", roleNum);
+		resultMap.put("resultStr", resultStr);
 		System.out.println("resultMap"+resultMap);
 		if("1".equals(stateCode)){
 			
 			session.setAttribute("loginInfo", resultMap);
 		}
-		return resultStr;
+		return resultMap1;
 		
 	}
 
