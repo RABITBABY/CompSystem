@@ -152,26 +152,14 @@ public class IndexController {
 	public  Map CompetitionList(String department,String time,String index,String pageSize) {
 		Map<String ,Object> resultMap=new HashMap<String, Object>();
 		
-		List<Competition> todayList=new ArrayList<Competition>();
-		List<Competition> yestedayList=new ArrayList<Competition>();
-		List<Competition> tomorrowList=new ArrayList<Competition>();
-		List<Competition> lastWeekList=new ArrayList<Competition>();
-		List<Competition> nextWeekList=new ArrayList<Competition>();
-		List<Competition> lastMoonList=new ArrayList<Competition>();
+		List<Competition> before=new ArrayList<Competition>();
+		List<Competition> after=new ArrayList<Competition>();
 		
-		todayList=compeService.todayCompetition();
-		yestedayList=compeService.yesterdayCompetition();
-		tomorrowList=compeService.tomorrowCompetition();
-		lastWeekList=compeService.lastWeekCompetition();
-		nextWeekList=compeService.nextWeekCompetition();
-		lastMoonList=compeService.lastMoonCompetition();
+		before=compeService.beforeToday();
+		after=compeService.afterToday();
 		
-		resultMap.put("today", todayList);
-		resultMap.put("yesterday", yestedayList);
-		resultMap.put("tomorrow", tomorrowList);
-		resultMap.put("lastWeek", lastWeekList);
-		resultMap.put("nextWeek", nextWeekList);
-		resultMap.put("lastMoon", lastMoonList);
+		resultMap.put("before", before);
+		resultMap.put("after", after);
 		
 		return resultMap;
 	}

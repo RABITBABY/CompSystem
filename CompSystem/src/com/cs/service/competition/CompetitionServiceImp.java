@@ -44,47 +44,29 @@ private CompetitionMapper compeMapper;
 		return pageInfo;
 	}
 
-	@Override
-	public List<Competition> todayCompetition() {
-		List<Competition> list=compeMapper.todayCompetition();
-		return list;
-	}
-
-	@Override
-	public List<Competition> yesterdayCompetition() {
-		List<Competition> list=compeMapper.yesterdayCompetition();
-		return list;
-	}
-
-	@Override
-	public List<Competition> tomorrowCompetition() {
-		List<Competition> list=compeMapper.tomorrowCompetition();
-		return list;
-	}
-
-	@Override
-	public List<Competition> lastWeekCompetition() {
-		List<Competition> list=compeMapper.lastWeekCompetition();
-		return list;
-	}
-
-	@Override
-	public List<Competition> nextWeekCompetition() {
-		List<Competition> list=compeMapper.nextWeekCompetition();
-		return list;
-	}
-
-	@Override
-	public List<Competition> lastMoonCompetition() {
-		List<Competition> list=compeMapper.lastMoonCompetition();
-		return list;
-	}
+	
 
 	@Override
 	public List<Map> analysisComp(Map map) {
 		List<Map> result=new ArrayList<Map>();
 		result=compeMapper.analysisCom(map);
 		return result;
+	}
+
+
+
+	@Override
+	public List<Competition> beforeToday() {
+		List<Competition> list=compeMapper.beforeToday();
+		return list;
+	}
+
+
+
+	@Override
+	public List<Competition> afterToday() {
+		List<Competition> list=compeMapper.afterToday();
+		return list;
 	}
 
 	

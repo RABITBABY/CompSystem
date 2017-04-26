@@ -12,11 +12,7 @@ import com.cs.util.PageInfo;
 public interface CompetitionService {
 	PageInfo CompetitionList(Map map);
 
-	List<Competition> todayCompetition();
-	List<Competition> yesterdayCompetition();
-	List<Competition> tomorrowCompetition();
-	List<Competition> lastWeekCompetition();
-	List<Competition> nextWeekCompetition();
-	List<Competition> lastMoonCompetition();
+	  List<Competition> beforeToday();
+	    List<Competition> afterToday();
 	List<Map> analysisComp(Map map);
 }

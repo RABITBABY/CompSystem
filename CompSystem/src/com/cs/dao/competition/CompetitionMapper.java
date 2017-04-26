@@ -36,12 +36,8 @@ public interface CompetitionMapper {
     int getTotal();
     int updatePubState(Map map);
     
-    List<Competition> todayCompetition();
-    List<Competition> yesterdayCompetition();
-    List<Competition> tomorrowCompetition();
-    List<Competition> lastWeekCompetition();
-    List<Competition> nextWeekCompetition();
-    List<Competition> lastMoonCompetition();
+    List<Competition> beforeToday();
+    List<Competition> afterToday();
     
     List<Map> analysisCom(Map map);
     
