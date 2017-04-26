@@ -154,12 +154,13 @@ public class IndexController {
 		
 		List<Competition> before=new ArrayList<Competition>();
 		List<Competition> after=new ArrayList<Competition>();
+		List<Competition> list=new ArrayList<Competition>();
 		
 		before=compeService.beforeToday();
 		after=compeService.afterToday();
-		
-		resultMap.put("before", before);
-		resultMap.put("after", after);
+		list.addAll(before);
+		list.addAll(after);
+		resultMap.put("comp", list);
 		
 		return resultMap;
 	}
