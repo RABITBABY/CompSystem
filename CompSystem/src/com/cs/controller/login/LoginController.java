@@ -42,7 +42,7 @@ public class LoginController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/login" ,method=RequestMethod.POST)
-	public Map IsAdmin(@RequestParam(value = "account",required=false) String account,
+	public String IsAdmin(@RequestParam(value = "account",required=false) String account,
 			@RequestParam(value = "password",required=false)String password,
 			@RequestParam(value = "role",required=false) String role, 
 			HttpSession session){
@@ -53,6 +53,7 @@ public class LoginController {
 		String userId="";
 		String userName="";
 		String roleNum="";//1--教师，2--审批员，3--学生，4--管理员
+		String resultStr="";
 		//显示传递的数据
 		System.out.println(password+"---"+account+"--"+role);
 		
@@ -68,8 +69,10 @@ public class LoginController {
 					session.setAttribute("user", teacher); 
 					if(teacher.getExaminer()==0){//教师
 						roleNum="1";
+						resultStr="teacher";
 					}else{//审批员
 						roleNum="2";
+						resultStr="examiner";
 					}
 					userId=String.valueOf(teacher.getTeacherno());
 					userName=teacher.getTeachername();
@@ -91,6 +94,7 @@ public class LoginController {
 					userId=String.valueOf(stu.getStudentno());
 					userName=stu.getStudentname();
 					info= "success";
+					resultStr="student";
 				}else{
 					stateCode="0";
 					info= "wrongPassword";
@@ -107,6 +111,7 @@ public class LoginController {
 					userId=admin.getAdminno();
 					userName=admin.getAdminname();
 					info= "success";
+					resultStr="admin";
 				}else{
 					stateCode="0";
 					info= "wrongPassword";
@@ -126,7 +131,8 @@ public class LoginController {
 			
 			session.setAttribute("loginInfo", resultMap);
 		}
-		return resultMap;
+		return resultStr;
+		
 	}
 
 	@ResponseBody
