@@ -61,6 +61,13 @@ public class CompetitionInfoVo {
 	public void setSchedules(List<Schedule> schedules) {
 		this.schedules = schedules;
 	}
+	@Override
+	public String toString() {
+		return "CompetitionInfoVo [competition=" + competition + ", budgets="
+				+ budgets + ", compConditions=" + compConditions
+				+ ", guideTeachers=" + guideTeachers + ", hours=" + hours
+				+ ", schedules=" + schedules + "]";
+	}
 	
     
 }
