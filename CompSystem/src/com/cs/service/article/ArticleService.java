@@ -10,6 +10,8 @@ import com.cs.util.PageInfo;
 public interface ArticleService {
 	PageInfo getArticleList(Map map);
 	
+	PageInfo searchArticle(Map map);
+	
 	Map getArticleByID(int articleID);
 	
 	int insertArticle(Article article);

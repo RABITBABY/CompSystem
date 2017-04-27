@@ -7,11 +7,42 @@
 	
  <select id="getMtypeList" resultType="Map" parameterType="Map">
    select ar.* ,ad.adminName adminName from competition.article ar,competition.administer ad 
-   where ar.pubuserno=ad.adminno and ar.articleType=#{type} ORDER BY ar.pubDate desc limit #{page},#{pageSize}
+   where ar.pubuserno=ad.adminno and ar.articleType=#{type}  ORDER BY ar.pubDate desc limit #{page},#{pageSize}
    </select>
+   
+   
+    <select id="searchArticle" resultType="Map" parameterType="Map">
+select ar.* ,ad.adminName adminName from competition.article ar,competition.administer ad 
+   where ar.pubuserno =ad.adminNo  
+ <if test="searchInput != null and searchInput!= ''">
+   and title like #{searchInput} 
+</if> 
+<if test="type != null and type!=''">
+   and articleType=#{type}
+</if>
+   ORDER BY ar.pubDate desc limit #{page},#{pageSize}
+</select>
+
+
+    <select id="searchTotal" resultType="int" parameterType="Map">
+select count(*) from competition.article ar,competition.administer ad 
+   where ar.pubuserno =ad.adminNo  
+ <if test="searchInput != null and searchInput!= ''">
+   and title like #{searchInput} 
+</if> 
+<if test="type != null and type!=''">
+   and articleType=#{type}
+</if>
+</select>
+
+
+
 
  <select id="getTotal" resultType="int" parameterType="String">
-  select count(*) from article  where articleType=#{type} 
+  select count(*) from article  where 1=1 
+  	<if test="_parameter != null ">
+  	 and articleType=#{_parameter}
+</if>
 </select>
 
  <select id="findById" resultType="Map" parameterType="int">

@@ -10,8 +10,10 @@ public interface ArticleMapper {
 	
 	/** 获取某类型的一定数量文章*/
 	List<Map> getMtypeList(Map map);
+	List<Map> searchArticle(Map map);
 	/**  获取所有该类型的文章数量   */
 	int getTotal(String type);
+	int searchTotal(Map map);
 	/**  根据文章id获取文章的详细内容 */
 	Map findById(int id);
 	/**发布文章*/

@@ -12,10 +12,12 @@ import com.cs.dao.article.ArticleMapper;
 import com.cs.dao.awards.AwardsMapper;
 import com.cs.dao.competition.CompetitionMapper;
 import com.cs.dao.fileUpload.FileUploadMapper;
+import com.cs.dao.material.MaterialMapper;
 import com.cs.dao.production.ProductionMapper;
 import com.cs.pojo.Administer;
 import com.cs.pojo.Competition;
 import com.cs.pojo.FileUpload;
+import com.cs.pojo.Material;
 import com.cs.pojo.Production;
 import com.cs.util.PageInfo;
 @Service
@@ -39,6 +41,8 @@ public class AdministerServiceImpl implements AdministerService{
 	@Autowired
 	private ProductionMapper productionMapper;
 	
+	@Autowired
+	private MaterialMapper materialMapper;
 	
 	/**
 	 * 上传文件
@@ -58,33 +62,6 @@ public class AdministerServiceImpl implements AdministerService{
 	}
 	
 	
-	/**
-	 * 获取最近的竞赛活动
-	 */
-	@Override
-	public PageInfo CompetitionList(Map map) {
-		Map param=new HashMap();
-		int index=Integer.parseInt(map.get("index").toString());
-		int pageSize=Integer.parseInt(map.get("pageSize").toString());
-		int page=(index-1)*pageSize;
-		param.put("page", page);
-		param.put("pageSize", pageSize);
-		param.put("department", map.get("department"));
-		param.put("time", map.get("time"));
-		
-		System.out.println("CompetitionList--param"+param);
-		List<Map<String,Object>> list=compeMapper.selectByAdmin(param);
-		
-		int total=compeMapper.getTotal();
-		int totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
-		PageInfo pageInfo=new PageInfo();
-		pageInfo.setList(list);
-		pageInfo.setTotal(totalPage);
-		pageInfo.setPageSize(pageSize);
-		pageInfo.setIndex(index);
-		return pageInfo;
-	}
-
 	
 
 	
@@ -100,5 +77,32 @@ public static void main(String[] args) {
 public FileUpload getFile(int fileId) {
 	FileUpload file=fileMapper.selectByPrimaryKey(fileId);
 	return file;
+}
+@Override
+public PageInfo allMaterial(Map map) {
+	int index=Integer.parseInt(map.get("index").toString());
+	int pageSize=Integer.parseInt(map.get("pageSize").toString());
+	int page=(index-1)*pageSize;
+	Map param=new HashMap<String , Object>();
+	param.put("page", page);
+	param.put("pageSize", pageSize);
+	List<Map> list =materialMapper.allMaterial(param);
+	int totalPage=0;
+	if(list.size()>0){
+		int total=materialMapper.MaterialCount();
+		totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
+	}
+	PageInfo pageInfo=new PageInfo();
+	pageInfo.setIndex(index);
+	pageInfo.setList(list);
+	pageInfo.setTotal(totalPage);
+	pageInfo.setPageSize(pageSize);
+	
+	return pageInfo;
+}
+@Override
+public int updateMaterialState(int id) {
+	int state =materialMapper.updateState(id);
+	return state;
 }
 }

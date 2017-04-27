@@ -31,7 +31,7 @@ public class ArticleServiceImpl implements ArticleService {
 	 */
 	@Override
 	public PageInfo getArticleList(Map map) {
-		System.out.println("参数"+map);
+		
 		int index=Integer.parseInt(map.get("index").toString());
 		int pageSize=Integer.parseInt(map.get("pageSize").toString());
 		int page=(index-1)*pageSize;
@@ -40,10 +40,43 @@ public class ArticleServiceImpl implements ArticleService {
 		param.put("page", page);
 		param.put("pageSize", pageSize);
 		param.put("type", type);
-		
+		System.out.println("参数"+param);
 		List<Map> list=articleMapper.getMtypeList(param);
+		System.out.println(type+"++++");
+		int totalPage=0;
+		if(list.size() > 0){
+			int total=articleMapper.getTotal(type);
+			totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
+		}
 		
-		int total=articleMapper.getTotal(type);
+		PageInfo pageInfo=new PageInfo();
+		pageInfo.setIndex(index);
+		pageInfo.setList(list);
+		pageInfo.setTotal(totalPage);
+		pageInfo.setPageSize(pageSize);
+		return pageInfo;
+	}
+	/**
+	 * 获取文章列表分页
+	 */
+	@Override
+	public PageInfo searchArticle(Map map) {
+		System.out.println("参数"+map);
+		int index=Integer.parseInt(map.get("index").toString());
+		int pageSize=Integer.parseInt(map.get("pageSize").toString());
+		int page=(index-1)*pageSize;
+		String type=map.get("type").toString();
+		String searchInput="%"+map.get("searchInput").toString()+"%";
+		
+		Map param=new HashMap();
+		param.put("page", page);
+		param.put("pageSize", pageSize);
+		param.put("type", type);
+		param.put("searchInput" , searchInput);
+		System.out.println("参数"+param);
+		List<Map> list=articleMapper.searchArticle(param);
+		
+		int total=articleMapper.searchTotal(param);
 		
 		int totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
 		PageInfo pageInfo=new PageInfo();
@@ -53,7 +86,6 @@ public class ArticleServiceImpl implements ArticleService {
 		pageInfo.setPageSize(pageSize);
 		return pageInfo;
 	}
-
 
 
 /**

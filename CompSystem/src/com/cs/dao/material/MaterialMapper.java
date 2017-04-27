@@ -1,6 +1,7 @@
 package com.cs.dao.material;
 
 import java.util.List;
+import java.util.Map;
 
 import com.cs.pojo.Material;
 
@@ -19,4 +20,10 @@ public interface MaterialMapper {
     int updateByPrimaryKeySelective(Material record);
 
     int updateByPrimaryKey(Material record);
+    //max
+    List<Map> allMaterial(Map map);
+    
+    int MaterialCount();
+    
+    int updateState(int id);
 }

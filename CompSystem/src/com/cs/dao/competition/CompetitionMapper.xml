@@ -525,6 +525,9 @@
      select com.*,t.teacherName,t.gender,t.department,t.phone,t.email  from competition com,teacher t
     where com.teacherNo=t.teacherNo
 		and com.applyEndDate>=now()
+		<if test=" department != '' ">
+			and com.department=#{department}
+		</if>
 	ORDER BY com.applyEndDate desc limit #{page},#{pageSize}
   </select>
   
@@ -534,4 +537,29 @@
 	<update id="updatePubState" parameterType="Map">
 		update competition set isPublish=#{isPub} where comId = #{rID}
 	</update>
+	
+	
+	<!-- 今天 -->
+	 <select id="beforeToday" resultType="com.cs.pojo.Competition" >
+		SELECT c.time,c.* from competition c where c.teaSpStatus=1 and c.depSpStatus=1
+		and c.time  &lt;= CURDATE()  ORDER BY c.time desc limit 0,3
+	</select>
+	<!-- 昨天 -->
+	 <select id="afterToday" resultType="com.cs.pojo.Competition" >
+  		SELECT c.time,c.* from competition c where c.teaSpStatus=1 and c.depSpStatus=1
+		and c.time > CURDATE()  ORDER BY c.time  limit 0,2;
+
+
+	</select>
+
+	
+	 <select id="analysisCom" resultType="Map" parameterType="Map">
+  		select  #{department} as department,DATE_FORMAT(c.time,'%Y') as year,COUNT(*) as compCount 
+		from competition c  
+		where c.department=#{department} and c.depSpStatus=1 and c.teaSpStatus=1
+		<if test="single != null ">
+ 			GROUP BY   DATE_FORMAT(c.time,'%Y')
+ 		</if>
+	</select>
+	
 </mapper>

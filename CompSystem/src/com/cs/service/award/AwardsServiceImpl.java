@@ -1,5 +1,6 @@
 package com.cs.service.award;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,10 +32,11 @@ public class AwardsServiceImpl implements AwardsService{
 		param.put("time", map.get("time"));
 		System.out.println("参数"+param);
 		List<Map> list=awardsMapper.getAwards(param);
-		
-		int total=awardsMapper.getTotal();
-		
-		int totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
+		int totalPage=0;
+		if(list.size() > 0){
+			int total=awardsMapper.getTotal();
+			totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
+		}
 		PageInfo pageInfo=new PageInfo();
 		pageInfo.setIndex(index);
 		pageInfo.setList(list);
@@ -42,5 +44,17 @@ public class AwardsServiceImpl implements AwardsService{
 		pageInfo.setPageSize(pageSize);
 		return pageInfo;
 	}
+	/**
+	 * 获奖分析
+	 */
+	@Override
+	public List<Map> analysisAwards(Map map) {
+		List<Map> result =new ArrayList<Map>();
+		result=awardsMapper.analysisAwards(map);
+		return result;
+	}
+	
+	
+	
 	
 }

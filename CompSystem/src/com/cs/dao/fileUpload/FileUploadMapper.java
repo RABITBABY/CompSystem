@@ -1,8 +1,16 @@
 package com.cs.dao.fileUpload;
 
+import java.util.List;
+import java.util.Map;
+
 import com.cs.pojo.FileUpload;
 
 public interface FileUploadMapper {
+	
+	List<Map> allFile(Map map);
+	 
+	int getTotal();
+	
     int deleteByPrimaryKey(Integer fileid);
 
     int insert(FileUpload record);
