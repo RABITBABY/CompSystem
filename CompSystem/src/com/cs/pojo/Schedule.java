@@ -2,6 +2,8 @@ package com.cs.pojo;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Schedule {
 	private Integer id;
 	
@@ -13,6 +15,7 @@ public class Schedule {
 
     private String position;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
 
     private Integer hours;

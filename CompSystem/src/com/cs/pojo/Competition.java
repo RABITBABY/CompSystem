@@ -3,6 +3,8 @@ package com.cs.pojo;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Competition {
     private Integer comid;
 
@@ -16,10 +18,12 @@ public class Competition {
 
     private String department;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
 
     private String host;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date time;
 
     private String place;
@@ -42,22 +46,26 @@ public class Competition {
 
     private String slsign;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date slsdate;
 
     private String uopinion;
 
     private String dsign;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dsdate;
 
     private String tdopinion;
 
     private String olsign;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date olsdate;
 
     private String lsign;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date lsdate;
 
     private Integer depspstatus;
@@ -66,8 +74,10 @@ public class Competition {
 
     private Integer completestatus;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date applybegindate;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date applyenddate;
 
     private Long cost;

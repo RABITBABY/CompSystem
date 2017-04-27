@@ -57,6 +57,13 @@
 	 <input  type="text" name="email" value="888888"/>
 	 <input  type="submit" value="修改"/>
 	</form>
+	<!-- 更新teacher -->
+	<form name="Form6" action="<%=path%>/teacher/updateTeacherInfo" method="post">
+	 <input  type="text" name="teacherno" value="1"/>
+	 <input  type="text" name="teachername" value="邱邱"/>
+	 <input  type="text" name="birth" value="2017-2-2"/>
+	 <input  type="submit" value="修改"/>
+	</form>
 </body>
 </html>
 
