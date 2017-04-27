@@ -69,19 +69,18 @@ public class TeacherServiceImpl implements TeacherService {
 
 	@Override
 	@Transactional
-	public void deleteComp(CompetitionInfoVo compVo) {
-		Competition competition = compVo.getCompetition();
-		comMapper.deleteByPrimaryKey(competition.getComid());
+	public void deleteComp(Integer comId) {
+		comMapper.deleteByPrimaryKey(comId);
 		// 经费预算
-		budgetMapper.deleteByComId(competition.getComid());
+		budgetMapper.deleteByComId(comId);
 		// 竞赛条件
-		compConditionMapper.deleteByComId(competition.getComid());
+		compConditionMapper.deleteByComId(comId);
 		// 指导老师
-		guideTeacherMapper.deleteByComId(competition.getComid());
+		guideTeacherMapper.deleteByComId(comId);
 		// 课时预算
-		hoursMapper.deleteByComId(competition.getComid());
+		hoursMapper.deleteByComId(comId);
 		// 培训安排
-		scheduleMapper.deleteByComId(competition.getComid());
+		scheduleMapper.deleteByComId(comId);
 	}
 
 	@Override

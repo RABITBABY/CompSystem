@@ -2,13 +2,18 @@ package com.cs.controller.websocket;
 
 
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.cs.pojo.Greeting;
 import com.cs.pojo.HelloMessage;
+import com.cs.pojo.Message;
+import com.sun.org.apache.regexp.internal.recompile;
 
 @Controller
 public class WebSocketController {
@@ -18,10 +23,13 @@ public class WebSocketController {
      * @param headers 
      */  
     @MessageMapping("/hello")
-    @SendTo("/topic/greetings" )
-    public Greeting greeting(HelloMessage message) throws Exception {
+    @SendTo("/topic/greetings")
+    public Message greeting(Message message) throws Exception {
        // Thread.sleep(3000); // simulated delay
-        return new Greeting("Hello, " + message.getName() + "!");
+    	if (message.getNo()==1) {
+    		return message;
+		}
+        return null;
     }
 
     @MessageMapping("/admin")

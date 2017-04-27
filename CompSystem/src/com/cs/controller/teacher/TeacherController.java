@@ -125,8 +125,8 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/getCompDetail")
-	public Map<String, Object> getCompDetail() {
-		return teacherService.getCompDetail(1);
+	public Map<String, Object> getCompDetail(Integer comId) {
+		return teacherService.getCompDetail(comId);
 	}
 
 	/**
@@ -149,8 +149,8 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/deleteComp")
-	public void deleteComp(CompetitionInfoVo compVo) {
-		teacherService.deleteComp(compVo);
+	public void deleteComp(Integer comId) {
+		teacherService.deleteComp(comId);
 	} 
 	
 	/**

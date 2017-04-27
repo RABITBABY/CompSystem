@@ -20,8 +20,9 @@
             stompClient.connect({}, function(frame) {
                 setConnected(true);
                 console.log('Connected: ' + frame);
-                stompClient.subscribe('/topic/greetings', function(greeting){
-                    showGreeting(JSON.parse(greeting.body).content);
+                stompClient.subscribe('/topic/greetings', function(message){
+                    console.log(message);
+                    showGreeting(JSON.parse(message.body).message);
                 });
             });
         }
@@ -36,7 +37,13 @@
 
         function sendName() {
             var name = document.getElementById('name').value;
-            stompClient.send("/app/hello", {}, JSON.stringify({ 'name': name }));
+            var message={
+                no:2,
+                role:1,
+                from:2,
+                message:name
+            }
+            stompClient.send("/app/hello", {}, JSON.stringify(message));
         }
 
         function showGreeting(message) {

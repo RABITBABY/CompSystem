@@ -31,7 +31,7 @@ public interface TeacherService {
 	 * @param comId
 	 * @return
 	 */
-	public void deleteComp(CompetitionInfoVo compVo);
+	public void deleteComp(Integer comId);
 	
 	/**
 	 * 新增申报表
