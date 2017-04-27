@@ -91,7 +91,7 @@ public class TeacherServiceImpl implements TeacherService {
 	
 	@Override
 	public boolean updateByTeacherNo(Teacher teacher) {
-		int updateByPrimaryKey = teacherMapper.updateByPrimaryKey(teacher);
+		int updateByPrimaryKey = teacherMapper.updateByPrimaryKeySelective(teacher);
 		if (updateByPrimaryKey > 0) {
 			return true;
 		}

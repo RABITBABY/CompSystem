@@ -48,6 +48,15 @@
 	 <input  type="text" name="awardsimg" value="1.jpg"/>
 	 <input  type="submit" value="下载"/>
 	</form>
+	
+	<!-- 更新student -->
+	<form name="Form5" action="<%=path%>/student/updateInfo" method="post">
+	 <input  type="text" name="studentno" value="1"/>
+	 <input  type="text" name="studentname" value="慌欢"/>
+	 <input  type="text" name="phone" value="1"/>
+	 <input  type="text" name="email" value="888888"/>
+	 <input  type="submit" value="修改"/>
+	</form>
 </body>
 </html>
 
