@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -84,7 +85,7 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/updateTeacherInfo")
-	public boolean updateTeacherInfo(Teacher teacher) {
+	public boolean updateTeacherInfo(@RequestBody Teacher teacher) {
 		return teacherService.updateByTeacherNo(teacher);
 	}
 
@@ -110,7 +111,7 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/getCompBySpStatus")
-	public List<Competition> getCompBySpStatus(Competition competition) {
+	public List<Competition> getCompBySpStatus(@RequestBody Competition competition) {
 		return teacherService.getCompBySpStatus(competition);
 	}
 
@@ -134,7 +135,7 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/addComp")
-	public void addComp(CompetitionInfoVo competitionInfovo) {
+	public void addComp(@RequestBody CompetitionInfoVo competitionInfovo) {
 		teacherService.addComp(competitionInfovo);
 	}
 
@@ -158,7 +159,7 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/updateComp")
-	public void updateComp(CompetitionInfoVo compVo) {
+	public void updateComp(@RequestBody CompetitionInfoVo compVo) {
 		teacherService.updateComp(compVo);
 	}
 
@@ -194,7 +195,7 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/manageGroupsMember")
-	public boolean manageGroupsMember(Groups groups) {
+	public boolean manageGroupsMember(@RequestBody Groups groups) {
 		return teacherService.approveGroups(groups);
 	}
 
@@ -269,7 +270,7 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/updateCompStatusByDept")
-	public void updateCompStatusByDept(Competition comp) {
+	public void updateCompStatusByDept(@RequestBody Competition comp) {
 		teacherService.updateCompStatusByDept(comp);
 	}
 	
@@ -280,7 +281,7 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/updateCompStatusByTea")
-	public void updateCompStatusByTea(Competition comp) {
+	public void updateCompStatusByTea(@RequestBody Competition comp) {
 		teacherService.updateCompStatusByTea(comp);
 	}
 	
