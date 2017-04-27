@@ -59,6 +59,7 @@ public class TeacherController {
 	 * 6.审批员的功能
 	 *    6.1系主任审批申报书√
 	 *    6.2教学处审批申报书√
+	 * 7.查找所有的教师
 	 */
 
 	@Autowired
@@ -285,5 +286,16 @@ public class TeacherController {
 	@RequestMapping(value = "/updateCompStatusByTea")
 	public void updateCompStatusByTea(Competition comp) {
 		teacherService.updateCompStatusByTea(comp);
+	}
+	
+	 
+	 /**
+	 * 7.查找所有的教师
+     * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/getAllTeacher")
+	public List<Teacher> getAllTeacher() {
+		return teacherService.selectAllTeacher();
 	}
 }

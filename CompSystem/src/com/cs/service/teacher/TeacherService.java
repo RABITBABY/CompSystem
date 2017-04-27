@@ -113,4 +113,12 @@ public interface TeacherService {
 	public void updateCompStatusByTea(Competition comp);
 	
 	
+	/**
+	 * 查看所有的教师
+	 * @param comId
+	 * @return
+	 */
+	public List<Teacher> selectAllTeacher();
+	
+	
 }

@@ -23,6 +23,9 @@
     teacherNo, teacherName, gender, birth, department, subject, phone, title, post, email, 
     type, direction, education, lab, password, examiner
   </sql>
+  <select id="selectAllTeacher" resultMap="BaseResultMap">
+    select * from teacher
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

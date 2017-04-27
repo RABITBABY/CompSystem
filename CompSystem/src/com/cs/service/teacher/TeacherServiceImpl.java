@@ -281,4 +281,9 @@ public class TeacherServiceImpl implements TeacherService {
 		comMapper.updateByTea(competition);
 	}
 
+	@Override
+	public List<Teacher> selectAllTeacher() {
+		return teacherMapper.selectAllTeacher();
+	}
+
 }
