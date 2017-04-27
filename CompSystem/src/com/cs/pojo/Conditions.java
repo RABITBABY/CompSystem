@@ -30,4 +30,12 @@ public class Conditions {
     public void setType(Integer type) {
         this.type = type;
     }
+
+	@Override
+	public String toString() {
+		return "Conditions [conditionid=" + conditionid + ", conditionname="
+				+ conditionname + ", type=" + type + "]";
+	}
+    
+    
 }

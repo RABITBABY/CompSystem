@@ -383,5 +383,28 @@ public class Competition {
 	public void setGroupnum(Integer groupnum) {
 		this.groupnum = groupnum;
 	}
-    
+
+	@Override
+	public String toString() {
+		return "Competition [comid=" + comid + ", comname=" + comname
+				+ ", teacherno=" + teacherno + ", unit=" + unit
+				+ ", levelname=" + levelname + ", department=" + department
+				+ ", date=" + date + ", host=" + host + ", time=" + time
+				+ ", place=" + place + ", introduce=" + introduce + ", object="
+				+ object + ", people=" + people + ", sponsor=" + sponsor
+				+ ", plan=" + plan + ", tgoal=" + tgoal + ", wgoal=" + wgoal
+				+ ", sopinion=" + sopinion + ", slsign=" + slsign
+				+ ", slsdate=" + slsdate + ", uopinion=" + uopinion
+				+ ", dsign=" + dsign + ", dsdate=" + dsdate + ", tdopinion="
+				+ tdopinion + ", olsign=" + olsign + ", olsdate=" + olsdate
+				+ ", lsign=" + lsign + ", lsdate=" + lsdate + ", depspstatus="
+				+ depspstatus + ", teaspstatus=" + teaspstatus
+				+ ", completestatus=" + completestatus + ", applybegindate="
+				+ applybegindate + ", applyenddate=" + applyenddate + ", cost="
+				+ cost + ", compstatus=" + compstatus + ", ispublish="
+				+ ispublish + ", isneedgroup=" + isneedgroup + ", groupnum="
+				+ groupnum + "]";
+	}
+     
+	
 }

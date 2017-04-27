@@ -53,6 +53,12 @@ public class Message {
 	public void setIsRead(Integer isRead) {
 		this.isRead = isRead;
 	}
+	@Override
+	public String toString() {
+		return "Message [id=" + id + ", no=" + no + ", role=" + role
+				+ ", from=" + from + ", message=" + message + ", sendDate="
+				+ sendDate + ", isRead=" + isRead + "]";
+	}
 	
 	
 

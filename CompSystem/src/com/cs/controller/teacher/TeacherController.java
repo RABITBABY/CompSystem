@@ -83,7 +83,7 @@ public class TeacherController {
 	 * 1.修改教师信息
 	 */
 	@ResponseBody
-	@RequestMapping(value = "/updateTeacherInfo", method = RequestMethod.POST)
+	@RequestMapping(value = "/updateTeacherInfo")
 	public boolean updateTeacherInfo(Teacher teacher) {
 		return teacherService.updateByTeacherNo(teacher);
 	}
@@ -101,20 +101,16 @@ public class TeacherController {
 	}
 
 	/**
-	 * 2.1.1）根据申报结果查看申报书，比如，查找所有通过的申报书
-	 * 
+	 * 2.1.1）根据申报结果查看申报书，比如，查找所有通过的申报书三个条件
+	 * competition.setDepspstatus(depStatus);
+	 *	competition.setTeaspstatus(teaStatusInteger);
+	 *	competition.setTeacherno(1);
 	 * @param competition
 	 * @return
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/getCompBySpStatus")
-	public List<Competition> getCompBySpStatus() {
-		Integer depStatus = 1;
-		Integer teaStatusInteger = 1;
-		Competition competition = new Competition();
-		competition.setDepspstatus(depStatus);
-		competition.setTeaspstatus(teaStatusInteger);
-		competition.setTeacherno(1);
+	public List<Competition> getCompBySpStatus(Competition competition) {
 		return teacherService.getCompBySpStatus(competition);
 	}
 
@@ -187,7 +183,7 @@ public class TeacherController {
 	@ResponseBody
 	@RequestMapping(value = "/getGroupsMember")
 	public List<Student> getGroupsMember(Integer groupsNo) {
-		return teacherService.getGroupsMember(1);
+		return teacherService.getGroupsMember(groupsNo);
 	}
 
 	/**
@@ -211,7 +207,7 @@ public class TeacherController {
 	@ResponseBody
 	@RequestMapping(value = "/getEndCompetition")
 	public List<Competition> getEndCompetition(Integer teacherNo) {
-		return teacherService.getEndCompetition(1);
+		return teacherService.getEndCompetition(teacherNo);
 	}
 
 	/**
@@ -262,8 +258,8 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/getAprroveTable")
-	public boolean getAprroveTable() {
-		return teacherService.createWord(1);
+	public boolean getAprroveTable(Integer comId) {
+		return teacherService.createWord(comId);
 	}
 	
 	/**

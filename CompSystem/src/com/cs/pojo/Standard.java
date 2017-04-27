@@ -40,4 +40,12 @@ public class Standard {
     public void setTeacher(String teacher) {
         this.teacher = teacher == null ? null : teacher.trim();
     }
+
+	@Override
+	public String toString() {
+		return "Standard [standardid=" + standardid + ", levelid=" + levelid
+				+ ", student=" + student + ", teacher=" + teacher + "]";
+	}
+    
+    
 }

@@ -40,4 +40,13 @@ public class Administer {
     public void setDepartment(String department) {
         this.department = department == null ? null : department.trim();
     }
+
+	@Override
+	public String toString() {
+		return "Administer [adminno=" + adminno + ", password=" + password
+				+ ", adminname=" + adminname + ", department=" + department
+				+ "]";
+	}
+    
+    
 }

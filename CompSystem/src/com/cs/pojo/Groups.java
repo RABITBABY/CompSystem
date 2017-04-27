@@ -91,6 +91,15 @@ public class Groups {
 	public void setIscaptain(Integer iscaptain) {
 		this.iscaptain = iscaptain;
 	}
+
+	@Override
+	public String toString() {
+		return "Groups [id=" + id + ", groupsno=" + groupsno + ", comid="
+				+ comid + ", groupsname=" + groupsname + ", teacherno="
+				+ teacherno + ", studentno=" + studentno + ", status=" + status
+				+ ", captainstatus=" + captainstatus + ", iscaptain="
+				+ iscaptain + "]";
+	}
     
 	
     

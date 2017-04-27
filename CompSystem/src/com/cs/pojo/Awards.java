@@ -72,6 +72,14 @@ public class Awards {
 	public void setAwardsimg(String awardsimg) {
 		this.awardsimg = awardsimg;
 	}
+
+	@Override
+	public String toString() {
+		return "Awards [awardsid=" + awardsid + ", comid=" + comid
+				+ ", prizename=" + prizename + ", groupsno=" + groupsno
+				+ ", awardsimg=" + awardsimg + ", awardtime=" + awardtime
+				+ ", ispublish=" + ispublish + "]";
+	}
     
     
 }

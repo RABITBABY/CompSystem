@@ -72,4 +72,13 @@ public class Schedule {
     public void setHours(Integer hours) {
         this.hours = hours;
     }
+
+	@Override
+	public String toString() {
+		return "Schedule [id=" + id + ", comid=" + comid + ", teacherno="
+				+ teacherno + ", content=" + content + ", position=" + position
+				+ ", date=" + date + ", hours=" + hours + "]";
+	}
+    
+    
 }

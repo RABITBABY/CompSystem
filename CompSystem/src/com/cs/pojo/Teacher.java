@@ -162,4 +162,17 @@ public class Teacher {
     public void setExaminer(Integer examiner) {
         this.examiner = examiner;
     }
+
+	@Override
+	public String toString() {
+		return "Teacher [teacherno=" + teacherno + ", teachername="
+				+ teachername + ", gender=" + gender + ", birth=" + birth
+				+ ", department=" + department + ", subject=" + subject
+				+ ", phone=" + phone + ", title=" + title + ", post=" + post
+				+ ", email=" + email + ", type=" + type + ", direction="
+				+ direction + ", education=" + education + ", lab=" + lab
+				+ ", password=" + password + ", examiner=" + examiner + "]";
+	}
+    
+    
 }

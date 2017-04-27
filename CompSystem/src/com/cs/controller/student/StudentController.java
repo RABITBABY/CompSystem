@@ -75,13 +75,12 @@ public class StudentController {
 	
 	/**
 	 * 1.1 获取该竞赛所需的条件
-	 * groups表和competition表
 	 * @return
 	 */
 	@ResponseBody
 	@RequestMapping("/getCompConditions")
-	public List<Conditions> getCompConditions(){
-		return conditionService.getCompCondition(1);
+	public List<Conditions> getCompConditions(Integer comId){
+		return conditionService.getCompCondition(comId);
 	}
 	
 	
@@ -91,8 +90,8 @@ public class StudentController {
 	 */
 	@ResponseBody
 	@RequestMapping("/getDissatisfyConditions")
-	public List<Conditions> getDissatisfyConditions(){
-		return studentService.getDissatisfyConditions(1, 1);
+	public List<Conditions> getDissatisfyConditions(Integer studentNo,Integer comId){
+		return studentService.getDissatisfyConditions(studentNo, comId);
 	}
 	
 	/**
@@ -205,9 +204,9 @@ public class StudentController {
 	 */
 	@ResponseBody
 	@RequestMapping("/getComp")
-	public Map<String, Object> getComp(){
+	public Map<String, Object> getComp(Integer studentNo){
 		Map<String, Object> map=new HashMap<String, Object>();
-		map.put("stuCom", studentService.getCompByStudentNo(1));
+		map.put("stuCom", studentService.getCompByStudentNo(studentNo));
 		return map;
 	}
 	
@@ -217,8 +216,8 @@ public class StudentController {
 	 */
 	@ResponseBody
 	@RequestMapping("/getAwards")
-	public List<Map<String, Object>> getAwards(){
-		return  studentService.selectAwardsByStudentNo(1);
+	public List<Map<String, Object>> getAwards(Integer studentNo){
+		return  studentService.selectAwardsByStudentNo(studentNo);
 	}
 	
 	/**
@@ -253,7 +252,7 @@ public class StudentController {
 	 */
 	@ResponseBody
 	@RequestMapping("/getStuInfo")
-	public Student getStuInfo(@Param("studentNo") Integer studentNo){
+	public Student getStuInfo(Integer studentNo){
 		return studentService.selectByNo(studentNo);
 	}
 	

@@ -50,4 +50,13 @@ public class Material {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+	@Override
+	public String toString() {
+		return "Material [materialid=" + materialid + ", studentno="
+				+ studentno + ", conditionid=" + conditionid + ", materialpic="
+				+ materialpic + ", status=" + status + "]";
+	}
+    
+    
 }

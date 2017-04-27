@@ -30,4 +30,12 @@ public class GuideTeacher {
     public void setComid(Integer comid) {
         this.comid = comid;
     }
+
+	@Override
+	public String toString() {
+		return "GuideTeacher [guideteaid=" + guideteaid + ", teacherno="
+				+ teacherno + ", comid=" + comid + "]";
+	}
+    
+    
 }
