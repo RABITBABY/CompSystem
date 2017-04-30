@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50018
 File Encoding         : 65001
 
-Date: 2017-04-20 22:47:01
+Date: 2017-04-27 21:42:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -50,17 +50,18 @@ CREATE TABLE `article` (
   `pubUserNo` int(11) default NULL COMMENT '发布用户(管理员)',
   `articleType` int(11) default NULL COMMENT '发布的类型（\r\n1--竞赛信息\r\n2—动态\r\n3—预告）\r\n',
   `comId` int(11) default NULL,
+  `visitCount` int(255) default '0',
   PRIMARY KEY  (`articleId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of article
 -- ----------------------------
-INSERT INTO `article` VALUES ('1', '“蓝桥杯”校赛报名通知', '报名啦', '2017-03-18', '1', '1', '1');
-INSERT INTO `article` VALUES ('2', '“蓝桥杯”校赛动态', '报名啦', '2017-03-18', '1', '2', '1');
-INSERT INTO `article` VALUES ('3', '“蓝桥杯”校赛即将开启', '报名啦', '2017-03-18', '1', '3', '1');
-INSERT INTO `article` VALUES ('4', '“艺术杯”校赛报名通知', '报名啦', '2017-03-18', '2', '1', '2');
-INSERT INTO `article` VALUES ('5', '“文化杯”校赛报名通知', '报名啦', '2017-03-18', '2', '1', '3');
+INSERT INTO `article` VALUES ('1', '“蓝桥杯”校赛报名通知', '报名啦', '2017-03-18', '1', '1', '1', '0');
+INSERT INTO `article` VALUES ('2', '“蓝桥杯”校赛动态', '报名啦', '2017-03-18', '1', '2', '1', '0');
+INSERT INTO `article` VALUES ('3', '“蓝桥杯”校赛即将开启', '报名啦', '2017-03-18', '1', '3', '1', '0');
+INSERT INTO `article` VALUES ('4', '“艺术杯”校赛报名通知', '报名啦', '2017-03-18', '2', '1', '2', '0');
+INSERT INTO `article` VALUES ('5', '“文化杯”校赛报名通知', '报名啦', '2017-03-18', '2', '1', '3', '0');
 
 -- ----------------------------
 -- Table structure for awards
@@ -336,6 +337,7 @@ CREATE TABLE `message` (
   `from` int(255) default NULL COMMENT '消息来自谁（填入工号）',
   `message` varchar(255) default NULL COMMENT '消息内容',
   `sendDate` date default NULL COMMENT '消息发送的日期',
+  `isRead` int(10) default NULL COMMENT '是否已读(0否。1是)',
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -419,7 +421,7 @@ CREATE TABLE `student` (
 -- ----------------------------
 -- Records of student
 -- ----------------------------
-INSERT INTO `student` VALUES ('1', '林欢雯', '女', '计算机系', '计算机科学与技术', '2', '13', '18819297382', '545306388@qq.com', '123123');
+INSERT INTO `student` VALUES ('1', '慌欢', '女', '计算机系', '计算机科学与技术', '2', '13', '1', '888888', '123123');
 INSERT INTO `student` VALUES ('2', '冯美欣', '女', '经济系', '金融', '1', '13', '18827392992', '545306381@qq.com', '123123');
 INSERT INTO `student` VALUES ('3', '叶子鹏', '男', '会计系', '审计学', '1', '13', '18827363778', '545306382@qq.com', '123123');
 INSERT INTO `student` VALUES ('4', '吴舒婷', '女', '外语系', '日语', '1', '13', '18812772828', '545306383@qq.com', '123123');
@@ -456,7 +458,7 @@ CREATE TABLE `teacher` (
 -- ----------------------------
 -- Records of teacher
 -- ----------------------------
-INSERT INTO `teacher` VALUES ('1', '邱珍珍', '女', '2010-12-01', '计算机系', '计算机原理', '18827283778', null, null, null, null, null, null, null, '123123', '1');
+INSERT INTO `teacher` VALUES ('1', '邱邱', '女', '2017-02-02', '计算机系', null, null, null, null, null, null, null, null, null, '123123', '1');
 INSERT INTO `teacher` VALUES ('2', '吴明珠', '女', '2010-12-01', '经济系', '经济原理', '18827283778', '', '', '', '', '', '', '', '123123', '1');
 INSERT INTO `teacher` VALUES ('3', '梁建军', '男', '2010-12-01', '会计系', '会计原理', '18827283778', '', '', '', '', '', '', '', '123123', '1');
 INSERT INTO `teacher` VALUES ('4', '林树青', '男', '2010-12-01', '外语系', '外语原理', '18827283778', '', '', '', '', '', '', '', '123123', '1');

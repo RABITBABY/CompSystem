@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -59,6 +60,7 @@ public class TeacherController {
 	 * 6.审批员的功能
 	 *    6.1系主任审批申报书√
 	 *    6.2教学处审批申报书√
+	 * 7.查找所有的教师
 	 */
 
 	@Autowired
@@ -82,8 +84,8 @@ public class TeacherController {
 	 * 1.修改教师信息
 	 */
 	@ResponseBody
-	@RequestMapping(value = "/updateTeacherInfo", method = RequestMethod.POST)
-	public boolean updateTeacherInfo(Teacher teacher) {
+	@RequestMapping(value = "/updateTeacherInfo")
+	public boolean updateTeacherInfo(@RequestBody Teacher teacher) {
 		return teacherService.updateByTeacherNo(teacher);
 	}
 
@@ -100,20 +102,16 @@ public class TeacherController {
 	}
 
 	/**
-	 * 2.1.1）根据申报结果查看申报书，比如，查找所有通过的申报书
-	 * 
+	 * 2.1.1）根据申报结果查看申报书，比如，查找所有通过的申报书三个条件
+	 * competition.setDepspstatus(depStatus);
+	 *	competition.setTeaspstatus(teaStatusInteger);
+	 *	competition.setTeacherno(1);
 	 * @param competition
 	 * @return
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/getCompBySpStatus")
-	public List<Competition> getCompBySpStatus() {
-		Integer depStatus = 1;
-		Integer teaStatusInteger = 1;
-		Competition competition = new Competition();
-		competition.setDepspstatus(depStatus);
-		competition.setTeaspstatus(teaStatusInteger);
-		competition.setTeacherno(1);
+	public List<Competition> getCompBySpStatus(@RequestBody Competition competition) {
 		return teacherService.getCompBySpStatus(competition);
 	}
 
@@ -125,8 +123,8 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/getCompDetail")
-	public Map<String, Object> getCompDetail() {
-		return teacherService.getCompDetail(1);
+	public Map<String, Object> getCompDetail(Integer comId) {
+		return teacherService.getCompDetail(comId);
 	}
 
 	/**
@@ -137,7 +135,7 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/addComp")
-	public void addComp(CompetitionInfoVo competitionInfovo) {
+	public void addComp(@RequestBody CompetitionInfoVo competitionInfovo) {
 		teacherService.addComp(competitionInfovo);
 	}
 
@@ -149,8 +147,8 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/deleteComp")
-	public void deleteComp(CompetitionInfoVo compVo) {
-		teacherService.deleteComp(compVo);
+	public void deleteComp(Integer comId) {
+		teacherService.deleteComp(comId);
 	} 
 	
 	/**
@@ -161,7 +159,7 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/updateComp")
-	public void updateComp(CompetitionInfoVo compVo) {
+	public void updateComp(@RequestBody CompetitionInfoVo compVo) {
 		teacherService.updateComp(compVo);
 	}
 
@@ -186,7 +184,7 @@ public class TeacherController {
 	@ResponseBody
 	@RequestMapping(value = "/getGroupsMember")
 	public List<Student> getGroupsMember(Integer groupsNo) {
-		return teacherService.getGroupsMember(1);
+		return teacherService.getGroupsMember(groupsNo);
 	}
 
 	/**
@@ -197,7 +195,7 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/manageGroupsMember")
-	public boolean manageGroupsMember(Groups groups) {
+	public boolean manageGroupsMember(@RequestBody Groups groups) {
 		return teacherService.approveGroups(groups);
 	}
 
@@ -210,7 +208,7 @@ public class TeacherController {
 	@ResponseBody
 	@RequestMapping(value = "/getEndCompetition")
 	public List<Competition> getEndCompetition(Integer teacherNo) {
-		return teacherService.getEndCompetition(1);
+		return teacherService.getEndCompetition(teacherNo);
 	}
 
 	/**
@@ -221,7 +219,7 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/setCompResult")
-	public void setCompResult(HttpServletRequest request,Awards[] awards) throws IllegalStateException, IOException{
+	public void setCompResult(HttpServletRequest request,Awards awards) throws IllegalStateException, IOException{
 		//将当前上下文初始化给CommonsMultipartResolver（多部分解析器）
 				CommonsMultipartResolver multipartResolver=new CommonsMultipartResolver(
 						request.getSession().getServletContext());
@@ -235,17 +233,15 @@ public class TeacherController {
 						//一次遍历所有文件
 						MultipartFile file=multiRquest.getFile(iter.next().toString());
 						if(file!=null){//文件不为空
-							for(int i=0;i<awards.length;i++){
-								String imageName=awards[i].getGroupsno().toString()+System.currentTimeMillis();
+								String imageName=awards.getGroupsno().toString()+System.currentTimeMillis();
 								//上传的位置-----------------------------------------
 								String path=request.getSession().getServletContext().getRealPath(File.separator)+"fileUpload\\awards\\"+imageName+".jpg";
 								//上传
 								file.transferTo(new File(path));
 								
 								//保存进数据库
-								awards[i].setAwardsimg(imageName+".jpg");
-								teacherService.setCompResult(awards[i]);
-							}
+								awards.setAwardsimg(imageName+".jpg");
+								teacherService.setCompResult(awards);
 							
 						}
 					}
@@ -261,8 +257,8 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/getAprroveTable")
-	public boolean getAprroveTable() {
-		return teacherService.createWord(1);
+	public boolean getAprroveTable(Integer comId) {
+		return teacherService.createWord(comId);
 	}
 	
 	/**
@@ -272,7 +268,7 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/updateCompStatusByDept")
-	public void updateCompStatusByDept(Competition comp) {
+	public void updateCompStatusByDept(@RequestBody Competition comp) {
 		teacherService.updateCompStatusByDept(comp);
 	}
 	
@@ -283,7 +279,18 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/updateCompStatusByTea")
-	public void updateCompStatusByTea(Competition comp) {
+	public void updateCompStatusByTea(@RequestBody Competition comp) {
 		teacherService.updateCompStatusByTea(comp);
+	}
+	
+	 
+	 /**
+	 * 7.查找所有的教师
+     * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/getAllTeacher")
+	public List<Teacher> getAllTeacher() {
+		return teacherService.selectAllTeacher();
 	}
 }

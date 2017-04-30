@@ -100,4 +100,15 @@ public class Student {
     public void setPassword(String password) {
         this.password = password == null ? null : password.trim();
     }
+
+	@Override
+	public String toString() {
+		return "Student [studentno=" + studentno + ", studentname="
+				+ studentname + ", gender=" + gender + ", department="
+				+ department + ", profession=" + profession + ", classno="
+				+ classno + ", grade=" + grade + ", phone=" + phone
+				+ ", email=" + email + ", password=" + password + "]";
+	}
+    
+    
 }

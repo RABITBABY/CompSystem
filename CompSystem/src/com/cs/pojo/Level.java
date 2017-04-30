@@ -30,4 +30,12 @@ public class Level {
     public void setPrizename(String prizename) {
         this.prizename = prizename == null ? null : prizename.trim();
     }
+
+	@Override
+	public String toString() {
+		return "Level [levelid=" + levelid + ", levelname=" + levelname
+				+ ", prizename=" + prizename + "]";
+	}
+    
+    
 }

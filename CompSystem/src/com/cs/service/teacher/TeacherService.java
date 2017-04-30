@@ -31,7 +31,7 @@ public interface TeacherService {
 	 * @param comId
 	 * @return
 	 */
-	public void deleteComp(CompetitionInfoVo compVo);
+	public void deleteComp(Integer comId);
 	
 	/**
 	 * 新增申报表
@@ -111,6 +111,14 @@ public interface TeacherService {
 	 * @return
 	 */
 	public void updateCompStatusByTea(Competition comp);
+	
+	
+	/**
+	 * 查看所有的教师
+	 * @param comId
+	 * @return
+	 */
+	public List<Teacher> selectAllTeacher();
 	
 	
 }

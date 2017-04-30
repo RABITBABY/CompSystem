@@ -30,4 +30,11 @@ public class CompCondition {
     public void setConditionid(Integer conditionid) {
         this.conditionid = conditionid;
     }
+	@Override
+	public String toString() {
+		return "CompCondition [id=" + id + ", comid=" + comid
+				+ ", conditionid=" + conditionid + "]";
+	}
+    
+    
 }

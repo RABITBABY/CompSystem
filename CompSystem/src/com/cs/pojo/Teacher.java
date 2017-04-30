@@ -2,13 +2,16 @@ package com.cs.pojo;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Teacher {
     private Integer teacherno;
 
     private String teachername;
 
     private String gender;
-
+    
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birth;
 
     private String department;
@@ -162,4 +165,17 @@ public class Teacher {
     public void setExaminer(Integer examiner) {
         this.examiner = examiner;
     }
+
+	@Override
+	public String toString() {
+		return "Teacher [teacherno=" + teacherno + ", teachername="
+				+ teachername + ", gender=" + gender + ", birth=" + birth
+				+ ", department=" + department + ", subject=" + subject
+				+ ", phone=" + phone + ", title=" + title + ", post=" + post
+				+ ", email=" + email + ", type=" + type + ", direction="
+				+ direction + ", education=" + education + ", lab=" + lab
+				+ ", password=" + password + ", examiner=" + examiner + "]";
+	}
+    
+    
 }

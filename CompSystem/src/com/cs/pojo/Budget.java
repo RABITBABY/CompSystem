@@ -50,4 +50,13 @@ public class Budget {
     public void setReasons(String reasons) {
         this.reasons = reasons == null ? null : reasons.trim();
     }
+
+	@Override
+	public String toString() {
+		return "Budget [budgetid=" + budgetid + ", comid=" + comid
+				+ ", subject=" + subject + ", sum=" + sum + ", reasons="
+				+ reasons + "]";
+	}
+    
+    
 }

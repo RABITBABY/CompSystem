@@ -60,5 +60,5 @@ public class FileUpload {
 				+ ", uploaduserno=" + uploaduserno + "]";
 	}
 
-   
+    
 }

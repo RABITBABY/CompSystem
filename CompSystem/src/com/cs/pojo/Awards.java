@@ -2,6 +2,8 @@ package com.cs.pojo;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Awards {
     private Integer awardsid;
 
@@ -13,6 +15,7 @@ public class Awards {
     
     private String awardsimg;
     
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date awardtime;
 
     private Integer ispublish;
@@ -71,6 +74,14 @@ public class Awards {
 
 	public void setAwardsimg(String awardsimg) {
 		this.awardsimg = awardsimg;
+	}
+
+	@Override
+	public String toString() {
+		return "Awards [awardsid=" + awardsid + ", comid=" + comid
+				+ ", prizename=" + prizename + ", groupsno=" + groupsno
+				+ ", awardsimg=" + awardsimg + ", awardtime=" + awardtime
+				+ ", ispublish=" + ispublish + "]";
 	}
     
     
