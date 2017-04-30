@@ -65,5 +65,16 @@
 	 <input  type="submit" value="修改"/>
 	</form>
 </body>
+<script type="text/javascript">
+  $(function(){
+  
+  
+    $(document).on('click','#id',function(){
+         //do something
+    });
+    
+    
+  });
+</script>
 </html>
 

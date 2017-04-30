@@ -219,7 +219,7 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/setCompResult")
-	public void setCompResult(HttpServletRequest request,Awards[] awards) throws IllegalStateException, IOException{
+	public void setCompResult(HttpServletRequest request,Awards awards) throws IllegalStateException, IOException{
 		//将当前上下文初始化给CommonsMultipartResolver（多部分解析器）
 				CommonsMultipartResolver multipartResolver=new CommonsMultipartResolver(
 						request.getSession().getServletContext());
@@ -233,17 +233,15 @@ public class TeacherController {
 						//一次遍历所有文件
 						MultipartFile file=multiRquest.getFile(iter.next().toString());
 						if(file!=null){//文件不为空
-							for(int i=0;i<awards.length;i++){
-								String imageName=awards[i].getGroupsno().toString()+System.currentTimeMillis();
+								String imageName=awards.getGroupsno().toString()+System.currentTimeMillis();
 								//上传的位置-----------------------------------------
 								String path=request.getSession().getServletContext().getRealPath(File.separator)+"fileUpload\\awards\\"+imageName+".jpg";
 								//上传
 								file.transferTo(new File(path));
 								
 								//保存进数据库
-								awards[i].setAwardsimg(imageName+".jpg");
-								teacherService.setCompResult(awards[i]);
-							}
+								awards.setAwardsimg(imageName+".jpg");
+								teacherService.setCompResult(awards);
 							
 						}
 					}
