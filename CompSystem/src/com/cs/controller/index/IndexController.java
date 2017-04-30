@@ -112,6 +112,7 @@ public class IndexController {
 		Map<String,Object> result=new HashMap<String, Object>();
 		if(articleId!=null && !"".equals(articleId)){
 			int id=Integer.parseInt(articleId);
+			articlService.addVisit(id);
 			result=articlService.getArticleByID(id);
 		}
 		
@@ -252,22 +253,23 @@ public class IndexController {
 	public  Map analysisAward(String department){
 		String []departments={"计算机系","外语系","艺术系","会计系","经济系","旅游管理系","法律系"};
 		Map result=new HashMap<String,Object>();
+		List departList=new ArrayList();
 		Map param=new HashMap<String,Object>();
 		//计算机系，外语系，艺术系，会计系，经济系，旅游管理系，法律系
 		if(department!=null && !"".equals(department)){
 			param.put("department", department);
 			param.put("single", "1");
 			List<Map> awardMap=awardsService.analysisAwards(param);
-			result.put(department, awardMap);
+			departList.add(awardMap);
 		}else{
 			for(int i=0;i<departments.length;i++){
 				param.put("department", departments[i]);
 				List<Map> awardMap=awardsService.analysisAwards(param);
-				System.out.println("888");
-				result.put(departments[i], awardMap);
+				departList.add(awardMap);
 			}
 		}
 		
+		result.put("analysisAwars", departList);
 		return result;
 	}
 	
@@ -275,26 +277,27 @@ public class IndexController {
 	
 	@ResponseBody
 	@RequestMapping("/analysisComp")
-	public  Map analysisComp(String department){
+	public  List analysisComp(String department){
 		String []departments={"计算机系","外语系","艺术系","会计系","经济系","旅游管理系","法律系"};
 		Map result=new HashMap<String,Object>();
 		Map param=new HashMap<String,Object>();
 		//计算机系，外语系，艺术系，会计系，经济系，旅游管理系，法律系
+		List departList=new ArrayList();
 		
 		if(department!=null && !"".equals(department)){
 			param.put("department", department);
 			param.put("single", "1");
 			List<Map> awardMap=compeService.analysisComp(param);
-			result.put(department, awardMap);
+			departList.add(awardMap);
 		}else{
 			for(int i=0;i<departments.length;i++){
 				param.put("department", departments[i]);
 				List<Map> awardMap=compeService.analysisComp(param);
-				result.put(departments[i], awardMap);
+				departList.add(awardMap);
 			}
 		}
 		
-		return result;
+		return departList;
 	}
 	
 	
