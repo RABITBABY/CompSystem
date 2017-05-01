@@ -19,4 +19,6 @@ public interface ArticleService {
 	int deleteArticle(int articleId,int rid,int type );
 	
 	int updateArticle(int articleId,String title,String content);
+	
+	void addVisit(int id);
 }

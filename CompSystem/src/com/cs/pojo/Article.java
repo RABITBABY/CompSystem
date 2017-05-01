@@ -2,6 +2,7 @@ package com.cs.pojo;
 
 import java.util.Date;
 
+
 public class Article {
     private Integer articleid;
 

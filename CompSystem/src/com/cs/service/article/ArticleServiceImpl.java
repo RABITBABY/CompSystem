@@ -171,5 +171,9 @@ public int updateArticle(int articleId, String title, String content) {
 	StateCode=articleMapper.updateArticle(param);
 	return StateCode;
 }
+@Override
+public void addVisit(int id) {
+	 articleMapper.addVisit(id);
+}
 
 }

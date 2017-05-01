@@ -20,5 +20,8 @@ public interface ArticleMapper {
 	int insertArticle(Article article);
 	/**删除文章*/
 	int deleteArticle(int articleId );
+	
 	int updateArticle(Map map );
+	
+	int addVisit(int id);
 }

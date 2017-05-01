@@ -64,6 +64,9 @@ select count(*) from competition.article ar,competition.administer ad
 
 <update id="updateArticle" parameterType="Map">
 	update article set title=#{title},content=#{content},pubDate=SYSDATE()  where articleId=#{articleId}
+</update>
 
+<update id="addVisit" parameterType="int">
+	update article a set a.visitCount=a.visitCount+1 where a.articleId=#{id}
 </update>
 </mapper>
