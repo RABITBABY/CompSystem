@@ -127,10 +127,13 @@
   
   <!--  max-->
   <select id="getAwards" parameterType="Map" resultType="Map">
-   select a.*,com.comName,g.* from awards a,competition com ,(select g.groupsNo as groupsNo , g.groupsName as groupsName, GROUP_CONCAT(s.studentName) AS groupNumber,t.teacherName as teacher from groups g  ,student s,teacher t
+   select a.*,com.comName,com.department,g.* from awards a,competition com ,(select g.groupsNo as groupsNo , g.groupsName as groupsName, GROUP_CONCAT(s.studentName) AS groupNumber,t.teacherName as teacher from groups g  ,student s,teacher t
 	where  g.studentNo=s.studentNo and g.teacherNo=t.teacherNo
 	GROUP BY g.groupsNo )g
 	where a.comId=com.comId and a.groupsNo=g.groupsNo
+	<if test=" department != '' ">
+			and com.department=#{department}
+	</if>
 	ORDER by awardTime desc limit #{page},#{pageSize}
   </select>
   <select id="getAwardByID" parameterType="String" resultType="Map">

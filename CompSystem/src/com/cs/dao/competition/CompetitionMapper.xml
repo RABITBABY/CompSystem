@@ -528,7 +528,7 @@
 		<if test=" department != '' ">
 			and com.department=#{department}
 		</if>
-	ORDER BY com.applyEndDate desc limit #{page},#{pageSize}
+	ORDER BY com.lsdate desc limit #{page},#{pageSize}
   </select>
   
    <select id="getTotal" resultType="int" >
