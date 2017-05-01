@@ -1,3 +1,3 @@
 eclipse.preferences.version=1
-validator.Checked=WebRoot/dist,WebRoot/js/sockjs.js,node_modules/angular-cli/blueprints/ng2/files/angular-cli.json,node_modules/angular-cli/blueprints/ng2/files/package.json,WebRoot/amazeui,WebRoot/WEB-INF,WebRoot/ueditor1_4_3-utf8-jsp
+validator.Checked=node_modules/angular-cli/blueprints/ng2/files/angular-cli.json,node_modules/angular-cli/blueprints/ng2/files/package.json,WebRoot
 validator.Unchecked=
