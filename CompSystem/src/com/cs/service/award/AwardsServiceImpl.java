@@ -53,6 +53,10 @@ public class AwardsServiceImpl implements AwardsService{
 		result=awardsMapper.analysisAwards(map);
 		return result;
 	}
+	@Override
+	public List<Map> unPubAward() {
+		return awardsMapper.unPubAward();
+	}
 	
 	
 	

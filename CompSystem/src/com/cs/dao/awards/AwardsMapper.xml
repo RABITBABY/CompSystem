@@ -136,21 +136,30 @@
 	</if>
 	ORDER by awardTime desc limit #{page},#{pageSize}
   </select>
+  
+   <select id="unPubAward"   resultType="Map">
+  select a.awardsId as id,c.comName as name from competition.awards a ,competition.competition c where c.comId=a.comId and (a.isPublish=0 or a.isPublish is null)
+	ORDER by a.awardTime desc 
+  </select>
+  
   <select id="getAwardByID" parameterType="String" resultType="Map">
     select a.*,com.comName,g.* from awards a,competition com ,(select g.groupsNo as groupsNo , g.groupsName as groupsName, GROUP_CONCAT(s.studentName) AS groupNumber,t.teacherName as teacher from groups g  ,student s,teacher t
     where  g.studentNo=s.studentNo and g.teacherNo=t.teacherNo
 	GROUP BY g.groupsNo )g
  	where a.comId=com.comId and a.groupsNo=g.groupsNo and a.awardsId=#{awardsId}
-	
   </select>
+  
+  
   <select id="getTotal" resultType="int">
   select count(*) from awards  
   </select>
-  <update id="updatePubState" parameterType="Map">
+  
+  
+  	<update id="updatePubState" parameterType="Map">
 	update awards set isPublish=#{isPub} where awardsId =#{rID}
-</update>
+	</update>
 
-  <select id="analysisAwards" resultType="Map" parameterType="Map">
+  	<select id="analysisAwards" resultType="Map" parameterType="Map">
   select #{department} as department,DATE_FORMAT(a.awardTime,'%Y') as year , count(*) as awardsCount 
 	from awards a,competition c ,groups g ,student stu
  where a.comId=c.comId and a.groupsNo=g.groupsNo and g.studentNo=stu.studentNo

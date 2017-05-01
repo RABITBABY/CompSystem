@@ -2,6 +2,7 @@ package com.cs.controller.admin;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -58,6 +59,8 @@ public class AdministerController {
 	/**
 	 * 获取近期的竞赛（可以报名）
 	 * @param type
+	 * 上周，，本周，， 本月
+	 * department
 	 * @return
 	 */
 	@ResponseBody
@@ -89,7 +92,9 @@ public class AdministerController {
 	/**
 	 * 获取近期的竞赛（可以报名）
 	 * @param type
-	 * @return
+	 * department
+	 *全部    本周      本月    三月内  
+ 	 * @return
 	 */
 	@ResponseBody
 	@RequestMapping("/awardList")
@@ -120,7 +125,7 @@ public class AdministerController {
 	
 
 	//---------文章相关
-	
+	//优化发布  将基础信息初始化贴到富文本框---竞赛   获奖
 	/**
 	 * 分页根据文章类型找到相关文章
 	 * @param type 文章类型
@@ -562,5 +567,30 @@ public class AdministerController {
 		stateCode=adminImpl.updateMaterialState(id);
 		result.put("stateCode", stateCode);
 		return result;
+	}
+	
+	
+	/**
+	 * 获取所有未发布的竞赛，获取所有未发布的获奖
+	 * type 1--竞赛   2---获奖
+	 */
+	@ResponseBody
+	@RequestMapping("/unPub")
+	public List unPub(String type){
+		type=ParamUtil.getStr(type, "");
+		List list=new ArrayList<Map>();
+		System.out.println(type+"===");
+		if("1".equals(type)){
+			//竞赛
+			System.out.println(type+"----");
+			list=compeService.unPubCom();
+		}else if("2".equals(type)){
+			//获奖情况
+			list=awardsService.unPubAward();
+		}
+		
+		
+		return list;
+		
 	}
 }

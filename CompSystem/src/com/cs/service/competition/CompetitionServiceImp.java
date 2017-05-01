@@ -72,6 +72,15 @@ private CompetitionMapper compeMapper;
 		return list;
 	}
 
+
+
+	@Override
+	public List<Map> unPubCom() {
+		List<Map > list=new ArrayList<Map>();
+		list=compeMapper.unPubCom();
+		return list;
+	}
+
 	
 	
 }

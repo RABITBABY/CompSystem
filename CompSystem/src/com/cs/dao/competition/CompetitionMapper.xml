@@ -524,11 +524,16 @@
   <select id="selectByAdmin" resultType="Map" parameterType="Map" >
      select com.*,t.teacherName,t.gender,t.department,t.phone,t.email  from competition com,teacher t
     where com.teacherNo=t.teacherNo
-		and com.applyEndDate>=now()
+		and com.applyEndDate>=now() and com.depSpStatus=1 and com.teaSpStatus=1
 		<if test=" department != '' ">
 			and com.department=#{department}
 		</if>
 	ORDER BY com.lsdate desc limit #{page},#{pageSize}
+  </select>
+  
+   <select id="unPubCom" resultType="Map"  >
+  select c.comId as id ,c.comName as name from competition  c where c.depSpStatus=1 and c.teaSpStatus=1 and (c.isPublish =0 or c.isPublish is null)
+	 ORDER BY c.lsdate desc 
   </select>
   
    <select id="getTotal" resultType="int" >

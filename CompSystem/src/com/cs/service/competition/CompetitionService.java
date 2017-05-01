@@ -15,4 +15,6 @@ public interface CompetitionService {
 	  List<Competition> beforeToday();
 	    List<Competition> afterToday();
 	List<Map> analysisComp(Map map);
+	
+	List<Map> unPubCom();
 }

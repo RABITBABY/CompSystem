@@ -28,6 +28,7 @@ public interface AwardsMapper {
     int getTotal();
     int updatePubState(Map map);
     List<Map> analysisAwards(Map map);
+    List<Map> unPubAward();
     
     
 }
