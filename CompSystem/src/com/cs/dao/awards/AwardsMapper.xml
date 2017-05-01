@@ -134,7 +134,18 @@
 	<if test=" department != '' ">
 			and com.department=#{department}
 	</if>
-	ORDER by awardTime desc limit #{page},#{pageSize}
+	
+	<if test =' time == "1" '>
+		and YEARWEEK(date_format(a.awardTime,'%Y-%m-%d')) = YEARWEEK(now()) 
+	</if>
+	<if test=' time=="2" '>
+		  and  date_format(a.awardTime,'%Y-%m')=date_format(now(),'%Y-%m')  
+	</if>
+	 <if test=' time=="3" '>
+		and a.awardTime >= DATE_SUB(CURDATE(), INTERVAL 2 MONTH) 
+	</if>
+	
+	 ORDER by awardTime desc limit #{page},#{pageSize}
   </select>
   
    <select id="unPubAward"   resultType="Map">

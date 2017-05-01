@@ -588,8 +588,6 @@ public class AdministerController {
 			//获奖情况
 			list=awardsService.unPubAward();
 		}
-		
-		
 		return list;
 		
 	}

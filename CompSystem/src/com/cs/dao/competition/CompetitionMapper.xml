@@ -524,11 +524,21 @@
   <select id="selectByAdmin" resultType="Map" parameterType="Map" >
      select com.*,t.teacherName,t.gender,t.department,t.phone,t.email  from competition com,teacher t
     where com.teacherNo=t.teacherNo
-		and com.applyEndDate>=now() and com.depSpStatus=1 and com.teaSpStatus=1
+		and com.applyEndDate>=now() and com.depSpStatus=1 and com.teaSpStatus=1 
 		<if test=" department != '' ">
 			and com.department=#{department}
 		</if>
-	ORDER BY com.lsdate desc limit #{page},#{pageSize}
+		 <if test=' time=="1" '>
+		and YEARWEEK(date_format(com.lsdate,'%Y-%m-%d')) = YEARWEEK(now())-1
+		</if>
+		<if test =' time == "2" '>
+		and YEARWEEK(date_format(com.lsdate,'%Y-%m-%d')) = YEARWEEK(now()) 
+		</if>
+		<if test=' time=="3" '>
+		  and  date_format(com.lsdate,'%Y-%m')=date_format(now(),'%Y-%m')  
+		</if>
+		
+	 ORDER BY com.lsdate desc limit #{page},#{pageSize}
   </select>
   
    <select id="unPubCom" resultType="Map"  >
@@ -553,8 +563,6 @@
 	 <select id="afterToday" resultType="com.cs.pojo.Competition" >
   		SELECT c.time,c.* from competition c where c.teaSpStatus=1 and c.depSpStatus=1
 		and c.time > CURDATE()  ORDER BY c.time  limit 0,2;
-
-
 	</select>
 
 	
