@@ -102,12 +102,12 @@
   <!--  Max-->
    <select id="allMaterial" resultType="Map" parameterType="Map"  >
   	SELECT m.*,s.studentName,c.conditionName from material m ,conditions c,student s 
-	where m.conditionId=c.conditionId and m.studentNo=s.studentNo and m.`status` is null or m.`status`=0 
+	where m.conditionId=c.conditionId and m.studentNo=s.studentNo and (m.`status` is null or m.`status`=0 )
 	 limit #{page},#{pageSize}
   </select>
   <select id="MaterialCount"   resultType="int">
   	SELECT count(*) from material m ,conditions c,student s 
-	where m.conditionId=c.conditionId and m.studentNo=s.studentNo and m.`status` is null or m.`status`=0
+	where m.conditionId=c.conditionId and m.studentNo=s.studentNo and( m.`status` is null or m.`status`=0)
   </select>
    <update id="updateState" parameterType="int" >
     	update material m set m.`status`=1 where m.materialId=#{id}
