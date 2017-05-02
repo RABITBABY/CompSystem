@@ -64,6 +64,7 @@ public class StudentController {
 	 *   6.1修改个人信息。√
 	 *   6.2获取个人材料。√
 	 *   6.3修改个人材料。√
+	 * 7.获取所有的条件√
 	 */
 	@Autowired
 	private StudentService studentService;
@@ -317,6 +318,16 @@ public class StudentController {
 		}
 		
 		
+	}
+	
+	/**
+	 * 7.获取所有的条件√
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/getAllConditions")
+	public List<Conditions> getAllConditions(){
+	    return conditionService.getAllCondition();
 	}
 	
 }

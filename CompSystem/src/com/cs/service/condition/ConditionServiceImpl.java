@@ -13,9 +13,16 @@ public class ConditionServiceImpl implements ConditionService{
 
 	@Autowired
 	private CompConditionMapper compConditionsMapper;
+	@Autowired
+	private ConditionsMapper conditionsMapper;
 	@Override
 	public List<Conditions> getCompCondition(Integer comId) {
 		return compConditionsMapper.selectComId(comId);
+	}
+	@Override
+	public List<Conditions> getAllCondition() {
+		
+		return conditionsMapper.selectAllConditions();
 	}
 
 }

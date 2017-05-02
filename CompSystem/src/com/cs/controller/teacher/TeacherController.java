@@ -28,6 +28,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.cs.pojo.Awards;
 import com.cs.pojo.Budget;
 import com.cs.pojo.Competition;
+import com.cs.pojo.Conditions;
 import com.cs.pojo.Department;
 import com.cs.pojo.Groups;
 import com.cs.pojo.Hours;
@@ -35,6 +36,7 @@ import com.cs.pojo.Material;
 import com.cs.pojo.Schedule;
 import com.cs.pojo.Student;
 import com.cs.pojo.Teacher;
+import com.cs.service.condition.ConditionService;
 import com.cs.service.groups.GroupsService;
 import com.cs.service.teacher.TeacherService;
 import com.cs.vo.CompetitionInfoVo;
@@ -60,13 +62,16 @@ public class TeacherController {
 	 * 6.审批员的功能
 	 *    6.1系主任审批申报书√
 	 *    6.2教学处审批申报书√
-	 * 7.查找所有的教师
+	 * 7.查找所有的教师√
+	 * 8.获取所有的条件√
 	 */
 
 	@Autowired
 	private TeacherService teacherService;
 	@Autowired
 	private GroupsService groupsService;
+	@Autowired
+	private ConditionService conditionService;
 
 	/**
 	 * 1.查看教师个人信息
@@ -293,4 +298,15 @@ public class TeacherController {
 	public List<Teacher> getAllTeacher() {
 		return teacherService.selectAllTeacher();
 	}
+	
+	/**
+	 * 8.获取所有的条件√
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/getAllConditions")
+	public List<Conditions> getAllConditions(){
+	    return conditionService.getAllCondition();
+	}
+	
 }

@@ -12,4 +12,11 @@ public interface ConditionService {
 	 * @return
 	 */
 	List<Conditions> getCompCondition(Integer comId);
+	
+	/**
+	 * 获取所有竞赛条件
+	 * @param comId
+	 * @return
+	 */
+	List<Conditions> getAllCondition();
 }

@@ -9,6 +9,9 @@
   <sql id="Base_Column_List" >
     conditionId, conditionName, type
   </sql>
+  <select id="selectAllConditions" resultMap="BaseResultMap">
+    select * from conditions
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

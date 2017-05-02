@@ -10,7 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.cs.pojo.Administer;
 import com.cs.pojo.Message;
+import com.cs.pojo.Student;
+import com.cs.pojo.Teacher;
 import com.sun.org.apache.regexp.internal.recompile;
 
 @Controller
@@ -21,14 +24,38 @@ public class WebSocketController {
      * @param headers 
      */  
     @MessageMapping("/hello")
-    @SendTo("/topic/greetings")
-    public Message greeting(Message message) throws Exception {
+    @SendTo("/topic/student")
+    public Message student(Message message,HttpSession session) throws Exception {
        // Thread.sleep(3000); // simulated delay
-    	if (message.getNo()==1) {
+    	Student student=(Student) session.getAttribute("student");
+    	if (message.getNo()==student.getStudentno()) {
     		return message;
 		}
         return null;
     }
+    
+    @MessageMapping("/hello")
+    @SendTo("/topic/teacher")
+    public Message teacher(Message message,HttpSession session) throws Exception {
+       // Thread.sleep(3000); // simulated delay
+    	Teacher teacher=(Teacher) session.getAttribute("teacher");
+    	if (message.getNo()==teacher.getTeacherno()) {
+    		return message;
+		}
+        return null;
+    }
+    
+    @MessageMapping("/hello")
+    @SendTo("/topic/admin")
+    public Message admin(Message message,HttpSession session) throws Exception {
+       // Thread.sleep(3000); // simulated delay
+    	Administer admin=(Administer) session.getAttribute("admin");
+    	if (message.getNo().toString().equals(admin.getAdminno())) {
+    		return message;
+		}
+        return null;
+    }
+
 
     
 }

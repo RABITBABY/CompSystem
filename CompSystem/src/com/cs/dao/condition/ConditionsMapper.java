@@ -7,6 +7,8 @@ import com.cs.pojo.Conditions;
 
 public interface ConditionsMapper {
 	
+	List<Conditions> selectAllConditions();
+	
     int deleteByPrimaryKey(Integer conditionid);
 
     int insert(Conditions record);
