@@ -28,6 +28,13 @@ public interface StudentService {
 	int updateByNo(Student studentno);
 	
 	/**
+	 * 根据学生no获取材料
+	 * @param studentNo
+	 * @return
+	 */
+	List<Material> getMaterial(int studentno);
+	
+	/**
 	 * 根据学号查找报名的所有竞赛
 	 * @param studentNo
 	 * @return

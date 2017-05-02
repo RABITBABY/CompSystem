@@ -62,6 +62,7 @@ public class StudentController {
 	 * 5.下载相关文件（获奖证书）√
 	 * 6.查看个人信息。√
 	 *   6.1修改个人信息。√
+	 *   6.2获取个人材料。√
 	 */
 	@Autowired
 	private StudentService studentService;
@@ -265,6 +266,15 @@ public class StudentController {
 	@RequestMapping("/updateInfo")
 	public int updateStuInfo(@RequestBody Student student){
 	    return studentService.updateByNo(student);
+	}
+	/**
+	 * 6.3获取个人材料。
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/getMaterial")
+	public List<Material> getMaterial(Integer studentNo){
+	    return studentService.getMaterial(studentNo);
 	}
 	
 }

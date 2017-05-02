@@ -101,6 +101,11 @@ public class StudentServiceImpl implements StudentService {
 		groupsMapper.updateCaptainStatus(groups);
 	}
 
+	@Override
+	public List<Material> getMaterial(int studentno) {
+		return materialMapper.selectByStudentno(studentno);
+	}
+
 	
 	
 }
