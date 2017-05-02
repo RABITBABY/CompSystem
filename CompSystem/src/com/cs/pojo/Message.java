@@ -2,13 +2,16 @@ package com.cs.pojo;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Message {
 	
 	private Integer id;
 	private Integer no;//工号
 	private Integer role;//角色
-	private Integer from;//该消息来自谁
+	private Integer fromNo;//该消息来自谁
 	private String message;//消息内容
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date sendDate;//发送日期
 	private Integer isRead;//是否已读
 	public Integer getId() {
@@ -29,11 +32,12 @@ public class Message {
 	public void setRole(Integer role) {
 		this.role = role;
 	}
-	public Integer getFrom() {
-		return from;
+	
+	public Integer getFromNo() {
+		return fromNo;
 	}
-	public void setFrom(Integer from) {
-		this.from = from;
+	public void setFromNo(Integer fromNo) {
+		this.fromNo = fromNo;
 	}
 	public String getMessage() {
 		return message;
@@ -56,7 +60,7 @@ public class Message {
 	@Override
 	public String toString() {
 		return "Message [id=" + id + ", no=" + no + ", role=" + role
-				+ ", from=" + from + ", message=" + message + ", sendDate="
+				+ ", from=" + fromNo + ", message=" + message + ", sendDate="
 				+ sendDate + ", isRead=" + isRead + "]";
 	}
 	
