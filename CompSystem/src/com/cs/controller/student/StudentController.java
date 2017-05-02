@@ -63,6 +63,7 @@ public class StudentController {
 	 * 6.查看个人信息。√
 	 *   6.1修改个人信息。√
 	 *   6.2获取个人材料。√
+	 *   6.3修改个人材料。√
 	 */
 	@Autowired
 	private StudentService studentService;
@@ -127,6 +128,7 @@ public class StudentController {
 					
 					//保存进数据库
 					material.setMaterialpic(imageName+".jpg");
+					material.setStatus(0);
 					materialMapper.insert(material);
 				}
 			}
@@ -268,13 +270,53 @@ public class StudentController {
 	    return studentService.updateByNo(student);
 	}
 	/**
-	 * 6.3获取个人材料。
+	 * 6.2获取个人材料。
 	 * @return
 	 */
 	@ResponseBody
 	@RequestMapping("/getMaterial")
 	public List<Material> getMaterial(Integer studentNo){
 	    return studentService.getMaterial(studentNo);
+	}
+	
+	/**
+	 * 6.3修改个人材料
+	 * @param request
+	 * @throws IllegalStateException
+	 * @throws IOException
+	 */
+	@ResponseBody
+	@RequestMapping("/updateMaterial")
+	public void updateMaterial(HttpServletRequest request,Material material) throws IllegalStateException, IOException{
+		//将当前上下文初始化给CommonsMultipartResolver（多部分解析器）
+		CommonsMultipartResolver multipartResolver=new CommonsMultipartResolver(
+				request.getSession().getServletContext());
+		//检查表单是否有enctype="multipart/form-data"属性
+		if(multipartResolver.isMultipart(request)){
+			//将request变成多部分request
+			MultipartHttpServletRequest multiRquest=(MultipartHttpServletRequest)request;
+			//获取multiRquest的所有文件名
+			Iterator iter=multiRquest.getFileNames();
+			while (iter.hasNext()) {
+				//一次遍历所有文件
+				MultipartFile file=multiRquest.getFile(iter.next().toString());
+				//String file.getOriginalFilename().split(".");
+				if(file!=null){//文件不为空
+					String imageName=material.getStudentno().toString()+System.currentTimeMillis();
+					//上传的位置-----------------------------------------
+					String path=request.getSession().getServletContext().getRealPath(File.separator)+"fileUpload\\material\\"+imageName+".jpg";
+					//上传
+					file.transferTo(new File(path));
+					
+					//保存进数据库
+					material.setMaterialpic(imageName+".jpg");
+					materialMapper.updateByPrimaryKey(material);
+				}
+			}
+		
+		}
+		
+		
 	}
 	
 }

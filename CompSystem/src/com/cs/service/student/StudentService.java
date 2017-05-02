@@ -25,7 +25,7 @@ public interface StudentService {
 	 * @param studentNo
 	 * @return
 	 */
-	int updateByNo(Student studentno);
+	int updateByNo(Student student);
 	
 	/**
 	 * 根据学生no获取材料
