@@ -241,6 +241,7 @@ public class LoginController {
 	public Map LoginInfo(HttpSession session){
 		Map< String, Object> resultMap=new HashMap<String, Object>();
 		String stateCode="1";
+		
 		resultMap=(Map)session.getAttribute("loginInfo");
 		if(resultMap==null){
 			stateCode="0";
