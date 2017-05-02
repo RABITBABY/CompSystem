@@ -243,6 +243,25 @@ public class AdministerController {
 	}
 	
 	
+	
+	/**
+	 * 初始化文章内容
+	 * @param comId
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/initArticle")
+	public Map initArticle(String comId, HttpServletResponse response){
+		Map result=new HashMap<String,Object>();
+		comId=ParamUtil.getStr(comId,"");
+		String articleDetail="";
+		      
+		articleDetail=articleService.initArticleDetail(comId);
+		response.setCharacterEncoding("UTF-8");  // 加上此处可解决页面js显示乱码问题    
+		result.put("detail", articleDetail);
+		return result ;
+	}
+	
 	//---------作品相关
 	
 	/**
@@ -252,7 +271,7 @@ public class AdministerController {
 	 */
 	@ResponseBody
 	@RequestMapping("/productionList")
-	public  Map productionList(String index,String pageSize) {
+ 	public  Map productionList(String index,String pageSize) {
 		Map<String ,Object> resultMap=new HashMap<String, Object>();
 		Map<String ,Object> param=new HashMap<String, Object>();
 		index=ParamUtil.getStr(index, "1");
@@ -426,7 +445,7 @@ public class AdministerController {
 	 */
 	@ResponseBody
 	@RequestMapping("/uploadFile")
-	public String saveFile(HttpServletRequest request,HttpServletResponse response) throws IllegalStateException, IOException{
+	public String saveFile(MultipartFile file,HttpServletRequest request,HttpServletResponse response) throws IllegalStateException, IOException{
 		String statueCode="0"; 
 		//获取解析器  
         CommonsMultipartResolver resolver = new CommonsMultipartResolver(request.getSession().getServletContext());  
@@ -438,7 +457,7 @@ public class AdministerController {
             Iterator<String> it = multiRequest.getFileNames();  
             while(it.hasNext()){  
                 //根据文件名称取文件  
-                MultipartFile file = multiRequest.getFile(it.next());  
+                 file = multiRequest.getFile(it.next());  
                 String fileName = file.getOriginalFilename();  //文件名
                 String uploadName = String.valueOf( System.currentTimeMillis());//时间戳字符串
                 String fileType=fileName.substring(fileName.indexOf("."), fileName.length());
@@ -591,4 +610,7 @@ public class AdministerController {
 		return list;
 		
 	}
+	
+	
+	
 }

@@ -1,18 +1,25 @@
 package com.cs.service.article;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.cs.dao.article.ArticleMapper;
 import com.cs.dao.awards.AwardsMapper;
+import com.cs.dao.compcondition.CompConditionMapper;
 import com.cs.dao.competition.CompetitionMapper;
+import com.cs.dao.guideteacher.GuideTeacherMapper;
+import com.cs.dao.schedule.ScheduleMapper;
 import com.cs.pojo.Article;
+import com.cs.pojo.Competition;
+import com.cs.pojo.Conditions;
+import com.cs.pojo.Schedule;
+import com.cs.pojo.Teacher;
 import com.cs.util.PageInfo;
 import com.cs.util.ParamUtil;
 
@@ -25,7 +32,12 @@ public class ArticleServiceImpl implements ArticleService {
 	@Autowired
 	private AwardsMapper awardsMapper;
 
-
+	@Autowired
+	private CompConditionMapper coMapper;
+	@Autowired
+	private GuideTeacherMapper gTeacherMapper;
+	@Autowired
+	private ScheduleMapper scheduleMapper;
 	/**
 	 * 获取文章列表分页
 	 */
@@ -174,6 +186,47 @@ public int updateArticle(int articleId, String title, String content) {
 @Override
 public void addVisit(int id) {
 	 articleMapper.addVisit(id);
+}
+@Override
+public String initArticleDetail(String comId) {
+	// TODO Auto-generated method stub
+	int id=Integer.parseInt(comId);
+	StringBuffer articleDetail=new StringBuffer();
+	List<Conditions> conditions=new ArrayList<Conditions>();
+	List<Map> schedule=new ArrayList<Map>();
+	List<Teacher> guideTeacher=new ArrayList<Teacher>();
+	Competition competition=new Competition();
+	
+	//竞赛基本信息competition
+	competition=competitionMapper.selectByPrimaryKey(id);
+	//竞赛条件compCondition
+	conditions= coMapper.selectComId(id);
+	//指导老师guideTeacher
+	guideTeacher=gTeacherMapper.selectComId(id);
+	//培训安排schedule
+	schedule=scheduleMapper.scheduleList(id);
+	System.out.println(schedule);
+	
+	articleDetail.append("\n竞赛基本信息：\n");
+	//拼接信息
+	articleDetail.append("\n竞赛名称：");
+	articleDetail.append("\n竞赛负责人：");
+	articleDetail.append("\n竞赛负责人：");
+	
+	articleDetail.append("\n竞赛条件：\n");
+	for (Conditions c : conditions) {
+		articleDetail.append(c.getConditionname()+"\t");
+	}
+	articleDetail.append("\n竞赛指导老师：\n");
+	for (Teacher teacher : guideTeacher) {
+		articleDetail.append(teacher.getTeachername()+"\t ");
+	}
+	articleDetail.append("\n竞赛培训安排：(培训内容 、培训地点、培训时间、培训负责老师、学时)\n");
+	for (Map s : schedule) {
+		articleDetail.append(s.get("content")+"\t"+s.get("position")+"\t"+s.get("date")+"\t"+s.get("teacherName")+"\t"+s.get("hour"));
+	}
+	System.out.println(articleDetail);
+	return articleDetail.toString();
 }
 
 }
