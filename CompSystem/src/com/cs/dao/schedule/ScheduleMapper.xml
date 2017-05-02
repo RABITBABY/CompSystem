@@ -111,4 +111,10 @@
   <delete id="deleteByComId" parameterType="java.lang.Integer">
         delete from schedule where comId=#{comId}
   </delete>
+  
+  
+   <select id="scheduleList" resultType="Map" parameterType="int" >
+    select  s.content as content,s.position as position , s.date as date ,s.hours as hour,t.teachername as teacherName from schedule s,teacher t
+    where t.teacherNo=s.teacherno and s.comId = #{comId}
+  </select>
 </mapper>

@@ -1,6 +1,7 @@
 package com.cs.dao.schedule;
 
 import java.util.List;
+import java.util.Map;
 
 import com.cs.pojo.Schedule;
 
@@ -17,4 +18,7 @@ public interface ScheduleMapper {
     int insert(Schedule record);
 
     int insertSelective(Schedule record);
+    
+    
+    List<Map> scheduleList(int comId);
 }

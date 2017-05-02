@@ -21,4 +21,5 @@ public interface ArticleService {
 	int updateArticle(int articleId,String title,String content);
 	
 	void addVisit(int id);
+	String initArticleDetail(String comId);
 }
