@@ -142,11 +142,11 @@ public class IndexController {
 		for(int i=0;i<list.size();i++){
 			Production p=list.get(i);
 			String fileName=p.getPic();
-			String path = request.getSession().getServletContext().getRealPath("/WEB-INF/productionImg");
-			path=path+fileName;
+			String path ="/productionImg";
+			path=path+"/"+fileName;
 			System.out.println(path);
 			p.setPic(path);
-			list.add(i, p);
+			list.set(i, p);
 		}
 		pageInfo.setList(list);
 		
@@ -198,7 +198,7 @@ public class IndexController {
 		String fileName=fileupload.getFilename();
 		String saveName=fileupload.getSavename();
 		System.out.println(fileName);
-		String path = request.getSession().getServletContext().getRealPath("/WEB-INF/uploadFile");
+		String path = request.getSession().getServletContext().getRealPath("/uploadFile");
 		path+="/"+saveName;
 		File file = new File(path);
 		String name= new String(fileName.getBytes("GBK"), "ISO-8859-1");

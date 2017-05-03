@@ -288,11 +288,11 @@ public class AdministerController {
 		for(int i=0;i<list.size();i++){
 			Production p=list.get(i);
 			String fileName=p.getPic();
-			String path = request.getSession().getServletContext().getRealPath("/WEB-INF/productionImg");
-			path=path+fileName;
+			String path = "productionImg";
+			path=path+"/"+fileName;
 			System.out.println(path);
 			p.setPic(path);
-			list.add(i, p);
+			list.set(i, p);
 		}
 		pageInfo.setList(list);
 		resultMap.put("produPageInfo", pageInfo);
@@ -329,7 +329,7 @@ public class AdministerController {
             if(".JPG".equals(fileType.toUpperCase()) ||".PNG".equals(fileType.toUpperCase())||".JPEG".equals(fileType.toUpperCase())){
             	uploadName=uploadName+fileType;
                 
-                String path = request.getSession().getServletContext().getRealPath("/WEB-INF/productionImg");  
+                String path = request.getSession().getServletContext().getRealPath("/productionImg");  
                 path=path+"/"+uploadName;
                 File newFile = new File(path);  
                 //上传的文件写入到指定的文件中  
@@ -391,7 +391,7 @@ public class AdministerController {
 	            if(".JPG".equals(fileType.toUpperCase()) ||".PNG".equals(fileType.toUpperCase())||".JPEG".equals(fileType.toUpperCase())){
 	            	uploadName=uploadName+fileType;
 	                
-	                String rootPath = request.getSession().getServletContext().getRealPath("/WEB-INF/productionImg");  
+	                String rootPath = request.getSession().getServletContext().getRealPath("/productionImg");  
 	                String  path=rootPath+"/"+uploadName;
 	                File newFile = new File(path);  
 	                //上传的文件写入到指定的文件中  
@@ -474,7 +474,7 @@ public class AdministerController {
                 String fileType=fileName.substring(fileName.indexOf("."), fileName.length());
                 uploadName=uploadName+fileType;
                 
-                String path = request.getSession().getServletContext().getRealPath("/WEB-INF/uploadFile");  
+                String path = request.getSession().getServletContext().getRealPath("/uploadFile");  
                 path=path+"/"+uploadName;
                 File newFile = new File(path);  
                 //上传的文件写入到指定的文件中  
@@ -518,7 +518,7 @@ public class AdministerController {
 		if(file!=null){
 			String fileName=file.getSavename();
 			System.out.println("fileName---"+fileName);
-			String path = request.getSession().getServletContext().getRealPath("/WEB-INF/uploadFile");  
+			String path = request.getSession().getServletContext().getRealPath("/uploadFile");  
 			path+="/"+fileName;
 			System.out.println("path:"+path);
 			File deleteFile=new File(path);
