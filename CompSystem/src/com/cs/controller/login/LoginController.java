@@ -171,6 +171,7 @@ public class LoginController {
 					userId=String.valueOf(teacher.getTeacherno());
 					userName=teacher.getTeachername();
 					info= "success";
+					request.getSession().setAttribute("teacher", teacher);
 				}else{
 					stateCode="0";
 					info= "wrongPassword";
@@ -188,6 +189,7 @@ public class LoginController {
 					userId=String.valueOf(stu.getStudentno());
 					userName=stu.getStudentname();
 					info= "success";
+					request.getSession().setAttribute("student", stu);
 				}else{
 					stateCode="0";
 					info= "wrongPassword";
@@ -204,6 +206,7 @@ public class LoginController {
 					userId=admin.getAdminno();
 					userName=admin.getAdminname();
 					info= "success";
+					request.getSession().setAttribute("admin", admin);
 				}else{
 					stateCode="0";
 					info= "wrongPassword";
@@ -238,6 +241,7 @@ public class LoginController {
 	public Map LoginInfo(HttpSession session){
 		Map< String, Object> resultMap=new HashMap<String, Object>();
 		String stateCode="1";
+		
 		resultMap=(Map)session.getAttribute("loginInfo");
 		if(resultMap==null){
 			stateCode="0";

@@ -15,9 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.cs.pojo.Article;
@@ -300,7 +302,7 @@ public class AdministerController {
 	 */
 	@ResponseBody
 	@RequestMapping("/uploadProduction")
-	public Map uploadProduction(String proName,String award,String membersName,String introduction, HttpServletRequest request,HttpServletResponse response) throws IllegalStateException, IOException{
+	public Map uploadProduction(@RequestParam("file")MultipartFile file,String proName,String award,String membersName,String introduction, HttpServletRequest request,HttpServletResponse response) throws IllegalStateException, IOException{
 		String stateCode="0";
 		String info="上传作品失败";
 		Map result=new HashMap<String, Object>();
@@ -311,7 +313,7 @@ public class AdministerController {
         Iterator<String> it = multiRequest.getFileNames();  
         while(it.hasNext()){  
             //根据文件名称取文件  
-            MultipartFile file = multiRequest.getFile(it.next());  
+            file = multiRequest.getFile(it.next());  
             String fileName = file.getOriginalFilename();  //文件名
             String uploadName = String.valueOf( System.currentTimeMillis());//时间戳字符串
             String fileType=fileName.substring(fileName.indexOf("."), fileName.length());
@@ -358,7 +360,7 @@ public class AdministerController {
 		 */
 		@ResponseBody
 		@RequestMapping("/updateProduction")
-		public Map updateProduction(String proId,String proName,String award,String membersName,String introduction, HttpServletRequest request,HttpServletResponse response) throws IllegalStateException, IOException{
+		public Map updateProduction(@RequestParam("file")MultipartFile file,String proId,String proName,String award,String membersName,String introduction, HttpServletRequest request,HttpServletResponse response) throws IllegalStateException, IOException{
 			String stateCode="0";
 			String info="上传作品失败";
 			Map result=new HashMap<String, Object>();
@@ -371,7 +373,7 @@ public class AdministerController {
 	        String uploadName ="";
 	        while(it.hasNext()){  
 	            //根据文件名称取文件  
-	            MultipartFile file = multiRequest.getFile(it.next()); 
+	             file = multiRequest.getFile(it.next()); 
 	            String fileName = file.getOriginalFilename();  //文件名
 	            if(fileName!=null && fileName!=""){
 	            //插入文件
@@ -445,7 +447,7 @@ public class AdministerController {
 	 */
 	@ResponseBody
 	@RequestMapping("/uploadFile")
-	public String saveFile(MultipartFile file,HttpServletRequest request,HttpServletResponse response) throws IllegalStateException, IOException{
+	public String saveFile(@RequestParam("file")MultipartFile file,HttpServletRequest request,HttpServletResponse response) throws IllegalStateException, IOException{
 		String statueCode="0"; 
 		//获取解析器  
         CommonsMultipartResolver resolver = new CommonsMultipartResolver(request.getSession().getServletContext());  
@@ -610,7 +612,7 @@ public class AdministerController {
 		return list;
 		
 	}
-	
+
 	
 	
 }
