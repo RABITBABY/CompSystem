@@ -261,7 +261,7 @@ public class TeacherController {
         if (!file.isEmpty()) {  
             try {  
             	//文件名
-            	String fileName="fileUpload/material/"+UUID.randomUUID().toString()+".jpg";  
+            	String fileName="fileUpload/awards/"+UUID.randomUUID().toString()+".jpg";  
                 // 文件保存路径  
                 String filePath = request.getSession().getServletContext().getRealPath("/") +fileName;
                 // 转存文件  
