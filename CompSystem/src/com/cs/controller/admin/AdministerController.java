@@ -294,7 +294,7 @@ public class AdministerController {
 			p.setPic(path);
 			list.add(i, p);
 		}
-		
+		pageInfo.setList(list);
 		resultMap.put("produPageInfo", pageInfo);
 		System.out.println(param+"\n"+resultMap);
 		
