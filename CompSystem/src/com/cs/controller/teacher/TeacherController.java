@@ -1,19 +1,35 @@
 package com.cs.controller.teacher;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.io.Writer;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -27,12 +43,14 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.cs.dao.competition.CompetitionMapper;
 import com.cs.dao.message.MessageMapper;
 import com.cs.pojo.Awards;
 import com.cs.pojo.Budget;
 import com.cs.pojo.Competition;
 import com.cs.pojo.Conditions;
 import com.cs.pojo.Department;
+import com.cs.pojo.FileUpload;
 import com.cs.pojo.Groups;
 import com.cs.pojo.Hours;
 import com.cs.pojo.Material;
@@ -44,6 +62,9 @@ import com.cs.service.condition.ConditionService;
 import com.cs.service.groups.GroupsService;
 import com.cs.service.teacher.TeacherService;
 import com.cs.vo.CompetitionInfoVo;
+
+import freemarker.template.Configuration;
+import freemarker.template.Template;
 
 @Controller
 @RequestMapping("/teacher")
@@ -81,6 +102,8 @@ public class TeacherController {
 	private MessageMapper messageMapper;
 	@Autowired  
     private HttpServletRequest request; 
+	@Autowired  
+	private CompetitionMapper comMapper;
 
 	/**
 	 * 1.查看教师个人信息
@@ -238,15 +261,14 @@ public class TeacherController {
         if (!file.isEmpty()) {  
             try {  
             	//文件名
-            	String fileName=UUID.randomUUID().toString()+".jpg";  
+            	String fileName="fileUpload/material/"+UUID.randomUUID().toString()+".jpg";  
                 // 文件保存路径  
-                String filePath = request.getSession().getServletContext().getRealPath("/") + "fileUpload/material/"  
-                        +fileName;
+                String filePath = request.getSession().getServletContext().getRealPath("/") +fileName;
                 // 转存文件  
                 file.transferTo(new File(filePath));  
 				
 				//保存进数据库
-				awards.setAwardsimg(fileName+".jpg");
+				awards.setAwardsimg(fileName);
 				awards.setIspublish(0);
 				teacherService.setCompResult(awards);
             } catch (Exception e) {  
@@ -266,6 +288,16 @@ public class TeacherController {
 	@RequestMapping(value = "/getAprroveTable")
 	public boolean getAprroveTable(Integer comId) {
 		return teacherService.createWord(comId);
+	}
+	
+	/**
+	 *测试
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value ="/getAprrove")    
+	public  void getAprrove(Integer comId,HttpServletResponse response) throws UnsupportedEncodingException {
+		
 	}
 	
 	/**

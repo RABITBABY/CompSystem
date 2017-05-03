@@ -119,10 +119,9 @@ public class StudentController {
         if (!file.isEmpty()) {  
             try {  
             	//文件名
-            	String fileName=UUID.randomUUID().toString()+".jpg";  
+            	String fileName="fileUpload/material/"+UUID.randomUUID().toString()+".jpg";  
                 // 文件保存路径  
-                String filePath = request.getSession().getServletContext().getRealPath("/") + "fileUpload/material/"  
-                        +fileName;
+                String filePath = request.getSession().getServletContext().getRealPath("/")+fileName;
                 // 转存文件  
                 file.transferTo(new File(filePath));  
                 //保存进数据库
@@ -228,13 +227,13 @@ public class StudentController {
     public ResponseEntity<byte[]> downloadAwards(HttpServletRequest request,Integer awardsId) throws IOException {    
     	Awards awards = awardsMapper.selectByPrimaryKey(awardsId);
     	//文件所在的位置
-        String path=request.getSession().getServletContext().getRealPath(File.separator)+"fileUpload\\awards\\"+awards.getAwardsimg();  
+        String path=request.getSession().getServletContext().getRealPath(File.separator)+awards.getAwardsimg();  
 
         File file=new File(path);  
 
         HttpHeaders headers = new HttpHeaders();    
 
-        String fileName=new String(awards.getAwardsimg().getBytes("UTF-8"),"iso-8859-1");
+        String fileName=new String(awards.getPrizename().getBytes("UTF-8"),"iso-8859-1");
 
         headers.setContentDispositionFormData("attachment", fileName);   
 
@@ -289,15 +288,14 @@ public class StudentController {
         if (!file.isEmpty()) {  
             try {  
             	//文件名
-            	String fileName=UUID.randomUUID().toString()+".jpg";  
+            	String fileName="fileUpload/material/"+UUID.randomUUID().toString()+".jpg";  
                 // 文件保存路径  
-                String filePath = request.getSession().getServletContext().getRealPath("/") + "fileUpload/material/"  
-                        +fileName;
+                String filePath = request.getSession().getServletContext().getRealPath("/") +fileName;
                 // 转存文件  
                 file.transferTo(new File(filePath));  
 				
 				//保存进数据库
-				material.setMaterialpic(fileName+".jpg");
+				material.setMaterialpic(fileName);
 				materialMapper.updateByPrimaryKey(material);
             } catch (Exception e) {  
                 e.printStackTrace();  

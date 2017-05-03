@@ -24,9 +24,9 @@
 	<form name="Form2" action="<%=path%>/student/saveMaterial" method="post"  enctype="multipart/form-data">
 	<h1>使用spring mvc提供的类的方法上传文件</h1>
 	<input type="file" name="file">
-	<input  type="submit" value="upload"/>
-	<input type="text" value="1" name="studentno" id="st">
+	<input type="text" value="11" name="studentno" id="st">
 	<input type="text" value="2" name=conditionid>
+	<input  type="submit" value="upload"/>
 	<p>${studentno}</p>
 	</form>
 	
@@ -64,13 +64,36 @@
 	 <input  type="text" name="birth" value="2017-2-2"/>
 	 <input  type="submit" value="修改"/>
 	</form>
+	
+	<form name="Form7"  method="post" id="mInfo"  enctype="multipart/form-data">
+	<h1>使用spring mvc提供的类的方法上传文件异步提交</h1>
+	<input type="file" name="file">
+	<input type="text" value="10" name="studentno" id="st">
+	<input type="text" value="2" name=conditionid>
+	<input  type="button" value="upload" id="add"/>
+	</form>
+	
+	<a id="btn">btn</a>
+	<img alt="" src="fileUpload/material/173839471.jpg">
 </body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
 <script type="text/javascript">
   $(function(){
   
   
-    $(document).on('click','#id',function(){
-         //do something
+    $("#btn").click(function(){
+       $.ajax({
+                type: "POST",
+                url:"teacher/getAprrove",
+                data:{comId:1},// 你的formid
+                async: false,
+                error: function() {
+                   
+                },
+                success: function() {
+                   
+                }
+            });
     });
     
     
