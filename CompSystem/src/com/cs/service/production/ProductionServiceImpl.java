@@ -20,7 +20,7 @@ public class ProductionServiceImpl implements ProductionService {
 	 * 获取最近的优秀作品
 	 */
 	@Override
-	public PageInfo productioList(Map map) {
+	public PageInfo<Production> productioList(Map map) {
 		Map param=new HashMap();
 		int index=Integer.parseInt(map.get("index").toString());
 		int pageSize=Integer.parseInt(map.get("pageSize").toString());
@@ -31,12 +31,15 @@ public class ProductionServiceImpl implements ProductionService {
 		System.out.println("productioList--param"+param);
 		
 		List<Production> list=productionMapper.getProduction(param);
+		
+		
+		
 		int totalPage=0;
 		if(list.size()>0){
 			int total=productionMapper.getTotal();
 			totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
 		}
-		PageInfo pageInfo=new PageInfo();
+		PageInfo<Production> pageInfo=new PageInfo<Production>();
 		pageInfo.setList(list);
 		pageInfo.setTotal(totalPage);
 		pageInfo.setPageSize(pageSize);
