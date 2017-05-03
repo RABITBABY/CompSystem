@@ -9,4 +9,5 @@ import com.cs.pojo.Message;
 public interface MessageMapper {
 	
 	int insertMessage(Message message);
+    List<Message> selectBysendtoNo(String no);
 }

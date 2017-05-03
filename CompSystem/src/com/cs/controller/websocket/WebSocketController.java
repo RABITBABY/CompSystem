@@ -27,42 +27,29 @@ public class WebSocketController {
      * @param topic 
      * @param headers 
      */  
-    @MessageMapping("/student")
-    @SendTo("/topic/student")
+    @MessageMapping("/user")
+    @SendTo("/topic/user")
     public Message student(Message message,HttpSession session) throws Exception {
        // Thread.sleep(3000); // simulated delay
     	Student student=(Student) session.getAttribute("student");
-    	mapper.insertMessage(message);
-    	if (message.getNo()==student.getStudentno()) {
-    		return message;
-		}
-        return null;
-    }
-    
-    @MessageMapping("/teacher")
-    @SendTo("/topic/teacher")
-    public Message teacher(Message message,HttpSession session) throws Exception {
-       // Thread.sleep(3000); // simulated delay
     	Teacher teacher=(Teacher) session.getAttribute("teacher");
-    	mapper.insertMessage(message);
-    	if (message.getNo()==teacher.getTeacherno()) {
-    		return message;
-		}
-        return null;
-    }
-    
-    @MessageMapping("/admin")
-    @SendTo("/topic/admin")
-    public Message admin(Message message,HttpSession session) throws Exception {
-       // Thread.sleep(3000); // simulated delay
     	Administer admin=(Administer) session.getAttribute("admin");
     	mapper.insertMessage(message);
-    	if (message.getNo().toString().equals(admin.getAdminno())) {
-    		return message;
+    	if (student!=null) {
+    		if (message.getSendtoNo().equals(student.getStudentno().toString())) {
+        		return message;
+    		}
+		}else if(teacher!=null){
+			if (message.getSendtoNo().equals(teacher.getTeacherno().toString())) {
+        		return message;
+    		}
+		}else if(admin!=null){
+			if (message.getSendtoNo().equals(admin.getAdminno().toString())) {
+        		return message;
+    		}
 		}
-        return null;
+    	return null;
     }
-
-
+    
     
 }

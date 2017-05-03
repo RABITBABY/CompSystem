@@ -7,9 +7,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Message {
 	
 	private Integer id;
-	private Integer no;//工号
+	private String sendtoNo;//推送消息给谁。工号
+	private String sendtoName;
 	private Integer role;//角色
-	private Integer fromNo;//该消息来自谁
+	private String fromNo;//该消息来自谁
+	private String fromName;
 	private String message;//消息内容
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date sendDate;//发送日期
@@ -20,11 +22,17 @@ public class Message {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Integer getNo() {
-		return no;
+	public String getSendtoNo() {
+		return sendtoNo;
 	}
-	public void setNo(Integer no) {
-		this.no = no;
+	public void setSendtoNo(String sendtoNo) {
+		this.sendtoNo = sendtoNo;
+	}
+	public String getSendtoName() {
+		return sendtoName;
+	}
+	public void setSendtoName(String sendtoName) {
+		this.sendtoName = sendtoName;
 	}
 	public Integer getRole() {
 		return role;
@@ -32,12 +40,17 @@ public class Message {
 	public void setRole(Integer role) {
 		this.role = role;
 	}
-	
-	public Integer getFromNo() {
+	public String getFromNo() {
 		return fromNo;
 	}
-	public void setFromNo(Integer fromNo) {
+	public void setFromNo(String fromNo) {
 		this.fromNo = fromNo;
+	}
+	public String getFromName() {
+		return fromName;
+	}
+	public void setFromName(String fromName) {
+		this.fromName = fromName;
 	}
 	public String getMessage() {
 		return message;
@@ -59,9 +72,10 @@ public class Message {
 	}
 	@Override
 	public String toString() {
-		return "Message [id=" + id + ", no=" + no + ", role=" + role
-				+ ", from=" + fromNo + ", message=" + message + ", sendDate="
-				+ sendDate + ", isRead=" + isRead + "]";
+		return "Message [id=" + id + ", sendtoNo=" + sendtoNo + ", sendtoName="
+				+ sendtoName + ", role=" + role + ", fromNo=" + fromNo
+				+ ", fromName=" + fromName + ", message=" + message
+				+ ", sendDate=" + sendDate + ", isRead=" + isRead + "]";
 	}
 	
 	

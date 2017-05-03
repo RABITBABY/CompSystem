@@ -25,6 +25,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.cs.dao.message.MessageMapper;
 import com.cs.pojo.Awards;
 import com.cs.pojo.Budget;
 import com.cs.pojo.Competition;
@@ -33,6 +34,7 @@ import com.cs.pojo.Department;
 import com.cs.pojo.Groups;
 import com.cs.pojo.Hours;
 import com.cs.pojo.Material;
+import com.cs.pojo.Message;
 import com.cs.pojo.Schedule;
 import com.cs.pojo.Student;
 import com.cs.pojo.Teacher;
@@ -64,6 +66,7 @@ public class TeacherController {
 	 *    6.2教学处审批申报书√
 	 * 7.查找所有的教师√
 	 * 8.获取所有的条件√
+	 * 9.获取个人消息。√
 	 */
 
 	@Autowired
@@ -72,6 +75,8 @@ public class TeacherController {
 	private GroupsService groupsService;
 	@Autowired
 	private ConditionService conditionService;
+	@Autowired
+	private MessageMapper messageMapper;
 
 	/**
 	 * 1.查看教师个人信息
@@ -307,6 +312,16 @@ public class TeacherController {
 	@RequestMapping("/getAllConditions")
 	public List<Conditions> getAllConditions(){
 	    return conditionService.getAllCondition();
+	}
+	
+	/**
+	 * 9.获取个人消息。√
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/getAllMessage")
+	public List<Message> getAllMessage(String no){
+	    return messageMapper.selectBysendtoNo(no);
 	}
 	
 }

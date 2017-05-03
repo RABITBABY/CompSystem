@@ -31,8 +31,8 @@ public class MessageDaoTest extends AbstractJUnit4SpringContextTests{
 		   Message me=new Message();
 		   me.setIsRead(0);
 		   me.setMessage("sss");
-		   me.setNo(1);
-		   me.setFromNo(2);
+		   me.setSendtoNo("1");
+		   me.setFromName("欢");
 		   me.setSendDate(new Date());
 		   mapper.insertMessage(me);
 	   }

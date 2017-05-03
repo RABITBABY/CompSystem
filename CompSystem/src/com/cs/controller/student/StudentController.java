@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -28,10 +29,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.cs.dao.awards.AwardsMapper;
 import com.cs.dao.material.MaterialMapper;
+import com.cs.dao.message.MessageMapper;
 import com.cs.pojo.Awards;
 import com.cs.pojo.Conditions;
 import com.cs.pojo.Groups;
 import com.cs.pojo.Material;
+import com.cs.pojo.Message;
 import com.cs.pojo.Student;
 import com.cs.pojo.Teacher;
 import com.cs.service.condition.ConditionService;
@@ -65,6 +68,7 @@ public class StudentController {
 	 *   6.2获取个人材料。√
 	 *   6.3修改个人材料。√
 	 * 7.获取所有的条件√
+	 * 8.获取个人消息。√
 	 */
 	@Autowired
 	private StudentService studentService;
@@ -76,7 +80,11 @@ public class StudentController {
 	private GroupsService groupsService;
 	@Autowired
 	private AwardsMapper awardsMapper;
+	@Autowired
+	private MessageMapper messageMapper;
 	
+	@Autowired  
+    private HttpServletRequest request; 
 	/**
 	 * 1.1 获取该竞赛所需的条件
 	 * @return
@@ -104,7 +112,7 @@ public class StudentController {
 	 * @throws IllegalStateException
 	 * @throws IOException
 	 */
-	@ResponseBody
+	/*@ResponseBody
 	@RequestMapping("/saveMaterial")
 	public void saveMaterial(HttpServletRequest request,Material material) throws IllegalStateException, IOException{
 		//将当前上下文初始化给CommonsMultipartResolver（多部分解析器）
@@ -137,6 +145,35 @@ public class StudentController {
 		}
 		
 		
+	}*/
+	
+	/**
+	 * 1.3个人信息：证书、学生证等的上传
+	 * @param request
+	 * @throws IllegalStateException
+	 * @throws IOException
+	 */
+	@ResponseBody
+	@RequestMapping("/saveMaterial")
+	public void saveMaterial(@RequestParam("file") MultipartFile file,Material material) throws IllegalStateException, IOException{
+		// 判断文件是否为空  
+        if (!file.isEmpty()) {  
+            try {  
+            	//文件名
+            	String fileName=UUID.randomUUID().toString()+".jpg";  
+                // 文件保存路径  
+                String filePath = request.getSession().getServletContext().getRealPath("/") + "fileUpload/material/"  
+                        +fileName;
+                // 转存文件  
+                file.transferTo(new File(filePath));  
+                //保存进数据库
+				material.setMaterialpic(fileName);
+				material.setStatus(0);
+				materialMapper.insert(material);
+            } catch (Exception e) {  
+                e.printStackTrace();  
+            }  
+        }  
 	}
 	 
 	 /**
@@ -328,6 +365,16 @@ public class StudentController {
 	@RequestMapping("/getAllConditions")
 	public List<Conditions> getAllConditions(){
 	    return conditionService.getAllCondition();
+	}
+	
+	/**
+	 * 8.获取个人消息。√
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/getAllMessage")
+	public List<Message> getAllMessage(String no){
+	    return messageMapper.selectBysendtoNo(no);
 	}
 	
 }

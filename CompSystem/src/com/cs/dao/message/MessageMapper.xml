@@ -3,18 +3,28 @@
 <mapper namespace="com.cs.dao.message.MessageMapper" >
   <resultMap id="BaseResultMap" type="com.cs.pojo.Message" >
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="no" property="no" jdbcType="VARCHAR" />
+    <result column="sendtoNo" property="sendtoNo" jdbcType="VARCHAR" />
+    <result column="sendtoName" property="sendtoName" jdbcType="VARCHAR" />
     <result column="role" property="role" jdbcType="INTEGER" />
     <result column="fromNo" property="fromNo" jdbcType="VARCHAR" />
+    <result column="fromName" property="fromName" jdbcType="VARCHAR" />
     <result column="message" property="message" jdbcType="VARCHAR" />
     <result column="sendDate" property="sendDate" jdbcType="DATE" />
     <result column="isRead" property="isRead" jdbcType="INTEGER" />
   </resultMap>
  
   <insert id="insertMessage" useGeneratedKeys="true" parameterType="com.cs.pojo.Message" >
-    insert into message (id, no, role,fromNo, message,sendDate,isRead)
-    values (#{id,jdbcType=INTEGER}, #{no,jdbcType=VARCHAR}, #{role,jdbcType=INTEGER}, 
-      #{fromNo,jdbcType=VARCHAR}, #{message,jdbcType=VARCHAR}, #{sendDate,jdbcType=DATE},0)
+    insert into message (id, sendtoNo,sendtoName, role,fromNo,fromName, message,sendDate,isRead)
+    values (#{id,jdbcType=INTEGER}, #{sendtoNo,jdbcType=VARCHAR}, #{sendtoName,jdbcType=VARCHAR}, #{role,jdbcType=INTEGER}, 
+      #{fromNo,jdbcType=VARCHAR}, #{fromName,jdbcType=VARCHAR}, #{message,jdbcType=VARCHAR}, #{sendDate,jdbcType=DATE},0)
   </insert>
+  
+  <!-- 根据sendtoNo查找messagesList-->
+  <select id="selectBysendtoNo" resultType="com.cs.pojo.Message" parameterType="java.lang.String" >
+    select 
+    *
+    from message
+    where sendtoNo = #{sendtoNo,jdbcType=VARCHAR}
+  </select>
   
 </mapper>
