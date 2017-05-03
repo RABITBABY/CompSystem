@@ -2,10 +2,10 @@ package com.cs.util;
 
 import java.util.List;
 
-public class PageInfo {
+public class PageInfo<T> {
 
 	private int total;//总页数
-	private List list;//集合
+	private List<T> list;//集合
 	private int index;//当前页
 	private int pageSize;//每页多少条
 	
