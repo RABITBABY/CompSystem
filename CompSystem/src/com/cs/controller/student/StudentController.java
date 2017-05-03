@@ -112,47 +112,6 @@ public class StudentController {
 	 * @throws IllegalStateException
 	 * @throws IOException
 	 */
-	/*@ResponseBody
-	@RequestMapping("/saveMaterial")
-	public void saveMaterial(HttpServletRequest request,Material material) throws IllegalStateException, IOException{
-		//将当前上下文初始化给CommonsMultipartResolver（多部分解析器）
-		CommonsMultipartResolver multipartResolver=new CommonsMultipartResolver(
-				request.getSession().getServletContext());
-		//检查表单是否有enctype="multipart/form-data"属性
-		if(multipartResolver.isMultipart(request)){
-			//将request变成多部分request
-			MultipartHttpServletRequest multiRquest=(MultipartHttpServletRequest)request;
-			//获取multiRquest的所有文件名
-			Iterator iter=multiRquest.getFileNames();
-			while (iter.hasNext()) {
-				//一次遍历所有文件
-				MultipartFile file=multiRquest.getFile(iter.next().toString());
-				//String file.getOriginalFilename().split(".");
-				if(file!=null){//文件不为空
-					String imageName=material.getStudentno().toString()+System.currentTimeMillis();
-					//上传的位置-----------------------------------------
-					String path=request.getSession().getServletContext().getRealPath(File.separator)+"fileUpload\\material\\"+imageName+".jpg";
-					//上传
-					file.transferTo(new File(path));
-					
-					//保存进数据库
-					material.setMaterialpic(imageName+".jpg");
-					material.setStatus(0);
-					materialMapper.insert(material);
-				}
-			}
-		
-		}
-		
-		
-	}*/
-	
-	/**
-	 * 1.3个人信息：证书、学生证等的上传
-	 * @param request
-	 * @throws IllegalStateException
-	 * @throws IOException
-	 */
 	@ResponseBody
 	@RequestMapping("/saveMaterial")
 	public void saveMaterial(@RequestParam("file") MultipartFile file,Material material) throws IllegalStateException, IOException{
@@ -325,35 +284,25 @@ public class StudentController {
 	 */
 	@ResponseBody
 	@RequestMapping("/updateMaterial")
-	public void updateMaterial(HttpServletRequest request,Material material) throws IllegalStateException, IOException{
-		//将当前上下文初始化给CommonsMultipartResolver（多部分解析器）
-		CommonsMultipartResolver multipartResolver=new CommonsMultipartResolver(
-				request.getSession().getServletContext());
-		//检查表单是否有enctype="multipart/form-data"属性
-		if(multipartResolver.isMultipart(request)){
-			//将request变成多部分request
-			MultipartHttpServletRequest multiRquest=(MultipartHttpServletRequest)request;
-			//获取multiRquest的所有文件名
-			Iterator iter=multiRquest.getFileNames();
-			while (iter.hasNext()) {
-				//一次遍历所有文件
-				MultipartFile file=multiRquest.getFile(iter.next().toString());
-				//String file.getOriginalFilename().split(".");
-				if(file!=null){//文件不为空
-					String imageName=material.getStudentno().toString()+System.currentTimeMillis();
-					//上传的位置-----------------------------------------
-					String path=request.getSession().getServletContext().getRealPath(File.separator)+"fileUpload\\material\\"+imageName+".jpg";
-					//上传
-					file.transferTo(new File(path));
-					
-					//保存进数据库
-					material.setMaterialpic(imageName+".jpg");
-					materialMapper.updateByPrimaryKey(material);
-				}
-			}
-		
-		}
-		
+	public void updateMaterial(@RequestParam("file") MultipartFile file,Material material) throws IllegalStateException, IOException{
+		// 判断文件是否为空  
+        if (!file.isEmpty()) {  
+            try {  
+            	//文件名
+            	String fileName=UUID.randomUUID().toString()+".jpg";  
+                // 文件保存路径  
+                String filePath = request.getSession().getServletContext().getRealPath("/") + "fileUpload/material/"  
+                        +fileName;
+                // 转存文件  
+                file.transferTo(new File(filePath));  
+				
+				//保存进数据库
+				material.setMaterialpic(fileName+".jpg");
+				materialMapper.updateByPrimaryKey(material);
+            } catch (Exception e) {  
+                e.printStackTrace();  
+            }  
+        }  
 		
 	}
 	
