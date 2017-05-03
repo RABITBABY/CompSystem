@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cs.pojo.Competition;
 import com.cs.pojo.FileUpload;
+import com.cs.pojo.Production;
 import com.cs.service.article.ArticleService;
 import com.cs.service.award.AwardsService;
 import com.cs.service.competition.CompetitionService;
@@ -127,7 +128,7 @@ public class IndexController {
 	 */
 	@ResponseBody
 	@RequestMapping("/productionList")
-	public  Map productionList(String index,String pageSize) {
+	public  Map productionList(String index,String pageSize ,HttpServletRequest request) {
 		Map<String ,Object> resultMap=new HashMap<String, Object>();
 		Map<String ,Object> param=new HashMap<String, Object>();
 		index=ParamUtil.getStr(index, "1");
@@ -137,6 +138,19 @@ public class IndexController {
 		param.put("pageSize", pageSize);	
 		PageInfo pageInfo=new PageInfo();
 		pageInfo=productionService.productioList(param);
+		List<Production> list=pageInfo.getList();
+		for(int i=0;i<list.size();i++){
+			Production p=list.get(i);
+			String fileName=p.getPic();
+			String path = request.getSession().getServletContext().getRealPath("/WEB-INF/productionImg");
+			path=path+fileName;
+			System.out.println(path);
+			p.setPic(path);
+			list.add(i, p);
+		}
+		pageInfo.setList(list);
+		
+		
 		resultMap.put("produPageInfo", pageInfo);
 		System.out.println(param+"\n"+resultMap);
 		
