@@ -283,8 +283,8 @@ public class AdministerController {
 		param.put("pageSize", pageSize);	
 		
 		PageInfo pageInfo=new PageInfo();
-		
 		pageInfo=productionService.productioList(param);
+		List list=pageInfo.getList();
 		
 		resultMap.put("produPageInfo", pageInfo);
 		System.out.println(param+"\n"+resultMap);
