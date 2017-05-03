@@ -180,17 +180,19 @@ public class TeacherServiceImpl implements TeacherService {
 
 	@Override
 	@Transactional
-	public void addComp(CompetitionInfoVo compVo) {
-		Competition competition = compVo.getCompetition();
+	public void addComp(Competition competition,List<Budget> budgets,
+			List<CompCondition> compConditions,List<GuideTeacher> guideTeachers,
+			List<Hours> hours,List<Schedule> schedules) {
+		//Competition competition = compVo.getCompetition();
 		competition.setCompstatus(0);
 		competition.setDepspstatus(0);
 		competition.setIspublish(0);
 		competition.setTeaspstatus(0);
 		comMapper.insertSelective(competition);
 		// 得到竞赛id
-		int comId = compVo.getCompetition().getComid();
+		int comId = competition.getComid();
 		// 经费预算
-		List<Budget> bList = compVo.getBudgets();
+		List<Budget> bList = budgets;
 		if (bList != null) {
 			for (int i = 0; i < bList.size(); i++) {
 				bList.get(i).setComid(comId);
@@ -198,7 +200,7 @@ public class TeacherServiceImpl implements TeacherService {
 			budgetMapper.addCompBudgetBatch(bList);
 		}
 		// 竞赛条件
-		List<CompCondition> compConditionsList = compVo.getCompConditions();
+		List<CompCondition> compConditionsList =compConditions;
 		if (compConditionsList != null) {
 			for (int i = 0; i < compConditionsList.size(); i++) {
 				compConditionsList.get(i).setComid(comId);
@@ -206,7 +208,7 @@ public class TeacherServiceImpl implements TeacherService {
 			compConditionMapper.addCompConditionBatch(compConditionsList);
 		}
 		// 指导老师
-		List<GuideTeacher> guideList = compVo.getGuideTeachers();
+		List<GuideTeacher> guideList = guideTeachers;
 		if (guideList != null) {
 			for (int i = 0; i < guideList.size(); i++) {
 				guideList.get(i).setComid(comId);
@@ -214,7 +216,7 @@ public class TeacherServiceImpl implements TeacherService {
 			guideTeacherMapper.addCompGuideTeacherBatch(guideList);
 		}
 		// 课时预算
-		List<Hours> hoursList = compVo.getHours();
+		List<Hours> hoursList =hours;
 		if (hoursList != null) {
 			for (int i = 0; i < hoursList.size(); i++) {
 				hoursList.get(i).setComid(comId);
@@ -222,7 +224,7 @@ public class TeacherServiceImpl implements TeacherService {
 			hoursMapper.addCompHoursBatch(hoursList);
 		}
 		// 培训安排
-		List<Schedule> scheduleList = compVo.getSchedules();
+		List<Schedule> scheduleList =schedules;
 		if (scheduleList != null) {
 			for (int i = 0; i < scheduleList.size(); i++) {
 				scheduleList.get(i).setComid(comId);

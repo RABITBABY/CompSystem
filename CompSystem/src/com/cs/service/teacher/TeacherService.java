@@ -3,9 +3,16 @@ package com.cs.service.teacher;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.cs.pojo.Awards;
+import com.cs.pojo.Budget;
+import com.cs.pojo.CompCondition;
 import com.cs.pojo.Competition;
 import com.cs.pojo.Groups;
+import com.cs.pojo.GuideTeacher;
+import com.cs.pojo.Hours;
+import com.cs.pojo.Schedule;
 import com.cs.pojo.Student;
 import com.cs.pojo.Teacher;
 import com.cs.vo.CompetitionInfoVo;
@@ -38,7 +45,9 @@ public interface TeacherService {
 	 * @param comId
 	 * @return
 	 */
-	public void addComp(CompetitionInfoVo compVo);
+	public void addComp(Competition competition,List<Budget> budgets,
+			List<CompCondition> compConditions,List<GuideTeacher> guideTeachers,
+			List<Hours> hours,List<Schedule> schedules);
 	
 	/**
 	 * 根据teacherno查找申报列表/以及结果
