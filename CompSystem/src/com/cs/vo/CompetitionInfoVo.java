@@ -12,6 +12,7 @@ import com.cs.pojo.Schedule;
 import com.cs.pojo.Teacher;
 
 public class CompetitionInfoVo {
+	
 	//申报书基本信息
 	private Competition competition;
 	//经费预算
