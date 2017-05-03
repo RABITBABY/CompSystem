@@ -172,8 +172,9 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/addComp")
-	public void addComp(@RequestBody CompetitionInfoVo competitionInfovo) {
-		teacherService.addComp(competitionInfovo);
+	public void addComp(@RequestBody Competition competition) {
+		System.out.println(competition.getComname());
+		//teacherService.addComp(competitionInfovo);
 	}
 
 	/**
