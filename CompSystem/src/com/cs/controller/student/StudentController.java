@@ -179,7 +179,6 @@ public class StudentController {
 	 
 	 /**
 	  * 1.4.3查找该竞赛所有指导老师。
-	  * 通过group表主键删除
 	  * @return
 	  */
 	 @ResponseBody
@@ -226,7 +225,8 @@ public class StudentController {
 	 * @return
 	 */
 	@RequestMapping("/downloadAwards")    
-    public ResponseEntity<byte[]> downloadAwards(HttpServletRequest request,Awards awards) throws IOException {    
+    public ResponseEntity<byte[]> downloadAwards(HttpServletRequest request,Integer awardsId) throws IOException {    
+    	Awards awards = awardsMapper.selectByPrimaryKey(awardsId);
     	//文件所在的位置
         String path=request.getSession().getServletContext().getRealPath(File.separator)+"fileUpload\\awards\\"+awards.getAwardsimg();  
 
@@ -278,7 +278,7 @@ public class StudentController {
 	
 	/**
 	 * 6.3修改个人材料
-	 * @param request
+	 * @param  id img
 	 * @throws IllegalStateException
 	 * @throws IOException
 	 */
