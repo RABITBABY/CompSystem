@@ -273,7 +273,7 @@ public class AdministerController {
 	 */
 	@ResponseBody
 	@RequestMapping("/productionList")
- 	public  Map productionList(String index,String pageSize) {
+ 	public  Map productionList(String index,String pageSize,HttpServletRequest request) {
 		Map<String ,Object> resultMap=new HashMap<String, Object>();
 		Map<String ,Object> param=new HashMap<String, Object>();
 		index=ParamUtil.getStr(index, "1");
@@ -282,9 +282,18 @@ public class AdministerController {
 		param.put("index", index);	
 		param.put("pageSize", pageSize);	
 		
-		PageInfo pageInfo=new PageInfo();
+		PageInfo<Production> pageInfo=new PageInfo<Production>();
 		pageInfo=productionService.productioList(param);
-		List list=pageInfo.getList();
+		List<Production> list=pageInfo.getList();
+		for(int i=0;i<list.size();i++){
+			Production p=list.get(i);
+			String fileName=p.getPic();
+			String path = request.getSession().getServletContext().getRealPath("/WEB-INF/productionImg");
+			path=path+fileName;
+			System.out.println(path);
+			p.setPic(path);
+			list.add(i, p);
+		}
 		
 		resultMap.put("produPageInfo", pageInfo);
 		System.out.println(param+"\n"+resultMap);
