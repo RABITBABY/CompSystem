@@ -302,7 +302,7 @@ public class AdministerController {
 	 */
 	@ResponseBody
 	@RequestMapping("/uploadProduction")
-	public Map uploadProduction(String proName,String award,String membersName,String introduction, HttpServletRequest request,HttpServletResponse response) throws IllegalStateException, IOException{
+	public Map uploadProduction(@RequestParam("file")MultipartFile file,String proName,String award,String membersName,String introduction, HttpServletRequest request,HttpServletResponse response) throws IllegalStateException, IOException{
 		String stateCode="0";
 		String info="上传作品失败";
 		Map result=new HashMap<String, Object>();
@@ -313,7 +313,7 @@ public class AdministerController {
         Iterator<String> it = multiRequest.getFileNames();  
         while(it.hasNext()){  
             //根据文件名称取文件  
-            MultipartFile file = multiRequest.getFile(it.next());  
+            file = multiRequest.getFile(it.next());  
             String fileName = file.getOriginalFilename();  //文件名
             String uploadName = String.valueOf( System.currentTimeMillis());//时间戳字符串
             String fileType=fileName.substring(fileName.indexOf("."), fileName.length());
