@@ -181,7 +181,12 @@ public class TeacherServiceImpl implements TeacherService {
 	@Override
 	@Transactional
 	public void addComp(CompetitionInfoVo compVo) {
-		int insertCom = comMapper.insertSelective(compVo.getCompetition());
+		Competition competition = compVo.getCompetition();
+		competition.setCompstatus(0);
+		competition.setDepspstatus(0);
+		competition.setIspublish(0);
+		competition.setTeaspstatus(0);
+		comMapper.insertSelective(competition);
 		// 得到竞赛id
 		int comId = compVo.getCompetition().getComid();
 		// 经费预算
@@ -229,7 +234,16 @@ public class TeacherServiceImpl implements TeacherService {
 	@Override
 	@Transactional
 	public void updateComp(CompetitionInfoVo compVo) {
-		comMapper.updateByPrimaryKeySelective(compVo.getCompetition());
+		Competition competition = compVo.getCompetition();
+		competition.setCompstatus(0);
+		competition.setDepspstatus(0);
+		competition.setIspublish(0);
+		competition.setTeaspstatus(0);
+		competition.setUopinion("");
+		competition.setDsign("");
+		competition.setTdopinion("");
+		competition.setOlsign("");
+		comMapper.updateByPrimaryKeySelective(competition);
 		// 经费预算
 		List<Budget> bList = compVo.getBudgets();
 		if (bList != null) {
