@@ -47,13 +47,11 @@ import com.cs.dao.competition.CompetitionMapper;
 import com.cs.dao.message.MessageMapper;
 import com.cs.pojo.Awards;
 import com.cs.pojo.Budget;
-import com.cs.pojo.CompCondition;
 import com.cs.pojo.Competition;
 import com.cs.pojo.Conditions;
 import com.cs.pojo.Department;
 import com.cs.pojo.FileUpload;
 import com.cs.pojo.Groups;
-import com.cs.pojo.GuideTeacher;
 import com.cs.pojo.Hours;
 import com.cs.pojo.Material;
 import com.cs.pojo.Message;
@@ -174,10 +172,8 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/addComp")
-	public void addComp(@RequestParam Competition competition,@RequestParam List<Budget> budgets,
-			@RequestParam List<CompCondition> compConditions,@RequestParam List<GuideTeacher> guideTeachers,
-			@RequestParam List<Hours> hours,@RequestParam List<Schedule> schedules) {
-		teacherService.addComp(competition,budgets,compConditions,guideTeachers,hours,schedules);
+	public void addComp(@RequestBody CompetitionInfoVo competitionInfovo) {
+		teacherService.addComp(competitionInfovo);
 	}
 
 	/**
