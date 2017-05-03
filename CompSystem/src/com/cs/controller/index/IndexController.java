@@ -142,7 +142,7 @@ public class IndexController {
 		for(int i=0;i<list.size();i++){
 			Production p=list.get(i);
 			String fileName=p.getPic();
-			String path ="/productionImg";
+			String path ="productionImg";
 			path=path+"/"+fileName;
 			System.out.println(path);
 			p.setPic(path);
