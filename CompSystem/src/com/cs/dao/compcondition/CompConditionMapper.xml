@@ -17,7 +17,7 @@
   <insert id="addCompConditionBatch" useGeneratedKeys="true" parameterType="java.util.List">  
     insert into compcondition (id,comId, conditionId) values
     <foreach collection="list" item="item" index="index" separator="," >  
-       #{item.id,jdbcType=INTEGER},#{item.comid,jdbcType=INTEGER}, #{item.conditionid,jdbcType=INTEGER}
+       (#{item.id,jdbcType=INTEGER},#{item.comid,jdbcType=INTEGER}, #{item.conditionid,jdbcType=INTEGER})
     </foreach>  
  </insert>  
 
