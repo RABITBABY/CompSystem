@@ -191,7 +191,7 @@ public class TeacherServiceImpl implements TeacherService {
 		int comId = compVo.getCompetition().getComid();
 		// 经费预算
 		List<Budget> bList = compVo.getBudgets();
-		if (bList != null) {
+		if (bList != null&&bList.size()>0) {
 			for (int i = 0; i < bList.size(); i++) {
 				bList.get(i).setComid(comId);
 			}
@@ -199,7 +199,7 @@ public class TeacherServiceImpl implements TeacherService {
 		}
 		// 竞赛条件
 		List<CompCondition> compConditionsList = compVo.getCompConditions();
-		if (compConditionsList != null) {
+		if (compConditionsList != null&&compConditionsList.size()>0) {
 			for (int i = 0; i < compConditionsList.size(); i++) {
 				compConditionsList.get(i).setComid(comId);
 			}
@@ -207,7 +207,7 @@ public class TeacherServiceImpl implements TeacherService {
 		}
 		// 指导老师
 		List<GuideTeacher> guideList = compVo.getGuideTeachers();
-		if (guideList != null) {
+		if (guideList != null&&guideList.size()>0) {
 			for (int i = 0; i < guideList.size(); i++) {
 				guideList.get(i).setComid(comId);
 			}
@@ -215,7 +215,7 @@ public class TeacherServiceImpl implements TeacherService {
 		}
 		// 课时预算
 		List<Hours> hoursList = compVo.getHours();
-		if (hoursList != null) {
+		if (hoursList != null&&hoursList.size()>0) {
 			for (int i = 0; i < hoursList.size(); i++) {
 				hoursList.get(i).setComid(comId);
 			}
@@ -223,7 +223,7 @@ public class TeacherServiceImpl implements TeacherService {
 		}
 		// 培训安排
 		List<Schedule> scheduleList = compVo.getSchedules();
-		if (scheduleList != null) {
+		if (scheduleList != null&&scheduleList.size()>0) {
 			for (int i = 0; i < scheduleList.size(); i++) {
 				scheduleList.get(i).setComid(comId);
 			}
@@ -246,14 +246,14 @@ public class TeacherServiceImpl implements TeacherService {
 		comMapper.updateByPrimaryKeySelective(competition);
 		// 经费预算
 		List<Budget> bList = compVo.getBudgets();
-		if (bList != null) {
+		if (bList != null&&bList.size()>0) {
 			for (int i = 0; i < bList.size(); i++) {
 				budgetMapper.updateByPrimaryKeySelective(bList.get(i));
 			}
 		}
 		// 竞赛条件
 		List<CompCondition> compConditionsList = compVo.getCompConditions();
-		if (compConditionsList != null) {
+		if (compConditionsList != null&&compConditionsList.size()>0) {
 			for (int i = 0; i < compConditionsList.size(); i++) {
 				compConditionMapper
 						.updateByPrimaryKeySelective(compConditionsList.get(i));
@@ -261,7 +261,7 @@ public class TeacherServiceImpl implements TeacherService {
 		}
 		// 指导老师
 		List<GuideTeacher> guideList = compVo.getGuideTeachers();
-		if (guideList != null) {
+		if (guideList != null&&guideList.size()>0) {
 			for (int i = 0; i < guideList.size(); i++) {
 				guideTeacherMapper
 						.updateByPrimaryKeySelective(guideList.get(i));
@@ -269,14 +269,14 @@ public class TeacherServiceImpl implements TeacherService {
 		}
 		// 课时预算
 		List<Hours> hoursList = compVo.getHours();
-		if (hoursList != null) {
+		if (hoursList != null&&hoursList.size()>0) {
 			for (int i = 0; i < hoursList.size(); i++) {
 				hoursMapper.updateByPrimaryKeySelective(hoursList.get(i));
 			}
 		}
 		// 培训安排
 		List<Schedule> scheduleList = compVo.getSchedules();
-		if (scheduleList != null) {
+		if (scheduleList != null&&scheduleList.size()>0) {
 			for (int i = 0; i < scheduleList.size(); i++) {
 				scheduleMapper.updateByPrimaryKeySelective(scheduleList.get(i));
 			}
