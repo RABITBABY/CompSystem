@@ -356,7 +356,6 @@ public class TeacherController {
 	}
 	/**
 	 * 10.待审核列表
-	 * 
 	 * @param teacherNo
 	 * @return
 	 */

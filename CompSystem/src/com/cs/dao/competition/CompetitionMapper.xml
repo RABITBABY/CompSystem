@@ -527,8 +527,8 @@
     set 
       tdopinion = #{tdopinion,jdbcType=VARCHAR},
       olsign = #{olsign,jdbcType=VARCHAR},
-      dsdate = #{dsdate,jdbcType=DATE},
-      depSpStatus = #{depspstatus,jdbcType=INTEGER}
+      olsdate = #{olsdate,jdbcType=DATE},
+      teaSpStatus = #{teaspstatus,jdbcType=INTEGER}
     where comId = #{comid,jdbcType=INTEGER}
   </update>
 
