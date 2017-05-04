@@ -461,13 +461,13 @@
   
    <select id="examDeptComp" resultType="com.cs.pojo.Competition"  parameterType="int">
   		select c.* from competition c
-left join teacher t
-on c.department=t.department
-where t.teacherNo=#{teacherNo} and depSpStatus=0
+		left join teacher t
+		on c.department=t.department
+		where t.teacherNo=#{teacherNo} and depSpStatus=0
 	</select>
    <select id="examTeaComp" resultType="com.cs.pojo.Competition"  parameterType="int" >
   		select * from competition 
-where depSpStatus=1 and teaSpStatus=0
+        where depSpStatus=1 and teaSpStatus=0
 	</select>
   
   <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Competition" >
