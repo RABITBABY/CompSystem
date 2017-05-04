@@ -300,4 +300,17 @@ public class TeacherServiceImpl implements TeacherService {
 		return teacherMapper.selectAllTeacher();
 	}
 
+	@Override
+	public List<Competition> getApproCompList(Integer teacherno) {
+		List<Competition> list=new ArrayList<Competition>();
+		Teacher teacher = teacherMapper.selectByPrimaryKey(teacherno);
+		if (teacher.getDepartment().equals("教学处") && teacher.getExaminer()==1) {
+			list=comMapper.examTeaComp(teacherno);
+		}else if((!teacher.getDepartment().equals("教学处")) && teacher.getExaminer()==1){
+			list=comMapper.examDeptComp(teacherno);
+		}
+
+		return list;
+	}
+
 }

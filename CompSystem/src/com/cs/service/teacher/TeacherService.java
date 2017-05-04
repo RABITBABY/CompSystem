@@ -120,5 +120,9 @@ public interface TeacherService {
 	 */
 	public List<Teacher> selectAllTeacher();
 	
-	
+	/**
+	 * 审批员获取等待审批列表
+	 * @return
+	 */
+	public List<Competition> getApproCompList(Integer teacherno);
 }

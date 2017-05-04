@@ -90,6 +90,7 @@ public class TeacherController {
 	 * 7.查找所有的教师√
 	 * 8.获取所有的条件√
 	 * 9.获取个人消息。√
+	 * 10.待审核列表√
 	 */
 
 	@Autowired
@@ -354,26 +355,14 @@ public class TeacherController {
 	    return messageMapper.selectBysendtoNo(no);
 	}
 	/**
-	 * 审核列表
+	 * 10.待审核列表
 	 * 
 	 * @param teacherNo
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping(value = "/examDeptComp")
-	public List<Competition> examDeptComp(Integer teacherNo) {
-		List<Competition> list=new ArrayList<Competition>();
-		//判断审批员是系的还是教学处的
-		list=comMapper.examDeptComp(teacherNo);
-		return list;
-	}
-	
-	@ResponseBody
-	@RequestMapping(value = "/examTeaComp")
-	public List<Competition> examTeaComp(Integer teacherNo) {
-		List<Competition> list=new ArrayList<Competition>();
-		//判断审批员是系的还是教学处的
-		list=comMapper.examTeaComp(teacherNo);
-		return list;
+	@RequestMapping(value = "/getApproCompList")
+	public List<Competition> getApproCompList(Integer teacherNo) {
+		return teacherService.getApproCompList(teacherNo);
 	}
 }
