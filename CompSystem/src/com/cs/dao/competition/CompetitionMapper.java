@@ -18,6 +18,7 @@ public interface CompetitionMapper {
 	List<Competition> selectEndComp(Integer teacherNo);
 	
     int deleteByPrimaryKey(Integer comid);
+     
     
     List<Competition> selectByTeacherno(Integer teacherno);
 
@@ -30,6 +31,10 @@ public interface CompetitionMapper {
     int updateByPrimaryKeySelective(Competition record);
 
     int updateByPrimaryKey(Competition record);
+    
+    List<Competition> examDeptComp(Integer teacherNo);
+    
+    List<Competition> examTeaComp(Integer teacherNo);
     
     //max
     List<Map<String,Object>> selectByAdmin(Map map);

@@ -353,5 +353,27 @@ public class TeacherController {
 	public List<Message> getAllMessage(String no){
 	    return messageMapper.selectBysendtoNo(no);
 	}
+	/**
+	 * 审核列表
+	 * 
+	 * @param teacherNo
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/examDeptComp")
+	public List<Competition> examDeptComp(Integer teacherNo) {
+		List<Competition> list=new ArrayList<Competition>();
+		//判断审批员是系的还是教学处的
+		list=comMapper.examDeptComp(teacherNo);
+		return list;
+	}
 	
+	@ResponseBody
+	@RequestMapping(value = "/examTeaComp")
+	public List<Competition> examTeaComp(Integer teacherNo) {
+		List<Competition> list=new ArrayList<Competition>();
+		//判断审批员是系的还是教学处的
+		list=comMapper.examTeaComp(teacherNo);
+		return list;
+	}
 }
