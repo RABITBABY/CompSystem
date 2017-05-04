@@ -1,6 +1,6 @@
 webpackJsonp([1,4],{
 
-/***/ 1186:
+/***/ 1187:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/*! Hammer.JS - v2.0.7 - 2016-04-22
@@ -2651,7 +2651,7 @@ if (true) {
 
 /***/ }),
 
-/***/ 1189:
+/***/ 1190:
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -2848,7 +2848,15 @@ module.exports = function(it){
 
 /***/ }),
 
-/***/ 1268:
+/***/ 127:
+/***/ (function(module, exports) {
+
+var core = module.exports = {version: '2.4.0'};
+if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
+
+/***/ }),
+
+/***/ 1270:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {/**
@@ -4947,19 +4955,11 @@ if (_global['PromiseRejectionEvent']) {
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(35), __webpack_require__(1189)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(35), __webpack_require__(1190)))
 
 /***/ }),
 
-/***/ 127:
-/***/ (function(module, exports) {
-
-var core = module.exports = {version: '2.4.0'};
-if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
-
-/***/ }),
-
-/***/ 1270:
+/***/ 1272:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(611);
@@ -5004,7 +5004,7 @@ var pIE            = __webpack_require__(535)
   , IE8_DOM_DEFINE = __webpack_require__(530)
   , gOPD           = Object.getOwnPropertyDescriptor;
 
-exports.f = __webpack_require__(79) ? gOPD : function getOwnPropertyDescriptor(O, P){
+exports.f = __webpack_require__(80) ? gOPD : function getOwnPropertyDescriptor(O, P){
   O = toIObject(O);
   P = toPrimitive(P, true);
   if(IE8_DOM_DEFINE)try {
@@ -5138,7 +5138,7 @@ exports.RETURN = RETURN;
 
 var dP         = __webpack_require__(65)
   , createDesc = __webpack_require__(196);
-module.exports = __webpack_require__(79) ? function(object, key, value){
+module.exports = __webpack_require__(80) ? function(object, key, value){
   return dP.f(object, key, createDesc(1, value));
 } : function(object, key, value){
   object[key] = value;
@@ -5728,7 +5728,7 @@ var dP          = __webpack_require__(65).f
   , $iterDefine = __webpack_require__(887)
   , step        = __webpack_require__(889)
   , setSpecies  = __webpack_require__(895)
-  , DESCRIPTORS = __webpack_require__(79)
+  , DESCRIPTORS = __webpack_require__(80)
   , fastKey     = __webpack_require__(195).fastKey
   , SIZE        = DESCRIPTORS ? '_s' : 'size';
 
@@ -5878,7 +5878,7 @@ module.exports = function(it){
 /***/ 530:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = !__webpack_require__(79) && !__webpack_require__(64)(function(){
+module.exports = !__webpack_require__(80) && !__webpack_require__(64)(function(){
   return Object.defineProperty(__webpack_require__(529)('div'), 'a', {get: function(){ return 7; }}).a != 7;
 });
 
@@ -6017,9 +6017,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_core_js_es6_reflect__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es7_reflect__ = __webpack_require__(873);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es7_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_js_es7_reflect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_zone_js_dist_zone__ = __webpack_require__(1268);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_zone_js_dist_zone__ = __webpack_require__(1270);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_zone_js_dist_zone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_zone_js_dist_zone__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_hammerjs_hammer__ = __webpack_require__(1186);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_hammerjs_hammer__ = __webpack_require__(1187);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_hammerjs_hammer___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_hammerjs_hammer__);
 /**
  * This file includes polyfills needed by Angular and is loaded before the app.
@@ -6100,7 +6100,7 @@ var anObject       = __webpack_require__(6)
   , toPrimitive    = __webpack_require__(307)
   , dP             = Object.defineProperty;
 
-exports.f = __webpack_require__(79) ? Object.defineProperty : function defineProperty(O, P, Attributes){
+exports.f = __webpack_require__(80) ? Object.defineProperty : function defineProperty(O, P, Attributes){
   anObject(O);
   P = toPrimitive(P, true);
   anObject(Attributes);
@@ -6114,7 +6114,7 @@ exports.f = __webpack_require__(79) ? Object.defineProperty : function definePro
 
 /***/ }),
 
-/***/ 79:
+/***/ 80:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Thank's IE8 for his funny defineProperty
@@ -6124,7 +6124,7 @@ module.exports = !__webpack_require__(64)(function(){
 
 /***/ }),
 
-/***/ 80:
+/***/ 81:
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
@@ -6505,7 +6505,7 @@ var LIBRARY        = __webpack_require__(890)
   , Iterators      = __webpack_require__(298)
   , $iterCreate    = __webpack_require__(531)
   , setToStringTag = __webpack_require__(301)
-  , getPrototypeOf = __webpack_require__(80)
+  , getPrototypeOf = __webpack_require__(81)
   , ITERATOR       = __webpack_require__(50)('iterator')
   , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
   , FF_ITERATOR    = '@@iterator'
@@ -6659,7 +6659,7 @@ var dP       = __webpack_require__(65)
   , anObject = __webpack_require__(6)
   , getKeys  = __webpack_require__(534);
 
-module.exports = __webpack_require__(79) ? Object.defineProperties : function defineProperties(O, Properties){
+module.exports = __webpack_require__(80) ? Object.defineProperties : function defineProperties(O, Properties){
   anObject(O);
   var keys   = getKeys(Properties)
     , length = keys.length
@@ -6707,7 +6707,7 @@ module.exports = Reflect && Reflect.ownKeys || function ownKeys(it){
 
 var global      = __webpack_require__(32)
   , dP          = __webpack_require__(65)
-  , DESCRIPTORS = __webpack_require__(79)
+  , DESCRIPTORS = __webpack_require__(80)
   , SPECIES     = __webpack_require__(50)('species');
 
 module.exports = function(KEY){
@@ -6945,7 +6945,7 @@ $export($export.S, 'Reflect', {
 
 // 26.1.8 Reflect.getPrototypeOf(target)
 var $export  = __webpack_require__(17)
-  , getProto = __webpack_require__(80)
+  , getProto = __webpack_require__(81)
   , anObject = __webpack_require__(6);
 
 $export($export.S, 'Reflect', {
@@ -6961,7 +6961,7 @@ $export($export.S, 'Reflect', {
 
 // 26.1.6 Reflect.get(target, propertyKey [, receiver])
 var gOPD           = __webpack_require__(129)
-  , getPrototypeOf = __webpack_require__(80)
+  , getPrototypeOf = __webpack_require__(81)
   , has            = __webpack_require__(43)
   , $export        = __webpack_require__(17)
   , isObject       = __webpack_require__(23)
@@ -7073,7 +7073,7 @@ if(setProto)$export($export.S, 'Reflect', {
 // 26.1.13 Reflect.set(target, propertyKey, V [, receiver])
 var dP             = __webpack_require__(65)
   , gOPD           = __webpack_require__(129)
-  , getPrototypeOf = __webpack_require__(80)
+  , getPrototypeOf = __webpack_require__(81)
   , has            = __webpack_require__(43)
   , $export        = __webpack_require__(17)
   , createDesc     = __webpack_require__(196)
@@ -7228,7 +7228,7 @@ var Set                     = __webpack_require__(913)
   , from                    = __webpack_require__(874)
   , metadata                = __webpack_require__(49)
   , anObject                = __webpack_require__(6)
-  , getPrototypeOf          = __webpack_require__(80)
+  , getPrototypeOf          = __webpack_require__(81)
   , ordinaryOwnMetadataKeys = metadata.keys
   , toMetaKey               = metadata.key;
 
@@ -7251,7 +7251,7 @@ metadata.exp({getMetadataKeys: function getMetadataKeys(target /*, targetKey */)
 
 var metadata               = __webpack_require__(49)
   , anObject               = __webpack_require__(6)
-  , getPrototypeOf         = __webpack_require__(80)
+  , getPrototypeOf         = __webpack_require__(81)
   , ordinaryHasOwnMetadata = metadata.has
   , ordinaryGetOwnMetadata = metadata.get
   , toMetaKey              = metadata.key;
@@ -7303,7 +7303,7 @@ metadata.exp({getOwnMetadata: function getOwnMetadata(metadataKey, target /*, ta
 
 var metadata               = __webpack_require__(49)
   , anObject               = __webpack_require__(6)
-  , getPrototypeOf         = __webpack_require__(80)
+  , getPrototypeOf         = __webpack_require__(81)
   , ordinaryHasOwnMetadata = metadata.has
   , toMetaKey              = metadata.key;
 
@@ -7356,5 +7356,5 @@ metadata.exp({metadata: function metadata(metadataKey, metadataValue){
 
 /***/ })
 
-},[1270]);
+},[1272]);
 //# sourceMappingURL=polyfills.bundle.js.map

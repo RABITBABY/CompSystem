@@ -296,7 +296,7 @@ exports = module.exports = __webpack_require__(2)();
 
 
 // module
-exports.push([module.i, "md-card md-card-content md-card md-card-content {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n}\r\n", ""]);
+exports.push([module.i, ".fileName {\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\r\n  white-space: nowrap;\r\n}\r\nbutton {\r\n  display: none;\r\n  min-width: 60px;\r\n}\r\n\r\nmd-list-item:hover button {\r\n  display: block;\r\n}\r\n", ""]);
 
 // exports
 
@@ -314,7 +314,7 @@ exports = module.exports = __webpack_require__(2)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "md-card md-card-content md-card md-card-content {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n}\r\n", ""]);
 
 // exports
 
@@ -332,7 +332,7 @@ exports = module.exports = __webpack_require__(2)();
 
 
 // module
-exports.push([module.i, "md-radio-button {\r\n    margin-right: 18px;\r\n}\r\n\r\n.full-width {\r\n  width: 100%;\r\n}\r\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -350,7 +350,7 @@ exports = module.exports = __webpack_require__(2)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "md-radio-button {\r\n    margin-right: 18px;\r\n}\r\n\r\n.full-width {\r\n  width: 100%;\r\n}\r\n", ""]);
 
 // exports
 
@@ -648,255 +648,280 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 1192:
-/***/ (function(module, exports) {
+/***/ 1186:
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<md-toolbar color=\"primary\">\r\n\r\n  <span class=\"noselect\" routerLink=\"/\" routerLinkActive=\"active\">\r\n    <md-icon>home</md-icon>\r\n    {{title}}\r\n  </span>\r\n  <span style=\"flex: 1 1 auto\"> </span>\r\n  <md-input-container>\r\n    <label><md-icon>search</md-icon></label>\r\n    <input mdInput placeholder=\"&ensp;&ensp;搜索\" />\r\n  </md-input-container>\r\n  <!-- This fills the remaining space of the current row -->\r\n  <span style=\"flex: 1 1 auto\"> </span>\r\n  <app-login>Loading LoginComponent ...</app-login>\r\n\r\n</md-toolbar>\r\n<router-outlet></router-outlet>\r\n"
+exports = module.exports = __webpack_require__(2)();
+// imports
+
+
+// module
+exports.push([module.i, "section {\r\n  height: 100%;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
 
 /***/ }),
 
 /***/ 1193:
 /***/ (function(module, exports) {
 
-module.exports = "<h3>报名</h3>\r\n<section *ngIf=\"!groupMode\">\r\n  <button md-button (click)=\"setGroupMode('create')\">创建队伍</button>\r\n  <button md-button (click)=\"setGroupMode('join')\">加入队伍</button>\r\n</section>\r\n<section *ngIf=\"groupMode === 'join'\">\r\n  <md-list>\r\n    <p>队长审核队员功能尚未添加</p>\r\n    <md-list-item *ngFor=\"let group of groups\">\r\n      {{group.groupsname}}\r\n      <button md-button (click)=\"joinGroup(group)\">申请加入</button>\r\n    </md-list-item>\r\n  </md-list>\r\n</section>\r\n<section *ngIf=\"groupMode === 'create'\">\r\n<form #groups=\"ngForm\">\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput ngModel name=\"groupsname\" placeholder=\"组名\" />\r\n  </md-input-container>\r\n  <md-select placeholder=\"选择指导老师\" ngModel name=\"guideTeacher\">\r\n    <md-option *ngFor=\"let item of guideTeachers\" [value]=\"guideTeachers\">\r\n      {{item.teachername}}\r\n    </md-option>\r\n  </md-select>\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput name=\"studentname\" [(ngModel)]=\"student.studentname\" placeholder=\"学号\" disabled />\r\n  </md-input-container>\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput name=\"comname\" [(ngModel)]=\"contest.comname\" placeholder=\"竞赛\" disabled />\r\n  </md-input-container>\r\n</form>\r\n<button md-button color=\"primary\" (click)=\"dialogRef.close(groups.value)\">创建</button>\r\n<button md-button color=\"warn\" (click)=\"dialogRef.close()\">取消</button>\r\n</section>\r\n"
+module.exports = "<md-toolbar color=\"primary\">\r\n\r\n  <span class=\"noselect\" routerLink=\"/\" routerLinkActive=\"active\">\r\n    <md-icon>home</md-icon>\r\n    {{title}}\r\n  </span>\r\n  <span style=\"flex: 1 1 auto\"> </span>\r\n  <md-input-container>\r\n    <label><md-icon>search</md-icon></label>\r\n    <input mdInput placeholder=\"&ensp;&ensp;搜索\" />\r\n  </md-input-container>\r\n  <!-- This fills the remaining space of the current row -->\r\n  <span style=\"flex: 1 1 auto\"> </span>\r\n  <app-login>Loading LoginComponent ...</app-login>\r\n\r\n</md-toolbar>\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
 /***/ 1194:
 /***/ (function(module, exports) {
 
-module.exports = "<article *ngIf=\"article\">\r\n  <h3>标题:{{article.title}}</h3>\r\n  <div>发布日期：{{article.pubDate}}</div><span>发布者: {{article.adminName}}</span><span>浏览量</span>\r\n  <div>内容：{{article.content}}</div>\r\n  <div>\r\n    <qr-code [value]=\"'All QR Code data goes here!'\" [size]=\"150\"></qr-code>\r\n  </div>\r\n  <md-card>\r\n    <md-card-actions>\r\n      <button md-button (click)=\"apply()\" [disabled]=\"already\">\r\n        <span *ngIf=\"already\">已</span>报名\r\n      </button>\r\n      <button *ngIf=\"already\" (click)=\"cancel()\">取消报名</button>\r\n      <button md-button>分享</button>\r\n      <button md-button (click)=\"toggleGroup()\">\r\n        <span *ngIf=\"!groupVisible\">展开</span>\r\n        <span *ngIf=\"groupVisible\">收拢</span>\r\n        队伍详情\r\n      </button>\r\n    </md-card-actions>\r\n    <md-card-header>\r\n      <md-card-title>队伍详情,当前参赛组数: {{groups.length}}</md-card-title>\r\n    </md-card-header>\r\n    <md-card-content *ngIf=\"groupVisible\">\r\n      <md-list>\r\n        <md-list-item *ngFor=\"let group of groups\">\r\n          {{group.groupsname}}\r\n        </md-list-item>\r\n      </md-list>\r\n    </md-card-content>\r\n  </md-card>\r\n</article>\r\n"
+module.exports = "<h3>报名</h3>\r\n<section *ngIf=\"!groupMode\">\r\n  <button md-button (click)=\"setGroupMode('create')\">创建队伍</button>\r\n  <button md-button (click)=\"setGroupMode('join')\">加入队伍</button>\r\n</section>\r\n<section *ngIf=\"groupMode === 'join'\">\r\n  <md-list>\r\n    <md-chip-list>\r\n    <md-chip selected=\"true\" color=\"warn\">队长审核队员功能尚未添加</md-chip>\r\n  </md-chip-list>\r\n    <md-list-item *ngFor=\"let group of groups\">\r\n      {{group.groupsname}}\r\n      <button md-button (click)=\"joinGroup(group)\">申请加入</button>\r\n    </md-list-item>\r\n  </md-list>\r\n</section>\r\n<section *ngIf=\"groupMode === 'create'\">\r\n<form #groups=\"ngForm\">\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput ngModel name=\"groupsname\" placeholder=\"组名\" />\r\n  </md-input-container>\r\n  <md-select placeholder=\"选择指导老师\" ngModel name=\"guideTeacher\">\r\n    <md-option *ngFor=\"let item of guideTeachers\" [value]=\"guideTeachers\">\r\n      {{item.teachername}}\r\n    </md-option>\r\n  </md-select>\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput name=\"studentname\" [(ngModel)]=\"student.studentname\" placeholder=\"学号\" disabled />\r\n  </md-input-container>\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput name=\"comname\" [(ngModel)]=\"contest.comname\" placeholder=\"竞赛\" disabled />\r\n  </md-input-container>\r\n</form>\r\n<button md-button color=\"primary\" (click)=\"dialogRef.close(groups.value)\">创建</button>\r\n<button md-button color=\"warn\" (click)=\"dialogRef.close()\">取消</button>\r\n</section>\r\n"
 
 /***/ }),
 
 /***/ 1195:
 /***/ (function(module, exports) {
 
-module.exports = "<p>初始化文章内容功能尚未添加</p>\r\n<md-card>\r\n  <md-card-title>编辑文章</md-card-title>\r\n  <md-card-content>\r\n    <form #article=\"ngForm\">\r\n      <md-input-container style=\"width: 100%\">\r\n        <input mdInput ngModel name=\"title\" placeholder=\"标题\" />\r\n      </md-input-container>\r\n      <table style=\"width: 100%\">\r\n        <tr>\r\n          <td>\r\n            <md-select style=\"width: 100%\" placeholder=\"发布区域\" ngModel name=\"articleType\">\r\n              <md-option *ngFor=\"let ARTICLETYPE of ARTICLETYPES\" [value]=\"ARTICLETYPE.id\">\r\n                {{ARTICLETYPE.name}}\r\n              </md-option>\r\n            </md-select>\r\n          </td>\r\n          <td>\r\n            <md-input-container style=\"width: 100%\">\r\n              <input mdInput [ngModel]=\"admin.adminname\" name=\"pub\" placeholder=\"发布者\" disabled/>\r\n            </md-input-container>\r\n          </td>\r\n          <td>\r\n            <md-input-container style=\"width: 100%\">\r\n              <input mdInput [ngModel]=\"now | date:'yyyy-MM-dd'\" name=\"date\" type=\"date\" placeholder=\"发布日期\" disabled/>\r\n            </md-input-container>\r\n          </td>\r\n        </tr>\r\n      </table>\r\n    </form>\r\n    <quill-editor [(ngModel)]=\"editorContent\" (change)=\"logChange($event)\"></quill-editor>\r\n  </md-card-content>\r\n  <md-card-actions>\r\n    <button md-button (click)=\"goBack()\">取消</button>\r\n    <button md-button color=\"primary\" (click)=\"save(article.value)\">提交</button>\r\n  </md-card-actions>\r\n</md-card>\r\n"
+module.exports = "<article *ngIf=\"article\">\r\n  <h3>标题:{{article.title}}</h3>\r\n  <p>发布日期:{{article.pubDate}}</p>\r\n  <p>发布者:{{article.adminName}}</p>\r\n  <span>浏览量:{{article.visitCount}}</span>\r\n  <div>内容:{{article.content}}</div>\r\n  <div>\r\n    <qr-code [value]=\"'All QR Code data goes here!'\" [size]=\"150\"></qr-code>\r\n  </div>\r\n  <md-card>\r\n    <md-card-actions>\r\n      <button md-button (click)=\"apply()\" [disabled]=\"already\">\r\n        <span *ngIf=\"already\">已</span>报名\r\n      </button>\r\n      <button *ngIf=\"already\" (click)=\"cancel()\">取消报名</button>\r\n      <button md-button>分享</button>\r\n      <button md-button (click)=\"toggleGroup()\">\r\n        <span *ngIf=\"!groupVisible\">展开</span>\r\n        <span *ngIf=\"groupVisible\">收拢</span>\r\n        队伍详情\r\n      </button>\r\n    </md-card-actions>\r\n    <md-card-header>\r\n      <md-card-title>队伍详情,当前参赛组数: {{groups.length}}</md-card-title>\r\n    </md-card-header>\r\n    <md-card-content *ngIf=\"groupVisible\">\r\n      <md-list>\r\n        <md-list-item *ngFor=\"let group of groups\">\r\n          {{group.groupsname}}\r\n        </md-list-item>\r\n      </md-list>\r\n    </md-card-content>\r\n  </md-card>\r\n</article>\r\n"
 
 /***/ }),
 
 /***/ 1196:
 /***/ (function(module, exports) {
 
-module.exports = "<p>编辑文章功能尚未添加</p>\r\n<md-tab-group>\r\n  <md-tab *ngFor=\"let ARTICLETYPE of ARTICLETYPES\">\r\n    <template md-tab-label>{{ARTICLETYPE.name}}</template>\r\n    <md-nav-list>\r\n      <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articles;let i of index | articleTypeFilter:ARTICLETYPE\">\r\n        {{article.title}}\r\n        <span style=\"flex: 1 1 auto\"> </span>\r\n        <md-icon>label</md-icon>{{article.articleType}}\r\n        <md-icon>date_range</md-icon>{{article.pubDate}}\r\n        <md-icon>person</md-icon>{{article.adminName}}\r\n        <button md-button>编辑</button>\r\n        <button md-button (click)=\"delete(article,i)\">删除</button>\r\n      </md-list-item>\r\n    </md-nav-list>\r\n  </md-tab>\r\n</md-tab-group>\r\n\r\n<div class=\"fixed-action-btn\">\r\n  <a class=\"btn-floating btn-large waves-effect waves-light red\" routerLink=\"edit\" routerLinkActive=\"active\">\r\n    <i class=\"large material-icons\">mode_edit</i>\r\n  </a>\r\n</div>\r\n"
+module.exports = "<md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn\">初始化文章内容功能尚未添加</md-chip>\r\n</md-chip-list>\r\n<md-card>\r\n  <md-card-title>编辑文章</md-card-title>\r\n  <md-card-content>\r\n    <form #article=\"ngForm\">\r\n      <md-input-container style=\"width: 100%\">\r\n        <input mdInput ngModel name=\"title\" placeholder=\"标题\" />\r\n      </md-input-container>\r\n      <table style=\"width: 100%\">\r\n        <tr>\r\n          <td>\r\n            <md-select style=\"width: 100%\" placeholder=\"发布区域\" ngModel name=\"articleType\">\r\n              <md-option *ngFor=\"let ARTICLETYPE of ARTICLETYPES\" [value]=\"ARTICLETYPE.id\">\r\n                {{ARTICLETYPE.name}}\r\n              </md-option>\r\n            </md-select>\r\n          </td>\r\n          <td>\r\n            <md-input-container style=\"width: 100%\">\r\n              <input mdInput [ngModel]=\"admin.adminname\" name=\"pub\" placeholder=\"发布者\" disabled/>\r\n            </md-input-container>\r\n          </td>\r\n          <td>\r\n            <md-input-container style=\"width: 100%\">\r\n              <input mdInput [ngModel]=\"now | date:'yyyy-MM-dd'\" name=\"date\" type=\"date\" placeholder=\"发布日期\" disabled/>\r\n            </md-input-container>\r\n          </td>\r\n        </tr>\r\n      </table>\r\n    </form>\r\n    <quill-editor [(ngModel)]=\"editorContent\" (change)=\"logChange($event)\"></quill-editor>\r\n  </md-card-content>\r\n  <md-card-actions>\r\n    <button md-button (click)=\"goBack()\">取消</button>\r\n    <button md-button color=\"primary\" (click)=\"save(article.value)\">提交</button>\r\n  </md-card-actions>\r\n</md-card>\r\n"
 
 /***/ }),
 
 /***/ 1197:
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\r\n"
+module.exports = "<md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn\">编辑文章功能尚未添加</md-chip>\r\n</md-chip-list>\r\n<md-tab-group>\r\n  <md-tab *ngFor=\"let ARTICLETYPE of ARTICLETYPES\">\r\n    <template md-tab-label>{{ARTICLETYPE.name}}</template>\r\n    <md-nav-list>\r\n      <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articles;let i of index | articleTypeFilter:ARTICLETYPE\">\r\n        {{article.title}}\r\n        <span style=\"flex: 1 1 auto\"> </span>\r\n        <md-icon>label</md-icon>{{article.articleType}}\r\n        <md-icon>date_range</md-icon>{{article.pubDate}}\r\n        <md-icon>person</md-icon>{{article.adminName}}\r\n        <button md-button>编辑</button>\r\n        <button md-button (click)=\"delete(article,i)\">删除</button>\r\n      </md-list-item>\r\n    </md-nav-list>\r\n  </md-tab>\r\n</md-tab-group>\r\n\r\n<div class=\"fixed-action-btn\">\r\n  <a class=\"btn-floating btn-large waves-effect waves-light red\" routerLink=\"edit\" routerLinkActive=\"active\">\r\n    <i class=\"large material-icons\">mode_edit</i>\r\n  </a>\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ 1198:
 /***/ (function(module, exports) {
 
-module.exports = "<p>获取近期的获奖情况功能尚未添加</p>\r\n<p>获取未发布的获奖情况功能尚未添加</p>\r\n<md-nav-list>\r\n    <md-list-item [routerLink]=\"['detail', award.comid]\" *ngFor=\"let award of awards\">\r\n      {{award.comName}}\r\n      <span style=\"flex: 1 1 auto\"> </span>\r\n      {{award.prizeName}}\r\n      <button md-button (click)=\"download(award)\">下载</button>\r\n    </md-list-item>\r\n</md-nav-list>\r\n"
+module.exports = "<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
 /***/ 1199:
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  award works!\r\n</p>\r\n"
+module.exports = "<md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn\">获取近期的获奖情况功能尚未添加</md-chip>\r\n<md-chip selected=\"true\" color=\"warn\">获取未发布的获奖情况功能尚未添加</md-chip>\r\n</md-chip-list>\r\n<md-nav-list>\r\n    <md-list-item [routerLink]=\"['detail', award.comid]\" *ngFor=\"let award of awards\">\r\n      {{award.comName}}\r\n      <span style=\"flex: 1 1 auto\"> </span>\r\n      {{award.prizeName}}\r\n      <button md-button (click)=\"download(award)\">下载</button>\r\n    </md-list-item>\r\n</md-nav-list>\r\n"
 
 /***/ }),
 
 /***/ 1200:
 /***/ (function(module, exports) {
 
-module.exports = "<md-card>\r\n  <md-card-actions>\r\n    <md-select placeholder=\"图表类型\" [(ngModel)]=\"chartType\" name=\"chartType\">\r\n      <md-option *ngFor=\"let CHARTYPE of CHARTTYPES\" [value]=\"CHARTYPE.value\">\r\n        {{CHARTYPE.name}}\r\n      </md-option>\r\n    </md-select>\r\n  </md-card-actions>\r\n  <md-card-content style=\"height: 400px\">\r\n    <ngx-charts-bar-vertical\r\n      *ngIf=\"chartType === 'bar-vertical'\"\r\n      [scheme]=\"colorScheme\"\r\n      [results]=\"single\"\r\n      [xAxis]=\"showXAxis\"\r\n      [yAxis]=\"showYAxis\"\r\n      [legend]=\"showLegend\"\r\n      [showXAxisLabel]=\"showXAxisLabel\"\r\n      [showYAxisLabel]=\"showYAxisLabel\"\r\n      [xAxisLabel]=\"xAxisLabel\"\r\n      [yAxisLabel]=\"yAxisLabel\"\r\n      (select)=\"select($event)\">\r\n    </ngx-charts-bar-vertical>\r\n    <ngx-charts-advanced-pie-chart\r\n      *ngIf=\"chartType === 'advanced-pie-chart'\"\r\n      [scheme]=\"colorScheme\"\r\n      [results]=\"single\"\r\n      (select)=\"select($event)\">\r\n    </ngx-charts-advanced-pie-chart>\r\n  </md-card-content>\r\n</md-card>\r\n"
+module.exports = "<p>\r\n  award works!\r\n</p>\r\n"
 
 /***/ }),
 
 /***/ 1201:
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"contest\">\r\n  <h2>竞赛名：{{contest.comName}}</h2>\r\n  <div>简介：{{contest.introduce}}</div>\r\n  <div>校外资助单位：{{contest.sponsor}}</div>\r\n  <div>系别：{{contest.department.departmentName}}</div>\r\n  <div>竞赛地点：{{contest.place}}</div>\r\n  <div>目前本校参赛人数：{{contest.people}}</div>\r\n  <div>报名开始时间：{{contest.applyBeginDate}}</div>\r\n  <div>报名结束时间：{{contest.applyEndDate}}</div>\r\n  <div>比赛时间：{{contest.comDate}}</div>\r\n</div>\r\n"
+module.exports = "<md-card>\r\n  <md-card-actions>\r\n    <md-select placeholder=\"图表类型\" [(ngModel)]=\"chartType\" name=\"chartType\">\r\n      <md-option *ngFor=\"let CHARTYPE of CHARTTYPES\" [value]=\"CHARTYPE.value\">\r\n        {{CHARTYPE.name}}\r\n      </md-option>\r\n    </md-select>\r\n  </md-card-actions>\r\n  <md-card-content style=\"height: 400px\">\r\n    <ngx-charts-bar-vertical\r\n      *ngIf=\"chartType === 'bar-vertical'\"\r\n      [scheme]=\"colorScheme\"\r\n      [results]=\"single\"\r\n      [xAxis]=\"showXAxis\"\r\n      [yAxis]=\"showYAxis\"\r\n      [legend]=\"showLegend\"\r\n      [showXAxisLabel]=\"showXAxisLabel\"\r\n      [showYAxisLabel]=\"showYAxisLabel\"\r\n      [xAxisLabel]=\"xAxisLabel\"\r\n      [yAxisLabel]=\"yAxisLabel\"\r\n      (select)=\"select($event)\">\r\n    </ngx-charts-bar-vertical>\r\n    <ngx-charts-advanced-pie-chart\r\n      *ngIf=\"chartType === 'advanced-pie-chart'\"\r\n      [scheme]=\"colorScheme\"\r\n      [results]=\"single\"\r\n      (select)=\"select($event)\">\r\n    </ngx-charts-advanced-pie-chart>\r\n  </md-card-content>\r\n</md-card>\r\n"
 
 /***/ }),
 
 /***/ 1202:
 /***/ (function(module, exports) {
 
-module.exports = "<md-nav-list>\r\n  <div *ngIf=\"user\">\r\n    <md-list-item [routerLink]=\"['/contest/detail', contest.comid]\" *ngFor=\"let contest of contests\">\r\n      {{contest.comname}}\r\n      <span style=\"flex: 1 1 auto\"> </span>\r\n      <md-icon>date_range</md-icon>{{contest.time}}\r\n    </md-list-item>\r\n  </div>\r\n  <div *ngIf=\"!user\">\r\n    <md-list-item [routerLink]=\"['/contest/detail', contest.comid]\" *ngFor=\"let contest of contests\">\r\n      {{contest.comname}}\r\n      <span style=\"flex: 1 1 auto\"> </span>\r\n      <md-icon>date_range</md-icon>{{contest.time}}\r\n    </md-list-item>\r\n  </div>\r\n</md-nav-list>\r\n"
+module.exports = "<div *ngIf=\"contest\">\r\n  <h2>竞赛名：{{contest.comName}}</h2>\r\n  <div>简介：{{contest.introduce}}</div>\r\n  <div>校外资助单位：{{contest.sponsor}}</div>\r\n  <div>系别：{{contest.department.departmentName}}</div>\r\n  <div>竞赛地点：{{contest.place}}</div>\r\n  <div>目前本校参赛人数：{{contest.people}}</div>\r\n  <div>报名开始时间：{{contest.applyBeginDate}}</div>\r\n  <div>报名结束时间：{{contest.applyEndDate}}</div>\r\n  <div>比赛时间：{{contest.comDate}}</div>\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ 1203:
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\r\n"
+module.exports = "<md-nav-list>\r\n  <div *ngIf=\"user\">\r\n    <md-list-item [routerLink]=\"['/contest/detail', contest.comid]\" *ngFor=\"let contest of contests\">\r\n      {{contest.comname}}\r\n      <span style=\"flex: 1 1 auto\"> </span>\r\n      <md-icon>date_range</md-icon>{{contest.time}}\r\n    </md-list-item>\r\n  </div>\r\n  <div *ngIf=\"!user\">\r\n    <md-list-item [routerLink]=\"['/contest/detail', contest.comid]\" *ngFor=\"let contest of contests\">\r\n      {{contest.comname}}\r\n      <span style=\"flex: 1 1 auto\"> </span>\r\n      <md-icon>date_range</md-icon>{{contest.time}}\r\n    </md-list-item>\r\n  </div>\r\n</md-nav-list>\r\n"
 
 /***/ }),
 
 /***/ 1204:
 /***/ (function(module, exports) {
 
-module.exports = "<md-nav-list>\n  <div>\n    <md-list-item [routerLink]=\"['/declaration/detail', declaration.comid]\" *ngFor=\"let declaration of declarations\">\n      {{declaration.comname}}\n      <span style=\"flex: 1 1 auto\"> </span>\n      <md-icon>date_range</md-icon>{{declaration.date}}\n    </md-list-item>\n  </div>\n</md-nav-list>\n"
+module.exports = "<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
 /***/ 1205:
 /***/ (function(module, exports) {
 
-module.exports = "<h1>{{title}}</h1>\r\n<p>查找所有的教师功能尚未添加</p>\r\n<p>获取参赛条件功能尚未添加</p>\r\n<md-tab-group>\r\n  <md-tab>\r\n    <template md-tab-label>{{declaration.baseInfo.title}}</template>\r\n    <md-card>\r\n      <md-card-content>\r\n        <form #baseInfo=\"ngForm\" class=\"container-fluid\">\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"name\" placeholder={{declaration.baseInfo.name}}/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <md-radio-group ngModel name=\"type\">\r\n            <md-radio-button *ngFor=\"let type of types\" value={{type.value}}>\r\n              {{type.value}}\r\n            </md-radio-button>\r\n          </md-radio-group>\r\n          <md-hint align=\"end\">必填</md-hint>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"leader\" placeholder={{declaration.baseInfo.leader}}/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"unit\" placeholder={{declaration.baseInfo.unit}}/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"phone\" type=\"tel\" placeholder={{declaration.baseInfo.phone}}/>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"email\" type=\"email\" placeholder={{declaration.baseInfo.email}}/>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel={{date}} name=\"date\" placeholder={{declaration.baseInfo.date}} disabled/>\r\n          </md-input-container>\r\n        </form>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n  <md-tab>\r\n    <template md-tab-label>\r\n      {{declaration.situation.title}}\r\n    </template>\r\n    <md-card>\r\n      <md-card-content>\r\n        <form #situation=\"ngForm\">\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"host\" placeholder={{declaration.situation.host}}/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"sponsor\" placeholder={{declaration.situation.sponsor}}/>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"time\" placeholder={{declaration.situation.time}}/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput type=\"date\" ngModel name=\"applyBeginDate\" placeholder=\"竞赛开始日期\"/>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput type=\"date\" ngModel name=\"applyEndDate\" placeholder=\"竞赛结束日期\"/>\r\n          </md-input-container>\r\n          <label>是否需要组队</label>\r\n          <md-radio-group ngModel name=\"isNeedGroup\">\r\n            <md-radio-button *ngFor=\"let item of [{name: '是', value: 'yes'},{name: '否', value: 'no'}]\" value={{item.value}}>\r\n              {{item.name}}\r\n            </md-radio-button>\r\n          </md-radio-group>\r\n          <md-input-container *ngIf=\"situation.value.isNeedGroup === 'yes'\">\r\n            <input mdInput type=\"number\" ngModel name=\"groupNum\" placeholder=\"组队人数\"/>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"place\" placeholder={{declaration.situation.place}}/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"object\" placeholder={{declaration.situation.object}}/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"people\" type=\"number\" placeholder={{declaration.situation.people}}/>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <textarea mdInput ngModel name=\"intro\" class=\"row\" cols=\"6\" placeholder={{declaration.situation.intro}}></textarea>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n        </form>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n  <md-tab>\r\n    <template md-tab-label>\r\n      {{declaration.plan.title}} &amp; {{declaration.goal.title}}\r\n    </template>\r\n    <md-card>\r\n      <md-card-content>\r\n        <!-- <label>{{declaration.plan.instructor}}</label> -->\r\n        <md-card>\r\n          <md-card-header>\r\n            <md-card-title>{{declaration.plan.schedule.title}}</md-card-title>\r\n          </md-card-header>\r\n          <md-card-content *ngIf=\"scheduleVisible\">\r\n            <form #schedule=\"ngForm\">\r\n              <table>\r\n                <tr>\r\n                  <td>\r\n                    <md-select placeholder=\"选择指导老师\" [(ngModel)]=\"teacherno\" name=\"teacherno\">\r\n                      <md-option *ngFor=\"let item of teachers\" [value]=\"item.teacherno\">\r\n                        {{item.teachername}}\r\n                      </md-option>\r\n                    </md-select>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"content\" placeholder=\"{{declaration.plan.schedule.content}}\" />\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"position\" placeholder=\"{{declaration.plan.schedule.place}}\" />\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput type=\"date\" [ngModel]=\"date | date:'yyyy-MM-dd'\" name=\"date\" placeholder=\"{{declaration.plan.schedule.date}}\" />\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput type=\"number\" ngModel name=\"hours\" placeholder=\"{{declaration.plan.schedule.hour}}\" />\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <button md-button (click)=\"addSchedule(schedule.value)\">添加</button>\r\n                  </td>\r\n                </tr>\r\n                <tr *ngFor=\"let item of schedules\">\r\n                  <td>{{item.teacherno}}</td>\r\n                  <td>{{item.content}}</td>\r\n                  <td>{{item.position}}</td>\r\n                  <td>{{item.date}}</td>\r\n                  <td>{{item.hour}}</td>\r\n                  <td>\r\n                    <button md-button (click)=\"deleteSchedule(item)\">删除</button>\r\n                  </td>\r\n                </tr>\r\n              </table>\r\n            </form>\r\n          </md-card-content>\r\n          <md-card-actions>\r\n            <button md-button *ngIf=\"scheduleVisible\" (click)=\"toggleSchedule()\">收拢</button>\r\n            <button md-button *ngIf=\"!scheduleVisible\" (click)=\"toggleSchedule()\">展开</button>\r\n          </md-card-actions>\r\n        </md-card>\r\n        <div style=\"padding: 10px 0\">\r\n          <form #plan=\"ngForm\">\r\n            <md-input-container>\r\n              <textarea mdInput ngModel name=\"plan\" cols=\"6\" placeholder={{declaration.plan.plan}}></textarea>\r\n              <md-hint align=\"end\">必填</md-hint>\r\n            </md-input-container>\r\n            <md-input-container>\r\n              <textarea mdInput ngModel name=\"tgoal\" cols=\"6\" placeholder={{declaration.goal.tgoal}}></textarea>\r\n              <md-hint align=\"end\">必填</md-hint>\r\n            </md-input-container>\r\n            <md-input-container>\r\n              <textarea mdInput ngModel name=\"wgoal\" cols=\"6\" placeholder={{declaration.goal.wgoal}}></textarea>\r\n              <md-hint align=\"end\">必填</md-hint>\r\n            </md-input-container>\r\n          </form>\r\n        </div>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n  <md-tab>\r\n    <template md-tab-label>\r\n      {{declaration.budget.title}}\r\n    </template>\r\n    <md-card>\r\n      <md-card-content>\r\n        <md-card>\r\n          <md-card-header>\r\n            <md-card-title>{{declaration.budget.budget.title}}</md-card-title>\r\n          </md-card-header>\r\n          <md-card-content *ngIf=\"budgetVisible\">\r\n            <form #budget=\"ngForm\">\r\n              <table>\r\n                <tr>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"subject\" placeholder={{declaration.budget.budget.subject}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"sum\" type=\"number\" placeholder={{declaration.budget.budget.sum}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"reasons\" placeholder={{declaration.budget.budget.reasons}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <button md-button (click)=\"addBudget(budget.value)\">添加</button>\r\n                  </td>\r\n                </tr>\r\n                <tr *ngFor=\"let item of budgets\">\r\n                  <td>{{item.subject}}</td>\r\n                  <td>{{item.sum}}</td>\r\n                  <td>{{item.reasons}}</td>\r\n                  <td>\r\n                    <button md-button (click)=\"deleteBudget(item)\">删除</button>\r\n                </tr>\r\n              </table>\r\n            </form>\r\n          </md-card-content>\r\n          <md-card-actions>\r\n            <button md-button *ngIf=\"budgetVisible\" (click)=\"toggleBudget()\">收拢</button>\r\n            <button md-button *ngIf=\"!budgetVisible\" (click)=\"toggleBudget()\">展开</button>\r\n          </md-card-actions>\r\n        </md-card>\r\n        <md-card>\r\n          <md-card-header>\r\n            <md-card-title>{{declaration.budget.hour.title}}</md-card-title>\r\n          </md-card-header>\r\n          <md-card-content *ngIf=\"hourVisible\">\r\n            <form #hour=\"ngForm\">\r\n              <table>\r\n                <tr>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"type\" placeholder={{declaration.budget.hour.type}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"hours\" type=\"number\" placeholder={{declaration.budget.hour.hours}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"remarks\" placeholder={{declaration.budget.hour.remarks}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <button md-button (click)=\"addHour(hour.value)\">添加</button>\r\n                  </td>\r\n                </tr>\r\n                <tr *ngFor=\"let item of hours\">\r\n                  <td>{{item.type}}</td>\r\n                  <td>{{item.hours}}</td>\r\n                  <td>{{item.remarks}}</td>\r\n                  <td>\r\n                    <button md-button (click)=\"deleteHour(item)\">删除</button>\r\n                </tr>\r\n              </table>\r\n            </form>\r\n          </md-card-content>\r\n          <md-card-actions>\r\n            <button md-button *ngIf=\"hourVisible\" (click)=\"toggleHour()\">收拢</button>\r\n            <button md-button *ngIf=\"!hourVisible\" (click)=\"toggleHour()\">展开</button>\r\n          </md-card-actions>\r\n        </md-card>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n  <md-tab>\r\n    <template md-tab-label>\r\n      意见\r\n    </template>\r\n    <md-card>\r\n      <md-card-content>\r\n        <form>\r\n          <md-input-container>\r\n            <textarea mdInput placeholder=\"意见\"></textarea>\r\n          </md-input-container>\r\n        </form>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n</md-tab-group>\r\n<button md-button color=\"primary\" style=\"width: 100%\" (click)=\"submit(baseInfo.value, situation.value, plan.value)\">提交</button>\r\n"
+module.exports = "<md-nav-list>\n  <div>\n    <md-list-item [routerLink]=\"['/declaration/detail', declaration.comid]\" *ngFor=\"let declaration of declarations\">\n      {{declaration.comname}}\n      <span style=\"flex: 1 1 auto\"> </span>\n      <md-icon>date_range</md-icon>{{declaration.date}}\n    </md-list-item>\n  </div>\n</md-nav-list>\n"
 
 /***/ }),
 
 /***/ 1206:
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  examiner works!\n</p>\n"
+module.exports = "<h1>{{title}}</h1>\r\n<md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn\">获取参赛条件功能尚未添加</md-chip>\r\n</md-chip-list>\r\n<md-tab-group>\r\n  <md-tab>\r\n    <template md-tab-label>{{declaration.baseInfo.title}}</template>\r\n    <md-card>\r\n      <md-card-content>\r\n        <form #baseInfo=\"ngForm\" class=\"container-fluid\" (change)=\"setProgress(baseInfo.value, situation.value, plan.value)\">\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"name\" placeholder={{declaration.baseInfo.name}}/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <md-radio-group [ngModel]=\"'A类'\" name=\"type\">\r\n            <md-radio-button *ngFor=\"let type of types\" value={{type.value}}>\r\n              {{type.value}}\r\n            </md-radio-button>\r\n          </md-radio-group>\r\n          <md-hint align=\"end\">必填</md-hint>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"leader\" placeholder={{declaration.baseInfo.leader}}/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"unit\" placeholder={{declaration.baseInfo.unit}}/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"phone\" type=\"tel\" placeholder={{declaration.baseInfo.phone}}/>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"email\" type=\"email\" placeholder={{declaration.baseInfo.email}}/>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput [ngModel]=\"date | date:'yyyy-MM-dd'\" name=\"date\" placeholder={{declaration.baseInfo.date}} disabled/>\r\n          </md-input-container>\r\n        </form>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n  <md-tab>\r\n    <template md-tab-label>\r\n      {{declaration.situation.title}}\r\n    </template>\r\n    <md-card>\r\n      <md-card-content>\r\n        <form #situation=\"ngForm\" (change)=\"setProgress(baseInfo.value, situation.value, plan.value)\">\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"host\" placeholder={{declaration.situation.host}}/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"sponsor\" placeholder={{declaration.situation.sponsor}}/>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel type=\"date\" [ngModel]=\"date | date:'yyyy-MM-dd'\" name=\"time\" placeholder={{declaration.situation.time}}/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput type=\"date\" [ngModel]=\"date | date:'yyyy-MM-dd'\" name=\"applyBeginDate\" placeholder=\"报名开始时间\"/>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput type=\"date\" [ngModel]=\"date | date:'yyyy-MM-dd'\" name=\"applyEndDate\" placeholder=\"报名结束时间\"/>\r\n          </md-input-container>\r\n          <label>是否需要组队</label>\r\n          <md-radio-group [ngModel]=\"'no'\" name=\"isNeedGroup\">\r\n            <md-radio-button *ngFor=\"let item of [{name: '是', value: 'yes'},{name: '否', value: 'no'}]\" value={{item.value}}>\r\n              {{item.name}}\r\n            </md-radio-button>\r\n          </md-radio-group>\r\n          <md-input-container *ngIf=\"situation.value.isNeedGroup === 'yes'\">\r\n            <input mdInput type=\"number\" ngModel name=\"groupNum\" placeholder=\"组队人数\"/>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"place\" placeholder={{declaration.situation.place}}/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"object\" placeholder={{declaration.situation.object}}/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"people\" type=\"number\" placeholder={{declaration.situation.people}}/>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <textarea mdInput ngModel name=\"intro\" class=\"row\" cols=\"6\" placeholder={{declaration.situation.intro}}></textarea>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n        </form>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n  <md-tab>\r\n    <template md-tab-label>\r\n      {{declaration.plan.title}} &amp; {{declaration.goal.title}}\r\n    </template>\r\n    <md-card>\r\n      <md-card-content>\r\n        <!-- <label>{{declaration.plan.instructor}}</label> -->\r\n        <md-card>\r\n          <md-card-header>\r\n            <md-card-title>{{declaration.plan.schedule.title}}</md-card-title>\r\n          </md-card-header>\r\n          <md-card-content *ngIf=\"scheduleVisible\">\r\n            <form #schedule=\"ngForm\">\r\n              <table>\r\n                <tr>\r\n                  <td>\r\n                    <md-select placeholder=\"选择指导老师\" [(ngModel)]=\"teacherno\" name=\"teacherno\">\r\n                      <md-option *ngFor=\"let item of teachers\" [value]=\"item.teacherno\">\r\n                        {{item.teachername}}\r\n                      </md-option>\r\n                    </md-select>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"content\" placeholder=\"{{declaration.plan.schedule.content}}\" />\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"position\" placeholder=\"{{declaration.plan.schedule.place}}\" />\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput type=\"date\" [ngModel]=\"date | date:'yyyy-MM-dd'\" name=\"date\" placeholder=\"{{declaration.plan.schedule.date}}\" />\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput type=\"number\" ngModel name=\"hours\" placeholder=\"{{declaration.plan.schedule.hour}}\" />\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <button md-button (click)=\"addSchedule(schedule.value);setProgress(baseInfo.value, situation.value, plan.value)\">添加</button>\r\n                  </td>\r\n                </tr>\r\n                <tr *ngFor=\"let item of schedules\">\r\n                  <td>{{item.teacherno}}</td>\r\n                  <td>{{item.content}}</td>\r\n                  <td>{{item.position}}</td>\r\n                  <td>{{item.date}}</td>\r\n                  <td>{{item.hours}}</td>\r\n                  <td>\r\n                    <button md-button (click)=\"deleteSchedule(item);setProgress(baseInfo.value, situation.value, plan.value)\">删除</button>\r\n                  </td>\r\n                </tr>\r\n              </table>\r\n            </form>\r\n          </md-card-content>\r\n          <md-card-actions>\r\n            <button md-button *ngIf=\"scheduleVisible\" (click)=\"toggleSchedule()\">收拢</button>\r\n            <button md-button *ngIf=\"!scheduleVisible\" (click)=\"toggleSchedule()\">展开</button>\r\n          </md-card-actions>\r\n        </md-card>\r\n        <div style=\"padding: 10px 0\">\r\n          <form #plan=\"ngForm\" (change)=\"setProgress(baseInfo.value, situation.value, plan.value)\">\r\n            <md-input-container>\r\n              <textarea mdInput ngModel name=\"plan\" cols=\"6\" placeholder={{declaration.plan.plan}}></textarea>\r\n              <md-hint align=\"end\">必填</md-hint>\r\n            </md-input-container>\r\n            <md-input-container>\r\n              <textarea mdInput ngModel name=\"tgoal\" cols=\"6\" placeholder={{declaration.goal.tgoal}}></textarea>\r\n              <md-hint align=\"end\">必填</md-hint>\r\n            </md-input-container>\r\n            <md-input-container>\r\n              <textarea mdInput ngModel name=\"wgoal\" cols=\"6\" placeholder={{declaration.goal.wgoal}}></textarea>\r\n              <md-hint align=\"end\">必填</md-hint>\r\n            </md-input-container>\r\n          </form>\r\n        </div>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n  <md-tab>\r\n    <template md-tab-label>\r\n      {{declaration.budget.title}}\r\n    </template>\r\n    <md-card>\r\n      <md-card-content>\r\n        <md-card>\r\n          <md-card-header>\r\n            <md-card-title>{{declaration.budget.budget.title}}</md-card-title>\r\n          </md-card-header>\r\n          <md-card-content *ngIf=\"budgetVisible\">\r\n            <form #budget=\"ngForm\">\r\n              <table>\r\n                <tr>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"subject\" placeholder={{declaration.budget.budget.subject}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"sum\" type=\"number\" placeholder={{declaration.budget.budget.sum}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"reasons\" placeholder={{declaration.budget.budget.reasons}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <button md-button (click)=\"addBudget(budget.value);setProgress(baseInfo.value, situation.value, plan.value)\">添加</button>\r\n                  </td>\r\n                </tr>\r\n                <tr *ngFor=\"let item of budgets\">\r\n                  <td>{{item.subject}}</td>\r\n                  <td>{{item.sum}}</td>\r\n                  <td>{{item.reasons}}</td>\r\n                  <td>\r\n                    <button md-button (click)=\"deleteBudget(item);setProgress(baseInfo.value, situation.value, plan.value)\">删除</button>\r\n                </tr>\r\n              </table>\r\n            </form>\r\n          </md-card-content>\r\n          <md-card-actions>\r\n            <button md-button *ngIf=\"budgetVisible\" (click)=\"toggleBudget()\">收拢</button>\r\n            <button md-button *ngIf=\"!budgetVisible\" (click)=\"toggleBudget()\">展开</button>\r\n          </md-card-actions>\r\n        </md-card>\r\n        <md-card>\r\n          <md-card-header>\r\n            <md-card-title>{{declaration.budget.hour.title}}</md-card-title>\r\n          </md-card-header>\r\n          <md-card-content *ngIf=\"hourVisible\">\r\n            <form #hour=\"ngForm\">\r\n              <table>\r\n                <tr>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"type\" placeholder={{declaration.budget.hour.type}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"hours\" type=\"number\" placeholder={{declaration.budget.hour.hours}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"remarks\" placeholder={{declaration.budget.hour.remarks}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <button md-button (click)=\"addHour(hour.value);setProgress(baseInfo.value, situation.value, plan.value)\">添加</button>\r\n                  </td>\r\n                </tr>\r\n                <tr *ngFor=\"let item of hours\">\r\n                  <td>{{item.type}}</td>\r\n                  <td>{{item.hours}}</td>\r\n                  <td>{{item.remarks}}</td>\r\n                  <td>\r\n                    <button md-button (click)=\"deleteHour(item);setProgress(baseInfo.value, situation.value, plan.value)\">删除</button>\r\n                </tr>\r\n              </table>\r\n            </form>\r\n          </md-card-content>\r\n          <md-card-actions>\r\n            <button md-button *ngIf=\"hourVisible\" (click)=\"toggleHour()\">收拢</button>\r\n            <button md-button *ngIf=\"!hourVisible\" (click)=\"toggleHour()\">展开</button>\r\n          </md-card-actions>\r\n        </md-card>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n  <md-tab>\r\n    <template md-tab-label>\r\n      意见\r\n    </template>\r\n    <md-card>\r\n      <md-card-content>\r\n        <form>\r\n          <md-input-container>\r\n            <textarea mdInput placeholder=\"意见\"></textarea>\r\n          </md-input-container>\r\n        </form>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n</md-tab-group>\r\n<h3>完成度:<span>{{progress/92 | percent}}</span></h3>\r\n<section>\r\n      <md-progress-bar\r\n          style=\"margin: 0 10px\"\r\n          [color]=\"'primary'\"\r\n          [mode]=\"'determinate'\"\r\n          [value]=\"progress\"\r\n          [bufferValue]=\"92\">\r\n      </md-progress-bar>\r\n    </section>\r\n<button md-button color=\"primary\" style=\"width: 100%\" (click)=\"submit(baseInfo.value, situation.value, plan.value)\">提交</button>\r\n"
 
 /***/ }),
 
 /***/ 1207:
 /***/ (function(module, exports) {
 
-module.exports = "<md-list>\n  <h3 md-subheader>文件列表</h3>\n  <md-list-item *ngFor=\"let item of files\">\n    {{item.fileName}}\n    <span style=\"flex: 1 1 auto\"></span>\n    <button md-button (click)=\"download(item)\">下载</button>\n  </md-list-item>\n</md-list>\n"
+module.exports = "<md-nav-list>\n  <md-list-item *ngFor=\"let item of approComps\">\n    {{item.comname}}\n    <span style=\"flex: 1 1 auto\"></span>\n    <button md-button (click)=\"openDialog(item)\">审批</button>\n  </md-list-item>\n</md-nav-list>\n"
 
 /***/ }),
 
 /***/ 1208:
 /***/ (function(module, exports) {
 
-module.exports = "<section fxLayout=\"row\">\r\n\r\n  <md-card fxFlex=\"60\">\r\n    <md-card-content>\r\n      <md-tab-group>\r\n        <md-tab *ngFor=\"let articleType of articleTypes\">\r\n          <template md-tab-label>{{articleType.name}}</template>\r\n          <md-nav-list>\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articles | articleTypeFilter:articleType\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n        </md-tab>\r\n      </md-tab-group>\r\n    </md-card-content>\r\n  </md-card>\r\n\r\n  <md-card fxFlex=\"40\">\r\n    <md-card-content>\r\n      <md-card *ngFor=\"let contest of contests | contestTimelineFilter\" [ngStyle]=\"{'background-color': setColor(contest) }\">\r\n        <md-card-content>\r\n          {{contest.comname}}\r\n          <span style=\"flex: 1 1 auto\"> </span>\r\n          <button md-button (click)=\"apply(contest)\">报名入口</button>\r\n          <md-icon>date_range</md-icon>{{contest.time}}\r\n        </md-card-content>\r\n      </md-card>\r\n    </md-card-content>\r\n  </md-card>\r\n</section>\r\n<section fxLayout=\"row\">\r\n  <app-works fxFlex=\"80\">Loading</app-works>\r\n  <app-files fxFlex=\"20\">Loading</app-files>\r\n</section>\r\n<section>\r\n  <app-chart>Loading ChartComponent...</app-chart>\r\n</section>\r\n"
+module.exports = "<form #examiner=\"ngForm\">\r\n  <md-input-container>\r\n    <textarea mdInput ngModel name=\"opinion\"  cols=\"6\" placeholder=\"审批意见\"></textarea>\r\n  </md-input-container>\r\n  <md-input-container>\r\n    <input mdInput ngModel name=\"pass\" hidden=\"hidden\"/>\r\n  </md-input-container>\r\n  <button md-button (click)=\"examiner.pass = 1;setComp(examiner);dialogRef.close(comp)\">通过</button>\r\n  <button md-button (click)=\"examiner.pass = 0;setComp(examiner);dialogRef.close(comp)\">不通过</button>\r\n</form>\r\n"
 
 /***/ }),
 
 /***/ 1209:
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\" [ngSwitch]=\"role\">\r\n  <button md-button [mdMenuTriggerFor]=\"menu\">\r\n    <span *ngSwitchCase=\"'admin'\">{{user.adminname}}</span>\r\n    <span *ngSwitchCase=\"'teacher'\">{{user.teachername}}</span>\r\n    <span *ngSwitchCase=\"'student'\">{{user.studentname}}</span>\r\n    <span *ngSwitchDefault>你到底是谁!</span>\r\n  </button>\r\n  <md-menu #menu=\"mdMenu\">\r\n    <md-card>\r\n      <md-card-title>\r\n        <span *ngSwitchCase=\"'admin'\">{{user.adminname}}</span>\r\n        <span *ngSwitchCase=\"'teacher'\">{{user.teachername}}</span>\r\n        <span *ngSwitchCase=\"'student'\">{{user.studentname}}</span>\r\n        <span *ngSwitchDefault>你到底是谁!</span>\r\n      </md-card-title>\r\n      <md-card-content>\r\n        <p>hello! how are you?</p>\r\n      </md-card-content>\r\n      <md-card-actions>\r\n        <button md-button routerLink=\"/{{role}}\" routerLinkActive=\"active\">\r\n          进入个人页面\r\n        </button>\r\n      </md-card-actions>\r\n    </md-card>\r\n    <button md-menu-item (click)=\"logout()\"> 登出</button>\r\n  </md-menu>\r\n</div>\r\n\r\n<button md-button *ngIf=\"!user\" (click)=\"openDialog()\">登录</button>\r\n"
+module.exports = "<md-list>\n  <h3 md-subheader>文件列表</h3>\n  <md-list-item *ngFor=\"let item of files\">\n    <span class=\"fileName\">{{item.fileName}}</span>\n    <span style=\"flex: 1 1 auto\"></span>\n    <button md-button (click)=\"download(item)\">下载</button>\n  </md-list-item>\n</md-list>\n"
 
 /***/ }),
 
 /***/ 1210:
 /***/ (function(module, exports) {
 
-module.exports = "<h3>登录</h3>\r\n<form #login=\"ngForm\">\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput ngModel name=\"account\" placeholder=\"账号/学号/工号\" />\r\n  </md-input-container>\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput ngModel name=\"password\" placeholder=\"密码\" type=\"password\" />\r\n  </md-input-container>\r\n  <md-radio-group name=\"role\" ngModel class=\"full-width\">\r\n    <md-radio-button *ngFor=\"let role of roles\" value={{role.value}}>\r\n      {{role.name}}\r\n    </md-radio-button>\r\n  </md-radio-group>\r\n</form>\r\n<button md-button color=\"primary\" (click)=\"dialogRef.close(login.value)\">Login</button>\r\n<button md-button color=\"warn\" (click)=\"dialogRef.close()\">No!</button>\r\n"
+module.exports = "<section fxLayout=\"row\">\r\n\r\n  <md-card fxFlex=\"60\">\r\n    <md-card-content>\r\n      <md-tab-group>\r\n        <md-tab *ngFor=\"let articleType of articleTypes\">\r\n          <template md-tab-label>{{articleType.name}}</template>\r\n          <!-- <md-nav-list>\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articles | articleTypeFilter:articleType\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list> -->\r\n          <md-nav-list *ngIf=\"articleType.id === 1\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeOnes\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n          <md-nav-list *ngIf=\"articleType.id === 2\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeTwos\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n          <md-nav-list *ngIf=\"articleType.id === 3\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeThrees\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n        </md-tab>\r\n      </md-tab-group>\r\n    </md-card-content>\r\n  </md-card>\r\n\r\n  <md-card fxFlex=\"40\">\r\n    <md-card-content>\r\n      <md-card *ngFor=\"let contest of contests | contestTimelineFilter\" [ngStyle]=\"{'background-color': setColor(contest) }\">\r\n        <md-card-content>\r\n          {{contest.comname}}\r\n          <span style=\"flex: 1 1 auto\"> </span>\r\n          <button md-button (click)=\"apply(contest)\">报名入口</button>\r\n          <md-icon>date_range</md-icon>{{contest.time}}\r\n        </md-card-content>\r\n      </md-card>\r\n    </md-card-content>\r\n  </md-card>\r\n</section>\r\n<section fxLayout=\"row\">\r\n  <app-works fxFlex=\"80\">Loading</app-works>\r\n  <app-files fxFlex=\"20\">Loading</app-files>\r\n</section>\r\n<section>\r\n  <app-chart>Loading ChartComponent...</app-chart>\r\n</section>\r\n"
 
 /***/ }),
 
 /***/ 1211:
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  notification works!\n</p>\n"
+module.exports = "<div *ngIf=\"user\" [ngSwitch]=\"role\">\r\n  <button md-button [mdMenuTriggerFor]=\"menu\">\r\n    <span *ngSwitchCase=\"'admin'\">{{user.adminname}}</span>\r\n    <span *ngSwitchCase=\"'teacher'\">{{user.teachername}}</span>\r\n    <span *ngSwitchCase=\"'student'\">{{user.studentname}}</span>\r\n    <span *ngSwitchDefault>你到底是谁!</span>\r\n  </button>\r\n  <md-menu #menu=\"mdMenu\">\r\n    <md-card>\r\n      <md-card-title>\r\n        <span *ngSwitchCase=\"'admin'\">{{user.adminname}}</span>\r\n        <span *ngSwitchCase=\"'teacher'\">{{user.teachername}}</span>\r\n        <span *ngSwitchCase=\"'student'\">{{user.studentname}}</span>\r\n        <span *ngSwitchDefault>你到底是谁!</span>\r\n      </md-card-title>\r\n      <md-card-content>\r\n        <p>hello! how are you?</p>\r\n      </md-card-content>\r\n      <md-card-actions>\r\n        <button md-button routerLink=\"/{{role}}\" routerLinkActive=\"active\">\r\n          进入个人页面\r\n        </button>\r\n      </md-card-actions>\r\n    </md-card>\r\n    <button md-menu-item (click)=\"logout()\"> 登出</button>\r\n  </md-menu>\r\n</div>\r\n\r\n<button md-button *ngIf=\"!user\" (click)=\"openDialog()\">登录</button>\r\n"
 
 /***/ }),
 
 /***/ 1212:
 /***/ (function(module, exports) {
 
-module.exports = "<p>获取近期竞赛(可报名)功能尚未添加</p>\r\n<p>获取未发布的竞赛功能尚未添加</p>\r\n<app-contest-list [user]=\"student\">Loading...</app-contest-list>\r\n"
+module.exports = "<h3>登录</h3>\r\n<form #login=\"ngForm\">\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput ngModel name=\"account\" placeholder=\"账号/学号/工号\" />\r\n  </md-input-container>\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput ngModel name=\"password\" placeholder=\"密码\" type=\"password\" />\r\n  </md-input-container>\r\n  <md-radio-group name=\"role\" [ngModel]=\"'student'\" class=\"full-width\">\r\n    <md-radio-button *ngFor=\"let role of roles\" value={{role.value}}>\r\n      {{role.name}}\r\n    </md-radio-button>\r\n  </md-radio-group>\r\n</form>\r\n<button md-button color=\"primary\" (click)=\"dialogRef.close(login.value)\">Login</button>\r\n<button md-button color=\"warn\" (click)=\"dialogRef.close()\">No!</button>\r\n"
 
 /***/ }),
 
 /***/ 1213:
 /***/ (function(module, exports) {
 
-module.exports = "<form #file=\"ngForm\">\n  <input ngModel type=\"file\" name=\"file\" #fileInput />\n  <button md-button (click)=\"apply(file.value)\">提交</button>\n</form>\n<md-divider></md-divider>\n<md-card *ngFor=\"let item of files;let i of index\">\n  <md-card-header>\n    <md-card-title>文件名:{{item.fileName}}</md-card-title>\n    <md-card-subtitle>上传者:{{item.adminName}},上传时间:{{item.uploadDate}}</md-card-subtitle>\n  </md-card-header>\n  <md-card-content>\n  </md-card-content>\n  <md-card-actions>\n    <button md-button (click)=\"delete(item,i)\">删除</button>\n  </md-card-actions>\n</md-card>\n"
+module.exports = "<p>\n  notification works!\n</p>\n"
 
 /***/ }),
 
 /***/ 1214:
 /***/ (function(module, exports) {
 
-module.exports = "<h1>仪表板</h1>\r\n"
+module.exports = "<md-chip-list>\r\n  <md-chip selected=\"true\" color=\"warn\">获取近期竞赛(可报名)功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">获取未发布的竞赛功能尚未添加</md-chip>\r\n</md-chip-list>\r\n<md-nav-list>\r\n  <h3 md-subheader>尚未发布的竞赛</h3>\r\n  <!-- <md-list-item [routerLink]=\"['/contest/detail', contest.comid]\" *ngFor=\"let contest of contests\">\r\n      {{contest.comname}}\r\n      <span style=\"flex: 1 1 auto\"> </span>\r\n      <md-icon>date_range</md-icon>{{contest.time}}\r\n    </md-list-item> -->\r\n  <md-divider></md-divider>\r\n  <h3 md-subheader>尚未发布的获奖情况</h3>\r\n</md-nav-list>\r\n"
 
 /***/ }),
 
 /***/ 1215:
 /***/ (function(module, exports) {
 
-module.exports = "<p>审核材料功能尚未添加</p>\n<p>\n  admin-material works!\n</p>\n"
+module.exports = "<form #file=\"ngForm\">\n  <input ngModel type=\"file\" name=\"file\" #fileInput />\n  <button md-button (click)=\"apply(file.value)\">提交</button>\n</form>\n<md-divider></md-divider>\n<md-card *ngFor=\"let item of files;let i of index\">\n  <md-card-header>\n    <md-card-title>文件名:{{item.fileName}}</md-card-title>\n    <md-card-subtitle>上传者:{{item.adminName}},上传时间:{{item.uploadDate}}</md-card-subtitle>\n  </md-card-header>\n  <md-card-content>\n  </md-card-content>\n  <md-card-actions>\n    <button md-button (click)=\"delete(item,i)\">删除</button>\n  </md-card-actions>\n</md-card>\n"
 
 /***/ }),
 
 /***/ 1216:
 /***/ (function(module, exports) {
 
-module.exports = "<p>更新作品功能尚未添加</p>\n<button md-button style=\"width: 100%\" (click)=\"openDialog()\">上传作品</button>\n<md-card *ngFor=\"let item of works;let i of index\">\n  <md-card-header>\n  <md-card-title>作品名:{{item.proname}}</md-card-title>\n  <md-card-subtitle>获奖者:{{item.membersname}}</md-card-subtitle>\n  </md-card-header>\n  <md-card-content>\n    <h3>奖项:{{item.award}}</h3>\n    {{item.introduction}}\n    <p>创建日期:{{item.createDate}}</p>\n  </md-card-content>\n  <md-card-actions>\n  <button md-button (click)=\"delete(item,i)\">删除</button>\n  </md-card-actions>\n</md-card>\n"
+module.exports = "<h1>仪表板</h1>\r\n"
 
 /***/ }),
 
 /***/ 1217:
 /***/ (function(module, exports) {
 
-module.exports = "<form #work=\"ngForm\">\r\n  <md-input-container>\r\n    <input mdInput ngModel name=\"proName\" placeholder=\"作品名\" />\r\n  </md-input-container>\r\n  <md-input-container>\r\n    <input mdInput ngModel name=\"award\" placeholder=\"奖项\" />\r\n  </md-input-container>\r\n  <md-input-container>\r\n    <input mdInput ngModel name=\"membersName\" placeholder=\"作品作者\" />\r\n  </md-input-container>\r\n  <md-input-container>\r\n    <input mdInput ngModel name=\"introduction\" placeholder=\"作品简介\" />\r\n  </md-input-container>\r\n  <input md-button ngModel type=\"file\" name=\"file\" #fileInput/>\r\n  <button md-button (click)=\"apply(work.value)\">提交</button>\r\n</form>\r\n"
+module.exports = "<md-chip-list>\n<md-chip selected=\"true\" color=\"warn\">审核材料功能尚未添加</md-chip>\n</md-chip-list>\n<p>\n  admin-material works!\n</p>\n"
 
 /***/ }),
 
 /***/ 1218:
 /***/ (function(module, exports) {
 
-module.exports = "<md-nav-list>\r\n  <h3 md-subheader>已报名竞赛列表</h3>\r\n  <md-list-item *ngFor=\"let appliedontest of appliedContests\">\r\n    {{appliedontest.comName}}\r\n  </md-list-item>\r\n  <md-divider></md-divider>\r\n    <h3 md-subheader>可报名竞赛列表</h3>\r\n    <!-- <md-list-item *ngFor=\"let contest of contests\">\r\n      {{contest.comName}}\r\n    </md-list-item> -->\r\n</md-nav-list>\r\n"
+module.exports = "<md-chip-list>\n<md-chip selected=\"true\" color=\"warn\">更新作品功能尚未添加</md-chip>\n</md-chip-list>\n<button md-button style=\"width: 100%\" (click)=\"openDialog()\">上传作品</button>\n<md-card *ngFor=\"let item of works;let i of index\">\n  <md-card-header>\n  <md-card-title>作品名:{{item.proname}}</md-card-title>\n  <md-card-subtitle>获奖者:{{item.membersname}}</md-card-subtitle>\n  </md-card-header>\n  <md-card-content>\n    <h3>奖项:{{item.award}}</h3>\n    {{item.introduction}}\n    <p>创建日期:{{item.createDate}}</p>\n  </md-card-content>\n  <md-card-actions>\n  <button md-button (click)=\"delete(item,i)\">删除</button>\n  </md-card-actions>\n</md-card>\n"
 
 /***/ }),
 
 /***/ 1219:
 /***/ (function(module, exports) {
 
-module.exports = "<form #material=\"ngForm\">\r\n<md-select placeholder=\"选择条件类型\" ngModel name=\"condition\">\r\n  <md-option *ngFor=\"let item of conditions\" [value]=\"item.conditionid\">\r\n    {{item.conditionname}}\r\n  </md-option>\r\n</md-select>\r\n<input ngModel type=\"file\" name=\"file\" [multiple]=\"multiple\" #fileInput/>\r\n<button md-button (click)=\"saveMaterial(material.value)\">提交</button>\r\n</form>\r\n"
+module.exports = "<form #work=\"ngForm\">\r\n  <md-input-container>\r\n    <input mdInput ngModel name=\"proName\" placeholder=\"作品名\" />\r\n  </md-input-container>\r\n  <md-input-container>\r\n    <input mdInput ngModel name=\"award\" placeholder=\"奖项\" />\r\n  </md-input-container>\r\n  <md-input-container>\r\n    <input mdInput ngModel name=\"membersName\" placeholder=\"作品作者\" />\r\n  </md-input-container>\r\n  <md-input-container>\r\n    <input mdInput ngModel name=\"introduction\" placeholder=\"作品简介\" />\r\n  </md-input-container>\r\n  <input md-button ngModel type=\"file\" name=\"file\" #fileInput/>\r\n  <button md-button (click)=\"apply(work.value)\">提交</button>\r\n</form>\r\n"
 
 /***/ }),
 
 /***/ 1220:
 /***/ (function(module, exports) {
 
-module.exports = "<md-card>\r\n  <md-card-content>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.sno}} [(ngModel)]=\"student.studentno\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.name}} [(ngModel)]=\"student.studentname\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.gender}} [(ngModel)]=\"student.gender\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.department}} [(ngModel)]=\"student.department\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.profession}} [(ngModel)]=\"student.profession\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.classno}} [(ngModel)]=\"student.classno\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.grade}} [(ngModel)]=\"student.grade\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.phone}} [(ngModel)]=\"student.phone\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.email}} [(ngModel)]=\"student.email\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n  </md-card-content>\r\n  <md-card-actions>\r\n    <button md-button color=\"primary\" (click)=\"toggleEdit();edit();\" *ngIf=\"disableEdit\">\r\n      编辑\r\n    </button>\r\n    <button md-button color=\"primary\" (click)=\"toggleEdit();save();\" *ngIf=\"!disableEdit\">\r\n      保存\r\n    </button>\r\n    <button md-button (click)=\"toggleEdit();cancel();\" *ngIf=\"!disableEdit\">取消</button>\r\n  </md-card-actions>\r\n</md-card>\r\n<md-divider></md-divider>\r\n<button md-button style=\"width:100%\" (click)=\"openDialog()\">上传材料</button>\r\n<span>修改个人材料功能尚未添加!!</span>\r\n<md-card *ngFor=\"let material of materials\">\r\n  <img md-card-image src={{material.materialpic}}>\r\n  <md-card-content>\r\n    状态:{{material.status}}\r\n  </md-card-content>\r\n</md-card>\r\n"
+module.exports = "<md-nav-list>\r\n  <h3 md-subheader>已报名竞赛列表</h3>\r\n  <md-list-item *ngFor=\"let appliedontest of appliedContests\">\r\n    {{appliedontest.comName}}\r\n  </md-list-item>\r\n  <md-divider></md-divider>\r\n    <h3 md-subheader>可报名竞赛列表</h3>\r\n    <!-- <md-list-item *ngFor=\"let contest of contests\">\r\n      {{contest.comName}}\r\n    </md-list-item> -->\r\n</md-nav-list>\r\n"
 
 /***/ }),
 
 /***/ 1221:
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  student-message works!\n</p>\n"
+module.exports = "<form #material=\"ngForm\">\r\n<md-select placeholder=\"选择条件类型\" ngModel name=\"condition\">\r\n  <md-option *ngFor=\"let item of conditions\" [value]=\"item.conditionid\">\r\n    {{item.conditionname}}\r\n  </md-option>\r\n</md-select>\r\n<input ngModel type=\"file\" name=\"file\" [multiple]=\"multiple\" #fileInput/>\r\n<button md-button (click)=\"saveMaterial(material.value)\">提交</button>\r\n</form>\r\n"
 
 /***/ }),
 
 /***/ 1222:
 /***/ (function(module, exports) {
 
-module.exports = "<p>根据申报结果查看功能尚未添加</p>\r\n<p>查看申报详情功能尚未添加</p>\r\n<p>修改申报书功能尚未添加</p>\r\n<p>导出申报表功能尚未添加</p>\r\n<p>查看竞赛小组以及组员功能尚未添加</p>\r\n<p>审批参赛小组功能尚未添加</p>\r\n<p>查看已经结束的竞赛功能尚未添加</p>\r\n<p>反馈获奖情况功能尚未添加</p>\r\n<p>审批申报书功能尚未添加</p>\r\n<md-nav-list>\r\n  <h3 md-subheader>已申报竞赛列表</h3>\r\n  <md-list-item *ngFor=\"let declaration of declarations;let i of index\">\r\n    {{declaration.comname}}\r\n    <span style=\"flex: 1 1 auto\"> </span>\r\n    <button md-button>修改</button>\r\n    <button md-button (click)=\"delete(declaration,i)\">删除</button>\r\n    <md-icon>date_range</md-icon>{{declaration.time}}\r\n  </md-list-item>\r\n</md-nav-list>\r\n"
+module.exports = "<md-card>\r\n  <md-card-content>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.sno}} [(ngModel)]=\"student.studentno\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.name}} [ngModel]=\"student.studentname\" [disabled]=\"true\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.gender}} [ngModel]=\"student.gender\" [disabled]=\"true\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.department}} [(ngModel)]=\"student.department\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.profession}} [(ngModel)]=\"student.profession\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.classno}} [(ngModel)]=\"student.classno\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.grade}} [(ngModel)]=\"student.grade\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.phone}} [(ngModel)]=\"student.phone\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.email}} [(ngModel)]=\"student.email\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n  </md-card-content>\r\n  <md-card-actions>\r\n    <button md-button color=\"primary\" (click)=\"toggleEdit();edit();\" *ngIf=\"disableEdit\">\r\n      编辑\r\n    </button>\r\n    <button md-button color=\"primary\" (click)=\"toggleEdit();save();\" *ngIf=\"!disableEdit\">\r\n      保存\r\n    </button>\r\n    <button md-button (click)=\"toggleEdit();cancel();\" *ngIf=\"!disableEdit\">取消</button>\r\n  </md-card-actions>\r\n</md-card>\r\n<md-divider></md-divider>\r\n<button md-button style=\"width:100%\" (click)=\"openDialog()\">上传材料</button>\r\n<md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn\">修改个人材料功能尚未添加!!</md-chip>\r\n</md-chip-list>\r\n<md-card *ngFor=\"let material of materials\">\r\n  <img md-card-image src={{material.materialpic}}>\r\n  <md-card-content>\r\n    状态:{{material.status}}\r\n  </md-card-content>\r\n</md-card>\r\n"
 
 /***/ }),
 
 /***/ 1223:
 /***/ (function(module, exports) {
 
-module.exports = "<md-card>\r\n  <md-card-content>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.tno}} [(ngModel)]=\"teacher.teacherno\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.name}} [(ngModel)]=\"teacher.teachername\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.gender}} [(ngModel)]=\"teacher.gender\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.birth}} [(ngModel)]=\"teacher.birth\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.department}} [(ngModel)]=\"teacher.department\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.subject}} [(ngModel)]=\"teacher.subject\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.phone}} [(ngModel)]=\"teacher.phone\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.title}} [(ngModel)]=\"teacher.title\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.post}} [(ngModel)]=\"teacher.post\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.email}} [(ngModel)]=\"teacher.email\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.type}} [(ngModel)]=\"teacher.type\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.direction}} [(ngModel)]=\"teacher.direction\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.education}} [(ngModel)]=\"teacher.education\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.lab}} [(ngModel)]=\"teacher.lab\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.examiner}} [(ngModel)]=\"teacher.examiner\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n  </md-card-content>\r\n  <md-card-actions>\r\n    <!-- TODO -->\r\n    <button md-button color=\"primary\" (click)=\"toggleEdit();edit();\" *ngIf=\"disableEdit\">\r\n      编辑\r\n    </button>\r\n    <button md-button color=\"primary\" (click)=\"toggleEdit();save();\" *ngIf=\"!disableEdit\">\r\n      保存\r\n    </button>\r\n    <button md-button (click)=\"toggleEdit();cancel();\" *ngIf=\"!disableEdit\">取消</button>\r\n  </md-card-actions>\r\n</md-card>\r\n"
+module.exports = "<p>\n  student-message works!\n</p>\n"
 
 /***/ }),
 
 /***/ 1224:
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  teacher-message works!\n</p>\n"
+module.exports = "<md-chip-list>\r\n  <md-chip selected=\"true\" color=\"warn\">根据申报结果查看功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">查看申报详情功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">修改申报书功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">导出申报表功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">查看竞赛小组以及组员功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">审批参赛小组功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">查看已经结束的竞赛功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">反馈获奖情况功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">审批申报书功能尚未添加</md-chip>\r\n</md-chip-list>\r\n<md-nav-list>\r\n  <h3 md-subheader>已申报竞赛列表</h3>\r\n  <md-list-item *ngFor=\"let declaration of declarations;let i of index\">\r\n    {{declaration.comname}}\r\n    <span style=\"flex: 1 1 auto\"> </span>\r\n    <md-chip-list>\r\n      <md-chip *ngIf=\"declaration.depspstatus===0\">待系部审批</md-chip>\r\n      <md-chip *ngIf=\"declaration.teaspstatus===0\">待教学处审批</md-chip>\r\n    </md-chip-list>\r\n    <span style=\"flex: 1 1 auto\"> </span>\r\n    <button md-button>修改</button>\r\n    <button md-button (click)=\"delete(declaration,i)\">删除</button>\r\n    <md-icon>date_range</md-icon>{{declaration.time}}\r\n  </md-list-item>\r\n</md-nav-list>\r\n"
 
 /***/ }),
 
 /***/ 1225:
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  user-info works!\n</p>\n"
+module.exports = "<md-card>\r\n  <md-card-content>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.tno}} [(ngModel)]=\"teacher.teacherno\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.name}} [ngModel]=\"teacher.teachername\" [disabled]=\"true\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.gender}} [(ngModel)]=\"teacher.gender\" [disabled]=\"true\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.birth}} [(ngModel)]=\"teacher.birth\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.department}} [(ngModel)]=\"teacher.department\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.subject}} [(ngModel)]=\"teacher.subject\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.phone}} [(ngModel)]=\"teacher.phone\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.title}} [(ngModel)]=\"teacher.title\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.post}} [(ngModel)]=\"teacher.post\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.email}} [(ngModel)]=\"teacher.email\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.type}} [(ngModel)]=\"teacher.type\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.direction}} [(ngModel)]=\"teacher.direction\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.education}} [(ngModel)]=\"teacher.education\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.lab}} [(ngModel)]=\"teacher.lab\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.examiner}} [(ngModel)]=\"examiner\" (change)=\"setExaminer()\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n  </md-card-content>\r\n  <md-card-actions>\r\n    <button md-button color=\"primary\" (click)=\"toggleEdit();edit();\" *ngIf=\"disableEdit\">\r\n      编辑\r\n    </button>\r\n    <button md-button color=\"primary\" (click)=\"toggleEdit();save();\" *ngIf=\"!disableEdit\">\r\n      保存\r\n    </button>\r\n    <button md-button (click)=\"toggleEdit();cancel();\" *ngIf=\"!disableEdit\">取消</button>\r\n  </md-card-actions>\r\n</md-card>\r\n"
 
 /***/ }),
 
 /***/ 1226:
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"row\">\r\n  <md-nav-list fxFlex=\"20\">\r\n    <md-list-item *ngFor=\"let link of links\">\r\n      <a md-line routerLink={{link.href}} routerLinkActive=\"active\"> {{link.name}} </a>\r\n    </md-list-item>\r\n  </md-nav-list>\r\n  <div fxFlex=\"80\">\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<p>\n  teacher-message works!\n</p>\n"
 
 /***/ }),
 
 /***/ 1227:
 /***/ (function(module, exports) {
 
-module.exports = "<md-card>\n  <md-card-header>\n  <md-card-title></md-card-title>\n  </md-card-header>\n  <md-card-content>\n  </md-card-content>\n</md-card>\n"
+module.exports = "<p>\n  user-info works!\n</p>\n"
+
+/***/ }),
+
+/***/ 1228:
+/***/ (function(module, exports) {
+
+module.exports = "<div fxLayout=\"row\">\r\n  <md-nav-list fxFlex=\"20\">\r\n    <md-list-item *ngFor=\"let link of links\">\r\n      <a md-line routerLink={{link.href}} routerLinkActive=\"active\"> {{link.name}} </a>\r\n    </md-list-item>\r\n  </md-nav-list>\r\n  <div fxFlex=\"80\">\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ 1229:
+/***/ (function(module, exports) {
+
+module.exports = "<section fxLayout=\"row\">\n<md-card *ngFor=\"let item of works | slice:0:3\" fxFlex=\"25\">\n  <md-card-header>\n  <md-card-title>作品:{{item.proname}}</md-card-title>\n  <md-card-subtitle>获奖者:{{item.membersname}}</md-card-subtitle>\n  </md-card-header>\n  <img md-card-image alt=\"图片\" src={{item.pic}}>\n  <md-card-content>\n    <p>奖项:{{item.award}}</p>\n    <p>{{item.introduction}}</p>\n  </md-card-content>\n</md-card>\n</section>\n"
 
 /***/ }),
 
@@ -939,7 +964,7 @@ module.exports = "<md-card>\n  <md-card-header>\n  <md-card-title></md-card-titl
 
 /***/ }),
 
-/***/ 1269:
+/***/ 1271:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(610);
@@ -947,7 +972,7 @@ module.exports = __webpack_require__(610);
 
 /***/ }),
 
-/***/ 15:
+/***/ 13:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1091,7 +1116,7 @@ TEACHERS.push(new __WEBPACK_IMPORTED_MODULE_0__models__["d" /* Teacher */](123, 
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(100);
@@ -1239,7 +1264,7 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeclarationListComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1277,7 +1302,7 @@ __decorate([
 DeclarationListComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-declaration-list',
-        template: __webpack_require__(1204),
+        template: __webpack_require__(1205),
         styles: [__webpack_require__(1162)],
         providers: [__WEBPACK_IMPORTED_MODULE_1__services__["c" /* ContestService */], __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */]]
     }),
@@ -1294,7 +1319,11 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExaminerComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ExaminerDialog; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1305,22 +1334,92 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
 var ExaminerComponent = (function () {
-    function ExaminerComponent() {
+    function ExaminerComponent(http, dialog, loginService) {
+        this.http = http;
+        this.dialog = dialog;
+        this.loginService = loginService;
     }
+    ExaminerComponent.prototype.openDialog = function (item) {
+        var _this = this;
+        this.dialogRef = this.dialog.open(ExaminerDialog, {
+            disableClose: false
+        });
+        this.dialogRef.componentInstance.comp = item;
+        this.dialogRef.componentInstance.teacher = this.teacher;
+        this.dialogRef.afterClosed().subscribe(function (result) {
+            if (result) {
+                var url;
+                if (_this.teacher.department !== "教学处") {
+                    url = "http://localhost:8080/CompSystem/teacher/updateCompStatusByDept";
+                }
+                else {
+                    url = "http://localhost:8080/CompSystem/teacher/updateCompStatusByTea";
+                }
+                _this.http.post(url, result)
+                    .subscribe(function () { return alert("审批成功!"); });
+            }
+            _this.dialogRef = null;
+        });
+    };
+    ExaminerComponent.prototype.getApproCompList = function () {
+        var _this = this;
+        this.http.get("http://localhost:8080/CompSystem/teacher/getApproCompList" + "?teacherNo=" + this.teacher.teacherno)
+            .map(function (response) { return console.log("TeacherContestComponent.getApproCompList:", response.json()) || response.json(); })
+            .subscribe(function (response) { return _this.approComps = response; });
+    };
     ExaminerComponent.prototype.ngOnInit = function () {
+        this.teacher = this.loginService.getUser();
+        this.getApproCompList();
     };
     return ExaminerComponent;
 }());
 ExaminerComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-examiner',
-        template: __webpack_require__(1206),
+        template: __webpack_require__(1207),
         styles: [__webpack_require__(1164)]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__["a" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__["a" /* MdDialog */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */]) === "function" && _c || Object])
 ], ExaminerComponent);
 
+var ExaminerDialog = (function () {
+    function ExaminerDialog(dialogRef) {
+        this.dialogRef = dialogRef;
+        this.d = new Date();
+        this.dStr = this.d.getFullYear() + "-" + (this.d.getMonth() + 1) + "-" + this.d.getDate();
+    }
+    ExaminerDialog.prototype.setComp = function (examiner) {
+        if (this.teacher.department != "教学处") {
+            this.comp.uopinion = examiner.opinion;
+            this.comp.dsign = this.teacher.teachername;
+            this.comp.dsdate = this.dStr;
+            this.comp.depspstatus = examiner.pass;
+        }
+        else {
+            this.comp.tdopinion = examiner.opinion;
+            this.comp.olsign = this.teacher.teachername;
+            this.comp.dsdate = this.dStr;
+            this.comp.teaspstatus = examiner.pass;
+        }
+    };
+    ExaminerDialog.prototype.ngOnInit = function () {
+    };
+    return ExaminerDialog;
+}());
+ExaminerDialog = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-examiner-dialog',
+        template: __webpack_require__(1208),
+        styles: [__webpack_require__(1165)]
+    }),
+    __metadata("design:paramtypes", [typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__["b" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__["b" /* MdDialogRef */]) === "function" && _d || Object])
+], ExaminerDialog);
+
+var _a, _b, _c, _d;
 //# sourceMappingURL=examiner.component.js.map
 
 /***/ }),
@@ -1331,6 +1430,7 @@ ExaminerComponent = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__examiner_component__ = __webpack_require__(516);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__examiner_component__["a"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__examiner_component__["b"]; });
 
 //# sourceMappingURL=index.js.map
 
@@ -1343,7 +1443,7 @@ ExaminerComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__declaration_component__ = __webpack_require__(838);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__declaration_component__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__examiner___ = __webpack_require__(517);
-/* unused harmony namespace reexport */
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__examiner___["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__declaration_list___ = __webpack_require__(837);
 /* unused harmony namespace reexport */
 
@@ -1390,8 +1490,8 @@ var NotificationComponent = (function () {
 NotificationComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-notification',
-        template: __webpack_require__(1211),
-        styles: [__webpack_require__(1169)]
+        template: __webpack_require__(1213),
+        styles: [__webpack_require__(1170)]
     }),
     __metadata("design:paramtypes", [])
 ], NotificationComponent);
@@ -1405,8 +1505,8 @@ NotificationComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminFilesComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1461,8 +1561,8 @@ __decorate([
 AdminFilesComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-admin-files',
-        template: __webpack_require__(1213),
-        styles: [__webpack_require__(1171)],
+        template: __webpack_require__(1215),
+        styles: [__webpack_require__(1172)],
         providers: [__WEBPACK_IMPORTED_MODULE_2__services__["f" /* AdminService */]]
     }),
     __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services__["f" /* AdminService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["f" /* AdminService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _c || Object])
@@ -1478,9 +1578,9 @@ var _a, _b, _c;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminWorksComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return WorksDialog; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1535,8 +1635,8 @@ var AdminWorksComponent = (function () {
 AdminWorksComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-admin-works',
-        template: __webpack_require__(1216),
-        styles: [__webpack_require__(1174)]
+        template: __webpack_require__(1218),
+        styles: [__webpack_require__(1175)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["a" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["a" /* MdDialog */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */]) === "function" && _b || Object])
 ], AdminWorksComponent);
@@ -1573,8 +1673,8 @@ __decorate([
 WorksDialog = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-works-dialog',
-        template: __webpack_require__(1217),
-        styles: [__webpack_require__(1175)],
+        template: __webpack_require__(1219),
+        styles: [__webpack_require__(1176)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services__["e" /* AwardService */]]
     }),
     __metadata("design:paramtypes", [typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["b" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["b" /* MdDialogRef */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services__["e" /* AwardService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["e" /* AwardService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */]) === "function" && _f || Object])
@@ -1620,8 +1720,8 @@ var _a, _b, _c, _d, _e, _f;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TeacherContestComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1663,8 +1763,8 @@ var TeacherContestComponent = (function () {
 TeacherContestComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-teacher-contest',
-        template: __webpack_require__(1222),
-        styles: [__webpack_require__(1180)],
+        template: __webpack_require__(1224),
+        styles: [__webpack_require__(1181)],
         providers: [__WEBPACK_IMPORTED_MODULE_2__services__["c" /* ContestService */], __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services__["c" /* ContestService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["c" /* ContestService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _c || Object])
@@ -1701,8 +1801,8 @@ var UserInfoComponent = (function () {
 UserInfoComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-user-info',
-        template: __webpack_require__(1225),
-        styles: [__webpack_require__(1183)]
+        template: __webpack_require__(1227),
+        styles: [__webpack_require__(1184)]
     }),
     __metadata("design:paramtypes", [])
 ], UserInfoComponent);
@@ -2561,7 +2661,7 @@ ContestUserFilterPipe = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(8);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2606,7 +2706,7 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AwardService; });
@@ -2680,7 +2780,7 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(100);
@@ -2711,8 +2811,7 @@ var ContestService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json; charset=UTF-8' });
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({ headers: headers });
         return this.http.post(this.baseUrl + "/teacher/addComp", JSON.stringify(decaration), options)
-            .map(function (response) { return true; })
-            .catch(this.handleError);
+            .map(function (response) { return true; });
     };
     ContestService.prototype.getContests = function () {
         return this.http.get(this.baseUrl + "/index/CompetionList")
@@ -2789,7 +2888,7 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise__ = __webpack_require__(102);
@@ -2906,7 +3005,7 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(100);
@@ -2994,7 +3093,7 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(100);
@@ -3089,7 +3188,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-root',
-        template: __webpack_require__(1192),
+        template: __webpack_require__(1193),
         styles: [__webpack_require__(1150)],
         providers: []
     }),
@@ -3107,8 +3206,8 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__(735);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_flex_layout__ = __webpack_require__(700);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__swimlane_ngx_charts__ = __webpack_require__(869);
@@ -3196,7 +3295,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_16__article__["a" /* ArticleComponent */], __WEBPACK_IMPORTED_MODULE_16__article__["b" /* ArticleListComponent */], __WEBPACK_IMPORTED_MODULE_16__article__["c" /* ArticleEditComponent */], __WEBPACK_IMPORTED_MODULE_16__article__["d" /* ArticleDetailComponent */], __WEBPACK_IMPORTED_MODULE_16__article__["e" /* ApplyDialog */],
             __WEBPACK_IMPORTED_MODULE_17__contest__["a" /* ContestComponent */], __WEBPACK_IMPORTED_MODULE_17__contest__["b" /* ContestListComponent */], __WEBPACK_IMPORTED_MODULE_17__contest__["c" /* ContestDetailComponent */],
             __WEBPACK_IMPORTED_MODULE_18__pipes__["a" /* ArticleTypeFilterPipe */], __WEBPACK_IMPORTED_MODULE_18__pipes__["b" /* ContestUserFilterPipe */], __WEBPACK_IMPORTED_MODULE_18__pipes__["c" /* ContestTimelineFilterPipe */],
-            __WEBPACK_IMPORTED_MODULE_19__declaration__["a" /* DeclarationComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__declaration__["a" /* DeclarationComponent */], __WEBPACK_IMPORTED_MODULE_19__declaration__["b" /* ExaminerDialog */],
             __WEBPACK_IMPORTED_MODULE_20__award__["a" /* AwardComponent */], __WEBPACK_IMPORTED_MODULE_20__award__["b" /* AwardListComponent */],
             __WEBPACK_IMPORTED_MODULE_21__chart__["a" /* ChartComponent */],
             __WEBPACK_IMPORTED_MODULE_22__user_user_info_user_info_component__["a" /* UserInfoComponent */],
@@ -3213,7 +3312,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_33__user_admin_admin_material_admin_material_component__["a" /* AdminMaterialComponent */]
         ],
         entryComponents: [
-            __WEBPACK_IMPORTED_MODULE_14__login__["b" /* LoginDialog */], __WEBPACK_IMPORTED_MODULE_16__article__["e" /* ApplyDialog */], __WEBPACK_IMPORTED_MODULE_15__user__["b" /* MaterialDialog */], __WEBPACK_IMPORTED_MODULE_15__user__["c" /* WorksDialog */]
+            __WEBPACK_IMPORTED_MODULE_14__login__["b" /* LoginDialog */], __WEBPACK_IMPORTED_MODULE_16__article__["e" /* ApplyDialog */], __WEBPACK_IMPORTED_MODULE_15__user__["b" /* MaterialDialog */], __WEBPACK_IMPORTED_MODULE_15__user__["c" /* WorksDialog */], __WEBPACK_IMPORTED_MODULE_19__declaration__["b" /* ExaminerDialog */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["BrowserModule"],
@@ -3286,7 +3385,7 @@ var appRoutes = [
                     }]
             }, {
                 path: 'contest',
-                component: __WEBPACK_IMPORTED_MODULE_4__contest__["b" /* ContestListComponent */]
+                component: __WEBPACK_IMPORTED_MODULE_2__user__["g" /* AdminContestComponent */]
             }, {
                 path: 'works',
                 component: __WEBPACK_IMPORTED_MODULE_2__user__["i" /* AdminWorksComponent */]
@@ -3363,12 +3462,12 @@ var routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule 
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap__ = __webpack_require__(341);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ArticleDetailComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ApplyDialog; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -3416,13 +3515,19 @@ var ArticleDetailComponent = (function () {
     ArticleDetailComponent.prototype.toggleGroup = function () {
         this.groupVisible = !this.groupVisible;
     };
+    ArticleDetailComponent.prototype.countView = function (article) {
+        this.http.get("http://localhost:8080/CompSystem/index/article" + "?articleId" + article.articleId)
+            .map(function (response) { return console.log("ArticleDetailComponent.countView:", response.json()) || response.json(); })
+            .subscribe(function (response) { return console.log("countView+1."); });
+    };
     ArticleDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params
             .switchMap(function (params) { return _this.articleService.getArticle(+params['id']); })
             .subscribe(function (article) {
             _this.article = article;
-            _this.contestService.getGroups(_this.article.comId)
+            _this.countView(article);
+            _this.contestService.getGroups(_this.article.relationId)
                 .subscribe(function (groups) {
                 _this.groups = groups;
                 var group = groups.find(function (group) { return group.studentno === _this.student.studentno; });
@@ -3431,7 +3536,7 @@ var ArticleDetailComponent = (function () {
                     _this.groupsno = group.groupsno;
                 }
             });
-            _this.contestService.getContest(_this.article.comId)
+            _this.contestService.getContest(_this.article.relationId)
                 .subscribe(function (contest) { return _this.contest = contest; });
         });
         this.student = this.loginService.getUser();
@@ -3442,7 +3547,7 @@ var ArticleDetailComponent = (function () {
             disableClose: false
         });
         this.dialogRef.componentInstance.student = this.student;
-        this.contestService.getCompGuideTeacher(this.article.comId)
+        this.contestService.getCompGuideTeacher(this.article.relationId)
             .subscribe(function (guideTeachers) { return _this.dialogRef.componentInstance.guideTeachers = guideTeachers; });
         this.dialogRef.componentInstance.contest = this.contest;
         this.dialogRef.componentInstance.groups = this.groups;
@@ -3458,7 +3563,7 @@ var ArticleDetailComponent = (function () {
 ArticleDetailComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-article-detail',
-        template: __webpack_require__(1194),
+        template: __webpack_require__(1195),
         styles: [__webpack_require__(1152)],
         providers: [__WEBPACK_IMPORTED_MODULE_5__services__["g" /* ArticleService */], __WEBPACK_IMPORTED_MODULE_5__services__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_5__services__["c" /* ContestService */]]
     }),
@@ -3485,7 +3590,7 @@ var ApplyDialog = (function () {
 ApplyDialog = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-apply-dialog',
-        template: __webpack_require__(1193),
+        template: __webpack_require__(1194),
         styles: [__webpack_require__(1151)],
         providers: [__WEBPACK_IMPORTED_MODULE_5__services__["c" /* ContestService */]]
     }),
@@ -3514,8 +3619,8 @@ var _a, _b, _c, _d, _e, _f, _g, _h;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datas__ = __webpack_require__(125);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ArticleEditComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -3564,7 +3669,7 @@ var ArticleEditComponent = (function () {
 ArticleEditComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-article-edit',
-        template: __webpack_require__(1195),
+        template: __webpack_require__(1196),
         styles: [__webpack_require__(1153)],
         providers: [__WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_2__services__["g" /* ArticleService */]]
     }),
@@ -3592,7 +3697,7 @@ var _a, _b, _c;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_article_service__ = __webpack_require__(511);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datas__ = __webpack_require__(125);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ArticleListComponent; });
@@ -3635,7 +3740,7 @@ var ArticleListComponent = (function () {
 ArticleListComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-article-list',
-        template: __webpack_require__(1196),
+        template: __webpack_require__(1197),
         styles: [__webpack_require__(1154)],
         providers: [__WEBPACK_IMPORTED_MODULE_2__services_article_service__["a" /* ArticleService */]]
     }),
@@ -3684,7 +3789,7 @@ var ArticleComponent = (function () {
 ArticleComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-article',
-        template: __webpack_require__(1197),
+        template: __webpack_require__(1198),
         styles: [__webpack_require__(1155)]
     }),
     __metadata("design:paramtypes", [])
@@ -3699,8 +3804,8 @@ ArticleComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AwardListComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3747,7 +3852,7 @@ __decorate([
 AwardListComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-award-list',
-        template: __webpack_require__(1198),
+        template: __webpack_require__(1199),
         styles: [__webpack_require__(1156)],
         providers: [__WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_2__services__["e" /* AwardService */]]
     }),
@@ -3796,7 +3901,7 @@ var AwardComponent = (function () {
 AwardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-award',
-        template: __webpack_require__(1199),
+        template: __webpack_require__(1200),
         styles: [__webpack_require__(1157)]
     }),
     __metadata("design:paramtypes", [])
@@ -3852,7 +3957,7 @@ var ChartComponent = (function () {
 ChartComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-chart',
-        template: __webpack_require__(1200),
+        template: __webpack_require__(1201),
         styles: [__webpack_require__(1158)]
     }),
     __metadata("design:paramtypes", [])
@@ -3881,7 +3986,7 @@ ChartComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_switchMap__ = __webpack_require__(341);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_switchMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContestDetailComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3912,7 +4017,7 @@ var ContestDetailComponent = (function () {
 ContestDetailComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-contest',
-        template: __webpack_require__(1201),
+        template: __webpack_require__(1202),
         styles: [__webpack_require__(1159)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services__["c" /* ContestService */]]
     }),
@@ -3940,7 +4045,7 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContestListComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3978,7 +4083,7 @@ __decorate([
 ContestListComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-contest-list',
-        template: __webpack_require__(1202),
+        template: __webpack_require__(1203),
         styles: [__webpack_require__(1160)],
         providers: [__WEBPACK_IMPORTED_MODULE_1__services__["c" /* ContestService */], __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */]]
     }),
@@ -4027,7 +4132,7 @@ var ContestComponent = (function () {
 ContestComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-contest',
-        template: __webpack_require__(1203),
+        template: __webpack_require__(1204),
         styles: [__webpack_require__(1161)]
     }),
     __metadata("design:paramtypes", [])
@@ -4053,8 +4158,8 @@ ContestComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models__ = __webpack_require__(48);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeclarationComponent; });
 /* unused harmony export GuideTeacher */
@@ -4072,9 +4177,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var DeclarationComponent = (function () {
-    function DeclarationComponent(contestService, http) {
+    function DeclarationComponent(contestService, http, loginService) {
         this.contestService = contestService;
         this.http = http;
+        this.loginService = loginService;
+        this.progress = 6 * 4;
         // TEACHERS: Teacher[];
         this.table = {
             schedule: [
@@ -4166,6 +4273,85 @@ var DeclarationComponent = (function () {
         ];
         // Object.assign(this, { TEACHERS });
     }
+    DeclarationComponent.prototype.setProgress = function (baseInfo, situation, plan) {
+        var count = 0;
+        if (baseInfo.name !== "") {
+            ++count;
+        }
+        if (baseInfo.type !== "") {
+            ++count;
+        }
+        if (baseInfo.leader !== "") {
+            ++count;
+        }
+        if (baseInfo.unit !== "") {
+            ++count;
+        }
+        if (baseInfo.phone !== "") {
+            ++count;
+        }
+        if (baseInfo.email !== "") {
+            ++count;
+        }
+        if (baseInfo.date !== "") {
+            ++count;
+        }
+        if (situation.host !== "") {
+            ++count;
+        }
+        if (situation.sponsor !== "") {
+            ++count;
+        }
+        if (situation.time !== "") {
+            ++count;
+        }
+        if (situation.applyBeginDate !== "") {
+            ++count;
+        }
+        if (situation.applyEndDate !== "") {
+            ++count;
+        }
+        if (situation.isNeedGroup === "yes") {
+            if (situation.groupNum !== "") {
+                ++count;
+            }
+        }
+        else if (situation.isNeedGroup === "no") {
+            ++count;
+        }
+        if (situation.place !== "") {
+            ++count;
+        }
+        if (situation.object !== "") {
+            ++count;
+        }
+        if (situation.people !== "") {
+            ++count;
+        }
+        if (situation.intro !== "") {
+            ++count;
+        }
+        if (this.schedules.length > 0) {
+            ++count;
+        }
+        if (plan.plan !== "") {
+            ++count;
+        }
+        if (plan.tgoal !== "") {
+            ++count;
+        }
+        if (plan.wgoal !== "") {
+            ++count;
+        }
+        if (this.budgets.length > 0) {
+            ++count;
+        }
+        if (this.hours.length > 0) {
+            ++count;
+        }
+        this.progress = 4 * count;
+        console.log(count + "!!!");
+    };
     DeclarationComponent.prototype.getTeachers = function () {
         var _this = this;
         this.http.get("http://localhost:8080/CompSystem/teacher/getAllTeacher")
@@ -4173,6 +4359,7 @@ var DeclarationComponent = (function () {
             .subscribe(function (response) { return _this.teachers = response; });
     };
     DeclarationComponent.prototype.ngOnInit = function () {
+        this.teacher = this.loginService.getUser();
         this.schedules = [];
         this.budgets = [];
         this.hours = [];
@@ -4219,10 +4406,9 @@ var DeclarationComponent = (function () {
         this.hourVisible = !this.hourVisible;
     };
     DeclarationComponent.prototype.submit = function (baseInfo, situation, plan) {
-        baseInfo.date = new Date().toLocaleDateString();
         var competition = {
             comname: baseInfo.name,
-            teacherno: baseInfo.leader,
+            teacherno: this.teacher.teacherno,
             unit: baseInfo.unit,
             levelname: baseInfo.type,
             department: "",
@@ -4246,36 +4432,21 @@ var DeclarationComponent = (function () {
             schedules: this.schedules,
             compConditions: []
         };
-        var gt = [];
-        var cc = [];
-        cc.push({ conditionid: 2 });
-        this.schedules.forEach(function (schedule) { return gt.push(new GuideTeacher(schedule.teacherno)); });
         this.schedules.forEach(function (schedule) { return declaration.guideTeachers.push(new GuideTeacher(schedule.teacherno)); });
         declaration.compConditions.push({ conditionid: 2 });
-        console.log("baseInfo:", baseInfo, "situation:", situation, "schedules:", this.schedules, "plan:", plan, "budgets:", this.budgets, "hours:", this.hours);
         console.log("declaration:", declaration);
-        var formData = new FormData();
-        formData.append("competition", JSON.stringify(competition));
-        formData.append("budgets", JSON.stringify(this.budgets));
-        formData.append("guideTeachers", JSON.stringify(gt));
-        formData.append("hours", JSON.stringify(this.hours));
-        formData.append("schedules", JSON.stringify(this.schedules));
-        formData.append("compConditions", JSON.stringify(cc));
-        console.log("competitionInfovo:", formData);
-        // this.http.post("http://localhost:8080/CompSystem/teacher/addComp",formData)
-        //   .subscribe(() => alert("提交成功!"));
-        this.contestService.create(declaration).subscribe(function (response) { return alert(response); });
+        this.contestService.create(declaration).subscribe(function (response) { return alert("提交成功!"); });
     };
     return DeclarationComponent;
 }());
 DeclarationComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-declaration',
-        template: __webpack_require__(1205),
+        template: __webpack_require__(1206),
         styles: [__webpack_require__(1163)],
-        providers: [__WEBPACK_IMPORTED_MODULE_2__services__["c" /* ContestService */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_2__services__["c" /* ContestService */], __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */]]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services__["c" /* ContestService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["c" /* ContestService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services__["c" /* ContestService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["c" /* ContestService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */]) === "function" && _c || Object])
 ], DeclarationComponent);
 
 var GuideTeacher = (function () {
@@ -4285,7 +4456,7 @@ var GuideTeacher = (function () {
     return GuideTeacher;
 }());
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=declaration.component.js.map
 
 /***/ }),
@@ -4295,7 +4466,7 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(8);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FilesComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4330,8 +4501,8 @@ var FilesComponent = (function () {
 FilesComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-files',
-        template: __webpack_require__(1207),
-        styles: [__webpack_require__(1165)]
+        template: __webpack_require__(1209),
+        styles: [__webpack_require__(1166)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _a || Object])
 ], FilesComponent);
@@ -4402,7 +4573,8 @@ var _a;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4416,15 +4588,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HomeComponent = (function () {
-    function HomeComponent(router, articleService, contestServer) {
+    function HomeComponent(router, articleService, http, contestServer) {
         this.router = router;
         this.articleService = articleService;
+        this.http = http;
         this.contestServer = contestServer;
         this.articleTypes = [];
         this.articles = [];
         this.contests = [];
     }
+    HomeComponent.prototype.getArticlesByType = function () {
+        var _this = this;
+        this.http.get("http://localhost:8080/CompSystem/index/articlesList" + "?type=1")
+            .map(function (response) { return console.log("HomeComponent.getArticlesByType:", response.json().articlePageInfo.list) || response.json().articlePageInfo.list; })
+            .subscribe(function (response) { return _this.articleTypeOnes = response; });
+        this.http.get("http://localhost:8080/CompSystem/index/articlesList" + "?type=2")
+            .map(function (response) { return console.log("HomeComponent.getArticlesByType:", response.json().articlePageInfo.list) || response.json().articlePageInfo.list; })
+            .subscribe(function (response) { return _this.articleTypeTwos = response; });
+        this.http.get("http://localhost:8080/CompSystem/index/articlesList" + "?type=3")
+            .map(function (response) { return console.log("HomeComponent.getArticlesByType:", response.json().articlePageInfo.list) || response.json().articlePageInfo.list; })
+            .subscribe(function (response) { return _this.articleTypeThrees = response; });
+    };
     HomeComponent.prototype.apply = function (contest) {
         var _this = this;
         this.articleService.getArticleByComp(contest.comid)
@@ -4434,6 +4620,7 @@ var HomeComponent = (function () {
         this.getArticleTypes();
         this.getArticles();
         this.getContests();
+        this.getArticlesByType();
     };
     HomeComponent.prototype.setColor = function (contest) {
         var currentDate = (function (d) { return new Date(d); })(new Date().toLocaleDateString()).valueOf();
@@ -4470,14 +4657,14 @@ var HomeComponent = (function () {
 HomeComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-home',
-        template: __webpack_require__(1208),
-        styles: [__webpack_require__(1166)],
-        providers: [__WEBPACK_IMPORTED_MODULE_2__services__["g" /* ArticleService */], __WEBPACK_IMPORTED_MODULE_2__services__["c" /* ContestService */]]
+        template: __webpack_require__(1210),
+        styles: [__webpack_require__(1167)],
+        providers: [__WEBPACK_IMPORTED_MODULE_3__services__["g" /* ArticleService */], __WEBPACK_IMPORTED_MODULE_3__services__["c" /* ContestService */]]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services__["g" /* ArticleService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["g" /* ArticleService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services__["c" /* ContestService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["c" /* ContestService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services__["g" /* ArticleService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["g" /* ArticleService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services__["c" /* ContestService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["c" /* ContestService */]) === "function" && _d || Object])
 ], HomeComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=home.component.js.map
 
 /***/ }),
@@ -4500,9 +4687,9 @@ var _a, _b, _c;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(8);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return LoginDialog; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -4565,8 +4752,8 @@ var LoginComponent = (function () {
 LoginComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-login',
-        template: __webpack_require__(1209),
-        styles: [__webpack_require__(1167)],
+        template: __webpack_require__(1211),
+        styles: [__webpack_require__(1168)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__["a" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__["a" /* MdDialog */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_http__["d" /* Http */]) === "function" && _d || Object])
@@ -4591,8 +4778,8 @@ var LoginDialog = (function () {
 LoginDialog = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-login-dialog',
-        template: __webpack_require__(1210),
-        styles: [__webpack_require__(1168)],
+        template: __webpack_require__(1212),
+        styles: [__webpack_require__(1169)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */]]
     }),
     __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__["b" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__["b" /* MdDialogRef */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */]) === "function" && _f || Object])
@@ -4619,6 +4806,7 @@ var _a, _b, _c, _d, _e, _f;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(8);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminContestComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4630,22 +4818,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var AdminContestComponent = (function () {
-    function AdminContestComponent() {
+    function AdminContestComponent(http) {
+        this.http = http;
     }
+    AdminContestComponent.prototype.getUnPub = function () {
+        var _this = this;
+        this.http.get("http://localhost:8080/CompSystem/admin/unPub" + "?type=1")
+            .map(function (response) { return console.log("AdminContestComponent.getUnPub:", response.json()) || response.json(); })
+            .subscribe(function (response) { return _this.unContests = response; });
+        this.http.get("http://localhost:8080/CompSystem/admin/unPub" + "?type=2")
+            .map(function (response) { return console.log("AdminContestComponent.getUnPub:", response.json()) || response.json(); })
+            .subscribe(function (response) { return _this.unAwards = response; });
+    };
     AdminContestComponent.prototype.ngOnInit = function () {
+        this.getUnPub();
     };
     return AdminContestComponent;
 }());
 AdminContestComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-admin-contest',
-        template: __webpack_require__(1212),
-        styles: [__webpack_require__(1170)]
+        template: __webpack_require__(1214),
+        styles: [__webpack_require__(1171)]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _a || Object])
 ], AdminContestComponent);
 
+var _a;
 //# sourceMappingURL=admin-contest.component.js.map
 
 /***/ }),
@@ -4698,8 +4899,8 @@ var AdminHomeComponent = (function () {
 AdminHomeComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-admin-home',
-        template: __webpack_require__(1214),
-        styles: [__webpack_require__(1172)]
+        template: __webpack_require__(1216),
+        styles: [__webpack_require__(1173)]
     }),
     __metadata("design:paramtypes", [])
 ], AdminHomeComponent);
@@ -4724,7 +4925,7 @@ AdminHomeComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(8);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminMaterialComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4755,8 +4956,8 @@ var AdminMaterialComponent = (function () {
 AdminMaterialComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-admin-material',
-        template: __webpack_require__(1215),
-        styles: [__webpack_require__(1173)]
+        template: __webpack_require__(1217),
+        styles: [__webpack_require__(1174)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _a || Object])
 ], AdminMaterialComponent);
@@ -4830,7 +5031,7 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StudentContestComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4859,8 +5060,8 @@ var StudentContestComponent = (function () {
 StudentContestComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-student-contest',
-        template: __webpack_require__(1218),
-        styles: [__webpack_require__(1176)],
+        template: __webpack_require__(1220),
+        styles: [__webpack_require__(1177)],
         providers: [__WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_1__services__["c" /* ContestService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services__["c" /* ContestService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services__["c" /* ContestService */]) === "function" && _b || Object])
@@ -4888,9 +5089,9 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return StudentInfoComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MaterialDialog; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -4966,8 +5167,8 @@ var StudentInfoComponent = (function () {
 StudentInfoComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-student-info',
-        template: __webpack_require__(1220),
-        styles: [__webpack_require__(1178)],
+        template: __webpack_require__(1222),
+        styles: [__webpack_require__(1179)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services__["d" /* StudentService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services__["d" /* StudentService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["d" /* StudentService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["a" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["a" /* MdDialog */]) === "function" && _c || Object])
@@ -5016,8 +5217,8 @@ __decorate([
 MaterialDialog = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-material-dialog',
-        template: __webpack_require__(1219),
-        styles: [__webpack_require__(1177)],
+        template: __webpack_require__(1221),
+        styles: [__webpack_require__(1178)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services__["c" /* ContestService */], __WEBPACK_IMPORTED_MODULE_3__services__["d" /* StudentService */], __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */]]
     }),
     __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["b" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["b" /* MdDialogRef */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__services__["c" /* ContestService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["c" /* ContestService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3__services__["d" /* StudentService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["d" /* StudentService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */]) === "function" && _j || Object])
@@ -5033,8 +5234,8 @@ var _a, _b, _c, _d, _e, _f, _g, _h, _j;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StudentMessageComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5068,8 +5269,8 @@ var StudentMessageComponent = (function () {
 StudentMessageComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-student-message',
-        template: __webpack_require__(1221),
-        styles: [__webpack_require__(1179)],
+        template: __webpack_require__(1223),
+        styles: [__webpack_require__(1180)],
         providers: [__WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */]) === "function" && _b || Object])
@@ -5121,7 +5322,7 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TeacherInfoComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5158,8 +5359,25 @@ var TeacherInfoComponent = (function () {
         };
         this.disableEdit = true;
     }
+    TeacherInfoComponent.prototype.setExaminer = function () {
+        if (this.examiner === "是") {
+            this.teacher.examiner = 1;
+        }
+        else if (this.examiner === "否") {
+            this.teacher.examiner = 0;
+        }
+        else {
+            alert(this.teacherInfo.examiner + ":输入错误!");
+        }
+    };
     TeacherInfoComponent.prototype.ngOnInit = function () {
         this.teacher = this.loginService.getUser();
+        if (this.teacher.examiner === 0) {
+            this.examiner = "否";
+        }
+        else if (this.teacher.examiner === 1) {
+            this.examiner = "是";
+        }
     };
     TeacherInfoComponent.prototype.toggleEdit = function () {
         this.disableEdit = !this.disableEdit;
@@ -5183,8 +5401,8 @@ var TeacherInfoComponent = (function () {
 TeacherInfoComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-teacher-info',
-        template: __webpack_require__(1223),
-        styles: [__webpack_require__(1181)],
+        template: __webpack_require__(1225),
+        styles: [__webpack_require__(1182)],
         providers: [__WEBPACK_IMPORTED_MODULE_1__services__["b" /* TeacherService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services__["b" /* TeacherService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services__["b" /* TeacherService */]) === "function" && _b || Object])
@@ -5200,8 +5418,8 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TeacherMessageComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5234,8 +5452,8 @@ var TeacherMessageComponent = (function () {
 TeacherMessageComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-teacher-message',
-        template: __webpack_require__(1224),
-        styles: [__webpack_require__(1182)],
+        template: __webpack_require__(1226),
+        styles: [__webpack_require__(1183)],
         providers: [__WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */]) === "function" && _b || Object])
@@ -5262,7 +5480,7 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5328,8 +5546,8 @@ var UserComponent = (function () {
 UserComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-user',
-        template: __webpack_require__(1226),
-        styles: [__webpack_require__(1184)],
+        template: __webpack_require__(1228),
+        styles: [__webpack_require__(1185)],
         providers: [__WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */]) === "function" && _a || Object])
@@ -5345,7 +5563,7 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WorksComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5374,8 +5592,8 @@ var WorksComponent = (function () {
 WorksComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-works',
-        template: __webpack_require__(1227),
-        styles: [__webpack_require__(1185)],
+        template: __webpack_require__(1229),
+        styles: [__webpack_require__(1186)],
         providers: [__WEBPACK_IMPORTED_MODULE_1__services__["e" /* AwardService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services__["e" /* AwardService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services__["e" /* AwardService */]) === "function" && _a || Object])
@@ -5403,5 +5621,5 @@ var environment = {
 
 /***/ })
 
-},[1269]);
+},[1271]);
 //# sourceMappingURL=main.bundle.js.map
