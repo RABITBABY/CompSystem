@@ -82,9 +82,8 @@ public class StudentController {
 	private AwardsMapper awardsMapper;
 	@Autowired
 	private MessageMapper messageMapper;
-	
-	@Autowired  
-    private HttpServletRequest request; 
+	//
+    //private HttpServletRequest request; 
 	/**
 	 * 1.1 获取该竞赛所需的条件
 	 * @return
@@ -114,7 +113,7 @@ public class StudentController {
 	 */
 	@ResponseBody
 	@RequestMapping("/saveMaterial")
-	public void saveMaterial(@RequestParam("file") MultipartFile file,Material material) throws IllegalStateException, IOException{
+	public void saveMaterial(@RequestParam("file") MultipartFile file,Material material,HttpServletRequest request) throws IllegalStateException, IOException{
 		// 判断文件是否为空  
         if (!file.isEmpty()) {  
             try {  
@@ -283,7 +282,7 @@ public class StudentController {
 	 */
 	@ResponseBody
 	@RequestMapping("/updateMaterial")
-	public void updateMaterial(@RequestParam("file") MultipartFile file,Material material) throws IllegalStateException, IOException{
+	public void updateMaterial(@RequestParam("file") MultipartFile file,Material material,HttpServletRequest request) throws IllegalStateException, IOException{
 		// 判断文件是否为空  
         if (!file.isEmpty()) {  
             try {  

@@ -101,8 +101,8 @@ public class TeacherController {
 	private ConditionService conditionService;
 	@Autowired
 	private MessageMapper messageMapper;
-	@Autowired  
-    private HttpServletRequest request; 
+	//@Autowired  
+    //private HttpServletRequest request; 
 	@Autowired  
 	private CompetitionMapper comMapper;
 
@@ -258,7 +258,7 @@ public class TeacherController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/setCompResult")
-	public void setCompResult(@RequestParam("file") MultipartFile file,Awards awards) throws IllegalStateException, IOException{
+	public void setCompResult(@RequestParam("file") MultipartFile file,Awards awards,HttpServletRequest request) throws IllegalStateException, IOException{
 		// 判断文件是否为空  
         if (!file.isEmpty()) {  
             try {  
