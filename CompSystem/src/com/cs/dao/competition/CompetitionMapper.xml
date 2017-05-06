@@ -334,10 +334,10 @@
         #{ispublish,jdbcType=INTEGER},
       </if>
       <if test="isneedgroup != null" >
-        #{isNeedGroup,jdbcType=INTEGER},
+        #{isneedgroup,jdbcType=INTEGER},
       </if>
       <if test="groupnum != null" >
-        #{groupNum,jdbcType=INTEGER},
+        #{groupnum,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
