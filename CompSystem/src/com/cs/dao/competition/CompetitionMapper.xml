@@ -76,6 +76,12 @@
     from competition
     where teacherno = #{teacherno,jdbcType=INTEGER}
   </select>
+  
+  <select id="selectAllComp" resultType="com.cs.pojo.Competition">
+    select 
+    <include refid="Base_Column_List" />
+    from competition
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from competition
     where comId = #{comid,jdbcType=INTEGER}

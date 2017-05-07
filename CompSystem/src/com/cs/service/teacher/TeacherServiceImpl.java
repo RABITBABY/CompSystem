@@ -313,4 +313,9 @@ public class TeacherServiceImpl implements TeacherService {
 		return list;
 	}
 
+	@Override
+	public List<Competition> selectAllComp() {
+		return comMapper.selectAllComp();
+	}
+
 }

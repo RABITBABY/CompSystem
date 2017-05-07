@@ -21,6 +21,8 @@ public interface CompetitionMapper {
      
     
     List<Competition> selectByTeacherno(Integer teacherno);
+    
+    List<Competition> selectAllComp();
 
     int insert(Competition record);
 

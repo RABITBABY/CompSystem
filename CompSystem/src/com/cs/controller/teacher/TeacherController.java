@@ -72,11 +72,12 @@ public class TeacherController {
 	/**
 	 * 1.查看、修改教师个人信息√ 
 	 * 2.管理申报表。 
-	 *   2.1）查看所有申报书审批结果（列表以及结果。）√
+	 *   2.1）根据teacherno查看所有申报书审批结果（列表以及结果。）√
 	 *     2.1.1）根据结果查看申报书，比如，查找所有通过的申报书√ 
 	 *     2.1.2）查看申报书详情√ 
 	 *   2.2）新增 √
 	 *   2.3）修改√、删除√。仅限申报不通过时。
+	 *   2.4）查看所有申报书审批结果（列表以及结果。）√
 	 * 3.查看审批通过的竞赛。 ——》2.1.1）根据结果查看申报书：这两个差不多
 	 *   3.1）查看某个竞赛参与的组别。√ 
 	 *     3.1.1）查看某个组别中的成员√ 
@@ -200,6 +201,16 @@ public class TeacherController {
 	@RequestMapping(value = "/updateComp")
 	public void updateComp(@RequestBody CompetitionInfoVo compVo) {
 		teacherService.updateComp(compVo);
+	}
+	/**
+	 * 2.4查看所有申报书审批结果（列表以及结果。）
+	 * @param teacherNo
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/getAllCompResult")
+	public List<Competition> getAllCompResult() {
+		return teacherService.selectAllComp();
 	}
 
 	/**
