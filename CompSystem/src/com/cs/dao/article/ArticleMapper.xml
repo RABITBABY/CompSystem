@@ -69,4 +69,9 @@ select count(*) from competition.article ar,competition.administer ad
 <update id="addVisit" parameterType="int">
 	update article a set a.visitCount=a.visitCount+1 where a.articleId=#{id}
 </update>
+
+<select id="hotArticle" resultType="com.cs.pojo.Article">
+SELECT * from article where articleType=1 ORDER BY visitCount desc,pubDate desc LIMIT 0,10
+</select>
+
 </mapper>

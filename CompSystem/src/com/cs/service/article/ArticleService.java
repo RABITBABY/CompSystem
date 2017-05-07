@@ -1,5 +1,6 @@
 package com.cs.service.article;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Service;
@@ -22,4 +23,5 @@ public interface ArticleService {
 	
 	void addVisit(int id);
 	String initArticleDetail(String comId);
+	List getHotArticle();
 }

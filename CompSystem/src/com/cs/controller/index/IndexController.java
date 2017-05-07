@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.cs.pojo.Article;
 import com.cs.pojo.Competition;
 import com.cs.pojo.FileUpload;
 import com.cs.pojo.Production;
@@ -315,7 +316,15 @@ public class IndexController {
 	}
 	
 	
-	
+
+	@ResponseBody
+	@RequestMapping("/hotArticle")
+	public  List hotArticle(String department){
+		List<Article> hotList=new ArrayList<Article>();
+		hotList=articlService.getHotArticle();
+		
+		return hotList;
+	}
 	
 	
 }

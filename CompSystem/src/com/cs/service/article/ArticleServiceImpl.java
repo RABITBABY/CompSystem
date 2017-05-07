@@ -228,5 +228,10 @@ public String initArticleDetail(String comId) {
 	System.out.println(articleDetail);
 	return articleDetail.toString();
 }
+@Override
+public List getHotArticle() {
+	
+	return articleMapper.hotArticle();
+}
 
 }
