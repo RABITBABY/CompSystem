@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cs.dao.model.ModelMapper">
+	<resultMap id="BaseResultMap" type="com.cs.pojo.Model">
+	</resultMap>
+
+	<select id="getTotal" resultType="int">
+		select count(*) from model
+	</select>
+
+	<select id="getAllModel" resultType="com.cs.pojo.Model">
+		select * from model limit
+		#{page},#{pageSize}
+	</select>
+	
+	<delete id="delectModel" parameterType="int">
+	DELETE from model where mid=#{mid}
+	</delete>
+	
+	<insert id="insertModel"  parameterType="com.cs.pojo.Model">
+	insert into model(content,adminno) values(#{content},#{adminNo})
+	</insert>
+	
+	<update id="updateModel" parameterType="com.cs.pojo.Model">
+	update model set content=#{content} where mid=#{mid}
+	</update>
+
+</mapper>
