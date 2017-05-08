@@ -125,4 +125,10 @@ public interface TeacherService {
 	 * @return
 	 */
 	public List<Competition> getApproCompList(Integer teacherno);
+	
+	/**
+	 * 获取所有申报列表
+	 * @return
+	 */
+	public List<Competition> selectAllComp();
 }
