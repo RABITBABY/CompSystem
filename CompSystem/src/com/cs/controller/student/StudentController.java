@@ -295,6 +295,7 @@ public class StudentController {
                 file.transferTo(new File(filePath));  
 				
 				//保存进数据库
+                material.setStatus(0);
 				material.setMaterialpic(fileName);
 				materialMapper.updateByPrimaryKey(material);
             } catch (Exception e) {  
