@@ -34,4 +34,8 @@ public class TeacherDaoTest extends AbstractJUnit4SpringContextTests{
 	   buList.add(budget2);
 	   budgetMapper.addCompBudgetBatch(buList);
    }
+   
+   public void selectByTeacherno() {
+	
+}
 }

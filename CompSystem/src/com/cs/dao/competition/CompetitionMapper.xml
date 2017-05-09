@@ -5,6 +5,7 @@
     <id column="comId" property="comid" jdbcType="INTEGER" />
     <result column="comName" property="comname" jdbcType="VARCHAR" />
     <result column="teacherNo" property="teacherno" jdbcType="INTEGER" />
+     <result column="leaderNo" property="leaderNo" jdbcType="INTEGER" />
     <result column="unit" property="unit" jdbcType="VARCHAR" />
     <result column="levelName" property="levelname" jdbcType="VARCHAR" />
     <result column="department" property="department" jdbcType="VARCHAR" />
@@ -87,7 +88,7 @@
     where comId = #{comid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" useGeneratedKeys="true" keyProperty="comid" parameterType="com.cs.pojo.Competition" >
-    insert into competition (comId, comName, teacherNo, 
+    insert into competition (comId, comName, teacherNo, leaderNo,
       unit, levelName, department, 
       date, host, time, place, 
       introduce, object, people, 
@@ -99,7 +100,7 @@
       depSpStatus, teaSpStatus, saveStatus, 
       applyBeginDate, applyEndDate, cost, 
       compStatus, isPublish,isNeedGroup,groupNum)
-    values (#{comid,jdbcType=INTEGER}, #{comname,jdbcType=VARCHAR}, #{teacherno,jdbcType=INTEGER}, 
+    values (#{comid,jdbcType=INTEGER}, #{comname,jdbcType=VARCHAR}, #{teacherno,jdbcType=INTEGER},#{leaderNo,jdbcType=INTEGER}, 
       #{unit,jdbcType=VARCHAR}, #{levelname,jdbcType=VARCHAR}, #{department,jdbcType=VARCHAR}, 
       #{date,jdbcType=DATE}, #{host,jdbcType=VARCHAR}, #{time,jdbcType=DATE}, #{place,jdbcType=VARCHAR}, 
       #{introduce,jdbcType=VARCHAR}, #{object,jdbcType=VARCHAR}, #{people,jdbcType=INTEGER}, 
@@ -123,6 +124,9 @@
       </if>
       <if test="teacherno != null" >
         teacherNo,
+      </if>
+      <if test="leaderNo != null" >
+        leaderNo,
       </if>
       <if test="unit != null" >
         unit,
@@ -240,6 +244,9 @@
       <if test="teacherno != null" >
         #{teacherno,jdbcType=INTEGER},
       </if>
+      <if test="leaderNo != null" >
+        #{leaderNo,jdbcType=INTEGER},
+      </if>
       <if test="unit != null" >
         #{unit,jdbcType=VARCHAR},
       </if>
@@ -355,6 +362,9 @@
       </if>
       <if test="teacherno != null" >
         teacherNo = #{teacherno,jdbcType=INTEGER},
+      </if>
+      <if test="leaderNo != null" >
+        leaderNo = #{leaderNo,jdbcType=INTEGER},
       </if>
       <if test="unit != null" >
         unit = #{unit,jdbcType=VARCHAR},
@@ -480,6 +490,7 @@
     update competition
     set comName = #{comname,jdbcType=VARCHAR},
       teacherNo = #{teacherno,jdbcType=INTEGER},
+      leaderNo = #{leaderNo,jdbcType=INTEGER},
       unit = #{unit,jdbcType=VARCHAR},
       levelName = #{levelname,jdbcType=VARCHAR},
       department = #{department,jdbcType=VARCHAR},

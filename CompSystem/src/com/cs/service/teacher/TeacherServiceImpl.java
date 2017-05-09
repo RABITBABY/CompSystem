@@ -294,11 +294,13 @@ public class TeacherServiceImpl implements TeacherService {
 	public CompetitionInfoVo addOrUpdateComp(CompetitionInfoVo compVo) {
 		Competition competition = compVo.getCompetition();
 		if (competition.getComid()!=null) {
-			CompetitionInfoVo addComp = addComp(compVo);
-			return addComp;
-		}else{
 			CompetitionInfoVo updateComp = updateComp(compVo);
+			
 			return updateComp;
+		}else{
+			CompetitionInfoVo addComp = addComp(compVo);
+			
+			return addComp;
 		}
 	}
 

@@ -75,7 +75,7 @@ public class TeacherController {
 	 *   2.1）根据teacherno查看所有申报书审批结果（列表以及结果。）√
 	 *     2.1.1）根据结果查看申报书，比如，查找所有通过的申报书√ 
 	 *     2.1.2）查看申报书详情√ 
-	 *   2.2）新增 √
+	 *   2.2）新增或保存申报书 √
 	 *   2.3）修改√、删除√。仅限申报不通过时。
 	 *   2.4）查看所有申报书审批结果（列表以及结果。）√
 	 * 3.查看审批通过的竞赛。 ——》2.1.1）根据结果查看申报书：这两个差不多
@@ -130,7 +130,6 @@ public class TeacherController {
 
 	/**
 	 * 2.1根据teacherno查看申报列表及结果
-	 * 
 	 * @param teacherNo
 	 * @return
 	 */
@@ -141,7 +140,7 @@ public class TeacherController {
 	}
 
 	/**
-	 * 2.1.1）根据申报结果查看申报书，比如，查找所有通过的申报书三个条件
+	 * 2.1.1）根据申报结果查看申报书，比如，查找所有通过的申报书 三个条件
 	 * competition.setDepspstatus(depStatus);
 	 *	competition.setTeaspstatus(teaStatusInteger);
 	 *	competition.setTeacherno(1);

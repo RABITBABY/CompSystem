@@ -11,6 +11,8 @@ public class Competition {
     private String comname;
 
     private Integer teacherno;
+    
+    private Integer leaderNo;
 
     private String unit;
 
@@ -396,6 +398,14 @@ public class Competition {
 		this.groupnum = groupnum;
 	}
 
+	public Integer getLeaderNo() {
+		return leaderNo;
+	}
+
+	public void setLeaderNo(Integer leaderNo) {
+		this.leaderNo = leaderNo;
+	}
+
 	@Override
 	public String toString() {
 		return "Competition [comid=" + comid + ", comname=" + comname
@@ -415,7 +425,7 @@ public class Competition {
 				+ applybegindate + ", applyenddate=" + applyenddate + ", cost="
 				+ cost + ", compstatus=" + compstatus + ", ispublish="
 				+ ispublish + ", isneedgroup=" + isneedgroup + ", groupnum="
-				+ groupnum + "]";
+				+ groupnum +"leaderNo="+leaderNo+ "]";
 	}
      
 	
