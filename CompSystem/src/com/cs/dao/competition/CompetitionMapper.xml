@@ -75,13 +75,41 @@
     select 
     <include refid="Base_Column_List" />
     from competition
-    where teacherno = #{teacherno,jdbcType=INTEGER}
+    where teacherno = #{teacherno,jdbcType=INTEGER} and saveStatus=1
+  </select>
+  <!-- 查找该教师没有提交审批的申报表 -->
+  <select id="selectNoSubmitByTeacherNo" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from competition
+    where teacherno = #{teacherno,jdbcType=INTEGER} and saveStatus=0
+  </select>
+  
+   <select id="selectByLeaderNo" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from competition
+    where leaderNo = #{leaderNo,jdbcType=INTEGER} and saveStatus=1
+  </select>
+  
+  <select id="selectScheCompByTeacherNo" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
+    select  c.* from competition c
+	LEFT JOIN schedule s
+	on c.comId=s.comId
+	where s.teacherNo=#{teacherno,jdbcType=INTEGER} and saveStatus=1
+  </select>
+  
+  <select id="selectGuideCompByTeacherNo" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
+    select  c.* from competition c
+	LEFT JOIN guideteacher g
+	on c.comId=g.comId
+	where g.teacherNo=#{teacherno,jdbcType=INTEGER} and saveStatus=1
   </select>
   
   <select id="selectAllComp" resultType="com.cs.pojo.Competition">
     select 
     <include refid="Base_Column_List" />
-    from competition
+    from competition where saveStatus=1
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from competition

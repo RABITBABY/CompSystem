@@ -222,6 +222,7 @@ public class StudentController {
 	 * 5.下载文件。获奖证书
 	 * @return
 	 */
+	@ResponseBody
 	@RequestMapping("/downloadAwards")    
     public ResponseEntity<byte[]> downloadAwards(HttpServletRequest request,Integer awardsId) throws IOException {    
     	Awards awards = awardsMapper.selectByPrimaryKey(awardsId);

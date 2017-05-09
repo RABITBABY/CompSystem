@@ -11,8 +11,10 @@ import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.cs.dao.budget.BudgetMapper;
+import com.cs.dao.competition.CompetitionMapper;
 import com.cs.dao.teacher.TeacherMapper;
 import com.cs.pojo.Budget;
+import com.cs.pojo.Competition;
 import com.cs.pojo.Teacher;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath*:SpringMVC.xml","classpath*:SpringMybatis.xml"})
@@ -21,6 +23,8 @@ public class TeacherDaoTest extends AbstractJUnit4SpringContextTests{
    private TeacherMapper teacherMapper;
    @Autowired
    private BudgetMapper budgetMapper;
+   @Autowired
+   private CompetitionMapper competitionMapper;
    @Test
    public void testAddComp(){
 	   Budget budget1=new Budget();
@@ -34,8 +38,9 @@ public class TeacherDaoTest extends AbstractJUnit4SpringContextTests{
 	   buList.add(budget2);
 	   budgetMapper.addCompBudgetBatch(buList);
    }
-   
+   @Test
    public void selectByTeacherno() {
-	
-}
+	   List<Competition> selectByLeaderNo = competitionMapper.selectByLeaderNo(201118);
+	   System.out.println(selectByLeaderNo.get(0).getComname());
+   }
 }

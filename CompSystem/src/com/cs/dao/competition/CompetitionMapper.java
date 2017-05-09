@@ -15,12 +15,26 @@ public interface CompetitionMapper {
 	/*教学处审批*/
 	int updateByTea(Competition competition);
 	
+	/*查找已经结束的竞赛*/
 	List<Competition> selectEndComp(Integer teacherNo);
 	
+	/*删除*/
     int deleteByPrimaryKey(Integer comid);
      
-    
+    /*查找该教师所申报的竞赛*/
     List<Competition> selectByTeacherno(Integer teacherno);
+    
+    /*查找该教师所负责的竞赛*/
+    List<Competition> selectByLeaderNo(Integer leaderNo);
+    
+    /*查找该教师所负责培训的竞赛*/
+    List<Competition> selectScheCompByTeacherNo(Integer teacherno);
+    
+    /*查找该教师所指导的竞赛*/
+    List<Competition> selectGuideCompByTeacherNo(Integer teacherno);
+    
+    /*查找该教师草稿箱。为提交审批的申报书*/
+    List<Competition> selectNoSubmitByTeacherNo(Integer teacherno);
     
     List<Competition> selectAllComp();
 
@@ -33,9 +47,9 @@ public interface CompetitionMapper {
     int updateByPrimaryKeySelective(Competition record);
 
     int updateByPrimaryKey(Competition record);
-    
+    /*系部待审批的竞赛*/
     List<Competition> examDeptComp(Integer teacherNo);
-    
+    /*教学处待审批的竞赛*/
     List<Competition> examTeaComp(Integer teacherNo);
     
     //max
