@@ -21,6 +21,6 @@ public interface AdministerService {
 	 
 	FileUpload getFile(int fileId);
 	
-	int updateMaterialState(int id);
+	int updateMaterialState(int id,int state);
 }
 

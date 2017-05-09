@@ -25,5 +25,5 @@ public interface MaterialMapper {
     
     int MaterialCount();
     
-    int updateState(int id);
+    int updateState(Map map);
 }

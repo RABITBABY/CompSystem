@@ -602,11 +602,15 @@ public class AdministerController {
 	 */
 	@ResponseBody
 	@RequestMapping("/reviewMaterial")
-	public Map reviewMaterial(String mid){
+	public Map reviewMaterial(String mid,String pass){
 		Map result=new HashMap<String,Object>();
 		int  stateCode=0;
 		int id=Integer.parseInt(ParamUtil.getStr(mid, "0"));
-		stateCode=adminImpl.updateMaterialState(id);
+		int state=Integer.parseInt(ParamUtil.getStr(pass, "1"));
+		if(state==0){
+			state=-1;
+		}
+		stateCode=adminImpl.updateMaterialState(id,state);
 		result.put("stateCode", stateCode);
 		return result;
 	}

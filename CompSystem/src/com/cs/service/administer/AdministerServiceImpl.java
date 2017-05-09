@@ -101,8 +101,11 @@ public PageInfo allMaterial(Map map) {
 	return pageInfo;
 }
 @Override
-public int updateMaterialState(int id) {
-	int state =materialMapper.updateState(id);
-	return state;
+public int updateMaterialState(int id,int state) {
+	Map param=new HashMap<String,Object>();
+	param.put("id", id);
+	param.put("state", state);
+	int stateCode =materialMapper.updateState(param);
+	return stateCode;
 }
 }
