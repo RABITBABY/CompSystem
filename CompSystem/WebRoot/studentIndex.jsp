@@ -75,6 +75,12 @@
 	
 	<a id="btn">btn</a>
 	<img alt="" src="fileUpload/material/173839471.jpg">
+	
+	<form name="Form8"  method="post" id="dowInfo" action="teacher/download">
+	<h1>下载申报表</h1>
+	<input type="text" value="32" name="comId">
+	<input  type="button" value="dowload" id="dowload"/>
+	</form>
 </body>
 <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
 <script type="text/javascript">
@@ -94,6 +100,10 @@
                    
                 }
             });
+    });
+    
+    $("#dowload").click(function(){
+         $("#dowInfo").submit();  
     });
     
     

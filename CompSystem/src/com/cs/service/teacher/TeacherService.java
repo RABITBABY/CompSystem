@@ -1,7 +1,10 @@
 package com.cs.service.teacher;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
+
+import org.apache.commons.io.FileUtils;
 
 import com.cs.pojo.Awards;
 import com.cs.pojo.Competition;
@@ -151,4 +154,6 @@ public interface TeacherService {
 	  * 查找该教师所指导的竞赛
 	  * */
 	public List<Competition>  selectGuideCompByTeacherNo(Integer teacherno);
+
+	File createWord3(Integer comId);
 }
