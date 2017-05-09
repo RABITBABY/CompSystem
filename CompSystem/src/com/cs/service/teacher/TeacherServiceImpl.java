@@ -5,7 +5,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -160,9 +162,94 @@ public class TeacherServiceImpl implements TeacherService {
 		configuration.setDefaultEncoding("UTF-8");
 		File outFile = null;
 		Map<String, Object> dataMap = new HashMap<String, Object>();
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 		try {
 			Competition competition = comMapper.selectByPrimaryKey(comId);
-			dataMap.put("comName", competition.getComname());
+			List<Teacher> guideTeachers = guideTeacherMapper.selectComId(comId);
+			Teacher teacher=teacherMapper.selectByPrimaryKey(competition.getLeaderNo());
+			if (competition.getComname()!=null) {
+				dataMap.put("comName", competition.getComname());
+			}else {
+				dataMap.put("comName","");
+			}
+			if (teacher.getTeachername()!=null) {
+				dataMap.put("leader", teacher.getTeachername());
+			}else {
+				dataMap.put("leader", "");
+			}
+			if (competition.getUnit()!=null) {
+				dataMap.put("unit", competition.getUnit());
+			}else {
+				dataMap.put("unit","");
+			}
+			if (competition.getLevelname()!=null) {
+				dataMap.put("rank", competition.getLevelname());
+			}else {
+				dataMap.put("rank","");
+			}
+			
+			if (competition.getDate()!=null) {
+				Date date = competition.getDate();
+				String format = sdf.format(date);
+				dataMap.put("date",format);
+			}else {
+				dataMap.put("date", "");
+			}
+			if (competition.getHost()!=null) {
+				dataMap.put("host", competition.getHost());
+			}else {
+				dataMap.put("host","");
+			}
+			if(competition.getTime()!=null){
+				 Date time = competition.getTime();
+				 String format = sdf.format(time);
+				dataMap.put("time",format);
+			}else {
+				dataMap.put("time","");
+			}
+			if (competition.getPlace()!=null) {
+				dataMap.put("place", competition.getPlace());
+			}else {
+				dataMap.put("place", "");
+			}
+			if (competition.getObject()!=null) {
+				dataMap.put("object", competition.getObject());
+			}else {
+				dataMap.put("object","");
+			}
+			if (competition.getPeople()!=null) {
+				dataMap.put("people", competition.getPeople());
+			}else {
+				dataMap.put("people", "");
+			}
+			if (competition.getSponsor()!=null) {
+				dataMap.put("sponsor", competition.getSponsor());
+			}else {
+				dataMap.put("sponsor","");
+			}
+			if ( competition.getIntroduce()!=null) {
+				dataMap.put("introduce", competition.getIntroduce());
+			}else {
+				dataMap.put("introduce", "");
+			}
+			if (teacher!=null) {
+				if (teacher.getPhone()!=null) {
+					dataMap.put("phone", teacher.getPhone());
+				}else {
+					dataMap.put("phone","");
+				}
+				if (teacher.getEmail()!=null) {
+					dataMap.put("email", teacher.getEmail());
+				}else {
+					dataMap.put("email","");
+				}
+			}else {
+				dataMap.put("phone","");
+				dataMap.put("email","");
+			}
+
+		    dataMap.put("guideList",guideTeachers);
+
 			// FTL文件所存在的位置
 			configuration.setClassForTemplateLoading(this.getClass(), "/file");
 			Template template = configuration.getTemplate("approveTable.ftl");

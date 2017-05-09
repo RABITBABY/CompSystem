@@ -76,7 +76,7 @@
 	<a id="btn">btn</a>
 	<img alt="" src="fileUpload/material/173839471.jpg">
 	
-	<form name="Form8"  method="post" id="dowInfo" action="teacher/download">
+	<form name="Form8"  method="post" id="dowInfo" action="teacher/getAprroveTable">
 	<h1>下载申报表</h1>
 	<input type="text" value="32" name="comId">
 	<input  type="button" value="dowload" id="dowload"/>

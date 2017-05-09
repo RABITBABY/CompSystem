@@ -11,7 +11,7 @@
 	xmlns:sl="http://schemas.microsoft.com/schemaLibrary/2003/core"
 	w:macrosPresent="no" w:embeddedObjPresent="no" w:ocxPresent="no"
 	xml:space="preserve"><w:ignoreSubtree
-	w:val="http://schemas.microsoft.com/office/word/2003/wordml/sp2" /><o:DocumentProperties><o:Title>华南师范大学增城学院学科竞赛管理办法（修改稿）</o:Title><o:Author>lyn</o:Author><o:LastAuthor>Administrator</o:LastAuthor><o:Revision>2</o:Revision><o:TotalTime>0</o:TotalTime><o:LastPrinted>2012-11-28T03:06:00Z</o:LastPrinted><o:Created>2017-04-06T14:47:00Z</o:Created><o:LastSaved>2017-04-06T14:47:00Z</o:LastSaved><o:Pages>5</o:Pages><o:Words>188</o:Words><o:Characters>1072</o:Characters><o:Company>增城学院</o:Company><o:Lines>8</o:Lines><o:Paragraphs>2</o:Paragraphs><o:CharactersWithSpaces>1258</o:CharactersWithSpaces><o:Version>14</o:Version></o:DocumentProperties><w:fonts><w:defaultFonts
+	w:val="http://schemas.microsoft.com/office/word/2003/wordml/sp2" /><o:DocumentProperties><o:Title>华南师范大学增城学院学科竞赛管理办法（修改稿）</o:Title><o:Author>lyn</o:Author><o:LastAuthor>Administrator</o:LastAuthor><o:Revision>3</o:Revision><o:TotalTime>2</o:TotalTime><o:LastPrinted>2012-11-28T03:06:00Z</o:LastPrinted><o:Created>2017-05-09T17:49:00Z</o:Created><o:LastSaved>2017-05-09T17:51:00Z</o:LastSaved><o:Pages>5</o:Pages><o:Words>185</o:Words><o:Characters>1055</o:Characters><o:Company>增城学院</o:Company><o:Lines>8</o:Lines><o:Paragraphs>2</o:Paragraphs><o:CharactersWithSpaces>1238</o:CharactersWithSpaces><o:Version>14</o:Version></o:DocumentProperties><w:fonts><w:defaultFonts
 	w:ascii="Times New Roman" w:fareast="宋体" w:h-ansi="Times New Roman"
 	w:cs="Times New Roman" /><w:font w:name="Times New Roman"><w:panose-1
 	w:val="02020603050405020304" /><w:charset w:val="00" /><w:family
@@ -1539,8 +1539,7 @@
 	w:val="none" w:sz="0" wx:bdrwidth="0" w:space="0" w:color="auto" /></w:divBdr></w:div></w:divsChild></w:div></w:divs><w:shapeDefaults><o:shapedefaults
 	v:ext="edit" spidmax="2049" /><o:shapelayout v:ext="edit"><o:idmap
 	v:ext="edit" data="1" /></o:shapelayout></w:shapeDefaults><w:docPr><w:view
-	w:val="print" /><w:zoom w:percent="100" /><w:doNotEmbedSystemFonts /><w:bordersDontSurroundHeader /><w:bordersDontSurroundFooter /><w:proofState
-	w:spelling="clean" w:grammar="clean" /><w:stylePaneFormatFilter
+	w:val="print" /><w:zoom w:percent="100" /><w:doNotEmbedSystemFonts /><w:bordersDontSurroundHeader /><w:bordersDontSurroundFooter /><w:stylePaneFormatFilter
 	w:val="3F01" /><w:defaultTabStop w:val="420" /><w:drawingGridHorizontalSpacing
 	w:val="120" /><w:drawingGridVerticalSpacing
 	w:val="163" /><w:displayHorizontalDrawingGridEvery
@@ -1551,10 +1550,10 @@
 	w:val="off" /><w:ignoreMixedContent w:val="off" /><w:alwaysShowPlaceholderText
 	w:val="off" /><w:hdrShapeDefaults><o:shapedefaults
 	v:ext="edit" spidmax="2049" /></w:hdrShapeDefaults><w:footnotePr><w:footnote
-	w:type="separator"><w:p wsp:rsidR="00C5737A" wsp:rsidRDefault="00C5737A"><w:r><w:separator /></w:r></w:p></w:footnote><w:footnote
-	w:type="continuation-separator"><w:p wsp:rsidR="00C5737A" wsp:rsidRDefault="00C5737A"><w:r><w:continuationSeparator /></w:r></w:p></w:footnote></w:footnotePr><w:endnotePr><w:endnote
-	w:type="separator"><w:p wsp:rsidR="00C5737A" wsp:rsidRDefault="00C5737A"><w:r><w:separator /></w:r></w:p></w:endnote><w:endnote
-	w:type="continuation-separator"><w:p wsp:rsidR="00C5737A" wsp:rsidRDefault="00C5737A"><w:r><w:continuationSeparator /></w:r></w:p></w:endnote></w:endnotePr><w:compat><w:spaceForUL /><w:balanceSingleByteDoubleByteWidth /><w:doNotLeaveBackslashAlone /><w:ulTrailSpace /><w:doNotExpandShiftReturn /><w:adjustLineHeightInTable /><w:dontAllowFieldEndSelect /><w:useWord2002TableStyleRules /><w:useFELayout /></w:compat><wsp:rsids><wsp:rsidRoot
+	w:type="separator"><w:p wsp:rsidR="004B6F1C" wsp:rsidRDefault="004B6F1C"><w:r><w:separator /></w:r></w:p></w:footnote><w:footnote
+	w:type="continuation-separator"><w:p wsp:rsidR="004B6F1C" wsp:rsidRDefault="004B6F1C"><w:r><w:continuationSeparator /></w:r></w:p></w:footnote></w:footnotePr><w:endnotePr><w:endnote
+	w:type="separator"><w:p wsp:rsidR="004B6F1C" wsp:rsidRDefault="004B6F1C"><w:r><w:separator /></w:r></w:p></w:endnote><w:endnote
+	w:type="continuation-separator"><w:p wsp:rsidR="004B6F1C" wsp:rsidRDefault="004B6F1C"><w:r><w:continuationSeparator /></w:r></w:p></w:endnote></w:endnotePr><w:compat><w:spaceForUL /><w:balanceSingleByteDoubleByteWidth /><w:doNotLeaveBackslashAlone /><w:ulTrailSpace /><w:doNotExpandShiftReturn /><w:adjustLineHeightInTable /><w:dontAllowFieldEndSelect /><w:useWord2002TableStyleRules /><w:useFELayout /></w:compat><wsp:rsids><wsp:rsidRoot
 	wsp:val="006C0BCC" /><wsp:rsid wsp:val="00001193" /><wsp:rsid
 	wsp:val="000016DF" /><wsp:rsid wsp:val="0000294A" /><wsp:rsid
 	wsp:val="00002FEF" /><wsp:rsid wsp:val="00010D42" /><wsp:rsid
@@ -1568,8 +1567,9 @@
 	wsp:val="00033E2E" /><wsp:rsid wsp:val="00035A4B" /><wsp:rsid
 	wsp:val="00037C09" /><wsp:rsid wsp:val="000451F7" /><wsp:rsid
 	wsp:val="00053A52" /><wsp:rsid wsp:val="00056256" /><wsp:rsid
-	wsp:val="0005720A" /><wsp:rsid wsp:val="00062A79" /><wsp:rsid
-	wsp:val="00064C5F" /><wsp:rsid wsp:val="000740E4" /><wsp:rsid
+	wsp:val="000566BC" /><wsp:rsid wsp:val="0005720A" /><wsp:rsid
+	wsp:val="00062A79" /><wsp:rsid wsp:val="00064C5F" /><wsp:rsid
+	wsp:val="000740E4" /><wsp:rsid wsp:val="0007429F" /><wsp:rsid
 	wsp:val="00075BF7" /><wsp:rsid wsp:val="00075D18" /><wsp:rsid
 	wsp:val="000775BD" /><wsp:rsid wsp:val="00081460" /><wsp:rsid
 	wsp:val="000814A7" /><wsp:rsid wsp:val="000840BF" /><wsp:rsid
@@ -1591,40 +1591,41 @@
 	wsp:val="0012406C" /><wsp:rsid wsp:val="001319E8" /><wsp:rsid
 	wsp:val="001329E3" /><wsp:rsid wsp:val="00141D36" /><wsp:rsid
 	wsp:val="00141F3B" /><wsp:rsid wsp:val="00142342" /><wsp:rsid
-	wsp:val="0014524C" /><wsp:rsid wsp:val="00146806" /><wsp:rsid
-	wsp:val="00146A11" /><wsp:rsid wsp:val="00146DEE" /><wsp:rsid
-	wsp:val="0015123B" /><wsp:rsid wsp:val="0015287D" /><wsp:rsid
-	wsp:val="00155F79" /><wsp:rsid wsp:val="00167333" /><wsp:rsid
-	wsp:val="00170528" /><wsp:rsid wsp:val="00171844" /><wsp:rsid
-	wsp:val="001721B7" /><wsp:rsid wsp:val="001809A8" /><wsp:rsid
-	wsp:val="00180A55" /><wsp:rsid wsp:val="00184EFF" /><wsp:rsid
-	wsp:val="00184F00" /><wsp:rsid wsp:val="00186F90" /><wsp:rsid
-	wsp:val="00187590" /><wsp:rsid wsp:val="00191B01" /><wsp:rsid
-	wsp:val="00194822" /><wsp:rsid wsp:val="00195268" /><wsp:rsid
-	wsp:val="001966B6" /><wsp:rsid wsp:val="001A1ED9" /><wsp:rsid
-	wsp:val="001A30F6" /><wsp:rsid wsp:val="001A72A2" /><wsp:rsid
-	wsp:val="001A776A" /><wsp:rsid wsp:val="001A7B15" /><wsp:rsid
-	wsp:val="001B2D59" /><wsp:rsid wsp:val="001C0DC7" /><wsp:rsid
-	wsp:val="001C2DB2" /><wsp:rsid wsp:val="001C7FBB" /><wsp:rsid
-	wsp:val="001D4883" /><wsp:rsid wsp:val="001D48C1" /><wsp:rsid
-	wsp:val="001D6752" /><wsp:rsid wsp:val="001E0D60" /><wsp:rsid
-	wsp:val="001E26F1" /><wsp:rsid wsp:val="001E5D9C" /><wsp:rsid
-	wsp:val="001E6578" /><wsp:rsid wsp:val="001E72C7" /><wsp:rsid
-	wsp:val="001F0DD5" /><wsp:rsid wsp:val="001F299F" /><wsp:rsid
-	wsp:val="001F5C2F" /><wsp:rsid wsp:val="001F67EF" /><wsp:rsid
-	wsp:val="001F734A" /><wsp:rsid wsp:val="0020202E" /><wsp:rsid
-	wsp:val="00205546" /><wsp:rsid wsp:val="00205921" /><wsp:rsid
-	wsp:val="0021131B" /><wsp:rsid wsp:val="00211603" /><wsp:rsid
-	wsp:val="00211BFB" /><wsp:rsid wsp:val="00214CB6" /><wsp:rsid
-	wsp:val="00215490" /><wsp:rsid wsp:val="00217A79" /><wsp:rsid
-	wsp:val="002200A0" /><wsp:rsid wsp:val="00221443" /><wsp:rsid
-	wsp:val="00221D6C" /><wsp:rsid wsp:val="002276FB" /><wsp:rsid
-	wsp:val="00230915" /><wsp:rsid wsp:val="00230E73" /><wsp:rsid
-	wsp:val="00230F40" /><wsp:rsid wsp:val="00231D73" /><wsp:rsid
-	wsp:val="00233CD3" /><wsp:rsid wsp:val="002377F3" /><wsp:rsid
-	wsp:val="00244A01" /><wsp:rsid wsp:val="0024569C" /><wsp:rsid
-	wsp:val="00250062" /><wsp:rsid wsp:val="002527FA" /><wsp:rsid
-	wsp:val="00254993" /><wsp:rsid wsp:val="00260B82" /><wsp:rsid
+	wsp:val="001448A2" /><wsp:rsid wsp:val="0014524C" /><wsp:rsid
+	wsp:val="00146806" /><wsp:rsid wsp:val="00146A11" /><wsp:rsid
+	wsp:val="00146DEE" /><wsp:rsid wsp:val="0015123B" /><wsp:rsid
+	wsp:val="0015287D" /><wsp:rsid wsp:val="00155F79" /><wsp:rsid
+	wsp:val="00167333" /><wsp:rsid wsp:val="00170528" /><wsp:rsid
+	wsp:val="00171844" /><wsp:rsid wsp:val="001721B7" /><wsp:rsid
+	wsp:val="001809A8" /><wsp:rsid wsp:val="00180A55" /><wsp:rsid
+	wsp:val="00184EFF" /><wsp:rsid wsp:val="00184F00" /><wsp:rsid
+	wsp:val="00186F90" /><wsp:rsid wsp:val="00187590" /><wsp:rsid
+	wsp:val="00191B01" /><wsp:rsid wsp:val="00194822" /><wsp:rsid
+	wsp:val="00195268" /><wsp:rsid wsp:val="001966B6" /><wsp:rsid
+	wsp:val="001A1ED9" /><wsp:rsid wsp:val="001A30F6" /><wsp:rsid
+	wsp:val="001A72A2" /><wsp:rsid wsp:val="001A776A" /><wsp:rsid
+	wsp:val="001A7B15" /><wsp:rsid wsp:val="001B2D59" /><wsp:rsid
+	wsp:val="001C0DC7" /><wsp:rsid wsp:val="001C2DB2" /><wsp:rsid
+	wsp:val="001C7FBB" /><wsp:rsid wsp:val="001D4883" /><wsp:rsid
+	wsp:val="001D48C1" /><wsp:rsid wsp:val="001D6752" /><wsp:rsid
+	wsp:val="001E0D60" /><wsp:rsid wsp:val="001E26F1" /><wsp:rsid
+	wsp:val="001E5D9C" /><wsp:rsid wsp:val="001E6578" /><wsp:rsid
+	wsp:val="001E72C7" /><wsp:rsid wsp:val="001F0DD5" /><wsp:rsid
+	wsp:val="001F299F" /><wsp:rsid wsp:val="001F5C2F" /><wsp:rsid
+	wsp:val="001F67EF" /><wsp:rsid wsp:val="001F734A" /><wsp:rsid
+	wsp:val="0020202E" /><wsp:rsid wsp:val="00205546" /><wsp:rsid
+	wsp:val="00205921" /><wsp:rsid wsp:val="0021131B" /><wsp:rsid
+	wsp:val="00211603" /><wsp:rsid wsp:val="00211BFB" /><wsp:rsid
+	wsp:val="00214CB6" /><wsp:rsid wsp:val="00215490" /><wsp:rsid
+	wsp:val="00217A79" /><wsp:rsid wsp:val="002200A0" /><wsp:rsid
+	wsp:val="00221443" /><wsp:rsid wsp:val="00221D6C" /><wsp:rsid
+	wsp:val="002276FB" /><wsp:rsid wsp:val="00230915" /><wsp:rsid
+	wsp:val="00230E73" /><wsp:rsid wsp:val="00230F40" /><wsp:rsid
+	wsp:val="00231D73" /><wsp:rsid wsp:val="00233CD3" /><wsp:rsid
+	wsp:val="002377F3" /><wsp:rsid wsp:val="00244A01" /><wsp:rsid
+	wsp:val="0024569C" /><wsp:rsid wsp:val="00250062" /><wsp:rsid
+	wsp:val="002527FA" /><wsp:rsid wsp:val="00254993" /><wsp:rsid
+	wsp:val="00260B82" /><wsp:rsid wsp:val="00262846" /><wsp:rsid
 	wsp:val="00263B39" /><wsp:rsid wsp:val="002645CC" /><wsp:rsid
 	wsp:val="0026491F" /><wsp:rsid wsp:val="00264DD0" /><wsp:rsid
 	wsp:val="002742BF" /><wsp:rsid wsp:val="0028143A" /><wsp:rsid
@@ -1634,61 +1635,63 @@
 	wsp:val="002A1C1F" /><wsp:rsid wsp:val="002A1CDD" /><wsp:rsid
 	wsp:val="002A548B" /><wsp:rsid wsp:val="002B2043" /><wsp:rsid
 	wsp:val="002B4ADE" /><wsp:rsid wsp:val="002B4B4F" /><wsp:rsid
-	wsp:val="002B68E9" /><wsp:rsid wsp:val="002B6EA4" /><wsp:rsid
-	wsp:val="002B790D" /><wsp:rsid wsp:val="002C29E7" /><wsp:rsid
-	wsp:val="002C78C5" /><wsp:rsid wsp:val="002D0434" /><wsp:rsid
-	wsp:val="002D0569" /><wsp:rsid wsp:val="002D4F97" /><wsp:rsid
-	wsp:val="002E3E11" /><wsp:rsid wsp:val="002E4BAD" /><wsp:rsid
-	wsp:val="002E66A1" /><wsp:rsid wsp:val="002E785A" /><wsp:rsid
-	wsp:val="002E7EFC" /><wsp:rsid wsp:val="002F53EE" /><wsp:rsid
-	wsp:val="003007AE" /><wsp:rsid wsp:val="00304134" /><wsp:rsid
-	wsp:val="003044F4" /><wsp:rsid wsp:val="0030599A" /><wsp:rsid
-	wsp:val="00310F27" /><wsp:rsid wsp:val="00310FB2" /><wsp:rsid
-	wsp:val="00313654" /><wsp:rsid wsp:val="00313B35" /><wsp:rsid
+	wsp:val="002B510C" /><wsp:rsid wsp:val="002B68E9" /><wsp:rsid
+	wsp:val="002B6EA4" /><wsp:rsid wsp:val="002B790D" /><wsp:rsid
+	wsp:val="002C29E7" /><wsp:rsid wsp:val="002C78C5" /><wsp:rsid
+	wsp:val="002D0434" /><wsp:rsid wsp:val="002D0569" /><wsp:rsid
+	wsp:val="002D4F97" /><wsp:rsid wsp:val="002E3E11" /><wsp:rsid
+	wsp:val="002E4BAD" /><wsp:rsid wsp:val="002E66A1" /><wsp:rsid
+	wsp:val="002E785A" /><wsp:rsid wsp:val="002E7EFC" /><wsp:rsid
+	wsp:val="002F53EE" /><wsp:rsid wsp:val="003007AE" /><wsp:rsid
+	wsp:val="00304134" /><wsp:rsid wsp:val="003044F4" /><wsp:rsid
+	wsp:val="0030599A" /><wsp:rsid wsp:val="00310F27" /><wsp:rsid
+	wsp:val="00310FB2" /><wsp:rsid wsp:val="00313654" /><wsp:rsid
+	wsp:val="00313B35" /><wsp:rsid wsp:val="00313B5B" /><wsp:rsid
 	wsp:val="003176DA" /><wsp:rsid wsp:val="00323ED3" /><wsp:rsid
 	wsp:val="00324D00" /><wsp:rsid wsp:val="00325B74" /><wsp:rsid
 	wsp:val="00336A56" /><wsp:rsid wsp:val="00337500" /><wsp:rsid
 	wsp:val="00340D27" /><wsp:rsid wsp:val="00344DFA" /><wsp:rsid
-	wsp:val="003509B4" /><wsp:rsid wsp:val="0035137F" /><wsp:rsid
-	wsp:val="00353620" /><wsp:rsid wsp:val="00353DD7" /><wsp:rsid
-	wsp:val="00354B03" /><wsp:rsid wsp:val="00355380" /><wsp:rsid
-	wsp:val="0035595C" /><wsp:rsid wsp:val="00364F1C" /><wsp:rsid
-	wsp:val="00373459" /><wsp:rsid wsp:val="003756D0" /><wsp:rsid
-	wsp:val="00377167" /><wsp:rsid wsp:val="0038082A" /><wsp:rsid
-	wsp:val="00384899" /><wsp:rsid wsp:val="00386232" /><wsp:rsid
-	wsp:val="00386E96" /><wsp:rsid wsp:val="00396510" /><wsp:rsid
-	wsp:val="003A247A" /><wsp:rsid wsp:val="003A39C3" /><wsp:rsid
-	wsp:val="003A3F88" /><wsp:rsid wsp:val="003B2041" /><wsp:rsid
-	wsp:val="003B31B7" /><wsp:rsid wsp:val="003B3ADE" /><wsp:rsid
-	wsp:val="003B40E2" /><wsp:rsid wsp:val="003B7805" /><wsp:rsid
-	wsp:val="003C1A01" /><wsp:rsid wsp:val="003C1E88" /><wsp:rsid
-	wsp:val="003C4216" /><wsp:rsid wsp:val="003C70BD" /><wsp:rsid
-	wsp:val="003D1D71" /><wsp:rsid wsp:val="003D287A" /><wsp:rsid
-	wsp:val="003D32B2" /><wsp:rsid wsp:val="003E1C28" /><wsp:rsid
-	wsp:val="003E1E0E" /><wsp:rsid wsp:val="003E3FC0" /><wsp:rsid
-	wsp:val="003E610E" /><wsp:rsid wsp:val="003F42C4" /><wsp:rsid
-	wsp:val="003F49DC" /><wsp:rsid wsp:val="003F62D6" /><wsp:rsid
-	wsp:val="0040182C" /><wsp:rsid wsp:val="0040508A" /><wsp:rsid
-	wsp:val="00410DAE" /><wsp:rsid wsp:val="00421C80" /><wsp:rsid
-	wsp:val="0042388D" /><wsp:rsid wsp:val="0043044D" /><wsp:rsid
-	wsp:val="004352B3" /><wsp:rsid wsp:val="004354BD" /><wsp:rsid
-	wsp:val="0043604E" /><wsp:rsid wsp:val="0043718E" /><wsp:rsid
-	wsp:val="004430B0" /><wsp:rsid wsp:val="004438BC" /><wsp:rsid
-	wsp:val="004443D6" /><wsp:rsid wsp:val="004454DB" /><wsp:rsid
-	wsp:val="00451E99" /><wsp:rsid wsp:val="0045565C" /><wsp:rsid
-	wsp:val="00455B6D" /><wsp:rsid wsp:val="00455E45" /><wsp:rsid
-	wsp:val="00456366" /><wsp:rsid wsp:val="00457DE6" /><wsp:rsid
-	wsp:val="00461EE0" /><wsp:rsid wsp:val="00462B52" /><wsp:rsid
-	wsp:val="00464A42" /><wsp:rsid wsp:val="004652D9" /><wsp:rsid
-	wsp:val="004662C8" /><wsp:rsid wsp:val="00467FD2" /><wsp:rsid
-	wsp:val="00471C21" /><wsp:rsid wsp:val="004805B5" /><wsp:rsid
-	wsp:val="004808C4" /><wsp:rsid wsp:val="0048369F" /><wsp:rsid
-	wsp:val="00483F59" /><wsp:rsid wsp:val="004861F0" /><wsp:rsid
-	wsp:val="00491D9E" /><wsp:rsid wsp:val="00496F5E" /><wsp:rsid
-	wsp:val="00497305" /><wsp:rsid wsp:val="004A04DD" /><wsp:rsid
-	wsp:val="004A1849" /><wsp:rsid wsp:val="004B0CC8" /><wsp:rsid
-	wsp:val="004B1BDD" /><wsp:rsid wsp:val="004B33AC" /><wsp:rsid
-	wsp:val="004B36C0" /><wsp:rsid wsp:val="004C720F" /><wsp:rsid
+	wsp:val="00347744" /><wsp:rsid wsp:val="003509B4" /><wsp:rsid
+	wsp:val="0035137F" /><wsp:rsid wsp:val="00353620" /><wsp:rsid
+	wsp:val="00353DD7" /><wsp:rsid wsp:val="00354B03" /><wsp:rsid
+	wsp:val="00355380" /><wsp:rsid wsp:val="0035595C" /><wsp:rsid
+	wsp:val="00364F1C" /><wsp:rsid wsp:val="00373459" /><wsp:rsid
+	wsp:val="003756D0" /><wsp:rsid wsp:val="00377167" /><wsp:rsid
+	wsp:val="0038082A" /><wsp:rsid wsp:val="00384899" /><wsp:rsid
+	wsp:val="00386232" /><wsp:rsid wsp:val="00386E96" /><wsp:rsid
+	wsp:val="00396510" /><wsp:rsid wsp:val="003A247A" /><wsp:rsid
+	wsp:val="003A39C3" /><wsp:rsid wsp:val="003A3F88" /><wsp:rsid
+	wsp:val="003B2041" /><wsp:rsid wsp:val="003B31B7" /><wsp:rsid
+	wsp:val="003B3ADE" /><wsp:rsid wsp:val="003B40E2" /><wsp:rsid
+	wsp:val="003B7805" /><wsp:rsid wsp:val="003C1A01" /><wsp:rsid
+	wsp:val="003C1E88" /><wsp:rsid wsp:val="003C4216" /><wsp:rsid
+	wsp:val="003C70BD" /><wsp:rsid wsp:val="003D1D71" /><wsp:rsid
+	wsp:val="003D287A" /><wsp:rsid wsp:val="003D32B2" /><wsp:rsid
+	wsp:val="003E1C28" /><wsp:rsid wsp:val="003E1E0E" /><wsp:rsid
+	wsp:val="003E3FC0" /><wsp:rsid wsp:val="003E610E" /><wsp:rsid
+	wsp:val="003F42C4" /><wsp:rsid wsp:val="003F49DC" /><wsp:rsid
+	wsp:val="003F62D6" /><wsp:rsid wsp:val="0040182C" /><wsp:rsid
+	wsp:val="0040508A" /><wsp:rsid wsp:val="00410DAE" /><wsp:rsid
+	wsp:val="00421C80" /><wsp:rsid wsp:val="0042388D" /><wsp:rsid
+	wsp:val="0043044D" /><wsp:rsid wsp:val="004352B3" /><wsp:rsid
+	wsp:val="004354BD" /><wsp:rsid wsp:val="0043604E" /><wsp:rsid
+	wsp:val="0043718E" /><wsp:rsid wsp:val="004430B0" /><wsp:rsid
+	wsp:val="004438BC" /><wsp:rsid wsp:val="004443D6" /><wsp:rsid
+	wsp:val="004454DB" /><wsp:rsid wsp:val="00451E99" /><wsp:rsid
+	wsp:val="0045565C" /><wsp:rsid wsp:val="00455B6D" /><wsp:rsid
+	wsp:val="00455E45" /><wsp:rsid wsp:val="00456366" /><wsp:rsid
+	wsp:val="00457DE6" /><wsp:rsid wsp:val="00461EE0" /><wsp:rsid
+	wsp:val="00462B52" /><wsp:rsid wsp:val="00464A42" /><wsp:rsid
+	wsp:val="004652D9" /><wsp:rsid wsp:val="004662C8" /><wsp:rsid
+	wsp:val="00467FD2" /><wsp:rsid wsp:val="00471C21" /><wsp:rsid
+	wsp:val="004805B5" /><wsp:rsid wsp:val="004808C4" /><wsp:rsid
+	wsp:val="0048369F" /><wsp:rsid wsp:val="00483F59" /><wsp:rsid
+	wsp:val="004861F0" /><wsp:rsid wsp:val="00491D9E" /><wsp:rsid
+	wsp:val="00496F5E" /><wsp:rsid wsp:val="00497305" /><wsp:rsid
+	wsp:val="004A04DD" /><wsp:rsid wsp:val="004A1849" /><wsp:rsid
+	wsp:val="004B0CC8" /><wsp:rsid wsp:val="004B1BDD" /><wsp:rsid
+	wsp:val="004B33AC" /><wsp:rsid wsp:val="004B36C0" /><wsp:rsid
+	wsp:val="004B6F1C" /><wsp:rsid wsp:val="004C720F" /><wsp:rsid
 	wsp:val="004C75B6" /><wsp:rsid wsp:val="004C7AB6" /><wsp:rsid
 	wsp:val="004D055B" /><wsp:rsid wsp:val="004D0D36" /><wsp:rsid
 	wsp:val="004D0EE0" /><wsp:rsid wsp:val="004D25DE" /><wsp:rsid
@@ -1714,19 +1717,20 @@
 	wsp:val="00567C5F" /><wsp:rsid wsp:val="00567C93" /><wsp:rsid
 	wsp:val="005711C8" /><wsp:rsid wsp:val="00576D39" /><wsp:rsid
 	wsp:val="0057749E" /><wsp:rsid wsp:val="00577B71" /><wsp:rsid
-	wsp:val="005839F7" /><wsp:rsid wsp:val="00587327" /><wsp:rsid
-	wsp:val="00592807" /><wsp:rsid wsp:val="005943F5" /><wsp:rsid
-	wsp:val="005946AC" /><wsp:rsid wsp:val="0059626F" /><wsp:rsid
-	wsp:val="0059747E" /><wsp:rsid wsp:val="005A432B" /><wsp:rsid
-	wsp:val="005B0FED" /><wsp:rsid wsp:val="005B180C" /><wsp:rsid
-	wsp:val="005B1A3A" /><wsp:rsid wsp:val="005B4B79" /><wsp:rsid
-	wsp:val="005B5314" /><wsp:rsid wsp:val="005B6E8A" /><wsp:rsid
-	wsp:val="005B7CC6" /><wsp:rsid wsp:val="005C0EA3" /><wsp:rsid
-	wsp:val="005C154B" /><wsp:rsid wsp:val="005C26D0" /><wsp:rsid
-	wsp:val="005C2CF1" /><wsp:rsid wsp:val="005C4B91" /><wsp:rsid
-	wsp:val="005C51F5" /><wsp:rsid wsp:val="005C6B6A" /><wsp:rsid
-	wsp:val="005D1830" /><wsp:rsid wsp:val="005D2CD1" /><wsp:rsid
-	wsp:val="005D2E54" /><wsp:rsid wsp:val="005D3CA7" /><wsp:rsid
+	wsp:val="005839F7" /><wsp:rsid wsp:val="00583E17" /><wsp:rsid
+	wsp:val="00587327" /><wsp:rsid wsp:val="00592807" /><wsp:rsid
+	wsp:val="005943F5" /><wsp:rsid wsp:val="005946AC" /><wsp:rsid
+	wsp:val="0059626F" /><wsp:rsid wsp:val="0059747E" /><wsp:rsid
+	wsp:val="005A432B" /><wsp:rsid wsp:val="005B0FED" /><wsp:rsid
+	wsp:val="005B180C" /><wsp:rsid wsp:val="005B1A3A" /><wsp:rsid
+	wsp:val="005B4B79" /><wsp:rsid wsp:val="005B5314" /><wsp:rsid
+	wsp:val="005B6E8A" /><wsp:rsid wsp:val="005B7CC6" /><wsp:rsid
+	wsp:val="005C0EA3" /><wsp:rsid wsp:val="005C154B" /><wsp:rsid
+	wsp:val="005C26D0" /><wsp:rsid wsp:val="005C2CF1" /><wsp:rsid
+	wsp:val="005C4B91" /><wsp:rsid wsp:val="005C51F5" /><wsp:rsid
+	wsp:val="005C6B6A" /><wsp:rsid wsp:val="005D1830" /><wsp:rsid
+	wsp:val="005D2CD1" /><wsp:rsid wsp:val="005D2E54" /><wsp:rsid
+	wsp:val="005D3CA7" /><wsp:rsid wsp:val="005D5439" /><wsp:rsid
 	wsp:val="005E4A52" /><wsp:rsid wsp:val="005F0F12" /><wsp:rsid
 	wsp:val="005F1400" /><wsp:rsid wsp:val="005F2A35" /><wsp:rsid
 	wsp:val="005F4160" /><wsp:rsid wsp:val="005F4950" /><wsp:rsid
@@ -1744,21 +1748,22 @@
 	wsp:val="00651C64" /><wsp:rsid wsp:val="006520CC" /><wsp:rsid
 	wsp:val="00653885" /><wsp:rsid wsp:val="00656520" /><wsp:rsid
 	wsp:val="0066252E" /><wsp:rsid wsp:val="00662B4C" /><wsp:rsid
-	wsp:val="006679FD" /><wsp:rsid wsp:val="00667DBE" /><wsp:rsid
-	wsp:val="00677DCB" /><wsp:rsid wsp:val="0068209D" /><wsp:rsid
-	wsp:val="006821F3" /><wsp:rsid wsp:val="0068406D" /><wsp:rsid
-	wsp:val="006866DA" /><wsp:rsid wsp:val="00686CFB" /><wsp:rsid
-	wsp:val="006875FF" /><wsp:rsid wsp:val="0069075D" /><wsp:rsid
-	wsp:val="00690894" /><wsp:rsid wsp:val="0069174C" /><wsp:rsid
-	wsp:val="0069299C" /><wsp:rsid wsp:val="00692F7B" /><wsp:rsid
-	wsp:val="00694C5D" /><wsp:rsid wsp:val="00695B0D" /><wsp:rsid
-	wsp:val="006970E7" /><wsp:rsid wsp:val="006A0145" /><wsp:rsid
-	wsp:val="006A57B3" /><wsp:rsid wsp:val="006A7A8F" /><wsp:rsid
-	wsp:val="006B33FA" /><wsp:rsid wsp:val="006C086A" /><wsp:rsid
-	wsp:val="006C0BCC" /><wsp:rsid wsp:val="006C6D40" /><wsp:rsid
-	wsp:val="006C75D8" /><wsp:rsid wsp:val="006C766C" /><wsp:rsid
-	wsp:val="006C7D64" /><wsp:rsid wsp:val="006D0227" /><wsp:rsid
-	wsp:val="006D0CC6" /><wsp:rsid wsp:val="006D131E" /><wsp:rsid
+	wsp:val="00663C13" /><wsp:rsid wsp:val="006679FD" /><wsp:rsid
+	wsp:val="00667DBE" /><wsp:rsid wsp:val="00677DCB" /><wsp:rsid
+	wsp:val="0068209D" /><wsp:rsid wsp:val="006821F3" /><wsp:rsid
+	wsp:val="0068406D" /><wsp:rsid wsp:val="006866DA" /><wsp:rsid
+	wsp:val="00686CFB" /><wsp:rsid wsp:val="006875FF" /><wsp:rsid
+	wsp:val="0069075D" /><wsp:rsid wsp:val="00690894" /><wsp:rsid
+	wsp:val="0069174C" /><wsp:rsid wsp:val="0069299C" /><wsp:rsid
+	wsp:val="00692F7B" /><wsp:rsid wsp:val="00694C5D" /><wsp:rsid
+	wsp:val="00695B0D" /><wsp:rsid wsp:val="006970E7" /><wsp:rsid
+	wsp:val="006A0145" /><wsp:rsid wsp:val="006A57B3" /><wsp:rsid
+	wsp:val="006A7A8F" /><wsp:rsid wsp:val="006B33FA" /><wsp:rsid
+	wsp:val="006C086A" /><wsp:rsid wsp:val="006C0BCC" /><wsp:rsid
+	wsp:val="006C6D40" /><wsp:rsid wsp:val="006C75D8" /><wsp:rsid
+	wsp:val="006C766C" /><wsp:rsid wsp:val="006C7D64" /><wsp:rsid
+	wsp:val="006D0227" /><wsp:rsid wsp:val="006D0CC6" /><wsp:rsid
+	wsp:val="006D131E" /><wsp:rsid wsp:val="006D25BA" /><wsp:rsid
 	wsp:val="006D6079" /><wsp:rsid wsp:val="006D6C4D" /><wsp:rsid
 	wsp:val="006E177B" /><wsp:rsid wsp:val="006E33AD" /><wsp:rsid
 	wsp:val="006F016D" /><wsp:rsid wsp:val="006F0E17" /><wsp:rsid
@@ -1771,72 +1776,73 @@
 	wsp:val="00711A55" /><wsp:rsid wsp:val="00711CF5" /><wsp:rsid
 	wsp:val="00714E89" /><wsp:rsid wsp:val="00715C49" /><wsp:rsid
 	wsp:val="00717687" /><wsp:rsid wsp:val="00721C63" /><wsp:rsid
-	wsp:val="00722090" /><wsp:rsid wsp:val="00733A53" /><wsp:rsid
-	wsp:val="00734456" /><wsp:rsid wsp:val="0073730D" /><wsp:rsid
-	wsp:val="0074073F" /><wsp:rsid wsp:val="00745317" /><wsp:rsid
-	wsp:val="00746AEA" /><wsp:rsid wsp:val="00750712" /><wsp:rsid
-	wsp:val="00752846" /><wsp:rsid wsp:val="00753E95" /><wsp:rsid
-	wsp:val="00754F85" /><wsp:rsid wsp:val="0075522F" /><wsp:rsid
-	wsp:val="0075631D" /><wsp:rsid wsp:val="007637CE" /><wsp:rsid
-	wsp:val="00763C0A" /><wsp:rsid wsp:val="00764F15" /><wsp:rsid
-	wsp:val="007670EC" /><wsp:rsid wsp:val="00773E2A" /><wsp:rsid
-	wsp:val="00774D51" /><wsp:rsid wsp:val="00775DC1" /><wsp:rsid
-	wsp:val="0078060E" /><wsp:rsid wsp:val="00782FCB" /><wsp:rsid
-	wsp:val="00783216" /><wsp:rsid wsp:val="007844FB" /><wsp:rsid
-	wsp:val="0078685E" /><wsp:rsid wsp:val="00793176" /><wsp:rsid
-	wsp:val="00796A7B" /><wsp:rsid wsp:val="00797761" /><wsp:rsid
-	wsp:val="00797B91" /><wsp:rsid wsp:val="00797BDE" /><wsp:rsid
-	wsp:val="007A0F1C" /><wsp:rsid wsp:val="007A7C2D" /><wsp:rsid
-	wsp:val="007B275C" /><wsp:rsid wsp:val="007C4E11" /><wsp:rsid
-	wsp:val="007D20CF" /><wsp:rsid wsp:val="007D6B95" /><wsp:rsid
-	wsp:val="007E00E6" /><wsp:rsid wsp:val="007E0CB9" /><wsp:rsid
-	wsp:val="007E1D5D" /><wsp:rsid wsp:val="007E1E22" /><wsp:rsid
-	wsp:val="007E249E" /><wsp:rsid wsp:val="007E4CCA" /><wsp:rsid
-	wsp:val="007F066C" /><wsp:rsid wsp:val="007F1CCA" /><wsp:rsid
-	wsp:val="007F2403" /><wsp:rsid wsp:val="007F31CF" /><wsp:rsid
-	wsp:val="007F55E3" /><wsp:rsid wsp:val="007F78E3" /><wsp:rsid
-	wsp:val="007F7CE0" /><wsp:rsid wsp:val="00800C68" /><wsp:rsid
-	wsp:val="008011B2" /><wsp:rsid wsp:val="00801878" /><wsp:rsid
-	wsp:val="00801B36" /><wsp:rsid wsp:val="00804C14" /><wsp:rsid
-	wsp:val="00813940" /><wsp:rsid wsp:val="00815982" /><wsp:rsid
-	wsp:val="008168CF" /><wsp:rsid wsp:val="00822887" /><wsp:rsid
-	wsp:val="008303F1" /><wsp:rsid wsp:val="0083040F" /><wsp:rsid
-	wsp:val="008360BA" /><wsp:rsid wsp:val="00837F54" /><wsp:rsid
-	wsp:val="00843427" /><wsp:rsid wsp:val="00844102" /><wsp:rsid
-	wsp:val="00844F10" /><wsp:rsid wsp:val="00850C84" /><wsp:rsid
-	wsp:val="00860D94" /><wsp:rsid wsp:val="00865C97" /><wsp:rsid
-	wsp:val="00867AC6" /><wsp:rsid wsp:val="00873C8B" /><wsp:rsid
-	wsp:val="00882F55" /><wsp:rsid wsp:val="00886CC6" /><wsp:rsid
-	wsp:val="00887710" /><wsp:rsid wsp:val="008910CF" /><wsp:rsid
-	wsp:val="00893B04" /><wsp:rsid wsp:val="008977A0" /><wsp:rsid
-	wsp:val="008A0711" /><wsp:rsid wsp:val="008A2049" /><wsp:rsid
-	wsp:val="008B0B99" /><wsp:rsid wsp:val="008B4A66" /><wsp:rsid
-	wsp:val="008B6D96" /><wsp:rsid wsp:val="008B7A73" /><wsp:rsid
-	wsp:val="008C021A" /><wsp:rsid wsp:val="008C02DF" /><wsp:rsid
-	wsp:val="008C2064" /><wsp:rsid wsp:val="008C6131" /><wsp:rsid
-	wsp:val="008D0FE5" /><wsp:rsid wsp:val="008D2867" /><wsp:rsid
-	wsp:val="008D5839" /><wsp:rsid wsp:val="008E5A4E" /><wsp:rsid
-	wsp:val="008E760D" /><wsp:rsid wsp:val="008F0E12" /><wsp:rsid
+	wsp:val="00722090" /><wsp:rsid wsp:val="0073309E" /><wsp:rsid
+	wsp:val="00733A53" /><wsp:rsid wsp:val="00734456" /><wsp:rsid
+	wsp:val="0073730D" /><wsp:rsid wsp:val="0074073F" /><wsp:rsid
+	wsp:val="00745317" /><wsp:rsid wsp:val="00746AEA" /><wsp:rsid
+	wsp:val="00750712" /><wsp:rsid wsp:val="00752846" /><wsp:rsid
+	wsp:val="00753E95" /><wsp:rsid wsp:val="00754F85" /><wsp:rsid
+	wsp:val="0075522F" /><wsp:rsid wsp:val="0075631D" /><wsp:rsid
+	wsp:val="007637CE" /><wsp:rsid wsp:val="00763C0A" /><wsp:rsid
+	wsp:val="00764F15" /><wsp:rsid wsp:val="007670EC" /><wsp:rsid
+	wsp:val="00773E2A" /><wsp:rsid wsp:val="00774D51" /><wsp:rsid
+	wsp:val="00775DC1" /><wsp:rsid wsp:val="0078060E" /><wsp:rsid
+	wsp:val="00782FCB" /><wsp:rsid wsp:val="00783216" /><wsp:rsid
+	wsp:val="007844FB" /><wsp:rsid wsp:val="0078685E" /><wsp:rsid
+	wsp:val="00793176" /><wsp:rsid wsp:val="00796A7B" /><wsp:rsid
+	wsp:val="00797761" /><wsp:rsid wsp:val="00797B91" /><wsp:rsid
+	wsp:val="00797BDE" /><wsp:rsid wsp:val="007A0F1C" /><wsp:rsid
+	wsp:val="007A7C2D" /><wsp:rsid wsp:val="007B275C" /><wsp:rsid
+	wsp:val="007C4E11" /><wsp:rsid wsp:val="007D20CF" /><wsp:rsid
+	wsp:val="007D6B95" /><wsp:rsid wsp:val="007E00E6" /><wsp:rsid
+	wsp:val="007E0CB9" /><wsp:rsid wsp:val="007E1D5D" /><wsp:rsid
+	wsp:val="007E1E22" /><wsp:rsid wsp:val="007E249E" /><wsp:rsid
+	wsp:val="007E4CCA" /><wsp:rsid wsp:val="007F066C" /><wsp:rsid
+	wsp:val="007F1CCA" /><wsp:rsid wsp:val="007F2403" /><wsp:rsid
+	wsp:val="007F31CF" /><wsp:rsid wsp:val="007F55E3" /><wsp:rsid
+	wsp:val="007F78E3" /><wsp:rsid wsp:val="007F7CE0" /><wsp:rsid
+	wsp:val="00800C68" /><wsp:rsid wsp:val="008011B2" /><wsp:rsid
+	wsp:val="00801878" /><wsp:rsid wsp:val="00801B36" /><wsp:rsid
+	wsp:val="00804C14" /><wsp:rsid wsp:val="00813940" /><wsp:rsid
+	wsp:val="00815982" /><wsp:rsid wsp:val="008168CF" /><wsp:rsid
+	wsp:val="00822887" /><wsp:rsid wsp:val="008303F1" /><wsp:rsid
+	wsp:val="0083040F" /><wsp:rsid wsp:val="008360BA" /><wsp:rsid
+	wsp:val="00837F54" /><wsp:rsid wsp:val="00843427" /><wsp:rsid
+	wsp:val="00844102" /><wsp:rsid wsp:val="00844F10" /><wsp:rsid
+	wsp:val="00850C84" /><wsp:rsid wsp:val="00860D94" /><wsp:rsid
+	wsp:val="00865C97" /><wsp:rsid wsp:val="00867AC6" /><wsp:rsid
+	wsp:val="00873C8B" /><wsp:rsid wsp:val="00882F55" /><wsp:rsid
+	wsp:val="00886CC6" /><wsp:rsid wsp:val="00887710" /><wsp:rsid
+	wsp:val="008910CF" /><wsp:rsid wsp:val="00893B04" /><wsp:rsid
+	wsp:val="008977A0" /><wsp:rsid wsp:val="008A0711" /><wsp:rsid
+	wsp:val="008A2049" /><wsp:rsid wsp:val="008B0B99" /><wsp:rsid
+	wsp:val="008B4A66" /><wsp:rsid wsp:val="008B6D96" /><wsp:rsid
+	wsp:val="008B7A73" /><wsp:rsid wsp:val="008C021A" /><wsp:rsid
+	wsp:val="008C02DF" /><wsp:rsid wsp:val="008C2064" /><wsp:rsid
+	wsp:val="008C6131" /><wsp:rsid wsp:val="008D0FE5" /><wsp:rsid
+	wsp:val="008D2867" /><wsp:rsid wsp:val="008D5839" /><wsp:rsid
+	wsp:val="008E5A4E" /><wsp:rsid wsp:val="008F0E12" /><wsp:rsid
 	wsp:val="008F2945" /><wsp:rsid wsp:val="008F5D32" /><wsp:rsid
 	wsp:val="008F71D7" /><wsp:rsid wsp:val="009040CE" /><wsp:rsid
-	wsp:val="00904F37" /><wsp:rsid wsp:val="00920DBD" /><wsp:rsid
-	wsp:val="00922A4B" /><wsp:rsid wsp:val="00930785" /><wsp:rsid
-	wsp:val="00931248" /><wsp:rsid wsp:val="0093207E" /><wsp:rsid
-	wsp:val="00934639" /><wsp:rsid wsp:val="00942DF6" /><wsp:rsid
-	wsp:val="009463F7" /><wsp:rsid wsp:val="00952687" /><wsp:rsid
-	wsp:val="00956575" /><wsp:rsid wsp:val="00956D7F" /><wsp:rsid
-	wsp:val="0095771D" /><wsp:rsid wsp:val="00957F12" /><wsp:rsid
-	wsp:val="00960FE2" /><wsp:rsid wsp:val="009666DC" /><wsp:rsid
-	wsp:val="0096733B" /><wsp:rsid wsp:val="009702C9" /><wsp:rsid
-	wsp:val="009727F3" /><wsp:rsid wsp:val="00976B37" /><wsp:rsid
-	wsp:val="00983437" /><wsp:rsid wsp:val="009835C7" /><wsp:rsid
-	wsp:val="00985531" /><wsp:rsid wsp:val="00985EC9" /><wsp:rsid
-	wsp:val="00986D83" /><wsp:rsid wsp:val="00986F8A" /><wsp:rsid
-	wsp:val="0099140B" /><wsp:rsid wsp:val="009959FC" /><wsp:rsid
-	wsp:val="00995A01" /><wsp:rsid wsp:val="00995AA4" /><wsp:rsid
-	wsp:val="00997666" /><wsp:rsid wsp:val="009A04D1" /><wsp:rsid
-	wsp:val="009A26D4" /><wsp:rsid wsp:val="009A4181" /><wsp:rsid
-	wsp:val="009A7FA5" /><wsp:rsid wsp:val="009B1EA5" /><wsp:rsid
+	wsp:val="00904DC7" /><wsp:rsid wsp:val="00904F37" /><wsp:rsid
+	wsp:val="00920DBD" /><wsp:rsid wsp:val="00922A4B" /><wsp:rsid
+	wsp:val="00930785" /><wsp:rsid wsp:val="00931248" /><wsp:rsid
+	wsp:val="0093207E" /><wsp:rsid wsp:val="00934639" /><wsp:rsid
+	wsp:val="00942DF6" /><wsp:rsid wsp:val="009463F7" /><wsp:rsid
+	wsp:val="00952687" /><wsp:rsid wsp:val="00956575" /><wsp:rsid
+	wsp:val="00956D7F" /><wsp:rsid wsp:val="0095771D" /><wsp:rsid
+	wsp:val="00957F12" /><wsp:rsid wsp:val="00960FE2" /><wsp:rsid
+	wsp:val="009666DC" /><wsp:rsid wsp:val="0096733B" /><wsp:rsid
+	wsp:val="009702C9" /><wsp:rsid wsp:val="009727F3" /><wsp:rsid
+	wsp:val="00976B37" /><wsp:rsid wsp:val="00983437" /><wsp:rsid
+	wsp:val="009835C7" /><wsp:rsid wsp:val="00985531" /><wsp:rsid
+	wsp:val="00985EC9" /><wsp:rsid wsp:val="00986D83" /><wsp:rsid
+	wsp:val="00986F8A" /><wsp:rsid wsp:val="0099140B" /><wsp:rsid
+	wsp:val="009959FC" /><wsp:rsid wsp:val="00995A01" /><wsp:rsid
+	wsp:val="00995AA4" /><wsp:rsid wsp:val="00997666" /><wsp:rsid
+	wsp:val="009A04D1" /><wsp:rsid wsp:val="009A26D4" /><wsp:rsid
+	wsp:val="009A4181" /><wsp:rsid wsp:val="009A7FA5" /><wsp:rsid
+	wsp:val="009B1EA5" /><wsp:rsid wsp:val="009B24F0" /><wsp:rsid
 	wsp:val="009B46C1" /><wsp:rsid wsp:val="009B5F86" /><wsp:rsid
 	wsp:val="009B7921" /><wsp:rsid wsp:val="009C018C" /><wsp:rsid
 	wsp:val="009C2CD4" /><wsp:rsid wsp:val="009C5819" /><wsp:rsid
@@ -1849,27 +1855,29 @@
 	wsp:val="009E7A2D" /><wsp:rsid wsp:val="009F1629" /><wsp:rsid
 	wsp:val="009F38CC" /><wsp:rsid wsp:val="009F4188" /><wsp:rsid
 	wsp:val="009F4FE6" /><wsp:rsid wsp:val="009F7785" /><wsp:rsid
-	wsp:val="00A00EEE" /><wsp:rsid wsp:val="00A0410D" /><wsp:rsid
-	wsp:val="00A07E35" /><wsp:rsid wsp:val="00A12E9F" /><wsp:rsid
-	wsp:val="00A14502" /><wsp:rsid wsp:val="00A14ACD" /><wsp:rsid
-	wsp:val="00A15AAC" /><wsp:rsid wsp:val="00A16A5C" /><wsp:rsid
-	wsp:val="00A20021" /><wsp:rsid wsp:val="00A202CF" /><wsp:rsid
-	wsp:val="00A21B3B" /><wsp:rsid wsp:val="00A26883" /><wsp:rsid
-	wsp:val="00A277A2" /><wsp:rsid wsp:val="00A34ADD" /><wsp:rsid
-	wsp:val="00A5078B" /><wsp:rsid wsp:val="00A547A8" /><wsp:rsid
+	wsp:val="00A00EEE" /><wsp:rsid wsp:val="00A03C5E" /><wsp:rsid
+	wsp:val="00A0410D" /><wsp:rsid wsp:val="00A07E35" /><wsp:rsid
+	wsp:val="00A12E9F" /><wsp:rsid wsp:val="00A14502" /><wsp:rsid
+	wsp:val="00A14ACD" /><wsp:rsid wsp:val="00A15AAC" /><wsp:rsid
+	wsp:val="00A16A5C" /><wsp:rsid wsp:val="00A20021" /><wsp:rsid
+	wsp:val="00A202CF" /><wsp:rsid wsp:val="00A21B3B" /><wsp:rsid
+	wsp:val="00A26883" /><wsp:rsid wsp:val="00A277A2" /><wsp:rsid
+	wsp:val="00A34ADD" /><wsp:rsid wsp:val="00A5078B" /><wsp:rsid
+	wsp:val="00A547A8" /><wsp:rsid wsp:val="00A60D57" /><wsp:rsid
 	wsp:val="00A64F64" /><wsp:rsid wsp:val="00A73F2A" /><wsp:rsid
 	wsp:val="00A74356" /><wsp:rsid wsp:val="00A751F9" /><wsp:rsid
 	wsp:val="00A759BD" /><wsp:rsid wsp:val="00A82523" /><wsp:rsid
 	wsp:val="00A844F5" /><wsp:rsid wsp:val="00A8586C" /><wsp:rsid
 	wsp:val="00A86545" /><wsp:rsid wsp:val="00A90FB2" /><wsp:rsid
-	wsp:val="00A91C52" /><wsp:rsid wsp:val="00A9482B" /><wsp:rsid
-	wsp:val="00A9509B" /><wsp:rsid wsp:val="00A95DEB" /><wsp:rsid
-	wsp:val="00A96841" /><wsp:rsid wsp:val="00AA32A2" /><wsp:rsid
-	wsp:val="00AA3910" /><wsp:rsid wsp:val="00AA7BB0" /><wsp:rsid
-	wsp:val="00AB1344" /><wsp:rsid wsp:val="00AB1F90" /><wsp:rsid
-	wsp:val="00AB384B" /><wsp:rsid wsp:val="00AB57CA" /><wsp:rsid
-	wsp:val="00AC1AC6" /><wsp:rsid wsp:val="00AC2B8B" /><wsp:rsid
-	wsp:val="00AC356A" /><wsp:rsid wsp:val="00AC4699" /><wsp:rsid
+	wsp:val="00A91C52" /><wsp:rsid wsp:val="00A92631" /><wsp:rsid
+	wsp:val="00A9482B" /><wsp:rsid wsp:val="00A9509B" /><wsp:rsid
+	wsp:val="00A95DEB" /><wsp:rsid wsp:val="00A96841" /><wsp:rsid
+	wsp:val="00AA32A2" /><wsp:rsid wsp:val="00AA3910" /><wsp:rsid
+	wsp:val="00AA7BB0" /><wsp:rsid wsp:val="00AB1344" /><wsp:rsid
+	wsp:val="00AB1F90" /><wsp:rsid wsp:val="00AB384B" /><wsp:rsid
+	wsp:val="00AB57CA" /><wsp:rsid wsp:val="00AC1AC6" /><wsp:rsid
+	wsp:val="00AC2B8B" /><wsp:rsid wsp:val="00AC356A" /><wsp:rsid
+	wsp:val="00AC3EF6" /><wsp:rsid wsp:val="00AC4699" /><wsp:rsid
 	wsp:val="00AC62CC" /><wsp:rsid wsp:val="00AD0393" /><wsp:rsid
 	wsp:val="00AD112E" /><wsp:rsid wsp:val="00AD11A7" /><wsp:rsid
 	wsp:val="00AD634A" /><wsp:rsid wsp:val="00AE0552" /><wsp:rsid
@@ -1919,75 +1927,77 @@
 	wsp:val="00C4319C" /><wsp:rsid wsp:val="00C45B2A" /><wsp:rsid
 	wsp:val="00C46677" /><wsp:rsid wsp:val="00C550A6" /><wsp:rsid
 	wsp:val="00C55A5C" /><wsp:rsid wsp:val="00C57022" /><wsp:rsid
-	wsp:val="00C5737A" /><wsp:rsid wsp:val="00C5780F" /><wsp:rsid
-	wsp:val="00C61C7B" /><wsp:rsid wsp:val="00C638A9" /><wsp:rsid
-	wsp:val="00C63946" /><wsp:rsid wsp:val="00C64BAB" /><wsp:rsid
-	wsp:val="00C6776E" /><wsp:rsid wsp:val="00C71816" /><wsp:rsid
-	wsp:val="00C72887" /><wsp:rsid wsp:val="00C809CD" /><wsp:rsid
-	wsp:val="00C8372E" /><wsp:rsid wsp:val="00C90F1F" /><wsp:rsid
+	wsp:val="00C5780F" /><wsp:rsid wsp:val="00C61C7B" /><wsp:rsid
+	wsp:val="00C638A9" /><wsp:rsid wsp:val="00C63946" /><wsp:rsid
+	wsp:val="00C64BAB" /><wsp:rsid wsp:val="00C6776E" /><wsp:rsid
+	wsp:val="00C71816" /><wsp:rsid wsp:val="00C72887" /><wsp:rsid
+	wsp:val="00C809CD" /><wsp:rsid wsp:val="00C8372E" /><wsp:rsid
+	wsp:val="00C90F1F" /><wsp:rsid wsp:val="00CA7D3E" /><wsp:rsid
 	wsp:val="00CA7F22" /><wsp:rsid wsp:val="00CB3F72" /><wsp:rsid
 	wsp:val="00CB4205" /><wsp:rsid wsp:val="00CB49F5" /><wsp:rsid
-	wsp:val="00CC50D4" /><wsp:rsid wsp:val="00CD4DE0" /><wsp:rsid
-	wsp:val="00CD5C48" /><wsp:rsid wsp:val="00CE2A2B" /><wsp:rsid
-	wsp:val="00CF13E3" /><wsp:rsid wsp:val="00CF30DF" /><wsp:rsid
-	wsp:val="00CF3CD0" /><wsp:rsid wsp:val="00D03260" /><wsp:rsid
-	wsp:val="00D10E69" /><wsp:rsid wsp:val="00D11370" /><wsp:rsid
-	wsp:val="00D14060" /><wsp:rsid wsp:val="00D23D02" /><wsp:rsid
-	wsp:val="00D317A0" /><wsp:rsid wsp:val="00D33500" /><wsp:rsid
-	wsp:val="00D34A27" /><wsp:rsid wsp:val="00D36C5A" /><wsp:rsid
-	wsp:val="00D41CDB" /><wsp:rsid wsp:val="00D41ED7" /><wsp:rsid
-	wsp:val="00D5180F" /><wsp:rsid wsp:val="00D52076" /><wsp:rsid
-	wsp:val="00D52198" /><wsp:rsid wsp:val="00D54502" /><wsp:rsid
-	wsp:val="00D55D0E" /><wsp:rsid wsp:val="00D55D96" /><wsp:rsid
-	wsp:val="00D55FAF" /><wsp:rsid wsp:val="00D56746" /><wsp:rsid
-	wsp:val="00D61131" /><wsp:rsid wsp:val="00D6129A" /><wsp:rsid
-	wsp:val="00D61B86" /><wsp:rsid wsp:val="00D61BED" /><wsp:rsid
-	wsp:val="00D641EE" /><wsp:rsid wsp:val="00D679AC" /><wsp:rsid
-	wsp:val="00D76581" /><wsp:rsid wsp:val="00D83F6B" /><wsp:rsid
-	wsp:val="00D84363" /><wsp:rsid wsp:val="00D85AD9" /><wsp:rsid
-	wsp:val="00D87F09" /><wsp:rsid wsp:val="00D90452" /><wsp:rsid
-	wsp:val="00D908DA" /><wsp:rsid wsp:val="00D91F1D" /><wsp:rsid
-	wsp:val="00D91F74" /><wsp:rsid wsp:val="00D93564" /><wsp:rsid
-	wsp:val="00DA01E0" /><wsp:rsid wsp:val="00DA0786" /><wsp:rsid
-	wsp:val="00DA0BAF" /><wsp:rsid wsp:val="00DA2645" /><wsp:rsid
-	wsp:val="00DA2F09" /><wsp:rsid wsp:val="00DA5A1B" /><wsp:rsid
-	wsp:val="00DA73C2" /><wsp:rsid wsp:val="00DB0257" /><wsp:rsid
-	wsp:val="00DB40D1" /><wsp:rsid wsp:val="00DB4959" /><wsp:rsid
-	wsp:val="00DB5F27" /><wsp:rsid wsp:val="00DC0DD0" /><wsp:rsid
-	wsp:val="00DC0F8E" /><wsp:rsid wsp:val="00DC1B23" /><wsp:rsid
-	wsp:val="00DC7E02" /><wsp:rsid wsp:val="00DD0CEC" /><wsp:rsid
-	wsp:val="00DD25F9" /><wsp:rsid wsp:val="00DD35E3" /><wsp:rsid
-	wsp:val="00DD6E92" /><wsp:rsid wsp:val="00DD75C8" /><wsp:rsid
-	wsp:val="00DE02A6" /><wsp:rsid wsp:val="00DE56B4" /><wsp:rsid
-	wsp:val="00DE79A1" /><wsp:rsid wsp:val="00DE7A25" /><wsp:rsid
-	wsp:val="00DF0072" /><wsp:rsid wsp:val="00DF0083" /><wsp:rsid
-	wsp:val="00DF1221" /><wsp:rsid wsp:val="00DF1DB1" /><wsp:rsid
-	wsp:val="00DF1EAB" /><wsp:rsid wsp:val="00DF550F" /><wsp:rsid
-	wsp:val="00DF609F" /><wsp:rsid wsp:val="00DF77E8" /><wsp:rsid
-	wsp:val="00E036A8" /><wsp:rsid wsp:val="00E0485D" /><wsp:rsid
-	wsp:val="00E05D77" /><wsp:rsid wsp:val="00E06907" /><wsp:rsid
-	wsp:val="00E113DD" /><wsp:rsid wsp:val="00E115DB" /><wsp:rsid
-	wsp:val="00E11795" /><wsp:rsid wsp:val="00E127B6" /><wsp:rsid
-	wsp:val="00E1648A" /><wsp:rsid wsp:val="00E16732" /><wsp:rsid
-	wsp:val="00E16971" /><wsp:rsid wsp:val="00E177BC" /><wsp:rsid
-	wsp:val="00E2189D" /><wsp:rsid wsp:val="00E226D6" /><wsp:rsid
-	wsp:val="00E233CB" /><wsp:rsid wsp:val="00E2681E" /><wsp:rsid
-	wsp:val="00E27E6C" /><wsp:rsid wsp:val="00E3146E" /><wsp:rsid
-	wsp:val="00E324B6" /><wsp:rsid wsp:val="00E32CF7" /><wsp:rsid
-	wsp:val="00E34887" /><wsp:rsid wsp:val="00E3525E" /><wsp:rsid
-	wsp:val="00E36161" /><wsp:rsid wsp:val="00E414AB" /><wsp:rsid
-	wsp:val="00E46DF8" /><wsp:rsid wsp:val="00E55506" /><wsp:rsid
-	wsp:val="00E57D38" /><wsp:rsid wsp:val="00E612EC" /><wsp:rsid
-	wsp:val="00E64194" /><wsp:rsid wsp:val="00E663E5" /><wsp:rsid
-	wsp:val="00E67900" /><wsp:rsid wsp:val="00E70098" /><wsp:rsid
-	wsp:val="00E7283A" /><wsp:rsid wsp:val="00E74D9F" /><wsp:rsid
-	wsp:val="00E75B3C" /><wsp:rsid wsp:val="00E861D6" /><wsp:rsid
-	wsp:val="00E8701D" /><wsp:rsid wsp:val="00E90519" /><wsp:rsid
-	wsp:val="00E90C61" /><wsp:rsid wsp:val="00E9488A" /><wsp:rsid
-	wsp:val="00E95D8F" /><wsp:rsid wsp:val="00E97D83" /><wsp:rsid
-	wsp:val="00E97E42" /><wsp:rsid wsp:val="00EA0CC9" /><wsp:rsid
-	wsp:val="00EA27EA" /><wsp:rsid wsp:val="00EB1DA4" /><wsp:rsid
-	wsp:val="00EB2E06" /><wsp:rsid wsp:val="00EB6FDB" /><wsp:rsid
+	wsp:val="00CC098C" /><wsp:rsid wsp:val="00CC50D4" /><wsp:rsid
+	wsp:val="00CD4DE0" /><wsp:rsid wsp:val="00CD5C48" /><wsp:rsid
+	wsp:val="00CE2A2B" /><wsp:rsid wsp:val="00CF13E3" /><wsp:rsid
+	wsp:val="00CF30DF" /><wsp:rsid wsp:val="00CF3CD0" /><wsp:rsid
+	wsp:val="00D03260" /><wsp:rsid wsp:val="00D10E69" /><wsp:rsid
+	wsp:val="00D11370" /><wsp:rsid wsp:val="00D14060" /><wsp:rsid
+	wsp:val="00D23D02" /><wsp:rsid wsp:val="00D317A0" /><wsp:rsid
+	wsp:val="00D33500" /><wsp:rsid wsp:val="00D34A27" /><wsp:rsid
+	wsp:val="00D36C5A" /><wsp:rsid wsp:val="00D41CDB" /><wsp:rsid
+	wsp:val="00D41ED7" /><wsp:rsid wsp:val="00D5180F" /><wsp:rsid
+	wsp:val="00D52076" /><wsp:rsid wsp:val="00D52198" /><wsp:rsid
+	wsp:val="00D54502" /><wsp:rsid wsp:val="00D55D0E" /><wsp:rsid
+	wsp:val="00D55D96" /><wsp:rsid wsp:val="00D55FAF" /><wsp:rsid
+	wsp:val="00D56746" /><wsp:rsid wsp:val="00D61131" /><wsp:rsid
+	wsp:val="00D6129A" /><wsp:rsid wsp:val="00D61B86" /><wsp:rsid
+	wsp:val="00D61BED" /><wsp:rsid wsp:val="00D641EE" /><wsp:rsid
+	wsp:val="00D679AC" /><wsp:rsid wsp:val="00D76581" /><wsp:rsid
+	wsp:val="00D83F6B" /><wsp:rsid wsp:val="00D84363" /><wsp:rsid
+	wsp:val="00D85AD9" /><wsp:rsid wsp:val="00D87F09" /><wsp:rsid
+	wsp:val="00D90452" /><wsp:rsid wsp:val="00D908DA" /><wsp:rsid
+	wsp:val="00D91F1D" /><wsp:rsid wsp:val="00D91F74" /><wsp:rsid
+	wsp:val="00D93564" /><wsp:rsid wsp:val="00DA01E0" /><wsp:rsid
+	wsp:val="00DA0786" /><wsp:rsid wsp:val="00DA0BAF" /><wsp:rsid
+	wsp:val="00DA2645" /><wsp:rsid wsp:val="00DA2F09" /><wsp:rsid
+	wsp:val="00DA5A1B" /><wsp:rsid wsp:val="00DA73C2" /><wsp:rsid
+	wsp:val="00DB0257" /><wsp:rsid wsp:val="00DB40D1" /><wsp:rsid
+	wsp:val="00DB4959" /><wsp:rsid wsp:val="00DB5F27" /><wsp:rsid
+	wsp:val="00DC0DD0" /><wsp:rsid wsp:val="00DC0F8E" /><wsp:rsid
+	wsp:val="00DC1B23" /><wsp:rsid wsp:val="00DC7E02" /><wsp:rsid
+	wsp:val="00DD0CEC" /><wsp:rsid wsp:val="00DD25F9" /><wsp:rsid
+	wsp:val="00DD35E3" /><wsp:rsid wsp:val="00DD6E92" /><wsp:rsid
+	wsp:val="00DD75C8" /><wsp:rsid wsp:val="00DE02A6" /><wsp:rsid
+	wsp:val="00DE56B4" /><wsp:rsid wsp:val="00DE79A1" /><wsp:rsid
+	wsp:val="00DE7A25" /><wsp:rsid wsp:val="00DF0072" /><wsp:rsid
+	wsp:val="00DF0083" /><wsp:rsid wsp:val="00DF1221" /><wsp:rsid
+	wsp:val="00DF1DB1" /><wsp:rsid wsp:val="00DF1EAB" /><wsp:rsid
+	wsp:val="00DF550F" /><wsp:rsid wsp:val="00DF609F" /><wsp:rsid
+	wsp:val="00DF77E8" /><wsp:rsid wsp:val="00E036A8" /><wsp:rsid
+	wsp:val="00E03895" /><wsp:rsid wsp:val="00E0485D" /><wsp:rsid
+	wsp:val="00E0577D" /><wsp:rsid wsp:val="00E05D77" /><wsp:rsid
+	wsp:val="00E06907" /><wsp:rsid wsp:val="00E113DD" /><wsp:rsid
+	wsp:val="00E115DB" /><wsp:rsid wsp:val="00E11795" /><wsp:rsid
+	wsp:val="00E127B6" /><wsp:rsid wsp:val="00E1648A" /><wsp:rsid
+	wsp:val="00E16732" /><wsp:rsid wsp:val="00E16971" /><wsp:rsid
+	wsp:val="00E177BC" /><wsp:rsid wsp:val="00E2189D" /><wsp:rsid
+	wsp:val="00E226D6" /><wsp:rsid wsp:val="00E233CB" /><wsp:rsid
+	wsp:val="00E2681E" /><wsp:rsid wsp:val="00E27E6C" /><wsp:rsid
+	wsp:val="00E3146E" /><wsp:rsid wsp:val="00E324B6" /><wsp:rsid
+	wsp:val="00E32CF7" /><wsp:rsid wsp:val="00E34887" /><wsp:rsid
+	wsp:val="00E3525E" /><wsp:rsid wsp:val="00E36161" /><wsp:rsid
+	wsp:val="00E414AB" /><wsp:rsid wsp:val="00E46DF8" /><wsp:rsid
+	wsp:val="00E55506" /><wsp:rsid wsp:val="00E57D38" /><wsp:rsid
+	wsp:val="00E612EC" /><wsp:rsid wsp:val="00E64194" /><wsp:rsid
+	wsp:val="00E663E5" /><wsp:rsid wsp:val="00E67900" /><wsp:rsid
+	wsp:val="00E70098" /><wsp:rsid wsp:val="00E7283A" /><wsp:rsid
+	wsp:val="00E74D9F" /><wsp:rsid wsp:val="00E75B3C" /><wsp:rsid
+	wsp:val="00E861D6" /><wsp:rsid wsp:val="00E8701D" /><wsp:rsid
+	wsp:val="00E90519" /><wsp:rsid wsp:val="00E90C61" /><wsp:rsid
+	wsp:val="00E9488A" /><wsp:rsid wsp:val="00E95D8F" /><wsp:rsid
+	wsp:val="00E97D83" /><wsp:rsid wsp:val="00E97E42" /><wsp:rsid
+	wsp:val="00EA0CC9" /><wsp:rsid wsp:val="00EA27EA" /><wsp:rsid
+	wsp:val="00EB1DA4" /><wsp:rsid wsp:val="00EB2E06" /><wsp:rsid
+	wsp:val="00EB4837" /><wsp:rsid wsp:val="00EB6FDB" /><wsp:rsid
 	wsp:val="00EB7CE1" /><wsp:rsid wsp:val="00EC01F7" /><wsp:rsid
 	wsp:val="00EC24B7" /><wsp:rsid wsp:val="00EC3AA1" /><wsp:rsid
 	wsp:val="00EC5860" /><wsp:rsid wsp:val="00EC6C48" /><wsp:rsid
@@ -2017,12 +2027,13 @@
 	wsp:val="00FA096B" /><wsp:rsid wsp:val="00FA0D99" /><wsp:rsid
 	wsp:val="00FA3595" /><wsp:rsid wsp:val="00FA719B" /><wsp:rsid
 	wsp:val="00FB13D7" /><wsp:rsid wsp:val="00FB66DE" /><wsp:rsid
-	wsp:val="00FC557C" /><wsp:rsid wsp:val="00FD1969" /><wsp:rsid
-	wsp:val="00FD2304" /><wsp:rsid wsp:val="00FD4FE2" /><wsp:rsid
-	wsp:val="00FD5C30" /><wsp:rsid wsp:val="00FE0C31" /><wsp:rsid
-	wsp:val="00FE2E87" /><wsp:rsid wsp:val="00FE35D2" /><wsp:rsid
-	wsp:val="00FF2BF9" /><wsp:rsid wsp:val="00FF4141" /><wsp:rsid
-	wsp:val="00FF4ABA" /><wsp:rsid wsp:val="00FF4F7B" /></wsp:rsids></w:docPr><w:body><wx:sect><w:p
+	wsp:val="00FC1704" /><wsp:rsid wsp:val="00FC557C" /><wsp:rsid
+	wsp:val="00FD1969" /><wsp:rsid wsp:val="00FD2304" /><wsp:rsid
+	wsp:val="00FD4FE2" /><wsp:rsid wsp:val="00FD5C30" /><wsp:rsid
+	wsp:val="00FE0C31" /><wsp:rsid wsp:val="00FE2E87" /><wsp:rsid
+	wsp:val="00FE35D2" /><wsp:rsid wsp:val="00FF2BF9" /><wsp:rsid
+	wsp:val="00FF4141" /><wsp:rsid wsp:val="00FF4ABA" /><wsp:rsid
+	wsp:val="00FF4F7B" /></wsp:rsids></w:docPr><w:body><wx:sect><w:p
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162"
 	wsp:rsidP="00033162"><w:pPr><w:spacing w:line="500" w:line-rule="exact" /><w:ind
 	w:right="-816" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
@@ -2078,22 +2089,17 @@
 	wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
-	w:val="single" /></w:rPr><w:t>  　</w:t></w:r><w:proofErr
-	w:type="spellStart" /><w:r wsp:rsidR="00960FE2"><w:rPr><w:rFonts
-	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
-	w:val="single" /></w:rPr><w:t>${comName}</w:t></w:r><w:proofErr
-	w:type="spellEnd" /><w:r wsp:rsidR="00B41EB5"><w:rPr><w:rFonts
-	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
-	w:val="single" /></w:rPr><w:t>      </w:t></w:r><w:r wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts
-	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
-	w:val="single" /></w:rPr><w:t>　　</w:t></w:r></w:p><w:p wsp:rsidR="00033162"
-	wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:ind
-	w:left-chars="600" w:left="3522" w:hanging-chars="576" w:hanging="2082" /><w:jc
-	w:val="left" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
-	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:b-cs /><w:color
+	w:val="single" /></w:rPr><w:t>  </w:t></w:r><w:r wsp:rsidR="00FC1704"
+	wsp:rsidRPr="00FC1704"><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体" /><wx:font
+	wx:val="宋体" /><w:b /><w:color w:val="000000" /><w:sz
+	w:val="36" /><w:sz-cs w:val="36" /><w:u w:val="single" /></w:rPr><w:t>${comName}</w:t></w:r><w:r
+	wsp:rsidR="00FC1704"><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font
+	wx:val="宋体" /><w:b /><w:color w:val="000000" /><w:sz
+	w:val="36" /><w:sz-cs w:val="36" /><w:u w:val="single" /></w:rPr><w:t>  </w:t></w:r></w:p><w:p
+	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162"
+	wsp:rsidP="00033162"><w:pPr><w:ind w:left-chars="600" w:left="3522"
+	w:hanging-chars="576" w:hanging="2082" /><w:jc w:val="left" /><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:b-cs /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
 	w:val="single" /></w:rPr></w:pPr><w:r wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
@@ -2104,11 +2110,17 @@
 	wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
-	w:val="single" /></w:rPr><w:t>          　    　  　　</w:t></w:r></w:p><w:p
-	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162"
-	wsp:rsidP="00033162"><w:pPr><w:ind w:left-chars="600" w:left="3522"
-	w:hanging-chars="576" w:hanging="2082" /><w:jc w:val="left" /><w:rPr><w:rFonts
+	w:val="single" /></w:rPr><w:t>  </w:t></w:r><w:r wsp:rsidR="002B510C"><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
+	w:val="single" /></w:rPr><w:t>${leader}</w:t></w:r><w:r wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
+	w:val="single" /></w:rPr><w:t>  </w:t></w:r></w:p><w:p wsp:rsidR="00033162"
+	wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:ind
+	w:left-chars="600" w:left="3522" w:hanging-chars="576" w:hanging="2082" /><w:jc
+	w:val="left" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
 	w:val="single" /></w:rPr></w:pPr><w:r wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:b-cs /><w:color
@@ -2116,11 +2128,18 @@
 	wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
-	w:val="single" /></w:rPr><w:t>　　　　　　　　　（盖章）</w:t></w:r></w:p><w:p
-	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162"
-	wsp:rsidP="00033162"><w:pPr><w:ind w:left-chars="600" w:left="3522"
-	w:hanging-chars="576" w:hanging="2082" /><w:jc w:val="left" /><w:rPr><w:rFonts
-	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:b-cs /><w:color
+	w:val="single" /></w:rPr><w:t>　</w:t></w:r><w:r wsp:rsidR="00FC1704"
+	wsp:rsidRPr="00FC1704"><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体" /><wx:font
+	wx:val="宋体" /><w:b /><w:color w:val="000000" /><w:sz
+	w:val="36" /><w:sz-cs w:val="36" /><w:u w:val="single" /></w:rPr><w:t>${unit}</w:t></w:r><w:r
+	wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
+	w:val="single" /></w:rPr><w:t>（盖章）</w:t></w:r></w:p><w:p wsp:rsidR="00033162"
+	wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:ind
+	w:left-chars="600" w:left="3522" w:hanging-chars="576" w:hanging="2082" /><w:jc
+	w:val="left" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:b-cs /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
 	w:val="single" /></w:rPr></w:pPr><w:r wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
@@ -2131,11 +2150,20 @@
 	wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
-	w:val="single" /></w:rPr><w:t>           　             </w:t></w:r></w:p><w:p
-	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162"
-	wsp:rsidP="00033162"><w:pPr><w:ind w:left-chars="600" w:left="3522"
-	w:hanging-chars="576" w:hanging="2082" /><w:jc w:val="left" /><w:rPr><w:rFonts
-	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:b-cs /><w:color
+	w:val="single" /></w:rPr><w:t>  </w:t></w:r><w:r wsp:rsidR="009B24F0"><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
+	w:val="single" /></w:rPr><w:t>${rank}</w:t></w:r><w:r wsp:rsidR="00313B5B"><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="00FC1704"><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r></w:p><w:p wsp:rsidR="00033162"
+	wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:ind
+	w:left-chars="600" w:left="3522" w:hanging-chars="576" w:hanging="2082" /><w:jc
+	w:val="left" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:b-cs /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
 	w:val="thick" /></w:rPr></w:pPr><w:r wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
@@ -2146,11 +2174,17 @@
 	wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
-	w:val="single" /></w:rPr><w:t>           　             </w:t></w:r></w:p><w:p
-	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162"
-	wsp:rsidP="00033162"><w:pPr><w:ind w:left-chars="600" w:left="3522"
-	w:hanging-chars="576" w:hanging="2082" /><w:jc w:val="left" /><w:rPr><w:rFonts
-	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:b-cs /><w:color
+	w:val="single" /></w:rPr><w:t>  </w:t></w:r><w:r wsp:rsidR="00313B5B"><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
+	w:val="single" /></w:rPr><w:t>${phone} </w:t></w:r><w:r wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r></w:p><w:p wsp:rsidR="00033162"
+	wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:ind
+	w:left-chars="600" w:left="3522" w:hanging-chars="576" w:hanging="2082" /><w:jc
+	w:val="left" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:b-cs /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /></w:rPr></w:pPr><w:r
 	wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:b-cs /><w:color
@@ -2158,11 +2192,17 @@
 	wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
-	w:val="single" /></w:rPr><w:t>           　             </w:t></w:r></w:p><w:p
-	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162"
-	wsp:rsidP="00033162"><w:pPr><w:ind w:left-chars="600" w:left="3522"
-	w:hanging-chars="576" w:hanging="2082" /><w:jc w:val="left" /><w:rPr><w:rFonts
+	w:val="single" /></w:rPr><w:t>  </w:t></w:r><w:r wsp:rsidR="00313B5B"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
+	w:val="single" /></w:rPr><w:t>${email}</w:t></w:r><w:r wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r></w:p><w:p wsp:rsidR="00033162"
+	wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:ind
+	w:left-chars="600" w:left="3522" w:hanging-chars="576" w:hanging="2082" /><w:jc
+	w:val="left" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
 	w:val="single" /></w:rPr></w:pPr><w:r wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
@@ -2173,16 +2213,31 @@
 	wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
-	w:val="single" /></w:rPr><w:t>       　     　　　      </w:t></w:r></w:p><w:p
-	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162"
-	wsp:rsidP="00033162"><w:pPr><w:ind w:left="1260" w:first-line="420" /><w:rPr><w:rFonts
-	w:fareast="黑体" w:hint="fareast" /><w:b /><w:color w:val="000000" /><w:sz
+	w:val="single" /></w:rPr><w:t>  </w:t></w:r><w:r wsp:rsidR="00313B5B"
+	wsp:rsidRPr="00313B5B"><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体" /><wx:font
+	wx:val="宋体" /><w:b /><w:color w:val="000000" /><w:sz
+	w:val="36" /><w:sz-cs w:val="36" /><w:u w:val="single" /></w:rPr><w:t>${date}</w:t></w:r><w:r
+	wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
+	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
+	w:val="single" /></w:rPr><w:t>  </w:t></w:r></w:p><w:p wsp:rsidR="00033162"
+	wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:ind
+	w:left="1260" w:first-line="420" /><w:rPr><w:rFonts w:fareast="黑体"
+	w:hint="fareast" /><w:b /><w:color w:val="000000" /><w:sz
 	w:val="36" /><w:sz-cs w:val="36" /><w:u w:val="single" /></w:rPr></w:pPr></w:p><w:p
-	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162"
-	wsp:rsidP="00033162"><w:pPr><w:ind w:left="1260" w:first-line="420" /><w:rPr><w:rFonts
-	w:fareast="黑体" w:hint="fareast" /><w:b /><w:color w:val="000000" /><w:sz
-	w:val="36" /><w:sz-cs w:val="36" /><w:u w:val="single" /></w:rPr></w:pPr></w:p><w:p
-	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162"
+	wsp:rsidR="00033162" wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:ind
+	w:left="1260" w:first-line="420" /><w:rPr><w:rFonts w:ascii="宋体"
+	w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /></w:rPr></w:pPr></w:p><w:p
+	wsp:rsidR="001448A2" wsp:rsidRDefault="001448A2" wsp:rsidP="00033162"><w:pPr><w:ind
+	w:left="1260" w:first-line="420" /><w:rPr><w:rFonts w:ascii="宋体"
+	w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /></w:rPr></w:pPr></w:p><w:p
+	wsp:rsidR="001448A2" wsp:rsidRDefault="001448A2" wsp:rsidP="00033162"><w:pPr><w:ind
+	w:left="1260" w:first-line="420" /><w:rPr><w:rFonts w:ascii="宋体"
+	w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /></w:rPr></w:pPr></w:p><w:p
+	wsp:rsidR="001448A2" wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="001448A2"
 	wsp:rsidP="00033162"><w:pPr><w:ind w:left="1260" w:first-line="420" /><w:rPr><w:rFonts
 	w:fareast="黑体" w:hint="fareast" /><w:b /><w:color w:val="000000" /><w:sz
 	w:val="36" /><w:sz-cs w:val="36" /><w:u w:val="single" /></w:rPr></w:pPr></w:p><w:p
@@ -2256,12 +2311,14 @@
 	w:val="000000" /></w:rPr><w:t>竞赛名称</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="6254" w:type="dxa" /><w:gridSpan w:val="10" /><w:vAlign
 	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
+	wsp:rsidRDefault="006D25BA" wsp:rsidP="006D25BA"><w:pPr><w:spacing
 	w:line="500" w:line-rule="exact" /><w:ind w:left-chars="-171"
 	w:left="-229" w:right="-816" w:hanging-chars="75" w:hanging="181" /><w:jc
 	w:val="center" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc></w:tr><w:tr
+	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="006D25BA"><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /></w:rPr><w:t>${comName}</w:t></w:r></w:p></w:tc></w:tr><w:tr
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidTr="00186F90"><w:tblPrEx><w:tblCellMar><w:top
 	w:w="0" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /></w:tblCellMar></w:tblPrEx><w:trPr><w:cantSplit /><w:jc
 	w:val="center" /></w:trPr><w:tc><w:tcPr><w:tcW w:w="1769" w:type="dxa" /><w:vmerge /><w:vAlign
@@ -2284,12 +2341,17 @@
 	w:val="000000" /></w:rPr><w:t>竞赛负责人</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="2407" w:type="dxa" /><w:gridSpan w:val="4" /><w:vAlign
 	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
+	wsp:rsidRDefault="00A03C5E" wsp:rsidP="006D25BA"><w:pPr><w:spacing
 	w:line="500" w:line-rule="exact" /><w:ind w:left-chars="-171"
 	w:left="-229" w:right="-816" w:hanging-chars="75" w:hanging="181" /><w:jc
 	w:val="center" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc><w:tc><w:tcPr><w:tcW
+	w:val="000000" /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /></w:rPr><w:t>${leader}</w:t></w:r><w:r wsp:rsidR="00E0577D"><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /></w:rPr>
+	</w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="1923" w:type="dxa" /><w:gridSpan w:val="4" /><w:vAlign
 	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
 	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
@@ -2302,12 +2364,14 @@
 	w:val="000000" /></w:rPr><w:t>联系电话</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="1924" w:type="dxa" /><w:gridSpan w:val="2" /><w:vAlign
 	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
+	wsp:rsidRDefault="006D25BA" wsp:rsidP="00033162"><w:pPr><w:spacing
 	w:line="500" w:line-rule="exact" /><w:ind w:left-chars="-171"
 	w:left="-229" w:right="-816" w:hanging-chars="75" w:hanging="181" /><w:jc
 	w:val="center" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc></w:tr><w:tr
+	w:val="000000" /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /></w:rPr><w:t>${phone}</w:t></w:r></w:p></w:tc></w:tr><w:tr
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidTr="00186F90"><w:tblPrEx><w:tblCellMar><w:top
 	w:w="0" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /></w:tblCellMar></w:tblPrEx><w:trPr><w:cantSplit /><w:jc
 	w:val="center" /></w:trPr><w:tc><w:tcPr><w:tcW w:w="1769" w:type="dxa" /><w:vmerge /><w:vAlign
@@ -2358,10 +2422,12 @@
 	w:val="000000" /></w:rPr><w:t>院级以上竞赛举办者</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="6254" w:type="dxa" /><w:gridSpan w:val="10" /><w:vAlign
 	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00186F90"><w:pPr><w:spacing
+	wsp:rsidRDefault="006D25BA" wsp:rsidP="00186F90"><w:pPr><w:spacing
 	w:line="500" w:line-rule="exact" /><w:ind w:left="-108" w:right="-154" /><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc></w:tr><w:tr
+	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="006D25BA"><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /></w:rPr><w:t>${host}</w:t></w:r></w:p></w:tc></w:tr><w:tr
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidTr="00186F90"><w:tblPrEx><w:tblCellMar><w:top
 	w:w="0" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /></w:tblCellMar></w:tblPrEx><w:trPr><w:cantSplit /><w:jc
 	w:val="center" /></w:trPr><w:tc><w:tcPr><w:tcW w:w="1769" w:type="dxa" /><w:vmerge /><w:vAlign
@@ -2384,12 +2450,14 @@
 	w:val="000000" /></w:rPr><w:t>竞赛时间</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="1992" w:type="dxa" /><w:gridSpan w:val="3" /><w:vAlign
 	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
+	wsp:rsidRDefault="006D25BA" wsp:rsidP="006D25BA"><w:pPr><w:spacing
 	w:line="500" w:line-rule="exact" /><w:ind w:left-chars="-171"
 	w:left="-229" w:right="-816" w:hanging-chars="75" w:hanging="181" /><w:jc
 	w:val="center" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc><w:tc><w:tcPr><w:tcW
+	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="006D25BA"><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /></w:rPr><w:t>${time}</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="1420" w:type="dxa" /><w:gridSpan w:val="2" /><w:vAlign
 	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
 	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
@@ -2402,12 +2470,14 @@
 	w:val="000000" /></w:rPr><w:t>竞赛地点</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="2842" w:type="dxa" /><w:gridSpan w:val="5" /><w:vAlign
 	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
+	wsp:rsidRDefault="006D25BA" wsp:rsidP="006D25BA"><w:pPr><w:spacing
 	w:line="500" w:line-rule="exact" /><w:ind w:left-chars="-171"
 	w:left="-229" w:right="-296" w:hanging-chars="75" w:hanging="181" /><w:jc
 	w:val="center" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc></w:tr><w:tr
+	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="006D25BA"><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /></w:rPr><w:t>${place}</w:t></w:r></w:p></w:tc></w:tr><w:tr
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidTr="00186F90"><w:tblPrEx><w:tblCellMar><w:top
 	w:w="0" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /></w:tblCellMar></w:tblPrEx><w:trPr><w:cantSplit /><w:jc
 	w:val="center" /></w:trPr><w:tc><w:tcPr><w:tcW w:w="1769" w:type="dxa" /><w:vmerge /><w:vAlign
@@ -2429,10 +2499,12 @@
 	w:val="000000" /></w:rPr><w:t>参赛对象</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="1992" w:type="dxa" /><w:gridSpan w:val="3" /><w:vAlign
 	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00186F90"><w:pPr><w:spacing
+	wsp:rsidRDefault="0073309E" wsp:rsidP="00186F90"><w:pPr><w:spacing
 	w:line="500" w:line-rule="exact" /><w:jc w:val="center" /><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc><w:tc><w:tcPr><w:tcW
+	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="0073309E"><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /></w:rPr><w:t>${object}</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="1420" w:type="dxa" /><w:gridSpan w:val="2" /><w:vAlign
 	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
 	wsp:rsidRDefault="00033162" wsp:rsidP="00186F90"><w:pPr><w:spacing
@@ -2443,12 +2515,14 @@
 	w:val="000000" /></w:rPr><w:t>人数</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="2842" w:type="dxa" /><w:gridSpan w:val="5" /><w:vAlign
 	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
+	wsp:rsidRDefault="0073309E" wsp:rsidP="0073309E"><w:pPr><w:spacing
 	w:line="500" w:line-rule="exact" /><w:ind w:left-chars="-171"
 	w:left="-229" w:right="-296" w:hanging-chars="75" w:hanging="181" /><w:jc
 	w:val="center" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc></w:tr><w:tr
+	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="0073309E"><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /></w:rPr><w:t>${people}</w:t></w:r></w:p></w:tc></w:tr><w:tr
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidTr="00186F90"><w:tblPrEx><w:tblCellMar><w:top
 	w:w="0" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /></w:tblCellMar></w:tblPrEx><w:trPr><w:cantSplit /><w:trHeight
 	w:val="519" /><w:jc w:val="center" /></w:trPr><w:tc><w:tcPr><w:tcW
@@ -2470,10 +2544,12 @@
 	w:val="000000" /></w:rPr><w:t>校外资助单位</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="6254" w:type="dxa" /><w:gridSpan w:val="10" /><w:vAlign
 	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00186F90"><w:pPr><w:spacing
+	wsp:rsidRDefault="0073309E" wsp:rsidP="00186F90"><w:pPr><w:spacing
 	w:line="500" w:line-rule="exact" /><w:rPr><w:rFonts w:ascii="宋体"
 	w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc></w:tr><w:tr
+	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="0073309E"><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /></w:rPr><w:t>${sponsor}</w:t></w:r></w:p></w:tc></w:tr><w:tr
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidTr="00186F90"><w:tblPrEx><w:tblCellMar><w:top
 	w:w="0" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /></w:tblCellMar></w:tblPrEx><w:trPr><w:cantSplit /><w:trHeight
 	w:val="519" /><w:jc w:val="center" /></w:trPr><w:tc><w:tcPr><w:tcW
@@ -2487,37 +2563,15 @@
 	w:val="000000" /></w:rPr><w:t>竞赛简介</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="7810" w:type="dxa" /><w:gridSpan w:val="12" /><w:vAlign
 	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00186F90"><w:pPr><w:spacing
+	wsp:rsidRDefault="006D25BA" wsp:rsidP="00186F90"><w:pPr><w:spacing
 	w:line="500" w:line-rule="exact" /><w:rPr><w:rFonts w:ascii="宋体"
 	w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p><w:p wsp:rsidR="00033162"
-	wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162" wsp:rsidP="00186F90"><w:pPr><w:spacing
-	w:line="500" w:line-rule="exact" /><w:rPr><w:rFonts w:ascii="宋体"
-	w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p><w:p wsp:rsidR="00033162"
-	wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162" wsp:rsidP="00186F90"><w:pPr><w:spacing
-	w:line="500" w:line-rule="exact" /><w:rPr><w:rFonts w:ascii="宋体"
-	w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p><w:p wsp:rsidR="00033162"
-	wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162" wsp:rsidP="00186F90"><w:pPr><w:spacing
-	w:line="500" w:line-rule="exact" /><w:rPr><w:rFonts w:ascii="宋体"
-	w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p><w:p wsp:rsidR="00033162"
-	wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162" wsp:rsidP="00186F90"><w:pPr><w:spacing
-	w:line="500" w:line-rule="exact" /><w:rPr><w:rFonts w:ascii="宋体"
-	w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p><w:p wsp:rsidR="00033162"
-	wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162" wsp:rsidP="00186F90"><w:pPr><w:spacing
-	w:line="500" w:line-rule="exact" /><w:rPr><w:rFonts w:ascii="宋体"
-	w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p><w:p wsp:rsidR="00033162"
-	wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162" wsp:rsidP="00186F90"><w:pPr><w:spacing
-	w:line="500" w:line-rule="exact" /><w:rPr><w:rFonts w:ascii="宋体"
-	w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p><w:p wsp:rsidR="00033162"
-	wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162" wsp:rsidP="00186F90"><w:pPr><w:spacing
-	w:line="500" w:line-rule="exact" /><w:rPr><w:rFonts w:ascii="宋体"
-	w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="006D25BA"><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /></w:rPr><w:t>${introduce}</w:t></w:r></w:p><w:p
+	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162"
+	wsp:rsidP="00186F90"><w:pPr><w:spacing w:line="500" w:line-rule="exact" /><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc></w:tr><w:tr
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidTr="00186F90"><w:tblPrEx><w:tblCellMar><w:top
 	w:w="0" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /></w:tblCellMar></w:tblPrEx><w:trPr><w:cantSplit /><w:jc
@@ -2570,7 +2624,9 @@
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr><w:t>专业</w:t></w:r></w:p></w:tc></w:tr><w:tr
+	w:val="000000" /></w:rPr><w:t>专业</w:t></w:r></w:p></w:tc></w:tr>
+	<#list guideList as guide>	
+	<w:tr
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidTr="00186F90"><w:tblPrEx><w:tblCellMar><w:top
 	w:w="0" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /></w:tblCellMar></w:tblPrEx><w:trPr><w:cantSplit /><w:jc
 	w:val="center" /></w:trPr><w:tc><w:tcPr><w:tcW w:w="1769" w:type="dxa" /><w:vmerge /><w:vAlign
@@ -2583,120 +2639,47 @@
 	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="1556" w:type="dxa" /><w:gridSpan w:val="2" /><w:vAlign
 	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
+	wsp:rsidRDefault="00904DC7" wsp:rsidP="00A03C5E"><w:pPr><w:spacing
 	w:line="500" w:line-rule="exact" /><w:ind w:left-chars="-171"
 	w:left="-229" w:right="-88" w:hanging-chars="75" w:hanging="181" /><w:jc
 	w:val="center" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc><w:tc><w:tcPr><w:tcW
+	w:val="000000" /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /></w:rPr>
+	<w:t>${guide.teachername}</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="1992" w:type="dxa" /><w:gridSpan w:val="3" /><w:vAlign
 	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
+	wsp:rsidRDefault="005D5439" wsp:rsidP="005D5439"><w:pPr><w:spacing
 	w:line="500" w:line-rule="exact" /><w:ind w:left-chars="-171"
 	w:left="-229" w:right="-96" w:hanging-chars="75" w:hanging="181" /><w:jc
 	w:val="center" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc><w:tc><w:tcPr><w:tcW
+	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="005D5439"><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /></w:rPr><w:t>${guide.title}</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="2160" w:type="dxa" /><w:gridSpan w:val="4" /><w:tcBorders><w:top
 	w:val="nil" /></w:tcBorders><w:vAlign w:val="center" /></w:tcPr><w:p
-	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162"
-	wsp:rsidP="00033162"><w:pPr><w:spacing w:line="500" w:line-rule="exact" /><w:ind
+	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="005D5439"
+	wsp:rsidP="005D5439"><w:pPr><w:spacing w:line="500" w:line-rule="exact" /><w:ind
 	w:left-chars="-171" w:left="-229" w:right="-96" w:hanging-chars="75"
 	w:hanging="181" /><w:jc w:val="center" /><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc><w:tc><w:tcPr><w:tcW
+	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="005D5439"><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /></w:rPr><w:t>${guide.post}</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="2102" w:type="dxa" /><w:gridSpan w:val="3" /><w:tcBorders><w:top
 	w:val="nil" /></w:tcBorders><w:vAlign w:val="center" /></w:tcPr><w:p
-	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162"
-	wsp:rsidP="00033162"><w:pPr><w:spacing w:line="500" w:line-rule="exact" /><w:ind
+	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="005D5439"
+	wsp:rsidP="005D5439"><w:pPr><w:spacing w:line="500" w:line-rule="exact" /><w:ind
 	w:left-chars="-171" w:left="-229" w:right="-154" w:hanging-chars="75"
 	w:hanging="181" /><w:jc w:val="center" /><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc></w:tr><w:tr
-	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidTr="00186F90"><w:tblPrEx><w:tblCellMar><w:top
-	w:w="0" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /></w:tblCellMar></w:tblPrEx><w:trPr><w:cantSplit /><w:jc
-	w:val="center" /></w:trPr><w:tc><w:tcPr><w:tcW w:w="1769" w:type="dxa" /><w:vmerge /><w:vAlign
-	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
-	w:line="500" w:line-rule="exact" /><w:ind w:left-chars="-171"
-	w:left="-229" w:right="-816" w:hanging-chars="75" w:hanging="181" /><w:jc
-	w:val="center" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
-	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc><w:tc><w:tcPr><w:tcW
-	w:w="1556" w:type="dxa" /><w:gridSpan w:val="2" /><w:vAlign
-	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
-	w:line="500" w:line-rule="exact" /><w:ind w:left-chars="-171"
-	w:left="-229" w:right="-88" w:hanging-chars="75" w:hanging="181" /><w:jc
-	w:val="center" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
-	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc><w:tc><w:tcPr><w:tcW
-	w:w="1992" w:type="dxa" /><w:gridSpan w:val="3" /><w:vAlign
-	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
-	w:line="500" w:line-rule="exact" /><w:ind w:left-chars="-171"
-	w:left="-229" w:right="-96" w:hanging-chars="75" w:hanging="181" /><w:jc
-	w:val="center" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
-	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc><w:tc><w:tcPr><w:tcW
-	w:w="2160" w:type="dxa" /><w:gridSpan w:val="4" /><w:vAlign
-	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
-	w:line="500" w:line-rule="exact" /><w:ind w:left-chars="-171"
-	w:left="-229" w:right="-96" w:hanging-chars="75" w:hanging="181" /><w:jc
-	w:val="center" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
-	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc><w:tc><w:tcPr><w:tcW
-	w:w="2102" w:type="dxa" /><w:gridSpan w:val="3" /><w:vAlign
-	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
-	w:line="500" w:line-rule="exact" /><w:ind w:left-chars="-171"
-	w:left="-229" w:right="-154" w:hanging-chars="75" w:hanging="181" /><w:jc
-	w:val="center" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
-	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc></w:tr><w:tr
-	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidTr="00186F90"><w:tblPrEx><w:tblCellMar><w:top
-	w:w="0" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /></w:tblCellMar></w:tblPrEx><w:trPr><w:cantSplit /><w:jc
-	w:val="center" /></w:trPr><w:tc><w:tcPr><w:tcW w:w="1769" w:type="dxa" /><w:vmerge /><w:vAlign
-	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
-	w:line="500" w:line-rule="exact" /><w:ind w:left-chars="-171"
-	w:left="-229" w:right="-816" w:hanging-chars="75" w:hanging="181" /><w:jc
-	w:val="center" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
-	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc><w:tc><w:tcPr><w:tcW
-	w:w="1556" w:type="dxa" /><w:gridSpan w:val="2" /><w:vAlign
-	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
-	w:line="500" w:line-rule="exact" /><w:ind w:left-chars="-171"
-	w:left="-229" w:right="-88" w:hanging-chars="75" w:hanging="181" /><w:jc
-	w:val="center" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
-	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc><w:tc><w:tcPr><w:tcW
-	w:w="1992" w:type="dxa" /><w:gridSpan w:val="3" /><w:vAlign
-	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
-	w:line="500" w:line-rule="exact" /><w:ind w:left-chars="-171"
-	w:left="-229" w:right="-96" w:hanging-chars="75" w:hanging="181" /><w:jc
-	w:val="center" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
-	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc><w:tc><w:tcPr><w:tcW
-	w:w="2160" w:type="dxa" /><w:gridSpan w:val="4" /><w:vAlign
-	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
-	w:line="500" w:line-rule="exact" /><w:ind w:left-chars="-171"
-	w:left="-229" w:right="-96" w:hanging-chars="75" w:hanging="181" /><w:jc
-	w:val="center" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
-	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc><w:tc><w:tcPr><w:tcW
-	w:w="2102" w:type="dxa" /><w:gridSpan w:val="3" /><w:vAlign
-	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
-	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
-	w:line="500" w:line-rule="exact" /><w:ind w:left-chars="-171"
-	w:left="-229" w:right="-154" w:hanging-chars="75" w:hanging="181" /><w:jc
-	w:val="center" /><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
-	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr></w:p></w:tc></w:tr><w:tr
+	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="005D5439"><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
+	w:val="000000" /></w:rPr><w:t>${guide.direction}</w:t></w:r></w:p></w:tc></w:tr>
+	</#list>
+	<w:tr
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidTr="00186F90"><w:tblPrEx><w:tblCellMar><w:top
 	w:w="0" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /></w:tblCellMar></w:tblPrEx><w:trPr><w:cantSplit /><w:jc
 	w:val="center" /></w:trPr><w:tc><w:tcPr><w:tcW w:w="1769" w:type="dxa" /><w:vmerge /><w:vAlign
@@ -2826,12 +2809,8 @@
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr><w:t>组</w:t></w:r><w:proofErr
-	w:type="gramStart" /><w:r wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts
-	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr><w:t>一</w:t></w:r><w:proofErr
-	w:type="gramEnd" /></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1496"
-	w:type="dxa" /><w:gridSpan w:val="2" /><w:vAlign
+	w:val="000000" /></w:rPr><w:t>组一</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+	w:w="1496" w:type="dxa" /><w:gridSpan w:val="2" /><w:vAlign
 	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
 	wsp:rsidRDefault="00033162" wsp:rsidP="00033162"><w:pPr><w:spacing
 	w:line="500" w:line-rule="exact" /><w:ind w:left-chars="-171"
@@ -4437,13 +4416,9 @@
 	w:line="500" w:line-rule="exact" /><w:ind w:right="-108"
 	w:first-line-chars="1350" w:first-line="3253" /><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr></w:pPr><w:proofErr w:type="gramStart" /><w:r
-	wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
-	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr><w:t>系部签字</w:t></w:r><w:proofErr
-	w:type="gramEnd" /><w:r wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts
+	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr><w:t>（盖章）：                                            </w:t></w:r></w:p><w:p
+	w:val="000000" /></w:rPr><w:t>系部签字（盖章）：                                            </w:t></w:r></w:p><w:p
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162"
 	wsp:rsidP="00033162"><w:pPr><w:spacing w:line="500" w:line-rule="exact" /><w:ind
 	w:right="-108" w:first-line-chars="1350" w:first-line="3253" /><w:rPr><w:rFonts
@@ -4565,7 +4540,7 @@
 	w:val="a5" /></w:rPr><w:fldChar w:fldCharType="begin" /></w:r><w:r><w:rPr><w:rStyle
 	w:val="a5" /></w:rPr><w:instrText>PAGE  </w:instrText></w:r><w:r><w:rPr><w:rStyle
 	w:val="a5" /></w:rPr><w:fldChar w:fldCharType="separate" /></w:r><w:r
-	wsp:rsidR="008E760D"><w:rPr><w:rStyle w:val="a5" /><w:noProof /></w:rPr><w:t>1</w:t></w:r><w:r><w:rPr><w:rStyle
+	wsp:rsidR="009B24F0"><w:rPr><w:rStyle w:val="a5" /><w:noProof /></w:rPr><w:t>1</w:t></w:r><w:r><w:rPr><w:rStyle
 	w:val="a5" /></w:rPr><w:fldChar w:fldCharType="end" /></w:r></w:p></wx:pBdrGroup><w:p
 	wsp:rsidR="00E70098" wsp:rsidRDefault="00E70098"><w:pPr><w:pStyle w:val="a4" /><w:ind
 	w:right="360" /></w:pPr></w:p></w:ftr><w:pgSz w:w="11907" w:h="16840"
