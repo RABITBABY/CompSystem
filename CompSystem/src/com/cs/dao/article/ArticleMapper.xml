@@ -1,77 +1,93 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.cs.dao.article.ArticleMapper" >
-  <resultMap id="BaseResultMap" type="com.cs.pojo.Article" >
-  </resultMap>
-  
-	
- <select id="getMtypeList" resultType="Map" parameterType="Map">
-   select ar.* ,ad.adminName adminName from competition.article ar,competition.administer ad 
-   where ar.pubuserno=ad.adminno and ar.articleType=#{type}  ORDER BY ar.pubDate desc limit #{page},#{pageSize}
-   </select>
-   
-   
-    <select id="searchArticle" resultType="Map" parameterType="Map">
-select ar.* ,ad.adminName adminName from competition.article ar,competition.administer ad 
-   where ar.pubuserno =ad.adminNo  
- <if test="searchInput != null and searchInput!= ''">
-   and title like #{searchInput} 
-</if> 
-<if test="type != null and type!=''">
-   and articleType=#{type}
-</if>
-   ORDER BY ar.pubDate desc limit #{page},#{pageSize}
-</select>
+<mapper namespace="com.cs.dao.article.ArticleMapper">
+	<resultMap id="BaseResultMap" type="com.cs.pojo.Article">
+	</resultMap>
 
 
-    <select id="searchTotal" resultType="int" parameterType="Map">
-select count(*) from competition.article ar,competition.administer ad 
-   where ar.pubuserno =ad.adminNo  
- <if test="searchInput != null and searchInput!= ''">
-   and title like #{searchInput} 
-</if> 
-<if test="type != null and type!=''">
-   and articleType=#{type}
-</if>
-</select>
+	<select id="getMtypeList" resultType="Map" parameterType="Map">
+		select
+		ar.* ,ad.adminName adminName from competition.article
+		ar,competition.administer ad
+		where ar.pubuserno=ad.adminno and
+		ar.articleType=#{type} ORDER BY
+		ar.pubDate desc limit
+		#{page},#{pageSize}
+	</select>
+
+
+	<select id="searchArticle" resultType="Map" parameterType="Map">
+		select ar.* ,ad.adminName adminName from competition.article
+		ar,competition.administer ad
+		where ar.pubuserno =ad.adminNo
+		<if test="searchInput != null and searchInput!= ''">
+			and title like #{searchInput}
+		</if>
+		<if test="type != null and type!=''">
+			and articleType=#{type}
+		</if>
+		ORDER BY ar.pubDate desc limit #{page},#{pageSize}
+	</select>
+
+
+	<select id="searchTotal" resultType="int" parameterType="Map">
+		select count(*) from competition.article ar,competition.administer ad
+		where ar.pubuserno =ad.adminNo
+		<if test="searchInput != null and searchInput!= ''">
+			and title like #{searchInput}
+		</if>
+		<if test="type != null and type!=''">
+			and articleType=#{type}
+		</if>
+	</select>
 
 
 
 
- <select id="getTotal" resultType="int" parameterType="String">
-  select count(*) from article  where 1=1 
-  	<if test="_parameter != null ">
-  	 and articleType=#{_parameter}
-</if>
-</select>
+	<select id="getTotal" resultType="int" parameterType="String">
+		select count(*) from article where 1=1
+		<if test="_parameter != null ">
+			and articleType=#{_parameter}
+		</if>
+	</select>
 
- <select id="findById" resultType="Map" parameterType="int">
-  select ar.* ,ad.adminName adminName from competition.article ar,competition.administer ad 
-   where ar.pubuserno=ad.adminno and ar.articleid=#{id}
-</select>
+	<select id="findById" resultType="Map" parameterType="int">
+		select ar.*
+		,ad.adminName adminName from competition.article
+		ar,competition.administer ad
+		where ar.pubuserno=ad.adminno and
+		ar.articleid=#{id}
+	</select>
 
-<insert id="insertArticle" parameterType="com.cs.pojo.Article">
-    insert into article ( title, pubDate, 
-      pubUserNo, articleType, relationId,  content)
-    values ( #{title}, #{pubdate}, 
-      #{pubuserno}, #{articletype}, #{relationId}, 
-      #{content})
+	<insert id="insertArticle" parameterType="com.cs.pojo.Article">
+		insert into article (
+		title, pubDate,
+		pubUserNo, articleType, relationId, content)
+		values (
+		#{title}, #{pubdate},
+		#{pubuserno}, #{articletype}, #{relationId},
+		#{content})
+	</insert>
+	<delete id="deleteArticle" parameterType="int">
+		DELETE from article
+		where articleId=#{articleId}
+	</delete>
 
-</insert>
-<delete id="deleteArticle" parameterType="int">
-	DELETE  from  article where articleId=#{articleId}
-</delete>
+	<update id="updateArticle" parameterType="Map">
+		update article set
+		title=#{title},content=#{content},pubDate=SYSDATE() where
+		articleId=#{articleId}
+	</update>
 
-<update id="updateArticle" parameterType="Map">
-	update article set title=#{title},content=#{content},pubDate=SYSDATE()  where articleId=#{articleId}
-</update>
+	<update id="addVisit" parameterType="int">
+		update article a set
+		a.visitCount=a.visitCount+1 where a.articleId=#{id}
+	</update>
 
-<update id="addVisit" parameterType="int">
-	update article a set a.visitCount=a.visitCount+1 where a.articleId=#{id}
-</update>
-
-<select id="hotArticle" resultType="com.cs.pojo.Article">
-SELECT * from article where articleType=1 ORDER BY visitCount desc,pubDate desc LIMIT 0,10
-</select>
+	<select id="hotArticle" resultType="com.cs.pojo.Article">
+		SELECT * from article where
+		articleType=1 ORDER BY visitCount desc,pubDate
+		desc LIMIT 0,10
+	</select>
 
 </mapper>

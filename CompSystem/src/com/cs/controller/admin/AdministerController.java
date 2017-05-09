@@ -19,17 +19,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.cs.pojo.Article;
 import com.cs.pojo.FileUpload;
+import com.cs.pojo.Model;
 import com.cs.pojo.Production;
 import com.cs.service.administer.AdministerServiceImpl;
 import com.cs.service.article.ArticleService;
 import com.cs.service.award.AwardsService;
 import com.cs.service.competition.CompetitionService;
 import com.cs.service.fileUpload.FileUploadService;
+import com.cs.service.model.ModelService;
 import com.cs.service.production.ProductionService;
 import com.cs.util.PageInfo;
 import com.cs.util.ParamUtil;
@@ -41,21 +42,25 @@ import com.cs.util.ParamUtil;
 public class AdministerController {
 
 	@Autowired
-	AdministerServiceImpl adminImpl;
+	private AdministerServiceImpl adminImpl;
 	
 	@Autowired
-	ProductionService productionService;
+	private ProductionService productionService;
 	
 	@Autowired
-	AwardsService awardsService;
+	private AwardsService awardsService;
 	
 	@Autowired
-	FileUploadService fileUploadService;
+	private FileUploadService fileUploadService;
 	
 	@Autowired
-	ArticleService articleService;
+	private ArticleService articleService;
+	
 	@Autowired
-	CompetitionService compeService;
+	private CompetitionService compeService;
+	
+	@Autowired
+	private ModelService modelService;
 	
 	
 	/**
@@ -170,7 +175,10 @@ public class AdministerController {
 		 articleType=ParamUtil.getStr(articleType, "1");
 		 relationId=ParamUtil.getStr(relationId, "0");
 		 Map userInfo=(Map)request.getSession().getAttribute("loginInfo");
+		 System.out.println("发布文章");
+		 
 		 String userNo="";
+		 System.out.println(userInfo);
 		 if(userInfo!=null){
 			userNo=userInfo.get("userId").toString();
 			if(userNo!=null && !"".equals(userNo)){
@@ -181,6 +189,7 @@ public class AdministerController {
 				article.setArticletype(Integer.parseInt(articleType));
 				article.setPubdate(new Date());
 				article.setPubuserno(userNo);
+				System.out.println("article"+article);
 				int state=articleService.insertArticle(article);
 				if(state>0){
 					stateCode="1";
@@ -188,6 +197,7 @@ public class AdministerController {
 				System.out.println(article);
 			}
 		}
+		 System.out.println(stateCode);
 		//获取当前登录用户
 		return stateCode;
 	}
@@ -621,7 +631,70 @@ public class AdministerController {
 		return list;
 		
 	}
+/**
+ * 获取所有的模板
+ * @param index 当前页
+ * @param pageSize 每页数量
+ * @return
+ */
+	@ResponseBody
+	@RequestMapping("/allModel")
+	public PageInfo getAllModel(String index,String pageSize){
+		PageInfo<Map> model=new PageInfo<Map>();
+		Map map=new HashMap<String, Object>();
+		index=ParamUtil.getStr(index, "1");
+		pageSize=ParamUtil.getStr(pageSize, "10");
+		map.put("index", index);
+		map.put("pageSize", pageSize);
+		model=modelService.getAllModel(map);
+		
+		return model;
+	}
 
+	/**
+	 * 添加一个Model
+	 * @param content 模板内容 
+	 * @param adminNo 添加模板的管理员账号
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/addModel")
+	public int addModel(String content,String adminNo){
+		
+		Model model=new Model();
+		model.setContent(content);
+		model.setAdminNo(adminNo);
+		int row=modelService.insertModel(model);
+		return row;
+	}
 	
+	/**
+	 * 修改模板Model
+	 * @param content 模板内容 
+	 * @param mid 模板id 
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/updateModel")
+	public int updateModel(String content,String mid){
+		int modelid=Integer.parseInt(mid);
+		Model model=new Model();
+		model.setContent(content);
+		model.setMid(modelid);
+		int row=modelService.updateModel(model);
+		return row;
+	}
+	
+	/**
+	 * 删除模板Model
+	 * @param mid 模板id 
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/deleteModel")
+	public int deleteModel(int mid){
+		int row=modelService.delectModel(mid);
+		return row;
+	}
 	
 }
