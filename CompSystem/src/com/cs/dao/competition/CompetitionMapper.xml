@@ -78,6 +78,27 @@
     where teacherno = #{teacherno,jdbcType=INTEGER}
   </select>
   
+   <select id="selectByLeaderNo" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from competition
+    where leaderNo = #{leaderNo,jdbcType=INTEGER}
+  </select>
+  
+  <select id="selectScheCompByTeacherNo" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
+    select  c.* from competition c
+	LEFT JOIN schedule s
+	on c.comId=s.comId
+	where s.teacherNo=#{teacherno,jdbcType=INTEGER}
+  </select>
+  
+  <select id="selectGuideCompByTeacherNo" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
+    select  c.* from competition c
+	LEFT JOIN guideteacher g
+	on c.comId=g.comId
+	where g.teacherNo=#{teacherno,jdbcType=INTEGER}
+  </select>
+  
   <select id="selectAllComp" resultType="com.cs.pojo.Competition">
     select 
     <include refid="Base_Column_List" />

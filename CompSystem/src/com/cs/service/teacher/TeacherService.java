@@ -138,4 +138,17 @@ public interface TeacherService {
 	 * @return
 	 */
 	public CompetitionInfoVo addOrUpdateComp(CompetitionInfoVo compVo);
+	
+	/**
+	 * 查找该教师所负责的竞赛
+	 * */
+	public List<Competition>  selectByLeaderNo(Integer leaderNo);
+	/**
+	 * 查找该教师所负责培训的竞赛
+	 * */
+	public List<Competition>  selectScheCompByTeacherNo(Integer teacherno);
+	 /**
+	  * 查找该教师所指导的竞赛
+	  * */
+	public List<Competition>  selectGuideCompByTeacherNo(Integer teacherno);
 }

@@ -78,6 +78,9 @@ public class TeacherController {
 	 *   2.2）新增或保存申报书 √
 	 *   2.3）修改√、删除√。仅限申报不通过时。
 	 *   2.4）查看所有申报书审批结果（列表以及结果。）√
+	 *   2.5）查找该教师所负责 的竞赛（竞赛负责人，因为申报人不一定是负责人）
+	 *   2.6）查找该教师所负责培训的竞赛（培训课时，教师）
+	 *   2.7）查找该教师所指导的竞赛（指导老师。）
 	 * 3.查看审批通过的竞赛。 ——》2.1.1）根据结果查看申报书：这两个差不多
 	 *   3.1）查看某个竞赛参与的组别。√ 
 	 *     3.1.1）查看某个组别中的成员√ 
@@ -202,7 +205,6 @@ public class TeacherController {
 	}
 	/**
 	 * 2.4查看所有申报书审批结果（列表以及结果。）
-	 * @param teacherNo
 	 * @return
 	 */
 	@ResponseBody
@@ -210,6 +212,39 @@ public class TeacherController {
 	public List<Competition> getAllCompResult() {
 		return teacherService.selectAllComp();
 	}
+	/**
+	 * 2.5）查找该教师所负责 的竞赛（竞赛负责人，因为申报人不一定是负责人）
+	 * @param teacherNo
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/getResponsibltyComp")
+	public List<Competition> getResponsibltyComp(Integer leaderNo) {
+		return teacherService.selectByLeaderNo(leaderNo);
+	}
+	
+	/**
+	 * 2.6）查找该教师所负责培训的竞赛（培训课时，教师）
+	 * @param teacherNo
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/getSchComp")
+	public List<Competition> getSchComp(Integer teacherno) {
+		return teacherService.selectScheCompByTeacherNo(teacherno);
+	}
+	
+	/**
+	 * 2.7）查找该教师所指导的竞赛（指导老师。）
+	 * @param teacherNo
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/getGuideComp")
+	public List<Competition> getGuideComp(Integer teacherno) {
+		return teacherService.selectGuideCompByTeacherNo(teacherno);
+	}
+	
 
 	/**
 	 * 3.1）查看某个竞赛参与的组别。

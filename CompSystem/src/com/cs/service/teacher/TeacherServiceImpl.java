@@ -339,4 +339,19 @@ public class TeacherServiceImpl implements TeacherService {
 		return comMapper.selectAllComp();
 	}
 
+	@Override
+	public List<Competition> selectByLeaderNo(Integer leaderNo) {
+		return comMapper.selectByLeaderNo(leaderNo);
+	}
+
+	@Override
+	public List<Competition> selectScheCompByTeacherNo(Integer teacherno) {
+		return comMapper.selectScheCompByTeacherNo(teacherno);
+	}
+
+	@Override
+	public List<Competition> selectGuideCompByTeacherNo(Integer teacherno) {
+		return comMapper.selectGuideCompByTeacherNo(teacherno);
+	}
+
 }
