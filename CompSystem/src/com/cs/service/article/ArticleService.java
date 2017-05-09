@@ -10,7 +10,7 @@ import com.cs.util.PageInfo;
 @Service
 public interface ArticleService {
 	PageInfo getArticleList(Map map);
-	
+	public PageInfo indexArticleList(Map map);
 	PageInfo searchArticle(Map map);
 	
 	Map getArticleByID(int articleID);

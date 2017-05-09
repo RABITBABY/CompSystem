@@ -10,11 +10,20 @@
 		ar.* ,ad.adminName adminName from competition.article
 		ar,competition.administer ad
 		where ar.pubuserno=ad.adminno and
-		ar.articleType=#{type} ORDER BY
+		ar.articleType=#{type} and pubuserno=#{adminNo}
+		ORDER BY
 		ar.pubDate desc limit
 		#{page},#{pageSize}
 	</select>
 
+
+<select id="getIndexList" resultType="Map" parameterType="Map">
+		select ar.* ,ad.adminName adminName from competition.article
+		ar,competition.administer ad
+		where ar.pubuserno=ad.adminno and ar.articleType=#{type} ORDER BY
+		ar.pubDate desc limit
+		#{page},#{pageSize}
+	</select>
 
 	<select id="searchArticle" resultType="Map" parameterType="Map">
 		select ar.* ,ad.adminName adminName from competition.article

@@ -38,6 +38,7 @@ public class ArticleServiceImpl implements ArticleService {
 	private GuideTeacherMapper gTeacherMapper;
 	@Autowired
 	private ScheduleMapper scheduleMapper;
+	
 	/**
 	 * 获取文章列表分页
 	 */
@@ -52,8 +53,41 @@ public class ArticleServiceImpl implements ArticleService {
 		param.put("page", page);
 		param.put("pageSize", pageSize);
 		param.put("type", type);
+		param.put("adminNo",map.get("adminNo").toString() );
 		System.out.println("参数"+param);
 		List<Map> list=articleMapper.getMtypeList(param);
+		System.out.println(type+"++++");
+		int totalPage=0;
+		if(list.size() > 0){
+			int total=articleMapper.getTotal(type);
+			totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
+		}
+		
+		PageInfo pageInfo=new PageInfo();
+		pageInfo.setIndex(index);
+		pageInfo.setList(list);
+		pageInfo.setTotal(totalPage);
+		pageInfo.setPageSize(pageSize);
+		return pageInfo;
+	}
+	
+	/**
+	 * 首页获取文章列表分页
+	 */
+	@Override
+	public PageInfo indexArticleList(Map map) {
+		
+		int index=Integer.parseInt(map.get("index").toString());
+		int pageSize=Integer.parseInt(map.get("pageSize").toString());
+		int page=(index-1)*pageSize;
+		String type=map.get("type").toString();
+		Map param=new HashMap();
+		param.put("page", page);
+		param.put("pageSize", pageSize);
+		param.put("type", type);
+		
+		System.out.println("参数"+param);
+		List<Map> list=articleMapper.getIndexList(param);
 		System.out.println(type+"++++");
 		int totalPage=0;
 		if(list.size() > 0){
