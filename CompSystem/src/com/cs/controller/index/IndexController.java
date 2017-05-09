@@ -69,7 +69,7 @@ public class IndexController {
 		param.put("index", index);
 		param.put("pageSize",pageSize);
 		System.out.println(param+"---");
-		PageInfo pageInfo=articlService.getArticleList(param);
+		PageInfo pageInfo=articlService.indexArticleList(param);
 		result.put("articlePageInfo",pageInfo );
 		return result;
 	}
@@ -133,8 +133,7 @@ public class IndexController {
 		Map<String ,Object> resultMap=new HashMap<String, Object>();
 		Map<String ,Object> param=new HashMap<String, Object>();
 		index=ParamUtil.getStr(index, "1");
-		pageSize=ParamUtil.getStr(pageSize, "6");
-		
+		pageSize=ParamUtil.getStr(pageSize, "4");
 		param.put("index", index);	
 		param.put("pageSize", pageSize);	
 		PageInfo pageInfo=new PageInfo();
@@ -322,7 +321,6 @@ public class IndexController {
 	public  List hotArticle(String department){
 		List<Article> hotList=new ArrayList<Article>();
 		hotList=articlService.getHotArticle();
-		
 		return hotList;
 	}
 	

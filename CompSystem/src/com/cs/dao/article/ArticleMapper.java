@@ -10,6 +10,7 @@ public interface ArticleMapper {
 	
 	/** 获取某类型的一定数量文章*/
 	List<Map> getMtypeList(Map map);
+	List<Map> getIndexList(Map map);
 	List<Map> searchArticle(Map map);
 	/**  获取所有该类型的文章数量   */
 	int getTotal(String type);

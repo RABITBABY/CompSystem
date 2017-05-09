@@ -105,18 +105,20 @@ public class AdministerController {
 	 */
 	@ResponseBody
 	@RequestMapping("/awardList")
-	public  Map awardsList(String department,String time,String index,String pageSize) {
+	public  Map awardsList(String department,String time,String index,String pageSize,HttpServletRequest request) {
 		Map<String ,Object> resultMap=new HashMap<String, Object>();
 		Map<String ,Object> param=new HashMap<String, Object>();
 		department=ParamUtil.getStr(department, "");
 		time=ParamUtil.getStr(time, "");
 		index=ParamUtil.getStr(index, "1");
 		pageSize=ParamUtil.getStr(pageSize, "10");
-		
+		Map userInfo =(Map)request.getSession().getAttribute("loginInfo");
+		String adminNo=userInfo.get("userId").toString();
 		param.put("department", department);
 		param.put("time", time);	
 		param.put("index", index);	
 		param.put("pageSize", pageSize);	
+		param.put("adminNo", adminNo);	
 		PageInfo pageInfo=new PageInfo();
 		
 		pageInfo=awardsService.getAwardsList(param);
@@ -600,11 +602,15 @@ public class AdministerController {
 	 */
 	@ResponseBody
 	@RequestMapping("/reviewMaterial")
-	public Map reviewMaterial(String mid){
+	public Map reviewMaterial(String mid,String pass){
 		Map result=new HashMap<String,Object>();
 		int  stateCode=0;
 		int id=Integer.parseInt(ParamUtil.getStr(mid, "0"));
-		stateCode=adminImpl.updateMaterialState(id);
+		int state=Integer.parseInt(ParamUtil.getStr(pass, "1"));
+		if(state==0){
+			state=-1;
+		}
+		stateCode=adminImpl.updateMaterialState(id,state);
 		result.put("stateCode", stateCode);
 		return result;
 	}
