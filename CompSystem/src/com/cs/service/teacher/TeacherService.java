@@ -92,8 +92,7 @@ public interface TeacherService {
 	 * @param comId
 	 * @return
 	 */
-	public boolean createWord(Integer comId);
-	
+	public File createWord(Integer comId);
 	/**
 	 * 修改申报表
 	 * @param comId
@@ -155,5 +154,5 @@ public interface TeacherService {
 	  * */
 	public List<Competition>  selectGuideCompByTeacherNo(Integer teacherno);
 
-	File createWord3(Integer comId);
+	
 }

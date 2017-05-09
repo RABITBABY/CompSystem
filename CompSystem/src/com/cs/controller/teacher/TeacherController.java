@@ -95,6 +95,7 @@ public class TeacherController {
 	 * 8.获取所有的条件√
 	 * 9.获取个人消息。√
 	 * 10.待审核列表√
+	 * 11.获取草稿箱的审批表。√
 	 */
 
 	@Autowired
@@ -331,10 +332,21 @@ public class TeacherController {
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping(value = "/getAprroveTable")
-	public boolean getAprroveTable(Integer comId) {
-		return teacherService.createWord(comId);
-	}
+	@RequestMapping("/getAprroveTable")    
+    public ResponseEntity<byte[]> getAprroveTable(HttpServletRequest request,Integer comId) throws IOException {    
+    	File file=teacherService.createWord(comId);
+
+        HttpHeaders headers = new HttpHeaders();    
+
+        String fileName=new String(file.getName().getBytes("UTF-8"),"iso-8859-1");
+
+        headers.setContentDispositionFormData("attachment", fileName);   
+
+        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);   
+
+        return new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(file), headers, HttpStatus.CREATED);    
+
+    } 
 	
 	/**
 	 *测试
@@ -410,20 +422,16 @@ public class TeacherController {
 	}
 	
 	
+	/**
+	 * 11.获取草稿箱的审批表
+	 * @param teacherNo
+	 * @return
+	 */
 	@ResponseBody
-	@RequestMapping("/download")    
-    public ResponseEntity<byte[]> download(HttpServletRequest request,Integer comId) throws IOException {    
-    	File file=teacherService.createWord3(comId);
-
-        HttpHeaders headers = new HttpHeaders();    
-
-        String fileName=new String(file.getName().getBytes("UTF-8"),"iso-8859-1");
-
-        headers.setContentDispositionFormData("attachment", fileName);   
-
-        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);   
-
-        return new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(file), headers, HttpStatus.CREATED);    
-
-    } 
+	@RequestMapping(value = "/getNoSubmitComp")
+	public List<Competition> getNoSubmitComp(Integer teacherNo) {
+		return comMapper.selectNoSubmitByTeacherNo(teacherNo);
+	}
+    
+    
 }

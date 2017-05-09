@@ -155,32 +155,7 @@ public class TeacherServiceImpl implements TeacherService {
 	}
 
 	@Override
-	public boolean createWord(Integer comId) {
-		Configuration configuration = new Configuration();
-		configuration.setDefaultEncoding("UTF-8");
-		Map<String, Object> dataMap = new HashMap<String, Object>();
-		try {
-			Competition competition = comMapper.selectByPrimaryKey(comId);
-			dataMap.put("comName", competition.getComname());
-
-			configuration.setClassForTemplateLoading(this.getClass(), "/file"); // FTL文件所存在的位置
-			Template template = configuration.getTemplate("approveTable.ftl");
-
-			File outFile = new File("E:/temp/" + competition.getComname()
-					+ "申报书.doc");
-			Writer out = new BufferedWriter(new OutputStreamWriter(
-					new FileOutputStream(outFile), "UTF-8"));
-			template.process(dataMap, out);
-			out.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-			return false;
-		}
-		return true;
-	}
-
-	@Override
-	public File createWord3(Integer comId) {
+	public File createWord(Integer comId) {
 		Configuration configuration = new Configuration();
 		configuration.setDefaultEncoding("UTF-8");
 		File outFile = null;

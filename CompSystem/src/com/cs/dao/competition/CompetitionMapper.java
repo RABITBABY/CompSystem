@@ -33,6 +33,9 @@ public interface CompetitionMapper {
     /*查找该教师所指导的竞赛*/
     List<Competition> selectGuideCompByTeacherNo(Integer teacherno);
     
+    /*查找该教师草稿箱。为提交审批的申报书*/
+    List<Competition> selectNoSubmitByTeacherNo(Integer teacherno);
+    
     List<Competition> selectAllComp();
 
     int insert(Competition record);
