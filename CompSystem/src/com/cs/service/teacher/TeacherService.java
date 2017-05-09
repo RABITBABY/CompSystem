@@ -38,7 +38,7 @@ public interface TeacherService {
 	 * @param comId
 	 * @return
 	 */
-	public void addComp(CompetitionInfoVo compVo);
+	public CompetitionInfoVo addComp(CompetitionInfoVo compVo);
 	
 	/**
 	 * 根据teacherno查找申报列表/以及结果
@@ -96,7 +96,7 @@ public interface TeacherService {
 	 * @param comId
 	 * @return
 	 */
-	public void updateComp(CompetitionInfoVo compVo);
+	public CompetitionInfoVo updateComp(CompetitionInfoVo compVo);
 	
 	/**
 	 * 系主任审批
@@ -131,4 +131,11 @@ public interface TeacherService {
 	 * @return
 	 */
 	public List<Competition> selectAllComp();
+	
+	/**
+	 * 保存或提交申报书
+	 * @param compVo
+	 * @return
+	 */
+	public CompetitionInfoVo addOrUpdateComp(CompetitionInfoVo compVo);
 }

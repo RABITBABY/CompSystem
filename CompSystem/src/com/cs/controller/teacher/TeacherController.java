@@ -167,16 +167,15 @@ public class TeacherController {
 	}
 
 	/**
-	 * 2.2）新增申报书
+	 * 2.2）新增或保存申报书
 	 * 
 	 * @param comId
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping(value = "/addComp")
-	public void addComp(@RequestBody CompetitionInfoVo competitionInfovo) {
-		System.out.println("进来");
-		teacherService.addComp(competitionInfovo);
+	@RequestMapping(value = "/addOrUpdateComp")
+	public CompetitionInfoVo addOrUpdateComp(@RequestBody CompetitionInfoVo competitionInfovo) {
+		return teacherService.addOrUpdateComp(competitionInfovo);
 	}
 
 	/**

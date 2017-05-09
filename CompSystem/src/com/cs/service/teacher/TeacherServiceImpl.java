@@ -36,6 +36,7 @@ import com.cs.pojo.Schedule;
 import com.cs.pojo.Student;
 import com.cs.pojo.Teacher;
 import com.cs.vo.CompetitionInfoVo;
+import com.sun.org.apache.regexp.internal.recompile;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -180,7 +181,7 @@ public class TeacherServiceImpl implements TeacherService {
 
 	@Override
 	@Transactional
-	public void addComp(CompetitionInfoVo compVo) {
+	public CompetitionInfoVo addComp(CompetitionInfoVo compVo) {
 		Competition competition = compVo.getCompetition();
 		competition.setCompstatus(0);
 		competition.setDepspstatus(0);
@@ -188,7 +189,7 @@ public class TeacherServiceImpl implements TeacherService {
 		competition.setTeaspstatus(0);
 		comMapper.insertSelective(competition);
 		// 得到竞赛id
-		int comId = compVo.getCompetition().getComid();
+		int comId = competition.getComid();
 		// 经费预算
 		List<Budget> bList = compVo.getBudgets();
 		if (bList != null&&bList.size()>0) {
@@ -229,11 +230,13 @@ public class TeacherServiceImpl implements TeacherService {
 			}
 			scheduleMapper.addCompScheduleBatch(scheduleList);
 		}
+		
+		return compVo;
 	}
 
 	@Override
 	@Transactional
-	public void updateComp(CompetitionInfoVo compVo) {
+	public CompetitionInfoVo updateComp(CompetitionInfoVo compVo) {
 		Competition competition = compVo.getCompetition();
 		competition.setCompstatus(0);
 		competition.setDepspstatus(0);
@@ -280,6 +283,22 @@ public class TeacherServiceImpl implements TeacherService {
 			for (int i = 0; i < scheduleList.size(); i++) {
 				scheduleMapper.updateByPrimaryKeySelective(scheduleList.get(i));
 			}
+		}
+		return compVo;
+	}
+	/**
+	 * 每5秒保存一次。
+	 */
+	@Override
+	@Transactional
+	public CompetitionInfoVo addOrUpdateComp(CompetitionInfoVo compVo) {
+		Competition competition = compVo.getCompetition();
+		if (competition.getComid()!=null) {
+			CompetitionInfoVo addComp = addComp(compVo);
+			return addComp;
+		}else{
+			CompetitionInfoVo updateComp = updateComp(compVo);
+			return updateComp;
 		}
 	}
 

@@ -32,7 +32,7 @@
     <result column="lsdate" property="lsdate" jdbcType="DATE" />
     <result column="depSpStatus" property="depspstatus" jdbcType="INTEGER" />
     <result column="teaSpStatus" property="teaspstatus" jdbcType="INTEGER" />
-    <result column="completeStatus" property="completestatus" jdbcType="INTEGER" />
+    <result column="saveStatus" property="saveStatus" jdbcType="INTEGER" />
     <result column="applyBeginDate" property="applybegindate" jdbcType="DATE" />
     <result column="applyEndDate" property="applyenddate" jdbcType="DATE" />
     <result column="cost" property="cost" jdbcType="DECIMAL" />
@@ -45,7 +45,7 @@
     comId, comName, teacherNo, unit, levelName, department, date, host, time, place, 
     introduce, object, people, sponsor, plan, tgoal, wgoal, sopinion, slsign, slsdate, 
     uopinion, dsign, dsdate, tdopinion, olsign, olsdate, lsign, lsdate, depSpStatus, 
-    teaSpStatus, completeStatus, applyBeginDate, applyEndDate, cost, compStatus, isPublish,
+    teaSpStatus, saveStatus, applyBeginDate, applyEndDate, cost, compStatus, isPublish,
     isNeedGroup,groupNum
   </sql>
   <!-- 根据状态查找申报表，比如，查找所有审批通过的申报表 -->
@@ -96,7 +96,7 @@
       slsdate, uopinion, dsign, 
       dsdate, tdopinion, olsign, 
       olsdate, lsign, lsdate, 
-      depSpStatus, teaSpStatus, completeStatus, 
+      depSpStatus, teaSpStatus, saveStatus, 
       applyBeginDate, applyEndDate, cost, 
       compStatus, isPublish,isNeedGroup,groupNum)
     values (#{comid,jdbcType=INTEGER}, #{comname,jdbcType=VARCHAR}, #{teacherno,jdbcType=INTEGER}, 
@@ -108,7 +108,7 @@
       #{slsdate,jdbcType=DATE}, #{uopinion,jdbcType=VARCHAR}, #{dsign,jdbcType=VARCHAR}, 
       #{dsdate,jdbcType=DATE}, #{tdopinion,jdbcType=VARCHAR}, #{olsign,jdbcType=VARCHAR}, 
       #{olsdate,jdbcType=TIMESTAMP}, #{lsign,jdbcType=VARCHAR}, #{lsdate,jdbcType=DATE}, 
-      #{depspstatus,jdbcType=INTEGER}, #{teaspstatus,jdbcType=INTEGER}, #{completestatus,jdbcType=INTEGER}, 
+      #{depspstatus,jdbcType=INTEGER}, #{teaspstatus,jdbcType=INTEGER}, #{saveStatus,jdbcType=INTEGER}, 
       #{applybegindate,jdbcType=DATE}, #{applyenddate,jdbcType=DATE}, #{cost,jdbcType=DECIMAL}, 
       #{compstatus,jdbcType=INTEGER}, #{ispublish,jdbcType=INTEGER}, #{isneedgroup,jdbcType=INTEGER}, #{groupnum,jdbcType=INTEGER})
   </insert>
@@ -205,8 +205,8 @@
       <if test="teaspstatus != null" >
         teaSpStatus,
       </if>
-      <if test="completestatus != null" >
-        completeStatus,
+      <if test="saveStatus != null" >
+        saveStatus,
       </if>
       <if test="applybegindate != null" >
         applyBeginDate,
@@ -321,8 +321,8 @@
       <if test="teaspstatus != null" >
         #{teaspstatus,jdbcType=INTEGER},
       </if>
-      <if test="completestatus != null" >
-        #{completestatus,jdbcType=INTEGER},
+      <if test="saveStatus != null" >
+        #{saveStatus,jdbcType=INTEGER},
       </if>
       <if test="applybegindate != null" >
         #{applybegindate,jdbcType=DATE},
@@ -437,8 +437,8 @@
       <if test="teaspstatus != null" >
         teaSpStatus = #{teaspstatus,jdbcType=INTEGER},
       </if>
-      <if test="completestatus != null" >
-        completeStatus = #{completestatus,jdbcType=INTEGER},
+      <if test="saveStatus != null" >
+        saveStatus = #{saveStatus,jdbcType=INTEGER},
       </if>
       <if test="applybegindate != null" >
         applyBeginDate = #{applybegindate,jdbcType=DATE},
@@ -507,7 +507,7 @@
       lsdate = #{lsdate,jdbcType=DATE},
       depSpStatus = #{depspstatus,jdbcType=INTEGER},
       teaSpStatus = #{teaspstatus,jdbcType=INTEGER},
-      completeStatus = #{completestatus,jdbcType=INTEGER},
+      saveStatus = #{saveStatus,jdbcType=INTEGER},
       applyBeginDate = #{applybegindate,jdbcType=DATE},
       applyEndDate = #{applyenddate,jdbcType=DATE},
       cost = #{cost,jdbcType=DECIMAL},

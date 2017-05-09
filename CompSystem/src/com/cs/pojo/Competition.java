@@ -72,7 +72,7 @@ public class Competition {
 
     private Integer teaspstatus;
 
-    private Integer completestatus;
+    private Integer saveStatus;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date applybegindate;
@@ -330,15 +330,17 @@ public class Competition {
         this.teaspstatus = teaspstatus;
     }
 
-    public Integer getCompletestatus() {
-        return completestatus;
-    }
+    
 
-    public void setCompletestatus(Integer completestatus) {
-        this.completestatus = completestatus;
-    }
+    public Integer getSaveStatus() {
+		return saveStatus;
+	}
 
-    public Date getApplybegindate() {
+	public void setSaveStatus(Integer saveStatus) {
+		this.saveStatus = saveStatus;
+	}
+
+	public Date getApplybegindate() {
         return applybegindate;
     }
 
@@ -409,7 +411,7 @@ public class Competition {
 				+ tdopinion + ", olsign=" + olsign + ", olsdate=" + olsdate
 				+ ", lsign=" + lsign + ", lsdate=" + lsdate + ", depspstatus="
 				+ depspstatus + ", teaspstatus=" + teaspstatus
-				+ ", completestatus=" + completestatus + ", applybegindate="
+				+ ", completestatus=" + saveStatus + ", applybegindate="
 				+ applybegindate + ", applyenddate=" + applyenddate + ", cost="
 				+ cost + ", compstatus=" + compstatus + ", ispublish="
 				+ ispublish + ", isneedgroup=" + isneedgroup + ", groupnum="
