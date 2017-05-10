@@ -8,5 +8,9 @@
     select * from administer
     where adminNo = #{adminno}
   </select>
+   <select id="getDepartment" resultType="String" parameterType="String" >
+    select a.department from administer a
+    where adminNo = #{adminno}
+  </select>
   
 </mapper>
