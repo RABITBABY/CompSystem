@@ -172,11 +172,6 @@ public class TeacherServiceImpl implements TeacherService {
 			}else {
 				dataMap.put("comName","");
 			}
-			if (teacher.getTeachername()!=null) {
-				dataMap.put("leader", teacher.getTeachername());
-			}else {
-				dataMap.put("leader", "");
-			}
 			if (competition.getUnit()!=null) {
 				dataMap.put("unit", competition.getUnit());
 			}else {
@@ -243,9 +238,15 @@ public class TeacherServiceImpl implements TeacherService {
 				}else {
 					dataMap.put("email","");
 				}
+				if (teacher.getTeachername()!=null) {
+					dataMap.put("leader", teacher.getTeachername());
+				}else {
+					dataMap.put("leader", "");
+				}
 			}else {
 				dataMap.put("phone","");
 				dataMap.put("email","");
+				dataMap.put("leader", "");
 			}
 
 		    dataMap.put("guideList",guideTeachers);
