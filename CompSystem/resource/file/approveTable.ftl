@@ -2092,7 +2092,7 @@
 	w:val="single" /></w:rPr><w:t>  </w:t></w:r><w:r wsp:rsidR="00FC1704"
 	wsp:rsidRPr="00FC1704"><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体" /><wx:font
 	wx:val="宋体" /><w:b /><w:color w:val="000000" /><w:sz
-	w:val="36" /><w:sz-cs w:val="36" /><w:u w:val="single" /></w:rPr><w:t>${comName}</w:t></w:r><w:r
+	w:val="36" /><w:sz-cs w:val="36" /><w:u w:val="single" /></w:rPr><w:t>${comName!''}</w:t></w:r><w:r
 	wsp:rsidR="00FC1704"><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font
 	wx:val="宋体" /><w:b /><w:color w:val="000000" /><w:sz
 	w:val="36" /><w:sz-cs w:val="36" /><w:u w:val="single" /></w:rPr><w:t>  </w:t></w:r></w:p><w:p
@@ -2113,7 +2113,7 @@
 	w:val="single" /></w:rPr><w:t>  </w:t></w:r><w:r wsp:rsidR="002B510C"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
-	w:val="single" /></w:rPr><w:t>${leader}</w:t></w:r><w:r wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts
+	w:val="single" /></w:rPr><w:t>${leader!''}</w:t></w:r><w:r wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
 	w:val="single" /></w:rPr><w:t>  </w:t></w:r></w:p><w:p wsp:rsidR="00033162"
@@ -2131,7 +2131,7 @@
 	w:val="single" /></w:rPr><w:t>　</w:t></w:r><w:r wsp:rsidR="00FC1704"
 	wsp:rsidRPr="00FC1704"><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体" /><wx:font
 	wx:val="宋体" /><w:b /><w:color w:val="000000" /><w:sz
-	w:val="36" /><w:sz-cs w:val="36" /><w:u w:val="single" /></w:rPr><w:t>${unit}</w:t></w:r><w:r
+	w:val="36" /><w:sz-cs w:val="36" /><w:u w:val="single" /></w:rPr><w:t>${unit!''}</w:t></w:r><w:r
 	wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts w:ascii="宋体" w:h-ansi="宋体"
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
@@ -2153,7 +2153,7 @@
 	w:val="single" /></w:rPr><w:t>  </w:t></w:r><w:r wsp:rsidR="009B24F0"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
-	w:val="single" /></w:rPr><w:t>${rank}</w:t></w:r><w:r wsp:rsidR="00313B5B"><w:rPr><w:rFonts
+	w:val="single" /></w:rPr><w:t>${rank!''}</w:t></w:r><w:r wsp:rsidR="00313B5B"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
 	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="00FC1704"><w:rPr><w:rFonts
@@ -2177,7 +2177,7 @@
 	w:val="single" /></w:rPr><w:t>  </w:t></w:r><w:r wsp:rsidR="00313B5B"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
-	w:val="single" /></w:rPr><w:t>${phone} </w:t></w:r><w:r wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts
+	w:val="single" /></w:rPr><w:t>${phone!''} </w:t></w:r><w:r wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
 	w:val="single" /></w:rPr><w:t> </w:t></w:r></w:p><w:p wsp:rsidR="00033162"
@@ -2195,7 +2195,7 @@
 	w:val="single" /></w:rPr><w:t>  </w:t></w:r><w:r wsp:rsidR="00313B5B"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
-	w:val="single" /></w:rPr><w:t>${email}</w:t></w:r><w:r wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts
+	w:val="single" /></w:rPr><w:t>${email!''}</w:t></w:r><w:r wsp:rsidRPr="00A82CC4"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /><w:sz w:val="36" /><w:sz-cs w:val="36" /><w:u
 	w:val="single" /></w:rPr><w:t> </w:t></w:r></w:p><w:p wsp:rsidR="00033162"
@@ -2318,7 +2318,7 @@
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="006D25BA"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr><w:t>${comName}</w:t></w:r></w:p></w:tc></w:tr><w:tr
+	w:val="000000" /></w:rPr><w:t>${comName!''}</w:t></w:r></w:p></w:tc></w:tr><w:tr
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidTr="00186F90"><w:tblPrEx><w:tblCellMar><w:top
 	w:w="0" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /></w:tblCellMar></w:tblPrEx><w:trPr><w:cantSplit /><w:jc
 	w:val="center" /></w:trPr><w:tc><w:tcPr><w:tcW w:w="1769" w:type="dxa" /><w:vmerge /><w:vAlign
@@ -2348,7 +2348,7 @@
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr><w:t>${leader}</w:t></w:r><w:r wsp:rsidR="00E0577D"><w:rPr><w:rFonts
+	w:val="000000" /></w:rPr><w:t>${leader!''}</w:t></w:r><w:r wsp:rsidR="00E0577D"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /></w:rPr>
 	</w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
@@ -2371,7 +2371,7 @@
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr><w:t>${phone}</w:t></w:r></w:p></w:tc></w:tr><w:tr
+	w:val="000000" /></w:rPr><w:t>${phone!''}</w:t></w:r></w:p></w:tc></w:tr><w:tr
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidTr="00186F90"><w:tblPrEx><w:tblCellMar><w:top
 	w:w="0" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /></w:tblCellMar></w:tblPrEx><w:trPr><w:cantSplit /><w:jc
 	w:val="center" /></w:trPr><w:tc><w:tcPr><w:tcW w:w="1769" w:type="dxa" /><w:vmerge /><w:vAlign
@@ -2427,7 +2427,7 @@
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="006D25BA"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr><w:t>${host}</w:t></w:r></w:p></w:tc></w:tr><w:tr
+	w:val="000000" /></w:rPr><w:t>${host!''}</w:t></w:r></w:p></w:tc></w:tr><w:tr
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidTr="00186F90"><w:tblPrEx><w:tblCellMar><w:top
 	w:w="0" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /></w:tblCellMar></w:tblPrEx><w:trPr><w:cantSplit /><w:jc
 	w:val="center" /></w:trPr><w:tc><w:tcPr><w:tcW w:w="1769" w:type="dxa" /><w:vmerge /><w:vAlign
@@ -2477,7 +2477,7 @@
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="006D25BA"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr><w:t>${place}</w:t></w:r></w:p></w:tc></w:tr><w:tr
+	w:val="000000" /></w:rPr><w:t>${place!''}</w:t></w:r></w:p></w:tc></w:tr><w:tr
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidTr="00186F90"><w:tblPrEx><w:tblCellMar><w:top
 	w:w="0" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /></w:tblCellMar></w:tblPrEx><w:trPr><w:cantSplit /><w:jc
 	w:val="center" /></w:trPr><w:tc><w:tcPr><w:tcW w:w="1769" w:type="dxa" /><w:vmerge /><w:vAlign
@@ -2504,7 +2504,7 @@
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="0073309E"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr><w:t>${object}</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+	w:val="000000" /></w:rPr><w:t>${object!''}</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="1420" w:type="dxa" /><w:gridSpan w:val="2" /><w:vAlign
 	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
 	wsp:rsidRDefault="00033162" wsp:rsidP="00186F90"><w:pPr><w:spacing
@@ -2522,7 +2522,7 @@
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="0073309E"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr><w:t>${people}</w:t></w:r></w:p></w:tc></w:tr><w:tr
+	w:val="000000" /></w:rPr><w:t>${people!''}</w:t></w:r></w:p></w:tc></w:tr><w:tr
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidTr="00186F90"><w:tblPrEx><w:tblCellMar><w:top
 	w:w="0" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /></w:tblCellMar></w:tblPrEx><w:trPr><w:cantSplit /><w:trHeight
 	w:val="519" /><w:jc w:val="center" /></w:trPr><w:tc><w:tcPr><w:tcW
@@ -2549,7 +2549,7 @@
 	w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="0073309E"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr><w:t>${sponsor}</w:t></w:r></w:p></w:tc></w:tr><w:tr
+	w:val="000000" /></w:rPr><w:t>${sponsor!''}</w:t></w:r></w:p></w:tc></w:tr><w:tr
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidTr="00186F90"><w:tblPrEx><w:tblCellMar><w:top
 	w:w="0" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /></w:tblCellMar></w:tblPrEx><w:trPr><w:cantSplit /><w:trHeight
 	w:val="519" /><w:jc w:val="center" /></w:trPr><w:tc><w:tcPr><w:tcW
@@ -2568,7 +2568,7 @@
 	w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="006D25BA"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr><w:t>${introduce}</w:t></w:r></w:p><w:p
+	w:val="000000" /></w:rPr><w:t>${introduce!''}</w:t></w:r></w:p><w:p
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="00033162"
 	wsp:rsidP="00186F90"><w:pPr><w:spacing w:line="500" w:line-rule="exact" /><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
@@ -2647,7 +2647,7 @@
 	w:val="000000" /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /></w:rPr>
-	<w:t>${guide.teachername}</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+	<w:t>${(guide.teachername)!''}</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="1992" w:type="dxa" /><w:gridSpan w:val="3" /><w:vAlign
 	w:val="center" /></w:tcPr><w:p wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4"
 	wsp:rsidRDefault="005D5439" wsp:rsidP="005D5439"><w:pPr><w:spacing
@@ -2657,7 +2657,7 @@
 	w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="005D5439"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr><w:t>${guide.title}</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+	w:val="000000" /></w:rPr><w:t>${(guide.title)!''}</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="2160" w:type="dxa" /><w:gridSpan w:val="4" /><w:tcBorders><w:top
 	w:val="nil" /></w:tcBorders><w:vAlign w:val="center" /></w:tcPr><w:p
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="005D5439"
@@ -2667,7 +2667,7 @@
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="005D5439"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr><w:t>${guide.post}</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+	w:val="000000" /></w:rPr><w:t>${(guide.post)!''}</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
 	w:w="2102" w:type="dxa" /><w:gridSpan w:val="3" /><w:tcBorders><w:top
 	w:val="nil" /></w:tcBorders><w:vAlign w:val="center" /></w:tcPr><w:p
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidRDefault="005D5439"
@@ -2677,7 +2677,7 @@
 	w:ascii="宋体" w:h-ansi="宋体" w:hint="fareast" /><wx:font wx:val="宋体" /><w:b /><w:color
 	w:val="000000" /></w:rPr></w:pPr><w:r wsp:rsidRPr="005D5439"><w:rPr><w:rFonts
 	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:b /><w:color
-	w:val="000000" /></w:rPr><w:t>${guide.direction}</w:t></w:r></w:p></w:tc></w:tr>
+	w:val="000000" /></w:rPr><w:t>${(guide.direction)!''}</w:t></w:r></w:p></w:tc></w:tr>
 	</#list>
 	<w:tr
 	wsp:rsidR="00033162" wsp:rsidRPr="00A82CC4" wsp:rsidTr="00186F90"><w:tblPrEx><w:tblCellMar><w:top
