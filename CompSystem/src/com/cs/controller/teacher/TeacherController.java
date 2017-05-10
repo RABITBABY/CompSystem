@@ -83,8 +83,9 @@ public class TeacherController {
 	 *   2.7）查找该教师所指导的竞赛（指导老师。）√
 	 * 3.查看审批通过的竞赛。 ——》2.1.1）根据结果查看申报书：这两个差不多
 	 *   3.1）查看某个竞赛参与的组别(待审批、审批通过)。√ 
+	 *     3.1.0）查看某个竞赛参与的组别。包括该组组员√ 
 	 *     3.1.1）查看某个组别中的成员√ 
-	 *   3.2）管理（删除/允许）某个报名竞赛的组别√
+	 *   3.2）管理（拒绝/允许）某个报名竞赛的组别√
 	 * 4.查看已经结束的竞赛。√ 
 	 *   4.1）反馈竞赛结果 √ 
 	 * 5.导出申报表√
@@ -259,6 +260,18 @@ public class TeacherController {
 	@RequestMapping(value = "/getCompGroups")
 	public List<Groups> getCompGroups(Integer comId) {
 		return groupsService.getCompGroups(comId);
+	}
+	
+	/**
+	 * 3.1.0）查看某个竞赛参与的组别。包括该组组员
+	 * 
+	 * @param comId
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/getCompGroupsAndMember")
+	public List<Map<String,Object>> getCompGroupsAndMember(Integer comId) {
+		return groupsService.getGroupsAndMember(comId);
 	}
 
 	/**

@@ -1,6 +1,9 @@
 package com.cs.service.groups;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.cs.dao.group.GroupsMapper;
 import com.cs.pojo.Groups;
+import com.cs.pojo.Student;
 @Service("groupsService")
 public class GroupsServiceImpl implements GroupsService{
 	@Autowired
@@ -32,5 +36,19 @@ public class GroupsServiceImpl implements GroupsService{
 			groupsMapper.insert(groups);
 		//}
 	}
+	@Override
+	public List<Map<String, Object>> getGroupsAndMember(Integer comId) {
+		List<Map<String,Object>> groupInfoList=new ArrayList<Map<String,Object>>();
+		List<Groups> compGroups = getCompGroups(comId);
+		for (int i = 0; i < compGroups.size(); i++) {
+			Map<String, Object> map=new HashMap<String, Object>();
+			List<Student> members = groupsMapper.selectByGroupsNo(compGroups.get(i).getGroupsno());
+			map.put("group", compGroups.get(i));
+			map.put("members", members);
+			groupInfoList.add(map);
+		}
+		return groupInfoList;
+	}
+
 
 }

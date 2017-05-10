@@ -1,6 +1,7 @@
 package com.cs.service.groups;
 
 import java.util.List;
+import java.util.Map;
 
 import com.cs.pojo.Groups;
 
@@ -22,5 +23,11 @@ public interface GroupsService {
 	 * @param groups
 	 */
 	public void createGroups(Groups groups);
+	
+	/**
+	 * 获取某个竞赛的组以及其组成员
+	 * @param comId
+	 */
+	public List<Map<String,Object>> getGroupsAndMember(Integer comId);
 
 }
