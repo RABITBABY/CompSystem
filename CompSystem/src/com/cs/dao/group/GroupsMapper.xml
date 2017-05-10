@@ -16,7 +16,7 @@
     id,groupsNo, comId, groupsName, teacherNo, studentNo, status,captainStatus,isCaptain
   </sql>
   
-  <!-- 查找学生所报名的竞赛 -->
+  <!-- 查找学生所报名的竞赛 返回map -->
   <select id="selectByStuNo" resultType="java.util.HashMap" parameterType="java.lang.Integer" >
     select g.studentNo,g.comId,g.groupsNo,g.groupsName,g.status,g.captainStatus,t.teacherName,c.comName
     from groups g
@@ -27,10 +27,25 @@
     where studentNo = #{studentno,jdbcType=INTEGER}
   </select>
   
+   <!-- 查找学生所报名的竞赛 返回competition-->
+  <select id="selectCompetitionByStuNo" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
+    select c.*
+    from groups g
+    LEFT JOIN competition c
+    on g.comId=c.comId
+    where studentNo =#{studentno,jdbcType=INTEGER}
+  </select>
+  
   <!-- 根据comId查找该竞赛参与的组别：待审批以及审批通过的 -->
   <select id="selectByComId" resultType="com.cs.pojo.Groups" parameterType="java.lang.Integer" >
     select * from groups 
     where comId =#{comId,jdbcType=INTEGER} and status!=-1  GROUP BY groupsNo
+  </select>
+  
+  <!-- 根据comId和studentNo查找该竞赛参与的组别 -->
+  <select id="selectByComIdAndStudentNo" resultType="com.cs.pojo.Groups" parameterType="java.util.Map" >
+   select * from groups 
+    where comId =#{comId,jdbcType=INTEGER} and status!=-1 and studentNo=#{studentno,jdbcType=INTEGER}  GROUP BY groupsNo 
   </select>
   
   <!-- 根据groupNo查找该组成员 -->

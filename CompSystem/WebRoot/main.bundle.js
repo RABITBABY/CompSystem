@@ -433,7 +433,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "/*md-card md-card-content md-card md-card-content {\r\n  display: flex;\r\n  flex-direction: row;\r\n}*/\r\nsection > md-card{\r\n  margin: 8px;\r\n}\r\nsection + section {\r\n  margin-bottom: 8px;\r\n}\r\n", ""]);
+exports.push([module.i, "#contest {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n}\r\nsection > md-card{\r\n  margin: 8px;\r\n}\r\nsection + section {\r\n  margin-top: 8px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -685,7 +685,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "md-card + md-card {\r\n  margin-top: 10px;\r\n}\r\nmd-card-content {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n  vertical-align: middle;\r\n}\r\nmd-chip-list {\r\n  margin-left: 12px;\r\n  display: inline-block;\r\n}\r\nmd-chip + md-chip {\r\n  margin-left: 8px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -813,7 +813,7 @@ module.exports = "<md-toolbar color=\"primary\">\r\n\r\n  <span class=\"noselect
 /***/ 1213:
 /***/ (function(module, exports) {
 
-module.exports = "<h3>报名</h3>\r\n<section *ngIf=\"!groupMode\">\r\n  <button md-button (click)=\"setGroupMode('create')\">创建队伍</button>\r\n  <button md-button (click)=\"setGroupMode('join')\">加入队伍</button>\r\n</section>\r\n<section *ngIf=\"groupMode === 'join'\">\r\n  <md-list>\r\n    <!-- <md-chip-list>\r\n    <md-chip selected=\"true\" color=\"warn\">队长审核队员功能尚未添加</md-chip>\r\n  </md-chip-list> -->\r\n    <md-list-item *ngFor=\"let group of groups\">\r\n      {{group.groupsname}}\r\n      <button md-button (click)=\"joinGroup(group)\">申请加入</button>\r\n    </md-list-item>\r\n  </md-list>\r\n</section>\r\n<section *ngIf=\"groupMode === 'create'\">\r\n<form #groups=\"ngForm\">\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput ngModel name=\"groupsname\" placeholder=\"组名\" />\r\n  </md-input-container>\r\n  <md-select placeholder=\"选择指导老师\" ngModel name=\"guideTeacher\">\r\n    <md-option *ngFor=\"let item of guideTeachers\" [value]=\"guideTeachers\">\r\n      {{item.teachername}}\r\n    </md-option>\r\n  </md-select>\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput name=\"studentname\" [(ngModel)]=\"student.studentname\" placeholder=\"学号\" disabled />\r\n  </md-input-container>\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput name=\"comname\" [(ngModel)]=\"contest.comname\" placeholder=\"竞赛\" disabled />\r\n  </md-input-container>\r\n</form>\r\n<button md-button color=\"primary\" (click)=\"dialogRef.close(groups.value)\">创建</button>\r\n<button md-button color=\"warn\" (click)=\"dialogRef.close()\">取消</button>\r\n</section>\r\n"
+module.exports = "<h3>报名</h3>\r\n<section *ngIf=\"!groupMode\">\r\n  <button md-button (click)=\"setGroupMode('create')\">创建队伍</button>\r\n  <button md-button (click)=\"setGroupMode('join')\">加入队伍</button>\r\n</section>\r\n<section *ngIf=\"groupMode === 'join'\">\r\n  <md-list>\r\n    <!-- <md-chip-list>\r\n    <md-chip selected=\"true\" color=\"warn\">队长审核队员功能尚未添加</md-chip>\r\n  </md-chip-list> -->\r\n    <md-list-item *ngFor=\"let group of groups\">\r\n      {{group.groupsname}}\r\n      <button md-button (click)=\"joinGroup(group)\">申请加入</button>\r\n    </md-list-item>\r\n  </md-list>\r\n</section>\r\n<section *ngIf=\"groupMode === 'create'\">\r\n<form #groups=\"ngForm\">\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput ngModel name=\"groupsname\" placeholder=\"组名\" />\r\n  </md-input-container>\r\n  <md-select placeholder=\"选择指导老师\" ngModel name=\"guideTeacher\">\r\n    <md-option *ngFor=\"let item of guideTeachers\" [value]=\"guideTeachers\">\r\n      {{item.teachername}}\r\n    </md-option>\r\n  </md-select>\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput name=\"studentno\" [ngModel]=\"student.studentno\" placeholder=\"学号\" disabled />\r\n  </md-input-container>\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput name=\"comname\" [ngModel]=\"contest.comname\" placeholder=\"竞赛\" disabled />\r\n  </md-input-container>\r\n</form>\r\n<button md-button color=\"primary\" (click)=\"dialogRef.close(groups.value)\">创建</button>\r\n<button md-button color=\"warn\" (click)=\"dialogRef.close()\">取消</button>\r\n</section>\r\n"
 
 /***/ }),
 
@@ -876,7 +876,7 @@ module.exports = "<div *ngIf=\"contest\">\r\n  <h2>竞赛名：{{contest.comName
 /***/ 1222:
 /***/ (function(module, exports) {
 
-module.exports = "<md-list>\n  <md-list-item *ngFor=\"let item of contests\">\n    {{item.comname}}\n    <span style=\"flex: 0 0 auto\"></span>\n    <button md-button (click)=\"openDialog(item)\">反馈获奖</button>\n  </md-list-item>\n</md-list>\n"
+module.exports = "<md-list>\n  <md-list-item *ngFor=\"let item of contests\">\n    {{item.comname}}\n    <span style=\"flex: 1 1 auto\"></span>\n    <button md-button (click)=\"openDialog(item)\">反馈获奖</button>\n  </md-list-item>\n</md-list>\n"
 
 /***/ }),
 
@@ -960,7 +960,7 @@ module.exports = "<md-card style=\"padding: 0\">\r\n  <md-card-content style=\"p
 /***/ 1234:
 /***/ (function(module, exports) {
 
-module.exports = "<section fxLayout=\"row\">\r\n  <md-card fxFlex=\"60\">\r\n    <h4 md-subheader>文章列表</h4>\r\n    <md-card-content>\r\n      <md-tab-group>\r\n        <md-tab *ngFor=\"let articleType of articleTypes\">\r\n          <template md-tab-label>{{articleType.name}}</template>\r\n          <md-nav-list *ngIf=\"articleType.id === 1\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeOnes\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n          <md-nav-list *ngIf=\"articleType.id === 2\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeTwos\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n          <md-nav-list *ngIf=\"articleType.id === 3\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeThrees\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n        </md-tab>\r\n      </md-tab-group>\r\n    </md-card-content>\r\n  </md-card>\r\n\r\n  <md-card fxFlex=\"40\">\r\n    <md-card-content>\r\n      <md-card *ngFor=\"let contest of contests | contestTimelineFilter\" [ngStyle]=\"{'background-color': setColor(contest) }\">\r\n        <md-card-content>\r\n          {{contest.comname}}\r\n          <span style=\"flex: 1 1 auto\"> </span>\r\n          <button md-button (click)=\"apply(contest)\">报名入口</button>\r\n          <md-icon>date_range</md-icon>{{contest.time}}\r\n        </md-card-content>\r\n      </md-card>\r\n    </md-card-content>\r\n  </md-card>\r\n</section>\r\n<section fxLayout=\"row\">\r\n  <app-works fxFlex=\"80\">Loading</app-works>\r\n  <app-files fxFlex=\"20\">Loading</app-files>\r\n</section>\r\n<section>\r\n  <app-chart>Loading ChartComponent...</app-chart>\r\n</section>\r\n"
+module.exports = "<section fxLayout=\"row\">\r\n  <md-card fxFlex=\"60\">\r\n    <md-card-content>\r\n      <md-tab-group>\r\n        <md-tab *ngFor=\"let articleType of articleTypes\">\r\n          <template md-tab-label>{{articleType.name}}</template>\r\n          <md-nav-list *ngIf=\"articleType.id === 1\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeOnes\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n          <md-nav-list *ngIf=\"articleType.id === 2\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeTwos\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n          <md-nav-list *ngIf=\"articleType.id === 3\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeThrees\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n        </md-tab>\r\n      </md-tab-group>\r\n    </md-card-content>\r\n  </md-card>\r\n\r\n  <md-card fxFlex=\"40\">\r\n    <md-card-content>\r\n      <md-card *ngFor=\"let contest of contests | contestTimelineFilter\" [ngStyle]=\"{'background-color': setColor(contest) }\">\r\n        <md-card-content id=\"contest\">\r\n          {{contest.comname}}\r\n          <span style=\"flex: 1 1 auto\"> </span>\r\n          <button md-button (click)=\"apply(contest)\">报名入口</button>\r\n          <md-icon>date_range</md-icon>{{contest.time}}\r\n        </md-card-content>\r\n      </md-card>\r\n    </md-card-content>\r\n  </md-card>\r\n</section>\r\n<section fxLayout=\"row\">\r\n  <app-works fxFlex=\"80\">Loading</app-works>\r\n  <app-files fxFlex=\"20\">Loading</app-files>\r\n</section>\r\n<section>\r\n  <app-chart>Loading ChartComponent...</app-chart>\r\n</section>\r\n"
 
 /***/ }),
 
@@ -1058,7 +1058,7 @@ module.exports = "<p>\n  student-message works!\n</p>\n"
 /***/ 1248:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <md-chip-list>\r\n  <md-chip selected=\"true\" color=\"warn\">根据申报结果查看功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">查看申报详情功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">修改申报书功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">导出申报表功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">查看竞赛小组以及组员功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">审批参赛小组功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">查看已经结束的竞赛功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">反馈获奖情况功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">审批申报书功能尚未添加</md-chip>\r\n</md-chip-list> -->\r\n<md-nav-list>\r\n  <h3 md-subheader>已申报竞赛列表</h3>\r\n  <md-list-item *ngFor=\"let declaration of declarations;let i of index\">\r\n    {{declaration.comname}}\r\n    <span style=\"flex: 1 1 auto\"> </span>\r\n    <span style=\"flex: 1 1 auto\"> </span>\r\n    <md-chip-list>\r\n      <md-chip *ngIf=\"declaration.depspstatus===0 || declaration.teaspstatus===0\" color=\"warn\">待审批</md-chip>\r\n    </md-chip-list>\r\n    <button md-button [routerLink]=\"['../declaration/detail', declaration.comid]\">详情</button>\r\n    <button md-button>修改</button>\r\n    <button md-button (click)=\"delete(declaration,i)\">删除</button>\r\n    <md-icon>date_range</md-icon>{{declaration.time}}\r\n  </md-list-item>\r\n</md-nav-list>\r\n"
+module.exports = "<!-- <md-chip-list>\r\n  <md-chip selected=\"true\" color=\"warn\">根据申报结果查看功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">查看申报详情功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">修改申报书功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">导出申报表功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">查看竞赛小组以及组员功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">审批参赛小组功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">查看已经结束的竞赛功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">反馈获奖情况功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">审批申报书功能尚未添加</md-chip>\r\n</md-chip-list> -->\r\n<h3 md-subheader>已申报竞赛列表</h3>\r\n<md-card *ngFor=\"let declaration of declarations;let i of index\">\r\n  <md-card-content>\r\n    <span>{{declaration.comname}}</span>\r\n    <span style=\"flex: 1 1 auto\"></span>\r\n    <md-chip-list style=\"display: inline-block\">\r\n      <md-chip color=\"accent\" selected=\"true\" *ngIf=\"declaration.depspstatus===0 || declaration.teaspstatus===0\">待审批</md-chip>\r\n    </md-chip-list>\r\n    <button md-icon-button *ngIf=\"!declaration.groupToggle\" mdTooltip=\"展开队伍详情\" (click)=\"toggleGroup(declaration)\">\r\n      <md-icon>keyboard_arrow_down</md-icon>\r\n    </button>\r\n    <button md-icon-button *ngIf=\"declaration.groupToggle\" mdTooltip=\"收起队伍详情\" (click)=\"toggleGroup(declaration)\">\r\n    <md-icon>keyboard_arrow_up</md-icon>\r\n  </button>\r\n    <button md-button color=\"primary\" [routerLink]=\"['../declaration/detail', declaration.comid]\">详情</button>\r\n    <button md-button [disabled]=\"declaration.teaspstatus===1\">修改</button>\r\n    <button md-button color=\"warn\" (click)=\"delete(declaration,i)\">删除</button>\r\n    <md-icon>date_range</md-icon>{{declaration.time}}\r\n  </md-card-content>\r\n  <md-card-content *ngIf=\"declaration.groupToggle\">\r\n    <span *ngIf=\"!declaration.groups\">暂无参赛队伍</span>\r\n    <md-list style=\"width: 100%\">\r\n      <h3 md-subheader *ngIf=\"declaration.groups\">所有参赛队伍(暂)</h3>\r\n\r\n      <md-card *ngFor=\"let group of declaration.groups\">\r\n        <md-card-content>\r\n          <strong>队伍名</strong>:{{ group.group.groupsname }}\r\n          <md-chip-list>\r\n            <md-chip *ngFor=\"let member of group.members\">{{member.studentno}} - {{member.studentname}}</md-chip>\r\n          </md-chip-list>\r\n          <span style=\"flex: 1 1 auto\"></span>\r\n          <button md-button color=\"primary\" *ngIf=\"group.group.status === 0\" (click)=\"pass(group.group,1)\">批准</button>\r\n          <button md-button color=\"warn\" *ngIf=\"group.group.status === 0\" (click)=\"pass(group.group,-1)\">不批准</button>\r\n        </md-card-content>\r\n      </md-card>\r\n\r\n      <!-- <md-list-item *ngFor=\"let item of declaration.groups;let i of index\">\r\n        {{item.group.groupsname}}\r\n        <h4 md-line>队长:{{item.group.studentno}} - </h4>\r\n        <span md-line *ngFor=\"let item of item.members\"> {{item.studentname}} </span>\r\n        <span style=\"flex: 1 1 auto\"></span>\r\n        <button md-button color=\"primary\" *ngIf=\"item.group.status===0\">批准</button>\r\n      </md-list-item> -->\r\n\r\n    </md-list>\r\n  </md-card-content>\r\n</md-card>\r\n"
 
 /***/ }),
 
@@ -2078,16 +2078,33 @@ var TeacherContestComponent = (function () {
         this.loginService = loginService;
         this.http = http;
     }
+    TeacherContestComponent.prototype.pass = function (group, pass) {
+        this.http.get("http://localhost:8080/CompSystem/teacher/manageGroupsMember" + "?groupNo=" + group.groupsno + "&status=" + pass)
+            .map(function (response) { return console.log("TeacherContestComponent.pass:", response.json()) || response.json(); })
+            .subscribe(function (response) { return group.status = 1; });
+    };
     TeacherContestComponent.prototype.getDeclarations = function () {
         var _this = this;
         this.contestService.getDeclarationsByTeacher(this.teacher.teacherno)
-            .subscribe(function (declarations) { return _this.declarations = declarations; });
+            .subscribe(function (declarations) {
+            _this.declarations = declarations;
+            _this.declarations.forEach(function (currentValue, index, array) {
+                array[index].groupToggle = false;
+                _this.http.get("http://localhost:8080/CompSystem/teacher/getCompGroupsAndMember" + "?comId=" + currentValue.comid)
+                    .map(function (response) { return response.json(); })
+                    .subscribe(function (response) { return array[index].groups = response; });
+            });
+            console.log(_this.declarations);
+        });
+    };
+    TeacherContestComponent.prototype.toggleGroup = function (declaration) {
+        declaration.groupToggle = !declaration.groupToggle;
     };
     TeacherContestComponent.prototype.delete = function (declaration, index) {
         var _this = this;
         this.http.get("http://localhost:8080/CompSystem/teacher/deleteComp" + "?comId=" + declaration.comid)
             .subscribe(function () {
-            _this.declarations.splice(index, 1);
+            _this.declarations.splice(index + 1, 1);
             alert("删除成功!");
         });
     };
@@ -3187,7 +3204,7 @@ var ContestService = (function () {
             .catch(this.handleError);
     };
     ContestService.prototype.getCompGuideTeacher = function (comid) {
-        return this.http.get(this.baseUrl + "/student/getCompGuideTeacher" + "?comid=" + comid)
+        return this.http.get(this.baseUrl + "/student/getCompGuideTeacher" + "?comId=" + comid)
             .map(function (response) { return console.log("ContestService.getCompGuideTeacher:", response.json()) || response.json(); })
             .catch(this.handleError);
     };
@@ -3987,23 +4004,30 @@ var ArticleDetailComponent = (function () {
                 .subscribe(function (contest) { return _this.contest = contest; });
         });
         this.student = this.loginService.getUser();
+        this.role = this.loginService.getRole();
     };
     ArticleDetailComponent.prototype.openDialog = function () {
         var _this = this;
-        this.dialogRef = this.dialog.open(ApplyDialog, {
-            disableClose: false
-        });
-        this.dialogRef.componentInstance.student = this.student;
-        this.contestService.getCompGuideTeacher(this.article.relationId)
-            .subscribe(function (guideTeachers) { return _this.dialogRef.componentInstance.guideTeachers = guideTeachers; });
-        this.dialogRef.componentInstance.contest = this.contest;
-        this.dialogRef.componentInstance.groups = this.groups;
-        this.dialogRef.afterClosed().subscribe(function (result) {
-            if (result) {
-                _this.contestService.createGroup(result).subscribe(function () { return console.log("create group sucess"); });
-            }
-            _this.dialogRef = null;
-        });
+        if (this.role != 'student') {
+            alert("请以学生的身份登录!");
+        }
+        else if (this.role == 'student') {
+            this.dialogRef = this.dialog.open(ApplyDialog, {
+                disableClose: false
+            });
+            this.dialogRef.componentInstance.student = this.student;
+            this.contestService.getCompGuideTeacher(this.article.relationId)
+                .subscribe(function (guideTeachers) { return _this.dialogRef.componentInstance.guideTeachers = guideTeachers; });
+            this.dialogRef.componentInstance.contest = this.contest;
+            this.dialogRef.componentInstance.groups = this.groups;
+            this.dialogRef.componentInstance.student = this.student;
+            this.dialogRef.afterClosed().subscribe(function (result) {
+                if (result) {
+                    _this.contestService.createGroup(result).subscribe(function () { return console.log("create group sucess"); });
+                }
+                _this.dialogRef = null;
+            });
+        }
     };
     return ArticleDetailComponent;
 }());
@@ -4030,7 +4054,6 @@ var ApplyDialog = (function () {
             .subscribe(function () { return alert("申请成功!等待队长审批."); });
     };
     ApplyDialog.prototype.ngOnInit = function () {
-        console.log("contest", this.contest);
     };
     return ApplyDialog;
 }());
