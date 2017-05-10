@@ -1,6 +1,35 @@
 webpackJsonp([0,4],{
 
-/***/ 1159:
+/***/ 11:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__login_service__ = __webpack_require__(822);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__login_service__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__article_service__ = __webpack_require__(510);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_1__article_service__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contest_service__ = __webpack_require__(821);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__contest_service__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__student_service__ = __webpack_require__(823);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__student_service__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__teacher_service__ = __webpack_require__(824);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_4__teacher_service__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__award_service__ = __webpack_require__(820);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_5__award_service__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__admin_service__ = __webpack_require__(819);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_6__admin_service__["a"]; });
+
+
+
+
+
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 1161:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
@@ -18,7 +47,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 1160:
+/***/ 1162:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
@@ -36,7 +65,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 1161:
+/***/ 1163:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
@@ -54,7 +83,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 1162:
+/***/ 1164:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
@@ -72,42 +101,6 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 1163:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)();
-// imports
-
-
-// module
-exports.push([module.i, "md-card {\r\n  margin-top: 10px;\r\n}\r\nmd-icon {\r\n  margin-left: 10px;\r\n}\r\n.fixed-action-btn {\r\n  position: fixed;\r\n  right: 23px;\r\n  bottom: 23px;\r\n  padding-top: 15px;\r\n  margin-bottom: 0;\r\n  z-index: 998;\r\n}\r\n.btn-floating {\r\n  display: inline-block;\r\n  color: #fff;\r\n  position: relative;\r\n  overflow: hidden;\r\n  z-index: 1;\r\n  width: 40px;\r\n  height: 40px;\r\n  line-height: 40px;\r\n  padding: 0;\r\n  background-color: #26a69a;\r\n  border-radius: 50%;\r\n  -webkit-transition: .3s;\r\n  transition: .3s;\r\n  cursor: pointer;\r\n  vertical-align: middle;\r\n}\r\n.btn-floating i {\r\n  width: inherit;\r\n  display: inline-block;\r\n  text-align: center;\r\n  color: #fff;\r\n  font-size: 1.6rem;\r\n  line-height: 40px;\r\n}\r\n.btn-floating:hover {\r\n  background-color: #26a69a;\r\n}\r\n\r\n.btn-floating:before {\r\n  border-radius: 0;\r\n}\r\n\r\n.btn-floating.btn-large {\r\n  width: 56px;\r\n  height: 56px;\r\n}\r\n\r\n.btn-floating.btn-large i {\r\n  line-height: 56px;\r\n}\r\n\r\nbutton.btn-floating {\r\n  border: none;\r\n}\r\n.waves-effect {\r\n  position: relative;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  overflow: hidden;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n  -webkit-tap-highlight-color: transparent;\r\n  vertical-align: middle;\r\n  z-index: 1;\r\n  will-change: opacity, transform;\r\n  -webkit-transition: .3s ease-out;\r\n  transition: .3s ease-out;\r\n}\r\n\r\n.waves-effect.waves-light .waves-ripple {\r\n  background-color: rgba(255, 255, 255, 0.45);\r\n}\r\n\r\n.red {\r\n  background-color: #F44336 !important;\r\n}\r\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ 1164:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)();
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
 /***/ 1165:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -116,7 +109,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "md-card {\r\n  margin-top: 10px;\r\n}\r\nmd-icon {\r\n  margin-left: 10px;\r\n}\r\n.fixed-action-btn {\r\n  position: fixed;\r\n  right: 23px;\r\n  bottom: 23px;\r\n  padding-top: 15px;\r\n  margin-bottom: 0;\r\n  z-index: 998;\r\n}\r\n.btn-floating {\r\n  display: inline-block;\r\n  color: #fff;\r\n  position: relative;\r\n  overflow: hidden;\r\n  z-index: 1;\r\n  width: 40px;\r\n  height: 40px;\r\n  line-height: 40px;\r\n  padding: 0;\r\n  background-color: #26a69a;\r\n  border-radius: 50%;\r\n  -webkit-transition: .3s;\r\n  transition: .3s;\r\n  cursor: pointer;\r\n  vertical-align: middle;\r\n}\r\n.btn-floating i {\r\n  width: inherit;\r\n  display: inline-block;\r\n  text-align: center;\r\n  color: #fff;\r\n  font-size: 1.6rem;\r\n  line-height: 40px;\r\n}\r\n.btn-floating:hover {\r\n  background-color: #26a69a;\r\n}\r\n\r\n.btn-floating:before {\r\n  border-radius: 0;\r\n}\r\n\r\n.btn-floating.btn-large {\r\n  width: 56px;\r\n  height: 56px;\r\n}\r\n\r\n.btn-floating.btn-large i {\r\n  line-height: 56px;\r\n}\r\n\r\nbutton.btn-floating {\r\n  border: none;\r\n}\r\n.waves-effect {\r\n  position: relative;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  overflow: hidden;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n  -webkit-tap-highlight-color: transparent;\r\n  vertical-align: middle;\r\n  z-index: 1;\r\n  will-change: opacity, transform;\r\n  -webkit-transition: .3s ease-out;\r\n  transition: .3s ease-out;\r\n}\r\n\r\n.waves-effect.waves-light .waves-ripple {\r\n  background-color: rgba(255, 255, 255, 0.45);\r\n}\r\n\r\n.red {\r\n  background-color: #F44336 !important;\r\n}\r\n", ""]);
 
 // exports
 
@@ -224,7 +217,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "table {\r\n  width: 100%;\r\n}\r\ntable, tr, th, td {\r\n  border-collapse: collapse;\r\n  border: 1px solid;\r\n}\r\n.textArea {\r\n  min-height: 100px;\r\n}\r\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -260,7 +253,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "md-input-container, table {\r\n  width: 100%;\r\n}\r\nmd-radio-group {\r\n  display: -webkit-inline-box;\r\n  display: -ms-inline-flexbox;\r\n  display: inline-flex;\r\n}\r\nmd-radio-button {\r\n  margin: 5px;\r\n}\r\nthead td {\r\n  text-align: center;\r\n}\r\nmd-chip-list {\r\n  position: absolute;\r\n}\r\nmd-chip:not(.mat-basic-chip) {\r\n  padding: 0 12px;\r\n  display: inline-block;\r\n}\r\n", ""]);
+exports.push([module.i, "table {\r\n  width: 100%;\r\n}\r\ntable, tr, th, td {\r\n  border-collapse: collapse;\r\n  border: 1px solid;\r\n}\r\n.textArea {\r\n  min-height: 100px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -314,7 +307,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, ".fileName {\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\r\n  white-space: nowrap;\r\n}\r\nbutton {\r\n  display: none;\r\n  min-width: 60px;\r\n}\r\n\r\nmd-list-item:hover button {\r\n  display: block;\r\n}\r\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -332,7 +325,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "md-card md-card-content md-card md-card-content {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n}\r\n", ""]);
+exports.push([module.i, "md-input-container, table {\r\n  width: 100%;\r\n}\r\nmd-radio-group {\r\n  display: -webkit-inline-box;\r\n  display: -ms-inline-flexbox;\r\n  display: inline-flex;\r\n}\r\nmd-radio-button {\r\n  margin: 5px;\r\n}\r\nthead td {\r\n  text-align: center;\r\n}\r\nmd-chip-list {\r\n  position: absolute;\r\n}\r\nmd-chip:not(.mat-basic-chip) {\r\n  padding: 0 12px;\r\n  display: inline-block;\r\n}\r\n", ""]);
 
 // exports
 
@@ -368,7 +361,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "md-radio-button {\r\n    margin-right: 18px;\r\n}\r\n\r\n.full-width {\r\n  width: 100%;\r\n}\r\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -386,7 +379,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".fileName {\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\r\n  white-space: nowrap;\r\n}\r\nbutton {\r\n  display: none;\r\n  min-width: 60px;\r\n}\r\n\r\nmd-list-item:hover button {\r\n  display: block;\r\n}\r\n", ""]);
 
 // exports
 
@@ -404,7 +397,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "md-card md-card-content md-card md-card-content {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n}\r\n", ""]);
 
 // exports
 
@@ -440,7 +433,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "md-radio-button {\r\n    margin-right: 18px;\r\n}\r\n\r\n.full-width {\r\n  width: 100%;\r\n}\r\n", ""]);
 
 // exports
 
@@ -494,7 +487,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "md-card {\r\n  float: left;\r\n}\r\n", ""]);
 
 // exports
 
@@ -530,7 +523,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "md-card {\r\n  float: left;\r\n}\r\n", ""]);
 
 // exports
 
@@ -548,7 +541,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "md-card {\r\n  float: left;\r\n}\r\n", ""]);
 
 // exports
 
@@ -692,6 +685,78 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 1198:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)();
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 1199:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)();
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 1200:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)();
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 1201:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)();
+// imports
+
+
+// module
 exports.push([module.i, "section {\r\n  height: 100%;\r\n}\r\n", ""]);
 
 // exports
@@ -702,313 +767,298 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 1205:
+/***/ 1209:
 /***/ (function(module, exports) {
 
 module.exports = "<md-toolbar color=\"primary\">\r\n\r\n  <span class=\"noselect\" routerLink=\"/\" routerLinkActive=\"active\">\r\n    <md-icon>home</md-icon>\r\n    {{title}}\r\n  </span>\r\n  <span style=\"flex: 1 1 auto\"> </span>\r\n  <md-input-container>\r\n    <label><md-icon>search</md-icon></label>\r\n    <input mdInput [(ngModel)]=\"searchWord\" placeholder=\"&ensp;&ensp;搜索\" (change)=\"getSearchArticles(searchWord)\"/>\r\n  </md-input-container>\r\n  <!-- This fills the remaining space of the current row -->\r\n  <span style=\"flex: 1 1 auto\"> </span>\r\n  <app-login>Loading LoginComponent ...</app-login>\r\n\r\n</md-toolbar>\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
-/***/ 1206:
+/***/ 1210:
 /***/ (function(module, exports) {
 
 module.exports = "<h3>报名</h3>\r\n<section *ngIf=\"!groupMode\">\r\n  <button md-button (click)=\"setGroupMode('create')\">创建队伍</button>\r\n  <button md-button (click)=\"setGroupMode('join')\">加入队伍</button>\r\n</section>\r\n<section *ngIf=\"groupMode === 'join'\">\r\n  <md-list>\r\n    <!-- <md-chip-list>\r\n    <md-chip selected=\"true\" color=\"warn\">队长审核队员功能尚未添加</md-chip>\r\n  </md-chip-list> -->\r\n    <md-list-item *ngFor=\"let group of groups\">\r\n      {{group.groupsname}}\r\n      <button md-button (click)=\"joinGroup(group)\">申请加入</button>\r\n    </md-list-item>\r\n  </md-list>\r\n</section>\r\n<section *ngIf=\"groupMode === 'create'\">\r\n<form #groups=\"ngForm\">\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput ngModel name=\"groupsname\" placeholder=\"组名\" />\r\n  </md-input-container>\r\n  <md-select placeholder=\"选择指导老师\" ngModel name=\"guideTeacher\">\r\n    <md-option *ngFor=\"let item of guideTeachers\" [value]=\"guideTeachers\">\r\n      {{item.teachername}}\r\n    </md-option>\r\n  </md-select>\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput name=\"studentname\" [(ngModel)]=\"student.studentname\" placeholder=\"学号\" disabled />\r\n  </md-input-container>\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput name=\"comname\" [(ngModel)]=\"contest.comname\" placeholder=\"竞赛\" disabled />\r\n  </md-input-container>\r\n</form>\r\n<button md-button color=\"primary\" (click)=\"dialogRef.close(groups.value)\">创建</button>\r\n<button md-button color=\"warn\" (click)=\"dialogRef.close()\">取消</button>\r\n</section>\r\n"
 
 /***/ }),
 
-/***/ 1207:
+/***/ 1211:
 /***/ (function(module, exports) {
 
 module.exports = "<article *ngIf=\"article\">\r\n  <h3>标题:{{article.title}}</h3>\r\n  <p>\r\n    <span>发布日期:{{article.pubDate}}</span>\r\n    <span>发布者:{{article.adminName}}</span>\r\n    <span>浏览量:{{article.visitCount}}</span>\r\n  </p>\r\n  <article [innerHTML]=\"article.content\"></article>\r\n  <div>\r\n    <qr-code [value]=\"'All QR Code data goes here!'\" [size]=\"150\"></qr-code>\r\n  </div>\r\n  <md-card>\r\n    <md-card-actions>\r\n      <button md-button (click)=\"apply()\" [disabled]=\"already\">\r\n        <span *ngIf=\"already\">已</span>报名\r\n      </button>\r\n      <button *ngIf=\"already\" (click)=\"cancel()\">取消报名</button>\r\n      <button md-button>分享</button>\r\n      <button md-button (click)=\"toggleGroup()\">\r\n        <span *ngIf=\"!groupVisible\">展开</span>\r\n        <span *ngIf=\"groupVisible\">收拢</span>\r\n        队伍详情\r\n      </button>\r\n    </md-card-actions>\r\n    <md-card-header>\r\n      <md-card-title>队伍详情,当前参赛组数: {{groups.length}}</md-card-title>\r\n    </md-card-header>\r\n    <md-card-content *ngIf=\"groupVisible\">\r\n      <md-list>\r\n        <md-list-item *ngFor=\"let group of groups\">\r\n          {{group.groupsname}}\r\n        </md-list-item>\r\n      </md-list>\r\n    </md-card-content>\r\n  </md-card>\r\n</article>\r\n"
 
 /***/ }),
 
-/***/ 1208:
-/***/ (function(module, exports) {
-
-module.exports = "<!-- <md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn\">初始化文章内容功能尚未添加</md-chip>\r\n</md-chip-list> -->\r\n<md-card>\r\n  <md-card-title>编辑文章</md-card-title>\r\n  <md-card-content>\r\n    <form #article=\"ngForm\">\r\n      <md-input-container style=\"width: 100%\">\r\n        <input mdInput ngModel name=\"title\" placeholder=\"标题\" />\r\n      </md-input-container>\r\n      <table style=\"width: 100%\">\r\n        <tr>\r\n          <td>\r\n            <md-select style=\"width: 100%\" placeholder=\"发布区域\" ngModel name=\"articleType\">\r\n              <md-option *ngFor=\"let ARTICLETYPE of ARTICLETYPES\" [value]=\"ARTICLETYPE.id\">\r\n                {{ARTICLETYPE.name}}\r\n              </md-option>\r\n            </md-select>\r\n          </td>\r\n          <td>\r\n            <md-input-container style=\"width: 100%\">\r\n              <input mdInput [ngModel]=\"admin.adminname\" name=\"pub\" placeholder=\"发布者\" disabled/>\r\n            </md-input-container>\r\n          </td>\r\n          <td>\r\n            <md-input-container style=\"width: 100%\">\r\n              <input mdInput [ngModel]=\"now | date:'yyyy-MM-dd'\" name=\"date\" type=\"date\" placeholder=\"发布日期\" disabled/>\r\n            </md-input-container>\r\n          </td>\r\n        </tr>\r\n      </table>\r\n      <table>\r\n        <tr>\r\n          <td>\r\n            <md-input-container>\r\n              <input mdInput placeholder=\"选择相关竞赛\" [mdAutocomplete]=\"auto\" [formControl]=\"compCtrl\" />\r\n            </md-input-container>\r\n            <md-autocomplete #auto=\"mdAutocomplete\" [displayWith]=\"displayFn.bind(this)\">\r\n              <md-option *ngFor=\"let item of filteredComps | async\" [value]=\"item\">\r\n                {{item.id}} - {{ item.name }}\r\n              </md-option>\r\n            </md-autocomplete>\r\n          </td>\r\n        </tr>\r\n      </table>\r\n    </form>\r\n    <quill-editor [(ngModel)]=\"editorContent\" (change)=\"logChange($event)\"></quill-editor>\r\n  </md-card-content>\r\n  <md-card-actions>\r\n    <button md-button (click)=\"goBack()\">取消</button>\r\n    <button md-button color=\"primary\" (click)=\"save(article.value)\">提交</button>\r\n  </md-card-actions>\r\n  <md-card-content>\r\n    <h4>预览:</h4>\r\n    <div [innerHTML]=\"editorContent\"></div>\r\n  </md-card-content>\r\n</md-card>\r\n"
-
-/***/ }),
-
-/***/ 1209:
-/***/ (function(module, exports) {
-
-module.exports = "<!-- <md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn\">编辑文章功能尚未添加</md-chip>\r\n</md-chip-list> -->\r\n<md-tab-group>\r\n  <md-tab *ngFor=\"let ARTICLETYPE of ARTICLETYPES\">\r\n    <template md-tab-label>{{ARTICLETYPE.name}}</template>\r\n    <md-nav-list *ngIf=\"ARTICLETYPE.id === 1\">\r\n      <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeOnes;let i of index\">\r\n        {{article.title}}\r\n        <span style=\"flex: 1 1 auto\"> </span>\r\n        <md-icon>date_range</md-icon>{{article.pubDate}}\r\n        <md-icon>person</md-icon>{{article.adminName}}\r\n        <button md-button color=\"primary\">编辑</button>\r\n        <button md-button (click)=\"delete(article,i)\" color=\"warn\">删除</button>\r\n      </md-list-item>\r\n    </md-nav-list>\r\n    <md-nav-list *ngIf=\"ARTICLETYPE.id === 2\">\r\n      <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeTwos;let i of index\">\r\n        {{article.title}}\r\n        <span style=\"flex: 1 1 auto\"> </span>\r\n        <md-icon>date_range</md-icon>{{article.pubDate}}\r\n        <md-icon>person</md-icon>{{article.adminName}}\r\n        <button md-button color=\"primary\">编辑</button>\r\n        <button md-button (click)=\"delete(article,i)\" color=\"warn\">删除</button>\r\n      </md-list-item>\r\n    </md-nav-list>\r\n    <md-nav-list *ngIf=\"ARTICLETYPE.id === 3\">\r\n      <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeThrees;let i of index\">\r\n        {{article.title}}\r\n        <span style=\"flex: 1 1 auto\"> </span>\r\n        <md-icon>date_range</md-icon>{{article.pubDate}}\r\n        <md-icon>person</md-icon>{{article.adminName}}\r\n        <button md-button color=\"primary\">编辑</button>\r\n        <button md-button (click)=\"delete(article,i)\" color=\"warn\">删除</button>\r\n      </md-list-item>\r\n    </md-nav-list>\r\n  </md-tab>\r\n</md-tab-group>\r\n\r\n<div class=\"fixed-action-btn\">\r\n  <a class=\"btn-floating btn-large waves-effect waves-light red\" routerLink=\"edit\" routerLinkActive=\"active\">\r\n    <i class=\"large material-icons\">mode_edit</i>\r\n  </a>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ 1210:
-/***/ (function(module, exports) {
-
-module.exports = "<router-outlet></router-outlet>\r\n"
-
-/***/ }),
-
-/***/ 1211:
-/***/ (function(module, exports) {
-
-module.exports = "<!-- <md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn\">获取近期的获奖情况功能尚未添加</md-chip>\r\n<md-chip selected=\"true\" color=\"warn\">获取未发布的获奖情况功能尚未添加</md-chip>\r\n</md-chip-list> -->\r\n<md-nav-list>\r\n    <md-list-item [routerLink]=\"['detail', award.comid]\" *ngFor=\"let award of awards\">\r\n      {{award.comName}}\r\n      <span style=\"flex: 1 1 auto\"> </span>\r\n      {{award.prizeName}}\r\n      <button md-button (click)=\"download(award)\">下载</button>\r\n    </md-list-item>\r\n</md-nav-list>\r\n"
-
-/***/ }),
-
 /***/ 1212:
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  award works!\r\n</p>\r\n"
+module.exports = "<!-- <md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn\">初始化文章内容功能尚未添加</md-chip>\r\n</md-chip-list> -->\r\n<md-card>\r\n  <md-card-title>编辑文章</md-card-title>\r\n  <md-card-content>\r\n    <form #article=\"ngForm\">\r\n      <md-input-container style=\"width: 100%\">\r\n        <input mdInput ngModel name=\"title\" placeholder=\"标题\" />\r\n      </md-input-container>\r\n      <table style=\"width: 100%\">\r\n        <tr>\r\n          <td>\r\n            <md-select style=\"width: 100%\" placeholder=\"发布区域\" ngModel name=\"articleType\">\r\n              <md-option *ngFor=\"let ARTICLETYPE of ARTICLETYPES\" [value]=\"ARTICLETYPE.id\">\r\n                {{ARTICLETYPE.name}}\r\n              </md-option>\r\n            </md-select>\r\n          </td>\r\n          <td>\r\n            <md-input-container style=\"width: 100%\">\r\n              <input mdInput [ngModel]=\"admin.adminname\" name=\"pub\" placeholder=\"发布者\" disabled/>\r\n            </md-input-container>\r\n          </td>\r\n          <td>\r\n            <md-input-container style=\"width: 100%\">\r\n              <input mdInput [ngModel]=\"now | date:'yyyy-MM-dd'\" name=\"date\" type=\"date\" placeholder=\"发布日期\" disabled/>\r\n            </md-input-container>\r\n          </td>\r\n        </tr>\r\n      </table>\r\n        <md-select style=\"width: 100%\" placeholder=\"相关竞赛\" ngModel name=\"relationId\" (change)=\"setContent(article.value.relationId)\">\r\n          <md-option *ngFor=\"let item of contests\" [value]=\"item.id\">\r\n            {{item.id}} - {{item.name}}\r\n          </md-option>\r\n        </md-select>\r\n      <!-- <table>\r\n        <tr>\r\n          <td>\r\n            <md-input-container>\r\n              <input mdInput name=\"relationId\" placeholder=\"选择相关竞赛\" [mdAutocomplete]=\"auto\" [formControl]=\"compCtrl\" />\r\n            </md-input-container>\r\n            <md-autocomplete #auto=\"mdAutocomplete\" [displayWith]=\"displayFn.bind(this)\">\r\n              <md-option *ngFor=\"let item of filteredComps | async\" [value]=\"item.id\">\r\n                {{item.id}} - {{ item.name }}\r\n              </md-option>\r\n            </md-autocomplete>\r\n          </td>\r\n        </tr>\r\n      </table> -->\r\n    </form>\r\n    <quill-editor [(ngModel)]=\"editorContent\" (change)=\"logChange($event)\"></quill-editor>\r\n  </md-card-content>\r\n  <md-card-actions>\r\n    <button md-button (click)=\"goBack()\">取消</button>\r\n    <button md-button color=\"primary\" (click)=\"save(article.value)\">提交</button>\r\n  </md-card-actions>\r\n  <md-card-content>\r\n    <h4>预览:</h4>\r\n    <div [innerHTML]=\"editorContent\"></div>\r\n  </md-card-content>\r\n</md-card>\r\n"
 
 /***/ }),
 
 /***/ 1213:
 /***/ (function(module, exports) {
 
-module.exports = "<md-card>\r\n  <md-card-actions>\r\n    <md-select placeholder=\"图表类型\" [(ngModel)]=\"chartType\" name=\"chartType\">\r\n      <md-option *ngFor=\"let CHARTYPE of CHARTTYPES\" [value]=\"CHARTYPE.value\">\r\n        {{CHARTYPE.name}}\r\n      </md-option>\r\n    </md-select>\r\n  </md-card-actions>\r\n  <md-card-content style=\"height: 400px\">\r\n    <ngx-charts-bar-vertical\r\n      *ngIf=\"chartType === 'bar-vertical'\"\r\n      [scheme]=\"colorScheme\"\r\n      [results]=\"single\"\r\n      [xAxis]=\"showXAxis\"\r\n      [yAxis]=\"showYAxis\"\r\n      [legend]=\"showLegend\"\r\n      [showXAxisLabel]=\"showXAxisLabel\"\r\n      [showYAxisLabel]=\"showYAxisLabel\"\r\n      [xAxisLabel]=\"xAxisLabel\"\r\n      [yAxisLabel]=\"yAxisLabel\"\r\n      (select)=\"select($event)\">\r\n    </ngx-charts-bar-vertical>\r\n    <ngx-charts-advanced-pie-chart\r\n      *ngIf=\"chartType === 'advanced-pie-chart'\"\r\n      [scheme]=\"colorScheme\"\r\n      [results]=\"single\"\r\n      (select)=\"select($event)\">\r\n    </ngx-charts-advanced-pie-chart>\r\n  </md-card-content>\r\n</md-card>\r\n"
+module.exports = "<!-- <md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn\">编辑文章功能尚未添加</md-chip>\r\n</md-chip-list> -->\r\n<md-tab-group>\r\n  <md-tab *ngFor=\"let ARTICLETYPE of ARTICLETYPES\">\r\n    <template md-tab-label>{{ARTICLETYPE.name}}</template>\r\n    <md-nav-list *ngIf=\"ARTICLETYPE.id === 1\">\r\n      <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeOnes;let i of index\">\r\n        {{article.title}}\r\n        <span style=\"flex: 1 1 auto\"> </span>\r\n        <md-icon>date_range</md-icon>{{article.pubDate}}\r\n        <md-icon>person</md-icon>{{article.adminName}}\r\n        <button md-button color=\"primary\">编辑</button>\r\n        <button md-button (click)=\"delete(article,i)\" color=\"warn\">删除</button>\r\n      </md-list-item>\r\n    </md-nav-list>\r\n    <md-nav-list *ngIf=\"ARTICLETYPE.id === 2\">\r\n      <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeTwos;let i of index\">\r\n        {{article.title}}\r\n        <span style=\"flex: 1 1 auto\"> </span>\r\n        <md-icon>date_range</md-icon>{{article.pubDate}}\r\n        <md-icon>person</md-icon>{{article.adminName}}\r\n        <button md-button color=\"primary\">编辑</button>\r\n        <button md-button (click)=\"delete(article,i)\" color=\"warn\">删除</button>\r\n      </md-list-item>\r\n    </md-nav-list>\r\n    <md-nav-list *ngIf=\"ARTICLETYPE.id === 3\">\r\n      <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeThrees;let i of index\">\r\n        {{article.title}}\r\n        <span style=\"flex: 1 1 auto\"> </span>\r\n        <md-icon>date_range</md-icon>{{article.pubDate}}\r\n        <md-icon>person</md-icon>{{article.adminName}}\r\n        <button md-button color=\"primary\">编辑</button>\r\n        <button md-button (click)=\"delete(article,i)\" color=\"warn\">删除</button>\r\n      </md-list-item>\r\n    </md-nav-list>\r\n  </md-tab>\r\n</md-tab-group>\r\n\r\n<div class=\"fixed-action-btn\">\r\n  <a class=\"btn-floating btn-large waves-effect waves-light red\" routerLink=\"edit\" routerLinkActive=\"active\">\r\n    <i class=\"large material-icons\">mode_edit</i>\r\n  </a>\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ 1214:
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"contest\">\r\n  <h2>竞赛名：{{contest.comName}}</h2>\r\n  <div>简介：{{contest.introduce}}</div>\r\n  <div>校外资助单位：{{contest.sponsor}}</div>\r\n  <div>系别：{{contest.department.departmentName}}</div>\r\n  <div>竞赛地点：{{contest.place}}</div>\r\n  <div>目前本校参赛人数：{{contest.people}}</div>\r\n  <div>报名开始时间：{{contest.applyBeginDate}}</div>\r\n  <div>报名结束时间：{{contest.applyEndDate}}</div>\r\n  <div>比赛时间：{{contest.comDate}}</div>\r\n</div>\r\n"
+module.exports = "<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
 /***/ 1215:
 /***/ (function(module, exports) {
 
-module.exports = "<md-nav-list>\r\n  <div *ngIf=\"user\">\r\n    <md-list-item [routerLink]=\"['/contest/detail', contest.comid]\" *ngFor=\"let contest of contests\">\r\n      {{contest.comname}}\r\n      <span style=\"flex: 1 1 auto\"> </span>\r\n      <md-icon>date_range</md-icon>{{contest.time}}\r\n    </md-list-item>\r\n  </div>\r\n  <div *ngIf=\"!user\">\r\n    <md-list-item [routerLink]=\"['/contest/detail', contest.comid]\" *ngFor=\"let contest of contests\">\r\n      {{contest.comname}}\r\n      <span style=\"flex: 1 1 auto\"> </span>\r\n      <md-icon>date_range</md-icon>{{contest.time}}\r\n    </md-list-item>\r\n  </div>\r\n</md-nav-list>\r\n"
+module.exports = "<!-- <md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn\">获取近期的获奖情况功能尚未添加</md-chip>\r\n<md-chip selected=\"true\" color=\"warn\">获取未发布的获奖情况功能尚未添加</md-chip>\r\n</md-chip-list> -->\r\n<md-nav-list>\r\n    <md-list-item [routerLink]=\"['detail', award.comid]\" *ngFor=\"let award of awards\">\r\n      {{award.comName}}\r\n      <span style=\"flex: 1 1 auto\"> </span>\r\n      {{award.prizeName}}\r\n      <button md-button (click)=\"download(award)\">下载</button>\r\n    </md-list-item>\r\n</md-nav-list>\r\n"
 
 /***/ }),
 
 /***/ 1216:
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\r\n"
+module.exports = "<p>\r\n  award works!\r\n</p>\r\n"
 
 /***/ }),
 
 /***/ 1217:
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"declaration\">\r\n  <h1>广州商学院学科竞赛项目</h1>\r\n  <h2>申&emsp;报&emsp;书</h2>\r\n  <p>竞赛名称: {{ declaration.comname }}</p>\r\n  <p *ngIf=\"leader\">竞赛负责人: {{ leader.teachername }}</p>\r\n  <p>所在单位(盖章): {{ declaration.department }}</p>\r\n  <p>竞赛类别: {{ declaration.levelname }}</p>\r\n  <p *ngIf=\"leader\">联系电话: {{ leader.phone }}</p>\r\n  <p *ngIf=\"leader\">电子邮箱: {{ leader.email }}</p>\r\n  <p>填表日期: {{ declaration.date }}</p>\r\n  <!-- <p>广州商学院教学处制</p> -->\r\n  <table>\r\n    <tr>\r\n      <td rowspan=\"7\">竞赛情况</td>\r\n      <th>竞赛名称</th>\r\n      <td colspan=\"3\">{{ declaration.comname }}\r\n    </tr>\r\n    <tr>\r\n      <th>竞赛负责人</th>\r\n      <td *ngIf=\"leader\">{{ leader.teachername }}</td>\r\n      <th>联系电话</th>\r\n      <td *ngIf=\"leader\">{{ leader.phone }}</td>\r\n    </tr>\r\n    <tr>\r\n      <th>竞赛类别</th>\r\n      <td colspan=\"3\">{{ declaration.levelname }}</td>\r\n    </tr>\r\n    <tr>\r\n      <th>院级以上竞赛举办者</th>\r\n      <td colspan=\"3\">{{ declaration.host }}</td>\r\n    </tr>\r\n    <tr>\r\n      <th>竞赛时间</th>\r\n      <td>{{ declaration.time }}</td>\r\n      <th>竞赛地点</th>\r\n      <td>{{ declaration.place }}</td>\r\n    </tr>\r\n    <tr>\r\n      <th>参赛对象</th>\r\n      <td>{{ declaration.object }}</td>\r\n      <th>人数</th>\r\n      <td>{{ declaration.people }}</td>\r\n    </tr>\r\n    <tr>\r\n      <th>校外资助单位</th>\r\n      <td colspan=\"3\">{{ declaration.sponsor }}</td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">竞赛简介</td>\r\n      <td colspan=\"4\">{{ declaration.introduce }}</td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"2\">指导教师</td>\r\n      <th>姓名</th>\r\n      <th>职称</th>\r\n      <th>职务</th>\r\n      <th>专业</th>\r\n    </tr>\r\n    <tr *ngFor=\"let item of teachers\">\r\n      <td>{{ item.teachername }}</td>\r\n      <td>{{ item.title }}</td>\r\n      <td>{{ item.post }}</td>\r\n      <td>{{ item.subject }}</td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">学科竞赛实施方案</td>\r\n      <td colspan=\"4\">\r\n        <div class=\"textArea\">\r\n          <p>{{ declaration.plan }}</p>\r\n        </div>\r\n        <p>附:培训工作安排表</p>\r\n        <table>\r\n          <tr>\r\n            <th>教师姓名</th>\r\n            <th>培训内容</th>\r\n            <th>培训地点</th>\r\n            <th>培训日期</th>\r\n            <th>学时</th>\r\n          </tr>\r\n          <tr *ngFor=\"let item of schedules\">\r\n            <td>{{ item.teacherno }}</td>\r\n            <td>{{ item.content }}</td>\r\n            <td>{{ item.position }}</td>\r\n            <td>{{ item.date }}</td>\r\n            <td>{{ item.hours }}</td>\r\n          </tr>\r\n        </table>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">能力训练目标</td>\r\n      <td colspan=\"4\">\r\n        <div class=\"textArea\">\r\n          <p>{{ declaration.tgoal }}</p>\r\n        </div>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">竞赛获奖目标</td>\r\n      <td colspan=\"4\">\r\n        <div class=\"textArea\">\r\n          <p>{{ declaration.wgoal }}</p>\r\n        </div>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">经费预算</td>\r\n      <td colspan=\"4\">\r\n        <table>\r\n          <tr>\r\n            <td rowspan=\"2 + budgets.length\">经费预算</td>\r\n            <td>支出科目</td>\r\n            <td>金额（元）</td>\r\n            <td>计算依据及理由</td>\r\n          </tr>\r\n          <tr *ngFor=\"let item of budgets\">\r\n            <td>{{ item.subject }}</td>\r\n            <td>{{ item.sum }}</td>\r\n            <td>{{ item.reasons }}</td>\r\n          </tr>\r\n          <tr>\r\n            <td rowspan=\"1\">合计</td>\r\n            <td colspan=\"2\">{{ budgets.length }} 个支出科目</td>\r\n            <td>{{ hoursSum }}</td>\r\n          </tr>\r\n        </table>\r\n        <table>\r\n          <tr>\r\n            <td rowspan=\"2 + hours.length\">课时预算</td>\r\n            <td>课时类别</td>\r\n            <td>课时数（学时）</td>\r\n            <td>备注</td>\r\n          </tr>\r\n          <tr *ngFor=\"let item of hours\">\r\n            <td>{{ item.type }}</td>\r\n            <td>{{ item.hours }}</td>\r\n            <td>{{ item.remarks }}</td>\r\n          </tr>\r\n          <tr>\r\n            <td rowspan=\"1\">合计</td>\r\n            <td colspan=\"2\">{{ hours.length }} 个课程</td>\r\n            <td>{{ hoursSum }}</td>\r\n          </tr>\r\n          <tr>\r\n            <td rowspan=\"1\">总计</td>\r\n            <td colspan=\"3\">{{budgets.length + hours.length}} 个经费科目</td>\r\n          </tr>\r\n        </table>\r\n        <!-- <md-grid-list cols=\"4\">\r\n          <md-grid-tile [rowspan]=\"budgets.length + 1\" [style.background]=\"'lightgreen'\">经费预算</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">支出科目</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">金额（元）</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">计算依据及理由</md-grid-tile>\r\n          <div *ngFor=\"let item of budgets\">\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.subject }}</md-grid-tile>\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.sum }}</md-grid-tile>\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.reasons }}</md-grid-tile>\r\n          </div>\r\n          <md-grid-tile>合计</md-grid-tile>\r\n          <md-grid-tile>{{budgets.length}} 个支出科目</md-grid-tile>\r\n          <md-grid-tile>{{hoursSum}}（元）</md-grid-tile>\r\n          <md-grid-tile></md-grid-tile>\r\n          <md-grid-tile [rowspan]=\"hours.length + 1\" [style.background]=\"'lightgreen'\">课时预算</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">课时类别</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">课时数（学时）</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">备注</md-grid-tile>\r\n          <div *ngFor=\"let item of hours\">\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.type }}</md-grid-tile>\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.hours }}</md-grid-tile>\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.remarks }}</md-grid-tile>\r\n          </div>\r\n          <md-grid-tile>合计</md-grid-tile>\r\n          <md-grid-tile>{{hours.length}} 个课程</md-grid-tile>\r\n          <md-grid-tile>{{hoursSum}}（学时）</md-grid-tile>\r\n          <md-grid-tile></md-grid-tile>\r\n          <md-grid-tile>总计</md-grid-tile>\r\n          <md-grid-tile>{{budgets.length + hours.length}} 个经费科目</md-grid-tile>\r\n          <md-grid-tile></md-grid-tile>\r\n          <md-grid-tile></md-grid-tile>\r\n        </md-grid-list> -->\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">竞赛组织实施单位意见</td>\r\n      <td colspan=\"4\">\r\n        <div class=\"textArea\">\r\n          <p>{{ declaration.uopinion }}</p>\r\n        </div>\r\n          <p>{{ declaration.dsdate }}</p>\r\n          <p>{{ declaration.dsign }}</p>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">教学处意见</td>\r\n      <td colspan=\"4\">\r\n        <div class=\"textArea\">\r\n          <p>{{ declaration.tdopinion }}</p>\r\n        </div>\r\n          <p>{{ declaration.olsdate }}</p>\r\n          <p>{{ declaration.olsign }}</p>\r\n      </td>\r\n    </tr>\r\n  </table>\r\n  <button md-button (click)=\"export(declaration)\">导出文档</button>\r\n</div>\r\n"
+module.exports = "<md-card>\r\n  <md-card-actions>\r\n    <md-select placeholder=\"图表类型\" [(ngModel)]=\"chartType\" name=\"chartType\">\r\n      <md-option *ngFor=\"let CHARTYPE of CHARTTYPES\" [value]=\"CHARTYPE.value\">\r\n        {{CHARTYPE.name}}\r\n      </md-option>\r\n    </md-select>\r\n  </md-card-actions>\r\n  <md-card-content style=\"height: 400px\">\r\n    <ngx-charts-bar-vertical\r\n      *ngIf=\"chartType === 'bar-vertical'\"\r\n      [scheme]=\"colorScheme\"\r\n      [results]=\"single\"\r\n      [xAxis]=\"showXAxis\"\r\n      [yAxis]=\"showYAxis\"\r\n      [legend]=\"showLegend\"\r\n      [showXAxisLabel]=\"showXAxisLabel\"\r\n      [showYAxisLabel]=\"showYAxisLabel\"\r\n      [xAxisLabel]=\"xAxisLabel\"\r\n      [yAxisLabel]=\"yAxisLabel\"\r\n      (select)=\"select($event)\">\r\n    </ngx-charts-bar-vertical>\r\n    <ngx-charts-advanced-pie-chart\r\n      *ngIf=\"chartType === 'advanced-pie-chart'\"\r\n      [scheme]=\"colorScheme\"\r\n      [results]=\"single\"\r\n      (select)=\"select($event)\">\r\n    </ngx-charts-advanced-pie-chart>\r\n  </md-card-content>\r\n</md-card>\r\n"
 
 /***/ }),
 
 /***/ 1218:
 /***/ (function(module, exports) {
 
-module.exports = "<md-nav-list>\n  <div>\n    <md-list-item [routerLink]=\"['/declaration/detail', declaration.comid]\" *ngFor=\"let declaration of declarations\">\n      {{declaration.comname}}\n      <span style=\"flex: 1 1 auto\"> </span>\n      <md-icon>date_range</md-icon>{{declaration.date}}\n    </md-list-item>\n  </div>\n</md-nav-list>\n"
+module.exports = "<div *ngIf=\"contest\">\r\n  <h2>竞赛名：{{contest.comName}}</h2>\r\n  <div>简介：{{contest.introduce}}</div>\r\n  <div>校外资助单位：{{contest.sponsor}}</div>\r\n  <div>系别：{{contest.department.departmentName}}</div>\r\n  <div>竞赛地点：{{contest.place}}</div>\r\n  <div>目前本校参赛人数：{{contest.people}}</div>\r\n  <div>报名开始时间：{{contest.applyBeginDate}}</div>\r\n  <div>报名结束时间：{{contest.applyEndDate}}</div>\r\n  <div>比赛时间：{{contest.comDate}}</div>\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ 1219:
 /***/ (function(module, exports) {
 
-module.exports = "<h1>{{title}}</h1>\r\n<md-icon color=\"warn\">stop</md-icon><span>必填项</span>\r\n<md-icon color=\"primary\">stop</md-icon><span>选填项</span>\r\n<h4>完成度:<span>{{progress/bufferValue | percent}}</span></h4>\r\n<section>\r\n  <!-- <md-progress-bar [color]=\"'warn'\" [mode]=\"'determinate'\" [value]=\"requiredProgress\" [bufferValue]=\"100\">\r\n  </md-progress-bar> -->\r\n  <md-progress-bar [color]=\"'warn'\" [mode]=\"'determinate'\" [value]=\"progress\" [bufferValue]=\"bufferValue\">\r\n  </md-progress-bar>\r\n</section>\r\n<md-tab-group>\r\n  <md-tab>\r\n    <template md-tab-label>\r\n      {{declaration.baseInfo.title}}\r\n      <md-icon color=\"warn\" *ngIf=\"baseInfo.valid\">done</md-icon>\r\n      <md-icon color=\"warn\" *ngIf=\"!baseInfo.valid\">clear</md-icon>\r\n    </template>\r\n    <md-card>\r\n      <md-card-content>\r\n        <form #baseInfo=\"ngForm\" (change)=\"setProgress(baseInfo.value, situation.value, plan.value)\">\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"name\" placeholder={{declaration.baseInfo.name}} required/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <table>\r\n            <tr>\r\n              <td>\r\n                <md-radio-group [ngModel]=\"'A类'\" name=\"type\">\r\n                  <md-radio-button *ngFor=\"let type of types\" value={{type.value}} required>\r\n                    {{type.value}}\r\n                  </md-radio-button>\r\n                </md-radio-group>\r\n              </td>\r\n              <td>\r\n                <label for=\"teacherno\"></label>\r\n                <md-select placeholder={{declaration.baseInfo.leader}} ngModel name=\"leader\">\r\n                  <md-option *ngFor=\"let item of teachers\" [value]=\"item.teacherno\">\r\n                    {{item.teachername}}\r\n                  </md-option>\r\n                </md-select>\r\n              </td>\r\n            </tr>\r\n          </table>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"unit\" placeholder={{declaration.baseInfo.unit}} required/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"phone\" type=\"tel\" placeholder={{declaration.baseInfo.phone}}/>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"email\" type=\"email\" placeholder={{declaration.baseInfo.email}}/>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput type=\"date\" [ngModel]=\"date | date:'yyyy-MM-dd'\" name=\"date\" placeholder={{declaration.baseInfo.date}}/>\r\n          </md-input-container>\r\n        </form>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n  <md-tab>\r\n    <template md-tab-label>\r\n      {{declaration.situation.title}}\r\n      <md-icon color=\"warn\" *ngIf=\"situation.valid\">done</md-icon>\r\n      <md-icon color=\"warn\" *ngIf=\"!situation.valid\">clear</md-icon>\r\n    </template>\r\n    <md-card>\r\n      <md-card-content>\r\n        <form #situation=\"ngForm\" (change)=\"setProgress(baseInfo.value, situation.value, plan.value)\">\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"host\" placeholder={{declaration.situation.host}} required/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"sponsor\" placeholder={{declaration.situation.sponsor}}/>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput type=\"date\" [ngModel]=\"date | date:'yyyy-MM-dd'\" name=\"time\" placeholder={{declaration.situation.time}} required/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <table>\r\n            <tr>\r\n              <td>\r\n                <md-input-container>\r\n                  <input mdInput type=\"date\" [ngModel]=\"date | date:'yyyy-MM-dd'\" name=\"applyBeginDate\" placeholder=\"报名开始时间\" />\r\n                </md-input-container>\r\n              </td>\r\n              <td>\r\n                <md-input-container>\r\n                  <input mdInput type=\"date\" [ngModel]=\"date | date:'yyyy-MM-dd'\" name=\"applyEndDate\" placeholder=\"报名结束时间\" />\r\n                </md-input-container>\r\n              </td>\r\n            </tr>\r\n            <tr>\r\n              <td>\r\n                <label for=\"isNeedGroup\">是否需要组队</label>\r\n                <md-radio-group [(ngModel)]=\"isNeedGroup\" name=\"isNeedGroup\">\r\n                  <md-radio-button *ngFor=\"let item of [{name: '是', value: 1},{name: '否', value: 0}]\" value={{item.value}}>\r\n                    {{item.name}}\r\n                  </md-radio-button>\r\n                </md-radio-group>\r\n              </td>\r\n              <td>\r\n                <md-input-container *ngIf=\"isNeedGroup == 1\">\r\n                  <input mdInput type=\"number\" ngModel name=\"groupNum\" placeholder=\"组队人数\" />\r\n                </md-input-container>\r\n              </td>\r\n            </tr>\r\n          </table>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"place\" placeholder={{declaration.situation.place}} required/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <md-select placeholder={{declaration.situation.object}} ngModel name=\"object\" required>\r\n            <md-option *ngFor=\"let item of DEPARTMENTS\" [value]=\"item.departmentName + '学生'\">\r\n              {{item.departmentName}}学生\r\n            </md-option>\r\n          </md-select>\r\n          <md-select placeholder=\"选择条件类型\" ngModel name=\"condition\">\r\n            <md-option *ngFor=\"let item of conditions\" [value]=\"item.conditionid\">\r\n              {{item.conditionname}}\r\n            </md-option>\r\n          </md-select>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"people\" type=\"number\" placeholder={{declaration.situation.people}}/>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <textarea mdInput ngModel name=\"intro\" cols=\"6\" placeholder={{declaration.situation.intro}} required></textarea>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n        </form>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n  <md-tab>\r\n    <template md-tab-label>\r\n      {{declaration.plan.title}} &amp; {{declaration.goal.title}}\r\n      <md-icon color=\"warn\" *ngIf=\"plan.valid\">done</md-icon>\r\n      <md-icon color=\"warn\" *ngIf=\"!plan.valid\">clear</md-icon>\r\n    </template>\r\n    <md-card>\r\n      <md-card-content>\r\n        <!-- <label>{{declaration.plan.instructor}}</label> -->\r\n        <md-card>\r\n          <md-card-content>\r\n            <md-input-container>\r\n              <md-chip-list>\r\n                <md-chip *ngFor=\"let item of gTeachers;let i of index\">\r\n                  <span>{{ item.teachername }}</span>\r\n                  <button md-icon-button (click)=\"deleteGuideTeacher(item,i)\">\r\n                      <md-icon>clear</md-icon>\r\n                    </button>\r\n                </md-chip>\r\n              </md-chip-list>\r\n              <!-- <input mdInput #guideTeacher name=\"guideTeacher\" /> -->\r\n              <input [ngStyle]=\"{'margin-left.px': guideTeachers.length * 110}\" mdInput placeholder=\"指导教师\" [mdAutocomplete]=\"auto\" [formControl]=\"teacherCtrl\" />\r\n            </md-input-container>\r\n            <md-autocomplete #auto=\"mdAutocomplete\" [displayWith]=\"displayFn.bind(this)\">\r\n              <md-option *ngFor=\"let item of filteredTeachers | async\" [value]=\"item\">\r\n                {{ item.teachername }}\r\n              </md-option>\r\n            </md-autocomplete>\r\n          </md-card-content>\r\n        </md-card>\r\n        <md-card>\r\n          <md-card-header>\r\n            <md-card-title>{{declaration.plan.schedule.title}}</md-card-title>\r\n          </md-card-header>\r\n          <md-card-content *ngIf=\"scheduleVisible\">\r\n            <form #schedule=\"ngForm\">\r\n              <table>\r\n                <tr>\r\n                  <td>\r\n                    <md-select placeholder=\"选择指导老师\" ngModel name=\"teacherno\">\r\n                      <md-option *ngFor=\"let item of teachers\" [value]=\"item.teacherno\">\r\n                        {{item.teachername}}\r\n                      </md-option>\r\n                    </md-select>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"content\" placeholder=\"{{declaration.plan.schedule.content}}\" />\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"position\" placeholder=\"{{declaration.plan.schedule.place}}\" />\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput type=\"date\" [ngModel]=\"date | date:'yyyy-MM-dd'\" name=\"date\" placeholder=\"{{declaration.plan.schedule.date}}\" />\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput type=\"number\" ngModel name=\"hours\" placeholder=\"{{declaration.plan.schedule.hour}}\" />\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <button md-button (click)=\"addSchedule(schedule);setProgress(baseInfo.value, situation.value, plan.value)\">添加</button>\r\n                  </td>\r\n                </tr>\r\n                <tr *ngFor=\"let item of schedules\">\r\n                  <td>{{item.teacherno}}</td>\r\n                  <td>{{item.content}}</td>\r\n                  <td>{{item.position}}</td>\r\n                  <td>{{item.date}}</td>\r\n                  <td>{{item.hours}}</td>\r\n                  <td>\r\n                    <button md-button (click)=\"deleteSchedule(item);setProgress(baseInfo.value, situation.value, plan.value)\">删除</button>\r\n                  </td>\r\n                </tr>\r\n              </table>\r\n            </form>\r\n          </md-card-content>\r\n          <md-card-actions>\r\n            <button md-icon-button (click)=\"toggleSchedule()\">\r\n              <md-icon *ngIf=\"scheduleVisible\">keyboard_arrow_up</md-icon>\r\n              <md-icon *ngIf=\"!scheduleVisible\">keyboard_arrow_down</md-icon>\r\n            </button>\r\n          </md-card-actions>\r\n        </md-card>\r\n        <div style=\"padding: 10px 0\">\r\n          <form #plan=\"ngForm\" (change)=\"setProgress(baseInfo.value, situation.value, plan.value)\">\r\n            <md-input-container>\r\n              <textarea mdInput ngModel name=\"plan\" cols=\"6\" placeholder={{declaration.plan.plan}} required></textarea>\r\n              <md-hint align=\"end\">必填</md-hint>\r\n            </md-input-container>\r\n            <md-input-container>\r\n              <textarea mdInput ngModel name=\"tgoal\" cols=\"6\" placeholder={{declaration.goal.tgoal}} required></textarea>\r\n              <md-hint align=\"end\">必填</md-hint>\r\n            </md-input-container>\r\n            <md-input-container>\r\n              <textarea mdInput ngModel name=\"wgoal\" cols=\"6\" placeholder={{declaration.goal.wgoal}} required></textarea>\r\n              <md-hint align=\"end\">必填</md-hint>\r\n            </md-input-container>\r\n          </form>\r\n        </div>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n  <md-tab>\r\n    <template md-tab-label>\r\n      {{declaration.budget.title}}\r\n    </template>\r\n    <md-card>\r\n      <md-card-content>\r\n        <md-card>\r\n          <md-card-header>\r\n            <md-card-title>{{declaration.budget.budget.title}}</md-card-title>\r\n          </md-card-header>\r\n          <md-card-content *ngIf=\"budgetVisible\">\r\n            <form #budget=\"ngForm\">\r\n              <table>\r\n                <tr>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"subject\" placeholder={{declaration.budget.budget.subject}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"sum\" type=\"number\" placeholder={{declaration.budget.budget.sum}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"reasons\" placeholder={{declaration.budget.budget.reasons}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <button md-button (click)=\"addBudget(budget);setProgress(baseInfo.value, situation.value, plan.value)\">添加</button>\r\n                  </td>\r\n                </tr>\r\n                <tr *ngFor=\"let item of budgets\">\r\n                  <td>{{item.subject}}</td>\r\n                  <td>{{item.sum}}</td>\r\n                  <td>{{item.reasons}}</td>\r\n                  <td>\r\n                    <button md-button (click)=\"deleteBudget(item);setProgress(baseInfo.value, situation.value, plan.value)\">删除</button>\r\n                </tr>\r\n              </table>\r\n            </form>\r\n          </md-card-content>\r\n          <md-card-actions>\r\n            <button md-icon-button (click)=\"toggleBudget()\">\r\n                <md-icon *ngIf=\"budgetVisible\">keyboard_arrow_up</md-icon>\r\n                <md-icon *ngIf=\"!budgetVisible\">keyboard_arrow_down</md-icon>\r\n              </button>\r\n          </md-card-actions>\r\n        </md-card>\r\n        <md-card>\r\n          <md-card-header>\r\n            <md-card-title>{{declaration.budget.hour.title}}</md-card-title>\r\n          </md-card-header>\r\n          <md-card-content *ngIf=\"hourVisible\">\r\n            <form #hour=\"ngForm\">\r\n              <table>\r\n                <tr>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"type\" placeholder={{declaration.budget.hour.type}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"hours\" type=\"number\" placeholder={{declaration.budget.hour.hours}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"remarks\" placeholder={{declaration.budget.hour.remarks}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <button md-button (click)=\"addHour(hour);setProgress(baseInfo.value, situation.value, plan.value)\">添加</button>\r\n                  </td>\r\n                </tr>\r\n                <tr *ngFor=\"let item of hours\">\r\n                  <td>{{item.type}}</td>\r\n                  <td>{{item.hours}}</td>\r\n                  <td>{{item.remarks}}</td>\r\n                  <td>\r\n                    <button md-button (click)=\"deleteHour(item);setProgress(baseInfo.value, situation.value, plan.value)\">删除</button>\r\n                </tr>\r\n              </table>\r\n            </form>\r\n          </md-card-content>\r\n          <md-card-actions>\r\n            <button md-icon-button (click)=\"toggleHour()\">\r\n                <md-icon *ngIf=\"hourVisible\">keyboard_arrow_up</md-icon>\r\n                <md-icon *ngIf=\"!hourVisible\">keyboard_arrow_down</md-icon>\r\n              </button>\r\n          </md-card-actions>\r\n        </md-card>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n</md-tab-group>\r\n<button md-button color=\"primary\" style=\"width: 100%\" (click)=\"submit(baseInfo.value, situation.value, plan.value,0)\">保存到草稿箱</button>\r\n<button md-button color=\"primary\" style=\"width: 100%\" (click)=\"submit(baseInfo.value, situation.value, plan.value,1)\">提交</button>\r\n"
+module.exports = "<md-nav-list>\r\n  <div *ngIf=\"user\">\r\n    <md-list-item [routerLink]=\"['/contest/detail', contest.comid]\" *ngFor=\"let contest of contests\">\r\n      {{contest.comname}}\r\n      <span style=\"flex: 1 1 auto\"> </span>\r\n      <md-icon>date_range</md-icon>{{contest.time}}\r\n    </md-list-item>\r\n  </div>\r\n  <div *ngIf=\"!user\">\r\n    <md-list-item [routerLink]=\"['/contest/detail', contest.comid]\" *ngFor=\"let contest of contests\">\r\n      {{contest.comname}}\r\n      <span style=\"flex: 1 1 auto\"> </span>\r\n      <md-icon>date_range</md-icon>{{contest.time}}\r\n    </md-list-item>\r\n  </div>\r\n</md-nav-list>\r\n"
 
 /***/ }),
 
 /***/ 1220:
 /***/ (function(module, exports) {
 
-module.exports = "<md-nav-list>\n  <md-list-item *ngFor=\"let item of approComps\">\n    {{item.comname}}\n    <span style=\"flex: 1 1 auto\"></span>\n    <button md-button (click)=\"openDialog(item)\">审批</button>\n  </md-list-item>\n</md-nav-list>\n"
+module.exports = "<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
 /***/ 1221:
 /***/ (function(module, exports) {
 
-module.exports = "<form #examiner=\"ngForm\">\r\n  <md-input-container>\r\n    <textarea mdInput ngModel name=\"opinion\"  cols=\"6\" placeholder=\"审批意见\"></textarea>\r\n  </md-input-container>\r\n  <md-input-container>\r\n    <input mdInput ngModel name=\"pass\" hidden=\"hidden\"/>\r\n  </md-input-container>\r\n  <button md-button (click)=\"examiner.value.pass = 1;setComp(examiner.value);dialogRef.close(comp)\">通过</button>\r\n  <button md-button (click)=\"examiner.value.pass = 0;setComp(examiner.value);dialogRef.close(comp)\">不通过</button>\r\n</form>\r\n"
+module.exports = "<div *ngIf=\"declaration\">\r\n  <h1>广州商学院学科竞赛项目</h1>\r\n  <h2>申&emsp;报&emsp;书</h2>\r\n  <p>竞赛名称: {{ declaration.comname }}</p>\r\n  <p *ngIf=\"leader\">竞赛负责人: {{ leader.teachername }}</p>\r\n  <p>所在单位(盖章): {{ declaration.department }}</p>\r\n  <p>竞赛类别: {{ declaration.levelname }}</p>\r\n  <p *ngIf=\"leader\">联系电话: {{ leader.phone }}</p>\r\n  <p *ngIf=\"leader\">电子邮箱: {{ leader.email }}</p>\r\n  <p>填表日期: {{ declaration.date }}</p>\r\n  <!-- <p>广州商学院教学处制</p> -->\r\n  <table>\r\n    <tr>\r\n      <td rowspan=\"7\">竞赛情况</td>\r\n      <th>竞赛名称</th>\r\n      <td colspan=\"3\">{{ declaration.comname }}\r\n    </tr>\r\n    <tr>\r\n      <th>竞赛负责人</th>\r\n      <td *ngIf=\"leader\">{{ leader.teachername }}</td>\r\n      <th>联系电话</th>\r\n      <td *ngIf=\"leader\">{{ leader.phone }}</td>\r\n    </tr>\r\n    <tr>\r\n      <th>竞赛类别</th>\r\n      <td colspan=\"3\">{{ declaration.levelname }}</td>\r\n    </tr>\r\n    <tr>\r\n      <th>院级以上竞赛举办者</th>\r\n      <td colspan=\"3\">{{ declaration.host }}</td>\r\n    </tr>\r\n    <tr>\r\n      <th>竞赛时间</th>\r\n      <td>{{ declaration.time }}</td>\r\n      <th>竞赛地点</th>\r\n      <td>{{ declaration.place }}</td>\r\n    </tr>\r\n    <tr>\r\n      <th>参赛对象</th>\r\n      <td>{{ declaration.object }}</td>\r\n      <th>人数</th>\r\n      <td>{{ declaration.people }}</td>\r\n    </tr>\r\n    <tr>\r\n      <th>校外资助单位</th>\r\n      <td colspan=\"3\">{{ declaration.sponsor }}</td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">竞赛简介</td>\r\n      <td colspan=\"4\">{{ declaration.introduce }}</td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"2\">指导教师</td>\r\n      <th>姓名</th>\r\n      <th>职称</th>\r\n      <th>职务</th>\r\n      <th>专业</th>\r\n    </tr>\r\n    <tr *ngFor=\"let item of teachers\">\r\n      <td>{{ item.teachername }}</td>\r\n      <td>{{ item.title }}</td>\r\n      <td>{{ item.post }}</td>\r\n      <td>{{ item.subject }}</td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">学科竞赛实施方案</td>\r\n      <td colspan=\"4\">\r\n        <div class=\"textArea\">\r\n          <p>{{ declaration.plan }}</p>\r\n        </div>\r\n        <p>附:培训工作安排表</p>\r\n        <table>\r\n          <tr>\r\n            <th>教师姓名</th>\r\n            <th>培训内容</th>\r\n            <th>培训地点</th>\r\n            <th>培训日期</th>\r\n            <th>学时</th>\r\n          </tr>\r\n          <tr *ngFor=\"let item of schedules\">\r\n            <td>{{ item.teacherno }}</td>\r\n            <td>{{ item.content }}</td>\r\n            <td>{{ item.position }}</td>\r\n            <td>{{ item.date }}</td>\r\n            <td>{{ item.hours }}</td>\r\n          </tr>\r\n        </table>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">能力训练目标</td>\r\n      <td colspan=\"4\">\r\n        <div class=\"textArea\">\r\n          <p>{{ declaration.tgoal }}</p>\r\n        </div>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">竞赛获奖目标</td>\r\n      <td colspan=\"4\">\r\n        <div class=\"textArea\">\r\n          <p>{{ declaration.wgoal }}</p>\r\n        </div>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">经费预算</td>\r\n      <td colspan=\"4\">\r\n        <table>\r\n          <tr>\r\n            <td rowspan=\"2 + budgets.length\">经费预算</td>\r\n            <td>支出科目</td>\r\n            <td>金额（元）</td>\r\n            <td>计算依据及理由</td>\r\n          </tr>\r\n          <tr *ngFor=\"let item of budgets\">\r\n            <td>{{ item.subject }}</td>\r\n            <td>{{ item.sum }}</td>\r\n            <td>{{ item.reasons }}</td>\r\n          </tr>\r\n          <tr>\r\n            <td rowspan=\"1\">合计</td>\r\n            <td colspan=\"2\">{{ budgets.length }} 个支出科目</td>\r\n            <td>{{ hoursSum }}</td>\r\n          </tr>\r\n        </table>\r\n        <table>\r\n          <tr>\r\n            <td rowspan=\"2 + hours.length\">课时预算</td>\r\n            <td>课时类别</td>\r\n            <td>课时数（学时）</td>\r\n            <td>备注</td>\r\n          </tr>\r\n          <tr *ngFor=\"let item of hours\">\r\n            <td>{{ item.type }}</td>\r\n            <td>{{ item.hours }}</td>\r\n            <td>{{ item.remarks }}</td>\r\n          </tr>\r\n          <tr>\r\n            <td rowspan=\"1\">合计</td>\r\n            <td colspan=\"2\">{{ hours.length }} 个课程</td>\r\n            <td>{{ hoursSum }}</td>\r\n          </tr>\r\n          <tr>\r\n            <td rowspan=\"1\">总计</td>\r\n            <td colspan=\"3\">{{budgets.length + hours.length}} 个经费科目</td>\r\n          </tr>\r\n        </table>\r\n        <!-- <md-grid-list cols=\"4\">\r\n          <md-grid-tile [rowspan]=\"budgets.length + 1\" [style.background]=\"'lightgreen'\">经费预算</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">支出科目</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">金额（元）</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">计算依据及理由</md-grid-tile>\r\n          <div *ngFor=\"let item of budgets\">\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.subject }}</md-grid-tile>\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.sum }}</md-grid-tile>\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.reasons }}</md-grid-tile>\r\n          </div>\r\n          <md-grid-tile>合计</md-grid-tile>\r\n          <md-grid-tile>{{budgets.length}} 个支出科目</md-grid-tile>\r\n          <md-grid-tile>{{hoursSum}}（元）</md-grid-tile>\r\n          <md-grid-tile></md-grid-tile>\r\n          <md-grid-tile [rowspan]=\"hours.length + 1\" [style.background]=\"'lightgreen'\">课时预算</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">课时类别</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">课时数（学时）</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">备注</md-grid-tile>\r\n          <div *ngFor=\"let item of hours\">\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.type }}</md-grid-tile>\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.hours }}</md-grid-tile>\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.remarks }}</md-grid-tile>\r\n          </div>\r\n          <md-grid-tile>合计</md-grid-tile>\r\n          <md-grid-tile>{{hours.length}} 个课程</md-grid-tile>\r\n          <md-grid-tile>{{hoursSum}}（学时）</md-grid-tile>\r\n          <md-grid-tile></md-grid-tile>\r\n          <md-grid-tile>总计</md-grid-tile>\r\n          <md-grid-tile>{{budgets.length + hours.length}} 个经费科目</md-grid-tile>\r\n          <md-grid-tile></md-grid-tile>\r\n          <md-grid-tile></md-grid-tile>\r\n        </md-grid-list> -->\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">竞赛组织实施单位意见</td>\r\n      <td colspan=\"4\">\r\n        <div class=\"textArea\">\r\n          <p>{{ declaration.uopinion }}</p>\r\n        </div>\r\n          <p>{{ declaration.dsdate }}</p>\r\n          <p>{{ declaration.dsign }}</p>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">教学处意见</td>\r\n      <td colspan=\"4\">\r\n        <div class=\"textArea\">\r\n          <p>{{ declaration.tdopinion }}</p>\r\n        </div>\r\n          <p>{{ declaration.olsdate }}</p>\r\n          <p>{{ declaration.olsign }}</p>\r\n      </td>\r\n    </tr>\r\n  </table>\r\n  <button md-button (click)=\"export(declaration)\">导出文档</button>\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ 1222:
 /***/ (function(module, exports) {
 
-module.exports = "<md-list>\n  <h3 md-subheader>文件列表</h3>\n  <md-list-item *ngFor=\"let item of files\">\n    <span class=\"fileName\">{{item.fileName}}</span>\n    <span style=\"flex: 1 1 auto\"></span>\n    <button md-button (click)=\"download(item)\">下载</button>\n  </md-list-item>\n</md-list>\n"
+module.exports = "<md-nav-list>\n  <div>\n    <md-list-item [routerLink]=\"['/declaration/detail', declaration.comid]\" *ngFor=\"let declaration of declarations\">\n      {{declaration.comname}}\n      <span style=\"flex: 1 1 auto\"> </span>\n      <md-icon>date_range</md-icon>{{declaration.date}}\n    </md-list-item>\n  </div>\n</md-nav-list>\n"
 
 /***/ }),
 
 /***/ 1223:
 /***/ (function(module, exports) {
 
-module.exports = "<section fxLayout=\"row\">\r\n\r\n  <md-card fxFlex=\"60\">\r\n    <md-card-content>\r\n      <md-tab-group>\r\n        <md-tab *ngFor=\"let articleType of articleTypes\">\r\n          <template md-tab-label>{{articleType.name}}</template>\r\n          <!-- <md-nav-list>\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articles | articleTypeFilter:articleType\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list> -->\r\n          <md-nav-list *ngIf=\"articleType.id === 1\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeOnes\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n          <md-nav-list *ngIf=\"articleType.id === 2\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeTwos\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n          <md-nav-list *ngIf=\"articleType.id === 3\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeThrees\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n        </md-tab>\r\n      </md-tab-group>\r\n    </md-card-content>\r\n  </md-card>\r\n\r\n  <md-card fxFlex=\"40\">\r\n    <md-card-content>\r\n      <md-card *ngFor=\"let contest of contests | contestTimelineFilter\" [ngStyle]=\"{'background-color': setColor(contest) }\">\r\n        <md-card-content>\r\n          {{contest.comname}}\r\n          <span style=\"flex: 1 1 auto\"> </span>\r\n          <button md-button (click)=\"apply(contest)\">报名入口</button>\r\n          <md-icon>date_range</md-icon>{{contest.time}}\r\n        </md-card-content>\r\n      </md-card>\r\n    </md-card-content>\r\n  </md-card>\r\n</section>\r\n<section fxLayout=\"row\">\r\n  <app-works fxFlex=\"80\">Loading</app-works>\r\n  <app-files fxFlex=\"20\">Loading</app-files>\r\n</section>\r\n<section>\r\n  <app-chart>Loading ChartComponent...</app-chart>\r\n</section>\r\n"
+module.exports = "<p>\n  declaration-load works!\n</p>\n"
 
 /***/ }),
 
 /***/ 1224:
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\" [ngSwitch]=\"role\">\r\n  <button md-button [mdMenuTriggerFor]=\"menu\">\r\n    <span *ngSwitchCase=\"'admin'\">{{user.adminname}}</span>\r\n    <span *ngSwitchCase=\"'teacher'\">{{user.teachername}}</span>\r\n    <span *ngSwitchCase=\"'student'\">{{user.studentname}}</span>\r\n    <span *ngSwitchDefault>你到底是谁!</span>\r\n  </button>\r\n  <md-menu #menu=\"mdMenu\">\r\n    <md-card>\r\n      <md-card-title>\r\n        <span *ngSwitchCase=\"'admin'\">{{user.adminname}}</span>\r\n        <span *ngSwitchCase=\"'teacher'\">{{user.teachername}}</span>\r\n        <span *ngSwitchCase=\"'student'\">{{user.studentname}}</span>\r\n        <span *ngSwitchDefault>你到底是谁!</span>\r\n      </md-card-title>\r\n      <md-card-content>\r\n        <p>hello! how are you?</p>\r\n      </md-card-content>\r\n      <md-card-actions>\r\n        <button md-button routerLink=\"/{{role}}\" routerLinkActive=\"active\">\r\n          进入个人页面\r\n        </button>\r\n      </md-card-actions>\r\n    </md-card>\r\n    <button md-menu-item (click)=\"logout()\"> 登出</button>\r\n  </md-menu>\r\n</div>\r\n\r\n<button md-button *ngIf=\"!user\" (click)=\"openDialog()\">登录</button>\r\n"
+module.exports = "<md-list>\n  <md-list-item>\n  </md-list-item>\n</md-list>\n"
 
 /***/ }),
 
 /***/ 1225:
 /***/ (function(module, exports) {
 
-module.exports = "<h3>登录</h3>\r\n<form #login=\"ngForm\">\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput ngModel name=\"account\" placeholder=\"账号/学号/工号\" />\r\n  </md-input-container>\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput ngModel name=\"password\" placeholder=\"密码\" type=\"password\" />\r\n  </md-input-container>\r\n  <md-radio-group name=\"role\" [ngModel]=\"'student'\" class=\"full-width\">\r\n    <md-radio-button *ngFor=\"let role of roles\" value={{role.value}}>\r\n      {{role.name}}\r\n    </md-radio-button>\r\n  </md-radio-group>\r\n</form>\r\n<button md-button color=\"primary\" (click)=\"dialogRef.close(login.value)\">Login</button>\r\n<button md-button color=\"warn\" (click)=\"dialogRef.close()\">No!</button>\r\n"
+module.exports = "<h1>{{title}}</h1>\r\n<md-icon color=\"warn\">stop</md-icon><span>必填项</span>\r\n<md-icon color=\"primary\">stop</md-icon><span>选填项</span>\r\n<h4>完成度:<span>{{progress/bufferValue | percent}}</span></h4>\r\n<section>\r\n  <!-- <md-progress-bar [color]=\"'warn'\" [mode]=\"'determinate'\" [value]=\"requiredProgress\" [bufferValue]=\"100\">\r\n  </md-progress-bar> -->\r\n  <md-progress-bar [color]=\"'warn'\" [mode]=\"'determinate'\" [value]=\"progress\" [bufferValue]=\"bufferValue\">\r\n  </md-progress-bar>\r\n</section>\r\n<md-tab-group>\r\n  <md-tab>\r\n    <template md-tab-label>\r\n      {{declaration.baseInfo.title}}\r\n      <md-icon color=\"warn\" *ngIf=\"baseInfo.valid\">done</md-icon>\r\n      <md-icon color=\"warn\" *ngIf=\"!baseInfo.valid\">clear</md-icon>\r\n    </template>\r\n    <md-card>\r\n      <md-card-content>\r\n        <form #baseInfo=\"ngForm\" (change)=\"setProgress(baseInfo.value, situation.value, plan.value)\">\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"name\" placeholder={{declaration.baseInfo.name}} required/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <table>\r\n            <tr>\r\n              <td>\r\n                <md-radio-group [ngModel]=\"'A类'\" name=\"type\">\r\n                  <md-radio-button *ngFor=\"let type of types\" value={{type.value}} required>\r\n                    {{type.value}}\r\n                  </md-radio-button>\r\n                </md-radio-group>\r\n              </td>\r\n              <td>\r\n                <label for=\"teacherno\"></label>\r\n                <md-select placeholder={{declaration.baseInfo.leader}} ngModel name=\"leader\">\r\n                  <md-option *ngFor=\"let item of teachers\" [value]=\"item.teacherno\">\r\n                    {{item.teachername}}\r\n                  </md-option>\r\n                </md-select>\r\n              </td>\r\n            </tr>\r\n          </table>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"unit\" placeholder={{declaration.baseInfo.unit}} required/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"phone\" type=\"tel\" placeholder={{declaration.baseInfo.phone}}/>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"email\" type=\"email\" placeholder={{declaration.baseInfo.email}}/>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput type=\"date\" [ngModel]=\"date | date:'yyyy-MM-dd'\" name=\"date\" placeholder={{declaration.baseInfo.date}}/>\r\n          </md-input-container>\r\n        </form>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n  <md-tab>\r\n    <template md-tab-label>\r\n      {{declaration.situation.title}}\r\n      <md-icon color=\"warn\" *ngIf=\"situation.valid\">done</md-icon>\r\n      <md-icon color=\"warn\" *ngIf=\"!situation.valid\">clear</md-icon>\r\n    </template>\r\n    <md-card>\r\n      <md-card-content>\r\n        <form #situation=\"ngForm\" (change)=\"setProgress(baseInfo.value, situation.value, plan.value)\">\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"host\" placeholder={{declaration.situation.host}} required/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"sponsor\" placeholder={{declaration.situation.sponsor}}/>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <input mdInput type=\"date\" [ngModel]=\"date | date:'yyyy-MM-dd'\" name=\"time\" placeholder={{declaration.situation.time}} required/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <table>\r\n            <tr>\r\n              <td>\r\n                <md-input-container>\r\n                  <input mdInput type=\"date\" [ngModel]=\"date | date:'yyyy-MM-dd'\" name=\"applyBeginDate\" placeholder=\"报名开始时间\" />\r\n                </md-input-container>\r\n              </td>\r\n              <td>\r\n                <md-input-container>\r\n                  <input mdInput type=\"date\" [ngModel]=\"date | date:'yyyy-MM-dd'\" name=\"applyEndDate\" placeholder=\"报名结束时间\" />\r\n                </md-input-container>\r\n              </td>\r\n            </tr>\r\n            <tr>\r\n              <td>\r\n                <label for=\"isNeedGroup\">是否需要组队</label>\r\n                <md-radio-group [(ngModel)]=\"isNeedGroup\" name=\"isNeedGroup\">\r\n                  <md-radio-button *ngFor=\"let item of [{name: '是', value: 1},{name: '否', value: 0}]\" value={{item.value}}>\r\n                    {{item.name}}\r\n                  </md-radio-button>\r\n                </md-radio-group>\r\n              </td>\r\n              <td>\r\n                <md-input-container *ngIf=\"isNeedGroup == 1\">\r\n                  <input mdInput type=\"number\" ngModel name=\"groupNum\" placeholder=\"组队人数\" />\r\n                </md-input-container>\r\n              </td>\r\n            </tr>\r\n          </table>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"place\" placeholder={{declaration.situation.place}} required/>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n          <md-select placeholder={{declaration.situation.object}} ngModel name=\"object\" required>\r\n            <md-option *ngFor=\"let item of DEPARTMENTS\" [value]=\"item.departmentName + '学生'\">\r\n              {{item.departmentName}}学生\r\n            </md-option>\r\n          </md-select>\r\n          <md-select placeholder=\"选择条件类型\" ngModel name=\"condition\">\r\n            <md-option *ngFor=\"let item of conditions\" [value]=\"item.conditionid\">\r\n              {{item.conditionname}}\r\n            </md-option>\r\n          </md-select>\r\n          <md-input-container>\r\n            <input mdInput ngModel name=\"people\" type=\"number\" placeholder={{declaration.situation.people}}/>\r\n          </md-input-container>\r\n          <md-input-container>\r\n            <textarea mdInput ngModel name=\"intro\" cols=\"6\" placeholder={{declaration.situation.intro}} required></textarea>\r\n            <md-hint align=\"end\">必填</md-hint>\r\n          </md-input-container>\r\n        </form>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n  <md-tab>\r\n    <template md-tab-label>\r\n      {{declaration.plan.title}} &amp; {{declaration.goal.title}}\r\n      <md-icon color=\"warn\" *ngIf=\"plan.valid\">done</md-icon>\r\n      <md-icon color=\"warn\" *ngIf=\"!plan.valid\">clear</md-icon>\r\n    </template>\r\n    <md-card>\r\n      <md-card-content>\r\n        <!-- <label>{{declaration.plan.instructor}}</label> -->\r\n        <md-card>\r\n          <md-card-content>\r\n            <md-input-container>\r\n              <md-chip-list>\r\n                <md-chip *ngFor=\"let item of gTeachers;let i of index\">\r\n                  <span>{{ item.teachername }}</span>\r\n                  <button md-icon-button (click)=\"deleteGuideTeacher(item,i)\">\r\n                      <md-icon>clear</md-icon>\r\n                    </button>\r\n                </md-chip>\r\n              </md-chip-list>\r\n              <!-- <input mdInput #guideTeacher name=\"guideTeacher\" /> -->\r\n              <input [ngStyle]=\"{'margin-left.px': guideTeachers.length * 110}\" mdInput placeholder=\"指导教师\" [mdAutocomplete]=\"auto\" [formControl]=\"teacherCtrl\" />\r\n            </md-input-container>\r\n            <md-autocomplete #auto=\"mdAutocomplete\" [displayWith]=\"displayFn.bind(this)\">\r\n              <md-option *ngFor=\"let item of filteredTeachers | async\" [value]=\"item\">\r\n                {{ item.teachername }}\r\n              </md-option>\r\n            </md-autocomplete>\r\n          </md-card-content>\r\n        </md-card>\r\n        <md-card>\r\n          <md-card-header>\r\n            <md-card-title>{{declaration.plan.schedule.title}}</md-card-title>\r\n          </md-card-header>\r\n          <md-card-content *ngIf=\"scheduleVisible\">\r\n            <form #schedule=\"ngForm\">\r\n              <table>\r\n                <tr>\r\n                  <td>\r\n                    <md-select placeholder=\"选择指导老师\" ngModel name=\"teacherno\">\r\n                      <md-option *ngFor=\"let item of teachers\" [value]=\"item.teacherno\">\r\n                        {{item.teachername}}\r\n                      </md-option>\r\n                    </md-select>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"content\" placeholder=\"{{declaration.plan.schedule.content}}\" />\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"position\" placeholder=\"{{declaration.plan.schedule.place}}\" />\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput type=\"date\" [ngModel]=\"date | date:'yyyy-MM-dd'\" name=\"date\" placeholder=\"{{declaration.plan.schedule.date}}\" />\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput type=\"number\" ngModel name=\"hours\" placeholder=\"{{declaration.plan.schedule.hour}}\" />\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <button md-button (click)=\"addSchedule(schedule);setProgress(baseInfo.value, situation.value, plan.value)\">添加</button>\r\n                  </td>\r\n                </tr>\r\n                <tr *ngFor=\"let item of schedules\">\r\n                  <td>{{item.teacherno}}</td>\r\n                  <td>{{item.content}}</td>\r\n                  <td>{{item.position}}</td>\r\n                  <td>{{item.date}}</td>\r\n                  <td>{{item.hours}}</td>\r\n                  <td>\r\n                    <button md-button (click)=\"deleteSchedule(item);setProgress(baseInfo.value, situation.value, plan.value)\">删除</button>\r\n                  </td>\r\n                </tr>\r\n              </table>\r\n            </form>\r\n          </md-card-content>\r\n          <md-card-actions>\r\n            <button md-icon-button (click)=\"toggleSchedule()\">\r\n              <md-icon *ngIf=\"scheduleVisible\">keyboard_arrow_up</md-icon>\r\n              <md-icon *ngIf=\"!scheduleVisible\">keyboard_arrow_down</md-icon>\r\n            </button>\r\n          </md-card-actions>\r\n        </md-card>\r\n        <div style=\"padding: 10px 0\">\r\n          <form #plan=\"ngForm\" (change)=\"setProgress(baseInfo.value, situation.value, plan.value)\">\r\n            <md-input-container>\r\n              <textarea mdInput ngModel name=\"plan\" cols=\"6\" placeholder={{declaration.plan.plan}} required></textarea>\r\n              <md-hint align=\"end\">必填</md-hint>\r\n            </md-input-container>\r\n            <md-input-container>\r\n              <textarea mdInput ngModel name=\"tgoal\" cols=\"6\" placeholder={{declaration.goal.tgoal}} required></textarea>\r\n              <md-hint align=\"end\">必填</md-hint>\r\n            </md-input-container>\r\n            <md-input-container>\r\n              <textarea mdInput ngModel name=\"wgoal\" cols=\"6\" placeholder={{declaration.goal.wgoal}} required></textarea>\r\n              <md-hint align=\"end\">必填</md-hint>\r\n            </md-input-container>\r\n          </form>\r\n        </div>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n  <md-tab>\r\n    <template md-tab-label>\r\n      {{declaration.budget.title}}\r\n    </template>\r\n    <md-card>\r\n      <md-card-content>\r\n        <md-card>\r\n          <md-card-header>\r\n            <md-card-title>{{declaration.budget.budget.title}}</md-card-title>\r\n          </md-card-header>\r\n          <md-card-content *ngIf=\"budgetVisible\">\r\n            <form #budget=\"ngForm\">\r\n              <table>\r\n                <tr>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"subject\" placeholder={{declaration.budget.budget.subject}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"sum\" type=\"number\" placeholder={{declaration.budget.budget.sum}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"reasons\" placeholder={{declaration.budget.budget.reasons}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <button md-button (click)=\"addBudget(budget);setProgress(baseInfo.value, situation.value, plan.value)\">添加</button>\r\n                  </td>\r\n                </tr>\r\n                <tr *ngFor=\"let item of budgets\">\r\n                  <td>{{item.subject}}</td>\r\n                  <td>{{item.sum}}</td>\r\n                  <td>{{item.reasons}}</td>\r\n                  <td>\r\n                    <button md-button (click)=\"deleteBudget(item);setProgress(baseInfo.value, situation.value, plan.value)\">删除</button>\r\n                </tr>\r\n              </table>\r\n            </form>\r\n          </md-card-content>\r\n          <md-card-actions>\r\n            <button md-icon-button (click)=\"toggleBudget()\">\r\n                <md-icon *ngIf=\"budgetVisible\">keyboard_arrow_up</md-icon>\r\n                <md-icon *ngIf=\"!budgetVisible\">keyboard_arrow_down</md-icon>\r\n              </button>\r\n          </md-card-actions>\r\n        </md-card>\r\n        <md-card>\r\n          <md-card-header>\r\n            <md-card-title>{{declaration.budget.hour.title}}</md-card-title>\r\n          </md-card-header>\r\n          <md-card-content *ngIf=\"hourVisible\">\r\n            <form #hour=\"ngForm\">\r\n              <table>\r\n                <tr>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"type\" placeholder={{declaration.budget.hour.type}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"hours\" type=\"number\" placeholder={{declaration.budget.hour.hours}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <md-input-container>\r\n                      <input mdInput ngModel name=\"remarks\" placeholder={{declaration.budget.hour.remarks}}/>\r\n                    </md-input-container>\r\n                  </td>\r\n                  <td>\r\n                    <button md-button (click)=\"addHour(hour);setProgress(baseInfo.value, situation.value, plan.value)\">添加</button>\r\n                  </td>\r\n                </tr>\r\n                <tr *ngFor=\"let item of hours\">\r\n                  <td>{{item.type}}</td>\r\n                  <td>{{item.hours}}</td>\r\n                  <td>{{item.remarks}}</td>\r\n                  <td>\r\n                    <button md-button (click)=\"deleteHour(item);setProgress(baseInfo.value, situation.value, plan.value)\">删除</button>\r\n                </tr>\r\n              </table>\r\n            </form>\r\n          </md-card-content>\r\n          <md-card-actions>\r\n            <button md-icon-button (click)=\"toggleHour()\">\r\n                <md-icon *ngIf=\"hourVisible\">keyboard_arrow_up</md-icon>\r\n                <md-icon *ngIf=\"!hourVisible\">keyboard_arrow_down</md-icon>\r\n              </button>\r\n          </md-card-actions>\r\n        </md-card>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n</md-tab-group>\r\n<button md-button color=\"primary\" style=\"width: 100%\" (click)=\"submit(baseInfo.value, situation.value, plan.value,0)\">保存到草稿箱</button>\r\n<button md-button color=\"primary\" style=\"width: 100%\" (click)=\"submit(baseInfo.value, situation.value, plan.value,1)\">提交</button>\r\n"
 
 /***/ }),
 
 /***/ 1226:
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  notification works!\n</p>\n"
+module.exports = "<md-nav-list>\n  <md-list-item *ngFor=\"let item of approComps\">\n    {{item.comname}}\n    <span style=\"flex: 1 1 auto\"></span>\n    <button md-button (click)=\"openDialog(item)\">审批</button>\n  </md-list-item>\n</md-nav-list>\n"
 
 /***/ }),
 
 /***/ 1227:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <md-chip-list>\r\n  <md-chip selected=\"true\" color=\"warn\">获取近期竞赛(可报名)功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">获取未发布的竞赛功能尚未添加</md-chip>\r\n</md-chip-list> -->\r\n<md-nav-list>\r\n  <h3 md-subheader>尚未发布的竞赛</h3>\r\n  <md-list-item *ngFor=\"let item of unContests\">\r\n      {{item.name}}\r\n      <span style=\"flex: 1 1 auto\"></span>\r\n      <button md-button (click)=\"publish(item)\">发布</button>\r\n    </md-list-item>\r\n  <md-divider></md-divider>\r\n  <h3 md-subheader>尚未发布的获奖情况</h3>\r\n  <md-list-item *ngFor=\"let item of unAwards\">\r\n    这里应该显示作品名\r\n  </md-list-item>\r\n</md-nav-list>\r\n"
+module.exports = "<form #examiner=\"ngForm\">\r\n  <md-input-container>\r\n    <textarea mdInput ngModel name=\"opinion\"  cols=\"6\" placeholder=\"审批意见\"></textarea>\r\n  </md-input-container>\r\n  <md-input-container>\r\n    <input mdInput ngModel name=\"pass\" hidden=\"hidden\"/>\r\n  </md-input-container>\r\n  <button md-button (click)=\"examiner.value.pass = 1;setComp(examiner.value);dialogRef.close(comp)\">通过</button>\r\n  <button md-button (click)=\"examiner.value.pass = 0;setComp(examiner.value);dialogRef.close(comp)\">不通过</button>\r\n</form>\r\n"
 
 /***/ }),
 
 /***/ 1228:
 /***/ (function(module, exports) {
 
-module.exports = "<form #file=\"ngForm\">\n  <input ngModel type=\"file\" name=\"file\" #fileInput />\n  <button md-button (click)=\"apply(file.value)\">提交</button>\n</form>\n<md-divider></md-divider>\n<md-card *ngFor=\"let item of files;let i of index\">\n  <md-card-header>\n    <md-card-title>文件名:{{item.fileName}}</md-card-title>\n    <md-card-subtitle>上传者:{{item.adminName}},上传时间:{{item.uploadDate}}</md-card-subtitle>\n  </md-card-header>\n  <md-card-content>\n  </md-card-content>\n  <md-card-actions>\n    <button md-button (click)=\"delete(item,i)\">删除</button>\n  </md-card-actions>\n</md-card>\n"
+module.exports = "<md-card style=\"padding: 0\">\r\n  <md-card-content style=\"padding: 0\">\r\n    <md-list>\r\n      <h3 md-subheader>文件列表</h3>\r\n      <md-list-item *ngFor=\"let item of files | slice:0:5\">\r\n        <span class=\"fileName\">{{item.fileName}}</span>\r\n        <span style=\"flex: 1 1 auto\"></span>\r\n        <button md-button color=\"primary\" (click)=\"download(item)\">下载</button>\r\n      </md-list-item>\r\n    </md-list>\r\n  </md-card-content>\r\n</md-card>\r\n"
 
 /***/ }),
 
 /***/ 1229:
 /***/ (function(module, exports) {
 
-module.exports = "<h1>仪表板</h1>\r\n"
+module.exports = "<section fxLayout=\"row\">\r\n\r\n  <md-card fxFlex=\"60\">\r\n    <md-card-content>\r\n      <md-tab-group>\r\n        <md-tab *ngFor=\"let articleType of articleTypes\">\r\n          <template md-tab-label>{{articleType.name}}</template>\r\n          <!-- <md-nav-list>\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articles | articleTypeFilter:articleType\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list> -->\r\n          <md-nav-list *ngIf=\"articleType.id === 1\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeOnes\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n          <md-nav-list *ngIf=\"articleType.id === 2\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeTwos\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n          <md-nav-list *ngIf=\"articleType.id === 3\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeThrees\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n        </md-tab>\r\n      </md-tab-group>\r\n    </md-card-content>\r\n  </md-card>\r\n\r\n  <md-card fxFlex=\"40\">\r\n    <md-card-content>\r\n      <md-card *ngFor=\"let contest of contests | contestTimelineFilter\" [ngStyle]=\"{'background-color': setColor(contest) }\">\r\n        <md-card-content>\r\n          {{contest.comname}}\r\n          <span style=\"flex: 1 1 auto\"> </span>\r\n          <button md-button (click)=\"apply(contest)\">报名入口</button>\r\n          <md-icon>date_range</md-icon>{{contest.time}}\r\n        </md-card-content>\r\n      </md-card>\r\n    </md-card-content>\r\n  </md-card>\r\n</section>\r\n<section fxLayout=\"row\">\r\n  <app-works fxFlex=\"80\">Loading</app-works>\r\n  <app-files fxFlex=\"20\">Loading</app-files>\r\n</section>\r\n<section>\r\n  <app-chart>Loading ChartComponent...</app-chart>\r\n</section>\r\n"
 
 /***/ }),
 
 /***/ 1230:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <md-chip-list>\n<md-chip selected=\"true\" color=\"warn\">审核材料功能尚未添加</md-chip>\n</md-chip-list> -->\n<md-card *ngFor=\"let item of materials | materialPass\">\n  <md-card-header>\n    <md-card-title>{{ item.conditionName }}</md-card-title>\n  </md-card-header>\n  <img md-card-image alt=\"图片\" src={{item.materialPic}}>\n  <md-card-content>\n    <span>上传材料者:{{ item.studentNo }} - {{ item.studentName }}</span>\n  </md-card-content>\n  <md-card-actions>\n    <button md-button color=\"primary\" (click)=\"pass(item,1)\">通过</button>\n    <button md-button color=\"warn\" (click)=\"pass(item,0)\">不通过</button>\n  </md-card-actions>\n</md-card>\n"
+module.exports = "<div *ngIf=\"user\" [ngSwitch]=\"role\">\r\n  <button md-button [mdMenuTriggerFor]=\"menu\">\r\n    <span *ngSwitchCase=\"'admin'\">{{user.adminname}}</span>\r\n    <span *ngSwitchCase=\"'teacher'\">{{user.teachername}}</span>\r\n    <span *ngSwitchCase=\"'student'\">{{user.studentname}}</span>\r\n    <span *ngSwitchDefault>你到底是谁!</span>\r\n  </button>\r\n  <md-menu #menu=\"mdMenu\">\r\n    <md-card>\r\n      <md-card-title>\r\n        <span *ngSwitchCase=\"'admin'\">{{user.adminname}}</span>\r\n        <span *ngSwitchCase=\"'teacher'\">{{user.teachername}}</span>\r\n        <span *ngSwitchCase=\"'student'\">{{user.studentname}}</span>\r\n        <span *ngSwitchDefault>你到底是谁!</span>\r\n      </md-card-title>\r\n      <md-card-content>\r\n        <p>hello! how are you?</p>\r\n      </md-card-content>\r\n      <md-card-actions>\r\n        <button md-button routerLink=\"/{{role}}\" routerLinkActive=\"active\">\r\n          进入个人页面\r\n        </button>\r\n      </md-card-actions>\r\n    </md-card>\r\n    <button md-menu-item (click)=\"logout()\"> 登出</button>\r\n  </md-menu>\r\n</div>\r\n\r\n<button md-button *ngIf=\"!user\" (click)=\"openDialog()\">登录</button>\r\n"
 
 /***/ }),
 
 /***/ 1231:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <md-chip-list>\n<md-chip selected=\"true\" color=\"warn\">更新作品功能尚未添加</md-chip>\n</md-chip-list> -->\n<button md-button style=\"width: 100%\" (click)=\"openDialog()\">上传作品</button>\n<md-card *ngFor=\"let item of works;let i of index\">\n  <md-card-header>\n  <md-card-title>作品名:{{item.proname}}</md-card-title>\n  <md-card-subtitle>获奖者:{{item.membersname}}</md-card-subtitle>\n  </md-card-header>\n  <md-card-content>\n    <h3>奖项:{{item.award}}</h3>\n    {{item.introduction}}\n    <p>创建日期:{{item.createDate}}</p>\n  </md-card-content>\n  <md-card-actions>\n  <button md-button (click)=\"delete(item,i)\">删除</button>\n  </md-card-actions>\n</md-card>\n"
+module.exports = "<h3>登录</h3>\r\n<form #login=\"ngForm\">\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput ngModel name=\"account\" placeholder=\"账号/学号/工号\" />\r\n  </md-input-container>\r\n  <md-input-container class=\"full-width\">\r\n    <input mdInput ngModel name=\"password\" placeholder=\"密码\" type=\"password\" />\r\n  </md-input-container>\r\n  <md-radio-group name=\"role\" [ngModel]=\"'student'\" class=\"full-width\">\r\n    <md-radio-button *ngFor=\"let role of roles\" value={{role.value}}>\r\n      {{role.name}}\r\n    </md-radio-button>\r\n  </md-radio-group>\r\n</form>\r\n<button md-button color=\"primary\" (click)=\"dialogRef.close(login.value)\">Login</button>\r\n<button md-button color=\"warn\" (click)=\"dialogRef.close()\">No!</button>\r\n"
 
 /***/ }),
 
 /***/ 1232:
 /***/ (function(module, exports) {
 
-module.exports = "<form #work=\"ngForm\">\r\n  <md-input-container>\r\n    <input mdInput ngModel name=\"proName\" placeholder=\"作品名\" />\r\n  </md-input-container>\r\n  <md-input-container>\r\n    <input mdInput ngModel name=\"award\" placeholder=\"奖项\" />\r\n  </md-input-container>\r\n  <md-input-container>\r\n    <input mdInput ngModel name=\"membersName\" placeholder=\"作品作者\" />\r\n  </md-input-container>\r\n  <md-input-container>\r\n    <input mdInput ngModel name=\"introduction\" placeholder=\"作品简介\" />\r\n  </md-input-container>\r\n  <input md-button ngModel type=\"file\" name=\"file\" #fileInput/>\r\n  <button md-button (click)=\"apply(work.value)\">提交</button>\r\n</form>\r\n"
+module.exports = "<p>\n  notification works!\n</p>\n"
 
 /***/ }),
 
 /***/ 1233:
 /***/ (function(module, exports) {
 
-module.exports = "<md-nav-list>\r\n  <h3 md-subheader>已报名竞赛列表</h3>\r\n  <md-list-item *ngFor=\"let appliedontest of appliedContests\">\r\n    {{appliedontest.comName}}\r\n  </md-list-item>\r\n  <md-divider></md-divider>\r\n    <h3 md-subheader>可报名竞赛列表</h3>\r\n    <!-- <md-list-item *ngFor=\"let contest of contests\">\r\n      {{contest.comName}}\r\n    </md-list-item> -->\r\n</md-nav-list>\r\n"
+module.exports = "<!-- <md-chip-list>\r\n  <md-chip selected=\"true\" color=\"warn\">获取近期竞赛(可报名)功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">获取未发布的竞赛功能尚未添加</md-chip>\r\n</md-chip-list> -->\r\n<md-nav-list>\r\n  <h3 md-subheader>尚未发布的竞赛</h3>\r\n  <md-list-item *ngFor=\"let item of unContests\">\r\n      {{item.name}}\r\n      <span style=\"flex: 1 1 auto\"></span>\r\n      <button md-button (click)=\"publish(item)\">发布</button>\r\n    </md-list-item>\r\n  <md-divider></md-divider>\r\n  <h3 md-subheader>尚未发布的获奖情况</h3>\r\n  <md-list-item *ngFor=\"let item of unAwards\">\r\n    这里应该显示作品名\r\n  </md-list-item>\r\n</md-nav-list>\r\n"
 
 /***/ }),
 
 /***/ 1234:
 /***/ (function(module, exports) {
 
-module.exports = "<form #material=\"ngForm\">\r\n<md-select placeholder=\"选择条件类型\" ngModel name=\"condition\">\r\n  <md-option *ngFor=\"let item of conditions\" [value]=\"item.conditionid\">\r\n    {{item.conditionname}}\r\n  </md-option>\r\n</md-select>\r\n<input ngModel type=\"file\" name=\"file\" [multiple]=\"multiple\" #fileInput/>\r\n<button md-button (click)=\"saveMaterial(material.value)\">提交</button>\r\n</form>\r\n"
+module.exports = "<form #file=\"ngForm\">\n  <input ngModel type=\"file\" name=\"file\" #fileInput />\n  <button md-button (click)=\"apply(file.value)\">提交</button>\n</form>\n<md-divider></md-divider>\n<md-card *ngFor=\"let item of files;let i of index\">\n  <md-card-header>\n    <md-card-title>文件名:{{item.fileName}}</md-card-title>\n    <md-card-subtitle>上传者:{{item.adminName}},上传时间:{{item.uploadDate}}</md-card-subtitle>\n  </md-card-header>\n  <md-card-content>\n  </md-card-content>\n  <md-card-actions>\n    <button md-button (click)=\"delete(item,i)\">删除</button>\n  </md-card-actions>\n</md-card>\n"
 
 /***/ }),
 
 /***/ 1235:
 /***/ (function(module, exports) {
 
-module.exports = "<md-card>\r\n  <md-card-content>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.sno}} [(ngModel)]=\"student.studentno\" [disabled]=\"true\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.name}} [ngModel]=\"student.studentname\" [disabled]=\"true\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.gender}} [ngModel]=\"student.gender\" [disabled]=\"true\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.department}} [(ngModel)]=\"student.department\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.profession}} [(ngModel)]=\"student.profession\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.classno}} [(ngModel)]=\"student.classno\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.grade}} [(ngModel)]=\"student.grade\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.phone}} [(ngModel)]=\"student.phone\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.email}} [(ngModel)]=\"student.email\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n  </md-card-content>\r\n  <md-card-actions>\r\n    <button md-button color=\"primary\" (click)=\"toggleEdit();edit();\" *ngIf=\"disableEdit\">\r\n      编辑\r\n    </button>\r\n    <button md-button color=\"primary\" (click)=\"toggleEdit();save();\" *ngIf=\"!disableEdit\">\r\n      保存\r\n    </button>\r\n    <button md-button (click)=\"toggleEdit();cancel();\" *ngIf=\"!disableEdit\">取消</button>\r\n  </md-card-actions>\r\n</md-card>\r\n<md-divider></md-divider>\r\n<button md-button style=\"width:100%\" (click)=\"openDialog()\">上传材料</button>\r\n<!-- <md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn\">修改个人材料功能尚未添加!!</md-chip>\r\n</md-chip-list> -->\r\n<md-card *ngFor=\"let material of materials\">\r\n  <img md-card-image src={{material.materialpic}}>\r\n  <md-card-content>\r\n    状态:{{material.status}}\r\n  </md-card-content>\r\n</md-card>\r\n"
+module.exports = "<h1>仪表板</h1>\r\n"
 
 /***/ }),
 
 /***/ 1236:
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  student-message works!\n</p>\n"
+module.exports = "<!-- <md-chip-list>\n<md-chip selected=\"true\" color=\"warn\">审核材料功能尚未添加</md-chip>\n</md-chip-list> -->\n<md-card *ngFor=\"let item of materials | materialPass\">\n  <md-card-header>\n    <md-card-title>{{ item.conditionName }}</md-card-title>\n  </md-card-header>\n  <img md-card-image alt=\"图片\" src={{item.materialPic}}>\n  <md-card-content>\n    <span>上传材料者:{{ item.studentNo }} - {{ item.studentName }}</span>\n  </md-card-content>\n  <md-card-actions>\n    <button md-button color=\"primary\" (click)=\"pass(item,1)\">通过</button>\n    <button md-button color=\"warn\" (click)=\"pass(item,0)\">不通过</button>\n  </md-card-actions>\n</md-card>\n"
 
 /***/ }),
 
 /***/ 1237:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <md-chip-list>\r\n  <md-chip selected=\"true\" color=\"warn\">根据申报结果查看功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">查看申报详情功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">修改申报书功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">导出申报表功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">查看竞赛小组以及组员功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">审批参赛小组功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">查看已经结束的竞赛功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">反馈获奖情况功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">审批申报书功能尚未添加</md-chip>\r\n</md-chip-list> -->\r\n<md-nav-list>\r\n  <h3 md-subheader>已申报竞赛列表</h3>\r\n  <md-list-item *ngFor=\"let declaration of declarations;let i of index\">\r\n    {{declaration.comname}}\r\n    <span style=\"flex: 1 1 auto\"> </span>\r\n    <span style=\"flex: 1 1 auto\"> </span>\r\n    <md-chip-list>\r\n      <md-chip *ngIf=\"declaration.depspstatus===0 || declaration.teaspstatus===0\" color=\"warn\">待审批</md-chip>\r\n    </md-chip-list>\r\n    <button md-button [routerLink]=\"['../declaration/detail', declaration.comid]\">详情</button>\r\n    <button md-button>修改</button>\r\n    <button md-button (click)=\"delete(declaration,i)\">删除</button>\r\n    <md-icon>date_range</md-icon>{{declaration.time}}\r\n  </md-list-item>\r\n</md-nav-list>\r\n"
+module.exports = "<!-- <md-chip-list>\n<md-chip selected=\"true\" color=\"warn\">更新作品功能尚未添加</md-chip>\n</md-chip-list> -->\n<button md-button style=\"width: 100%\" (click)=\"openDialog()\">上传作品</button>\n<md-card *ngFor=\"let item of works;let i of index\">\n  <md-card-header>\n  <md-card-title>作品名:{{item.proname}}</md-card-title>\n  <md-card-subtitle>获奖者:{{item.membersname}}</md-card-subtitle>\n  </md-card-header>\n  <md-card-content>\n    <h3>奖项:{{item.award}}</h3>\n    {{item.introduction}}\n    <p>创建日期:{{item.createDate}}</p>\n  </md-card-content>\n  <md-card-actions>\n  <button md-button (click)=\"delete(item,i)\">删除</button>\n  </md-card-actions>\n</md-card>\n"
 
 /***/ }),
 
 /***/ 1238:
 /***/ (function(module, exports) {
 
-module.exports = "<md-card>\r\n  <md-card-content>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.tno}} [(ngModel)]=\"teacher.teacherno\" [disabled]=\"true\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.name}} [ngModel]=\"teacher.teachername\" [disabled]=\"true\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.gender}} [(ngModel)]=\"teacher.gender\" [disabled]=\"true\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.birth}} [(ngModel)]=\"teacher.birth\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.department}} [(ngModel)]=\"teacher.department\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.subject}} [(ngModel)]=\"teacher.subject\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.phone}} [(ngModel)]=\"teacher.phone\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.title}} [(ngModel)]=\"teacher.title\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.post}} [(ngModel)]=\"teacher.post\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.email}} [(ngModel)]=\"teacher.email\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.type}} [(ngModel)]=\"teacher.type\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.direction}} [(ngModel)]=\"teacher.direction\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.education}} [(ngModel)]=\"teacher.education\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.lab}} [(ngModel)]=\"teacher.lab\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.examiner}} [(ngModel)]=\"examiner\" (change)=\"setExaminer()\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n  </md-card-content>\r\n  <md-card-actions>\r\n    <button md-button color=\"primary\" (click)=\"toggleEdit();edit();\" *ngIf=\"disableEdit\">\r\n      编辑\r\n    </button>\r\n    <button md-button color=\"primary\" (click)=\"toggleEdit();save();\" *ngIf=\"!disableEdit\">\r\n      保存\r\n    </button>\r\n    <button md-button (click)=\"toggleEdit();cancel();\" *ngIf=\"!disableEdit\">取消</button>\r\n  </md-card-actions>\r\n</md-card>\r\n"
+module.exports = "<form #work=\"ngForm\">\r\n  <md-input-container>\r\n    <input mdInput ngModel name=\"proName\" placeholder=\"作品名\" />\r\n  </md-input-container>\r\n  <md-input-container>\r\n    <input mdInput ngModel name=\"award\" placeholder=\"奖项\" />\r\n  </md-input-container>\r\n  <md-input-container>\r\n    <input mdInput ngModel name=\"membersName\" placeholder=\"作品作者\" />\r\n  </md-input-container>\r\n  <md-input-container>\r\n    <input mdInput ngModel name=\"introduction\" placeholder=\"作品简介\" />\r\n  </md-input-container>\r\n  <input md-button ngModel type=\"file\" name=\"file\" #fileInput/>\r\n  <button md-button (click)=\"apply(work.value)\">提交</button>\r\n</form>\r\n"
 
 /***/ }),
 
 /***/ 1239:
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  teacher-message works!\n</p>\n"
+module.exports = "<md-nav-list>\r\n  <h3 md-subheader>已报名竞赛列表</h3>\r\n  <md-list-item *ngFor=\"let appliedontest of appliedContests\">\r\n    {{appliedontest.comName}}\r\n  </md-list-item>\r\n  <md-divider></md-divider>\r\n    <h3 md-subheader>可报名竞赛列表</h3>\r\n    <!-- <md-list-item *ngFor=\"let contest of contests\">\r\n      {{contest.comName}}\r\n    </md-list-item> -->\r\n</md-nav-list>\r\n"
 
 /***/ }),
 
 /***/ 1240:
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\n"
+module.exports = "<form #material=\"ngForm\">\r\n<md-select placeholder=\"选择条件类型\" ngModel name=\"condition\">\r\n  <md-option *ngFor=\"let item of conditions\" [value]=\"item.conditionid\">\r\n    {{item.conditionname}}\r\n  </md-option>\r\n</md-select>\r\n<input ngModel type=\"file\" name=\"file\" [multiple]=\"multiple\" #fileInput/>\r\n<button md-button (click)=\"saveMaterial(material.value)\">提交</button>\r\n</form>\r\n"
 
 /***/ }),
 
 /***/ 1241:
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  user-info works!\n</p>\n"
+module.exports = "<md-card>\r\n  <md-card-content>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.sno}} [(ngModel)]=\"student.studentno\" [disabled]=\"true\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.name}} [ngModel]=\"student.studentname\" [disabled]=\"true\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.gender}} [ngModel]=\"student.gender\" [disabled]=\"true\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.department}} [(ngModel)]=\"student.department\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.profession}} [(ngModel)]=\"student.profession\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.classno}} [(ngModel)]=\"student.classno\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.grade}} [(ngModel)]=\"student.grade\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.phone}} [(ngModel)]=\"student.phone\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{studentInfo.email}} [(ngModel)]=\"student.email\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n  </md-card-content>\r\n  <md-card-actions>\r\n    <button md-button color=\"primary\" (click)=\"toggleEdit();edit();\" *ngIf=\"disableEdit\">\r\n      编辑\r\n    </button>\r\n    <button md-button color=\"primary\" (click)=\"toggleEdit();save();\" *ngIf=\"!disableEdit\">\r\n      保存\r\n    </button>\r\n    <button md-button (click)=\"toggleEdit();cancel();\" *ngIf=\"!disableEdit\">取消</button>\r\n  </md-card-actions>\r\n</md-card>\r\n<md-divider></md-divider>\r\n<button md-button style=\"width:100%\" (click)=\"openDialog()\">上传材料</button>\r\n<!-- <md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn\">修改个人材料功能尚未添加!!</md-chip>\r\n</md-chip-list> -->\r\n<md-card *ngFor=\"let material of materials\">\r\n  <img md-card-image src={{material.materialpic}}>\r\n  <md-card-content>\r\n    状态:{{material.status}}\r\n  </md-card-content>\r\n</md-card>\r\n"
 
 /***/ }),
 
 /***/ 1242:
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"row\">\r\n  <md-nav-list fxFlex=\"20\">\r\n    <md-list-item routerLink={{link.href}} *ngFor=\"let link of links\">\r\n      <!-- <a md-line  routerLinkActive=\"active\"> -->\r\n        {{link.name}}\r\n        <md-icon *ngIf=\"link.icon\" style=\"margin-left: 5px\">{{link.icon}}</md-icon>\r\n      <!-- </a> -->\r\n    </md-list-item>\r\n  </md-nav-list>\r\n  <div fxFlex=\"80\">\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<p>\n  student-message works!\n</p>\n"
 
 /***/ }),
 
 /***/ 1243:
 /***/ (function(module, exports) {
 
-module.exports = "<section fxLayout=\"row\">\n<md-card *ngFor=\"let item of works | slice:0:4\" fxFlex=\"25\">\n  <img md-card-image alt=\"图片\" src={{item.pic}}>\n  <md-card-header>\n  <md-card-title>作品名称:{{item.proname}}</md-card-title>\n  <md-card-subtitle>奖项:{{item.award}}</md-card-subtitle>\n  </md-card-header>\n  <md-card-content>\n    <p>获奖者:{{item.membersname}}</p>\n    <p>作品介绍:{{item.introduction}}</p>\n  </md-card-content>\n</md-card>\n</section>\n"
+module.exports = "<!-- <md-chip-list>\r\n  <md-chip selected=\"true\" color=\"warn\">根据申报结果查看功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">查看申报详情功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">修改申报书功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">导出申报表功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">查看竞赛小组以及组员功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">审批参赛小组功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">查看已经结束的竞赛功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">反馈获奖情况功能尚未添加</md-chip>\r\n  <md-chip selected=\"true\" color=\"warn\">审批申报书功能尚未添加</md-chip>\r\n</md-chip-list> -->\r\n<md-nav-list>\r\n  <h3 md-subheader>已申报竞赛列表</h3>\r\n  <md-list-item *ngFor=\"let declaration of declarations;let i of index\">\r\n    {{declaration.comname}}\r\n    <span style=\"flex: 1 1 auto\"> </span>\r\n    <span style=\"flex: 1 1 auto\"> </span>\r\n    <md-chip-list>\r\n      <md-chip *ngIf=\"declaration.depspstatus===0 || declaration.teaspstatus===0\" color=\"warn\">待审批</md-chip>\r\n    </md-chip-list>\r\n    <button md-button [routerLink]=\"['../declaration/detail', declaration.comid]\">详情</button>\r\n    <button md-button>修改</button>\r\n    <button md-button (click)=\"delete(declaration,i)\">删除</button>\r\n    <md-icon>date_range</md-icon>{{declaration.time}}\r\n  </md-list-item>\r\n</md-nav-list>\r\n"
 
 /***/ }),
 
-/***/ 1287:
+/***/ 1244:
+/***/ (function(module, exports) {
+
+module.exports = "<md-card>\r\n  <md-card-content>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.tno}} [(ngModel)]=\"teacher.teacherno\" [disabled]=\"true\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.name}} [ngModel]=\"teacher.teachername\" [disabled]=\"true\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.gender}} [(ngModel)]=\"teacher.gender\" [disabled]=\"true\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.birth}} [(ngModel)]=\"teacher.birth\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.department}} [(ngModel)]=\"teacher.department\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.subject}} [(ngModel)]=\"teacher.subject\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.phone}} [(ngModel)]=\"teacher.phone\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.title}} [(ngModel)]=\"teacher.title\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.post}} [(ngModel)]=\"teacher.post\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.email}} [(ngModel)]=\"teacher.email\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.type}} [(ngModel)]=\"teacher.type\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.direction}} [(ngModel)]=\"teacher.direction\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.education}} [(ngModel)]=\"teacher.education\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.lab}} [(ngModel)]=\"teacher.lab\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput placeholder={{teacherInfo.examiner}} [(ngModel)]=\"examiner\" (change)=\"setExaminer()\" [disabled]=\"disableEdit\" />\r\n    </md-input-container>\r\n  </md-card-content>\r\n  <md-card-actions>\r\n    <button md-button color=\"primary\" (click)=\"toggleEdit();edit();\" *ngIf=\"disableEdit\">\r\n      编辑\r\n    </button>\r\n    <button md-button color=\"primary\" (click)=\"toggleEdit();save();\" *ngIf=\"!disableEdit\">\r\n      保存\r\n    </button>\r\n    <button md-button (click)=\"toggleEdit();cancel();\" *ngIf=\"!disableEdit\">取消</button>\r\n  </md-card-actions>\r\n</md-card>\r\n"
+
+/***/ }),
+
+/***/ 1245:
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  teacher-message works!\n</p>\n"
+
+/***/ }),
+
+/***/ 1246:
+/***/ (function(module, exports) {
+
+module.exports = "<router-outlet></router-outlet>\n"
+
+/***/ }),
+
+/***/ 1247:
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  user-info works!\n</p>\n"
+
+/***/ }),
+
+/***/ 1248:
+/***/ (function(module, exports) {
+
+module.exports = "<div fxLayout=\"row\">\r\n  <md-nav-list fxFlex=\"20\">\r\n    <md-list-item routerLink={{link.href}} *ngFor=\"let link of links\">\r\n      <!-- <a md-line  routerLinkActive=\"active\"> -->\r\n        {{link.name}}\r\n        <md-icon *ngIf=\"link.icon\" style=\"margin-left: 5px\">{{link.icon}}</md-icon>\r\n      <!-- </a> -->\r\n    </md-list-item>\r\n  </md-nav-list>\r\n  <div fxFlex=\"80\">\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ 1249:
+/***/ (function(module, exports) {
+
+module.exports = "<section fxLayout=\"row\">\n<md-card *ngFor=\"let item of works | slice:0:4\" fxFlex=\"25\">\n  <img md-card-image alt=\"图片\" src={{item.pic}}>\n  <md-card-content>\n    <p>作品名称:{{item.proname}}</p>\n    <p>奖项:{{item.award}}</p>\n    <p>获奖者:{{item.membersname}}</p>\n    <p>作品介绍:{{item.introduction}}</p>\n  </md-card-content>\n</md-card>\n</section>\n"
+
+/***/ }),
+
+/***/ 1293:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(613);
+module.exports = __webpack_require__(614);
 
-
-/***/ }),
-
-/***/ 13:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__login_service__ = __webpack_require__(821);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__login_service__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__article_service__ = __webpack_require__(510);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_1__article_service__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contest_service__ = __webpack_require__(820);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__contest_service__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__student_service__ = __webpack_require__(822);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__student_service__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__teacher_service__ = __webpack_require__(823);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_4__teacher_service__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__award_service__ = __webpack_require__(819);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_5__award_service__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__admin_service__ = __webpack_require__(818);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_6__admin_service__["a"]; });
-
-
-
-
-
-
-
-//# sourceMappingURL=index.js.map
 
 /***/ }),
 
@@ -1100,7 +1150,12 @@ var ArticleService = (function () {
     };
     ArticleService.prototype.getArticleByComp = function (id) {
         return this.getArticles()
-            .map(function (articles) { return articles.find(function (article) { return article.comId === id; }); });
+            .map(function (articles) {
+            console.log("ArticleService.getArticleByComp:" + articles);
+            var list = articles.find(function (article) { return article.relationId == id; });
+            console.log("ArticleService.getArticleByComp:" + list);
+            return list;
+        });
     };
     ArticleService.prototype.handleError = function (error) {
         // In a real world app, we might use a remote logging infrastructure
@@ -1132,13 +1187,13 @@ var _a;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__article_component__ = __webpack_require__(833);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__article_component__ = __webpack_require__(834);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__article_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__article_list___ = __webpack_require__(832);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__article_list___ = __webpack_require__(833);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__article_list___["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__article_edit___ = __webpack_require__(830);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__article_edit___ = __webpack_require__(831);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__article_edit___["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__article_detail___ = __webpack_require__(828);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__article_detail___ = __webpack_require__(829);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__article_detail___["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_3__article_detail___["b"]; });
 
@@ -1153,9 +1208,9 @@ var _a;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__award_component__ = __webpack_require__(836);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__award_component__ = __webpack_require__(837);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__award_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__award_list___ = __webpack_require__(835);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__award_list___ = __webpack_require__(836);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__award_list___["a"]; });
 
 
@@ -1167,11 +1222,11 @@ var _a;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contest_detail___ = __webpack_require__(840);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contest_detail___ = __webpack_require__(841);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__contest_detail___["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__contest_list___ = __webpack_require__(842);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__contest_list___ = __webpack_require__(843);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__contest_list___["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contest_component__ = __webpack_require__(843);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contest_component__ = __webpack_require__(844);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__contest_component__["a"]; });
 
 
@@ -1189,7 +1244,7 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_switchMap__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_switchMap__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeclarationDetailComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1223,9 +1278,11 @@ var DeclarationDetailComponent = (function () {
         this.hoursSum = 0;
     }
     DeclarationDetailComponent.prototype.export = function (declaration) {
-        this.http.get("http://localhost:8080/CompSystem/teacher/getAprroveTable" + "?comId=" + declaration.comid)
-            .map(function (response) { return console.log("DeclarationDetailComponent.export:", response.json()) || response.json(); })
-            .subscribe(function (response) { return console.log(response); });
+        var url = "http://localhost:8080/CompSystem/teacher/getAprroveTable" + "?comId=" + declaration.comid;
+        window.location.href = url;
+        //  this.http.get(url)
+        //   .map(response => console.log("DeclarationDetailComponent.export:",response.json()) || response.json())
+        //   .subscribe(response => console.log(response));
     };
     DeclarationDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1252,8 +1309,8 @@ var DeclarationDetailComponent = (function () {
 DeclarationDetailComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-declaration-detail',
-        template: __webpack_require__(1217),
-        styles: [__webpack_require__(1171)],
+        template: __webpack_require__(1221),
+        styles: [__webpack_require__(1173)],
         providers: [__WEBPACK_IMPORTED_MODULE_4__services__["b" /* ContestService */], __WEBPACK_IMPORTED_MODULE_4__services__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_4__services__["c" /* TeacherService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__services__["b" /* ContestService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services__["b" /* ContestService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services__["a" /* LoginService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__services__["c" /* TeacherService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services__["c" /* TeacherService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */]) === "function" && _e || Object])
@@ -1269,7 +1326,7 @@ var _a, _b, _c, _d, _e;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeclarationListComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1307,8 +1364,8 @@ __decorate([
 DeclarationListComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-declaration-list',
-        template: __webpack_require__(1218),
-        styles: [__webpack_require__(1172)],
+        template: __webpack_require__(1222),
+        styles: [__webpack_require__(1174)],
         providers: [__WEBPACK_IMPORTED_MODULE_1__services__["b" /* ContestService */], __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services__["b" /* ContestService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services__["b" /* ContestService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */]) === "function" && _b || Object])
@@ -1325,8 +1382,59 @@ var _a, _b;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(11);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeclarationSaveComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var DeclarationSaveComponent = (function () {
+    function DeclarationSaveComponent(http, loginService) {
+        this.http = http;
+        this.loginService = loginService;
+    }
+    DeclarationSaveComponent.prototype.getSaved = function () {
+        this.http.get("http://localhost:8080/CompSystem/teacher/getNoSubmitComp" + "?teacherNo=" + this.teacher.teacherno)
+            .map(function (response) { return console.log("DeclarationSaveComponent.getSaved:", response.json()) || response.json(); })
+            .subscribe(function (response) { });
+    };
+    DeclarationSaveComponent.prototype.ngOnInit = function () {
+        this.teacher = this.loginService.getUser();
+        this.getSaved();
+    };
+    return DeclarationSaveComponent;
+}());
+DeclarationSaveComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-declaration-save',
+        template: __webpack_require__(1224),
+        styles: [__webpack_require__(1176)],
+        providers: [__WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */]]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */]) === "function" && _b || Object])
+], DeclarationSaveComponent);
+
+var _a, _b;
+//# sourceMappingURL=declaration-save.component.js.map
+
+/***/ }),
+
+/***/ 517:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExaminerComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ExaminerDialog; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1385,8 +1493,8 @@ var ExaminerComponent = (function () {
 ExaminerComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-examiner',
-        template: __webpack_require__(1220),
-        styles: [__webpack_require__(1174)]
+        template: __webpack_require__(1226),
+        styles: [__webpack_require__(1178)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__["a" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__["a" /* MdDialog */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */]) === "function" && _c || Object])
 ], ExaminerComponent);
@@ -1420,8 +1528,8 @@ var ExaminerDialog = (function () {
 ExaminerDialog = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-examiner-dialog',
-        template: __webpack_require__(1221),
-        styles: [__webpack_require__(1175)]
+        template: __webpack_require__(1227),
+        styles: [__webpack_require__(1179)]
     }),
     __metadata("design:paramtypes", [typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__["b" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__["b" /* MdDialogRef */]) === "function" && _d || Object])
 ], ExaminerDialog);
@@ -1431,33 +1539,13 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
-/***/ 517:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__examiner_component__ = __webpack_require__(516);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__examiner_component__["a"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__examiner_component__["b"]; });
-
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
 /***/ 518:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__declaration_component__ = __webpack_require__(846);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__declaration_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__examiner___ = __webpack_require__(517);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__examiner___["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__declaration_list___ = __webpack_require__(845);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__declaration_detail___ = __webpack_require__(844);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_3__declaration_detail___["a"]; });
-
-
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__examiner_component__ = __webpack_require__(517);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__examiner_component__["a"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__examiner_component__["b"]; });
 
 //# sourceMappingURL=index.js.map
 
@@ -1467,14 +1555,37 @@ var _a, _b, _c, _d;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_component__ = __webpack_require__(850);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__home_component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__declaration_component__ = __webpack_require__(848);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__declaration_component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__examiner___ = __webpack_require__(518);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__examiner___["b"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__declaration_list___ = __webpack_require__(846);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__declaration_detail___ = __webpack_require__(845);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__declaration_detail___["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__declaration_save_declaration_save_component__ = __webpack_require__(516);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_4__declaration_save_declaration_save_component__["a"]; });
+
+
+
+
 
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
 /***/ 520:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_component__ = __webpack_require__(852);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__home_component__["a"]; });
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 521:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1500,8 +1611,8 @@ var NotificationComponent = (function () {
 NotificationComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-notification',
-        template: __webpack_require__(1226),
-        styles: [__webpack_require__(1180)]
+        template: __webpack_require__(1232),
+        styles: [__webpack_require__(1184)]
     }),
     __metadata("design:paramtypes", [])
 ], NotificationComponent);
@@ -1510,13 +1621,13 @@ NotificationComponent = __decorate([
 
 /***/ }),
 
-/***/ 521:
+/***/ 522:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminFilesComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1542,7 +1653,9 @@ var AdminFilesComponent = (function () {
         if (fileCount > 0) {
             formData.append('file', inputEl.files.item(0));
             this.http.post("http://localhost:8080/CompSystem/admin/uploadFile", formData)
-                .subscribe(function () { return alert('上传成功!'); });
+                .subscribe(function () {
+                alert('上传成功!');
+            });
         }
     };
     AdminFilesComponent.prototype.getFiles = function () {
@@ -1571,8 +1684,8 @@ __decorate([
 AdminFilesComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-admin-files',
-        template: __webpack_require__(1228),
-        styles: [__webpack_require__(1182)],
+        template: __webpack_require__(1234),
+        styles: [__webpack_require__(1186)],
         providers: [__WEBPACK_IMPORTED_MODULE_2__services__["f" /* AdminService */]]
     }),
     __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services__["f" /* AdminService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["f" /* AdminService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _c || Object])
@@ -1583,7 +1696,7 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 522:
+/***/ 523:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1627,8 +1740,8 @@ var AdminMaterialComponent = (function () {
 AdminMaterialComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-admin-material',
-        template: __webpack_require__(1230),
-        styles: [__webpack_require__(1184)]
+        template: __webpack_require__(1236),
+        styles: [__webpack_require__(1188)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
 ], AdminMaterialComponent);
@@ -1638,14 +1751,14 @@ var _a;
 
 /***/ }),
 
-/***/ 523:
+/***/ 524:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminWorksComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return WorksDialog; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1700,8 +1813,8 @@ var AdminWorksComponent = (function () {
 AdminWorksComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-admin-works',
-        template: __webpack_require__(1231),
-        styles: [__webpack_require__(1185)]
+        template: __webpack_require__(1237),
+        styles: [__webpack_require__(1189)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["a" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["a" /* MdDialog */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _b || Object])
 ], AdminWorksComponent);
@@ -1738,8 +1851,8 @@ __decorate([
 WorksDialog = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-works-dialog',
-        template: __webpack_require__(1232),
-        styles: [__webpack_require__(1186)],
+        template: __webpack_require__(1238),
+        styles: [__webpack_require__(1190)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services__["e" /* AwardService */]]
     }),
     __metadata("design:paramtypes", [typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["b" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["b" /* MdDialogRef */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services__["e" /* AwardService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["e" /* AwardService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _f || Object])
@@ -1750,27 +1863,27 @@ var _a, _b, _c, _d, _e, _f;
 
 /***/ }),
 
-/***/ 524:
+/***/ 525:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__admin___ = __webpack_require__(861);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__admin___ = __webpack_require__(863);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__admin___["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_0__admin___["b"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_0__admin___["c"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_0__admin___["d"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_0__admin___["e"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_0__admin___["f"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__student___ = __webpack_require__(862);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__student___ = __webpack_require__(864);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__student___["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_1__student___["b"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_1__student___["c"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__teacher___ = __webpack_require__(868);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__teacher___ = __webpack_require__(870);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_2__teacher___["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "l", function() { return __WEBPACK_IMPORTED_MODULE_2__teacher___["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__user_component__ = __webpack_require__(874);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__user_component__ = __webpack_require__(876);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_3__user_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__user_info___ = __webpack_require__(873);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__user_info___ = __webpack_require__(875);
 /* unused harmony namespace reexport */
 
 
@@ -1781,13 +1894,13 @@ var _a, _b, _c, _d, _e, _f;
 
 /***/ }),
 
-/***/ 525:
+/***/ 526:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TeacherContestComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1829,8 +1942,8 @@ var TeacherContestComponent = (function () {
 TeacherContestComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-teacher-contest',
-        template: __webpack_require__(1237),
-        styles: [__webpack_require__(1191)],
+        template: __webpack_require__(1243),
+        styles: [__webpack_require__(1195)],
         providers: [__WEBPACK_IMPORTED_MODULE_2__services__["b" /* ContestService */], __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services__["b" /* ContestService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["b" /* ContestService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _c || Object])
@@ -1841,7 +1954,7 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 526:
+/***/ 527:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1867,8 +1980,8 @@ var TeacherComponent = (function () {
 TeacherComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-teacher',
-        template: __webpack_require__(1240),
-        styles: [__webpack_require__(1194)]
+        template: __webpack_require__(1246),
+        styles: [__webpack_require__(1198)]
     }),
     __metadata("design:paramtypes", [])
 ], TeacherComponent);
@@ -1877,7 +1990,7 @@ TeacherComponent = __decorate([
 
 /***/ }),
 
-/***/ 527:
+/***/ 528:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1903,8 +2016,8 @@ var UserInfoComponent = (function () {
 UserInfoComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-user-info',
-        template: __webpack_require__(1241),
-        styles: [__webpack_require__(1195)]
+        template: __webpack_require__(1247),
+        styles: [__webpack_require__(1199)]
     }),
     __metadata("design:paramtypes", [])
 ], UserInfoComponent);
@@ -1913,7 +2026,7 @@ UserInfoComponent = __decorate([
 
 /***/ }),
 
-/***/ 612:
+/***/ 613:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -1922,20 +2035,20 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 612;
+webpackEmptyContext.id = 613;
 
 
 /***/ }),
 
-/***/ 613:
+/***/ 614:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(755);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(825);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(876);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(756);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(826);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(878);
 
 
 
@@ -1952,37 +2065,37 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__article__ = __webpack_require__(799);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__article__ = __webpack_require__(800);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__article__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__article_type__ = __webpack_require__(798);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__article_type__ = __webpack_require__(799);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_1__article_type__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__level__ = __webpack_require__(806);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__level__ = __webpack_require__(807);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__level__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__project__ = __webpack_require__(808);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__project__ = __webpack_require__(809);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__award__ = __webpack_require__(800);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__award__ = __webpack_require__(801);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__contest__ = __webpack_require__(802);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__contest__ = __webpack_require__(803);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "l", function() { return __WEBPACK_IMPORTED_MODULE_5__contest__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__budget__ = __webpack_require__(801);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__budget__ = __webpack_require__(802);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_6__budget__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__hour__ = __webpack_require__(805);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__hour__ = __webpack_require__(806);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_7__hour__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__schedule__ = __webpack_require__(810);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__schedule__ = __webpack_require__(811);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_8__schedule__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__login__ = __webpack_require__(807);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__login__ = __webpack_require__(808);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__role__ = __webpack_require__(809);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__role__ = __webpack_require__(810);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_10__role__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__admin__ = __webpack_require__(797);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__admin__ = __webpack_require__(798);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_11__admin__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__department__ = __webpack_require__(803);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__department__ = __webpack_require__(804);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_12__department__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__student__ = __webpack_require__(811);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__student__ = __webpack_require__(812);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_13__student__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__group_detail__ = __webpack_require__(804);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__group_detail__ = __webpack_require__(805);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__teacher__ = __webpack_require__(812);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__teacher__ = __webpack_require__(813);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_15__teacher__["a"]; });
 
 
@@ -2007,7 +2120,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 788:
+/***/ 789:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2026,7 +2139,7 @@ ADMINS.push(new __WEBPACK_IMPORTED_MODULE_0__models__["h" /* Admin */]("123", "1
 
 /***/ }),
 
-/***/ 789:
+/***/ 790:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2045,7 +2158,7 @@ var ARTICLETYPES = [
 
 /***/ }),
 
-/***/ 790:
+/***/ 791:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2055,7 +2168,7 @@ var AWARDS = [];
 
 /***/ }),
 
-/***/ 791:
+/***/ 792:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2088,7 +2201,7 @@ function getRandomIntInclusive(min, max) {
 
 /***/ }),
 
-/***/ 792:
+/***/ 793:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2098,7 +2211,7 @@ var CONTESTS = [];
 
 /***/ }),
 
-/***/ 793:
+/***/ 794:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2113,7 +2226,7 @@ var LEVELS = [
 
 /***/ }),
 
-/***/ 794:
+/***/ 795:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2129,7 +2242,7 @@ var ROLES = [
 
 /***/ }),
 
-/***/ 795:
+/***/ 796:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2146,7 +2259,7 @@ STUDENTS.push(new __WEBPACK_IMPORTED_MODULE_0__models__["f" /* Student */](123, 
 
 /***/ }),
 
-/***/ 796:
+/***/ 797:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2162,7 +2275,7 @@ TEACHERS.push(new __WEBPACK_IMPORTED_MODULE_0__models__["g" /* Teacher */](123, 
 
 /***/ }),
 
-/***/ 797:
+/***/ 798:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2182,7 +2295,7 @@ var Admin = (function () {
 
 /***/ }),
 
-/***/ 798:
+/***/ 799:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2199,7 +2312,7 @@ var ArticleType = (function () {
 
 /***/ }),
 
-/***/ 799:
+/***/ 800:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2223,7 +2336,7 @@ var Article = (function () {
 
 /***/ }),
 
-/***/ 800:
+/***/ 801:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2275,7 +2388,7 @@ var Award = (function () {
 
 /***/ }),
 
-/***/ 801:
+/***/ 802:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2299,7 +2412,7 @@ var Budget = (function () {
 
 /***/ }),
 
-/***/ 802:
+/***/ 803:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2315,7 +2428,7 @@ var Contest = (function () {
 
 /***/ }),
 
-/***/ 803:
+/***/ 804:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2333,7 +2446,7 @@ var Department = (function () {
 
 /***/ }),
 
-/***/ 804:
+/***/ 805:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2361,7 +2474,7 @@ var GroupDetail = (function () {
 
 /***/ }),
 
-/***/ 805:
+/***/ 806:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2385,7 +2498,7 @@ var Hour = (function () {
 
 /***/ }),
 
-/***/ 806:
+/***/ 807:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2403,7 +2516,7 @@ var Level = (function () {
 
 /***/ }),
 
-/***/ 807:
+/***/ 808:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2421,7 +2534,7 @@ var Login = (function () {
 
 /***/ }),
 
-/***/ 808:
+/***/ 809:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2485,7 +2598,7 @@ var Project = (function () {
 
 /***/ }),
 
-/***/ 809:
+/***/ 810:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2502,7 +2615,7 @@ var Role = (function () {
 
 /***/ }),
 
-/***/ 810:
+/***/ 811:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2528,7 +2641,7 @@ var Schedule = (function () {
 
 /***/ }),
 
-/***/ 811:
+/***/ 812:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2555,7 +2668,7 @@ var Student = (function () {
 
 /***/ }),
 
-/***/ 812:
+/***/ 813:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2587,7 +2700,7 @@ var Teacher = (function () {
 
 /***/ }),
 
-/***/ 813:
+/***/ 814:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2619,7 +2732,7 @@ ArticleTypeFilterPipe = __decorate([
 
 /***/ }),
 
-/***/ 814:
+/***/ 815:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2666,7 +2779,7 @@ ContestTimelineFilterPipe = __decorate([
 
 /***/ }),
 
-/***/ 815:
+/***/ 816:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2698,15 +2811,15 @@ ContestUserFilterPipe = __decorate([
 
 /***/ }),
 
-/***/ 816:
+/***/ 817:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__article_type_filter_pipe__ = __webpack_require__(813);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__article_type_filter_pipe__ = __webpack_require__(814);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__article_type_filter_pipe__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__contest_timeline_filter_pipe__ = __webpack_require__(814);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__contest_timeline_filter_pipe__ = __webpack_require__(815);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__contest_timeline_filter_pipe__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contest_user_filter_pipe__ = __webpack_require__(815);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contest_user_filter_pipe__ = __webpack_require__(816);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__contest_user_filter_pipe__["a"]; });
 
 
@@ -2715,7 +2828,7 @@ ContestUserFilterPipe = __decorate([
 
 /***/ }),
 
-/***/ 817:
+/***/ 818:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2748,7 +2861,7 @@ MaterialPassPipe = __decorate([
 
 /***/ }),
 
-/***/ 818:
+/***/ 819:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2793,7 +2906,7 @@ var _a;
 
 /***/ }),
 
-/***/ 819:
+/***/ 820:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2867,7 +2980,7 @@ var _a;
 
 /***/ }),
 
-/***/ 820:
+/***/ 821:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2988,13 +3101,13 @@ var _a;
 
 /***/ }),
 
-/***/ 821:
+/***/ 822:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise__);
@@ -3132,7 +3245,7 @@ var _a;
 
 /***/ }),
 
-/***/ 822:
+/***/ 823:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3220,7 +3333,7 @@ var _a;
 
 /***/ }),
 
-/***/ 823:
+/***/ 824:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3294,7 +3407,7 @@ var _a;
 
 /***/ }),
 
-/***/ 824:
+/***/ 825:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3328,8 +3441,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-root',
-        template: __webpack_require__(1205),
-        styles: [__webpack_require__(1159)],
+        template: __webpack_require__(1209),
+        styles: [__webpack_require__(1161)],
         providers: []
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
@@ -3340,7 +3453,7 @@ var _a;
 
 /***/ }),
 
-/***/ 825:
+/***/ 826:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3349,39 +3462,41 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__(739);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_flex_layout__ = __webpack_require__(704);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__swimlane_ngx_charts__ = __webpack_require__(877);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__(740);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_flex_layout__ = __webpack_require__(705);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__swimlane_ngx_charts__ = __webpack_require__(879);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__swimlane_ngx_charts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__swimlane_ngx_charts__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ng2_quill_editor__ = __webpack_require__(785);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angular2_qrcode__ = __webpack_require__(878);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_routing__ = __webpack_require__(826);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__guard__ = __webpack_require__(849);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_component__ = __webpack_require__(824);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__home__ = __webpack_require__(519);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__login__ = __webpack_require__(851);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__user__ = __webpack_require__(524);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ng2_quill_editor__ = __webpack_require__(786);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angular2_qrcode__ = __webpack_require__(880);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_routing__ = __webpack_require__(827);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__guard__ = __webpack_require__(851);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_component__ = __webpack_require__(825);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__home__ = __webpack_require__(520);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__login__ = __webpack_require__(853);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__user__ = __webpack_require__(525);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__article__ = __webpack_require__(511);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__contest__ = __webpack_require__(513);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pipes__ = __webpack_require__(816);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__declaration__ = __webpack_require__(518);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pipes__ = __webpack_require__(817);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__declaration__ = __webpack_require__(519);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__award__ = __webpack_require__(512);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__chart__ = __webpack_require__(838);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__user_user_info_user_info_component__ = __webpack_require__(527);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__declaration_examiner_examiner_component__ = __webpack_require__(516);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__chart__ = __webpack_require__(839);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__user_user_info_user_info_component__ = __webpack_require__(528);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__declaration_examiner_examiner_component__ = __webpack_require__(517);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__declaration_declaration_list_declaration_list_component__ = __webpack_require__(515);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__works_works_component__ = __webpack_require__(875);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__notification_notification_component__ = __webpack_require__(520);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__user_teacher_teacher_contest_teacher_contest_component__ = __webpack_require__(525);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__files_files_component__ = __webpack_require__(847);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__user_admin_admin_works_admin_works_component__ = __webpack_require__(523);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__user_admin_admin_files_admin_files_component__ = __webpack_require__(521);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__user_student_student_message_student_message_component__ = __webpack_require__(867);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__user_teacher_teacher_message_teacher_message_component__ = __webpack_require__(872);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__user_admin_admin_material_admin_material_component__ = __webpack_require__(522);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__works_works_component__ = __webpack_require__(877);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__notification_notification_component__ = __webpack_require__(521);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__user_teacher_teacher_contest_teacher_contest_component__ = __webpack_require__(526);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__files_files_component__ = __webpack_require__(849);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__user_admin_admin_works_admin_works_component__ = __webpack_require__(524);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__user_admin_admin_files_admin_files_component__ = __webpack_require__(522);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__user_student_student_message_student_message_component__ = __webpack_require__(869);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__user_teacher_teacher_message_teacher_message_component__ = __webpack_require__(874);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__user_admin_admin_material_admin_material_component__ = __webpack_require__(523);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__declaration_declaration_detail_declaration_detail_component__ = __webpack_require__(514);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__user_teacher_teacher_component__ = __webpack_require__(526);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pipes_material_pass_pipe__ = __webpack_require__(817);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__user_teacher_teacher_component__ = __webpack_require__(527);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pipes_material_pass_pipe__ = __webpack_require__(818);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__declaration_declaration_save_declaration_save_component__ = __webpack_require__(516);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__declaration_declaration_load_declaration_load_component__ = __webpack_require__(847);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3389,6 +3504,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -3459,7 +3576,9 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_33__user_admin_admin_material_admin_material_component__["a" /* AdminMaterialComponent */],
             __WEBPACK_IMPORTED_MODULE_34__declaration_declaration_detail_declaration_detail_component__["a" /* DeclarationDetailComponent */],
             __WEBPACK_IMPORTED_MODULE_35__user_teacher_teacher_component__["a" /* TeacherComponent */],
-            __WEBPACK_IMPORTED_MODULE_36__pipes_material_pass_pipe__["a" /* MaterialPassPipe */]
+            __WEBPACK_IMPORTED_MODULE_36__pipes_material_pass_pipe__["a" /* MaterialPassPipe */],
+            __WEBPACK_IMPORTED_MODULE_37__declaration_declaration_save_declaration_save_component__["a" /* DeclarationSaveComponent */],
+            __WEBPACK_IMPORTED_MODULE_38__declaration_declaration_load_declaration_load_component__["a" /* DeclarationLoadComponent */]
         ],
         entryComponents: [
             __WEBPACK_IMPORTED_MODULE_14__login__["b" /* LoginDialog */], __WEBPACK_IMPORTED_MODULE_16__article__["e" /* ApplyDialog */], __WEBPACK_IMPORTED_MODULE_15__user__["b" /* MaterialDialog */], __WEBPACK_IMPORTED_MODULE_15__user__["c" /* WorksDialog */], __WEBPACK_IMPORTED_MODULE_19__declaration__["b" /* ExaminerDialog */]
@@ -3488,19 +3607,19 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 826:
+/***/ 827:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home__ = __webpack_require__(519);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__user__ = __webpack_require__(524);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home__ = __webpack_require__(520);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__user__ = __webpack_require__(525);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__article__ = __webpack_require__(511);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__contest__ = __webpack_require__(513);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__declaration__ = __webpack_require__(518);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__declaration__ = __webpack_require__(519);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__award__ = __webpack_require__(512);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__declaration_examiner__ = __webpack_require__(517);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__notification__ = __webpack_require__(853);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__declaration_examiner__ = __webpack_require__(518);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__notification__ = __webpack_require__(855);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return routing; });
 
 
@@ -3561,11 +3680,14 @@ var appRoutes = [
                 path: 'declaration',
                 component: __WEBPACK_IMPORTED_MODULE_5__declaration__["a" /* DeclarationComponent */]
             }, {
+                path: 'save',
+                component: __WEBPACK_IMPORTED_MODULE_5__declaration__["c" /* DeclarationSaveComponent */]
+            }, {
                 path: 'declarationList',
                 component: __WEBPACK_IMPORTED_MODULE_2__user__["l" /* TeacherContestComponent */]
             }, {
                 path: 'declaration/detail/:id',
-                component: __WEBPACK_IMPORTED_MODULE_5__declaration__["c" /* DeclarationDetailComponent */]
+                component: __WEBPACK_IMPORTED_MODULE_5__declaration__["d" /* DeclarationDetailComponent */]
             }, {
                 path: 'examiner',
                 component: __WEBPACK_IMPORTED_MODULE_7__declaration_examiner__["a" /* ExaminerComponent */]
@@ -3618,7 +3740,7 @@ var routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule 
 
 /***/ }),
 
-/***/ 827:
+/***/ 828:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3628,7 +3750,7 @@ var routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule 
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ArticleDetailComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ApplyDialog; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -3724,8 +3846,8 @@ var ArticleDetailComponent = (function () {
 ArticleDetailComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-article-detail',
-        template: __webpack_require__(1207),
-        styles: [__webpack_require__(1161)],
+        template: __webpack_require__(1211),
+        styles: [__webpack_require__(1163)],
         providers: [__WEBPACK_IMPORTED_MODULE_5__services__["g" /* ArticleService */], __WEBPACK_IMPORTED_MODULE_5__services__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_5__services__["b" /* ContestService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__services__["g" /* ArticleService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services__["g" /* ArticleService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__services__["b" /* ContestService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services__["b" /* ContestService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services__["a" /* LoginService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["a" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["a" /* MdDialog */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */]) === "function" && _f || Object])
@@ -3751,8 +3873,8 @@ var ApplyDialog = (function () {
 ApplyDialog = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-apply-dialog',
-        template: __webpack_require__(1206),
-        styles: [__webpack_require__(1160)],
+        template: __webpack_require__(1210),
+        styles: [__webpack_require__(1162)],
         providers: [__WEBPACK_IMPORTED_MODULE_5__services__["b" /* ContestService */]]
     }),
     __metadata("design:paramtypes", [typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["b" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["b" /* MdDialogRef */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */]) === "function" && _h || Object])
@@ -3763,11 +3885,11 @@ var _a, _b, _c, _d, _e, _f, _g, _h;
 
 /***/ }),
 
-/***/ 828:
+/***/ 829:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__article_detail_component__ = __webpack_require__(827);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__article_detail_component__ = __webpack_require__(828);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__article_detail_component__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__article_detail_component__["b"]; });
 
@@ -3775,7 +3897,7 @@ var _a, _b, _c, _d, _e, _f, _g, _h;
 
 /***/ }),
 
-/***/ 829:
+/***/ 830:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3786,7 +3908,7 @@ var _a, _b, _c, _d, _e, _f, _g, _h;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__datas__ = __webpack_require__(98);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ArticleEditComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -3817,6 +3939,25 @@ var ArticleEditComponent = (function () {
         this.content = "";
         Object.assign(this, { ARTICLETYPES: __WEBPACK_IMPORTED_MODULE_7__datas__["a" /* ARTICLETYPES */] });
     }
+    ArticleEditComponent.prototype.setContent = function (comid) {
+        var _this = this;
+        if (comid) {
+            this.http.get("http://localhost:8080/CompSystem/teacher/getCompDetail" + "?comId=" + comid)
+                .map(function (response) { return console.log("DeclarationDetailComponent:", response.json()) || response.json(); })
+                .subscribe(function (response) {
+                if (confirm("加载竞赛内容到编辑栏吗?")) {
+                    _this.editorContent = "<p>\u7ADE\u8D5B\u540D:" + response.competition.comname + "</p>";
+                    _this.editorContent += "<p>\u7B80\u4ECB:" + response.competition.introduce + "</p>";
+                    _this.editorContent += "<p>\u4E3B\u529E\u65B9:" + response.competition.host + "</p>";
+                    _this.editorContent += "<p>\u534F\u529E\u65B9:" + response.competition.department + "</p>";
+                    _this.editorContent += "<p>\u7533\u8BF7\u5F00\u59CB\u65F6\u95F4:" + response.competition.applybegindate + "</p>";
+                    _this.editorContent += "<p>\u7533\u8BF7\u7ED3\u675F\u65F6\u95F4:" + response.competition.applyenddate + "</p>";
+                    _this.editorContent += "<p>\u7ADE\u8D5B\u65F6\u95F4:" + response.competition.time + "</p>";
+                    _this.editorContent += "<p>\u7ADE\u8D5B\u5BF9\u8C61:" + response.competition.object + "</p>";
+                }
+            });
+        }
+    };
     ArticleEditComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.admin = this.loginService.getUser();
@@ -3824,6 +3965,7 @@ var ArticleEditComponent = (function () {
         this.filteredComps = this.compCtrl.valueChanges
             .startWith(null)
             .map(function (name) { return _this.filterComps(name); });
+        this.getContests();
     };
     ArticleEditComponent.prototype.filterComps = function (val) {
         return val ? this.contests.filter(function (c) { return new RegExp("^" + val, 'gi').test(c.comname); })
@@ -3859,7 +4001,7 @@ var ArticleEditComponent = (function () {
             title: article.title,
             content: this.editorContent,
             articleType: article.articleType,
-            relationId: this.admin.adminno
+            relationId: article.relationId
         }).subscribe(function (response) { return alert("发布成功!"); });
     };
     ArticleEditComponent.prototype.goBack = function () {
@@ -3870,8 +4012,8 @@ var ArticleEditComponent = (function () {
 ArticleEditComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-article-edit',
-        template: __webpack_require__(1208),
-        styles: [__webpack_require__(1162)],
+        template: __webpack_require__(1212),
+        styles: [__webpack_require__(1164)],
         providers: [__WEBPACK_IMPORTED_MODULE_6__services__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_6__services__["g" /* ArticleService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common__["Location"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common__["Location"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services__["a" /* LoginService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6__services__["g" /* ArticleService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services__["g" /* ArticleService */]) === "function" && _e || Object])
@@ -3882,18 +4024,18 @@ var _a, _b, _c, _d, _e;
 
 /***/ }),
 
-/***/ 830:
+/***/ 831:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__article_edit_component__ = __webpack_require__(829);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__article_edit_component__ = __webpack_require__(830);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__article_edit_component__["a"]; });
 
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 831:
+/***/ 832:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3954,8 +4096,8 @@ var ArticleListComponent = (function () {
 ArticleListComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-article-list',
-        template: __webpack_require__(1209),
-        styles: [__webpack_require__(1163)],
+        template: __webpack_require__(1213),
+        styles: [__webpack_require__(1165)],
         providers: [__WEBPACK_IMPORTED_MODULE_2__services_article_service__["a" /* ArticleService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_article_service__["a" /* ArticleService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_article_service__["a" /* ArticleService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object])
@@ -3966,18 +4108,18 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 832:
+/***/ 833:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__article_list_component__ = __webpack_require__(831);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__article_list_component__ = __webpack_require__(832);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__article_list_component__["a"]; });
 
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 833:
+/***/ 834:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4003,8 +4145,8 @@ var ArticleComponent = (function () {
 ArticleComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-article',
-        template: __webpack_require__(1210),
-        styles: [__webpack_require__(1164)]
+        template: __webpack_require__(1214),
+        styles: [__webpack_require__(1166)]
     }),
     __metadata("design:paramtypes", [])
 ], ArticleComponent);
@@ -4013,13 +4155,13 @@ ArticleComponent = __decorate([
 
 /***/ }),
 
-/***/ 834:
+/***/ 835:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AwardListComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4066,8 +4208,8 @@ __decorate([
 AwardListComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-award-list',
-        template: __webpack_require__(1211),
-        styles: [__webpack_require__(1165)],
+        template: __webpack_require__(1215),
+        styles: [__webpack_require__(1167)],
         providers: [__WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_2__services__["e" /* AwardService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services__["e" /* AwardService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["e" /* AwardService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _c || Object])
@@ -4078,18 +4220,18 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 835:
+/***/ 836:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__award_list_component__ = __webpack_require__(834);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__award_list_component__ = __webpack_require__(835);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__award_list_component__["a"]; });
 
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 836:
+/***/ 837:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4115,8 +4257,8 @@ var AwardComponent = (function () {
 AwardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-award',
-        template: __webpack_require__(1212),
-        styles: [__webpack_require__(1166)]
+        template: __webpack_require__(1216),
+        styles: [__webpack_require__(1168)]
     }),
     __metadata("design:paramtypes", [])
 ], AwardComponent);
@@ -4125,7 +4267,7 @@ AwardComponent = __decorate([
 
 /***/ }),
 
-/***/ 837:
+/***/ 838:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4171,8 +4313,8 @@ var ChartComponent = (function () {
 ChartComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-chart',
-        template: __webpack_require__(1213),
-        styles: [__webpack_require__(1167)]
+        template: __webpack_require__(1217),
+        styles: [__webpack_require__(1169)]
     }),
     __metadata("design:paramtypes", [])
 ], ChartComponent);
@@ -4181,18 +4323,18 @@ ChartComponent = __decorate([
 
 /***/ }),
 
-/***/ 838:
+/***/ 839:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__chart_component__ = __webpack_require__(837);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__chart_component__ = __webpack_require__(838);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__chart_component__["a"]; });
 
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 839:
+/***/ 840:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4200,7 +4342,7 @@ ChartComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_switchMap__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_switchMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContestDetailComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4231,8 +4373,8 @@ var ContestDetailComponent = (function () {
 ContestDetailComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-contest',
-        template: __webpack_require__(1214),
-        styles: [__webpack_require__(1168)],
+        template: __webpack_require__(1218),
+        styles: [__webpack_require__(1170)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services__["b" /* ContestService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services__["b" /* ContestService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["b" /* ContestService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object])
@@ -4243,23 +4385,23 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 840:
+/***/ 841:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contest_detail_component__ = __webpack_require__(839);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contest_detail_component__ = __webpack_require__(840);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__contest_detail_component__["a"]; });
 
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 841:
+/***/ 842:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContestListComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4297,8 +4439,8 @@ __decorate([
 ContestListComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-contest-list',
-        template: __webpack_require__(1215),
-        styles: [__webpack_require__(1169)],
+        template: __webpack_require__(1219),
+        styles: [__webpack_require__(1171)],
         providers: [__WEBPACK_IMPORTED_MODULE_1__services__["b" /* ContestService */], __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services__["b" /* ContestService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services__["b" /* ContestService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */]) === "function" && _b || Object])
@@ -4309,18 +4451,18 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 842:
+/***/ 843:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contest_list_component__ = __webpack_require__(841);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contest_list_component__ = __webpack_require__(842);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__contest_list_component__["a"]; });
 
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 843:
+/***/ 844:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4346,8 +4488,8 @@ var ContestComponent = (function () {
 ContestComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-contest',
-        template: __webpack_require__(1216),
-        styles: [__webpack_require__(1170)]
+        template: __webpack_require__(1220),
+        styles: [__webpack_require__(1172)]
     }),
     __metadata("design:paramtypes", [])
 ], ContestComponent);
@@ -4356,7 +4498,7 @@ ContestComponent = __decorate([
 
 /***/ }),
 
-/***/ 844:
+/***/ 845:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4367,7 +4509,7 @@ ContestComponent = __decorate([
 
 /***/ }),
 
-/***/ 845:
+/***/ 846:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4378,7 +4520,43 @@ ContestComponent = __decorate([
 
 /***/ }),
 
-/***/ 846:
+/***/ 847:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeclarationLoadComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var DeclarationLoadComponent = (function () {
+    function DeclarationLoadComponent() {
+    }
+    DeclarationLoadComponent.prototype.ngOnInit = function () {
+    };
+    return DeclarationLoadComponent;
+}());
+DeclarationLoadComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-declaration-load',
+        template: __webpack_require__(1223),
+        styles: [__webpack_require__(1175)]
+    }),
+    __metadata("design:paramtypes", [])
+], DeclarationLoadComponent);
+
+//# sourceMappingURL=declaration-load.component.js.map
+
+/***/ }),
+
+/***/ 848:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4387,7 +4565,7 @@ ContestComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_startWith__ = __webpack_require__(342);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_startWith___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_startWith__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__datas__ = __webpack_require__(98);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeclarationComponent; });
@@ -4727,10 +4905,20 @@ var DeclarationComponent = (function () {
         console.log("declaration:", declaration);
         this.contestService.create(declaration).subscribe(function (response) {
             _this.comid = response.competition.comid;
+            if (saveStatus === 0) {
+                alert("已经成功保存到草稿箱");
+            }
+            else if (saveStatus === 1) {
+                alert("已经成功提交");
+            }
         });
     };
     return DeclarationComponent;
 }());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('passComid'),
+    __metadata("design:type", Object)
+], DeclarationComponent.prototype, "passComid", void 0);
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('baseInfo'),
     __metadata("design:type", Object)
@@ -4746,8 +4934,8 @@ __decorate([
 DeclarationComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-declaration',
-        template: __webpack_require__(1219),
-        styles: [__webpack_require__(1173)],
+        template: __webpack_require__(1225),
+        styles: [__webpack_require__(1177)],
         providers: [__WEBPACK_IMPORTED_MODULE_4__services__["b" /* ContestService */], __WEBPACK_IMPORTED_MODULE_4__services__["a" /* LoginService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__services__["b" /* ContestService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services__["b" /* ContestService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services__["a" /* LoginService */]) === "function" && _c || Object])
@@ -4768,7 +4956,7 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 847:
+/***/ 849:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4808,8 +4996,8 @@ var FilesComponent = (function () {
 FilesComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-files',
-        template: __webpack_require__(1222),
-        styles: [__webpack_require__(1176)]
+        template: __webpack_require__(1228),
+        styles: [__webpack_require__(1180)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
 ], FilesComponent);
@@ -4819,7 +5007,7 @@ var _a;
 
 /***/ }),
 
-/***/ 848:
+/***/ 850:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4863,25 +5051,25 @@ var _a;
 
 /***/ }),
 
-/***/ 849:
+/***/ 851:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__authGuard__ = __webpack_require__(848);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__authGuard__ = __webpack_require__(850);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__authGuard__["a"]; });
 
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 850:
+/***/ 852:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4920,6 +5108,7 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.apply = function (contest) {
         var _this = this;
+        // this.http.get()
         this.articleService.getArticleByComp(contest.comid)
             .subscribe(function (article) { return _this.router.navigate(['article/detail/' + article.articleId]); });
     };
@@ -4964,8 +5153,8 @@ var HomeComponent = (function () {
 HomeComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-home',
-        template: __webpack_require__(1223),
-        styles: [__webpack_require__(1177)],
+        template: __webpack_require__(1229),
+        styles: [__webpack_require__(1181)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services__["g" /* ArticleService */], __WEBPACK_IMPORTED_MODULE_3__services__["b" /* ContestService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services__["g" /* ArticleService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["g" /* ArticleService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services__["b" /* ContestService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["b" /* ContestService */]) === "function" && _d || Object])
@@ -4976,11 +5165,11 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
-/***/ 851:
+/***/ 853:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__login_component__ = __webpack_require__(852);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__login_component__ = __webpack_require__(854);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__login_component__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__login_component__["b"]; });
 
@@ -4988,14 +5177,14 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
-/***/ 852:
+/***/ 854:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(6);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return LoginDialog; });
@@ -5059,8 +5248,8 @@ var LoginComponent = (function () {
 LoginComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-login',
-        template: __webpack_require__(1224),
-        styles: [__webpack_require__(1178)],
+        template: __webpack_require__(1230),
+        styles: [__webpack_require__(1182)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__["a" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__["a" /* MdDialog */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]) === "function" && _d || Object])
@@ -5085,8 +5274,8 @@ var LoginDialog = (function () {
 LoginDialog = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-login-dialog',
-        template: __webpack_require__(1225),
-        styles: [__webpack_require__(1179)],
+        template: __webpack_require__(1231),
+        styles: [__webpack_require__(1183)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */]]
     }),
     __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__["b" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__["b" /* MdDialogRef */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */]) === "function" && _f || Object])
@@ -5097,18 +5286,18 @@ var _a, _b, _c, _d, _e, _f;
 
 /***/ }),
 
-/***/ 853:
+/***/ 855:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__notification_component__ = __webpack_require__(520);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__notification_component__ = __webpack_require__(521);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__notification_component__["a"]; });
 
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 854:
+/***/ 856:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5159,8 +5348,8 @@ var AdminContestComponent = (function () {
 AdminContestComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-admin-contest',
-        template: __webpack_require__(1227),
-        styles: [__webpack_require__(1181)]
+        template: __webpack_require__(1233),
+        styles: [__webpack_require__(1185)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _b || Object])
 ], AdminContestComponent);
@@ -5170,29 +5359,29 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 855:
+/***/ 857:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__admin_contest_component__ = __webpack_require__(854);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__admin_contest_component__ = __webpack_require__(856);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__admin_contest_component__["a"]; });
 
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 856:
+/***/ 858:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__admin_files_component__ = __webpack_require__(521);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__admin_files_component__ = __webpack_require__(522);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__admin_files_component__["a"]; });
 
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 857:
+/***/ 859:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5218,8 +5407,8 @@ var AdminHomeComponent = (function () {
 AdminHomeComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-admin-home',
-        template: __webpack_require__(1229),
-        styles: [__webpack_require__(1183)]
+        template: __webpack_require__(1235),
+        styles: [__webpack_require__(1187)]
     }),
     __metadata("design:paramtypes", [])
 ], AdminHomeComponent);
@@ -5228,35 +5417,12 @@ AdminHomeComponent = __decorate([
 
 /***/ }),
 
-/***/ 858:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__admin_home_component__ = __webpack_require__(857);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__admin_home_component__["a"]; });
-
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 859:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__admin_material_component__ = __webpack_require__(522);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__admin_material_component__["a"]; });
-
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
 /***/ 860:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__admin_works_component__ = __webpack_require__(523);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__admin_works_component__["b"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__admin_works_component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__admin_home_component__ = __webpack_require__(859);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__admin_home_component__["a"]; });
 
 //# sourceMappingURL=index.js.map
 
@@ -5266,16 +5432,39 @@ AdminHomeComponent = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__admin_home___ = __webpack_require__(858);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__admin_material_component__ = __webpack_require__(523);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__admin_material_component__["a"]; });
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 862:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__admin_works_component__ = __webpack_require__(524);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__admin_works_component__["b"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__admin_works_component__["a"]; });
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 863:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__admin_home___ = __webpack_require__(860);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__admin_home___["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__admin_contest___ = __webpack_require__(855);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__admin_contest___ = __webpack_require__(857);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__admin_contest___["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__admin_works___ = __webpack_require__(860);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__admin_works___ = __webpack_require__(862);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__admin_works___["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_2__admin_works___["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__admin_files___ = __webpack_require__(856);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__admin_files___ = __webpack_require__(858);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_3__admin_files___["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__admin_material___ = __webpack_require__(859);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__admin_material___ = __webpack_require__(861);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_4__admin_material___["a"]; });
 
 
@@ -5286,14 +5475,14 @@ AdminHomeComponent = __decorate([
 
 /***/ }),
 
-/***/ 862:
+/***/ 864:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__student_info___ = __webpack_require__(865);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__student_info___ = __webpack_require__(867);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__student_info___["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__student_info___["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__student_contest___ = __webpack_require__(863);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__student_contest___ = __webpack_require__(865);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__student_contest___["a"]; });
 
 
@@ -5301,23 +5490,23 @@ AdminHomeComponent = __decorate([
 
 /***/ }),
 
-/***/ 863:
+/***/ 865:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__student_contest_component__ = __webpack_require__(864);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__student_contest_component__ = __webpack_require__(866);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__student_contest_component__["a"]; });
 
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 864:
+/***/ 866:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StudentContestComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5346,8 +5535,8 @@ var StudentContestComponent = (function () {
 StudentContestComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-student-contest',
-        template: __webpack_require__(1233),
-        styles: [__webpack_require__(1187)],
+        template: __webpack_require__(1239),
+        styles: [__webpack_require__(1191)],
         providers: [__WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_1__services__["b" /* ContestService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services__["b" /* ContestService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services__["b" /* ContestService */]) === "function" && _b || Object])
@@ -5358,11 +5547,11 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 865:
+/***/ 867:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__student_info_component__ = __webpack_require__(866);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__student_info_component__ = __webpack_require__(868);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__student_info_component__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__student_info_component__["b"]; });
 
@@ -5370,14 +5559,14 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 866:
+/***/ 868:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return StudentInfoComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MaterialDialog; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -5453,8 +5642,8 @@ var StudentInfoComponent = (function () {
 StudentInfoComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-student-info',
-        template: __webpack_require__(1235),
-        styles: [__webpack_require__(1189)],
+        template: __webpack_require__(1241),
+        styles: [__webpack_require__(1193)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services__["d" /* StudentService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services__["d" /* StudentService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["d" /* StudentService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["a" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["a" /* MdDialog */]) === "function" && _c || Object])
@@ -5503,8 +5692,8 @@ __decorate([
 MaterialDialog = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-material-dialog',
-        template: __webpack_require__(1234),
-        styles: [__webpack_require__(1188)],
+        template: __webpack_require__(1240),
+        styles: [__webpack_require__(1192)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services__["b" /* ContestService */], __WEBPACK_IMPORTED_MODULE_3__services__["d" /* StudentService */], __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */]]
     }),
     __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["b" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["b" /* MdDialogRef */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__services__["b" /* ContestService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["b" /* ContestService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3__services__["d" /* StudentService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["d" /* StudentService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _j || Object])
@@ -5515,13 +5704,13 @@ var _a, _b, _c, _d, _e, _f, _g, _h, _j;
 
 /***/ }),
 
-/***/ 867:
+/***/ 869:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StudentMessageComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5555,8 +5744,8 @@ var StudentMessageComponent = (function () {
 StudentMessageComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-student-message',
-        template: __webpack_require__(1236),
-        styles: [__webpack_require__(1190)],
+        template: __webpack_require__(1242),
+        styles: [__webpack_require__(1194)],
         providers: [__WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */]) === "function" && _b || Object])
@@ -5567,40 +5756,18 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 868:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__teacher_component__ = __webpack_require__(526);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__teacher_info___ = __webpack_require__(870);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__teacher_info___["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__teacher_contest___ = __webpack_require__(869);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__teacher_contest___["a"]; });
-
-
-
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 869:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__teacher_contest_component__ = __webpack_require__(525);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__teacher_contest_component__["a"]; });
-
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
 /***/ 870:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__teacher_info_component__ = __webpack_require__(871);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__teacher_info_component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__teacher_component__ = __webpack_require__(527);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__teacher_info___ = __webpack_require__(872);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__teacher_info___["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__teacher_contest___ = __webpack_require__(871);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__teacher_contest___["a"]; });
+
+
 
 //# sourceMappingURL=index.js.map
 
@@ -5610,8 +5777,30 @@ var _a, _b;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__teacher_contest_component__ = __webpack_require__(526);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__teacher_contest_component__["a"]; });
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 872:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__teacher_info_component__ = __webpack_require__(873);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__teacher_info_component__["a"]; });
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 873:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TeacherInfoComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5690,8 +5879,8 @@ var TeacherInfoComponent = (function () {
 TeacherInfoComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-teacher-info',
-        template: __webpack_require__(1238),
-        styles: [__webpack_require__(1192)],
+        template: __webpack_require__(1244),
+        styles: [__webpack_require__(1196)],
         providers: [__WEBPACK_IMPORTED_MODULE_1__services__["c" /* TeacherService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services__["c" /* TeacherService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services__["c" /* TeacherService */]) === "function" && _b || Object])
@@ -5702,13 +5891,13 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 872:
+/***/ 874:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TeacherMessageComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5741,8 +5930,8 @@ var TeacherMessageComponent = (function () {
 TeacherMessageComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-teacher-message',
-        template: __webpack_require__(1239),
-        styles: [__webpack_require__(1193)],
+        template: __webpack_require__(1245),
+        styles: [__webpack_require__(1197)],
         providers: [__WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */]) === "function" && _b || Object])
@@ -5753,23 +5942,23 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 873:
+/***/ 875:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__user_info_component__ = __webpack_require__(527);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__user_info_component__ = __webpack_require__(528);
 /* unused harmony namespace reexport */
 
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 874:
+/***/ 876:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5808,12 +5997,15 @@ var UserComponent = (function () {
                         this.links = [
                             { href: '/teacher', name: '个人信息', icon: 'person' },
                             { href: 'declaration', name: '申报竞赛', icon: 'create' },
+                            { href: 'save', name: '申报书草稿箱(暂)' },
                             { href: 'declarationList', name: '申报竞赛列表', icon: 'view_list' },
                             { href: 'feedbackAward', name: '反馈获奖', icon: 'feedback' }
                         ];
                         if (this.user.examiner === 1) {
-                            this.links.splice(1, 1);
                             this.links.push({ href: 'examiner', name: '审批竞赛', icon: 'rate_review' });
+                        }
+                        if (this.user.department == '教学处') {
+                            this.links.splice(1, 1);
                         }
                     }
                     break;
@@ -5837,8 +6029,8 @@ var UserComponent = (function () {
 UserComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-user',
-        template: __webpack_require__(1242),
-        styles: [__webpack_require__(1196)],
+        template: __webpack_require__(1248),
+        styles: [__webpack_require__(1200)],
         providers: [__WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */]) === "function" && _a || Object])
@@ -5849,13 +6041,13 @@ var _a;
 
 /***/ }),
 
-/***/ 875:
+/***/ 877:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WorksComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5888,8 +6080,8 @@ var WorksComponent = (function () {
 WorksComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-works',
-        template: __webpack_require__(1243),
-        styles: [__webpack_require__(1197)],
+        template: __webpack_require__(1249),
+        styles: [__webpack_require__(1201)],
         providers: [__WEBPACK_IMPORTED_MODULE_2__services__["e" /* AwardService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services__["e" /* AwardService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["e" /* AwardService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object])
@@ -5900,7 +6092,7 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 876:
+/***/ 878:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5921,25 +6113,25 @@ var environment = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__admins__ = __webpack_require__(788);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__admins__ = __webpack_require__(789);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__teachers__ = __webpack_require__(796);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__teachers__ = __webpack_require__(797);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__students__ = __webpack_require__(795);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__students__ = __webpack_require__(796);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chart_datas__ = __webpack_require__(791);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chart_datas__ = __webpack_require__(792);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__chart_datas__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__roles__ = __webpack_require__(794);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__roles__ = __webpack_require__(795);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_4__roles__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__articles__ = __webpack_require__(789);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__articles__ = __webpack_require__(790);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_5__articles__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__contests__ = __webpack_require__(792);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__contests__ = __webpack_require__(793);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__departments__ = __webpack_require__(292);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_7__departments__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__levels__ = __webpack_require__(793);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__levels__ = __webpack_require__(794);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__awards__ = __webpack_require__(790);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__awards__ = __webpack_require__(791);
 /* unused harmony namespace reexport */
 
 
@@ -5956,5 +6148,5 @@ var environment = {
 
 /***/ })
 
-},[1287]);
+},[1293]);
 //# sourceMappingURL=main.bundle.js.map

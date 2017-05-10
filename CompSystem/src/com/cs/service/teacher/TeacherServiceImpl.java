@@ -167,22 +167,9 @@ public class TeacherServiceImpl implements TeacherService {
 			Competition competition = comMapper.selectByPrimaryKey(comId);
 			List<Teacher> guideTeachers = guideTeacherMapper.selectComId(comId);
 			Teacher teacher=teacherMapper.selectByPrimaryKey(competition.getLeaderNo());
-			if (competition.getComname()!=null) {
-				dataMap.put("comName", competition.getComname());
-			}else {
-				dataMap.put("comName","");
-			}
-			if (competition.getUnit()!=null) {
-				dataMap.put("unit", competition.getUnit());
-			}else {
-				dataMap.put("unit","");
-			}
-			if (competition.getLevelname()!=null) {
-				dataMap.put("rank", competition.getLevelname());
-			}else {
-				dataMap.put("rank","");
-			}
-			
+		    dataMap.put("comName", competition.getComname());
+			dataMap.put("unit", competition.getUnit());
+			dataMap.put("rank", competition.getLevelname());
 			if (competition.getDate()!=null) {
 				Date date = competition.getDate();
 				String format = sdf.format(date);
@@ -190,11 +177,7 @@ public class TeacherServiceImpl implements TeacherService {
 			}else {
 				dataMap.put("date", "");
 			}
-			if (competition.getHost()!=null) {
-				dataMap.put("host", competition.getHost());
-			}else {
-				dataMap.put("host","");
-			}
+			dataMap.put("host", competition.getHost());
 			if(competition.getTime()!=null){
 				 Date time = competition.getTime();
 				 String format = sdf.format(time);
@@ -202,54 +185,16 @@ public class TeacherServiceImpl implements TeacherService {
 			}else {
 				dataMap.put("time","");
 			}
-			if (competition.getPlace()!=null) {
-				dataMap.put("place", competition.getPlace());
-			}else {
-				dataMap.put("place", "");
-			}
-			if (competition.getObject()!=null) {
-				dataMap.put("object", competition.getObject());
-			}else {
-				dataMap.put("object","");
-			}
-			if (competition.getPeople()!=null) {
-				dataMap.put("people", competition.getPeople());
-			}else {
-				dataMap.put("people", "");
-			}
-			if (competition.getSponsor()!=null) {
-				dataMap.put("sponsor", competition.getSponsor());
-			}else {
-				dataMap.put("sponsor","");
-			}
-			if ( competition.getIntroduce()!=null) {
-				dataMap.put("introduce", competition.getIntroduce());
-			}else {
-				dataMap.put("introduce", "");
-			}
-			if (teacher!=null) {
-				if (teacher.getPhone()!=null) {
-					dataMap.put("phone", teacher.getPhone());
-				}else {
-					dataMap.put("phone","");
-				}
-				if (teacher.getEmail()!=null) {
-					dataMap.put("email", teacher.getEmail());
-				}else {
-					dataMap.put("email","");
-				}
-				if (teacher.getTeachername()!=null) {
-					dataMap.put("leader", teacher.getTeachername());
-				}else {
-					dataMap.put("leader", "");
-				}
-			}else {
-				dataMap.put("phone","");
-				dataMap.put("email","");
-				dataMap.put("leader", "");
-			}
-
-		    dataMap.put("guideList",guideTeachers);
+			dataMap.put("place", competition.getPlace());
+			dataMap.put("object", competition.getObject());
+			dataMap.put("people", competition.getPeople());
+			dataMap.put("sponsor", competition.getSponsor());
+			dataMap.put("introduce", competition.getIntroduce());
+			dataMap.put("phone", teacher.getPhone());
+			dataMap.put("email", teacher.getEmail());
+			dataMap.put("leader", teacher.getTeachername());
+            dataMap.put("guideList",guideTeachers);
+		    
 
 			// FTL文件所存在的位置
 			configuration.setClassForTemplateLoading(this.getClass(), "/file");
