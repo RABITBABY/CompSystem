@@ -92,12 +92,22 @@
     from competition
     where leaderNo = #{leaderNo,jdbcType=INTEGER} and saveStatus=1
   </select>
+  <!-- 查询该教师申报或者负责的竞赛 -->
+  <select id="selectByLeaderNoOrTeacher" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
+    select  * from competition where teacherno=#{teacherno,jdbcType=INTEGER} 
+    or leaderno=#{teacherno,jdbcType=INTEGER} and saveStatus=1
+  </select>
   
   <select id="selectScheCompByTeacherNo" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
     select  c.* from competition c
 	LEFT JOIN schedule s
 	on c.comId=s.comId
 	where s.teacherNo=#{teacherno,jdbcType=INTEGER} and saveStatus=1
+  </select>
+  
+  <select id="selectApplyCompByteacherNo" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
+    SELECT * from competition where NOW()>=applyBeginDate and NOW() &lt;= applyEndDate  and (teacherNo=#{teacherno,jdbcType=INTEGER} or leaderNo=#{teacherno,jdbcType=INTEGER})
+    and depSpStatus=1 and teaSpStatus=1
   </select>
   
   <select id="selectGuideCompByTeacherNo" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >

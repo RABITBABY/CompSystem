@@ -40,7 +40,7 @@ public class TeacherDaoTest extends AbstractJUnit4SpringContextTests{
    }
    @Test
    public void selectByTeacherno() {
-	   List<Competition> selectByLeaderNo = competitionMapper.selectByLeaderNo(201118);
-	   System.out.println(selectByLeaderNo.get(0).getComname());
+	  List<Competition> selectApplyCompByteacherNo = competitionMapper.selectApplyCompByteacherNo(201118);
+      System.out.println(selectApplyCompByteacherNo.get(0).getComname());
    }
 }
