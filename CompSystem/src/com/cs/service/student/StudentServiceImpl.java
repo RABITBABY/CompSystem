@@ -121,9 +121,9 @@ public class StudentServiceImpl implements StudentService {
 			Map<String, Object> conditionMap=new HashMap<String, Object>();
 			conditionMap.put("comId", comList.get(i).getComid());
 			conditionMap.put("studentno", studentNo);
-			Groups group = groupsMapper.selectByComIdAndStudentNo(conditionMap);
-		    map.put("group", group);
-		    List<Student> members = groupsMapper.selectByGroupsNo(group.getGroupsno());
+			List<Groups> groupList = groupsMapper.selectByComIdAndStudentNo(conditionMap);
+		    map.put("groupList", groupList);
+		    List<Student> members = groupsMapper.selectByGroupsNo(groupList.get(0).getGroupsno());
 		    map.put("members", members);
 		    comGroupMembers.add(map);
 		}

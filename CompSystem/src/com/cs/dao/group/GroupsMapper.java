@@ -14,12 +14,12 @@ public interface GroupsMapper {
 	//根据studentno查找该学生报名的竞赛返回competition
 	List<Competition> selectCompetitionByStuNo(Integer studentno);
 	/**
-	 * 根据comId和studentno获取队伍信息。
+	 * 根据comId和studentno获取队伍信息。包括队长group和队员group
 	 * Map ：
 	 * Integer comId,Integer studentno
 	 * @return
 	 */
-	Groups selectByComIdAndStudentNo(Map<String,Object> map);
+	List<Groups> selectByComIdAndStudentNo(Map<String,Object> map);
 	
 	//根据comId查找参与该竞赛的组别
 	List<Groups> selectByComId(Integer comId);

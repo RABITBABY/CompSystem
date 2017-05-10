@@ -23,14 +23,13 @@ public class WebSocketController {
 	@Autowired
 	private MessageMapper mapper;
 	/** 
-     * 表示服务端可以接收客户端通过主题“/app/hello”发送过来的消息，客户端需要在主题"/topic/greetings"上监听并接收服务端发回的消息 
+     * 表示服务端可以接收客户端通过主题“/app/user”发送过来的消息，客户端需要在主题"/topic/user"上监听并接收服务端发回的消息 
      * @param topic 
      * @param headers 
      */  
     @MessageMapping("/user")
     @SendTo("/topic/user")
     public Message student(Message message,HttpSession session) throws Exception {
-       // Thread.sleep(3000); // simulated delay
     	Student student=(Student) session.getAttribute("student");
     	Teacher teacher=(Teacher) session.getAttribute("teacher");
     	Administer admin=(Administer) session.getAttribute("admin");
