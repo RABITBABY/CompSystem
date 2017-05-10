@@ -30,7 +30,7 @@
   <!-- 根据comId查找该竞赛参与的组别：待审批以及审批通过的 -->
   <select id="selectByComId" resultType="com.cs.pojo.Groups" parameterType="java.lang.Integer" >
     select * from groups 
-    where comId =#{comId,jdbcType=INTEGER} and status!=2  GROUP BY groupsNo
+    where comId =#{comId,jdbcType=INTEGER} and status!=-1  GROUP BY groupsNo
   </select>
   
   <!-- 根据groupNo查找该组成员 -->
