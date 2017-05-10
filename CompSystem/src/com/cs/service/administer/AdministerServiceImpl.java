@@ -14,6 +14,7 @@ import com.cs.dao.competition.CompetitionMapper;
 import com.cs.dao.fileUpload.FileUploadMapper;
 import com.cs.dao.material.MaterialMapper;
 import com.cs.dao.production.ProductionMapper;
+import com.cs.dao.teacher.TeacherMapper;
 import com.cs.pojo.Administer;
 import com.cs.pojo.Competition;
 import com.cs.pojo.FileUpload;
@@ -43,6 +44,7 @@ public class AdministerServiceImpl implements AdministerService{
 	
 	@Autowired
 	private MaterialMapper materialMapper;
+	
 	
 	/**
 	 * 上传文件
@@ -83,20 +85,29 @@ public PageInfo allMaterial(Map map) {
 	int index=Integer.parseInt(map.get("index").toString());
 	int pageSize=Integer.parseInt(map.get("pageSize").toString());
 	int page=(index-1)*pageSize;
-	Map param=new HashMap<String , Object>();
-	param.put("page", page);
-	param.put("pageSize", pageSize);
-	List<Map> list =materialMapper.allMaterial(param);
-	int totalPage=0;
-	if(list.size()>0){
-		int total=materialMapper.MaterialCount();
-		totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
-	}
+	String adminNo=map.get("adminNo").toString();
+	String department=adminMapper.getDepartment(adminNo);
 	PageInfo pageInfo=new PageInfo();
-	pageInfo.setIndex(index);
-	pageInfo.setList(list);
-	pageInfo.setTotal(totalPage);
-	pageInfo.setPageSize(pageSize);
+	
+	if(department!=null && !"".equals(department)){
+		Map param=new HashMap<String , Object>();
+		param.put("page", page);
+		param.put("pageSize", pageSize);
+		param.put("department", department);
+		System.out.println("allMaterialService参数:"+param);
+		List<Map> list =materialMapper.allMaterial(param);
+		int totalPage=0;
+		if(list.size()>0){
+			int total=materialMapper.MaterialCount();
+			totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
+		}
+		
+		pageInfo.setIndex(index);
+		pageInfo.setList(list);
+		pageInfo.setTotal(totalPage);
+		pageInfo.setPageSize(pageSize);
+	}
+	
 	
 	return pageInfo;
 }

@@ -62,6 +62,9 @@ public class AdministerController {
 	@Autowired
 	private ModelService modelService;
 	
+
+	
+	
 	
 	/**
 	 * 获取近期的竞赛（可以报名）
@@ -181,7 +184,11 @@ public class AdministerController {
 		 title=ParamUtil.getStr(title, "");
 		 content=ParamUtil.getStr(content, "");
 		 articleType=ParamUtil.getStr(articleType, "1");
-		 relationId=ParamUtil.getStr(relationId, "0");
+		 int rid=0;
+		 if(relationId!=null && !"".equals(relationId)){
+			 rid= Integer.parseInt(relationId);
+		 }
+		 System.out.println(relationId+"------");
 		 Map userInfo=(Map)request.getSession().getAttribute("loginInfo");
 		 System.out.println("发布文章");
 		 
@@ -193,7 +200,7 @@ public class AdministerController {
 				Article article=new Article();
 				article.setTitle(title);
 				article.setContent(content);
-				article.setRelationId(Integer.parseInt(relationId));
+				article.setRelationId(rid);
 				article.setArticletype(Integer.parseInt(articleType));
 				article.setPubdate(new Date());
 				article.setPubuserno(userNo);
@@ -204,6 +211,8 @@ public class AdministerController {
 				}
 				System.out.println(article);
 			}
+		}else{
+			System.out.println("session信息丢失");
 		}
 		 System.out.println(stateCode);
 		//获取当前登录用户
@@ -584,7 +593,7 @@ public class AdministerController {
 	 */
 	@ResponseBody
 	@RequestMapping("/allMaterial")
-	public Map allMaterial(String index,String pageSize){
+	public Map allMaterial(String index,String pageSize,HttpServletRequest request){
 		Map result=new HashMap<String,Object>();
 		Map param=new HashMap<String,Object>();
 		
@@ -593,9 +602,17 @@ public class AdministerController {
 		pageSize=ParamUtil.getStr(pageSize, "10");
 		param.put("index",index);
 		param.put("pageSize",pageSize);
+		Map userInfo =(Map)request.getSession().getAttribute("loginInfo");
+		String adminNo="";
+		 if(userInfo!=null){
+			 adminNo=userInfo.get("userId").toString();
+			 param.put("adminNo", adminNo);
+			 
+			 pageinfo =adminImpl.allMaterial(param);
+				result.put("materials", pageinfo);
+		 }
 		
-		pageinfo =adminImpl.allMaterial(param);
-		result.put("materials", pageinfo);
+		
 		return result;
 	}
 	
