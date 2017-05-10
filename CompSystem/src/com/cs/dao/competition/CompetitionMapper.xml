@@ -56,7 +56,7 @@
     from competition
     where depSpStatus = #{depspstatus,jdbcType=INTEGER} and
      teaSpStatus = #{teaspstatus,jdbcType=INTEGER}  and
-     teacherNo=#{teacherno,jdbcType=INTEGER}
+     (teacherNo=#{teacherno,jdbcType=INTEGER} or leaderNo=#{teacherno,jdbcType=INTEGER})
   </select>
   
   <!-- 查看以及比赛结束的竞赛-->
@@ -94,8 +94,8 @@
   </select>
   <!-- 查询该教师申报或者负责的竞赛 -->
   <select id="selectByLeaderNoOrTeacher" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
-    select  * from competition where teacherno=#{teacherno,jdbcType=INTEGER} 
-    or leaderno=#{teacherno,jdbcType=INTEGER} and saveStatus=1
+    select  * from competition where (teacherno=#{teacherno,jdbcType=INTEGER} 
+    or leaderno=#{teacherno,jdbcType=INTEGER}) and saveStatus=1
   </select>
   
   <select id="selectScheCompByTeacherNo" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
