@@ -63,6 +63,7 @@
    <select id="selectEndComp" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
     SELECT * from competition where NOW()  > time
     and (teacherNo= #{teacherNo,jdbcType=INTEGER} or leaderNo= #{teacherNo,jdbcType=INTEGER})
+    and teaSpStatus=1 and depSpStatus=1
   </select>
   
    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.cs.pojo.Competition" >
