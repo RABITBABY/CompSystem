@@ -96,6 +96,8 @@ public class TeacherController {
 	 * 9.获取个人消息。√
 	 * 10.待审核列表√
 	 * 11.获取草稿箱的审批表。√
+	 * 12.根据teacherno查找可报名的竞赛√
+	 * 13.查找该教师负责或申报的竞赛√
 	 */
 
 	@Autowired
@@ -433,5 +435,26 @@ public class TeacherController {
 		return comMapper.selectNoSubmitByTeacherNo(teacherNo);
 	}
     
-    
+	/**
+	 * 12.根据teacherno查找可报名的竞赛
+	 * @param teacherNo
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/getApplyComp")
+	public List<Competition> getApplyComp(Integer teacherNo) {
+		return comMapper.selectApplyCompByteacherNo(teacherNo);
+	}
+	
+	/**
+	 * 13.查找该教师负责或申报的竞赛
+	 * @param teacherNo
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/getResponOrApplyComp")
+	public List<Competition> getResponOrApplyComp(Integer teacherNo) {
+		return comMapper.selectByLeaderNoOrTeacher(teacherNo);
+	}
+	
 }
