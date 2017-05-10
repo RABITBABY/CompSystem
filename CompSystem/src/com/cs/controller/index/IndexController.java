@@ -49,6 +49,17 @@ public class IndexController {
 	@Autowired
 	AwardsService awardsService;
 	
+	/**
+	 *根据竞赛Id获取竞赛征文文章
+	 */
+	@ResponseBody
+	@RequestMapping("/getArticleByComp")
+	public Map getArticleByComp(int compId){
+		Map result=new HashMap<String,Object>();
+		result=articlService.getArticleByComp(compId);
+		return result;
+		
+	}
 	
 	/**
 	 * 分页根据文章类型找到相关文章

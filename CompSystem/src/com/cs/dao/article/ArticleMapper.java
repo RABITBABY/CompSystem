@@ -26,4 +26,6 @@ public interface ArticleMapper {
 	
 	int addVisit(int id);
 	List hotArticle();
+	
+	 Map getArticleByComp(int compId);
 }

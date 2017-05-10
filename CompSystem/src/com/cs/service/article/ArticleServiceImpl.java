@@ -169,10 +169,12 @@ public int insertArticle(Article article) {
 	if(type==1){
 		 state=competitionMapper.updatePubState(param);
 		
-	}else if(type==2){
+	}else if(type==3){
 		state=awardsMapper.updatePubState(param);
+	}else{
+		stateCode=  articleMapper.insertArticle(article);
 	}
-	if(state>0)
+	if(state>0 )
 		stateCode=  articleMapper.insertArticle(article);
 	
 	//修改文章的状态
@@ -196,7 +198,7 @@ public int deleteArticle(int articleId, int rid,int type) {
 	if(state>0){
 		if(type==1){
 			stateCode=competitionMapper.updatePubState(param);
-		}else if(type==2){
+		}else if(type==3){
 			stateCode=awardsMapper.updatePubState(param);
 		}
 	}
@@ -266,6 +268,14 @@ public String initArticleDetail(String comId) {
 public List getHotArticle() {
 	
 	return articleMapper.hotArticle();
+}
+
+@Override
+public Map getArticleByComp(int compId) {
+	Map result =new HashMap<String ,Object>();
+	result=articleMapper.getArticleByComp(compId);
+	
+	return result;
 }
 
 }
