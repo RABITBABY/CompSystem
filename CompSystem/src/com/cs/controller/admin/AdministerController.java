@@ -105,20 +105,19 @@ public class AdministerController {
 	 */
 	@ResponseBody
 	@RequestMapping("/awardList")
-	public  Map awardsList(String department,String time,String index,String pageSize,HttpServletRequest request) {
+	public  Map awardsList(String department,String time,String index,String pageSize) {
 		Map<String ,Object> resultMap=new HashMap<String, Object>();
 		Map<String ,Object> param=new HashMap<String, Object>();
 		department=ParamUtil.getStr(department, "");
 		time=ParamUtil.getStr(time, "");
 		index=ParamUtil.getStr(index, "1");
 		pageSize=ParamUtil.getStr(pageSize, "10");
-		Map userInfo =(Map)request.getSession().getAttribute("loginInfo");
-		String adminNo=userInfo.get("userId").toString();
+		
 		param.put("department", department);
 		param.put("time", time);	
 		param.put("index", index);	
 		param.put("pageSize", pageSize);	
-		param.put("adminNo", adminNo);	
+		
 		PageInfo pageInfo=new PageInfo();
 		
 		pageInfo=awardsService.getAwardsList(param);
@@ -144,7 +143,7 @@ public class AdministerController {
 	 */
 	@ResponseBody
 	@RequestMapping(value="/article")
-	public  Map findArticleByType(String type,String index,String pageSize) {
+	public  Map findArticleByType(String type,String index,String pageSize,HttpServletRequest request) {
 		Map<String,Object> result=new HashMap<String, Object>();
 		Map<String,Object> param=new HashMap<String, Object>();
 		type=ParamUtil.getStr(type, "1");
@@ -153,9 +152,16 @@ public class AdministerController {
 		param.put("type", type);
 		param.put("index", index);
 		param.put("pageSize",pageSize);
-		
-		PageInfo pageInfo=articleService.getArticleList(param);
-		result.put("articlePageInfo",pageInfo );
+		Map userInfo =(Map)request.getSession().getAttribute("loginInfo");
+		String adminNo="";
+		 if(userInfo!=null){
+			 adminNo=userInfo.get("userId").toString();
+				if(adminNo!=null && !"".equals(adminNo)){
+					param.put("adminNo", adminNo);	
+					PageInfo pageInfo=articleService.getArticleList(param);
+					result.put("articlePageInfo",pageInfo );
+				}
+			}
 		return result;
 	}
 	
