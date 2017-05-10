@@ -43,7 +43,7 @@
     <result column="groupNum" property="groupnum" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    comId, comName, teacherNo, unit, levelName, department, date, host, time, place, 
+    comId, comName, teacherNo,leaderNo, unit, levelName, department, date, host, time, place, 
     introduce, object, people, sponsor, plan, tgoal, wgoal, sopinion, slsign, slsdate, 
     uopinion, dsign, dsdate, tdopinion, olsign, olsdate, lsign, lsdate, depSpStatus, 
     teaSpStatus, saveStatus, applyBeginDate, applyEndDate, cost, compStatus, isPublish,
@@ -52,7 +52,7 @@
   <!-- 根据状态查找申报表，比如，查找所有审批通过的申报表 -->
    <select id="selectBySpStatus" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
-    <include refid="Base_Column_List" />
+    *
     from competition
     where depSpStatus = #{depspstatus,jdbcType=INTEGER} and
      teaSpStatus = #{teaspstatus,jdbcType=INTEGER}  and
@@ -67,27 +67,27 @@
   
    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.cs.pojo.Competition" >
     select 
-    <include refid="Base_Column_List" />
+    *
     from competition
     where comId = #{comid,jdbcType=INTEGER}
   </select>
   <select id="selectByTeacherno" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
     select 
-    <include refid="Base_Column_List" />
+    *
     from competition
     where teacherno = #{teacherno,jdbcType=INTEGER} and saveStatus=1
   </select>
   <!-- 查找该教师没有提交审批的申报表 -->
   <select id="selectNoSubmitByTeacherNo" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
     select 
-    <include refid="Base_Column_List" />
+    *
     from competition
     where teacherno = #{teacherno,jdbcType=INTEGER} and saveStatus=0
   </select>
   
    <select id="selectByLeaderNo" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
     select 
-    <include refid="Base_Column_List" />
+    *
     from competition
     where leaderNo = #{leaderNo,jdbcType=INTEGER} and saveStatus=1
   </select>
@@ -108,7 +108,7 @@
   
   <select id="selectAllComp" resultType="com.cs.pojo.Competition">
     select 
-    <include refid="Base_Column_List" />
+    *
     from competition where saveStatus=1
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
