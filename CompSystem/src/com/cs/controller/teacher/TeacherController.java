@@ -287,14 +287,17 @@ public class TeacherController {
 	}
 
 	/**
-	 * 3.2）管理（删除/允许）某个报名竞赛的组别
+	 * 3.2）管理（拒绝/允许）某个报名竞赛的组别
 	 * 
 	 * @param teacherNo
 	 * @return
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/manageGroupsMember")
-	public boolean manageGroupsMember(@RequestBody Groups groups) {
+	public boolean manageGroupsMember(Integer groupNo,Integer status) {
+		Groups groups=new Groups();
+		groups.setGroupsno(groupNo);
+		groups.setStatus(status);
 		return teacherService.approveGroups(groups);
 	}
 
