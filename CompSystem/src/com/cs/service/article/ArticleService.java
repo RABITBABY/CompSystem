@@ -15,6 +15,8 @@ public interface ArticleService {
 	
 	Map getArticleByID(int articleID);
 	
+	 Map getArticleByComp(int compId);
+	
 	int insertArticle(Article article);
 	
 	int deleteArticle(int articleId,int rid,int type );
