@@ -27,6 +27,9 @@ public interface GroupsMapper {
 	//根据groupsno查找该组的成员
 	List<Student> selectByGroupsNo(Integer groupsNo);
 	
+	//根据id查找所在组的队长的group信息
+	Groups selectGroupById(Integer id);
+	
 	//修改队伍状态
 	int updateStatus(Groups groups);
 	

@@ -74,7 +74,7 @@ public interface StudentService {
 	 * @param comId
 	 * @return
 	 */
-	void setCaptainStatus(Groups groups);
+	void setCaptainStatus(Integer captainstatus,Integer id);
 	
 	/**
 	 * 获取该生参与的竞赛以及所在队伍，以及其队员。

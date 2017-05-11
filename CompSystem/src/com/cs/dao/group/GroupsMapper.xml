@@ -48,7 +48,7 @@
 	where groupsNo in(
 	select groupsNo from groups 
 	    where comId =#{comId,jdbcType=INTEGER} and status!=-1 and studentNo=#{studentno,jdbcType=INTEGER}
-	)
+	) and captainStatus!=-1
   </select>
   
   <!-- 根据groupNo查找该组成员 -->
@@ -57,7 +57,16 @@
 	from groups g
 	left JOIN student s
 	on g.studentNo =s.studentNo
-	where g.groupsNo=#{groupsNo,jdbcType=INTEGER}
+	where g.groupsNo=#{groupsNo,jdbcType=INTEGER} and g.captainStatus!=-1
+  </select>
+  
+  <!-- 根据id查找所在组的队长的group信息 -->
+  <select id="selectGroupById" resultType="com.cs.pojo.Groups" parameterType="java.lang.Integer" >
+   SELECT * FROM groups
+	where groupsNo =(
+	SELECT groupsNo FROM groups
+	WHERE id=#{id,jdbcType=INTEGER}
+	) and isCaptain=1
   </select>
   <!-- 查找最大的groupsNo -->
   <select id="selectMaxGroupsNo"  resultType="java.lang.Integer">
