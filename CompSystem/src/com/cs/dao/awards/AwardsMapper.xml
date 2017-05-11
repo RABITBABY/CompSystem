@@ -189,7 +189,7 @@ select g.groupsNo as groupsNo , g.groupsName as groupsName, GROUP_CONCAT(s.stude
     where  g.studentNo=s.studentNo and g.teacherNo=t.teacherNo
 	GROUP BY g.groupsNo 
 
-)g where a.comId=com.comId and a.groupsNo=g.groupsNo and com.comId=33
+)g where a.comId=com.comId and a.groupsNo=g.groupsNo and com.comId=#{compId}
   </select>
   
   
