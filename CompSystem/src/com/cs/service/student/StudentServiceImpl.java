@@ -1,6 +1,7 @@
 package com.cs.service.student;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.cs.dao.awards.AwardsMapper;
 import com.cs.dao.compcondition.CompConditionMapper;
+import com.cs.dao.competition.CompetitionMapper;
 import com.cs.dao.condition.ConditionsMapper;
 import com.cs.dao.group.GroupsMapper;
 import com.cs.dao.guideteacher.GuideTeacherMapper;
@@ -43,6 +45,8 @@ public class StudentServiceImpl implements StudentService {
 	
 	@Autowired
 	private GuideTeacherMapper guideTeacherMapper;
+	@Autowired
+	private CompetitionMapper competitionMapper;
 
 	@Override
 	public Student selectByNo(int studentNo) {
@@ -104,6 +108,26 @@ public class StudentServiceImpl implements StudentService {
 	@Override
 	public List<Material> getMaterial(int studentno) {
 		return materialMapper.selectByStudentno(studentno);
+	}
+
+	@Override
+	public List<Map<String, Object>> getCompGroupMembers(Integer studentNo) {
+		List<Map<String,Object>> comGroupMembers=new ArrayList<Map<String,Object>>();
+		//竞赛
+		List<Competition> comList = groupsMapper.selectCompetitionByStuNo(studentNo);
+		for (int i = 0; i < comList.size(); i++) {
+			Map<String,Object> map=new HashMap<String, Object>();
+			map.put("comp", comList.get(i));
+			Map<String, Object> conditionMap=new HashMap<String, Object>();
+			conditionMap.put("comId", comList.get(i).getComid());
+			conditionMap.put("studentno", studentNo);
+			List<Groups> groupList = groupsMapper.selectByComIdAndStudentNo(conditionMap);
+		    map.put("groupList", groupList);
+		    List<Student> members = groupsMapper.selectByGroupsNo(groupList.get(0).getGroupsno());
+		    map.put("members", members);
+		    comGroupMembers.add(map);
+		}
+		return comGroupMembers;
 	}
 
 	

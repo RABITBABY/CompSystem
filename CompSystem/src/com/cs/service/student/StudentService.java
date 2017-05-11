@@ -75,4 +75,11 @@ public interface StudentService {
 	 * @return
 	 */
 	void setCaptainStatus(Groups groups);
+	
+	/**
+	 * 获取该生参与的竞赛以及所在队伍，以及其队员。
+	 * @param studentNo
+	 * @return
+	 */
+	List<Map<String, Object>> getCompGroupMembers(Integer studentNo);
 }

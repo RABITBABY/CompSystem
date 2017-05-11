@@ -58,6 +58,7 @@ public class StudentController {
 	 *      1.4.2创建队伍。(当不需要组队时。为一人一组)√
 	 *      1.4.3查找该竞赛所有指导老师。√
 	 *      1.4.4队长审核加入的成员√
+	 *      1.4.5获取参与的竞赛、队伍列表、以及成员√
 	 * 2.查看报名结果√
 	 *     报名结果：即xx竞赛  等待队长审核  等待老师审核
 	 * 3.缴纳比赛费用
@@ -190,10 +191,22 @@ public class StudentController {
 	  */
 	 @ResponseBody
 	 @RequestMapping("/setCaptainStatus")
-	 public void setCaptainStatus(@RequestBody Groups groups){
+	 public void setCaptainStatus(Integer captainstatus,Integer id){
+		 Groups groups=new Groups();
+		 groups.setCaptainstatus(captainstatus);
+		 groups.setId(id);
 		 studentService.setCaptainStatus(groups);
 	 }
 	 
+	 /**
+	  * 1.4.5获取参与的竞赛、队伍列表、以及成员
+	  * @return
+	  */
+	 @ResponseBody
+	 @RequestMapping("/getCompGroupMembers")
+	 public List<Map<String,Object>> getCompGroupMembers(Integer studentNo){
+		return studentService.getCompGroupMembers(studentNo);
+	 }
 	 
 	/**
 	 * 2.查看报名结果
