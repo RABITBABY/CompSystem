@@ -164,13 +164,12 @@ public int insertArticle(Article article) {
 	int type=article.getArticletype();
 	int rID=article.getRelationId();
 	param.put("rID", rID);
+	param.put("type", type);
 	param.put("isPub", "1");
+	System.out.println("PubArticle参数:"+param);
 	int state=0;
-	if(type==1){
+	if(type==1 || type==3){
 		 state=competitionMapper.updatePubState(param);
-		
-	}else if(type==3){
-		state=awardsMapper.updatePubState(param);
 	}else{
 		stateCode=  articleMapper.insertArticle(article);
 	}
@@ -193,13 +192,15 @@ public int deleteArticle(int articleId, int rid,int type) {
 	int state=articleMapper.deleteArticle(articleId);
 	param.put("rID", rid);
 	param.put("isPub", 0);
+	param.put("type", type);
 	System.out.println(param);
 	//修改状态
 	if(state>0){
-		if(type==1){
+		if(type==1 || type==3){
 			stateCode=competitionMapper.updatePubState(param);
-		}else if(type==3){
-			stateCode=awardsMapper.updatePubState(param);
+		}
+		else{
+			stateCode=state;
 		}
 	}
 	return stateCode;
