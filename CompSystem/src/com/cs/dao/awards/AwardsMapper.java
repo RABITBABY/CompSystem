@@ -24,13 +24,21 @@ public interface AwardsMapper {
     
 //    max
     List<Map> getAwards(Map map);
+    
     Map getAwardByID(String awardsId);
+    
     int getTotal(Map map);
+    
     int updatePubState(Map map);
+    
     List<Map> analysisAwards(Map map);
+    
     List<Map> unPubAward(String department);
     
     List<Map> awardsByComp(int compId);
+    
+    List<Integer>  allComps(Map map);
+    int  allCompsCount(Map map);
     
     
 }

@@ -192,6 +192,14 @@ select g.groupsNo as groupsNo , g.groupsName as groupsName, GROUP_CONCAT(s.stude
 )g where a.comId=com.comId and a.groupsNo=g.groupsNo and com.comId=#{compId}
   </select>
   
+  <select id="allComps" resultType="int" parameterType="Map">
+  select  DISTINCT a.comId from awards a ,competition c 
+	where a.comId=c.comId and c.department=#{department} ORDER BY a.awardTime limit #{page},#{pageSize}
+  </select>
   
+  <select id="allCompsCount" resultType="int" parameterType="Map">
+  select   COUNT(DISTINCT a.comId) as count from awards a ,competition c 
+where a.comId=c.comId and c.department=#{department} ORDER BY a.awardTime 
+  </select>
   
 </mapper>
