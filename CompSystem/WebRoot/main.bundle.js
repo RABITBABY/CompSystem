@@ -823,7 +823,7 @@ module.exports = "<!-- <md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn
 /***/ 1218:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn\">编辑文章功能尚未添加</md-chip>\r\n</md-chip-list> -->\r\n<md-tab-group>\r\n  <md-tab *ngFor=\"let ARTICLETYPE of ARTICLETYPES\">\r\n    <template md-tab-label>{{ARTICLETYPE.name}}</template>\r\n    <md-nav-list *ngIf=\"ARTICLETYPE.id === 1\">\r\n      <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeOnes;let i of index\">\r\n        {{article.title}}\r\n        <span style=\"flex: 1 1 auto\"> </span>\r\n        <md-icon>date_range</md-icon>{{article.pubDate}}\r\n        <md-icon>person</md-icon>{{article.adminName}}\r\n        <button md-button color=\"primary\">编辑</button>\r\n        <button md-button (click)=\"delete(article,i)\" color=\"warn\">删除</button>\r\n      </md-list-item>\r\n    </md-nav-list>\r\n    <md-nav-list *ngIf=\"ARTICLETYPE.id === 2\">\r\n      <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeTwos;let i of index\">\r\n        {{article.title}}\r\n        <span style=\"flex: 1 1 auto\"> </span>\r\n        <md-icon>date_range</md-icon>{{article.pubDate}}\r\n        <md-icon>person</md-icon>{{article.adminName}}\r\n        <button md-button color=\"primary\">编辑</button>\r\n        <button md-button (click)=\"delete(article,i)\" color=\"warn\">删除</button>\r\n      </md-list-item>\r\n    </md-nav-list>\r\n    <md-nav-list *ngIf=\"ARTICLETYPE.id === 3\">\r\n      <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeThrees;let i of index\">\r\n        {{article.title}}\r\n        <span style=\"flex: 1 1 auto\"> </span>\r\n        <md-icon>date_range</md-icon>{{article.pubDate}}\r\n        <md-icon>person</md-icon>{{article.adminName}}\r\n        <button md-button color=\"primary\">编辑</button>\r\n        <button md-button (click)=\"delete(article,i)\" color=\"warn\">删除</button>\r\n      </md-list-item>\r\n    </md-nav-list>\r\n  </md-tab>\r\n</md-tab-group>\r\n\r\n<div class=\"fixed-action-btn\">\r\n  <a class=\"btn-floating btn-large waves-effect waves-light red\" routerLink=\"edit\" routerLinkActive=\"active\">\r\n    <i class=\"large material-icons\">mode_edit</i>\r\n  </a>\r\n</div>\r\n"
+module.exports = "<!-- <md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn\">编辑文章功能尚未添加</md-chip>\r\n</md-chip-list> -->\r\n<md-tab-group>\r\n  <md-tab *ngFor=\"let ARTICLETYPE of ARTICLETYPES\">\r\n    <template md-tab-label>{{ARTICLETYPE.name}}</template>\r\n    <md-list *ngIf=\"ARTICLETYPE.id === 1\">\r\n      <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeOnes;let i of index\">\r\n        {{article.title}}\r\n        <span style=\"flex: 1 1 auto\"> </span>\r\n        <md-icon>date_range</md-icon>{{article.pubDate}}\r\n        <md-icon>person</md-icon>{{article.adminName}}\r\n        <button md-button color=\"primary\" (click)=\"edit(article)\">编辑</button>\r\n        <button md-button (click)=\"delete(article,i)\" color=\"warn\">删除</button>\r\n      </md-list-item>\r\n    </md-list>\r\n    <md-nav-list *ngIf=\"ARTICLETYPE.id === 2\">\r\n      <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeTwos;let i of index\">\r\n        {{article.title}}\r\n        <span style=\"flex: 1 1 auto\"> </span>\r\n        <md-icon>date_range</md-icon>{{article.pubDate}}\r\n        <md-icon>person</md-icon>{{article.adminName}}\r\n        <button md-button color=\"primary\">编辑</button>\r\n        <button md-button (click)=\"delete(article,i)\" color=\"warn\">删除</button>\r\n      </md-list-item>\r\n    </md-nav-list>\r\n    <md-nav-list *ngIf=\"ARTICLETYPE.id === 3\">\r\n      <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeThrees;let i of index\">\r\n        {{article.title}}\r\n        <span style=\"flex: 1 1 auto\"> </span>\r\n        <md-icon>date_range</md-icon>{{article.pubDate}}\r\n        <md-icon>person</md-icon>{{article.adminName}}\r\n        <button md-button color=\"primary\">编辑</button>\r\n        <button md-button (click)=\"delete(article,i)\" color=\"warn\">删除</button>\r\n      </md-list-item>\r\n    </md-nav-list>\r\n  </md-tab>\r\n</md-tab-group>\r\n\r\n<div class=\"fixed-action-btn\">\r\n  <a class=\"btn-floating btn-large waves-effect waves-light red\" routerLink=\"edit\" routerLinkActive=\"active\">\r\n    <i class=\"large material-icons\">mode_edit</i>\r\n  </a>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1054,7 +1054,7 @@ module.exports = "<p>\n  student-message works!\n</p>\n"
 /***/ 1251:
 /***/ (function(module, exports) {
 
-module.exports = "<md-select style=\"width: 100%\" placeholder=\"筛选内容\" [(ngModel)]=\"show\">\r\n  <md-option *ngFor=\"let item of filterContent\" [value]=\"item.value\">\r\n    {{item.name}}\r\n  </md-option>\r\n</md-select>\r\n<div *ngIf=\"show == 'applied'\">\r\n<h4>已申报竞赛列表</h4>\r\n<md-card *ngFor=\"let declaration of declarations;let i of index\">\r\n  <md-card-content>\r\n    <span>{{declaration.comname}}</span>\r\n    <span style=\"flex: 1 1 auto\"></span>\r\n    <md-chip-list style=\"display: inline-block\">\r\n      <md-chip color=\"accent\" selected=\"true\" *ngIf=\"declaration.depspstatus===0 || declaration.teaspstatus===0\">待审批</md-chip>\r\n    </md-chip-list>\r\n    <button md-icon-button *ngIf=\"!declaration.groupToggle\" mdTooltip=\"展开队伍详情\" (click)=\"toggleGroup(declaration)\">\r\n      <md-icon>keyboard_arrow_down</md-icon>\r\n    </button>\r\n    <button md-icon-button *ngIf=\"declaration.groupToggle\" mdTooltip=\"收起队伍详情\" (click)=\"toggleGroup(declaration)\">\r\n    <md-icon>keyboard_arrow_up</md-icon>\r\n  </button>\r\n    <button md-button color=\"primary\" [routerLink]=\"['../declaration/detail', declaration.comid]\">详情</button>\r\n    <button md-button [disabled]=\"declaration.teaspstatus===1\">修改</button>\r\n    <button md-button color=\"warn\" (click)=\"delete(declaration,i)\">删除</button>\r\n    <md-icon>date_range</md-icon>{{declaration.time}}\r\n  </md-card-content>\r\n  <md-card-content *ngIf=\"declaration.groupToggle\">\r\n    <span *ngIf=\"!declaration.groups\">暂无参赛队伍</span>\r\n    <md-list style=\"width: 100%\">\r\n      <h3 md-subheader *ngIf=\"declaration.groups\">所有参赛队伍(暂)</h3>\r\n      <md-card *ngFor=\"let group of declaration.groups\">\r\n        <md-card-content>\r\n          <strong>队伍名</strong>:{{ group.group.groupsname }}\r\n          <md-chip-list>\r\n            <md-chip *ngFor=\"let member of group.members\">{{member.studentno}} - {{member.studentname}}</md-chip>\r\n          </md-chip-list>\r\n          <span style=\"flex: 1 1 auto\"></span>\r\n          <button md-button color=\"primary\" *ngIf=\"group.group.status === 0\" (click)=\"pass(group.group,1)\">批准</button>\r\n          <button md-button color=\"warn\" *ngIf=\"group.group.status === 0\" (click)=\"pass(group.group,-1)\">不批准</button>\r\n        </md-card-content>\r\n      </md-card>\r\n    </md-list>\r\n  </md-card-content>\r\n</md-card>\r\n</div>\r\n"
+module.exports = "<md-select style=\"width: 100%;margin-top: 20px\" placeholder=\"筛选内容\" [(ngModel)]=\"show\" (change)=\"getDeclarations()\">\r\n  <md-option *ngFor=\"let item of filterContent\" [value]=\"item.value\">\r\n    {{item.name}}\r\n  </md-option>\r\n</md-select>\r\n<md-card *ngFor=\"let declaration of declarations;let i of index\">\r\n  <md-card-content>\r\n    <span>{{declaration.comname}}</span>\r\n    <span style=\"flex: 1 1 auto\"></span>\r\n    <md-chip-list style=\"display: inline-block\">\r\n      <md-chip color=\"accent\" selected=\"true\" *ngIf=\"declaration.depspstatus===0 || declaration.teaspstatus===0\">待审批</md-chip>\r\n    </md-chip-list>\r\n    <button md-icon-button *ngIf=\"!declaration.groupToggle\" mdTooltip=\"展开队伍详情\" (click)=\"toggleGroup(declaration)\">\r\n      <md-icon>keyboard_arrow_down</md-icon>\r\n    </button>\r\n    <button md-icon-button *ngIf=\"declaration.groupToggle\" mdTooltip=\"收起队伍详情\" (click)=\"toggleGroup(declaration)\">\r\n    <md-icon>keyboard_arrow_up</md-icon>\r\n  </button>\r\n    <button md-button color=\"primary\" [routerLink]=\"['../declaration/detail', declaration.comid]\">详情</button>\r\n    <button md-button [disabled]=\"declaration.teaspstatus===1\">修改</button>\r\n    <button md-button color=\"warn\" (click)=\"delete(declaration,i)\">删除</button>\r\n    <md-icon>date_range</md-icon>{{declaration.time}}\r\n  </md-card-content>\r\n  <md-card-content *ngIf=\"declaration.groupToggle\">\r\n    <span *ngIf=\"!declaration.groups\">暂无参赛队伍</span>\r\n    <md-list style=\"width: 100%\">\r\n      <h3 md-subheader *ngIf=\"declaration.groups\">所有参赛队伍(暂)</h3>\r\n      <md-card *ngFor=\"let group of declaration.groups\">\r\n        <md-card-content>\r\n          <strong>队伍名</strong>:{{ group.group.groupsname }}\r\n          <md-chip-list>\r\n            <md-chip *ngFor=\"let member of group.members\">{{member.studentno}} - {{member.studentname}}</md-chip>\r\n          </md-chip-list>\r\n          <span style=\"flex: 1 1 auto\"></span>\r\n          <button md-button color=\"primary\" *ngIf=\"group.group.status === 0\" (click)=\"pass(group.group,1)\">批准</button>\r\n          <button md-button color=\"warn\" *ngIf=\"group.group.status === 0\" (click)=\"pass(group.group,-1)\">不批准</button>\r\n        </md-card-content>\r\n      </md-card>\r\n    </md-list>\r\n  </md-card-content>\r\n</md-card>\r\n"
 
 /***/ }),
 
@@ -1404,7 +1404,7 @@ var _a, _b, _c, _d, _e, _f;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_switchMap__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_switchMap__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(6);
@@ -2172,7 +2172,12 @@ var TeacherContestComponent = (function () {
         this.show = 'applied';
         this.filterContent = [
             { name: "已申报竞赛列表", value: "applied" },
-            { name: "可以报名的竞赛", value: "appling" }
+            { name: "待审批竞赛列表", value: "waiting" },
+            { name: "审批通过的竞赛列表", value: "pass" },
+            { name: "审批通过的竞赛列表", value: "back" },
+            { name: "可以报名的竞赛", value: "applying" },
+            { name: "竞赛中的竞赛", value: "contesting" },
+            { name: "竞赛已结束的竞赛", value: "end" }
         ];
     }
     TeacherContestComponent.prototype.pass = function (group, pass) {
@@ -2182,15 +2187,54 @@ var TeacherContestComponent = (function () {
     };
     TeacherContestComponent.prototype.getDeclarations = function () {
         var _this = this;
-        this.contestService.getDeclarationsByTeacher(this.teacher.teacherno)
+        var url = "http://localhost:8080/CompSystem/teacher/getResponOrApplyComp" + "?teacherNo=" + this.teacher.teacherno;
+        switch (this.show) {
+            case 'applying':
+                {
+                    url = "http://localhost:8080/CompSystem/teacher/getResponOrApplyComp" + "?teacherNo=" + this.teacher.teacherno + "&btnStatus=4";
+                }
+                break;
+            case 'waiting':
+                {
+                    url = "http://localhost:8080/CompSystem/teacher/getResponOrApplyComp" + "?teacherNo=" + this.teacher.teacherno + "&btnStatus=1";
+                }
+                break;
+            case 'pass':
+                {
+                    url = "http://localhost:8080/CompSystem/teacher/getResponOrApplyComp" + "?teacherNo=" + this.teacher.teacherno + "&btnStatus=2";
+                }
+                break;
+            case 'back':
+                {
+                    url = "http://localhost:8080/CompSystem/teacher/getResponOrApplyComp" + "?teacherNo=" + this.teacher.teacherno + "&btnStatus=3";
+                }
+                break;
+            case 'contesting':
+                {
+                    url = "http://localhost:8080/CompSystem/teacher/getResponOrApplyComp" + "?teacherNo=" + this.teacher.teacherno + "&btnStatus=5";
+                }
+                break;
+            case 'end':
+                {
+                    url = "http://localhost:8080/CompSystem/teacher/getResponOrApplyComp" + "?teacherNo=" + this.teacher.teacherno + "&btnStatus=6";
+                }
+                break;
+            default: {
+                url = "http://localhost:8080/CompSystem/teacher/getResponOrApplyComp" + "?teacherNo=" + this.teacher.teacherno;
+            }
+        }
+        this.http.get(url)
+            .map(function (response) { return console.log("ContestService.getContests:", response.json()) || response.json(); })
             .subscribe(function (declarations) {
             _this.declarations = declarations;
-            _this.declarations.forEach(function (currentValue, index, array) {
-                array[index].groupToggle = false;
-                _this.http.get("http://localhost:8080/CompSystem/teacher/getCompGroupsAndMember" + "?comId=" + currentValue.comid)
-                    .map(function (response) { return response.json(); })
-                    .subscribe(function (response) { return array[index].groups = response; });
-            });
+            if (_this.declarations) {
+                _this.declarations.forEach(function (currentValue, index, array) {
+                    array[index].groupToggle = false;
+                    _this.http.get("http://localhost:8080/CompSystem/teacher/getCompGroupsAndMember" + "?comId=" + currentValue.comid)
+                        .map(function (response) { return response.json(); })
+                        .subscribe(function (response) { return array[index].groups = response; });
+                });
+            }
             console.log(_this.declarations);
         });
     };
@@ -3888,7 +3932,7 @@ AppModule = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home__ = __webpack_require__(521);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__user__ = __webpack_require__(526);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__article__ = __webpack_require__(511);
@@ -3925,6 +3969,9 @@ var appRoutes = [
                         component: __WEBPACK_IMPORTED_MODULE_3__article__["b" /* ArticleListComponent */]
                     }, {
                         path: 'edit',
+                        component: __WEBPACK_IMPORTED_MODULE_3__article__["c" /* ArticleEditComponent */]
+                    }, {
+                        path: 'edit:id',
                         component: __WEBPACK_IMPORTED_MODULE_3__article__["c" /* ArticleEditComponent */]
                     }, {
                         path: 'detail/:id',
@@ -4029,7 +4076,7 @@ var routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap__);
@@ -4190,7 +4237,7 @@ var _a, _b, _c, _d, _e, _f, _g, _h;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services__ = __webpack_require__(9);
@@ -4232,12 +4279,12 @@ var ArticleEditComponent = (function () {
                 url = "http://localhost:8080/CompSystem/teacher/getCompDetail" + "?comId=" + comid;
             }
             else if (articleType === 3) {
-                url = "";
+                url = "http://localhost:8080/CompSystem/admin/awardsByComp" + "?comId=" + comid;
             }
             this.http.get("http://localhost:8080/CompSystem/teacher/getCompDetail" + "?comId=" + comid)
                 .map(function (response) { return console.log("DeclarationDetailComponent:", response.json()) || response.json(); })
                 .subscribe(function (response) {
-                if (confirm("加载竞赛内容到编辑栏吗?")) {
+                if (articleType === 1 && confirm("加载竞赛内容到编辑栏吗?")) {
                     _this.editorContent = "<p>\u7ADE\u8D5B\u540D:" + response.competition.comname + "</p>";
                     _this.editorContent += "<p>\u7B80\u4ECB:" + response.competition.introduce + "</p>";
                     _this.editorContent += "<p>\u4E3B\u529E\u65B9:" + response.competition.host + "</p>";
@@ -4247,11 +4294,19 @@ var ArticleEditComponent = (function () {
                     _this.editorContent += "<p>\u7ADE\u8D5B\u65F6\u95F4:" + response.competition.time + "</p>";
                     _this.editorContent += "<p>\u7ADE\u8D5B\u5BF9\u8C61:" + response.competition.object + "</p>";
                 }
+                else if (articleType === 3 && confirm("加载获奖情况到编辑栏吗?")) {
+                }
             });
         }
     };
     ArticleEditComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.route.params
+            .switchMap(function (params) { return _this.articleService.getArticle(+params['id']); })
+            .subscribe(function (article) {
+            _this.article = article;
+            console.log("this.article:", article);
+        });
         this.admin = this.loginService.getUser();
         this.compCtrl = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]();
         this.filteredComps = this.compCtrl.valueChanges
@@ -4343,9 +4398,10 @@ var _a, _b, _c, _d, _e;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_article_service__ = __webpack_require__(510);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datas__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_article_service__ = __webpack_require__(510);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__datas__ = __webpack_require__(98);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ArticleListComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4360,16 +4416,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ArticleListComponent = (function () {
-    function ArticleListComponent(articleService, http) {
+    function ArticleListComponent(articleService, router, http) {
         this.articleService = articleService;
+        this.router = router;
         this.http = http;
         this.articles = [];
-        Object.assign(this, { ARTICLETYPES: __WEBPACK_IMPORTED_MODULE_3__datas__["a" /* ARTICLETYPES */] });
+        Object.assign(this, { ARTICLETYPES: __WEBPACK_IMPORTED_MODULE_4__datas__["a" /* ARTICLETYPES */] });
     }
+    ArticleListComponent.prototype.edit = function (article) {
+        this.router.navigate(['edit/' + article.articleId]);
+    };
     ArticleListComponent.prototype.delete = function (article, index) {
         var _this = this;
-        article.splice(index, 1);
         this.http.get("http://localhost:8080/ComSystem" + "/admin/deleteArticle" + "?articleId=" + article.articleId)
             .map(function (response) { return console.log("ArticleListComponent.delete:", response.json()) || response.json(); })
             .subscribe(function () {
@@ -4406,12 +4466,12 @@ ArticleListComponent = __decorate([
         selector: 'app-article-list',
         template: __webpack_require__(1218),
         styles: [__webpack_require__(1167)],
-        providers: [__WEBPACK_IMPORTED_MODULE_2__services_article_service__["a" /* ArticleService */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_3__services_article_service__["a" /* ArticleService */]]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_article_service__["a" /* ArticleService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_article_service__["a" /* ArticleService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_article_service__["a" /* ArticleService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_article_service__["a" /* ArticleService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */]) === "function" && _c || Object])
 ], ArticleListComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=article-list.component.js.map
 
 /***/ }),
@@ -4647,7 +4707,7 @@ ChartComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_switchMap__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_switchMap__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(9);
@@ -5320,7 +5380,7 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(42);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthGuard; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5375,7 +5435,7 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
@@ -5494,7 +5554,7 @@ var _a, _b, _c, _d;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(6);
@@ -5614,7 +5674,7 @@ var _a, _b, _c, _d, _e, _f;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(6);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminContestComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
