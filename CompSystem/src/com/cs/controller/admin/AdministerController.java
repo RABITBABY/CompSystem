@@ -67,40 +67,50 @@ public class AdministerController {
 	
 	
 	/**
-	 * 获取近期的竞赛（可以报名）
-	 * @param type
+	 * 获取近期的竞赛（可以报名）---只能查看到自己系的
+	 * @param time
 	 * 上周，，本周，， 本月
-	 * department
+	 * levelName    竞赛类别
 	 * @return
 	 */
 	@ResponseBody
 	@RequestMapping("/CompetionList")
-	public  Map CompetitionList(String department,String time,String index,String pageSize) {
+	public  Map CompetitionList(String levelName,String time,String index,String pageSize,HttpServletRequest request) {
 		Map<String ,Object> resultMap=new HashMap<String, Object>();
 		Map<String ,Object> param=new HashMap<String, Object>();
-		department=ParamUtil.getStr(department, "");
+		PageInfo pageInfo=new PageInfo();
+		
+		levelName=ParamUtil.getStr(levelName, "");
 		time=ParamUtil.getStr(time, "");
 		index=ParamUtil.getStr(index, "1");
 		pageSize=ParamUtil.getStr(pageSize, "10");
 		
-		param.put("department", department);
+		param.put("levelName", levelName);
 		param.put("time", time);	
-		param.put("index", index);	
-		
+		param.put("index", index);
 		param.put("pageSize", pageSize);	
+		Map userInfo =(Map)request.getSession().getAttribute("loginInfo");
+		String department="";
+		 if(userInfo!=null){
+			 department=userInfo.get("department").toString();
+				if(department!=null && !"".equals(department)){
+					param.put("department", department);	
+					pageInfo=compeService.CompetitionList(param);
+					
+					resultMap.put("comPageInfo", pageInfo);
+					System.out.println(param+"\n"+resultMap);
+				}
+		 }else{
+			 System.out.println("还没有登录");
+		 }
 		
-		PageInfo pageInfo=new PageInfo();
 		
-		pageInfo=compeService.CompetitionList(param);
-		
-		resultMap.put("comPageInfo", pageInfo);
-		System.out.println(param+"\n"+resultMap);
 		
 		return resultMap;
 	}
 
 	/**
-	 * 获取近期的竞赛（可以报名）
+	 * 获取近期的获奖
 	 * @param type
 	 * department
 	 *全部    本周      本月    三月内  
@@ -108,25 +118,33 @@ public class AdministerController {
 	 */
 	@ResponseBody
 	@RequestMapping("/awardList")
-	public  Map awardsList(String department,String time,String index,String pageSize) {
+	public  Map awardsList(String time,String index,String pageSize,HttpServletRequest request) {
 		Map<String ,Object> resultMap=new HashMap<String, Object>();
 		Map<String ,Object> param=new HashMap<String, Object>();
-		department=ParamUtil.getStr(department, "");
+		PageInfo pageInfo=new PageInfo();
+		
 		time=ParamUtil.getStr(time, "");
 		index=ParamUtil.getStr(index, "1");
 		pageSize=ParamUtil.getStr(pageSize, "10");
 		
-		param.put("department", department);
+		
 		param.put("time", time);	
 		param.put("index", index);	
 		param.put("pageSize", pageSize);	
+		Map userInfo =(Map)request.getSession().getAttribute("loginInfo");
+		String department="";
+		 if(userInfo!=null){
+			 department=userInfo.get("department").toString();
+				if(department!=null && !"".equals(department)){
+					param.put("department", department);
+					pageInfo=awardsService.getAwardsList(param);
+					
+					resultMap.put("awardsList", pageInfo);
+					System.out.println(param+"\n"+resultMap);
+				}
+		 }
 		
-		PageInfo pageInfo=new PageInfo();
 		
-		pageInfo=awardsService.getAwardsList(param);
-		
-		resultMap.put("awardsList", pageInfo);
-		System.out.println(param+"\n"+resultMap);
 		
 		return resultMap;
 	}

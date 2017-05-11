@@ -28,6 +28,7 @@ private CompetitionMapper compeMapper;
 		int page=(index-1)*pageSize;
 		param.put("page", page);
 		param.put("pageSize", pageSize);
+		param.put("levelName", map.get("levelName"));
 		param.put("department", map.get("department"));
 		param.put("time", map.get("time"));
 		

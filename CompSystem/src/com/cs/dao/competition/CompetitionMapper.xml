@@ -591,10 +591,10 @@
   <!--Max  -->
   <select id="selectByAdmin" resultType="Map" parameterType="Map" >
      select com.*,t.teacherName,t.gender,t.department,t.phone,t.email  from competition com,teacher t
-    where com.teacherNo=t.teacherNo
+    where com.teacherNo=t.teacherNo and com.department=#{department}
 		and com.applyEndDate>=now() and com.depSpStatus=1 and com.teaSpStatus=1 
-		<if test=" department != '' ">
-			and com.department=#{department}
+		<if test=" levelName != '' ">
+			and com.levelName=#{levelName}
 		</if>
 		 <if test=' time=="1" '>
 		and YEARWEEK(date_format(com.lsdate,'%Y-%m-%d')) = YEARWEEK(now())-1

@@ -131,9 +131,7 @@
 	where  g.studentNo=s.studentNo and g.teacherNo=t.teacherNo
 	GROUP BY g.groupsNo )g
 	where a.comId=com.comId and a.groupsNo=g.groupsNo
-	<if test=" department != '' ">
-			and com.department=#{department}
-	</if>
+	 and com.department=#{department}
 	
 	<if test =' time == "1" '>
 		and YEARWEEK(date_format(a.awardTime,'%Y-%m-%d')) = YEARWEEK(now()) 
@@ -157,7 +155,7 @@
     select a.*,com.comName,g.* from awards a,competition com ,(select g.groupsNo as groupsNo , g.groupsName as groupsName, GROUP_CONCAT(s.studentName) AS groupNumber,t.teacherName as teacher from groups g  ,student s,teacher t
     where  g.studentNo=s.studentNo and g.teacherNo=t.teacherNo
 	GROUP BY g.groupsNo )g
- 	where a.comId=com.comId and a.groupsNo=g.groupsNo and a.awardsId=#{awardsId}
+ 	where a.comId=com.comId and a.groupsNo=g.groupsNo and a.awardsId=#{awardsId} 
   </select>
   
   
