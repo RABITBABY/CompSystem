@@ -91,8 +91,19 @@ public class Competition {
     private Integer isneedgroup;
     
     private Integer groupnum;
+    
+    private int awardPub;
+    
    
-    public Integer getComid() {
+    public int getAwardPub() {
+		return awardPub;
+	}
+
+	public void setAwardPub(int awardPub) {
+		this.awardPub = awardPub;
+	}
+
+	public Integer getComid() {
         return comid;
     }
 
@@ -425,7 +436,7 @@ public class Competition {
 				+ applybegindate + ", applyenddate=" + applyenddate + ", cost="
 				+ cost + ", compstatus=" + compstatus + ", ispublish="
 				+ ispublish + ", isneedgroup=" + isneedgroup + ", groupnum="
-				+ groupnum +"leaderNo="+leaderNo+ "]";
+				+ groupnum +"leaderNo="+leaderNo+ "awardPub="+awardPub+"]";
 	}
      
 	
