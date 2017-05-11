@@ -21,7 +21,7 @@
 </head>
 
 <body>
-	<form name="Form2" action="<%=path%>/student/saveMaterial" method="post"  enctype="multipart/form-data">
+	<form name="Form2"  id="form2" method="post"  enctype="multipart/form-data">
 	<h1>使用spring mvc提供的类的方法上传文件</h1>
 	<input type="file" name="file">
 	<input type="text" value="11" name="studentno" id="st">
@@ -86,10 +86,10 @@
   $(function(){
   
   
-    $("#btn").click(function(){
+    $("#add").click(function(){
        $.ajax({
                 type: "POST",
-                url:"teacher/getAprrove",
+                url:"student/saveMaterial",
                 data:{comId:1},// 你的formid
                 async: false,
                 error: function() {
