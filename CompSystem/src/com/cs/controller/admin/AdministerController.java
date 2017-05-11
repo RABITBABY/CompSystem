@@ -771,11 +771,12 @@ public class AdministerController {
 	 */
 	@ResponseBody
 	@RequestMapping("/awardsByComp")
-	public List awardsByComp(int compId){
+	public List awardsByComp(String compId){
 		List<Map> resuList=new ArrayList<Map>();
-		
-		resuList =awardsService.awardsByComp(compId);
-		
+		int compid=Integer.parseInt(ParamUtil.getStr(compId, "0"));
+		if(compid>0){
+			resuList =awardsService.awardsByComp(compid);
+		}
 		return resuList;
 	}
 	
