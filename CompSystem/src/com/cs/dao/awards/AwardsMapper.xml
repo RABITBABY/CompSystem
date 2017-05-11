@@ -159,8 +159,10 @@
   </select>
   
   
-  <select id="getTotal" resultType="int">
-  select count(*) from awards  
+  <select id="getTotal" resultType="int" parameterType="Map">
+ select count(*) from awards a,competition com
+	where a.comId=com.comId 
+	 and com.department=#{department}
   </select>
   
   

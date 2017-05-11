@@ -614,8 +614,9 @@
 	 ORDER BY c.lsdate desc 
   </select>
   
-   <select id="getTotal" resultType="int" >
-  	select COUNT(*) from competition   where applyEndDate>=now()
+   <select id="getTotal" resultType="int" parameterType="Map" >
+  	select COUNT(*) from competition com  where   com.department=#{department}
+		and com.applyEndDate>=now() and com.depSpStatus=1 and com.teaSpStatus=1 
 	</select>
 	<update id="updatePubState" parameterType="Map">
 		update competition set isPublish=#{isPub} where comId = #{rID}

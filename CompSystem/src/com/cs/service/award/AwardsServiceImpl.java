@@ -34,7 +34,8 @@ public class AwardsServiceImpl implements AwardsService{
 		List<Map> list=awardsMapper.getAwards(param);
 		int totalPage=0;
 		if(list.size() > 0){
-			int total=awardsMapper.getTotal();
+			int total=awardsMapper.getTotal(param);
+			System.out.println("total总条数"+total);
 			totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
 		}
 		PageInfo pageInfo=new PageInfo();

@@ -110,10 +110,11 @@ public class AdministerController {
 	}
 
 	/**
-	 * 获取近期的获奖
+	 * 获取近期的获奖---只能看自己系
 	 * @param type
-	 * department
-	 *全部    本周      本月    三月内  
+	 * time
+	 *全部    本周      本月    三月内
+	 *  
  	 * @return
 	 */
 	@ResponseBody
@@ -143,9 +144,6 @@ public class AdministerController {
 					System.out.println(param+"\n"+resultMap);
 				}
 		 }
-		
-		
-		
 		return resultMap;
 	}
 	
@@ -156,7 +154,7 @@ public class AdministerController {
 	//---------文章相关
 	//优化发布  将基础信息初始化贴到富文本框---竞赛   获奖
 	/**
-	 * 分页根据文章类型找到相关文章
+	 * 分页根据文章类型找到相关文章---只能查看自己发布的
 	 * @param type 文章类型
 	 * @param page 页数
 	 * @param pageSize 每页数量 
@@ -182,6 +180,8 @@ public class AdministerController {
 					PageInfo pageInfo=articleService.getArticleList(param);
 					result.put("articlePageInfo",pageInfo );
 				}
+			}else{
+				System.out.println("session信息丢失");
 			}
 		return result;
 	}
@@ -589,7 +589,7 @@ public class AdministerController {
 	 */
 	@ResponseBody
 	@RequestMapping("/allFile")
-	public Map allFile(String index,String pageSize){
+	public Map allFile(String index,String pageSize,HttpServletRequest request){
 		Map result=new HashMap<String,Object>();
 		Map param=new HashMap<String,Object>();
 		PageInfo pageinfo=new PageInfo();
@@ -597,8 +597,18 @@ public class AdministerController {
 		pageSize=ParamUtil.getStr(pageSize, "10");
 		param.put("index",index);
 		param.put("pageSize",pageSize);
-		pageinfo=fileUploadService.allFile(param);
-		result.put("filePage", pageinfo);
+		
+		Map userInfo =(Map)request.getSession().getAttribute("loginInfo");
+		String adminNo="";
+		 if(userInfo!=null){
+			 adminNo=userInfo.get("userId").toString();
+				if(adminNo!=null && !"".equals(adminNo)){
+					param.put("adminNo",adminNo);
+					pageinfo=fileUploadService.allFile(param);
+					result.put("filePage", pageinfo);
+				}
+		 }
+		
 		return result;
 	}
 	

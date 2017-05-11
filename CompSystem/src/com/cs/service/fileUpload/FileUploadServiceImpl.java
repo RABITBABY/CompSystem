@@ -41,10 +41,12 @@ public class FileUploadServiceImpl implements FileUploadService {
 		Map param=new HashMap<String , Object>();
 		param.put("page", page);
 		param.put("pageSize", pageSize);
+		param.put("adminNo", map.get("adminNo").toString());
 		List<Map> list=mapper.allFile(param);
 		int totalPage=0;
 		if(list.size()>0){
-			int total=mapper.getTotal();
+			int total=mapper.getTotal(param);
+			System.out.println("总条数"+total);
 			totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
 		}
 		PageInfo pageInfo=new PageInfo();
