@@ -73,7 +73,6 @@ public class TeacherController {
 	 * 1.查看、修改教师个人信息√ 
 	 * 2.管理申报表。 
 	 *   2.1）根据teacherno查看所有申报书审批结果（列表以及结果。）√
-	 *     2.1.1）根据结果查看申报书，比如，查找所有通过的申报书√ 
 	 *     2.1.2）查看申报书详情√ 
 	 *   2.2）新增或保存申报书 √
 	 *   2.3）修改√、删除√。仅限申报不通过时。
@@ -81,7 +80,6 @@ public class TeacherController {
 	 *   2.5）查找该教师所负责 的竞赛（竞赛负责人，因为申报人不一定是负责人）√
 	 *   2.6）查找该教师所负责培训的竞赛（培训课时，教师）√
 	 *   2.7）查找该教师所指导的竞赛（指导老师。）√
-	 * 3.查看审批通过的竞赛。 ——》2.1.1）根据结果查看申报书：这两个差不多
 	 *   3.1）查看某个竞赛参与的组别(待审批、审批通过)。√ 
 	 *     3.1.0）查看某个竞赛参与的组别。包括该组组员√ 
 	 *     3.1.1）查看某个组别中的成员√ 
@@ -147,20 +145,6 @@ public class TeacherController {
 	}
 
 	/**
-	 * 2.1.1）根据申报结果查看申报书，比如，查找所有通过的申报书 三个条件
-	 * competition.setDepspstatus(depStatus);
-	 *	competition.setTeaspstatus(teaStatusInteger);
-	 *	competition.setTeacherno(1);
-	 * @param competition
-	 * @return
-	 */
-	@ResponseBody
-	@RequestMapping(value = "/getCompBySpStatus")
-	public List<Competition> getCompBySpStatus(@RequestBody Competition competition) {
-		return teacherService.getCompBySpStatus(competition);
-	}
-
-	/**
 	 * 2.1.2）查看申报书详情
 	 * 
 	 * @param comId
@@ -181,6 +165,7 @@ public class TeacherController {
 	@ResponseBody
 	@RequestMapping(value = "/addOrUpdateComp")
 	public CompetitionInfoVo addOrUpdateComp(@RequestBody CompetitionInfoVo competitionInfovo) {
+		System.out.println(competitionInfovo);
 		return teacherService.addOrUpdateComp(competitionInfovo);
 	}
 
@@ -464,13 +449,20 @@ public class TeacherController {
 	
 	/**
 	 * 13.查找该教师负责或申报的竞赛
+	 * 根据btnStatus去获取竞赛列表
+	 *  0:所有
+	 *  1：待审批 2.审批通过  3.审批不通过  
+	 *  4：报名中，5：竞赛中，6：竞赛结束
 	 * @param teacherNo
 	 * @return
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/getResponOrApplyComp")
-	public List<Competition> getResponOrApplyComp(Integer teacherNo) {
-		return comMapper.selectByLeaderNoOrTeacher(teacherNo);
+	public List<Competition> getResponOrApplyComp(Integer teacherNo,Integer btnStatus) {
+		if (btnStatus==null) {
+			btnStatus=0;
+		}
+		return teacherService.getCompByBtnStatus(btnStatus, teacherNo);
 	}
 	
 }

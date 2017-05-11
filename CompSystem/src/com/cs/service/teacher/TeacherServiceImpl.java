@@ -101,10 +101,52 @@ public class TeacherServiceImpl implements TeacherService {
 		return false;
 	}
 
+	/**
+	 * 0:所有
+	 * 1：待审批 2.审批通过  3.审批不通过  
+	 *  4：报名中，5：竞赛中，6：竞赛结束
+	 */
 	@Override
-	public List<Competition> getCompBySpStatus(Competition competition) {
-
-		return comMapper.selectBySpStatus(competition);
+	public List<Competition> getCompByBtnStatus(Integer btnStatus,Integer teacherNo) {
+		Competition competition=new Competition();
+    	competition.setTeacherno(teacherNo);
+		List<Competition> comList=new ArrayList<Competition>();
+		if (btnStatus==0) {
+			comList.addAll(comMapper.selectByLeaderNoOrTeacher(teacherNo));
+		}else if (btnStatus==1) {
+			//待审批
+        	//没审批的
+        	competition.setDepspstatus(0);
+        	competition.setTeaspstatus(0);
+        	comList.addAll(comMapper.selectBySpStatus(competition));
+        	//系部已经审批的
+        	competition.setDepspstatus(1);
+        	competition.setTeaspstatus(0);
+        	comList.addAll(comMapper.selectBySpStatus(competition));
+		}else if (btnStatus==2) {
+			//审批通过的
+			competition.setDepspstatus(1);
+        	competition.setTeaspstatus(1);
+        	comList.addAll(comMapper.selectBySpStatus(competition));
+		}else if (btnStatus==3) {
+			//审批不通过
+			competition.setDepspstatus(-1);
+        	competition.setTeaspstatus(0);
+        	comList.addAll(comMapper.selectBySpStatus(competition));
+        	competition.setDepspstatus(1);
+        	competition.setTeaspstatus(-1);
+        	comList.addAll(comMapper.selectBySpStatus(competition));
+		}else if (btnStatus==4) {
+			//报名中的竞赛
+			comList.addAll(comMapper.selectApplyCompByteacherNo(teacherNo));
+		}else if(btnStatus==5){
+			//竞赛中
+			comList.addAll(comMapper.selectNowComp(teacherNo));
+		}else if (btnStatus==6) {
+			//竞赛结束
+			comList.addAll(comMapper.selectEndComp(teacherNo));
+		}
+		return comList;
 	}
 
 	@Override

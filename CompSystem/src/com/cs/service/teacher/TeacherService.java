@@ -52,10 +52,12 @@ public interface TeacherService {
 	
 	
 	/**
-	 * 根据SpStatus状态查找竞赛
+	 * 根据btnStatus状态查找竞赛
+	 *  1：待审批 2.审批通过  3.审批不通过  
+	 *  4：报名中，3：竞赛中，4：竞赛结束
 	 * @return
 	 */
-	public List<Competition> getCompBySpStatus(Competition competition);
+	public List<Competition> getCompByBtnStatus(Integer btnStatus,Integer teacherNo);
 	
 	/**
 	 * 根据comId查找竞赛详情

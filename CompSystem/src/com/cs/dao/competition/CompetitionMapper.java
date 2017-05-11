@@ -42,6 +42,9 @@ public interface CompetitionMapper {
     /*查找该教师负责或申报的竞赛*/
     List<Competition> selectByLeaderNoOrTeacher(Integer teacherno);
     
+    /*查找该教师正在进行的竞赛 */
+    List<Competition> selectNowComp(Integer teacherno);
+    
     List<Competition> selectAllComp();
 
     int insert(Competition record);
