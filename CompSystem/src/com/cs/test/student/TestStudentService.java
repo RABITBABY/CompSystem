@@ -26,7 +26,7 @@ public class TestStudentService extends AbstractJUnit4SpringContextTests {
 		Groups groups=new Groups();
 		groups.setId(5);
 		groups.setCaptainstatus(2);
-		studentService.setCaptainStatus(groups);
+		//studentService.setCaptainStatus(groups);
 	}
 	
 }

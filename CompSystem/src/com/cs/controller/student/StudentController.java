@@ -192,10 +192,7 @@ public class StudentController {
 	 @ResponseBody
 	 @RequestMapping("/setCaptainStatus")
 	 public void setCaptainStatus(Integer captainstatus,Integer id){
-		 Groups groups=new Groups();
-		 groups.setCaptainstatus(captainstatus);
-		 groups.setId(id);
-		 studentService.setCaptainStatus(groups);
+		 studentService.setCaptainStatus(captainstatus,id);
 	 }
 	 
 	 /**

@@ -1,5 +1,6 @@
 package com.cs.service.student;
 
+import java.security.acl.Group;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -87,7 +88,6 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public void joinGroup(Integer groupsid,Integer studentNo) {
-		
 		Groups groups = groupsMapper.selectByPrimaryKey(groupsid);
 		groups.setStudentno(studentNo);
 		groups.setIscaptain(0);
@@ -101,7 +101,10 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public void setCaptainStatus(Groups groups) {
+	public void setCaptainStatus(Integer captainstatus,Integer id) {
+		Groups groups=new Groups();
+		groups.setCaptainstatus(captainstatus);
+		groups.setId(id);
 		groupsMapper.updateCaptainStatus(groups);
 	}
 

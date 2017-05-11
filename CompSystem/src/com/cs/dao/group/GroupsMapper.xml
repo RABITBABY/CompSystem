@@ -59,6 +59,15 @@
 	on g.studentNo =s.studentNo
 	where g.groupsNo=#{groupsNo,jdbcType=INTEGER} and g.captainStatus!=-1
   </select>
+  
+  <!-- 根据id查找所在组的队长的group信息 -->
+  <select id="selectGroupById" resultType="com.cs.pojo.Groups" parameterType="java.lang.Integer" >
+   SELECT * FROM groups
+	where groupsNo =(
+	SELECT groupsNo FROM groups
+	WHERE id=#{id,jdbcType=INTEGER}
+	) and isCaptain=1
+  </select>
   <!-- 查找最大的groupsNo -->
   <select id="selectMaxGroupsNo"  resultType="java.lang.Integer">
     select MAX(groupsNo)
