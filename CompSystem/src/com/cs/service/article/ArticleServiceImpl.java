@@ -222,6 +222,7 @@ public int updateArticle(int articleId, String title, String content) {
 }
 @Override
 public void addVisit(int id) {
+	System.out.println("articleAdd");
 	 articleMapper.addVisit(id);
 }
 @Override
