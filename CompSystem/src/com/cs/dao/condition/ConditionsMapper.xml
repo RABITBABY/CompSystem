@@ -12,6 +12,9 @@
   <select id="selectAllConditions" resultMap="BaseResultMap">
     select * from conditions
   </select>
+  <select id="getConditionsByType" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select * from conditions where type=#{type,jdbcType=INTEGER}
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

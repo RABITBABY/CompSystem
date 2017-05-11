@@ -44,6 +44,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cs.dao.competition.CompetitionMapper;
+import com.cs.dao.condition.ConditionsMapper;
 import com.cs.dao.message.MessageMapper;
 import com.cs.pojo.Awards;
 import com.cs.pojo.Budget;
@@ -92,6 +93,7 @@ public class TeacherController {
 	 *    6.2教学处审批申报书√
 	 * 7.查找所有的教师√
 	 * 8.获取所有的条件√
+	 *   8.1根据type获取条件√
 	 * 9.获取个人消息。√
 	 * 10.待审核列表√
 	 * 11.获取草稿箱的审批表。√
@@ -111,6 +113,8 @@ public class TeacherController {
     //private HttpServletRequest request; 
 	@Autowired  
 	private CompetitionMapper comMapper;
+	@Autowired  
+	private ConditionsMapper conditionsMapper;
 
 	/**
 	 * 1.查看教师个人信息
@@ -402,6 +406,16 @@ public class TeacherController {
 	@RequestMapping("/getAllConditions")
 	public List<Conditions> getAllConditions(){
 	    return conditionService.getAllCondition();
+	}
+	
+	/**
+	 * 8.1根据type获取条件√
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/getConditionsByType")
+	public List<Conditions> getConditionsByType(Integer type){
+	    return conditionsMapper.getConditionsByType(type);
 	}
 	
 	/**
