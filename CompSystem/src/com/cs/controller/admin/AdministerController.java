@@ -683,18 +683,18 @@ public class AdministerController {
 		 if(userInfo!=null){
 			 department=userInfo.get("department").toString();
 				if(department!=null && !"".equals(department)){
-					
+					if("1".equals(type)){
+						//竞赛
+						System.out.println(type+"----");
+						list=compeService.unPubCom(department);
+					}else if("2".equals(type)){
+						//获奖情况
+						list=awardsService.unPubAward(department);
+					}
 					
 				}
 		 }
-		if("1".equals(type)){
-			//竞赛
-			System.out.println(type+"----");
-			list=compeService.unPubCom(department);
-		}else if("2".equals(type)){
-			//获奖情况
-			list=awardsService.unPubAward(department);
-		}
+		
 		return list;
 		
 	}

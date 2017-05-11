@@ -71,6 +71,9 @@ public interface CompetitionMapper {
     
     List<Map> analysisCom(Map map);
     
+    
+    
+    List<Map> unPubaward(String department);
     List<Map> unPubCom(String department);
     
     

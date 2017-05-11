@@ -84,7 +84,7 @@ public class AwardsServiceImpl implements AwardsService{
 	}
 	@Override
 	public List<Map> unPubAward(String department) {
-		return awardsMapper.unPubAward(department);
+		return compMapper.unPubaward(department);
 	}
 	@Override
 	public List<Map> awardsByComp(int compId) {

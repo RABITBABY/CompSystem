@@ -632,6 +632,11 @@
   where  c.department=#{department} and c.depSpStatus=1 and c.teaSpStatus=1 and (c.isPublish =0 or c.isPublish is null)
 	 ORDER BY c.lsdate desc 
   </select>
+  <select id="unPubaward" resultType="Map" parameterType="String"  >
+ select DISTINCT  c.comId,c.comName as count from awards a ,competition c 
+where a.comId=c.comId and c.department=#{department} and (c.awardPub=0 or c.awardPub='')
+ORDER BY a.awardTime desc
+  </select>
   
    <select id="getTotal" resultType="int" parameterType="Map" >
   	select COUNT(*) from competition com  where   com.department=#{department}
