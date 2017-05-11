@@ -643,7 +643,16 @@ ORDER BY a.awardTime desc
 		and com.applyEndDate>=now() and com.depSpStatus=1 and com.teaSpStatus=1 
 	</select>
 	<update id="updatePubState" parameterType="Map">
-		update competition set isPublish=#{isPub} where comId = #{rID}
+		update competition 
+		
+		<if test=' type=="1" '>
+		set isPublish=#{isPub}
+		</if>
+		<if test=' type=="3" '>
+		set awardPub=#{isPub}
+		</if>
+		
+		 where comId = #{rID}
 	</update>
 	
 	

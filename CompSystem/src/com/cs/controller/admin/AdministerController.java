@@ -98,15 +98,12 @@ public class AdministerController {
 					param.put("department", department);	
 					pageInfo=compeService.CompetitionList(param);
 					
-					resultMap.put("comPageInfo", pageInfo);
 					System.out.println(param+"\n"+resultMap);
 				}
 		 }else{
 			 System.out.println("还没有登录");
 		 }
-		
-		
-		
+		 resultMap.put("comPageInfo", pageInfo);
 		return resultMap;
 	}
 
@@ -141,10 +138,10 @@ public class AdministerController {
 					param.put("department", department);
 					pageInfo=awardsService.getAwardsList(param);
 					
-					resultMap.put("awardsList", pageInfo);
 					System.out.println(param+"\n"+resultMap);
 				}
 		 }
+		 resultMap.put("awardsList", pageInfo);
 		return resultMap;
 	}
 	
@@ -166,6 +163,7 @@ public class AdministerController {
 	public  Map findArticleByType(String type,String index,String pageSize,HttpServletRequest request) {
 		Map<String,Object> result=new HashMap<String, Object>();
 		Map<String,Object> param=new HashMap<String, Object>();
+		PageInfo pageInfo=new PageInfo();
 		type=ParamUtil.getStr(type, "1");
 		index=ParamUtil.getStr(index, "1");
 		pageSize=ParamUtil.getStr(pageSize, "10");
@@ -178,12 +176,12 @@ public class AdministerController {
 			 adminNo=userInfo.get("userId").toString();
 				if(adminNo!=null && !"".equals(adminNo)){
 					param.put("adminNo", adminNo);	
-					PageInfo pageInfo=articleService.getArticleList(param);
-					result.put("articlePageInfo",pageInfo );
+					 pageInfo=articleService.getArticleList(param);
 				}
 			}else{
 				System.out.println("session信息丢失");
 			}
+		result.put("articlePageInfo",pageInfo );
 		return result;
 	}
 	
@@ -343,7 +341,6 @@ public class AdministerController {
 		pageInfo.setList(list);
 		resultMap.put("produPageInfo", pageInfo);
 		System.out.println(param+"\n"+resultMap);
-		
 		return resultMap;
 	}
 	
@@ -606,10 +603,10 @@ public class AdministerController {
 				if(adminNo!=null && !"".equals(adminNo)){
 					param.put("adminNo",adminNo);
 					pageinfo=fileUploadService.allFile(param);
-					result.put("filePage", pageinfo);
 				}
 		 }
 		
+		 result.put("filePage", pageinfo);
 		return result;
 	}
 	
@@ -638,9 +635,9 @@ public class AdministerController {
 			 param.put("adminNo", adminNo);
 			 
 			 pageinfo =adminImpl.allMaterial(param);
-				result.put("materials", pageinfo);
 		 }
 		
+		 result.put("materials", pageinfo);
 		
 		return result;
 	}
