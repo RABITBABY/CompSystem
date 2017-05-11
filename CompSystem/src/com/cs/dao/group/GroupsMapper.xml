@@ -48,7 +48,7 @@
 	where groupsNo in(
 	select groupsNo from groups 
 	    where comId =#{comId,jdbcType=INTEGER} and status!=-1 and studentNo=#{studentno,jdbcType=INTEGER}
-	)
+	) and captainStatus!=-1
   </select>
   
   <!-- 根据groupNo查找该组成员 -->
