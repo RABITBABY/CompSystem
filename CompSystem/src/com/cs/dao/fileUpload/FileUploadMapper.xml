@@ -13,11 +13,12 @@
   
   <select id="allFile" resultType="Map" parameterType="Map" >
     select f.*,a.adminName from fileupload f,administer a 
-    where f.uploadUserNo=a.adminNo ORDER BY f.uploadDate limit #{page},#{pageSize}
+    where f.uploadUserNo=a.adminNo and  f.uploadUserNo=#{adminNo} ORDER BY f.uploadDate limit #{page},#{pageSize}
   </select>
   
     <select id="getTotal" resultType="int"  >
-    select count(*) from fileupload 
+  select count(*)  from fileupload f
+    where  f.uploadUserNo=#{adminNo}
   </select>
   
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="int" >

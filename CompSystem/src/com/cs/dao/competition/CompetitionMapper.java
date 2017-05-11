@@ -63,7 +63,7 @@ public interface CompetitionMapper {
     
     //max
     List<Map<String,Object>> selectByAdmin(Map map);
-    int getTotal();
+    int getTotal(Map map);
     int updatePubState(Map map);
     
     List<Competition> beforeToday();
@@ -71,7 +71,7 @@ public interface CompetitionMapper {
     
     List<Map> analysisCom(Map map);
     
-    List<Map> unPubCom();
+    List<Map> unPubCom(String department);
     
     
     

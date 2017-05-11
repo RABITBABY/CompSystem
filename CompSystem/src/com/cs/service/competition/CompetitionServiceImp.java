@@ -28,6 +28,7 @@ private CompetitionMapper compeMapper;
 		int page=(index-1)*pageSize;
 		param.put("page", page);
 		param.put("pageSize", pageSize);
+		param.put("levelName", map.get("levelName"));
 		param.put("department", map.get("department"));
 		param.put("time", map.get("time"));
 		
@@ -35,7 +36,8 @@ private CompetitionMapper compeMapper;
 		List<Map<String,Object>> list=compeMapper.selectByAdmin(param);
 		int totalPage=0;
 		if(list.size() > 0){
-			int total=compeMapper.getTotal();
+			int total=compeMapper.getTotal(param);
+			System.out.println("total总条数"+total);
 			totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
 		}
 		
@@ -75,9 +77,9 @@ private CompetitionMapper compeMapper;
 
 
 	@Override
-	public List<Map> unPubCom() {
+	public List<Map> unPubCom(String department) {
 		List<Map > list=new ArrayList<Map>();
-		list=compeMapper.unPubCom();
+		list=compeMapper.unPubCom(department);
 		return list;
 	}
 

@@ -51,6 +51,7 @@ public class LoginController {
 		Map<String , Object> resultMap1=new HashMap<String, Object>();
 		String stateCode="1";
 		String info="";
+		String department="";
 		String userId="";
 		String userName="";
 		String roleNum="";//1--教师，2--审批员，3--学生，4--管理员
@@ -77,6 +78,7 @@ public class LoginController {
 					}
 					userId=String.valueOf(teacher.getTeacherno());
 					userName=teacher.getTeachername();
+					department=teacher.getDepartment();
 					resultMap1.put("user", teacher);
 					info= "success";
 				}else{
@@ -95,6 +97,7 @@ public class LoginController {
 					roleNum="3";
 					userId=String.valueOf(stu.getStudentno());
 					userName=stu.getStudentname();
+					department=stu.getDepartment();
 					info= "success";
 					resultStr="student";
 					resultMap1.put("user", stu);
@@ -113,6 +116,7 @@ public class LoginController {
 					roleNum="4";
 					userId=admin.getAdminno();
 					userName=admin.getAdminname();
+					department=admin.getDepartment();
 					info= "success";
 					resultStr="admin";
 					resultMap1.put("user", admin);
@@ -130,6 +134,7 @@ public class LoginController {
 		resultMap.put("userId", userId);
 		resultMap.put("userName", userName);
 		resultMap.put("roleNum", roleNum);
+		resultMap.put("department", department);
 		resultMap.put("resultStr", resultStr);
 		System.out.println("resultMap"+resultMap);
 		if("1".equals(stateCode)){

@@ -9,7 +9,7 @@ public interface FileUploadMapper {
 	
 	List<Map> allFile(Map map);
 	 
-	int getTotal();
+	int getTotal(Map map);
 	
     int deleteByPrimaryKey(Integer fileid);
 

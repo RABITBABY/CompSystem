@@ -22,6 +22,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.cs.pojo.Article;
+import com.cs.pojo.Awards;
 import com.cs.pojo.FileUpload;
 import com.cs.pojo.Model;
 import com.cs.pojo.Production;
@@ -67,67 +68,83 @@ public class AdministerController {
 	
 	
 	/**
-	 * 获取近期的竞赛（可以报名）
-	 * @param type
+	 * 获取近期的竞赛（可以报名）---只能查看到自己系的
+	 * @param time
 	 * 上周，，本周，， 本月
-	 * department
+	 * levelName    竞赛类别
 	 * @return
 	 */
 	@ResponseBody
 	@RequestMapping("/CompetionList")
-	public  Map CompetitionList(String department,String time,String index,String pageSize) {
+	public  Map CompetitionList(String levelName,String time,String index,String pageSize,HttpServletRequest request) {
 		Map<String ,Object> resultMap=new HashMap<String, Object>();
 		Map<String ,Object> param=new HashMap<String, Object>();
-		department=ParamUtil.getStr(department, "");
+		PageInfo pageInfo=new PageInfo();
+		
+		levelName=ParamUtil.getStr(levelName, "");
 		time=ParamUtil.getStr(time, "");
 		index=ParamUtil.getStr(index, "1");
 		pageSize=ParamUtil.getStr(pageSize, "10");
 		
-		param.put("department", department);
+		param.put("levelName", levelName);
 		param.put("time", time);	
-		param.put("index", index);	
-		
+		param.put("index", index);
 		param.put("pageSize", pageSize);	
+		Map userInfo =(Map)request.getSession().getAttribute("loginInfo");
+		String department="";
+		 if(userInfo!=null){
+			 department=userInfo.get("department").toString();
+				if(department!=null && !"".equals(department)){
+					param.put("department", department);	
+					pageInfo=compeService.CompetitionList(param);
+					
+					resultMap.put("comPageInfo", pageInfo);
+					System.out.println(param+"\n"+resultMap);
+				}
+		 }else{
+			 System.out.println("还没有登录");
+		 }
 		
-		PageInfo pageInfo=new PageInfo();
 		
-		pageInfo=compeService.CompetitionList(param);
-		
-		resultMap.put("comPageInfo", pageInfo);
-		System.out.println(param+"\n"+resultMap);
 		
 		return resultMap;
 	}
 
 	/**
-	 * 获取近期的竞赛（可以报名）
+	 * 获取近期的获奖---只能看自己系
 	 * @param type
-	 * department
-	 *全部    本周      本月    三月内  
+	 * time
+	 *全部    本周      本月    三月内
+	 *  
  	 * @return
 	 */
 	@ResponseBody
 	@RequestMapping("/awardList")
-	public  Map awardsList(String department,String time,String index,String pageSize) {
+	public  Map awardsList(String time,String index,String pageSize,HttpServletRequest request) {
 		Map<String ,Object> resultMap=new HashMap<String, Object>();
 		Map<String ,Object> param=new HashMap<String, Object>();
-		department=ParamUtil.getStr(department, "");
+		PageInfo pageInfo=new PageInfo();
+		
 		time=ParamUtil.getStr(time, "");
 		index=ParamUtil.getStr(index, "1");
 		pageSize=ParamUtil.getStr(pageSize, "10");
 		
-		param.put("department", department);
+		
 		param.put("time", time);	
 		param.put("index", index);	
 		param.put("pageSize", pageSize);	
-		
-		PageInfo pageInfo=new PageInfo();
-		
-		pageInfo=awardsService.getAwardsList(param);
-		
-		resultMap.put("awardsList", pageInfo);
-		System.out.println(param+"\n"+resultMap);
-		
+		Map userInfo =(Map)request.getSession().getAttribute("loginInfo");
+		String department="";
+		 if(userInfo!=null){
+			 department=userInfo.get("department").toString();
+				if(department!=null && !"".equals(department)){
+					param.put("department", department);
+					pageInfo=awardsService.getAwardsList(param);
+					
+					resultMap.put("awardsList", pageInfo);
+					System.out.println(param+"\n"+resultMap);
+				}
+		 }
 		return resultMap;
 	}
 	
@@ -138,7 +155,7 @@ public class AdministerController {
 	//---------文章相关
 	//优化发布  将基础信息初始化贴到富文本框---竞赛   获奖
 	/**
-	 * 分页根据文章类型找到相关文章
+	 * 分页根据文章类型找到相关文章---只能查看自己发布的
 	 * @param type 文章类型
 	 * @param page 页数
 	 * @param pageSize 每页数量 
@@ -164,6 +181,8 @@ public class AdministerController {
 					PageInfo pageInfo=articleService.getArticleList(param);
 					result.put("articlePageInfo",pageInfo );
 				}
+			}else{
+				System.out.println("session信息丢失");
 			}
 		return result;
 	}
@@ -571,7 +590,7 @@ public class AdministerController {
 	 */
 	@ResponseBody
 	@RequestMapping("/allFile")
-	public Map allFile(String index,String pageSize){
+	public Map allFile(String index,String pageSize,HttpServletRequest request){
 		Map result=new HashMap<String,Object>();
 		Map param=new HashMap<String,Object>();
 		PageInfo pageinfo=new PageInfo();
@@ -579,8 +598,18 @@ public class AdministerController {
 		pageSize=ParamUtil.getStr(pageSize, "10");
 		param.put("index",index);
 		param.put("pageSize",pageSize);
-		pageinfo=fileUploadService.allFile(param);
-		result.put("filePage", pageinfo);
+		
+		Map userInfo =(Map)request.getSession().getAttribute("loginInfo");
+		String adminNo="";
+		 if(userInfo!=null){
+			 adminNo=userInfo.get("userId").toString();
+				if(adminNo!=null && !"".equals(adminNo)){
+					param.put("adminNo",adminNo);
+					pageinfo=fileUploadService.allFile(param);
+					result.put("filePage", pageinfo);
+				}
+		 }
+		
 		return result;
 	}
 	
@@ -645,17 +674,26 @@ public class AdministerController {
 	 */
 	@ResponseBody
 	@RequestMapping("/unPub")
-	public List unPub(String type){
+	public List unPub(String type,HttpServletRequest request){
 		type=ParamUtil.getStr(type, "");
 		List list=new ArrayList<Map>();
 		System.out.println(type+"===");
+		Map userInfo =(Map)request.getSession().getAttribute("loginInfo");
+		String department="";
+		 if(userInfo!=null){
+			 department=userInfo.get("department").toString();
+				if(department!=null && !"".equals(department)){
+					
+					
+				}
+		 }
 		if("1".equals(type)){
 			//竞赛
 			System.out.println(type+"----");
-			list=compeService.unPubCom();
+			list=compeService.unPubCom(department);
 		}else if("2".equals(type)){
 			//获奖情况
-			list=awardsService.unPubAward();
+			list=awardsService.unPubAward(department);
 		}
 		return list;
 		
@@ -724,6 +762,21 @@ public class AdministerController {
 	public int deleteModel(int mid){
 		int row=modelService.delectModel(mid);
 		return row;
+	}
+	
+	/**
+	 * 
+	 * @param mid
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/awardsByComp")
+	public List awardsByComp(int compId){
+		List<Map> resuList=new ArrayList<Map>();
+		
+		resuList =awardsService.awardsByComp(compId);
+		
+		return resuList;
 	}
 	
 }

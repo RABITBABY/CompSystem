@@ -34,7 +34,8 @@ public class AwardsServiceImpl implements AwardsService{
 		List<Map> list=awardsMapper.getAwards(param);
 		int totalPage=0;
 		if(list.size() > 0){
-			int total=awardsMapper.getTotal();
+			int total=awardsMapper.getTotal(param);
+			System.out.println("total总条数"+total);
 			totalPage=(int) Math.ceil(total/(pageSize*1.0));//总页数
 		}
 		PageInfo pageInfo=new PageInfo();
@@ -54,8 +55,13 @@ public class AwardsServiceImpl implements AwardsService{
 		return result;
 	}
 	@Override
-	public List<Map> unPubAward() {
-		return awardsMapper.unPubAward();
+	public List<Map> unPubAward(String department) {
+		return awardsMapper.unPubAward(department);
+	}
+	@Override
+	public List<Map> awardsByComp(int compId) {
+		
+		return awardsMapper.awardsByComp(compId);
 	}
 	
 	
