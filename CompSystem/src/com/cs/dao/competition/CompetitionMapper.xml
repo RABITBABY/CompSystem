@@ -609,8 +609,9 @@
 	 ORDER BY com.lsdate desc limit #{page},#{pageSize}
   </select>
   
-   <select id="unPubCom" resultType="Map"  >
-  select c.comId as id ,c.comName as name from competition  c where c.depSpStatus=1 and c.teaSpStatus=1 and (c.isPublish =0 or c.isPublish is null)
+   <select id="unPubCom" resultType="Map" parameterType="String"  >
+  select c.comId as id ,c.comName as name from competition  c 
+  where  c.department=#{department} and c.depSpStatus=1 and c.teaSpStatus=1 and (c.isPublish =0 or c.isPublish is null)
 	 ORDER BY c.lsdate desc 
   </select>
   

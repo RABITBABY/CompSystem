@@ -146,8 +146,9 @@
 	 ORDER by awardTime desc limit #{page},#{pageSize}
   </select>
   
-   <select id="unPubAward"   resultType="Map">
-  select a.awardsId as id,c.comName as name from competition.awards a ,competition.competition c where c.comId=a.comId and (a.isPublish=0 or a.isPublish is null)
+   <select id="unPubAward"   resultType="Map" parameterType="String">
+  select a.awardsId as id,c.comName as name from competition.awards a ,competition.competition c 
+   where c.comId=a.comId and (a.isPublish=0 or a.isPublish is null) and c.department=#{department}
 	ORDER by a.awardTime desc 
   </select>
   
@@ -181,7 +182,15 @@
  
   </select>
   
-  
+  <select id="awardsByComp" parameterType="int" resultType="Map">
+  select a.*,com.comName,g.groupMember,g.groupsName,g.teacher from awards a,competition com ,
+(
+select g.groupsNo as groupsNo , g.groupsName as groupsName, GROUP_CONCAT(s.studentName) AS groupMember,t.teacherName as teacher from groups g  ,student s,teacher t
+    where  g.studentNo=s.studentNo and g.teacherNo=t.teacherNo
+	GROUP BY g.groupsNo 
+
+)g where a.comId=com.comId and a.groupsNo=g.groupsNo and com.comId=33
+  </select>
   
   
   

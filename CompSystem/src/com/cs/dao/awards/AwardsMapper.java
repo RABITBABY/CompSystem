@@ -28,7 +28,9 @@ public interface AwardsMapper {
     int getTotal(Map map);
     int updatePubState(Map map);
     List<Map> analysisAwards(Map map);
-    List<Map> unPubAward();
+    List<Map> unPubAward(String department);
+    
+    List<Map> awardsByComp(int compId);
     
     
 }

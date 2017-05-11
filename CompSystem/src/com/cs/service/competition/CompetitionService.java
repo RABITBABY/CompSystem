@@ -16,5 +16,5 @@ public interface CompetitionService {
 	    List<Competition> afterToday();
 	List<Map> analysisComp(Map map);
 	
-	List<Map> unPubCom();
+	List<Map> unPubCom(String department);
 }

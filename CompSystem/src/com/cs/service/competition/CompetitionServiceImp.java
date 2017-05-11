@@ -77,9 +77,9 @@ private CompetitionMapper compeMapper;
 
 
 	@Override
-	public List<Map> unPubCom() {
+	public List<Map> unPubCom(String department) {
 		List<Map > list=new ArrayList<Map>();
-		list=compeMapper.unPubCom();
+		list=compeMapper.unPubCom(department);
 		return list;
 	}
 

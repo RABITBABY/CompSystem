@@ -10,5 +10,6 @@ import com.cs.util.PageInfo;
 public interface AwardsService {
 	PageInfo getAwardsList(Map map);
 	List<Map> analysisAwards(Map map);
-	List<Map> unPubAward();
+	List<Map> unPubAward(String department);
+	 List<Map> awardsByComp(int compId);
 }

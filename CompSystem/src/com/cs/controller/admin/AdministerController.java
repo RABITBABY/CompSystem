@@ -22,6 +22,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.cs.pojo.Article;
+import com.cs.pojo.Awards;
 import com.cs.pojo.FileUpload;
 import com.cs.pojo.Model;
 import com.cs.pojo.Production;
@@ -673,17 +674,26 @@ public class AdministerController {
 	 */
 	@ResponseBody
 	@RequestMapping("/unPub")
-	public List unPub(String type){
+	public List unPub(String type,HttpServletRequest request){
 		type=ParamUtil.getStr(type, "");
 		List list=new ArrayList<Map>();
 		System.out.println(type+"===");
+		Map userInfo =(Map)request.getSession().getAttribute("loginInfo");
+		String department="";
+		 if(userInfo!=null){
+			 department=userInfo.get("department").toString();
+				if(department!=null && !"".equals(department)){
+					
+					
+				}
+		 }
 		if("1".equals(type)){
 			//竞赛
 			System.out.println(type+"----");
-			list=compeService.unPubCom();
+			list=compeService.unPubCom(department);
 		}else if("2".equals(type)){
 			//获奖情况
-			list=awardsService.unPubAward();
+			list=awardsService.unPubAward(department);
 		}
 		return list;
 		
@@ -752,6 +762,21 @@ public class AdministerController {
 	public int deleteModel(int mid){
 		int row=modelService.delectModel(mid);
 		return row;
+	}
+	
+	/**
+	 * 
+	 * @param mid
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/awardsByComp")
+	public List awardsByComp(int compId){
+		List<Map> resuList=new ArrayList<Map>();
+		
+		resuList =awardsService.awardsByComp(compId);
+		
+		return resuList;
 	}
 	
 }
