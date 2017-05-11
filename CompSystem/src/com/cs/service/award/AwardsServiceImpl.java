@@ -52,7 +52,7 @@ public class AwardsServiceImpl implements AwardsService{
 			competition=compMapper.selectByPrimaryKey(compid);
 			awardsist=awardsMapper.awardsByComp(compid);
 			compAwardMap.put("competition", competition);
-			compAwardMap.put("awardsist", awardsist);
+			compAwardMap.put("awardsList", awardsist);
 			resultList.add(compAwardMap);
 		}
 		//拼接成一个Map
