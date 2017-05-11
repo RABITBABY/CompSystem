@@ -20,4 +20,6 @@ public interface ConditionsMapper {
     int updateByPrimaryKeySelective(Conditions record);
 
     int updateByPrimaryKey(Conditions record);
+    
+    List<Conditions> getConditionsByType(Integer type);
 }
