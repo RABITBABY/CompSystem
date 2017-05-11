@@ -1026,7 +1026,7 @@ module.exports = "<md-nav-list>\r\n  <h3 md-subheader>已报名竞赛列表</h3>
 /***/ 1247:
 /***/ (function(module, exports) {
 
-module.exports = "<md-card *ngFor=\"let group of groups\">\r\n  <md-card-header>\r\n    <md-card-title>\r\n      <h4><strong>竞赛名称</strong>:{{group.comp.comname}}</h4>\r\n    </md-card-title>\r\n  </md-card-header>\r\n  <md-card-content>\r\n    <p><strong>队伍</strong>:{{group.captainGroup.groupsname}}</p>\r\n    <p><strong>队长</strong>:{{group.captainGroup.studentno}} - {{group.captainStudent.studentname}}</p>\r\n    <strong>组员</strong>(上限:{{ group.comp.groupnum }}人):\r\n    <p *ngFor=\"let item of group.groupList\" style=\"display: flex;flex-direction: row;\">\r\n      {{ item.studentno }} - {{ item.student.studentname }}\r\n      <span style=\"flex: 1 1 auto\"></span>\r\n      <span *ngIf=\"(student.studentno == group.captainStudent.studentno) && (item.captainstatus !=1) && (student.studentno != item.studentno)\">\r\n        <button md-button color=\"primary\" (click)=\"pass(item,1)\" [disabled]=\"group.memberCount>=group.comp.groupnum\">准许</button>\r\n        <button md-button color=\"warn\" (click)=\"pass(item,0)\">拒绝</button>\r\n      </span>\r\n    </p>\r\n    <!-- <md-chip-list>\r\n    <md-chip *ngFor=\"let member of group.members\">{{ member.studentname }}</md-chip>\r\n  </md-chip-list> -->\r\n    <!-- <span style=\"flex: 1 1 auto\"></span> -->\r\n    <!-- <button md-icon-button  (click)=\"toggleGroup(item)\">\r\n      <md-icon *ngIf=\"item.groupToggle\">keyboard_arrow_down</md-icon>\r\n      <md-icon *ngIf=\"!item.groupToggle\">keyboard_arrow_up</md-icon>\r\n    </button> -->\r\n  </md-card-content>\r\n</md-card>\r\n"
+module.exports = "<md-card *ngFor=\"let group of groups\">\r\n  <md-card-header>\r\n    <md-card-title>\r\n      <h4><strong>竞赛名称</strong>:{{group.comp.comname}}</h4>\r\n    </md-card-title>\r\n  </md-card-header>\r\n  <md-card-content>\r\n    <p><strong>队伍</strong>:{{group.captainGroup.groupsname}}</p>\r\n    <p><strong>队长</strong>:{{group.captainGroup.studentno}} - {{group.captainStudent.studentname}}</p>\r\n    <strong>组员</strong>(上限:{{ group.comp.groupnum }}人):\r\n    <p *ngFor=\"let item of group.groupList\" style=\"display: flex;flex-direction: row;\">\r\n      {{ item.studentno }} - {{ item.student.studentname }}\r\n      <span style=\"flex: 1 1 auto\"></span>\r\n      <span *ngIf=\"(student.studentno == group.captainStudent.studentno) && (item.captainstatus !=1) && (student.studentno != item.studentno)\">\r\n        <button md-button color=\"primary\" (click)=\"pass(item,1)\" [disabled]=\"group.memberCount>=group.comp.groupnum\">准许</button>\r\n        <button md-button color=\"warn\" (click)=\"pass(item,0)\">拒绝</button>\r\n      </span>\r\n    </p>\r\n    <!-- <md-chip-list>\r\n    <md-chip *ngFor=\"let member of group.members\">{{ member.studentname }}</md-chip>\r\n  </md-chip-list> -->\r\n    <!-- <span style=\"flex: 1 1 auto\"></span> -->\r\n    <!-- <button md-icon-button  (click)=\"toggleGroup(item)\">\r\n      <md-icon *ngIf=\"item.groupToggle\">keyboard_arrow_down</md-icon>\r\n      <md-icon *ngIf=\"!item.groupToggle\">keyboard_arrow_up</md-icon>\r\n    </button> -->\r\n  </md-card-content>\r\n  <md-card-actions *ngIf=\"student.studentno != group.captainStudent.studentno\">\r\n    <button md-button (click)=\"cancel(group)\">取消报名</button>\r\n  </md-card-actions>\r\n</md-card>\r\n"
 
 /***/ }),
 
@@ -2082,6 +2082,15 @@ var StudentGroupComponent = (function () {
         this.http = http;
         this.loginService = loginService;
     }
+    StudentGroupComponent.prototype.cancel = function (group) {
+        var _this = this;
+        var v = group.groupList.find(function (e) { return _this.student.studentno == e.studentno; });
+        this.http.get("http://localhost:8080/CompSystem/student/outGroup" + "?id=" + v.id)
+            .subscribe(function () {
+            _this.getGroups();
+            alert("取消成功!");
+        });
+    };
     StudentGroupComponent.prototype.pass = function (group, pass) {
         var _this = this;
         this.http.get("http://localhost:8080/CompSystem/student/setCaptainStatus" + "?captainstatus=" + pass + "&id=" + group.id)
