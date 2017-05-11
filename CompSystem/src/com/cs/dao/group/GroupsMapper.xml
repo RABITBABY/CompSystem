@@ -57,7 +57,7 @@
 	from groups g
 	left JOIN student s
 	on g.studentNo =s.studentNo
-	where g.groupsNo=#{groupsNo,jdbcType=INTEGER}
+	where g.groupsNo=#{groupsNo,jdbcType=INTEGER} and g.captainStatus!=-1
   </select>
   <!-- 查找最大的groupsNo -->
   <select id="selectMaxGroupsNo"  resultType="java.lang.Integer">
