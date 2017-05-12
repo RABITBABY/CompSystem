@@ -290,12 +290,16 @@ public class AdministerController {
 	
 	@ResponseBody
 	@RequestMapping("/articleByCompId")
-	public Map articleByCompId(String compId) {
+	public Map articleByCompId(String compId,String type) {
 		Map result=new HashMap<String ,Object>();
 		int compid=Integer.parseInt(ParamUtil.getStr(compId, "0"));
+		int articleType=Integer.parseInt(ParamUtil.getStr(type, "1"));
+		Map param=new HashMap<String ,Object>();
+		param.put("compId", compid);
+		param.put("type", articleType);
 		if(compid>0){
 			//获取这个compId的包含article的Map
-			result=articleService.getArticleByComp(compid);
+			result=articleService.getArticleByComp(param);
 		}
 		return result;
 	}

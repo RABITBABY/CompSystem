@@ -57,9 +57,11 @@ public class IndexController {
 	public Map getArticleByComp(int compId){
 		int stateCode=0;
 		Map result=new HashMap<String,Object>();
+		Map param=new HashMap<String,Object>();
 		//判断是否发布了文章
-		
-		Map map=articlService.getArticleByComp(compId);
+		param.put("compId", compId);
+		param.put("type", 1);
+		Map map=articlService.getArticleByComp(param);
 		if(map!=null){
 			stateCode=1;
 			result=map;

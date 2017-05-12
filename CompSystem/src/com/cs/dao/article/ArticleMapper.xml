@@ -104,7 +104,7 @@
 		ar,administer ad,competition comp
 		where ar.pubuserno=ad.adminno 
 		and comp.comId=ar.relationId
-		and relationId=#{compId} and articleType=1
+		and relationId=#{compId} and articleType=#{type}
 	</select>
 
 </mapper>
