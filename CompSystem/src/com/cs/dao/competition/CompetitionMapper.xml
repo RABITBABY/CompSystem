@@ -58,6 +58,7 @@
     where depSpStatus = #{depspstatus,jdbcType=INTEGER} and
      teaSpStatus = #{teaspstatus,jdbcType=INTEGER}  and
      (teacherNo=#{teacherno,jdbcType=INTEGER} or leaderNo=#{teacherno,jdbcType=INTEGER})
+     and saveStatus=1
   </select>
   
   <!-- 查看以及比赛结束的竞赛-->
@@ -71,7 +72,7 @@
    <select id="selectNowComp" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
     SELECT * from competition where    CURDATE()= time
     and (teacherNo= #{teacherNo,jdbcType=INTEGER} or leaderNo= #{teacherNo,jdbcType=INTEGER})
-    and teaSpStatus=1 and depSpStatus=1
+    and teaSpStatus=1 and depSpStatus=1 and saveStatus=1
   </select>
   
    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.cs.pojo.Competition" >
@@ -535,11 +536,11 @@
   		select c.* from competition c
 		left join teacher t
 		on c.department=t.department
-		where t.teacherNo=#{teacherNo} and depSpStatus=0
+		where t.teacherNo=#{teacherNo} and depSpStatus=0 and saveStatus=1
 	</select>
    <select id="examTeaComp" resultType="com.cs.pojo.Competition"  parameterType="int" >
   		select * from competition 
-        where depSpStatus=1 and teaSpStatus=0
+        where depSpStatus=1 and teaSpStatus=0 and saveStatus=1
 	</select>
   
   <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Competition" >
