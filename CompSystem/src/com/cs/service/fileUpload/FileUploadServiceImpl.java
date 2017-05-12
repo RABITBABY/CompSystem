@@ -41,7 +41,10 @@ public class FileUploadServiceImpl implements FileUploadService {
 		Map param=new HashMap<String , Object>();
 		param.put("page", page);
 		param.put("pageSize", pageSize);
-		param.put("adminNo", map.get("adminNo").toString());
+		if(map.get("adminNo")!=null){
+			
+			param.put("adminNo", map.get("adminNo").toString());
+		}
 		List<Map> list=mapper.allFile(param);
 		int totalPage=0;
 		if(list.size()>0){
@@ -58,4 +61,5 @@ public class FileUploadServiceImpl implements FileUploadService {
 		return pageInfo;
 	}
 
+	
 }
