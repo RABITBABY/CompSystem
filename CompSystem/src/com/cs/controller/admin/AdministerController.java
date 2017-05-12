@@ -604,6 +604,8 @@ public class AdministerController {
 					param.put("adminNo",adminNo);
 					pageinfo=fileUploadService.allFile(param);
 				}
+		 }else{
+			 System.out.println("session丢失");
 		 }
 		
 		 result.put("filePage", pageinfo);
