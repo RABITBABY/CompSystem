@@ -100,11 +100,11 @@
 	</select>
 	
 	<select id="getArticleByComp" parameterType="int" resultType="Map">
-	select ar.* ,ad.adminName adminName from article
+	select ar.* ,ad.adminName adminName ,comp.comName as name ,comp.comId as id from article
 		ar,administer ad,competition comp
 		where ar.pubuserno=ad.adminno 
 		and comp.comId=ar.relationId
-		and relationId=#{compId} and articleType=1
+		and relationId=#{compId} and articleType=#{type}
 	</select>
 
 </mapper>

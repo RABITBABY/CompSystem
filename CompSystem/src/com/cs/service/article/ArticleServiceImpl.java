@@ -273,11 +273,13 @@ public List getHotArticle() {
 }
 
 @Override
-public Map getArticleByComp(int compId) {
+public Map getArticleByComp(Map map) {
 	Map result =new HashMap<String ,Object>();
-	result=articleMapper.getArticleByComp(compId);
+	result=articleMapper.getArticleByComp(map);
 	
 	return result;
 }
+
+
 
 }
