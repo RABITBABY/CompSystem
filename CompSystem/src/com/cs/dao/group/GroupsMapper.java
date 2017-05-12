@@ -52,4 +52,6 @@ public interface GroupsMapper {
     int updateByPrimaryKeySelective(Groups record);
 
     int updateByPrimaryKey(Groups record);
+    //未反馈获奖的组别
+    List<Groups> selectNotAwardsGroups(Integer comId);
 }

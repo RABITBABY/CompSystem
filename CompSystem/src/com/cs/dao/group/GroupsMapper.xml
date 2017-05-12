@@ -51,6 +51,13 @@
 	) and captainStatus!=-1
   </select>
   
+  <!-- 根据comId查找还未反馈获奖的组别 -->
+  <select id="selectNotAwardsGroups" resultType="com.cs.pojo.Groups" parameterType="java.lang.Integer" >
+    SELECT * from groups 
+	where groupsNo not in (
+	SELECT groupsNo from awards where comId=#{comId,jdbcType=INTEGER}) and comId=#{comId,jdbcType=INTEGER}
+  </select>
+  
   <!-- 根据groupNo查找该组成员 -->
   <select id="selectByGroupsNo" resultType="com.cs.pojo.Student" parameterType="java.lang.Integer" >
     select s.*

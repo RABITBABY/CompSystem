@@ -99,6 +99,7 @@ public class TeacherController {
 	 * 11.获取草稿箱的审批表。√
 	 * 12.根据teacherno查找可报名的竞赛√
 	 * 13.查找该教师负责或申报的竞赛√
+	 * 14.查找comId竞赛未反馈获奖的组别√
 	 */
 
 	@Autowired
@@ -479,4 +480,15 @@ public class TeacherController {
 		return teacherService.getCompByBtnStatus(btnStatus, teacherNo);
 	}
 	
+	/**
+	 * 14.查找comId竞赛未反馈获奖的组别√
+	 * @param teacherNo
+	 * @param btnStatus
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/getNotAwardsGroups")
+	public List<Groups> getNotAwardsGroups(Integer comId) {
+		return groupsService.getNotAwardsGroups(comId);
+	}
 }

@@ -29,5 +29,11 @@ public interface GroupsService {
 	 * @param comId
 	 */
 	public List<Map<String,Object>> getGroupsAndMember(Integer comId);
+	
+	/**
+	 * 获取某个竞赛的未反馈获奖的组
+	 * @param comId
+	 */
+	public List<Groups> getNotAwardsGroups(Integer comId);
 
 }
