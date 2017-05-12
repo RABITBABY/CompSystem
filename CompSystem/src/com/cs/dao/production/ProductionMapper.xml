@@ -9,7 +9,7 @@
   </select>
   
     <select id="getTotal" resultType="int">
-  select count(*) from awards  
+  select count(*) from production  
   </select>
   
   
