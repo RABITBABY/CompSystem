@@ -245,7 +245,7 @@ public class StudentController {
 
         String fileName=new String(awards.getPrizename().getBytes("UTF-8"),"iso-8859-1");
 
-        headers.setContentDispositionFormData("attachment", fileName);   
+        headers.setContentDispositionFormData("attachment", fileName+".jpg");   
 
         headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);   
 

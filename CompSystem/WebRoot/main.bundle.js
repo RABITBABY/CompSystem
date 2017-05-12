@@ -605,7 +605,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "md-card {\r\n  float: left;\r\n  margin: 8px 8px;\r\n  max-width: 31%;\r\n}\r\n", ""]);
+exports.push([module.i, "md-card {\r\n  float: left;\r\n  margin: 8px 8px;\r\n  max-width: 31%;\r\n  max-height: 250px;\r\n  max-height: 31%;\r\n}\r\n", ""]);
 
 // exports
 
@@ -852,7 +852,7 @@ module.exports = module.exports.toString();
 /***/ 1216:
 /***/ (function(module, exports) {
 
-module.exports = "<md-toolbar color=\"primary\">\r\n\r\n  <span class=\"noselect\" routerLink=\"/\" routerLinkActive=\"active\">\r\n    <md-icon>home</md-icon>\r\n    {{title}}\r\n  </span>\r\n  <span style=\"flex: 1 1 auto\"> </span>\r\n  <button md-icon-button (click)=\"searchToggle()\">\r\n  <md-icon>search</md-icon>\r\n</button>\r\n  <form #search=\"ngForm\">\r\n    <md-select *ngIf=\"searchMode\" ngModel name=\"type\" placeholder=\"文章类型\" (change)=\"getSearchArticles(search.value)\">\r\n      <md-option *ngFor=\"let item of articleTypes\" [value]=\"item.id\">\r\n        {{item.name}}\r\n      </md-option>\r\n    </md-select>\r\n    <md-input-container *ngIf=\"searchMode\">\r\n      <input mdInput ngModel name=\"word\" placeholder=\"搜索\" (change)=\"getSearchArticles(search.value)\" />\r\n    </md-input-container>\r\n  </form>\r\n  <!-- This fills the remaining space of the current row -->\r\n  <span style=\"flex: 1 1 auto\"> </span>\r\n  <app-login>Loading LoginComponent ...</app-login>\r\n\r\n</md-toolbar>\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<md-toolbar color=\"primary\">\r\n\r\n  <span class=\"noselect\" routerLink=\"/\" routerLinkActive=\"active\">\r\n    <button md-icon-button>\r\n    <md-icon>home</md-icon>\r\n  </button>\r\n    {{title}}\r\n  </span>\r\n  <span style=\"flex: 1 1 auto\"> </span>\r\n  <button md-icon-button (click)=\"searchToggle()\">\r\n  <md-icon>search</md-icon>\r\n</button>\r\n  <form #search=\"ngForm\">\r\n    <md-select *ngIf=\"searchMode\" ngModel name=\"type\" placeholder=\"文章类型\" (change)=\"getSearchArticles(search.value)\">\r\n      <md-option *ngFor=\"let item of articleTypes\" [value]=\"item.id\">\r\n        {{item.name}}\r\n      </md-option>\r\n    </md-select>\r\n    <md-input-container *ngIf=\"searchMode\">\r\n      <input mdInput ngModel name=\"word\" placeholder=\"搜索\" autocomplete=\"off\" (change)=\"getSearchArticles(search.value)\" />\r\n    </md-input-container>\r\n  </form>\r\n  <!-- This fills the remaining space of the current row -->\r\n  <span style=\"flex: 1 1 auto\"> </span>\r\n  <app-login>Loading LoginComponent ...</app-login>\r\n\r\n</md-toolbar>\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -880,14 +880,14 @@ module.exports = "<!-- <md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn
 /***/ 1220:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn\">编辑文章功能尚未添加</md-chip>\r\n</md-chip-list> -->\r\n<md-tab-group>\r\n  <md-tab *ngFor=\"let ARTICLETYPE of ARTICLETYPES\">\r\n    <template md-tab-label>{{ARTICLETYPE.name}}</template>\r\n    <md-list *ngIf=\"ARTICLETYPE.id === 1\">\r\n      <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeOnes;let i of index\">\r\n        {{article.title}}\r\n        <span style=\"flex: 1 1 auto\"> </span>\r\n        <md-icon>date_range</md-icon>{{article.pubDate}}\r\n        <md-icon>person</md-icon>{{article.adminName}}\r\n        <button md-button class=\"edit\" [routerLink]=\"['edit', article.articleId]\">编辑</button>\r\n        <button md-button class=\"delete\" (click)=\"delete(article)\">删除</button>\r\n      </md-list-item>\r\n    </md-list>\r\n    <md-nav-list *ngIf=\"ARTICLETYPE.id === 2\">\r\n      <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeTwos;let i of index\">\r\n        {{article.title}}\r\n        <span style=\"flex: 1 1 auto\"> </span>\r\n        <md-icon>date_range</md-icon>{{article.pubDate}}\r\n        <md-icon>person</md-icon>{{article.adminName}}\r\n        <button md-button class=\"edit\" [routerLink]=\"['edit', article.articleId]\">编辑</button>\r\n        <button md-button class=\"delete\" (click)=\"delete(article)\">删除</button>\r\n      </md-list-item>\r\n    </md-nav-list>\r\n    <md-nav-list *ngIf=\"ARTICLETYPE.id === 3\">\r\n      <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeThrees;let i of index\">\r\n        {{article.title}}\r\n        <span style=\"flex: 1 1 auto\"> </span>\r\n        <md-icon>date_range</md-icon>{{article.pubDate}}\r\n        <md-icon>person</md-icon>{{article.adminName}}\r\n        <button md-button class=\"edit\" [routerLink]=\"['edit', article.articleId]\">编辑</button>\r\n        <button md-button class=\"delete\" (click)=\"delete(article)\">删除</button>\r\n      </md-list-item>\r\n    </md-nav-list>\r\n  </md-tab>\r\n</md-tab-group>\r\n\r\n<div class=\"fixed-action-btn\">\r\n  <a class=\"btn-floating btn-large waves-effect waves-light red\" routerLink=\"edit\" routerLinkActive=\"active\">\r\n    <i class=\"large material-icons\">mode_edit</i>\r\n  </a>\r\n</div>\r\n"
+module.exports = "<md-tab-group>\r\n  <md-tab *ngFor=\"let ARTICLETYPE of ARTICLETYPES\">\r\n    <template md-tab-label>{{ARTICLETYPE.name}}</template>\r\n    <md-list *ngIf=\"articles[ARTICLETYPE.id]\">\r\n      <md-list-item [routerLink]=\"['/article/detail', article.articleId]\" *ngFor=\"let article of articles[ARTICLETYPE.id].list\">\r\n        {{article.title}}\r\n        <span style=\"flex: 1 1 auto\"> </span>\r\n        <md-icon>date_range</md-icon>{{article.pubDate}}\r\n        <md-icon>person</md-icon>{{article.adminName}}\r\n        <div *ngIf=\"role == 'admin'\">\r\n          <button md-button class=\"edit\" [routerLink]=\"['edit', article.articleId]\">编辑</button>\r\n          <button md-button class=\"delete\" (click)=\"delete(article)\">删除</button>\r\n        </div>\r\n      </md-list-item>\r\n      <md-list-item>\r\n        <span style=\"flex: 1 1 auto\"></span>\r\n        <button (click)=\"getArticlesByType(ARTICLETYPE.id, articles[ARTICLETYPE.id].index - 1)\" md-icon-button [disabled]=\"articles[ARTICLETYPE.id].index==1\">\r\n          <md-icon>navigate_before</md-icon>\r\n        </button>\r\n\r\n        <button (click)=\"getArticlesByType(ARTICLETYPE.id, i)\" md-button *ngFor=\"let item of arr(articles[ARTICLETYPE.id].total).fill(1);let i = index\" [disabled]=\"articles[ARTICLETYPE.id].index == (i+1)\">\r\n          {{i+1}}\r\n        </button>\r\n\r\n        <button (click)=\"getArticlesByType(ARTICLETYPE.id, articles[ARTICLETYPE.id].index + 1)\" md-icon-button [disabled]=\"articles[ARTICLETYPE.id].index==articles[ARTICLETYPE.id].total\">\r\n          <md-icon>navigate_next</md-icon>\r\n        </button>\r\n        <span style=\"flex: 1 1 auto\"></span>\r\n      </md-list-item>\r\n    </md-list>\r\n  </md-tab>\r\n</md-tab-group>\r\n\r\n<div class=\"fixed-action-btn\" *ngIf=\"role == 'admin'\">\r\n  <a class=\"btn-floating btn-large waves-effect waves-light red\" routerLink=\"edit\" routerLinkActive=\"active\">\r\n    <i class=\"large material-icons\">mode_edit</i>\r\n  </a>\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ 1221:
 /***/ (function(module, exports) {
 
-module.exports = "<md-list *ngIf=\"articlePageInfo\">\r\n  <h3 md-subheader>文章列表</h3>\r\n  <md-list-item [routerLink]=\"['/article/detail', item.articleId]\" *ngFor=\"let item of articlePageInfo.list\">\r\n    <h4>{{item.title}}</h4>\r\n    <span style=\"flex: 1 1 auto\"></span>\r\n    <span><md-icon mdTooltip=\"访问量\" style=\"margin-left: 24px\">pageview</md-icon>{{item.visitCount}}</span>\r\n      <span><md-icon mdTooltip=\"发布者\" style=\"margin-left: 24px\">person</md-icon>{{item.adminName}}</span>\r\n    <span><md-icon mdTooltip=\"发布日期\">date_range</md-icon>{{item.pubDate | date:'yyyy年MM月dd日'}}</span>\r\n  </md-list-item>\r\n  <md-list-item>\r\n    <span style=\"flex:1 1 auto\"></span>\r\n    <button (click)=\"reSearch(articlePageInfo.index - 1)\" md-icon-button [disabled]=\"articlePageInfo.index==1\">\r\n      <md-icon>navigate_before</md-icon>\r\n    </button>\r\n\r\n    <button (click)=\"reSearch(i)\" md-button *ngFor=\"let item of arr(articlePageInfo.total).fill(1);let i of index\" [disabled]=\"articlePageInfo.index == i\">\r\n      {{i}}\r\n    </button>\r\n\r\n    <button (click)=\"reSearch(articlePageInfo.index + 1)\" md-icon-button [disabled]=\"articlePageInfo.index==articlePageInfo.total\">\r\n      <md-icon>navigate_next</md-icon>\r\n    </button>\r\n    <span style=\"flex:1 1 auto\"></span>\r\n  </md-list-item>\r\n</md-list>\r\n"
+module.exports = "<md-list *ngIf=\"articlePageInfo\">\r\n  <h3 md-subheader>文章列表</h3>\r\n  <md-list-item [routerLink]=\"['/article/detail', item.articleId]\" *ngFor=\"let item of articlePageInfo.list\">\r\n    <h4>{{item.title}}</h4>\r\n    <span style=\"flex: 1 1 auto\"></span>\r\n    <span><md-icon mdTooltip=\"访问量\" style=\"margin-left: 24px\">pageview</md-icon>{{item.visitCount}}</span>\r\n      <span><md-icon mdTooltip=\"发布者\" style=\"margin-left: 24px\">person</md-icon>{{item.adminName}}</span>\r\n    <span><md-icon mdTooltip=\"发布日期\">date_range</md-icon>{{item.pubDate | date:'yyyy年MM月dd日'}}</span>\r\n  </md-list-item>\r\n  <md-list-item>\r\n    <span style=\"flex:1 1 auto\"></span>\r\n    <button (click)=\"reSearch(articlePageInfo.index - 1)\" md-icon-button [disabled]=\"articlePageInfo.index==1\">\r\n      <md-icon>navigate_before</md-icon>\r\n    </button>\r\n\r\n    <button (click)=\"reSearch(i)\" md-button *ngFor=\"let item of arr(articlePageInfo.total).fill(1);let i = index\" [disabled]=\"articlePageInfo.index == (i+1)\">\r\n      {{i+1}}\r\n    </button>\r\n\r\n    <button (click)=\"reSearch(articlePageInfo.index + 1)\" md-icon-button [disabled]=\"articlePageInfo.index==articlePageInfo.total\">\r\n      <md-icon>navigate_next</md-icon>\r\n    </button>\r\n    <span style=\"flex:1 1 auto\"></span>\r\n  </md-list-item>\r\n</md-list>\r\n"
 
 /***/ }),
 
@@ -915,7 +915,7 @@ module.exports = "<p>\r\n  award works!\r\n</p>\r\n"
 /***/ 1225:
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"row\" fxLayout.xs=\"column\">\r\n<md-card *ngIf=\"analysisComps\" fxFlex=\"50\">\r\n  <md-card-content style=\"height: 400px\">\r\n    <ngx-charts-bar-vertical\r\n      *ngIf=\"chartType === 'bar-vertical'\"\r\n      [scheme]=\"colorScheme\"\r\n      [results]=\"analysisComps\"\r\n      [xAxis]=\"showXAxis\"\r\n      [yAxis]=\"'竞赛数量'\"\r\n      [legend]=\"showLegend\"\r\n      [showXAxisLabel]=\"showXAxisLabel\"\r\n      [showYAxisLabel]=\"showYAxisLabel\"\r\n      [xAxisLabel]=\"xAxisLabel\"\r\n      [yAxisLabel]=\"yAxisLabel\"\r\n      (select)=\"select($event)\">\r\n    </ngx-charts-bar-vertical>\r\n  </md-card-content>\r\n</md-card>\r\n<md-card *ngIf=\"analysisAwars\" fxFlex=\"50\">\r\n  <md-card-actions>\r\n    <md-select placeholder=\"图表类型\" [(ngModel)]=\"chartType\" name=\"chartType\">\r\n      <md-option *ngFor=\"let CHARTYPE of CHARTTYPES\" [value]=\"CHARTYPE.value\">\r\n        {{CHARTYPE.name}}\r\n      </md-option>\r\n    </md-select>\r\n  </md-card-actions>\r\n  <md-card-content style=\"height: 400px\">\r\n    <ngx-charts-bar-vertical\r\n      *ngIf=\"chartType === 'bar-vertical'\"\r\n      [scheme]=\"colorScheme\"\r\n      [results]=\"analysisAwars\"\r\n      [xAxis]=\"showXAxis\"\r\n      [yAxis]=\"showYAxis\"\r\n      [legend]=\"showLegend\"\r\n      [showXAxisLabel]=\"showXAxisLabel\"\r\n      [showYAxisLabel]=\"showYAxisLabel\"\r\n      [xAxisLabel]=\"xAxisLabel\"\r\n      [yAxisLabel]=\"yAxisLabel\"\r\n      (select)=\"select($event)\">\r\n    </ngx-charts-bar-vertical>\r\n    <ngx-charts-advanced-pie-chart\r\n      *ngIf=\"chartType === 'advanced-pie-chart'\"\r\n      [scheme]=\"colorScheme\"\r\n      [results]=\"analysisAwars\"\r\n      (select)=\"select($event)\">\r\n    </ngx-charts-advanced-pie-chart>\r\n  </md-card-content>\r\n</md-card>\r\n</div>\r\n"
+module.exports = "<div fxLayout=\"row\" fxLayout.xs=\"column\" fxLayout.sm=\"column\">\r\n<md-card *ngIf=\"analysisComps\" fxFlex=\"50\">\r\n  <md-card-content style=\"height: 400px\">\r\n    <ngx-charts-bar-vertical\r\n      *ngIf=\"chartType === 'bar-vertical'\"\r\n      [scheme]=\"colorScheme\"\r\n      [results]=\"analysisComps\"\r\n      [xAxis]=\"showXAxis\"\r\n      [yAxis]=\"showYAxis\"\r\n      [legend]=\"showLegend\"\r\n      [showXAxisLabel]=\"showXAxisLabel\"\r\n      [showYAxisLabel]=\"showYAxisLabel\"\r\n      [xAxisLabel]=\"xAxisLabel\"\r\n      [yAxisLabel]=\"'竞赛数量'\"\r\n      (select)=\"select($event)\">\r\n    </ngx-charts-bar-vertical>\r\n  </md-card-content>\r\n</md-card>\r\n<md-card *ngIf=\"analysisAwars\" fxFlex=\"50\">\r\n  <md-card-actions>\r\n    <md-select placeholder=\"图表类型\" [(ngModel)]=\"chartType\" name=\"chartType\">\r\n      <md-option *ngFor=\"let CHARTYPE of CHARTTYPES\" [value]=\"CHARTYPE.value\">\r\n        {{CHARTYPE.name}}\r\n      </md-option>\r\n    </md-select>\r\n  </md-card-actions>\r\n  <md-card-content style=\"height: 400px\">\r\n    <ngx-charts-bar-vertical\r\n      *ngIf=\"chartType === 'bar-vertical'\"\r\n      [scheme]=\"colorScheme\"\r\n      [results]=\"analysisAwars\"\r\n      [xAxis]=\"showXAxis\"\r\n      [yAxis]=\"showYAxis\"\r\n      [legend]=\"showLegend\"\r\n      [showXAxisLabel]=\"showXAxisLabel\"\r\n      [showYAxisLabel]=\"showYAxisLabel\"\r\n      [xAxisLabel]=\"xAxisLabel\"\r\n      [yAxisLabel]=\"yAxisLabel\"\r\n      (select)=\"select($event)\">\r\n    </ngx-charts-bar-vertical>\r\n    <ngx-charts-advanced-pie-chart\r\n      *ngIf=\"chartType === 'advanced-pie-chart'\"\r\n      [scheme]=\"colorScheme\"\r\n      [results]=\"analysisAwars\"\r\n      (select)=\"select($event)\">\r\n    </ngx-charts-advanced-pie-chart>\r\n  </md-card-content>\r\n</md-card>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -957,7 +957,7 @@ module.exports = "<router-outlet></router-outlet>\r\n"
 /***/ 1231:
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"declaration\">\r\n  <h1>广州商学院学科竞赛项目</h1>\r\n  <h2>申&emsp;报&emsp;书</h2>\r\n  <p>竞赛名称: {{ declaration.comname }}</p>\r\n  <p *ngIf=\"leader\">竞赛负责人: {{ leader.teachername }}</p>\r\n  <p>所在单位(盖章): {{ declaration.department }}</p>\r\n  <p>竞赛类别: {{ declaration.levelname }}</p>\r\n  <p *ngIf=\"leader\">联系电话: {{ leader.phone }}</p>\r\n  <p *ngIf=\"leader\">电子邮箱: {{ leader.email }}</p>\r\n  <p>填表日期: {{ declaration.date }}</p>\r\n  <!-- <p>广州商学院教学处制</p> -->\r\n  <table>\r\n    <tr>\r\n      <td rowspan=\"7\">竞赛情况</td>\r\n      <th>竞赛名称</th>\r\n      <td colspan=\"3\">{{ declaration.comname }}\r\n    </tr>\r\n    <tr>\r\n      <th>竞赛负责人</th>\r\n      <td *ngIf=\"leader\">{{ leader.teachername }}</td>\r\n      <th>联系电话</th>\r\n      <td *ngIf=\"leader\">{{ leader.phone }}</td>\r\n    </tr>\r\n    <tr>\r\n      <th>竞赛类别</th>\r\n      <td colspan=\"3\">{{ declaration.levelname }}</td>\r\n    </tr>\r\n    <tr>\r\n      <th>院级以上竞赛举办者</th>\r\n      <td colspan=\"3\">{{ declaration.host }}</td>\r\n    </tr>\r\n    <tr>\r\n      <th>竞赛时间</th>\r\n      <td>{{ declaration.time }}</td>\r\n      <th>竞赛地点</th>\r\n      <td>{{ declaration.place }}</td>\r\n    </tr>\r\n    <tr>\r\n      <th>参赛对象</th>\r\n      <td>{{ declaration.object }}</td>\r\n      <th>人数</th>\r\n      <td>{{ declaration.people }}</td>\r\n    </tr>\r\n    <tr>\r\n      <th>校外资助单位</th>\r\n      <td colspan=\"3\">{{ declaration.sponsor }}</td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">竞赛简介</td>\r\n      <td colspan=\"4\">{{ declaration.introduce }}</td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"2\">指导教师</td>\r\n      <th>姓名</th>\r\n      <th>职称</th>\r\n      <th>职务</th>\r\n      <th>专业</th>\r\n    </tr>\r\n    <tr *ngFor=\"let item of teachers\">\r\n      <td>{{ item.teachername }}</td>\r\n      <td>{{ item.title }}</td>\r\n      <td>{{ item.post }}</td>\r\n      <td>{{ item.subject }}</td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">学科竞赛实施方案</td>\r\n      <td colspan=\"4\">\r\n        <div class=\"textArea\">\r\n          <p>{{ declaration.plan }}</p>\r\n        </div>\r\n        <p>附:培训工作安排表</p>\r\n        <table>\r\n          <tr>\r\n            <th>教师姓名</th>\r\n            <th>培训内容</th>\r\n            <th>培训地点</th>\r\n            <th>培训日期</th>\r\n            <th>学时</th>\r\n          </tr>\r\n          <tr *ngFor=\"let item of schedules\">\r\n            <td>{{ item.teacherno }}</td>\r\n            <td>{{ item.content }}</td>\r\n            <td>{{ item.position }}</td>\r\n            <td>{{ item.date }}</td>\r\n            <td>{{ item.hours }}</td>\r\n          </tr>\r\n        </table>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">能力训练目标</td>\r\n      <td colspan=\"4\">\r\n        <div class=\"textArea\">\r\n          <p>{{ declaration.tgoal }}</p>\r\n        </div>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">竞赛获奖目标</td>\r\n      <td colspan=\"4\">\r\n        <div class=\"textArea\">\r\n          <p>{{ declaration.wgoal }}</p>\r\n        </div>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">经费预算</td>\r\n      <td colspan=\"4\">\r\n        <table>\r\n          <tr>\r\n            <td rowspan=\"2 + budgets.length\">经费预算</td>\r\n            <td>支出科目</td>\r\n            <td>金额（元）</td>\r\n            <td>计算依据及理由</td>\r\n          </tr>\r\n          <tr *ngFor=\"let item of budgets\">\r\n            <td>{{ item.subject }}</td>\r\n            <td>{{ item.sum }}</td>\r\n            <td>{{ item.reasons }}</td>\r\n          </tr>\r\n          <tr>\r\n            <td rowspan=\"1\">合计</td>\r\n            <td colspan=\"2\">{{ budgets.length }} 个支出科目</td>\r\n            <td>{{ hoursSum }}</td>\r\n          </tr>\r\n        </table>\r\n        <table>\r\n          <tr>\r\n            <td rowspan=\"2 + hours.length\">课时预算</td>\r\n            <td>课时类别</td>\r\n            <td>课时数（学时）</td>\r\n            <td>备注</td>\r\n          </tr>\r\n          <tr *ngFor=\"let item of hours\">\r\n            <td>{{ item.type }}</td>\r\n            <td>{{ item.hours }}</td>\r\n            <td>{{ item.remarks }}</td>\r\n          </tr>\r\n          <tr>\r\n            <td rowspan=\"1\">合计</td>\r\n            <td colspan=\"2\">{{ hours.length }} 个课程</td>\r\n            <td>{{ hoursSum }}</td>\r\n          </tr>\r\n          <tr>\r\n            <td rowspan=\"1\">总计</td>\r\n            <td colspan=\"3\">{{budgets.length + hours.length}} 个经费科目</td>\r\n          </tr>\r\n        </table>\r\n        <!-- <md-grid-list cols=\"4\">\r\n          <md-grid-tile [rowspan]=\"budgets.length + 1\" [style.background]=\"'lightgreen'\">经费预算</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">支出科目</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">金额（元）</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">计算依据及理由</md-grid-tile>\r\n          <div *ngFor=\"let item of budgets\">\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.subject }}</md-grid-tile>\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.sum }}</md-grid-tile>\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.reasons }}</md-grid-tile>\r\n          </div>\r\n          <md-grid-tile>合计</md-grid-tile>\r\n          <md-grid-tile>{{budgets.length}} 个支出科目</md-grid-tile>\r\n          <md-grid-tile>{{hoursSum}}（元）</md-grid-tile>\r\n          <md-grid-tile></md-grid-tile>\r\n          <md-grid-tile [rowspan]=\"hours.length + 1\" [style.background]=\"'lightgreen'\">课时预算</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">课时类别</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">课时数（学时）</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">备注</md-grid-tile>\r\n          <div *ngFor=\"let item of hours\">\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.type }}</md-grid-tile>\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.hours }}</md-grid-tile>\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.remarks }}</md-grid-tile>\r\n          </div>\r\n          <md-grid-tile>合计</md-grid-tile>\r\n          <md-grid-tile>{{hours.length}} 个课程</md-grid-tile>\r\n          <md-grid-tile>{{hoursSum}}（学时）</md-grid-tile>\r\n          <md-grid-tile></md-grid-tile>\r\n          <md-grid-tile>总计</md-grid-tile>\r\n          <md-grid-tile>{{budgets.length + hours.length}} 个经费科目</md-grid-tile>\r\n          <md-grid-tile></md-grid-tile>\r\n          <md-grid-tile></md-grid-tile>\r\n        </md-grid-list> -->\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">竞赛组织实施单位意见</td>\r\n      <td colspan=\"4\">\r\n        <div class=\"textArea\">\r\n          <p>{{ declaration.uopinion }}</p>\r\n        </div>\r\n          <p>{{ declaration.dsdate }}</p>\r\n          <p>{{ declaration.dsign }}</p>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">教学处意见</td>\r\n      <td colspan=\"4\">\r\n        <div class=\"textArea\">\r\n          <p>{{ declaration.tdopinion }}</p>\r\n        </div>\r\n          <p>{{ declaration.olsdate }}</p>\r\n          <p>{{ declaration.olsign }}</p>\r\n      </td>\r\n    </tr>\r\n  </table>\r\n  <button md-button (click)=\"export(declaration)\">导出文档</button>\r\n</div>\r\n"
+module.exports = "<div *ngIf=\"declaration\">\r\n  <h1>广州商学院学科竞赛项目</h1>\r\n  <h2>申&emsp;报&emsp;书</h2>\r\n  <p>竞赛名称: {{ declaration.comname }}</p>\r\n  <p *ngIf=\"leader\">竞赛负责人: {{ leader.teachername }}</p>\r\n  <p>所在单位(盖章): {{ declaration.department }}</p>\r\n  <p>竞赛类别: {{ declaration.levelname }}</p>\r\n  <p *ngIf=\"leader\">联系电话: {{ leader.phone }}</p>\r\n  <p *ngIf=\"leader\">电子邮箱: {{ leader.email }}</p>\r\n  <p>填表日期: {{ declaration.date }}</p>\r\n  <!-- <p>广州商学院教学处制</p> -->\r\n  <table>\r\n    <tr>\r\n      <td rowspan=\"7\">竞赛情况</td>\r\n      <th>竞赛名称</th>\r\n      <td colspan=\"3\">{{ declaration.comname }}\r\n    </tr>\r\n    <tr>\r\n      <th>竞赛负责人</th>\r\n      <td *ngIf=\"leader\">{{ leader.teachername }}</td>\r\n      <th>联系电话</th>\r\n      <td *ngIf=\"leader\">{{ leader.phone }}</td>\r\n    </tr>\r\n    <tr>\r\n      <th>竞赛类别</th>\r\n      <td colspan=\"3\">{{ declaration.levelname }}</td>\r\n    </tr>\r\n    <tr>\r\n      <th>院级以上竞赛举办者</th>\r\n      <td colspan=\"3\">{{ declaration.host }}</td>\r\n    </tr>\r\n    <tr>\r\n      <th>竞赛时间</th>\r\n      <td>{{ declaration.time }}</td>\r\n      <th>竞赛地点</th>\r\n      <td>{{ declaration.place }}</td>\r\n    </tr>\r\n    <tr>\r\n      <th>参赛对象</th>\r\n      <td>{{ declaration.object }}</td>\r\n      <th>人数</th>\r\n      <td>{{ declaration.people }}</td>\r\n    </tr>\r\n    <tr>\r\n      <th>校外资助单位</th>\r\n      <td colspan=\"3\">{{ declaration.sponsor }}</td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">竞赛简介</td>\r\n      <td colspan=\"4\">{{ declaration.introduce }}</td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"2\">指导教师</td>\r\n      <th>姓名</th>\r\n      <th>职称</th>\r\n      <th>职务</th>\r\n      <th>专业</th>\r\n    </tr>\r\n    <tr *ngFor=\"let item of teachers\">\r\n      <td>{{ item.teachername }}</td>\r\n      <td>{{ item.title }}</td>\r\n      <td>{{ item.post }}</td>\r\n      <td>{{ item.subject }}</td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">学科竞赛实施方案</td>\r\n      <td colspan=\"4\">\r\n        <div class=\"textArea\">\r\n          <p>{{ declaration.plan }}</p>\r\n        </div>\r\n        <p>附:培训工作安排表</p>\r\n        <table>\r\n          <tr>\r\n            <th>教师姓名</th>\r\n            <th>培训内容</th>\r\n            <th>培训地点</th>\r\n            <th>培训日期</th>\r\n            <th>学时</th>\r\n          </tr>\r\n          <tr *ngFor=\"let item of schedules\">\r\n            <td>{{ item.teacherno }}</td>\r\n            <td>{{ item.content }}</td>\r\n            <td>{{ item.position }}</td>\r\n            <td>{{ item.date }}</td>\r\n            <td>{{ item.hours }}</td>\r\n          </tr>\r\n        </table>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">能力训练目标</td>\r\n      <td colspan=\"4\">\r\n        <div class=\"textArea\">\r\n          <p>{{ declaration.tgoal }}</p>\r\n        </div>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">竞赛获奖目标</td>\r\n      <td colspan=\"4\">\r\n        <div class=\"textArea\">\r\n          <p>{{ declaration.wgoal }}</p>\r\n        </div>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">经费预算</td>\r\n      <td colspan=\"4\">\r\n        <table>\r\n          <tr>\r\n            <td rowspan=\"2 + budgets.length\">经费预算</td>\r\n            <td>支出科目</td>\r\n            <td>金额（元）</td>\r\n            <td>计算依据及理由</td>\r\n          </tr>\r\n          <tr *ngFor=\"let item of budgets\">\r\n            <td>{{ item.subject }}</td>\r\n            <td>{{ item.sum }}</td>\r\n            <td>{{ item.reasons }}</td>\r\n          </tr>\r\n          <tr>\r\n            <td rowspan=\"1\">合计</td>\r\n            <td colspan=\"2\">{{ budgets.length }} 个支出科目</td>\r\n            <td>{{ hoursSum }}</td>\r\n          </tr>\r\n        </table>\r\n        <table>\r\n          <tr>\r\n            <td rowspan=\"2 + hours.length\">课时预算</td>\r\n            <td>课时类别</td>\r\n            <td>课时数（学时）</td>\r\n            <td>备注</td>\r\n          </tr>\r\n          <tr *ngFor=\"let item of hours\">\r\n            <td>{{ item.type }}</td>\r\n            <td>{{ item.hours }}</td>\r\n            <td>{{ item.remarks }}</td>\r\n          </tr>\r\n          <tr>\r\n            <td rowspan=\"1\">合计</td>\r\n            <td colspan=\"2\">{{ hours.length }} 个课程</td>\r\n            <td>{{ hoursSum }}</td>\r\n          </tr>\r\n          <tr>\r\n            <td rowspan=\"1\">总计</td>\r\n            <td colspan=\"3\">{{budgets.length + hours.length}} 个经费科目</td>\r\n          </tr>\r\n        </table>\r\n        <!-- <md-grid-list cols=\"4\">\r\n          <md-grid-tile [rowspan]=\"budgets.length + 1\" [style.background]=\"'lightgreen'\">经费预算</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">支出科目</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">金额（元）</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">计算依据及理由</md-grid-tile>\r\n          <div *ngFor=\"let item of budgets\">\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.subject }}</md-grid-tile>\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.sum }}</md-grid-tile>\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.reasons }}</md-grid-tile>\r\n          </div>\r\n          <md-grid-tile>合计</md-grid-tile>\r\n          <md-grid-tile>{{budgets.length}} 个支出科目</md-grid-tile>\r\n          <md-grid-tile>{{hoursSum}}（元）</md-grid-tile>\r\n          <md-grid-tile></md-grid-tile>\r\n          <md-grid-tile [rowspan]=\"hours.length + 1\" [style.background]=\"'lightgreen'\">课时预算</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">课时类别</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">课时数（学时）</md-grid-tile>\r\n          <md-grid-tile [style.background]=\"'#DDBDF1'\">备注</md-grid-tile>\r\n          <div *ngFor=\"let item of hours\">\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.type }}</md-grid-tile>\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.hours }}</md-grid-tile>\r\n            <md-grid-tile [style.background]=\"'lightblue'\">{{ item.remarks }}</md-grid-tile>\r\n          </div>\r\n          <md-grid-tile>合计</md-grid-tile>\r\n          <md-grid-tile>{{hours.length}} 个课程</md-grid-tile>\r\n          <md-grid-tile>{{hoursSum}}（学时）</md-grid-tile>\r\n          <md-grid-tile></md-grid-tile>\r\n          <md-grid-tile>总计</md-grid-tile>\r\n          <md-grid-tile>{{budgets.length + hours.length}} 个经费科目</md-grid-tile>\r\n          <md-grid-tile></md-grid-tile>\r\n          <md-grid-tile></md-grid-tile>\r\n        </md-grid-list> -->\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">竞赛组织实施单位意见</td>\r\n      <td colspan=\"4\">\r\n        <div class=\"textArea\">\r\n          <p>{{ declaration.uopinion }}</p>\r\n        </div>\r\n          <p>{{ declaration.dsdate }}</p>\r\n          <p>{{ declaration.dsign }}</p>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td rowspan=\"1\">教学处意见</td>\r\n      <td colspan=\"4\">\r\n        <div class=\"textArea\">\r\n          <p>{{ declaration.tdopinion }}</p>\r\n        </div>\r\n          <p>{{ declaration.olsdate }}</p>\r\n          <p>{{ declaration.olsign }}</p>\r\n      </td>\r\n    </tr>\r\n  </table>\r\n  <button md-button style=\"width: 100%\" (click)=\"export(declaration)\">导出文档</button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -992,14 +992,14 @@ module.exports = "<h1>{{title}}</h1>\r\n<!-- <md-icon color=\"warn\">stop</md-ic
 /***/ 1236:
 /***/ (function(module, exports) {
 
-module.exports = "<md-list>\r\n  <md-list-item *ngFor=\"let item of approComps\">\r\n    {{item.comname}}\r\n    <span style=\"flex: 1 1 auto\"></span>\r\n    <button md-button [routerLink]=\"['/contest/detail', item.comid]\">详情</button>\r\n    <button md-button (click)=\"openDialog(item)\">审批</button>\r\n  </md-list-item>\r\n</md-list>\r\n"
+module.exports = "<md-list>\r\n  <md-list-item *ngFor=\"let item of approComps\">\r\n    {{item.comname}}\r\n    <span style=\"flex: 1 1 auto\"></span>\r\n    <button md-button [routerLink]=\"['/teacher/declaration/detail', item.comid]\">详情</button>\r\n    <button md-button (click)=\"openDialog(item)\">审批</button>\r\n  </md-list-item>\r\n</md-list>\r\n"
 
 /***/ }),
 
 /***/ 1237:
 /***/ (function(module, exports) {
 
-module.exports = "<form #examiner=\"ngForm\">\r\n  <md-input-container>\r\n    <textarea mdInput ngModel name=\"opinion\"  cols=\"6\" placeholder=\"审批意见\"></textarea>\r\n  </md-input-container>\r\n  <md-input-container>\r\n    <input mdInput ngModel name=\"pass\" hidden=\"hidden\"/>\r\n  </md-input-container>\r\n  <button md-button (click)=\"examiner.value.pass = 1;setComp(examiner.value);dialogRef.close(comp)\">通过</button>\r\n  <button md-button (click)=\"examiner.value.pass = 0;setComp(examiner.value);dialogRef.close(comp)\">不通过</button>\r\n</form>\r\n"
+module.exports = "<form #examiner=\"ngForm\">\r\n  <table>\r\n    <tr>\r\n      <td colspan=\"2\">\r\n        <md-input-container style=\"width:100;min-height:70px\">\r\n          <textarea mdInput ngModel name=\"opinion\" cols=\"6\" placeholder=\"审批意见\"></textarea>\r\n        </md-input-container>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td colspan=\"2\">\r\n        <md-input-container>\r\n          <input mdInput ngModel name=\"pass\" hidden=\"hidden\" />\r\n        </md-input-container>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td>\r\n        <button md-button (click)=\"examiner.value.pass = 1;setComp(examiner.value);dialogRef.close(comp)\">通过</button>\r\n      </td>\r\n      <td>\r\n        <button md-button (click)=\"examiner.value.pass = 0;setComp(examiner.value);dialogRef.close(comp)\">不通过</button>\r\n      </td>\r\n    </tr>\r\n  </table>\r\n</form>\r\n"
 
 /***/ }),
 
@@ -1013,7 +1013,7 @@ module.exports = "<md-list>\r\n  <h3 md-subheader>文件列表</h3>\r\n</md-list
 /***/ 1239:
 /***/ (function(module, exports) {
 
-module.exports = "<section fxLayout=\"row\" fxLayout.xs=\"column\">\r\n  <md-card fxFlex=\"60\">\r\n    <md-list>\r\n      <h3 md-subheader>文章列表</h3>\r\n    </md-list>\r\n    <md-card-content>\r\n      <md-tab-group>\r\n        <md-tab *ngFor=\"let articleType of articleTypes\">\r\n          <template md-tab-label>{{articleType.name}}</template>\r\n          <md-nav-list *ngIf=\"articleType.id === 1\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeOnes\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n          <md-nav-list *ngIf=\"articleType.id === 2\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeTwos\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n          <md-nav-list *ngIf=\"articleType.id === 3\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeThrees\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n        </md-tab>\r\n      </md-tab-group>\r\n    </md-card-content>\r\n  </md-card>\r\n\r\n  <md-card fxFlex=\"40\" fxLayout.xs=\"column\">\r\n    <md-card-content style=\"width: 100%\">\r\n      <md-list>\r\n        <h3 md-subheader>最近竞赛</h3>\r\n      </md-list>\r\n      <md-card style=\"width: 100%\" *ngFor=\"let contest of contests | contestTimelineFilter\" [ngStyle]=\"{'background-color': setColor(contest) }\">\r\n        <md-card-content id=\"contest\">\r\n          {{contest.comname}}\r\n          <span style=\"flex: 1 1 auto\"> </span>\r\n          <!-- <button md-button (click)=\"apply(contest)\">报名入口</button> -->\r\n          <md-icon>date_range</md-icon>{{contest.time}}\r\n        </md-card-content>\r\n      </md-card>\r\n    </md-card-content>\r\n  </md-card>\r\n</section>\r\n<section fxLayout=\"row\" fxLayout.xs=\"column\">\r\n  <app-works fxFlex=\"80\">Loading</app-works>\r\n  <app-files fxFlex=\"20\">Loading</app-files>\r\n</section>\r\n<section>\r\n  <app-chart>Loading ChartComponent...</app-chart>\r\n</section>\r\n"
+module.exports = "<section fxLayout=\"row\" fxLayout.md=\"row\" fxLayout.xs=\"column\" fxLayout.sm=\"column\">\r\n  <md-card fxFlex=\"60\">\r\n    <md-list style=\"display:flex\">\r\n      <h3 md-subheader>文章列表</h3>\r\n      <span style=\"flex: 1 1 auto\"></span>\r\n      <button md-button [routerLink]=\"['/article']\">更多</button>\r\n    </md-list>\r\n    <md-card-content>\r\n      <md-tab-group>\r\n        <md-tab *ngFor=\"let articleType of articleTypes\">\r\n          <template md-tab-label>{{articleType.name}}</template>\r\n          <md-nav-list *ngIf=\"articleType.id === 1\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeOnes\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n          <md-nav-list *ngIf=\"articleType.id === 2\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeTwos\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n          <md-nav-list *ngIf=\"articleType.id === 3\">\r\n            <md-list-item [routerLink]=\"['article/detail', article.articleId]\" *ngFor=\"let article of articleTypeThrees\">\r\n              {{article.title}}\r\n              <span style=\"flex: 1 1 auto\"> </span>\r\n              <md-icon>date_range</md-icon>{{article.pubDate}}\r\n            </md-list-item>\r\n          </md-nav-list>\r\n        </md-tab>\r\n      </md-tab-group>\r\n    </md-card-content>\r\n  </md-card>\r\n\r\n  <md-card fxFlex=\"40\" fxLayout.xs=\"column\">\r\n    <md-card-content style=\"width: 100%\">\r\n      <md-list>\r\n        <h3 md-subheader>最近竞赛</h3>\r\n      </md-list>\r\n      <md-card style=\"width: 100%\" *ngFor=\"let contest of contests | contestTimelineFilter\" [ngStyle]=\"{'background-color': setColor(contest) }\">\r\n        <md-card-content id=\"contest\">\r\n          {{contest.comname}}\r\n          <span style=\"flex: 1 1 auto\"> </span>\r\n          <!-- <button md-button (click)=\"apply(contest)\">报名入口</button> -->\r\n          <md-icon>date_range</md-icon>{{contest.time}}\r\n        </md-card-content>\r\n      </md-card>\r\n    </md-card-content>\r\n  </md-card>\r\n</section>\r\n<section fxLayout=\"row\"fxLayout.xs=\"column\" fxLayout.sm=\"column\">\r\n  <app-works fxFlex=\"80\">Loading</app-works>\r\n  <app-files fxFlex=\"20\">Loading</app-files>\r\n</section>\r\n<section>\r\n  <app-chart>Loading ChartComponent...</app-chart>\r\n</section>\r\n"
 
 /***/ }),
 
@@ -1041,7 +1041,7 @@ module.exports = "<p>\n  notification works!\n</p>\n"
 /***/ 1243:
 /***/ (function(module, exports) {
 
-module.exports = "<md-tab-group>\r\n  <md-tab>\r\n    <template md-tab-label>尚未发布的竞赛</template>\r\n    <md-card *ngFor=\"let contest of unContests\">\r\n      <md-card-content style=\"display: flex;flex-direction:row\">\r\n        <span><strong>竞赛名称</strong>:{{contest.comName}}</span>\r\n        <span style=\"flex: 1 1 auto\"></span>\r\n        <span *ngIf=\"contest.teacher\" style=\"margin-right: 32px\">负责人:{{contest.teacher.teachername}}</span>\r\n        <button md-button [routerLink]=\"['/admin/article/publish', contest.comId]\">发布</button>\r\n        <button md-icon-button *ngIf=\"!contest.detailToggle\" mdTooltip=\"收起详情\" (click)=\"detailToggle(contest)\">\r\n            <md-icon>keyboard_arrow_down</md-icon>\r\n          </button>\r\n        <button md-icon-button *ngIf=\"contest.detailToggle\" mdTooltip=\"展开详情\" (click)=\"detailToggle(contest)\">\r\n            <md-icon>keyboard_arrow_up</md-icon>\r\n          </button>\r\n      </md-card-content>\r\n      <md-card-content *ngIf=\"contest.detailToggle\">\r\n        <md-list>\r\n          <h3 md-subheader>详细信息</h3>\r\n        </md-list>\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\r\n          <span>主办系别:{{contest.unit}}</span>\r\n          <span>竞赛等级:{{contest.levelName}}</span>\r\n          <span>竞赛地点:{{contest.place}}</span>\r\n        </div>\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\r\n          <span>竞赛时间:{{contest.time | date:'yyyy年MM月dd日'}}</span>\r\n          <span>报名时间:{{contest.applyBeginDate | date:'yyyy年MM月dd日'}} - {{contest.applyEndDate | date:'yyyy年MM月dd日'}}</span>\r\n        </div>\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\r\n          <span>参赛对象:{{contest.object}}</span>\r\n          <span>报名费用:{{contest.cost}}</span>\r\n        </div>\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\r\n          <span>是否组队:{{contest.isNeedGroup}}</span>\r\n          <span>组队人数:{{contest.groupNum}}</span>\r\n        </div>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n  <md-tab>\r\n    <template md-tab-label>尚未发布的获奖情况</template>\r\n    <md-card *ngFor=\"let unAward of unAwards\">\r\n      <md-card-content style=\"display: flex;flex-direction:row\">\r\n        <span><strong>竞赛名称</strong>:{{unAward.competition.comname}}</span>\r\n        <span style=\"flex: 1 1 auto\"></span>\r\n        <button md-button [routerLink]=\"['/admin/article/push', unAward.competition.comid]\">发布</button>\r\n        <button md-icon-button *ngIf=\"!unAward.detailToggle\" mdTooltip=\"收起详情\" (click)=\"detailToggle(unAward)\">\r\n            <md-icon>keyboard_arrow_down</md-icon>\r\n          </button>\r\n        <button md-icon-button *ngIf=\"unAward.detailToggle\" mdTooltip=\"展开详情\" (click)=\"detailToggle(unAward)\">\r\n            <md-icon>keyboard_arrow_up</md-icon>\r\n          </button>\r\n      </md-card-content>\r\n      <md-card-content *ngIf=\"unAward.detailToggle\">\r\n        <md-list>\r\n          <h3 md-subheader>获奖详情</h3>\r\n          <md-list-item *ngFor=\"let item of unAward.awardsList\">\r\n            <p md-line>\r\n              <span><strong>队伍名</strong>:{{item.groupsName}}</span>\r\n              <span style=\"margin-left:32px\"><strong>队员</strong>:{{item.groupMember}}</span>\r\n            </p>\r\n            <p md-line>\r\n              <span><strong>奖项</strong>:{{item.prizeName}}</span>\r\n              <span style=\"margin-left:32px\"><strong>获奖时间</strong>:{{item.awardTime | date:'yyyy年MM月dd日'}}</span>\r\n            </p>\r\n          </md-list-item>\r\n        </md-list>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n</md-tab-group>\r\n"
+module.exports = "<md-tab-group>\r\n  <md-tab>\r\n    <template md-tab-label>可报名竞赛</template>\r\n    <md-card *ngFor=\"let contest of unContests\">\r\n      <md-card-content style=\"display: flex;flex-direction:row\">\r\n        <span><strong>竞赛名称</strong>:{{contest.comName}}</span>\r\n        <span style=\"flex: 1 1 auto\"></span>\r\n        <span *ngIf=\"contest.teacher\" style=\"margin-right: 32px\">负责人:{{contest.teacher.teachername}}</span>\r\n        <button *ngIf=\"contest.isPublish!=1\" md-button [routerLink]=\"['/admin/article/publish', contest.comId]\">发布</button>\r\n        <button *ngIf=\"contest.isPublish==1\" md-button [routerLink]=\"['/admin/article/publish', contest.comId]\">编辑</button>\r\n        <button md-icon-button *ngIf=\"!contest.detailToggle\" mdTooltip=\"收起详情\" (click)=\"detailToggle(contest)\">\r\n            <md-icon>keyboard_arrow_down</md-icon>\r\n          </button>\r\n        <button md-icon-button *ngIf=\"contest.detailToggle\" mdTooltip=\"展开详情\" (click)=\"detailToggle(contest)\">\r\n            <md-icon>keyboard_arrow_up</md-icon>\r\n          </button>\r\n      </md-card-content>\r\n      <md-card-content *ngIf=\"contest.detailToggle\">\r\n        <md-list>\r\n          <h3 md-subheader>详细信息</h3>\r\n        </md-list>\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\r\n          <span>主办系别:{{contest.unit}}</span>\r\n          <span>竞赛等级:{{contest.levelName}}</span>\r\n          <span>竞赛地点:{{contest.place}}</span>\r\n        </div>\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\r\n          <span>竞赛时间:{{contest.time | date:'yyyy年MM月dd日'}}</span>\r\n          <span>报名时间:{{contest.applyBeginDate | date:'yyyy年MM月dd日'}} - {{contest.applyEndDate | date:'yyyy年MM月dd日'}}</span>\r\n        </div>\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\r\n          <span>参赛对象:{{contest.object}}</span>\r\n          <span>报名费用:{{contest.cost}}</span>\r\n        </div>\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\r\n          <span>是否组队:{{contest.isNeedGroup}}</span>\r\n          <span>组队人数:{{contest.groupNum}}</span>\r\n        </div>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n  <md-tab>\r\n    <template md-tab-label>近期获奖</template>\r\n    <md-card *ngFor=\"let unAward of unAwards\">\r\n      <md-card-content style=\"display: flex;flex-direction:row\">\r\n        <span><strong>竞赛名称</strong>:{{unAward.competition.comname}}</span>\r\n        <span style=\"flex: 1 1 auto\"></span>\r\n        <button md-button [routerLink]=\"['/admin/article/push', unAward.competition.comid]\">发布</button>\r\n        <button md-icon-button *ngIf=\"!unAward.detailToggle\" mdTooltip=\"收起详情\" (click)=\"detailToggle(unAward)\">\r\n            <md-icon>keyboard_arrow_down</md-icon>\r\n          </button>\r\n        <button md-icon-button *ngIf=\"unAward.detailToggle\" mdTooltip=\"展开详情\" (click)=\"detailToggle(unAward)\">\r\n            <md-icon>keyboard_arrow_up</md-icon>\r\n          </button>\r\n      </md-card-content>\r\n      <md-card-content *ngIf=\"unAward.detailToggle\">\r\n        <md-list>\r\n          <h3 md-subheader>获奖详情</h3>\r\n          <md-list-item *ngFor=\"let item of unAward.awardsList\">\r\n            <p md-line>\r\n              <span><strong>队伍名</strong>:{{item.groupsName}}</span>\r\n              <span style=\"margin-left:32px\"><strong>队员</strong>:{{item.groupMember}}</span>\r\n            </p>\r\n            <p md-line>\r\n              <span><strong>奖项</strong>:{{item.prizeName}}</span>\r\n              <span style=\"margin-left:32px\"><strong>获奖时间</strong>:{{item.awardTime | date:'yyyy年MM月dd日'}}</span>\r\n            </p>\r\n          </md-list-item>\r\n        </md-list>\r\n      </md-card-content>\r\n    </md-card>\r\n  </md-tab>\r\n</md-tab-group>\r\n"
 
 /***/ }),
 
@@ -1069,7 +1069,7 @@ module.exports = "<!-- <md-chip-list>\n<md-chip selected=\"true\" color=\"warn\"
 /***/ 1247:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn\">更新作品功能尚未添加</md-chip>\r\n</md-chip-list> -->\r\n<button md-button style=\"width: 100%\" (click)=\"openDialog()\">上传作品</button>\r\n<md-card *ngFor=\"let item of works;let i of index\">\r\n  <img md-card-image alt=\"图片\" src={{item.pic}}>\r\n  <md-card-content>\r\n    <p><strong>作品名称</strong>:{{item.proname}}</p>\r\n    <p><strong>奖项</strong>:{{item.award}}</p>\r\n    <p><strong>获奖者</strong>:{{item.membersname}}</p>\r\n    <p><strong>作品介绍</strong>:{{item.introduction}}</p>\r\n  </md-card-content>\r\n  <md-card-actions>\r\n    <button md-button (click)=\"openDialog(item)\">编辑</button>\r\n    <button md-button (click)=\"delete(item)\">删除</button>\r\n  </md-card-actions>\r\n</md-card>\r\n"
+module.exports = "<button *ngIf=\"role == 'admin'\" md-button style=\"width: 100%\" (click)=\"openDialog()\">上传作品</button>\r\n<section fxLayout=\"row\" fxLayout.xs=\"column\" fxLayoutAlign=\"start start\">\r\n  <md-card *ngFor=\"let item of works;let i of index\" fxFlex=\"25\" fxLayout.md=\"33\" fxLayout.sm=\"50\" fxLayout.xs=\"100\">\r\n    <img md-card-image alt=\"图片\" src={{item.pic}}>\r\n    <md-card-content>\r\n      <p><strong>作品名称</strong>:{{item.proname}}</p>\r\n      <p><strong>奖项</strong>:{{item.award}}</p>\r\n      <p><strong>获奖者</strong>:{{item.membersname}}</p>\r\n      <p><strong>作品介绍</strong>:{{item.introduction}}</p>\r\n    </md-card-content>\r\n    <md-card-actions *ngIf=\"role == 'admin'\">\r\n      <button md-button (click)=\"openDialog(item)\">编辑</button>\r\n      <button md-button (click)=\"delete(item)\">删除</button>\r\n    </md-card-actions>\r\n  </md-card>\r\n</section>\r\n"
 
 /***/ }),
 
@@ -1083,7 +1083,7 @@ module.exports = "<form #workF=\"ngForm\">\r\n  <md-input-container style=\"widt
 /***/ 1249:
 /***/ (function(module, exports) {
 
-module.exports = "<md-nav-list>\r\n  <h3 md-subheader>已报名竞赛列表</h3>\r\n  <!-- <md-divider></md-divider> -->\r\n  <!-- <h3 md-subheader>可报名竞赛列表</h3> -->\r\n  <!-- <md-list-item *ngFor=\"let contest of contests\">\r\n      {{contest.comName}}\r\n    </md-list-item> -->\r\n</md-nav-list>\r\n<div *ngIf=\"appliedContests\">\r\n  <md-card *ngFor=\"let appliedContest of appliedContests\">\r\n    <md-card-content style=\"display:flex;flex-direction:row\">\r\n      {{appliedContest.comp.comname}}\r\n      <span style=\"flex:1 1 auto\"></span>\r\n      <button md-icon-button mdTooltip=\"展开队伍\" *ngIf=\"!appliedContest.groupToggle\" (click)=\"groupToggle(appliedContest)\">\r\n      <md-icon>keyboard_arrow_down</md-icon>\r\n    </button>\r\n      <button md-icon-button mdTooltip=\"收起队伍\" *ngIf=\"appliedContest.groupToggle\" (click)=\"groupToggle(appliedContest)\">\r\n      <md-icon>keyboard_arrow_up</md-icon>\r\n    </button>\r\n    </md-card-content>\r\n    <md-card-content *ngIf=\"appliedContest.groupToggle\">\r\n      <md-list>\r\n        <h3 md-subheader>队伍详情</h3>\r\n      </md-list>\r\n      <div>\r\n        <span><strong>队伍名</strong>:{{appliedContest.groupList[0].groupsname}}</span>\r\n        <span *ngIf=\"appliedContest.student\">\r\n          <strong>队长</strong>:{{appliedContest.student.studentname}}\r\n        </span>\r\n      </div>\r\n\r\n      <div *ngIf=\"appliedContest.group\">\r\n        <strong>队员:</strong>\r\n        <div *ngFor=\"let group of appliedContest.groupList\" style=\"display:flex;flex-direction:row\">\r\n          {{group.student.studentname}}\r\n          <span style=\"flex:1 1 autuo\"></span>\r\n          <!-- 如果是 本人=队长 && 本人!=该队员 -->\r\n          <div *ngIf=\"student.studentno == appliedContest.group.studentno && student.studentno != group.student.studentno\">\r\n            <button md-button>准许</button>\r\n            <button md-button>拒绝</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n"
+module.exports = "<md-nav-list>\r\n  <h3 md-subheader>已报名竞赛列表</h3>\r\n  <!-- <md-divider></md-divider> -->\r\n  <!-- <h3 md-subheader>可报名竞赛列表</h3> -->\r\n  <!-- <md-list-item *ngFor=\"let contest of contests\">\r\n      {{contest.comName}}\r\n    </md-list-item> -->\r\n</md-nav-list>\r\n<div *ngIf=\"appliedContests\">\r\n  <md-card *ngFor=\"let appliedContest of appliedContests\">\r\n    <md-card-content style=\"display:flex;flex-direction:row\">\r\n      {{appliedContest.comp.comname}}\r\n      <span style=\"flex:1 1 auto\"></span>\r\n      <button md-icon-button mdTooltip=\"展开队伍\" *ngIf=\"!appliedContest.groupToggle\" (click)=\"groupToggle(appliedContest)\">\r\n      <md-icon>keyboard_arrow_down</md-icon>\r\n    </button>\r\n      <button md-icon-button mdTooltip=\"收起队伍\" *ngIf=\"appliedContest.groupToggle\" (click)=\"groupToggle(appliedContest)\">\r\n      <md-icon>keyboard_arrow_up</md-icon>\r\n    </button>\r\n    </md-card-content>\r\n    <md-card-content *ngIf=\"appliedContest.groupToggle\">\r\n      <md-list>\r\n        <h3 md-subheader>队伍详情</h3>\r\n      </md-list>\r\n      <div>\r\n        <span><strong>队伍名</strong>:{{appliedContest.groupList[0].groupsname}}</span>\r\n        <span *ngIf=\"appliedContest.student\">\r\n          <strong>队长</strong>:{{appliedContest.student.studentname}}\r\n        </span>\r\n      </div>\r\n\r\n      <div *ngIf=\"appliedContest.group\">\r\n        <strong>队员:</strong>\r\n        <div *ngFor=\"let group of appliedContest.groupList\" style=\"display:flex;flex-direction:row\">\r\n          {{group.student.studentname}}\r\n          <span style=\"flex:1 1 autuo\"></span>\r\n          <!-- 如果是 本人=队长 && 本人!=该队员 -->\r\n          <div *ngIf=\"student.studentno == appliedContest.group.studentno && student.studentno != group.student.studentno\">\r\n            <button md-button (click)=\"pass(item,1)\">准许</button>\r\n            <button md-button (click)=\"pass(item,0)\">拒绝</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1118,7 +1118,7 @@ module.exports = "<p>\n  student-message works!\n</p>\n"
 /***/ 1254:
 /***/ (function(module, exports) {
 
-module.exports = "<md-select style=\"width: 100%;margin-top: 20px\" placeholder=\"筛选内容\" [(ngModel)]=\"show\" (change)=\"getDeclarations()\">\r\n  <md-option *ngFor=\"let item of filterContent\" [value]=\"item.value\">\r\n    {{item.name}}\r\n  </md-option>\r\n</md-select>\r\n<md-card *ngFor=\"let declaration of declarations;let i of index\">\r\n  <md-card-content>\r\n    <span>{{declaration.comname}}</span>\r\n    <span style=\"flex: 1 1 auto\"></span>\r\n    <md-chip-list style=\"display: inline-block\">\r\n      <md-chip color=\"accent\" selected=\"true\" *ngIf=\"declaration.depspstatus===0 || declaration.teaspstatus===0\">待审批</md-chip>\r\n    </md-chip-list>\r\n    <button md-icon-button *ngIf=\"!declaration.groupToggle\" mdTooltip=\"展开队伍详情\" (click)=\"toggleGroup(declaration)\">\r\n      <md-icon>keyboard_arrow_down</md-icon>\r\n    </button>\r\n    <button md-icon-button *ngIf=\"declaration.groupToggle\" mdTooltip=\"收起队伍详情\" (click)=\"toggleGroup(declaration)\">\r\n    <md-icon>keyboard_arrow_up</md-icon>\r\n  </button>\r\n    <button md-button color=\"primary\" [routerLink]=\"['../declaration/detail', declaration.comid]\">详情</button>\r\n    <button md-button [disabled]=\"declaration.depspstatus!=1 || declaration.teaspstatus!=1\">修改</button>\r\n    <!-- <button md-button [disabled]=\"declaration.depspstatus!=1 || declaration.teaspstatus!=1\" color=\"warn\" (click)=\"delete(declaration)\">删除</button> -->\r\n    <md-icon>date_range</md-icon>{{declaration.time}}\r\n  </md-card-content>\r\n  <md-card-content *ngIf=\"declaration.groupToggle\">\r\n    <span *ngIf=\"!declaration.groups\">暂无参赛队伍</span>\r\n    <md-list style=\"width: 100%\">\r\n      <h3 md-subheader *ngIf=\"declaration.groups\">所有参赛队伍(暂)</h3>\r\n      <md-card *ngFor=\"let group of declaration.groups\">\r\n        <md-card-content>\r\n          <strong>队伍名</strong>:{{ group.group.groupsname }}\r\n          <md-chip-list>\r\n            <md-chip *ngFor=\"let member of group.members\">{{member.studentno}} - {{member.studentname}}</md-chip>\r\n          </md-chip-list>\r\n          <span style=\"flex: 1 1 auto\"></span>\r\n          <button md-button color=\"primary\" *ngIf=\"group.group.status === 0\" (click)=\"pass(group.group,1)\">批准</button>\r\n          <button md-button color=\"warn\" *ngIf=\"group.group.status === 0\" (click)=\"pass(group.group,-1)\">不批准</button>\r\n        </md-card-content>\r\n      </md-card>\r\n    </md-list>\r\n  </md-card-content>\r\n</md-card>\r\n"
+module.exports = "<md-select style=\"width: 100%;margin-top: 20px\" placeholder=\"筛选内容\" [(ngModel)]=\"show\" (change)=\"getDeclarations()\">\r\n  <md-option *ngFor=\"let item of filterContent\" [value]=\"item.value\">\r\n    {{item.name}}\r\n  </md-option>\r\n</md-select>\r\n<md-card *ngFor=\"let declaration of declarations;let i of index\">\r\n  <md-card-content>\r\n    <span>{{declaration.comname}}</span>\r\n    <span style=\"flex: 1 1 auto\"></span>\r\n    <md-chip-list style=\"display: inline-block\">\r\n      <md-chip color=\"accent\" selected=\"true\" *ngIf=\"declaration.depspstatus===0 || declaration.teaspstatus===0\">待审批</md-chip>\r\n    </md-chip-list>\r\n    <button md-icon-button *ngIf=\"!declaration.groupToggle\" mdTooltip=\"展开队伍详情\" (click)=\"toggleGroup(declaration)\">\r\n      <md-icon>keyboard_arrow_down</md-icon>\r\n    </button>\r\n    <button md-icon-button *ngIf=\"declaration.groupToggle\" mdTooltip=\"收起队伍详情\" (click)=\"toggleGroup(declaration)\">\r\n    <md-icon>keyboard_arrow_up</md-icon>\r\n  </button>\r\n    <button md-button color=\"primary\" [routerLink]=\"['/teacher/declaration/detail', declaration.comid]\">详情</button>\r\n    <button md-button [disabled]=\"declaration.depspstatus!=1 || declaration.teaspstatus!=1\">修改</button>\r\n    <!-- <button md-button [disabled]=\"declaration.depspstatus!=1 || declaration.teaspstatus!=1\" color=\"warn\" (click)=\"delete(declaration)\">删除</button> -->\r\n    <md-icon>date_range</md-icon>{{declaration.time}}\r\n  </md-card-content>\r\n  <md-card-content *ngIf=\"declaration.groupToggle\">\r\n    <span *ngIf=\"!declaration.groups\">暂无参赛队伍</span>\r\n    <md-list style=\"width: 100%\">\r\n      <h3 md-subheader *ngIf=\"declaration.groups\">所有参赛队伍(暂)</h3>\r\n      <md-card *ngFor=\"let group of declaration.groups\">\r\n        <md-card-content>\r\n          <strong>队伍名</strong>:{{ group.group.groupsname }}\r\n          <md-chip-list>\r\n            <md-chip *ngFor=\"let member of group.members\">{{member.studentno}} - {{member.studentname}}</md-chip>\r\n          </md-chip-list>\r\n          <span style=\"flex: 1 1 auto\"></span>\r\n          <button md-button color=\"primary\" *ngIf=\"group.group.status === 0\" (click)=\"pass(group.group,1)\">批准</button>\r\n          <button md-button color=\"warn\" *ngIf=\"group.group.status === 0\" (click)=\"pass(group.group,-1)\">不批准</button>\r\n        </md-card-content>\r\n      </md-card>\r\n    </md-list>\r\n  </md-card-content>\r\n</md-card>\r\n"
 
 /***/ }),
 
@@ -1160,7 +1160,7 @@ module.exports = "<div fxLayout=\"row\">\r\n  <md-nav-list fxFlex=\"20\">\r\n   
 /***/ 1260:
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <md-list>\r\n    <h3 md-subheader>优秀作品</h3>\r\n  </md-list>\r\n  <section fxLayout=\"row\" fxLayout.xs=\"column\">\r\n    <md-card *ngFor=\"let item of works | slice:0:4\" fxFlex=\"25\">\r\n      <img md-card-image alt=\"图片\" src={{item.pic}}>\r\n      <md-card-content>\r\n        <p><strong>作品名称</strong>:{{item.proname}}</p>\r\n        <p><strong>奖项</strong>:{{item.award}}</p>\r\n        <p><strong>获奖者</strong>:{{item.membersname}}</p>\r\n        <p><strong>作品介绍</strong>:{{item.introduction}}</p>\r\n      </md-card-content>\r\n    </md-card>\r\n    </section>\r\n</div>\r\n"
+module.exports = "<div>\r\n  <md-list style=\"display: flex\">\r\n    <h3 md-subheader>优秀作品</h3>\r\n    <span style=\"flex: 1 1 auto\"></span>\r\n      <button md-button [routerLink]=\"['/work']\">更多</button>\r\n  </md-list>\r\n  <section fxLayout=\"row\" fxLayout.xs=\"column\">\r\n    <md-card *ngFor=\"let item of works | slice:0:4\" fxFlex=\"25\">\r\n      <img md-card-image alt=\"图片\" src={{item.pic}}>\r\n      <md-card-content>\r\n        <p><strong>作品名称</strong>:{{item.proname}}</p>\r\n        <p><strong>奖项</strong>:{{item.award}}</p>\r\n        <p><strong>获奖者</strong>:{{item.membersname}}</p>\r\n        <p><strong>作品介绍</strong>:{{item.introduction}}</p>\r\n      </md-card-content>\r\n    </md-card>\r\n    </section>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1197,7 +1197,7 @@ var DEPARTMENTS = [
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(85);
@@ -1405,7 +1405,7 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContestDoneComponent; });
@@ -1543,7 +1543,7 @@ var _a, _b, _c, _d, _e, _f;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_switchMap__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_switchMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeclarationDetailComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1681,7 +1681,7 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeclarationSaveComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1733,7 +1733,7 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExaminerComponent; });
@@ -1774,7 +1774,10 @@ var ExaminerComponent = (function () {
                     url = "http://localhost:8080/CompSystem/teacher/updateCompStatusByTea";
                 }
                 _this.http.post(url, result)
-                    .subscribe(function () { return alert("审批成功!"); });
+                    .subscribe(function () {
+                    _this.getApproCompList();
+                    alert("审批成功!");
+                });
             }
             _this.dialogRef = null;
         });
@@ -1782,11 +1785,11 @@ var ExaminerComponent = (function () {
     ExaminerComponent.prototype.getApproCompList = function () {
         var _this = this;
         var url;
-        if (this.teacher.department = "教学处") {
+        if (this.teacher.department == "教学处") {
             url = "http://localhost:8080/CompSystem/teacher/getTeaComp";
         }
         else {
-            url = "http://localhost:8080/ConpSystem/teacher/getDeptComp";
+            url = "http://localhost:8080/CompSystem/teacher/getDeptComp";
         }
         this.http.get("http://localhost:8080/CompSystem/teacher/getApproCompList" + "?teacherNo=" + this.teacher.teacherno)
             .map(function (response) { return console.log("TeacherContestComponent.getApproCompList:", response.json()) || response.json(); })
@@ -1934,7 +1937,7 @@ NotificationComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminFilesComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2011,7 +2014,7 @@ var _a, _b, _c;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminMaterialComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2073,7 +2076,7 @@ var _a;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminWorksComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return WorksDialog; });
@@ -2091,13 +2094,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var AdminWorksComponent = (function () {
-    function AdminWorksComponent(dialog, http) {
+    function AdminWorksComponent(dialog, http, loginService) {
         this.dialog = dialog;
         this.http = http;
+        this.loginService = loginService;
     }
     AdminWorksComponent.prototype.getWorks = function () {
         var _this = this;
-        this.http.get("http://localhost:8080/CompSystem/admin/productionList")
+        this.http.get(this.url)
             .map(function (response) { return console.log("WorksDialog.getWorks:", response.json().produPageInfo.list) || response.json().produPageInfo.list; })
             .subscribe(function (response) { return _this.works = response; });
     };
@@ -2111,6 +2115,13 @@ var AdminWorksComponent = (function () {
         });
     };
     AdminWorksComponent.prototype.ngOnInit = function () {
+        this.role = this.loginService.getRole();
+        if (this.role == 'admin') {
+            this.url = "http://localhost:8080/CompSystem/admin/productionList";
+        }
+        else {
+            this.url = "http://localhost:8080/CompSystem/index/productionList";
+        }
         this.getWorks();
     };
     AdminWorksComponent.prototype.openDialog = function (item) {
@@ -2132,9 +2143,10 @@ AdminWorksComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-admin-works',
         template: __webpack_require__(1247),
-        styles: [__webpack_require__(1195)]
+        styles: [__webpack_require__(1195)],
+        providers: [__WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */]]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["a" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["a" /* MdDialog */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["a" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["a" /* MdDialog */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["a" /* LoginService */]) === "function" && _c || Object])
 ], AdminWorksComponent);
 
 var WorksDialog = (function () {
@@ -2184,7 +2196,7 @@ var WorksDialog = (function () {
 }());
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('fileInput'),
-    __metadata("design:type", typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _c || Object)
+    __metadata("design:type", typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _d || Object)
 ], WorksDialog.prototype, "inputEl", void 0);
 WorksDialog = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -2193,10 +2205,10 @@ WorksDialog = __decorate([
         styles: [__webpack_require__(1196)],
         providers: [__WEBPACK_IMPORTED_MODULE_3__services__["e" /* AwardService */]]
     }),
-    __metadata("design:paramtypes", [typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["b" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["b" /* MdDialogRef */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services__["e" /* AwardService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["e" /* AwardService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["b" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__["b" /* MdDialogRef */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__services__["e" /* AwardService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services__["e" /* AwardService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */]) === "function" && _g || Object])
 ], WorksDialog);
 
-var _a, _b, _c, _d, _e, _f;
+var _a, _b, _c, _d, _e, _f, _g;
 //# sourceMappingURL=admin-works.component.js.map
 
 /***/ }),
@@ -2238,7 +2250,7 @@ var _a, _b, _c, _d, _e, _f;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StudentGroupComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2323,7 +2335,7 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TeacherContestComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -3385,7 +3397,7 @@ MaterialPassPipe = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3430,7 +3442,7 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AwardService; });
@@ -3525,7 +3537,7 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(85);
@@ -3582,7 +3594,7 @@ var ContestService = (function () {
         });
     };
     ContestService.prototype.getContestHttp = function (id) {
-        return this.http.get("http://localhost:8080/CompSyste/teacher/getCompDetail" + "?comId=" + id)
+        return this.http.get("http://localhost:8080/CompSystem/teacher/getCompDetail" + "?comId=" + id)
             .map(function (response) { return console.log("ContestService.getContestHttp:", response.json()) || response.json().competition; });
     };
     ContestService.prototype.getDeclaration = function (id) {
@@ -3663,7 +3675,7 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__);
@@ -3700,11 +3712,11 @@ var LoginService = (function () {
         this.rolesUrl = "http://localhost:8080/CompSystem/getRoles";
         this.componentMethodCallSource = new __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__["Subject"]();
         this.componentMethodCalled$ = this.componentMethodCallSource.asObservable();
-        if (localStorage.getItem('currentUser') === undefined) {
+        if (sessionStorage.getItem('currentUser') === undefined) {
             this.logout();
         }
-        this.user = JSON.parse(localStorage.getItem('currentUser'));
-        this.role = JSON.parse(localStorage.getItem('currentRole'));
+        this.user = JSON.parse(sessionStorage.getItem('currentUser'));
+        this.role = JSON.parse(sessionStorage.getItem('currentRole'));
         if (this.role && this.user) {
             var form = {
                 account: "",
@@ -3756,9 +3768,9 @@ var LoginService = (function () {
             }
             else {
                 _this.user = response.json().user;
-                localStorage.setItem('currentUser', JSON.stringify(_this.user));
+                sessionStorage.setItem('currentUser', JSON.stringify(_this.user));
                 _this.role = form.role;
-                localStorage.setItem('currentRole', JSON.stringify(_this.role));
+                sessionStorage.setItem('currentRole', JSON.stringify(_this.role));
                 var title;
                 switch (_this.role) {
                     case "admin":
@@ -3789,8 +3801,8 @@ var LoginService = (function () {
     };
     LoginService.prototype.logout = function () {
         // remove user from local storage to log user out
-        localStorage.removeItem('currentUser');
-        localStorage.removeItem('currentRole');
+        sessionStorage.removeItem('currentUser');
+        sessionStorage.removeItem('currentRole');
         this.user = null;
     };
     LoginService.prototype.getUser = function () {
@@ -3837,7 +3849,7 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(85);
@@ -3929,7 +3941,7 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(85);
@@ -4003,7 +4015,7 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
@@ -4066,7 +4078,7 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__(743);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_flex_layout__ = __webpack_require__(708);
@@ -4343,6 +4355,9 @@ var appRoutes = [
                 component: __WEBPACK_IMPORTED_MODULE_8__notification__["a" /* NotificationComponent */]
             }]
     }, {
+        path: 'work',
+        component: __WEBPACK_IMPORTED_MODULE_2__user__["i" /* AdminWorksComponent */]
+    }, {
         path: 'article',
         component: __WEBPACK_IMPORTED_MODULE_3__article__["a" /* ArticleComponent */],
         children: [{
@@ -4377,7 +4392,7 @@ var routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule 
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services__ = __webpack_require__(7);
@@ -4552,7 +4567,7 @@ var _a, _b, _c, _d, _e, _f, _g, _h, _j;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_toPromise__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_toPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__ = __webpack_require__(85);
@@ -4803,9 +4818,10 @@ var _a, _b, _c, _d, _e, _f, _g;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_article_service__ = __webpack_require__(510);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__datas__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ArticleListComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4821,12 +4837,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ArticleListComponent = (function () {
-    function ArticleListComponent(articleService, router, http) {
+    function ArticleListComponent(articleService, router, http, loginService) {
         this.articleService = articleService;
         this.router = router;
         this.http = http;
-        this.articles = [];
+        this.loginService = loginService;
+        this.articles = new Array();
+        this.arr = Array;
         Object.assign(this, { ARTICLETYPES: __WEBPACK_IMPORTED_MODULE_4__datas__["a" /* ARTICLETYPES */] });
     }
     ArticleListComponent.prototype.delete = function (article) {
@@ -4835,63 +4854,48 @@ var ArticleListComponent = (function () {
             .map(function (response) { return console.log("ArticleListComponent.delete:", response.json()) || response.json(); })
             .subscribe(function () {
             _this.getArticles();
-            _this.getArticlesByType();
             alert("删除成功!");
         });
     };
-    ArticleListComponent.prototype.getArticlesByType = function () {
+    ArticleListComponent.prototype.getArticles = function () {
+        this.getArticlesByType(1, 1);
+        this.getArticlesByType(2, 1);
+        this.getArticlesByType(3, 1);
+    };
+    ArticleListComponent.prototype.getArticlesByType = function (type, index) {
         var _this = this;
-        this.http.get("http://localhost:8080/CompSystem/admin/article" + "?type=1" + "&pageSize=5")
-            .map(function (response) {
-            console.log("HomeComponent.getArticlesByType:", response.json());
-            if (response.json()) {
-                console.log(response.json());
-                if (response.json().articlePageInfo) {
-                    console.log(response.json().articlePageInfo);
-                    return response.json().articlePageInfo.list;
-                }
+        this.http.get(this.url + "?type=" + type + "&pageSize=10" + "&index=" + index)
+            .map(function (response) { return console.log("ArticleListComponent.getArticlesByType:", response.json()) || response.json().articlePageInfo; })
+            .subscribe(function (response) {
+            switch (type) {
+                case 1:
+                    {
+                        _this.articles[type] = response;
+                    }
+                    break;
+                case 2:
+                    {
+                        _this.articles[type] = response;
+                    }
+                    break;
+                case 3:
+                    {
+                        _this.articles[type] = response;
+                    }
+                    break;
+                default: break;
             }
-            else
-                return [];
-        })
-            .subscribe(function (response) { return _this.articleTypeOnes = response; });
-        this.http.get("http://localhost:8080/CompSystem/admin/article" + "?type=2" + "&pageSize=5")
-            .map(function (response) {
-            console.log("HomeComponent.getArticlesByType:", response.json());
-            if (response.json()) {
-                console.log(response.json());
-                if (response.json().articlePageInfo) {
-                    console.log(response.json().articlePageInfo);
-                    return response.json().articlePageInfo.list;
-                }
-            }
-            else
-                return [];
-        })
-            .subscribe(function (response) { return _this.articleTypeTwos = response; });
-        this.http.get("http://localhost:8080/CompSystem/admin/article" + "?type=3" + "&pageSize=5")
-            .map(function (response) {
-            console.log("HomeComponent.getArticlesByType:", response.json());
-            if (response.json()) {
-                console.log(response.json());
-                if (response.json().articlePageInfo) {
-                    console.log(response.json().articlePageInfo);
-                    return response.json().articlePageInfo.list;
-                }
-            }
-            else
-                return [];
-        })
-            .subscribe(function (response) { return _this.articleTypeThrees = response; });
+        });
     };
     ArticleListComponent.prototype.ngOnInit = function () {
+        this.role = this.loginService.getRole();
+        if (this.role == 'admin') {
+            this.url = "http://localhost:8080/CompSystem/admin/article";
+        }
+        else {
+            this.url = "http://localhost:8080/CompSystem/index/articlesList";
+        }
         this.getArticles();
-        this.getArticlesByType();
-    };
-    ArticleListComponent.prototype.getArticles = function () {
-        var _this = this;
-        this.articleService.getArticles()
-            .subscribe(function (articles) { return _this.articles = articles; });
     };
     return ArticleListComponent;
 }());
@@ -4900,12 +4904,12 @@ ArticleListComponent = __decorate([
         selector: 'app-article-list',
         template: __webpack_require__(1220),
         styles: [__webpack_require__(1168)],
-        providers: [__WEBPACK_IMPORTED_MODULE_3__services_article_service__["a" /* ArticleService */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_3__services_article_service__["a" /* ArticleService */], __WEBPACK_IMPORTED_MODULE_5__services__["a" /* LoginService */]]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_article_service__["a" /* ArticleService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_article_service__["a" /* ArticleService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_article_service__["a" /* ArticleService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_article_service__["a" /* ArticleService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* Http */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services__["a" /* LoginService */]) === "function" && _d || Object])
 ], ArticleListComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=article-list.component.js.map
 
 /***/ }),
@@ -4962,7 +4966,7 @@ ArticleComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AwardListComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -4985,13 +4989,15 @@ var AwardListComponent = (function () {
         this.awards = [];
     }
     AwardListComponent.prototype.download = function (award) {
-        this.http.get("http://localhost:8080/CompSystem/student/downloadAwards" + "?awardsId=")
-            .map(function (response) { return console.log(response.json()) || response.json(); })
-            .subscribe(function (data) {
-            var blob = new Blob([data], { type: 'text/csv' });
-            var url = window.URL.createObjectURL(blob);
-            window.open(url);
-        });
+        var url = "http://localhost:8080/CompSystem/student/downloadAwards" + "?awardsId=" + award.awardsId;
+        window.location.href = url;
+        // this.http.get("http://localhost:8080/CompSystem/student/downloadAwards" + "?awardsId=" + award.awardsId )
+        //   .map(response => console.log(response.json()) || response.json())
+        //   .subscribe(data => {
+        //     var blob = new Blob([data], { type: 'text/csv' });
+        //     var url= window.URL.createObjectURL(blob);
+        //     window.open(url);
+        //   });
     };
     AwardListComponent.prototype.ngOnInit = function () {
         this.student = this.loginService.getUser();
@@ -5379,7 +5385,7 @@ DeclarationLoadComponent = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_startWith__ = __webpack_require__(342);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_startWith___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_startWith__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services__ = __webpack_require__(7);
@@ -5783,7 +5789,7 @@ var _a, _b, _c;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FilesComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5890,7 +5896,7 @@ var _a;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -6011,7 +6017,7 @@ var _a, _b, _c, _d;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material_dialog__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(4);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return LoginDialog; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -6129,7 +6135,7 @@ var _a, _b, _c, _d, _e, _f;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminContestComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -6354,7 +6360,8 @@ AdminHomeComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StudentContestComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -6367,18 +6374,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var StudentContestComponent = (function () {
-    function StudentContestComponent(loginService, contestService, studentService) {
+    function StudentContestComponent(loginService, contestService, studentService, http) {
         this.loginService = loginService;
         this.contestService = contestService;
         this.studentService = studentService;
+        this.http = http;
     }
+    StudentContestComponent.prototype.pass = function (group, pass) {
+        var _this = this;
+        this.http.get("http://localhost:8080/CompSystem/student/setCaptainStatus" + "?captainstatus=" + pass + "&id=" + group.id)
+            .subscribe(function () {
+            //重新读取数据
+            _this.getAppliedContests();
+            alert("审核成功!");
+        });
+    };
     StudentContestComponent.prototype.groupToggle = function (v) {
         v.groupToggle = !v.groupToggle;
     };
-    StudentContestComponent.prototype.ngOnInit = function () {
+    StudentContestComponent.prototype.getAppliedContests = function () {
         var _this = this;
-        this.student = this.loginService.getUser();
         this.studentService.getCompGroupMembers(this.student.studentno)
             .subscribe(function (response) {
             _this.appliedContests = response;
@@ -6408,6 +6425,10 @@ var StudentContestComponent = (function () {
             }
         });
     };
+    StudentContestComponent.prototype.ngOnInit = function () {
+        this.student = this.loginService.getUser();
+        this.getAppliedContests();
+    };
     return StudentContestComponent;
 }());
 StudentContestComponent = __decorate([
@@ -6415,12 +6436,12 @@ StudentContestComponent = __decorate([
         selector: 'app-student-contest',
         template: __webpack_require__(1249),
         styles: [__webpack_require__(1197)],
-        providers: [__WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_1__services__["c" /* ContestService */], __WEBPACK_IMPORTED_MODULE_1__services__["d" /* StudentService */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_2__services__["c" /* ContestService */], __WEBPACK_IMPORTED_MODULE_2__services__["d" /* StudentService */]]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services__["a" /* LoginService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services__["c" /* ContestService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services__["c" /* ContestService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services__["d" /* StudentService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services__["d" /* StudentService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["a" /* LoginService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services__["c" /* ContestService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["c" /* ContestService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services__["d" /* StudentService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services__["d" /* StudentService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _d || Object])
 ], StudentContestComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=student-contest.component.js.map
 
 /***/ }),
@@ -6443,7 +6464,7 @@ var _a, _b, _c;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material_dialog__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return StudentInfoComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MaterialDialog; });
@@ -6587,7 +6608,7 @@ var _a, _b, _c, _d, _e, _f, _g, _h, _j;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StudentMessageComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -6774,7 +6795,7 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TeacherMessageComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -6923,7 +6944,7 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WorksComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
