@@ -15,7 +15,7 @@
   </sql>
   <!-- 查找学生获奖情况 -->
   <select id="selectAwardsByStuNo" resultType="java.util.HashMap" parameterType="java.lang.Integer" >
-    select g.groupsNo,g.groupsName,g.comId,a.prizeName,a.awardsImg,c.comName,a.awardTime
+    select g.groupsNo,g.groupsName,g.comId,a.prizeName,a.awardsImg,a.awardsId,c.comName,a.awardTime
 	from groups g
 	INNER JOIN awards a
 	on g.groupsNo=a.groupsNo

@@ -49,6 +49,10 @@ public class GroupsServiceImpl implements GroupsService{
 		}
 		return groupInfoList;
 	}
+	@Override
+	public List<Groups> getNotAwardsGroups(Integer comId) {
+		return groupsMapper.selectNotAwardsGroups(comId);
+	}
 
 
 }
