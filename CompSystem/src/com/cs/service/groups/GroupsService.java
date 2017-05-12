@@ -3,6 +3,7 @@ package com.cs.service.groups;
 import java.util.List;
 import java.util.Map;
 
+import com.cs.pojo.Competition;
 import com.cs.pojo.Groups;
 
 public interface GroupsService {
@@ -35,5 +36,7 @@ public interface GroupsService {
 	 * @param comId
 	 */
 	public List<Groups> getNotAwardsGroups(Integer comId);
+	
+
 
 }

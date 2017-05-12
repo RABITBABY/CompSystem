@@ -440,5 +440,80 @@ public class TeacherServiceImpl implements TeacherService {
 	public List<Competition> selectGuideCompByTeacherNo(Integer teacherno) {
 		return comMapper.selectGuideCompByTeacherNo(teacherno);
 	}
+	/**
+	 * 系审批员
+	 * 	0:所有
+	 *  1：待系部审批 2.待教学处审批  3.审批通过  4.审批不通过  
+	 *  5：报名中，6：竞赛中，7：竞赛结束
+	 * */
+	@Override
+	public List<Competition> getDeptComp(Integer teacherNo, Integer btnStatus) {
+		//Teacher teacher=teacherMapper.selectByPrimaryKey(teacherNo);
+		List<Competition> comList=new ArrayList<Competition>();
+		if (btnStatus==0) {
+			//全部
+			comList.addAll(comMapper.selectDeptComp(teacherNo));
+		}else if (btnStatus==1) {
+			//待系部审批
+			comList.addAll(comMapper.examDeptComp(teacherNo));
+		}else if (btnStatus==2) {
+			//待教学处审批
+			comList.addAll(comMapper.selectNoTeaCompInDept(teacherNo));
+		}else if (btnStatus==3) {
+			//审批通过的
+			comList.addAll(comMapper.selectDeptCompPass(teacherNo));
+		}else if (btnStatus==4) {
+			//审批不通过的
+			comList.addAll(comMapper.selectDeptNotPassComp(teacherNo));
+		}else if(btnStatus==5){
+			//报名中
+			comList.addAll(comMapper.selectDeptCompApply(teacherNo));
+		}else if (btnStatus==6) {
+			//竞赛中
+			comList.addAll(comMapper.selectDeptNowComp(teacherNo));
+		}else if (btnStatus==7) {
+			//竞赛结束的
+			comList.addAll(comMapper.selectDeptEndComp(teacherNo));
+		}
+		return comList;
+	}
+
+	/**
+	 *  教学处
+	 * 	0:所有
+	 *  1：待系部审批 2.待教学处审批  3.审批通过  4.审批不通过  
+	 *  5：报名中，6：竞赛中，7：竞赛结束
+	 * */
+	@Override
+	public List<Competition> getTeaComp(Integer teacherNo, Integer btnStatus) {
+		//Teacher teacher=teacherMapper.selectByPrimaryKey(teacherNo);
+				List<Competition> comList=new ArrayList<Competition>();
+				if (btnStatus==0) {
+					//全部
+					comList.addAll(comMapper.selectAllComp());
+				}else if (btnStatus==1) {
+					//待系部审批
+					comList.addAll(comMapper.selectNoDeptCompInTea(teacherNo));
+				}else if (btnStatus==2) {
+					//待教学处审批
+					comList.addAll(comMapper.examTeaComp(teacherNo));
+				}else if (btnStatus==3) {
+					//审批通过的
+					comList.addAll(comMapper.selectTeaCompPass(teacherNo));
+				}else if (btnStatus==4) {
+					//审批不通过的
+					comList.addAll(comMapper.selectTeaCompFail(teacherNo));
+				}else if(btnStatus==5){
+					//报名中
+					comList.addAll(comMapper.selectTeaCompApply(teacherNo));
+				}else if (btnStatus==6) {
+					//竞赛中
+					comList.addAll(comMapper.selectTeaNowComp(teacherNo));
+				}else if (btnStatus==7) {
+					//竞赛结束的
+					comList.addAll(comMapper.selectTeaEndComp(teacherNo));
+				}
+				return comList;
+	}
 
 }

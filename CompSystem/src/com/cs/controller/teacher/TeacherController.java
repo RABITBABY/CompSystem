@@ -100,6 +100,8 @@ public class TeacherController {
 	 * 12.根据teacherno查找可报名的竞赛√
 	 * 13.查找该教师负责或申报的竞赛√
 	 * 14.查找comId竞赛未反馈获奖的组别√
+	 * 15.根据btnStatus获取系部审批员申报书列表。√
+	 * 16.根据btnStatus获取教学处审批员申报书列表√
 	 */
 
 	@Autowired
@@ -490,5 +492,36 @@ public class TeacherController {
 	@RequestMapping(value = "/getNotAwardsGroups")
 	public List<Groups> getNotAwardsGroups(Integer comId) {
 		return groupsService.getNotAwardsGroups(comId);
+	}
+	
+	/**
+	 * 15.获取系部审批员申报书列表。√
+	 * 	0:所有
+	 *  1：待系部审批 2.待教学处审批  3.审批通过  4.审批不通过  
+	 *  5：报名中，6：竞赛中，7：竞赛结束
+	 * @param teacherNo
+	 * @param btnStatus
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/getDeptComp")
+	public List<Competition> getDeptComp(Integer teacherNo,Integer btnStatus) {
+		return teacherService.getDeptComp(teacherNo,btnStatus);
+	}
+	
+	
+	/**
+	 *  16.根据btnStatus获取教学处审批员申报书列表√
+	 * 	0:所有
+	 *  1：待系部审批 2.待教学处审批  3.审批通过  4.审批不通过  
+	 *  5：报名中，6：竞赛中，7：竞赛结束
+	 * @param teacherNo
+	 * @param btnStatus
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/getTeaComp")
+	public List<Competition> getTeaComp(Integer teacherNo,Integer btnStatus) {
+		return teacherService.getTeaComp(teacherNo,btnStatus);
 	}
 }

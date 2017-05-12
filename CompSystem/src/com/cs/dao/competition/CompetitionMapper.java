@@ -18,6 +18,9 @@ public interface CompetitionMapper {
 	/*查找已经结束的竞赛*/
 	List<Competition> selectEndComp(Integer teacherNo);
 	
+	/*系部申报列表中已经结束的竞赛*/
+	List<Competition> selectDeptEndComp(Integer teacherNo);
+	
 	/*删除*/
     int deleteByPrimaryKey(Integer comid);
      
@@ -73,7 +76,29 @@ public interface CompetitionMapper {
     
     List<Map> unPubaward(String department);
     List<Map> unPubCom(String department);
-    
-    
-    
+    //查找系部审批员中所有的申报书
+    List<Competition> selectDeptComp(Integer teacherNo);
+    //查找系部审批表中，教学处未审批的部分
+    List<Competition> selectNoTeaCompInDept(Integer teacherNo);
+    //查找系部审批表中，审批通过部分
+    List<Competition> selectDeptCompPass(Integer teacherNo);
+    //查找系部审批表中，正在报名的部分
+    List<Competition> selectDeptCompApply(Integer teacherNo);
+    //系部审批表中，正在举行的竞赛
+    List<Competition> selectDeptNowComp(Integer teacherNo);
+    //系部审批表中，审批不通过的竞赛
+    List<Competition> selectDeptNotPassComp(Integer teacherNo);
+    //教学处申报书中待系部审批的竞赛
+    List<Competition> selectNoDeptCompInTea(Integer teacherNo);
+    //教学处申报书中审批通过的竞赛
+    List<Competition> selectTeaCompPass(Integer teacherNo);
+    //教学处申报书中审批不通过的竞赛
+    List<Competition> selectTeaCompFail(Integer teacherNo);
+    //教学处申报书中正在报名的竞赛
+    List<Competition> selectTeaCompApply(Integer teacherNo);
+    //教学处申报书中正在比赛的竞赛
+    List<Competition> selectTeaNowComp(Integer teacherNo);
+    //教学处申报书中已经结束的竞赛
+    List<Competition> selectTeaEndComp(Integer teacherNo);
 }
+

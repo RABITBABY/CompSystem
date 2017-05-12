@@ -68,10 +68,28 @@
     and teaSpStatus=1 and depSpStatus=1
   </select>
   
+  <!-- 查看系部审批员的申报列表中，已经比赛结束的竞赛-->
+   <select id="selectDeptEndComp" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
+    select c.* from competition c
+		left join teacher t
+		on c.department=t.department
+		where t.teacherNo=#{teacherNo} and NOW()  > time
+    and teaSpStatus=1 and depSpStatus=1
+  </select>
+  
   <!-- 查看正在进行的竞赛-->
    <select id="selectNowComp" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
     SELECT * from competition where    CURDATE()= time
     and (teacherNo= #{teacherNo,jdbcType=INTEGER} or leaderNo= #{teacherNo,jdbcType=INTEGER})
+    and teaSpStatus=1 and depSpStatus=1 and saveStatus=1
+  </select>
+  
+  <!-- 系部审批员的审批列表中正在进行的竞赛-->
+   <select id="selectDeptNowComp" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
+    select c.* from competition c
+		left join teacher t
+		on c.department=t.department
+		where t.teacherNo=#{teacherNo} and  CURDATE()= time
     and teaSpStatus=1 and depSpStatus=1 and saveStatus=1
   </select>
   
@@ -116,6 +134,14 @@
   
   <select id="selectApplyCompByteacherNo" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
     SELECT * from competition where CURDATE()>=applyBeginDate and CURDATE() &lt;= applyEndDate  and (teacherNo=#{teacherno,jdbcType=INTEGER} or leaderNo=#{teacherno,jdbcType=INTEGER})
+    and depSpStatus=1 and teaSpStatus=1
+  </select>
+  <!-- 查找系部审批表中，正在报名的部分 -->
+  <select id="selectDeptCompApply" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
+    select c.* from competition c
+		left join teacher t
+		on c.department=t.department
+		where t.teacherNo=#{teacherNo} and CURDATE()>=applyBeginDate and CURDATE() &lt;= applyEndDate  
     and depSpStatus=1 and teaSpStatus=1
   </select>
   
@@ -532,16 +558,79 @@
     where comId = #{comid,jdbcType=INTEGER}
   </update>
   
+  <!-- 系部待审批的 -->
    <select id="examDeptComp" resultType="com.cs.pojo.Competition"  parameterType="int">
   		select c.* from competition c
 		left join teacher t
 		on c.department=t.department
 		where t.teacherNo=#{teacherNo} and depSpStatus=0 and saveStatus=1
-	</select>
+   </select>
+   <!-- 教学处待审批的 -->
    <select id="examTeaComp" resultType="com.cs.pojo.Competition"  parameterType="int" >
   		select * from competition 
         where depSpStatus=1 and teaSpStatus=0 and saveStatus=1
 	</select>
+	<!-- 系部审批员可见的所有该系申报书 -->
+	 <select id="selectDeptComp" resultType="com.cs.pojo.Competition"  parameterType="int">
+  		select c.* from competition c
+		left join teacher t
+		on c.department=t.department
+		where t.teacherNo=#{teacherNo} and saveStatus=1
+   </select>
+   
+   <!-- 系部申报书中待教学处审批的竞赛-->
+   <select id="selectNoTeaCompInDept" resultType="com.cs.pojo.Competition"  parameterType="int">
+  		select c.* from competition c
+		left join teacher t
+		on c.department=t.department
+		where t.teacherNo=#{teacherNo} and depSpStatus=1  and teaSpStatus=0 and saveStatus=1
+   </select>
+   
+    <!-- 教学处申报书中待系部审批的竞赛-->
+   <select id="selectNoDeptCompInTea" resultType="com.cs.pojo.Competition"  parameterType="int">
+  		select * from competition  where depSpStatus=0  and saveStatus=1
+   </select>
+   <!-- 教学处申报书中审批通过的竞赛-->
+   <select id="selectTeaCompPass" resultType="com.cs.pojo.Competition"  parameterType="int">
+  		select * from competition  where depSpStatus=0 and teaSpStatus=0 and saveStatus=1
+   </select>
+   <!-- 教学处申报书中审批不通过的竞赛-->
+   <select id="selectTeaCompFail" resultType="com.cs.pojo.Competition"  parameterType="int">
+  		select * from competition  where (depSpStatus=-1 or teaSpStatus=-1) and saveStatus=1
+   </select>
+    <!-- 教学处申报书中正在报名的竞赛-->
+   <select id="selectTeaCompApply" resultType="com.cs.pojo.Competition"  parameterType="int">
+  		select * from competition where CURDATE()>=applyBeginDate and CURDATE() &lt;= applyEndDate  
+    and depSpStatus=1 and teaSpStatus=1
+   </select>
+   
+   <!-- 教学处申报书中正在进行的竞赛-->
+   <select id="selectTeaNowComp" resultType="com.cs.pojo.Competition"  parameterType="int">
+  		select * from competition where CURDATE()= time
+    and teaSpStatus=1 and depSpStatus=1 and saveStatus=1
+   </select>
+   
+   <!-- 教学处申报书中已经结束的竞赛-->
+   <select id="selectTeaEndComp" resultType="com.cs.pojo.Competition"  parameterType="int">
+  		select * from competition where NOW()  > time
+    and teaSpStatus=1 and depSpStatus=1
+   </select>
+   
+   <!-- 查找系部审批表中，审批通过部分-->
+   <select id="selectDeptCompPass" resultType="com.cs.pojo.Competition"  parameterType="int">
+  		select c.* from competition c
+		left join teacher t
+		on c.department=t.department
+		where t.teacherNo=#{teacherNo} and depSpStatus=1  and teaSpStatus=1 and saveStatus=1
+   </select>
+   
+   <!-- 查找系部审批表中，审批不通过部分-->
+   <select id="selectDeptNotPassComp" resultType="com.cs.pojo.Competition"  parameterType="int">
+  		select c.* from competition c
+		left join teacher t
+		on c.department=t.department
+		where t.teacherNo=#{teacherNo} and (depSpStatus=-1  or teaSpStatus=-1) and saveStatus=1
+   </select>
   
   <update id="updateByPrimaryKey" parameterType="com.cs.pojo.Competition" >
     update competition

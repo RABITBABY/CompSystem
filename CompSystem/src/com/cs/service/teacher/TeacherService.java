@@ -156,5 +156,23 @@ public interface TeacherService {
 	  * */
 	public List<Competition>  selectGuideCompByTeacherNo(Integer teacherno);
 
+	/**
+	 * 根据btnStatus
+	 * 查找系部审批员可以看到的竞赛
+	 *   即。该系的
+	 * @param teacherNo
+	 * @param btnStatus
+	 * @return
+	 */
+	public List<Competition> getDeptComp(Integer teacherNo,Integer btnStatus);
 	
+	/**
+	 * 根据btnStatus
+	 * 查找教学处审批员可以看到的竞赛
+	 *   即。全院的
+	 * @param teacherNo
+	 * @param btnStatus
+	 * @return
+	 */
+	public List<Competition> getTeaComp(Integer teacherNo,Integer btnStatus);
 }
