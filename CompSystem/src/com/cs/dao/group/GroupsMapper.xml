@@ -29,7 +29,7 @@
   
    <!-- 查找学生所报名的竞赛 返回competition-->
   <select id="selectCompetitionByStuNo" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
-    select c.*
+    select DISTINCT c.*
     from groups g
     LEFT JOIN competition c
     on g.comId=c.comId
