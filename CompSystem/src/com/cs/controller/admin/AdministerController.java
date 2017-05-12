@@ -288,6 +288,18 @@ public class AdministerController {
 		return stateCode;
 	}
 	
+	@ResponseBody
+	@RequestMapping("/articleByCompId")
+	public Map articleByCompId(String compId) {
+		Map result=new HashMap<String ,Object>();
+		int compid=Integer.parseInt(ParamUtil.getStr(compId, "0"));
+		if(compid>0){
+			//获取这个compId的包含article的Map
+			result=articleService.getArticleByComp(compid);
+		}
+		return result;
+	}
+	
 	
 	
 	/**
@@ -403,7 +415,7 @@ public class AdministerController {
 	}
 	
 		/**
-		 * 上传优秀作品
+		 * 修改优秀作品
 		 * @param request
 		 * @param response
 		 * @return

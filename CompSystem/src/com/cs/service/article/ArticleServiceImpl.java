@@ -280,4 +280,6 @@ public Map getArticleByComp(int compId) {
 	return result;
 }
 
+
+
 }

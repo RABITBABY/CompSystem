@@ -96,7 +96,7 @@ public class IndexController {
 	}
 	
 	/**
-	 * 
+	 * 搜索文章
 	 * @param searchInput
 	 * @param type
 	 * @param index
