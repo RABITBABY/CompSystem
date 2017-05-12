@@ -887,7 +887,7 @@ module.exports = "<!-- <md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn
 /***/ 1221:
 /***/ (function(module, exports) {
 
-module.exports = "<md-list *ngIf=\"articlePageInfo\">\r\n  <h3 md-subheader>文章列表</h3>\r\n  <md-list-item [routerLink]=\"['/article/detail', item.articleId]\" *ngFor=\"let item of articlePageInfo.list\">\r\n    <h4>{{item.title}}</h4>\r\n    <span style=\"flex: 1 1 auto\"></span>\r\n    <span><md-icon mdTooltip=\"访问量\" style=\"margin-left: 24px\">pageview</md-icon>{{item.visitCount}}</span>\r\n      <span><md-icon mdTooltip=\"发布者\" style=\"margin-left: 24px\">person</md-icon>{{item.adminName}}</span>\r\n    <span><md-icon mdTooltip=\"发布日期\">date_range</md-icon>{{item.pubDate | date:'yyyy年MM月dd日'}}</span>\r\n  </md-list-item>\r\n</md-list>\r\n"
+module.exports = "<md-list *ngIf=\"articlePageInfo\">\r\n  <h3 md-subheader>文章列表</h3>\r\n  <md-list-item [routerLink]=\"['/article/detail', item.articleId]\" *ngFor=\"let item of articlePageInfo.list\">\r\n    <h4>{{item.title}}</h4>\r\n    <span style=\"flex: 1 1 auto\"></span>\r\n    <span><md-icon mdTooltip=\"访问量\" style=\"margin-left: 24px\">pageview</md-icon>{{item.visitCount}}</span>\r\n      <span><md-icon mdTooltip=\"发布者\" style=\"margin-left: 24px\">person</md-icon>{{item.adminName}}</span>\r\n    <span><md-icon mdTooltip=\"发布日期\">date_range</md-icon>{{item.pubDate | date:'yyyy年MM月dd日'}}</span>\r\n  </md-list-item>\r\n  <md-list-item>\r\n    <span style=\"flex:1 1 auto\"></span>\r\n    <button (click)=\"reSearch(articlePageInfo.index - 1)\" md-icon-button [disabled]=\"articlePageInfo.index==1\">\r\n      <md-icon>navigate_before</md-icon>\r\n    </button>\r\n\r\n    <button (click)=\"reSearch(i)\" md-button *ngFor=\"let item of arr(articlePageInfo.total).fill(1);let i of index\" [disabled]=\"articlePageInfo.index == i\">\r\n      {{i}}\r\n    </button>\r\n\r\n    <button (click)=\"reSearch(articlePageInfo.index + 1)\" md-icon-button [disabled]=\"articlePageInfo.index==articlePageInfo.total\">\r\n      <md-icon>navigate_next</md-icon>\r\n    </button>\r\n    <span style=\"flex:1 1 auto\"></span>\r\n  </md-list-item>\r\n</md-list>\r\n"
 
 /***/ }),
 
@@ -1069,21 +1069,21 @@ module.exports = "<!-- <md-chip-list>\n<md-chip selected=\"true\" color=\"warn\"
 /***/ 1247:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn\">更新作品功能尚未添加</md-chip>\r\n</md-chip-list> -->\r\n<button md-button style=\"width: 100%\" (click)=\"openDialog()\">上传作品</button>\r\n<md-card *ngFor=\"let item of works;let i of index\">\r\n  <img md-card-image alt=\"图片\" src={{item.pic}}>\r\n  <md-card-content>\r\n    <p><strong>作品名称</strong>:{{item.proname}}</p>\r\n    <p><strong>奖项</strong>:{{item.award}}</p>\r\n    <p><strong>获奖者</strong>:{{item.membersname}}</p>\r\n    <p><strong>作品介绍</strong>:{{item.introduction}}</p>\r\n  </md-card-content>\r\n  <md-card-actions>\r\n    <button md-button (click)=\"delete(item)\">删除</button>\r\n  </md-card-actions>\r\n</md-card>\r\n"
+module.exports = "<!-- <md-chip-list>\r\n<md-chip selected=\"true\" color=\"warn\">更新作品功能尚未添加</md-chip>\r\n</md-chip-list> -->\r\n<button md-button style=\"width: 100%\" (click)=\"openDialog()\">上传作品</button>\r\n<md-card *ngFor=\"let item of works;let i of index\">\r\n  <img md-card-image alt=\"图片\" src={{item.pic}}>\r\n  <md-card-content>\r\n    <p><strong>作品名称</strong>:{{item.proname}}</p>\r\n    <p><strong>奖项</strong>:{{item.award}}</p>\r\n    <p><strong>获奖者</strong>:{{item.membersname}}</p>\r\n    <p><strong>作品介绍</strong>:{{item.introduction}}</p>\r\n  </md-card-content>\r\n  <md-card-actions>\r\n    <button md-button (click)=\"openDialog(item)\">编辑</button>\r\n    <button md-button (click)=\"delete(item)\">删除</button>\r\n  </md-card-actions>\r\n</md-card>\r\n"
 
 /***/ }),
 
 /***/ 1248:
 /***/ (function(module, exports) {
 
-module.exports = "<form #work=\"ngForm\">\r\n  <md-input-container style=\"width: 100%\">\r\n    <input mdInput ngModel name=\"proName\" placeholder=\"作品名\" />\r\n  </md-input-container>\r\n  <md-input-container style=\"width: 100%\">\r\n    <input mdInput ngModel name=\"award\" placeholder=\"奖项\" />\r\n  </md-input-container>\r\n  <md-input-container style=\"width: 100%\">\r\n    <input mdInput ngModel name=\"membersName\" placeholder=\"作品作者\" />\r\n  </md-input-container>\r\n  <md-input-container style=\"width: 100%\">\r\n    <textarea mdInput ngModel name=\"introduction\" placeholder=\"作品简介\" ></textarea>\r\n  </md-input-container>\r\n  <input md-button ngModel type=\"file\" name=\"file\" #fileInput/>\r\n  <button md-button style=\"width: 100%\" (click)=\"apply(work.value)\">提交</button>\r\n</form>\r\n"
+module.exports = "<form #workF=\"ngForm\">\r\n  <md-input-container style=\"width: 100%\">\r\n    <input mdInput [ngModel]=\"work.proname\" name=\"proName\" placeholder=\"作品名\" />\r\n  </md-input-container>\r\n  <md-input-container style=\"width: 100%\">\r\n    <input mdInput [ngModel]=\"work.award\" name=\"award\" placeholder=\"奖项\" />\r\n  </md-input-container>\r\n  <md-input-container style=\"width: 100%\">\r\n    <input mdInput [ngModel]=\"work.membersname\" name=\"membersName\" placeholder=\"作品作者\" />\r\n  </md-input-container>\r\n  <md-input-container style=\"width: 100%\">\r\n    <textarea mdInput [ngModel]=\"work.introduction\" name=\"introduction\" placeholder=\"作品简介\" ></textarea>\r\n  </md-input-container>\r\n  <img style=\"max-height:150px;max-width:150px\" src={{work.pic}} alt=\"作品图\" *ngIf=\"work.pic\"/>\r\n  <input md-button ngModel type=\"file\" name=\"file\" #fileInput (change)=\"readUrl($event)\"/>\r\n  <button md-button style=\"width: 100%\" (click)=\"apply(workF.value)\">提交</button>\r\n</form>\r\n"
 
 /***/ }),
 
 /***/ 1249:
 /***/ (function(module, exports) {
 
-module.exports = "<md-nav-list>\r\n  <h3 md-subheader>已报名竞赛列表</h3>\r\n  <!-- <md-divider></md-divider> -->\r\n  <!-- <h3 md-subheader>可报名竞赛列表</h3> -->\r\n  <!-- <md-list-item *ngFor=\"let contest of contests\">\r\n      {{contest.comName}}\r\n    </md-list-item> -->\r\n</md-nav-list>\r\n<div *ngIf=\"appliedContests\">\r\n  <md-card *ngFor=\"let appliedContest of appliedContests\">\r\n    <md-card-content style=\"display:flex;flex-direction:row\">\r\n      {{appliedContest.comp.comname}}\r\n      <span style=\"flex:1 1 auto\"></span>\r\n      <button md-icon-button mdTooltip=\"展开队伍\" *ngIf=\"!appliedContest.groupToggle\" (click)=\"groupToggle(appliedContest)\">\r\n      <md-icon>keyboard_arrow_down</md-icon>\r\n    </button>\r\n      <button md-icon-button mdTooltip=\"收起队伍\" *ngIf=\"appliedContest.groupToggle\" (click)=\"groupToggle(appliedContest)\">\r\n      <md-icon>keyboard_arrow_up</md-icon>\r\n    </button>\r\n    </md-card-content>\r\n    <md-card-content *ngIf=\"appliedContest.groupToggle\">\r\n      <md-list>\r\n        <h3 md-subheader>队伍详情</h3>\r\n      </md-list>\r\n      <div>\r\n        <span><strong>队伍名</strong>:{{appliedContest.groupList[0].groupsname}}</span>\r\n        <span *ngIf=\"appliedContest.student\"><strong>队长</strong>:{{appliedContest.student.studentname}}</span>\r\n      </div>\r\n      <!-- 没有队长组 即自己一组? -->\r\n      <div *ngIf=\"appliedContest.group\">\r\n        <strong>队员:</strong>\r\n        <div *ngFor=\"let group of appliedContest.groupList\" style=\"display:flex;flex-direction:row\">\r\n          {{group.student.studentname}}\r\n          <span style=\"flex:1 1 autuo\"></span>\r\n          <!-- 如果是 本人=队长 && 本人!=该队员 -->\r\n          <div *ngIf=\"student.studentno == appliedContest.group.studentno && student.studentno != group.student.studentno\">\r\n            <button md-button>准许</button>\r\n            <button md-button>拒绝</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n"
+module.exports = "<md-nav-list>\r\n  <h3 md-subheader>已报名竞赛列表</h3>\r\n  <!-- <md-divider></md-divider> -->\r\n  <!-- <h3 md-subheader>可报名竞赛列表</h3> -->\r\n  <!-- <md-list-item *ngFor=\"let contest of contests\">\r\n      {{contest.comName}}\r\n    </md-list-item> -->\r\n</md-nav-list>\r\n<div *ngIf=\"appliedContests\">\r\n  <md-card *ngFor=\"let appliedContest of appliedContests\">\r\n    <md-card-content style=\"display:flex;flex-direction:row\">\r\n      {{appliedContest.comp.comname}}\r\n      <span style=\"flex:1 1 auto\"></span>\r\n      <button md-icon-button mdTooltip=\"展开队伍\" *ngIf=\"!appliedContest.groupToggle\" (click)=\"groupToggle(appliedContest)\">\r\n      <md-icon>keyboard_arrow_down</md-icon>\r\n    </button>\r\n      <button md-icon-button mdTooltip=\"收起队伍\" *ngIf=\"appliedContest.groupToggle\" (click)=\"groupToggle(appliedContest)\">\r\n      <md-icon>keyboard_arrow_up</md-icon>\r\n    </button>\r\n    </md-card-content>\r\n    <md-card-content *ngIf=\"appliedContest.groupToggle\">\r\n      <md-list>\r\n        <h3 md-subheader>队伍详情</h3>\r\n      </md-list>\r\n      <div>\r\n        <span><strong>队伍名</strong>:{{appliedContest.groupList[0].groupsname}}</span>\r\n        <span *ngIf=\"appliedContest.student\">\r\n          <strong>队长</strong>:{{appliedContest.student.studentname}}\r\n        </span>\r\n      </div>\r\n\r\n      <div *ngIf=\"appliedContest.group\">\r\n        <strong>队员:</strong>\r\n        <div *ngFor=\"let group of appliedContest.groupList\" style=\"display:flex;flex-direction:row\">\r\n          {{group.student.studentname}}\r\n          <span style=\"flex:1 1 autuo\"></span>\r\n          <!-- 如果是 本人=队长 && 本人!=该队员 -->\r\n          <div *ngIf=\"student.studentno == appliedContest.group.studentno && student.studentno != group.student.studentno\">\r\n            <button md-button>准许</button>\r\n            <button md-button>拒绝</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1328,12 +1328,22 @@ var ArticleSearchComponent = (function () {
     function ArticleSearchComponent(route, articleService) {
         this.route = route;
         this.articleService = articleService;
+        this.arr = Array;
     }
     ArticleSearchComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params
-            .switchMap(function (params) { return _this.articleService.searchArticle("" + params['url']); })
-            .subscribe(function (response) { return _this.articlePageInfo = response.articlePageInfo; });
+            .switchMap(function (params) { _this.url = "" + params['url']; return _this.articleService.searchArticle("" + params['url']); })
+            .subscribe(function (response) {
+            _this.articlePageInfo = response.articlePageInfo;
+        });
+    };
+    ArticleSearchComponent.prototype.reSearch = function (index) {
+        var _this = this;
+        this.articleService.searchArticle(this.url + "&index=" + index)
+            .subscribe(function (response) {
+            _this.articlePageInfo = response.articlePageInfo;
+        });
     };
     return ArticleSearchComponent;
 }());
@@ -1578,7 +1588,7 @@ var DeclarationDetailComponent = (function () {
         var _this = this;
         this.teacher = this.loginService.getUser();
         this.route.params
-            .switchMap(function (params) { return _this.contestService.getDeclaration(+params['id']); })
+            .switchMap(function (params) { return _this.contestService.getContestHttp(+params['id']); })
             .subscribe(function (declaration) {
             _this.declaration = declaration;
             _this.teacherService.select(declaration.teacherno).subscribe(function (response) { return _this.leader = response; });
@@ -2103,11 +2113,14 @@ var AdminWorksComponent = (function () {
     AdminWorksComponent.prototype.ngOnInit = function () {
         this.getWorks();
     };
-    AdminWorksComponent.prototype.openDialog = function () {
+    AdminWorksComponent.prototype.openDialog = function (item) {
         var _this = this;
         this.dialogRef = this.dialog.open(WorksDialog, {
             disableClose: false
         });
+        if (item) {
+            this.dialogRef.componentInstance.work = item;
+        }
         this.dialogRef.afterClosed().subscribe(function (result) {
             _this.getWorks();
             _this.dialogRef = null;
@@ -2130,18 +2143,33 @@ var WorksDialog = (function () {
         this.awardService = awardService;
         this.http = http;
     }
+    WorksDialog.prototype.readUrl = function (event) {
+        var _this = this;
+        if (event.target.files && event.target.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                _this.work.pic = event.target.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    };
     WorksDialog.prototype.apply = function (work) {
         var _this = this;
         var inputEl = this.inputEl.nativeElement;
         var fileCount = inputEl.files.length;
         var formData = new FormData();
+        var url = "http://localhost:8080/CompSystem/admin/uploadProduction";
         if (fileCount > 0) {
+            if (this.work.proid) {
+                formData.append('proId', this.work.proid);
+                url = "http://localhost:8080/CompSystem/admin/updateProduction";
+            }
             formData.append('file', inputEl.files.item(0));
             formData.append('proName', work.proName);
             formData.append('award', work.award);
             formData.append('membersName', work.membersName);
             formData.append('introduction', work.introduction);
-            this.http.post("http://localhost:8080/CompSystem/admin/uploadProduction", formData)
+            this.http.post(url, formData)
                 .map(function (response) { return console.log("WorksDialog.apply:", response.json()) || response.json(); })
                 .subscribe(function (response) {
                 console.log(response);
@@ -6364,9 +6392,9 @@ var StudentContestComponent = (function () {
                         //找到队长
                         if (e.iscaptain == 1) {
                             //找到队长组
-                            v.group = array;
+                            v.group = e;
                             //找到队长
-                            v.student = v.members.find(function (e) { return v.group.studentno == e.studentno; });
+                            v.student = v.members.find(function (el) { return e.studentno == el.studentno; });
                         }
                         //找到队员
                         if (e.captainstatus == 1) {
@@ -6376,6 +6404,7 @@ var StudentContestComponent = (function () {
                         e.student = v.members.find(function (el) { return e.studentno == el.studentno; });
                     });
                 });
+                console.log(_this.appliedContests);
             }
         });
     };
