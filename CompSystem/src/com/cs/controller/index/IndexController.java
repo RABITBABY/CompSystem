@@ -55,8 +55,18 @@ public class IndexController {
 	@ResponseBody
 	@RequestMapping("/getArticleByComp")
 	public Map getArticleByComp(int compId){
+		int stateCode=0;
 		Map result=new HashMap<String,Object>();
-		result=articlService.getArticleByComp(compId);
+		//判断是否发布了文章
+		
+		Map map=articlService.getArticleByComp(compId);
+		if(map!=null){
+			stateCode=1;
+			result=map;
+		}else{
+			result.put("info", "还未开放报名入口");
+		}
+		result.put("stateCode", stateCode);
 		return result;
 		
 	}
@@ -123,6 +133,7 @@ public class IndexController {
 	@RequestMapping(value="/article", method = RequestMethod.GET)
 	public  Map findArticleById(String articleId) {
 		Map<String,Object> result=new HashMap<String, Object>();
+		
 		if(articleId!=null && !"".equals(articleId)){
 			int id=Integer.parseInt(articleId);
 			articlService.addVisit(id);

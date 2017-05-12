@@ -70,7 +70,7 @@
   
   <!-- 查看正在进行的竞赛-->
    <select id="selectNowComp" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
-    SELECT * from competition where NOW()  = time
+    SELECT * from competition where    CURDATE()= time
     and (teacherNo= #{teacherNo,jdbcType=INTEGER} or leaderNo= #{teacherNo,jdbcType=INTEGER})
     and teaSpStatus=1 and depSpStatus=1 and saveStatus=1
   </select>
@@ -115,7 +115,7 @@
   </select>
   
   <select id="selectApplyCompByteacherNo" resultType="com.cs.pojo.Competition" parameterType="java.lang.Integer" >
-    SELECT * from competition where NOW()>=applyBeginDate and NOW() &lt;= applyEndDate  and (teacherNo=#{teacherno,jdbcType=INTEGER} or leaderNo=#{teacherno,jdbcType=INTEGER})
+    SELECT * from competition where CURDATE()>=applyBeginDate and CURDATE() &lt;= applyEndDate  and (teacherNo=#{teacherno,jdbcType=INTEGER} or leaderNo=#{teacherno,jdbcType=INTEGER})
     and depSpStatus=1 and teaSpStatus=1
   </select>
   
@@ -611,7 +611,7 @@
   <select id="selectByAdmin" resultType="Map" parameterType="Map" >
      select com.*,t.teacherName,t.gender,t.department,t.phone,t.email  from competition com,teacher t
     where com.teacherNo=t.teacherNo and com.department=#{department}
-		and com.applyEndDate>=now() and com.depSpStatus=1 and com.teaSpStatus=1 
+		and com.applyEndDate>=CURDATE() and com.depSpStatus=1 and com.teaSpStatus=1 
 		<if test=" levelName != '' ">
 			and com.levelName=#{levelName}
 		</if>
@@ -641,7 +641,7 @@ ORDER BY a.awardTime desc
   
    <select id="getTotal" resultType="int" parameterType="Map" >
   	select COUNT(*) from competition com  where   com.department=#{department}
-		and com.applyEndDate>=now() and com.depSpStatus=1 and com.teaSpStatus=1 
+		and com.applyEndDate>=CURDATE() and com.depSpStatus=1 and com.teaSpStatus=1 
 	</select>
 	<update id="updatePubState" parameterType="Map">
 		update competition 
